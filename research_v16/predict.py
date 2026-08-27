@@ -61,12 +61,26 @@ def risk_rating(frame: pd.DataFrame) -> pd.Series:
     else:
         untradable = pd.Series(0.0, index=frame.index)
 
-    risk = volatility * 0.5 + liquidity_penalty * 0.35 + untradable * 0.15
+    # 舆情背离：公告密集(>=10)且方向偏空(text_score<0) → 主力借利空出货的风险
+    if "recent_text_events" in frame and "text_event_score" in frame:
+        hot_negative = (
+            (pd.to_numeric(frame["recent_text_events"], errors="coerce").fillna(0) >= 10)
+            & (pd.to_numeric(frame["text_event_score"], errors="coerce").fillna(0.0) < 0)
+        ).astype(float)
+    else:
+        hot_negative = pd.Series(0.0, index=frame.index)
+
+    risk = (
+        volatility * 0.40
+        + liquidity_penalty * 0.30
+        + untradable * 0.10
+        + hot_negative * 0.20
+    )
 
     def rate(value: float) -> str:
-        if value >= 0.6:
+        if value >= 0.55:
             return "高"
-        if value >= 0.35:
+        if value >= 0.30:
             return "中"
         return "低"
 

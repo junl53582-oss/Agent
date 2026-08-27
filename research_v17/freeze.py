@@ -42,10 +42,7 @@ CODE_FILES = [
     "tests/test_research_v17.py",
 ]
 DEPENDENCY_FILES = [
-    "research_v16/config.py", "research_v16/data.py", "research_v16/text_model.py",
-    "research_v16/model.py", "research_v16/portfolio.py", "research_v16/backtest.py",
-    "research_v16/validation.py", "research_v16/freeze.py", "research_v16/preflight.py",
-    "research_v16/cli.py", "research_v16/predict.py",
+    "research_v16/freeze.py",
 ]
 
 
@@ -73,7 +70,7 @@ def freeze_research(root: str | Path = ".") -> dict:
     if not event_quality.get("passed") or not all(event_quality.get("gates", {}).values()):
         raise RuntimeError("V17复用的V15文本事件数据审计未通过")
     dependencies = set(DEPENDENCY_FILES)
-    for package in ["stockpilot", *[f"research_v{version}" for version in range(3, 17)]]:
+    for package in ["stockpilot", *[f"research_v{version}" for version in range(3, 16)]]:
         dependencies.update(path.relative_to(workspace).as_posix() for path in (workspace / package).rglob("*.py"))
     lock = {
         "protocol": "stockpilot-v17-market-momentum-timing-over-v16",
