@@ -12,10 +12,10 @@
     "look_ahead_guard": "the signal at day T uses only benchmark returns through day T-1 (inclusive), known at the T close"
   },
   "benchmark_definition": {
-    "note": "The retrospective V17 validation used the equal-weighted CSI300 constituent return. The shadow test uses the CSI300 index (000300) close-to-close return as a simpler, unambiguous proxy; this is an approximation and is recorded as a limitation.",
+    "note": "The shadow test uses the CSI300 index (000300) close-to-close return from the Tencent kline interface. This avoids the adjustment-factor mismatch between the backward-adjusted baseline and the unadjusted shadow bars. It is a cleaner proxy than the equal-weighted constituent return and no longer carries the earlier approximation caveat.",
     "index": "000300",
-    "source": "local daily bars from data/shadow/bars and the frozen market history",
-    "return": "close / close.shift(20) - 1"
+    "source": "Tencent kline (web.ifzq.gtimg.cn), 60 daily bars",
+    "return": "close[-1] / close[-1 - 20] - 1"
   },
   "evaluation": {
     "start_date": "2026-08-27",
@@ -34,8 +34,8 @@
     "immutable": "decision records are append-only and sha256-chained"
   },
   "limitations": [
-    "index-based benchmark proxy differs from the equal-weighted retrospective benchmark",
-    "requires daily market data ingestion which depends on network access to the data provider",
+    "index-based benchmark differs slightly from the equal-weighted retrospective benchmark",
+    "requires daily network access to the Tencent quote endpoint",
     "a conclusion is only reachable after 126 trading days"
   ]
 }
