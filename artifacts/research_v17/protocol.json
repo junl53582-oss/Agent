@@ -1,0 +1,37 @@
+{
+  "protocol": "stockpilot-v17-market-momentum-timing-over-v16",
+  "status": "registered_before_any_v17_performance_or_ic",
+  "objective": "Test whether a simple market-momentum timing overlay on the frozen V16 ungated signal materially improves win rate and reduces drawdown, without introducing look-ahead.",
+  "hypothesis_origin": "Exploratory analysis on the V16 2020-2025 retrospective window found that holding only when the prior rebalance period benchmark return was positive transformed the V16 ungated line from a 48 percent win rate and -33.8 percent drawdown into a 94 percent win rate and near-zero drawdown. This is a retrospective discovery and must be re-verified under a frozen, pre-registered protocol; it is not yet evidence.",
+  "timing_rule": {
+    "signal": "prior rebalance period benchmark return (20 trading days)",
+    "window": 1,
+    "threshold": 0.0,
+    "action_long": "hold the V16 ungated portfolio",
+    "action_flat": "hold cash (zero return, zero cost)",
+    "initial_state": "before enough history accumulates, hold the portfolio (in_market=True)",
+    "look_ahead_guard": "the timing signal uses only benchmark returns from periods already fully elapsed at the rebalance date"
+  },
+  "model": "reuses the frozen V16 word-char ensemble text model exactly (fit and score), only the portfolio holding decision changes",
+  "modes": {
+    "v16_ungated": "the V16 ungated line without timing, as the same-run control",
+    "v17_timing": "the V16 ungated line with the market-momentum timing overlay"
+  },
+  "gates": {
+    "timing_win_rate_at_least_plus_10pct": "timed win rate at least 10 percentage points above the untimed line",
+    "timing_reduces_drawdown": "timed max drawdown no worse than untimed",
+    "timing_excess_positive": "timed cumulative excess over benchmark positive",
+    "timing_not_fewer_positive_years": "timed positive-excess years at least as many as untimed",
+    "timing_holds_at_least_30pct": "timed line is in the market at least 30 percent of periods (no vacuous all-cash strategy)",
+    "timing_return_positive": "timed cumulative total return positive"
+  },
+  "decision_rule": {
+    "all_gates_passed": "the timing overlay replaces the untimed line as the preferred presentation; still no execution authorization and still requires the future shadow protocol",
+    "any_gate_failed": "decision stays keep_v6 and the timing result is recorded as a retrospective observation"
+  },
+  "honest_reporting": [
+    "the timing signal was discovered on the same 2020-2025 window reused by V3-V16, so a pass here is weaker evidence than the future shadow protocol",
+    "only 73 rebalance periods; a 94 percent win rate has a wide confidence interval",
+    "timing improves the result by avoiding down markets, not by improving stock selection skill"
+  ]
+}

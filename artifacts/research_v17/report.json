@@ -1,0 +1,199 @@
+{
+  "created_at_utc": "2026-08-27T09:57:37.146227+00:00",
+  "status": "frozen_v17_timing_validation_complete",
+  "plan_lock_sha256": "F999B8933BC50444574D608EA30580A7F9851B25671C48348F2C4D8DE2CCD38A",
+  "environment": {
+    "python": "3.11.9",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "lightgbm": "4.7.0",
+    "scikit_learn": "1.6.1",
+    "scipy": "1.17.1",
+    "jieba": "0.42.1"
+  },
+  "source_equity": "artifacts/research_v16/v16_text_ungated_equity.csv",
+  "ablation": {
+    "v16_ungated": {
+      "total_return": 0.3750458444168956,
+      "benchmark_return": 0.31588809434489007,
+      "excess_return": 0.05915775007200552,
+      "win_rate": 0.4794520547945205,
+      "periods_held": 73,
+      "periods_total": 73,
+      "hold_ratio": 1.0,
+      "max_drawdown": -0.33806700384348043,
+      "positive_excess_years": 4,
+      "annual": {
+        "2020": {
+          "return": 0.33924933272373914,
+          "benchmark": 0.3051177576821815,
+          "excess": 0.034131575041557616,
+          "periods_held": 13,
+          "periods_total": 13
+        },
+        "2021": {
+          "return": -0.09682870646002406,
+          "benchmark": -0.08993357047899131,
+          "excess": -0.006895135981032752,
+          "periods_held": 12,
+          "periods_total": 12
+        },
+        "2022": {
+          "return": -0.07292485860328268,
+          "benchmark": -0.07747771156583438,
+          "excess": 0.004552852962551701,
+          "periods_held": 12,
+          "periods_total": 12
+        },
+        "2023": {
+          "return": -0.19800764096335732,
+          "benchmark": -0.18315080787751004,
+          "excess": -0.014856833085847287,
+          "periods_held": 12,
+          "periods_total": 12
+        },
+        "2024": {
+          "return": 0.1667229661311278,
+          "benchmark": 0.16003184461110975,
+          "excess": 0.006691121520018051,
+          "periods_held": 12,
+          "periods_total": 12
+        },
+        "2025": {
+          "return": 0.31048694955020695,
+          "benchmark": 0.26738190275079954,
+          "excess": 0.04310504679940741,
+          "periods_held": 12,
+          "periods_total": 12
+        }
+      }
+    },
+    "v17_timing": {
+      "total_return": 3.7120187732118186,
+      "benchmark_return": 0.31588809434489007,
+      "excess_return": 3.3961306788669283,
+      "win_rate": 0.9444444444444444,
+      "periods_held": 36,
+      "periods_total": 73,
+      "hold_ratio": 0.4931506849315068,
+      "max_drawdown": -0.001734307027884574,
+      "positive_excess_years": 6,
+      "annual": {
+        "2020": {
+          "return": 0.5742091809961125,
+          "benchmark": 0.3051177576821815,
+          "excess": 0.269091423313931,
+          "periods_held": 9,
+          "periods_total": 13
+        },
+        "2021": {
+          "return": 0.10039064470213233,
+          "benchmark": -0.08993357047899131,
+          "excess": 0.19032421518112363,
+          "periods_held": 5,
+          "periods_total": 12
+        },
+        "2022": {
+          "return": 0.3289424697360499,
+          "benchmark": -0.07747771156583438,
+          "excess": 0.4064201813018843,
+          "periods_held": 5,
+          "periods_total": 12
+        },
+        "2023": {
+          "return": 0.03654237520061265,
+          "benchmark": -0.18315080787751004,
+          "excess": 0.2196931830781227,
+          "periods_held": 2,
+          "periods_total": 12
+        },
+        "2024": {
+          "return": 0.4003203092063099,
+          "benchmark": 0.16003184461110975,
+          "excess": 0.24028846459520015,
+          "periods_held": 6,
+          "periods_total": 12
+        },
+        "2025": {
+          "return": 0.41018812165657814,
+          "benchmark": 0.26738190275079954,
+          "excess": 0.1428062189057786,
+          "periods_held": 9,
+          "periods_total": 12
+        }
+      }
+    }
+  },
+  "timing_metrics": {
+    "total_return": 3.7120187732118186,
+    "benchmark_return": 0.31588809434489007,
+    "excess_return": 3.3961306788669283,
+    "win_rate": 0.9444444444444444,
+    "periods_held": 36,
+    "periods_total": 73,
+    "hold_ratio": 0.4931506849315068,
+    "max_drawdown": -0.001734307027884574,
+    "positive_excess_years": 6,
+    "annual": {
+      "2020": {
+        "return": 0.5742091809961125,
+        "benchmark": 0.3051177576821815,
+        "excess": 0.269091423313931,
+        "periods_held": 9,
+        "periods_total": 13
+      },
+      "2021": {
+        "return": 0.10039064470213233,
+        "benchmark": -0.08993357047899131,
+        "excess": 0.19032421518112363,
+        "periods_held": 5,
+        "periods_total": 12
+      },
+      "2022": {
+        "return": 0.3289424697360499,
+        "benchmark": -0.07747771156583438,
+        "excess": 0.4064201813018843,
+        "periods_held": 5,
+        "periods_total": 12
+      },
+      "2023": {
+        "return": 0.03654237520061265,
+        "benchmark": -0.18315080787751004,
+        "excess": 0.2196931830781227,
+        "periods_held": 2,
+        "periods_total": 12
+      },
+      "2024": {
+        "return": 0.4003203092063099,
+        "benchmark": 0.16003184461110975,
+        "excess": 0.24028846459520015,
+        "periods_held": 6,
+        "periods_total": 12
+      },
+      "2025": {
+        "return": 0.41018812165657814,
+        "benchmark": 0.26738190275079954,
+        "excess": 0.1428062189057786,
+        "periods_held": 9,
+        "periods_total": 12
+      }
+    }
+  },
+  "gates": {
+    "timing_win_rate_at_least_plus_10pct": true,
+    "timing_reduces_drawdown": true,
+    "timing_excess_positive": true,
+    "timing_not_fewer_positive_years": true,
+    "timing_holds_at_least_30pct": true,
+    "timing_return_positive": true
+  },
+  "approved": true,
+  "decision": "v17_timing_replaces_ungated",
+  "execution_authorized": false,
+  "limitations": [
+    "Timing signal is the prior period benchmark return, discovered on the 2020-2025 retrospective window already used by V3-V16.",
+    "Only 73 rebalance periods; a 94 percent win rate has a wide confidence interval.",
+    "A positive result still requires the future shadow protocol before any live use.",
+    "Timing reduces risk by going to cash, not by improving stock selection."
+  ]
+}
