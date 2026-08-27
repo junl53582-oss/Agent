@@ -1,0 +1,59 @@
+{
+  "created_at_utc": "2026-08-24T16:44:26.442626+00:00",
+  "status": "retrospective_research",
+  "plan_lock_sha256": "8669522CC4E9B404579307530B149D3BFC1BC8972D125049143500E5A85CE932",
+  "data_manifest": "artifacts/research_v8/data_manifest.json",
+  "ablation": {
+    "v6_buffer": {
+      "total_return": 0.3512908981451963,
+      "benchmark_return": 0.44039650477876147,
+      "excess_return": -0.08910560663356515,
+      "mean_rank_ic": 0.025298819441517423,
+      "max_drawdown": -0.200495809689053,
+      "positive_test_year_ratio": 0.6666666666666666,
+      "nonnegative_sector_ic_ratio": 0.8333333333333334,
+      "average_one_way_turnover": 0.445029688196074,
+      "average_transaction_cost": 0.0009325938412747477
+    },
+    "v8_full": {
+      "total_return": 0.45134107177327065,
+      "benchmark_return": 0.44039650477876147,
+      "excess_return": 0.010944566994509186,
+      "mean_rank_ic": 0.02481358256930554,
+      "max_drawdown": -0.1802152029632409,
+      "positive_test_year_ratio": 0.6666666666666666,
+      "nonnegative_sector_ic_ratio": 0.8333333333333334,
+      "average_one_way_turnover": 0.4197862975359378,
+      "average_transaction_cost": 0.0008795827208884614
+    }
+  },
+  "metrics": {
+    "total_return": 0.45134107177327065,
+    "benchmark_return": 0.44039650477876147,
+    "excess_return": 0.010944566994509186,
+    "mean_rank_ic": 0.02481358256930554,
+    "max_drawdown": -0.1802152029632409,
+    "positive_test_year_ratio": 0.6666666666666666,
+    "nonnegative_sector_ic_ratio": 0.8333333333333334,
+    "average_one_way_turnover": 0.4197862975359378,
+    "average_transaction_cost": 0.0008795827208884614
+  },
+  "strict_gates": {
+    "excess": true,
+    "ic": true,
+    "drawdown": true,
+    "years": true,
+    "sectors": true
+  },
+  "strict_passed": true,
+  "replacement_gates": {
+    "excess_better_v6": true,
+    "ic_at_least_v6": false,
+    "drawdown_at_least_v6": true,
+    "years_at_least_v6": true,
+    "turnover_below_lock": true
+  },
+  "replacement_approved": false,
+  "decision": "keep_v6",
+  "execution_authorized": false
+}

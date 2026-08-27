@@ -1,0 +1,10 @@
+{
+  "phase": "collecting",
+  "observed_trading_days": 3,
+  "minimum_trading_days": 126,
+  "evaluation_cutoff": null,
+  "window_signal_snapshots": 0,
+  "pending_window_signals": [],
+  "ready_for_adjudication": false,
+  "execution_authorized": false
+}

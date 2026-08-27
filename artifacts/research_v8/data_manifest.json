@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-08-25",
+  "market_history": {
+    "path": "data/market_history.csv",
+    "sha256": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "coverage": "2022-01-04 through 2026-08-21",
+    "symbols": 421
+  },
+  "point_in_time_fundamentals": {
+    "path": "data/fundamentals_pit.csv",
+    "sha256": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "rows": 31401,
+    "symbols": 421,
+    "visibility_field": "available_date",
+    "source_adapter": "Eastmoney financial analysis indicator through AkShare",
+    "raw_cache": "data/fundamental_cache",
+    "rule": "A record becomes visible only on or after available_date"
+  },
+  "excluded_sources": {
+    "announcement_text": "not included because a complete immutable historical text snapshot is not present",
+    "research_and_development": "not included because the current PIT table has no reliable field",
+    "analyst_expectations": "not included because no historical version timestamps are available"
+  }
+}

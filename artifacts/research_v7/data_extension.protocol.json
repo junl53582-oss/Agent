@@ -1,0 +1,12 @@
+{
+  "status": "planned_not_used_in_locked_v7_run",
+  "principle": "New data must be snapshotted and hashed before model testing.",
+  "sources": {
+    "announcements": "CNINFO official disclosure timestamps and documents",
+    "valuation": "split-safe daily PE/PB/PS with observation dates",
+    "analyst_revisions": "licensed point-in-time consensus vintages",
+    "long_history": "point-in-time CSI 300 membership, exposures and bars from 2015"
+  },
+  "required_checks": ["publication_time_not_after_feature_time", "no backward fill", "delisted securities retained", "raw snapshot hashes", "coverage by year and sector"],
+  "activation_rule": "No field may enter a model until coverage and leakage tests pass and a new plan lock is created."
+}

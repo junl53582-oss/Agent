@@ -1,0 +1,79 @@
+{
+  "protocol_version": 1,
+  "created_at_utc": "2026-08-24T13:47:30.610791+00:00",
+  "amends_manifest": "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\artifacts\\future_test\\manifest.lock.json",
+  "manifest_sha256": "e8d7e5e45ecd6f59496debe381c8bfe9d56d3efe64b53fa77098c79d02998415",
+  "locked_settings": {
+    "data_dir": "data",
+    "artifact_dir": "artifacts",
+    "horizon": 5,
+    "rebalance_every": 5,
+    "retrain_every": 20,
+    "min_train_days": 252,
+    "train_window_days": 756,
+    "top_n": 20,
+    "initial_cash": 1000000.0,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "ridge_alpha": 10.0,
+    "model_name": "low_volatility",
+    "label_mode": "neutral",
+    "weighting": "inverse_volatility",
+    "hold_buffer": 5,
+    "industry_cap": 0.3,
+    "evaluation_start": null,
+    "evaluation_end": null
+  },
+  "source_root": "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\stockpilot",
+  "core_source_sha256": {
+    "audit.py": "82928a63ffda456c34c32e171459e3920e6581ab737db2a752f8c36396116a9b",
+    "adjudication.py": "d82657a5dd78a0aaddff1245f90761714f743093b6a348608f07e2e9e2fdaacd",
+    "backtest.py": "292fa019e219acbfcde04c66031247ef3a88b98e59b2a638fb411dc7340948ef",
+    "config.py": "ef3fbb9e9fc22b02ca6fee2f369f9ff6486156770308f216791140b2e1a17307",
+    "data.py": "5bdcda34c710bf71768a7443da387cd80e656bd9964220b87e5e69703de020aa",
+    "exposure.py": "93aa1320d5e003bd6712cf7fa8a58198175129a8fcb5e0dc0d1f0cfc860d684b",
+    "features.py": "593ed55ddb29ea6ca7ec27f3419b1e2f7e94e0e210b97af476257df479279afc",
+    "future_test.py": "a3d0e914e7e56463a1e456db56dc6b37e3e6aa2e2e27be54764313ae5b340a97",
+    "membership.py": "c8f02339075f42009b4d0e0e9fe71c8d5fe6b1fabc4fcc916315b59e8e718c7f",
+    "model.py": "d23d3ee4d890a4ef64f7a9a6f7c1b654315af63167746d02643fcb9989ff49d0",
+    "portfolio.py": "b453d782063707aa173cbf626b5739abed4d90c05dadadf5e2b84f784ecf6162",
+    "shadow.py": "b7aa5ad3ebfca50740f6512d0df3e42cba3354fd90fb0bc8956a1783060c3688",
+    "shadow_evaluate.py": "cba267661ff50b2a7fa83f694f2c0e280339d996ffd4e9f1f79f0611d60cc9ac",
+    "trading.py": "8e452bd14b37ed098ff31cab1d8fde137df98dfb5f76b0424e2afe2842fe0e6a"
+  },
+  "runtime": {
+    "python": "3.12.13",
+    "dependencies": {
+      "numpy": "2.5.2",
+      "pandas": "2.3.3",
+      "lightgbm": "4.7.0",
+      "akshare": "1.18.94"
+    },
+    "market_data_provider": "tencent",
+    "price_adjustment": "qfq"
+  },
+  "adopted_artifacts_sha256": {
+    "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\artifacts\\future_test\\manifest.lock.json": "e8d7e5e45ecd6f59496debe381c8bfe9d56d3efe64b53fa77098c79d02998415",
+    "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\data\\shadow\\bars\\2026-08-24.csv": "37884255972b020e3baa6e4d6e7300b2379c4c1737f8b516fa9b709cea5a4235",
+    "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\artifacts\\future_test\\signals\\2026-08-24.csv": "c6cff2dfa5c87f51a40ff61afc4509e2434f9b2240ab725705b12be5d01061c7",
+    "C:\\Users\\lin\\Documents\\ChatGPT\\量化\\artifacts\\future_test\\predictions\\2026-08-24.csv": "e84c43d0903933503ca1e8505e8a20d480c78460944b82655e33eb2b1523bb12"
+  },
+  "prediction_snapshot_schema": [
+    "date",
+    "symbol",
+    "score",
+    "pred_rank",
+    "eligible",
+    "selected",
+    "planned_weight"
+  ],
+  "adjudication": {
+    "window": "first minimum_trading_days observations",
+    "label_maturity_buffer": 6,
+    "rank_ic": "daily Spearman(score, neutral_or_market_relative_label)",
+    "benchmark": "equal-weight eligible point-in-time universe, gross return",
+    "decision_never_authorizes_execution": true
+  },
+  "execution_authorized": false
+}

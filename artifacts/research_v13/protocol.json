@@ -1,0 +1,54 @@
+{
+  "protocol": "stockpilot-v13-two-stage-confidence-gate-drawdown-state",
+  "status": "pre_registered_before_any_v13_model_performance",
+  "production_model": "V6",
+  "test_years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "development_context": "V13 is independent and designed after V12; V12 remains frozen.",
+  "two_stage_model": {
+    "target_source": "V12 sector-relative net marginal return",
+    "classifier": "LightGBM probability of within-date-sector Top20%",
+    "magnitude_model": "LightGBM L1 regression trained on within-date-sector Top40%",
+    "combined_raw_score": "probability times positive clipped conditional magnitude",
+    "two_stage_share": 0.80,
+    "v10_global_share": 0.20
+  },
+  "validation_gate": {
+    "window_years": 2,
+    "embargo_calendar_days": 28,
+    "confidence": "pooled period payoff 90% one-sided lower bound > 0",
+    "z": 1.2815515655446004,
+    "each_year_mean_floor": -0.0025,
+    "technology": "same rule on technology Top5 with sufficient PIT samples"
+  },
+  "drawdown_state": {
+    "full": 1.0,
+    "cautious": 0.70,
+    "defensive": 0.40,
+    "enter_cautious_at_drawdown": -0.06,
+    "enter_defensive_at_drawdown": -0.12,
+    "recover_defensive_if": "drawdown > -0.08 and 60-day momentum > 0",
+    "recover_full_if": "drawdown > -0.04 and 60-day momentum > 0"
+  },
+  "portfolio": {
+    "maximum_active_budget": 0.15,
+    "maximum_stock_active_weight": 0.0075,
+    "sector_neutral_before_cash_overlay": true,
+    "maximum_ex_ante_tracking_error": 0.06,
+    "active_top_n": 30,
+    "rebalance_every_trading_days": 20
+  },
+  "replacement_gates": {
+    "cumulative_excess_gt": 0.0,
+    "positive_excess_years_gte": 4,
+    "rank_ic_5_gte_v6": 0.025300983903540037,
+    "rank_ic_20_gt": 0.0,
+    "selected_net_marginal_gt": 0.0,
+    "technology_rank_ic_5_gte": 0.0,
+    "technology_rank_ic_20_gte": 0.0,
+    "max_drawdown_gte": -0.18,
+    "realized_tracking_error_lte": 0.12,
+    "turnover_and_cost_lte_v8": true,
+    "future_shadow": "required after every retrospective gate"
+  },
+  "decision_policy": "No changes after lock; V6 remains production unless all retrospective and future gates pass."
+}

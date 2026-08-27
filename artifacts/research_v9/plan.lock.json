@@ -1,0 +1,63 @@
+{
+  "protocol": "stockpilot-v9-three-line-frozen-study",
+  "locked_at_utc": "2026-08-25T05:31:13.674880+00:00",
+  "protocol_sha256": "BAF6EC78A32571465E7CDC6391D15A2E30252E275A001AED53BAD4F49A0A749E",
+  "data_sha256": {
+    "data/universes/000300/history_v9.csv": "71CEA29E5CBB879A3CB4CA837829ADAE433DB0ADBE24A3B129837E57A70A9C7F",
+    "data/market_history_v9.csv": "422D86877B1DE3CD2AD66B21492D395A8BABC1A9A53884AA17BE62840C5B355B",
+    "data/fundamentals_pit_v9.csv": "2550A815DF9D872CDFEEFAAEBCA192BA8FB4776306318C353028B6534DD8E609",
+    "data/industry_history_v9.csv": "67C34250E1EC656A4173245CA6FEA963439857534EAD8EE0BFA7CBB2A6691EBA"
+  },
+  "code_sha256": {
+    "research_v9/config.py": "4BB71E108EF946DC0C36B7455BA0A749BC1B030820F48E79BBB3C626A0E9769F",
+    "research_v9/data.py": "CEF082165C5A7DAB25D79B123AECA55C06055F9E29AB9C88F01C1728B3B622B5",
+    "research_v9/data_cli.py": "2ACC8F5A4343BB1DBB4015532BEC7A463EAF4401D29346387D4C92F0BCEFEA63",
+    "research_v9/features.py": "D5F5EB44A3C1AD45F2406E8A90BD04A7C2E2E04D6E5ADBD799FBF66CFE3AF3BB",
+    "research_v9/model.py": "3B027ABC66F4A30C5D09257078F71EE6D6538126706575AFA55D070722C0A528",
+    "research_v9/backtest.py": "9699476ACD74990850625195128FFC37E2B198C9DB780055C48CA337382C9FBA",
+    "research_v9/quality.py": "68D596D8F281C0B194A4ADB076B604CE9ED16EC4EF3EE09D0680C58E32FF1B96",
+    "research_v9/freeze.py": "8E1CA21ED9C7C58514704A6ECD0EEF35FA3E0003C50B99A96FE1EDDD6C001C46",
+    "research_v9/validation.py": "B54FDF878EAEDAC3D3AEDF72F0EB359740B2E55391E790110C56C3484453AD84",
+    "research_v9/cli.py": "4BBEF3F5058CDD0EB3DEEE3CA75C8FEF8D3741E08214DFD57CD4D8C31B10EBE9",
+    "tests/test_research_v9.py": "81B8FDFC594E41061CC52B0DC94E61F4BCFEEF06F22637CB4B81126C8E31A35E"
+  },
+  "quality": {
+    "membership_rows": 8400,
+    "membership_snapshots": 28,
+    "membership_symbols": 667,
+    "membership_min": "2015-01-30",
+    "membership_max": "2026-06-30",
+    "membership_min_size": 300,
+    "membership_max_size": 300,
+    "market_rows": 1651470,
+    "market_symbols": 667,
+    "market_min": "2015-01-05",
+    "market_max": "2026-08-21",
+    "fundamental_rows": 53744,
+    "fundamental_symbols": 667,
+    "fundamental_pit_violations": 0,
+    "industry_rows": 1773,
+    "industry_symbols": 643,
+    "industry_future_violations": 0,
+    "gates": {
+      "membership_exact_300": true,
+      "membership_starts_2015": true,
+      "market_symbols_at_least_650": true,
+      "market_starts_2015": true,
+      "market_ends_2026_08_21": true,
+      "fundamental_symbols_at_least_650": true,
+      "fundamental_pit_clean": true,
+      "industry_symbols_at_least_630": true,
+      "industry_pit_clean": true
+    },
+    "passed": true
+  },
+  "environment": {
+    "python": "3.11.9",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "lightgbm": "4.7.0"
+  },
+  "valid_performance_seen_before_lock": false,
+  "invalid_implementation_run_seen": true
+}

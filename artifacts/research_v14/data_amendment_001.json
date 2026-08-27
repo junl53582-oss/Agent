@@ -1,0 +1,17 @@
+{
+  "amendment": "announcement pagination and proxy-concurrency repair",
+  "stage": "candidate data acquisition before any V14 model protocol or performance",
+  "invalid_cache": "data/v14_cache/announcements",
+  "issues": [
+    "CNInfo fixed response page size is 30 even when 100 was requested",
+    "four concurrent workers exhausted local proxy sockets"
+  ],
+  "repair": [
+    "new independent announcements_complete cache",
+    "fixed 30-row pagination",
+    "two workers",
+    "per-symbol session and four-attempt retry"
+  ],
+  "coverage_threshold_changed": false,
+  "model_performance_seen": false
+}

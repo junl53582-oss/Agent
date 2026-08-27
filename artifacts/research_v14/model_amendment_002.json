@@ -1,0 +1,15 @@
+{
+  "amendment": "expanding-window event-feature stability year requirement",
+  "stage": "before the V14 data lock and before any V14 performance, IC or validation result",
+  "issue": "Announcements begin in 2017. The first nested fold validating 2018 has only one prior event year, so a fixed four-year requirement would make early test-year activation impossible by construction.",
+  "repair": "For each fold require the feature to have valid annual IC in every event-data year currently available, capped at four and with a minimum of one. Once four event years are available, the original four-year requirement remains fixed.",
+  "unchanged": [
+    "minimum sign consistency 0.65",
+    "minimum median absolute annual IC 0.003",
+    "two out-of-sample validation years",
+    "positive 90 percent lower bounds for both absolute and incremental payoff",
+    "each validation-year payoff floor",
+    "all portfolio and replacement gates"
+  ],
+  "model_performance_seen": false
+}

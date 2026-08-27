@@ -1,0 +1,69 @@
+{
+  "created_at_utc": "2026-08-24T11:55:07.430990+00:00",
+  "market_path": "data\\market_history.csv",
+  "membership_path": "data\\universes\\000300\\history.csv",
+  "training_period": "before 2024-01-01",
+  "validation_period": "2024-01-01 to 2024-12-31",
+  "test_period": "2025-01-01 to 2026-08-13",
+  "label_mode": "neutral",
+  "selection_rule": "excess/max(|drawdown|,10%) + RankIC; no test metrics used",
+  "candidates": [
+    {
+      "name": "ridge_top20",
+      "model_name": "ridge",
+      "top_n": 20,
+      "weighting": "equal",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "lgb_top10",
+      "model_name": "lightgbm",
+      "top_n": 10,
+      "weighting": "equal",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "lgb_top20",
+      "model_name": "lightgbm",
+      "top_n": 20,
+      "weighting": "equal",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "lgb_top30",
+      "model_name": "lightgbm",
+      "top_n": 30,
+      "weighting": "equal",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "lgb_top20_invvol",
+      "model_name": "lightgbm",
+      "top_n": 20,
+      "weighting": "inverse_volatility",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "momentum60_top20",
+      "model_name": "momentum_60",
+      "top_n": 20,
+      "weighting": "equal",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    },
+    {
+      "name": "lowvol_top20",
+      "model_name": "low_volatility",
+      "top_n": 20,
+      "weighting": "inverse_volatility",
+      "hold_buffer": 5,
+      "industry_cap": 0.3
+    }
+  ],
+  "holdout_status": "retrospective_research"
+}

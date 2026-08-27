@@ -1,0 +1,59 @@
+{
+  "start_date": "2024-01-04",
+  "end_date": "2024-12-25",
+  "periods": 48,
+  "total_return": 0.17194474138950944,
+  "annual_return": 0.18127902164352405,
+  "benchmark_return": 0.16067492401229355,
+  "sharpe": 0.6846651931055926,
+  "max_drawdown": -0.139182023714986,
+  "win_rate": 0.4166666666666667,
+  "mean_rank_ic": 0.06143410414234655,
+  "transaction_cost_roundtrip": 0.0021,
+  "model": "low_volatility",
+  "horizon_days": 5,
+  "top_n": 20,
+  "label_mode": "neutral",
+  "weighting": "inverse_volatility",
+  "hold_buffer": 5,
+  "industry_cap": 0.3,
+  "average_one_way_turnover": 0.3073472185864534,
+  "signal_execution_rate": 1.0,
+  "blocked_limit_up": 0,
+  "deferred_exits": 0,
+  "average_cash_weight": -9.25185853854297e-18,
+  "data_health": {
+    "symbols": 421,
+    "rows": 466581,
+    "data_start": "2022-01-04",
+    "data_end": "2026-08-21",
+    "snapshot_date": null,
+    "membership_mode": "point_in_time",
+    "membership_coverage": 1.0,
+    "membership_symbol_coverage": 1.0,
+    "membership_snapshots": 12,
+    "survivorship_bias": false,
+    "best_constituent_return": 33.1295693087224,
+    "median_constituent_return": -0.09528907922912211,
+    "max_abs_daily_return": 1.4166666666666665,
+    "quarantined_symbols": [
+      "600066"
+    ],
+    "warnings": [
+      "1只股票出现单日绝对收益超过35%，已从训练和交易中隔离。"
+    ]
+  },
+  "warning": "研究用途；结果来自历史样本外走步回测，不代表未来收益。",
+  "feature_weights": {
+    "ret_1_rank": 0.0,
+    "ret_5_rank": 0.0,
+    "ret_20_rank": 0.0,
+    "momentum_60_rank": 0.0,
+    "ma_gap_20_rank": 0.0,
+    "volatility_20_rank": -1.0,
+    "range_10_rank": 0.0,
+    "volume_ratio_20_rank": 0.0,
+    "amount_rank": 0.0,
+    "rsi_14_rank": 0.0
+  }
+}

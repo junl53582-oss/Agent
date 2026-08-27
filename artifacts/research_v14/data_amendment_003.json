@@ -1,0 +1,9 @@
+{
+  "amendment": "interpret announcement source start as query boundary plus early-period observation",
+  "stage": "before completion of the announcement download, data audit, model lock or any V14 performance",
+  "issue": "2017-01-01 was a non-trading holiday. Requiring the first observed disclosure row to be dated on or before that exact day confuses an empty holiday with missing source coverage.",
+  "repair": "Require the configured CNInfo query boundary to be on or before 2017-01-01 and require at least one observed disclosure by 2017-01-31.",
+  "coverage_threshold_changed": false,
+  "minimum_symbol_coverage": 700,
+  "model_performance_seen": false
+}

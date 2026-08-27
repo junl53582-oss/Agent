@@ -1,0 +1,41 @@
+{
+  "latest_prediction_date": "2026-08-24",
+  "model": "research_v4_factor_stability",
+  "prediction_count": 239,
+  "signal_count": 20,
+  "signal_path": "artifacts\\research_v4\\live\\signals\\2026-08-24.csv",
+  "prediction_path": "artifacts\\research_v4\\live\\predictions\\2026-08-24.csv",
+  "selected_factors": [
+    {
+      "factor": "low_volatility",
+      "selected": true,
+      "direction": 1,
+      "weight": 0.8252606144122211,
+      "mean_rank_ic": 0.039780580721774164,
+      "direction_consistency": 1.0,
+      "training_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "ic_days": 721
+    },
+    {
+      "factor": "trend",
+      "selected": true,
+      "direction": -1,
+      "weight": 0.17473938558777896,
+      "mean_rank_ic": -0.008423077646324816,
+      "direction_consistency": 0.6666666666666666,
+      "training_years": [
+        2023,
+        2024,
+        2025
+      ],
+      "ic_days": 721
+    }
+  ],
+  "execution_authorized": false,
+  "protocol_status": "retrospective_research",
+  "already_recorded": true
+}

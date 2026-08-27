@@ -1,0 +1,20 @@
+{
+  "latest_prediction_date": "2026-08-26",
+  "model": "research_v6_sector_balanced_ensemble",
+  "prediction_count": 239,
+  "signal_count": 30,
+  "signal_path": "artifacts\\research_v6\\live\\signals\\2026-08-26.csv",
+  "prediction_path": "artifacts\\research_v6\\live\\predictions\\2026-08-26.csv",
+  "sector_counts": {
+    "cyclical_manufacturing": 11,
+    "technology": 8,
+    "finance_real_estate": 6,
+    "consumer": 2,
+    "defensive": 1,
+    "healthcare": 1,
+    "other": 1
+  },
+  "execution_authorized": false,
+  "replacement_approved": true,
+  "already_recorded": false
+}

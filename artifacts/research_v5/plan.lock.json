@@ -1,0 +1,63 @@
+{
+  "protocol": "stockpilot-research-v5-multidimensional-experts",
+  "locked_at": "2026-08-24",
+  "status": "retrospective_research",
+  "data_sha256": {
+    "data/market_history.csv": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "data/fundamentals_pit.csv": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "data/universes/000300/history.csv": "2CDA18F9813EFCA113EEE4495578BD31600C4CFF420168130BD3A54EDC50DECC",
+    "data/exposures.csv": "AEB273A48DB4977F312820AE00D1F5C97C773422033DE53F20E900AB9292CB72"
+  },
+  "test_years": [2024, 2025, 2026],
+  "training": {
+    "window_years": 3,
+    "ridge_alpha": 50.0,
+    "minimum_expert_rows": 5000,
+    "minimum_expert_dates": 100,
+    "label": "5-day industry-size-neutral excess return",
+    "label_must_mature_before_test_year": true
+  },
+  "dimensions": {
+    "fundamental": ["quality", "growth"],
+    "market_behavior": ["momentum", "short_reversal", "volume_attention"],
+    "risk": ["low_volatility"],
+    "liquidity": ["liquidity"],
+    "learned_global": "ridge over all seven features",
+    "learned_industry": "broad-industry ridge with global fallback"
+  },
+  "regimes": {
+    "risk_on": "market_momentum_60 > 0.02 and positive_20d_breadth > 0.55",
+    "risk_off": "market_momentum_60 < -0.02 and positive_20d_breadth < 0.45",
+    "otherwise": "neutral"
+  },
+  "component_weights": {
+    "risk_on": {"fundamental": 0.20, "behavior": 0.25, "risk": 0.05, "liquidity": 0.05, "global_model": 0.25, "industry_expert": 0.20},
+    "neutral": {"fundamental": 0.25, "behavior": 0.15, "risk": 0.10, "liquidity": 0.05, "global_model": 0.25, "industry_expert": 0.20},
+    "risk_off": {"fundamental": 0.30, "behavior": 0.05, "risk": 0.20, "liquidity": 0.05, "global_model": 0.25, "industry_expert": 0.15}
+  },
+  "portfolio": {
+    "rebalance_every_days": 5,
+    "top_n": 20,
+    "minimum_positions": 8,
+    "hold_buffer": 5,
+    "industry_cap": 0.30,
+    "weighting": "inverse_volatility",
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "pass_gates": {
+    "net_excess_return_gt": 0.0,
+    "mean_rank_ic_gt": 0.0,
+    "max_drawdown_gt": -0.20,
+    "positive_test_year_ratio_gte": 0.50,
+    "nonnegative_broad_sector_ic_ratio_gte": 0.60
+  },
+  "known_missing_dimensions": [
+    "point-in-time analyst forecast revisions",
+    "point-in-time announcement/news sentiment",
+    "split-safe historical valuation ratios",
+    "macro series with vintage timestamps"
+  ],
+  "decision_rule": "One locked run only. A pass creates a future-shadow candidate; it never authorizes trading."
+}

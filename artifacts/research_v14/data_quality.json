@@ -1,0 +1,59 @@
+{
+  "analyst": {
+    "rows": 21699,
+    "symbols": 268,
+    "date_min": "2017-01-03",
+    "date_max": "2026-08-25",
+    "invalid_dates": 0,
+    "duplicates": 0,
+    "future_dates": 0
+  },
+  "northbound": {
+    "rows": 271034,
+    "symbols": 199,
+    "date_min": "2017-03-16",
+    "date_max": "2024-08-16",
+    "invalid_dates": 0,
+    "duplicates": 0,
+    "future_dates": 0
+  },
+  "announcements": {
+    "rows": 966865,
+    "symbols": 791,
+    "date_min": "2017-01-03",
+    "date_max": "2026-08-25",
+    "invalid_dates": 0,
+    "duplicates": 0,
+    "future_dates": 0
+  },
+  "gates": {
+    "analyst": {
+      "symbol_coverage": false,
+      "starts_by_2018": true,
+      "dates_clean": true,
+      "unique": true
+    },
+    "northbound": {
+      "symbol_coverage": false,
+      "starts_by_2018": true,
+      "known_stop_not_forward_filled": true,
+      "dates_clean": true,
+      "unique": true
+    },
+    "announcements": {
+      "symbol_coverage": true,
+      "query_starts_by_2017": true,
+      "observed_in_january_2017": true,
+      "dates_clean": true,
+      "unique": true
+    }
+  },
+  "accepted_sources": [
+    "announcements"
+  ],
+  "rejected_sources": [
+    "analyst",
+    "northbound"
+  ],
+  "at_least_one_new_source_passed": true
+}

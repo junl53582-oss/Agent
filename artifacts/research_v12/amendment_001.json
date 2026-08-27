@@ -1,0 +1,11 @@
+{
+  "amendment": "V12-001 mechanical feature-name collision fix",
+  "original_lock_sha256": "B3E830A250B42536BDCC55AC1DAF16149E2834B1BD3F2DA64C9AF5726DC6E7C2",
+  "failure_stage": "dataset feature assembly before any V12 model fitting or performance output",
+  "error": "market_momentum_60 already existed in the inherited V10 dataset",
+  "change": "rename only the V12 official-weight benchmark momentum column to v12_market_momentum_60 and update its consumer/tests",
+  "parameters_changed": false,
+  "targets_changed": false,
+  "performance_seen": false,
+  "original_lock_archive": "artifacts/research_v12/invalid_preperformance_run_20260825_1647"
+}

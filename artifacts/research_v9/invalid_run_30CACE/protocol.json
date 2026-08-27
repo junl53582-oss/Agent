@@ -1,0 +1,51 @@
+{
+  "protocol": "stockpilot-v9-three-line-frozen-study",
+  "status": "pre_registered_before_performance_validation",
+  "test_years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "training": {
+    "window_years": 5,
+    "horizon_days": 5,
+    "maturity_rule": "label_end_date strictly before test-year cutoff",
+    "target": "same-date residual after industry, official-weight-size, momentum and low-vol controls"
+  },
+  "v9_alpha": {
+    "history_start": "2015-01-01",
+    "point_in_time_membership": true,
+    "point_in_time_financial_announcements": true,
+    "point_in_time_industry_changes": true,
+    "features": "financial levels and changes, freshness, valuation, 8 long-window technical factors, 4 technology-relative factors"
+  },
+  "v9_nonlinear": {
+    "v6_base_share": 0.70,
+    "enhanced_share": 0.30,
+    "ridge_share_within_enhanced": 0.60,
+    "lightgbm_share_within_enhanced": 0.40,
+    "ridge_alpha": 75.0,
+    "lightgbm": "fixed constrained StockPilot LightGBMRanker parameters",
+    "technology_global_share": 0.50,
+    "technology_specialist_share": 0.50
+  },
+  "v9_portfolio": {
+    "official_csi300_core_share": 0.75,
+    "active_enhancement_share": 0.25,
+    "active_top_n": 30,
+    "holding_bonus": 0.025,
+    "rebalance_every_trading_days": 5,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "ablation_modes": ["v6_portfolio", "v9_alpha", "v9_nonlinear", "v9_full"],
+  "replacement_gates": {
+    "cumulative_excess_gt": 0.0,
+    "positive_excess_years_gte": 4,
+    "mean_rank_ic_gte_v6": 0.025300983903540037,
+    "technology_rank_ic_gte": 0.0,
+    "max_drawdown_gte": -0.18,
+    "average_one_way_turnover_lte_v8": 0.4197862975359378,
+    "average_transaction_cost_lte_v8": 0.0008795827208884614,
+    "future_shadow": "must pass after historical gates; cannot be pre-declared"
+  },
+  "decision_policy": "V6 remains production. If and only if all retrospective gates pass, freeze V9 predictions into a new append-only future shadow. Replacement remains forbidden until that shadow is valid. No post-result parameter edits."
+}
+

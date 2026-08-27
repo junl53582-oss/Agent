@@ -1,0 +1,134 @@
+{
+  "plan": {
+    "created_at_utc": "2026-08-24T11:55:07.430990+00:00",
+    "market_path": "data\\market_history.csv",
+    "membership_path": "data\\universes\\000300\\history.csv",
+    "training_period": "before 2024-01-01",
+    "validation_period": "2024-01-01 to 2024-12-31",
+    "test_period": "2025-01-01 to 2026-08-13",
+    "label_mode": "neutral",
+    "selection_rule": "excess/max(|drawdown|,10%) + RankIC; no test metrics used",
+    "candidates": [
+      {
+        "name": "ridge_top20",
+        "model_name": "ridge",
+        "top_n": 20,
+        "weighting": "equal",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "lgb_top10",
+        "model_name": "lightgbm",
+        "top_n": 10,
+        "weighting": "equal",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "lgb_top20",
+        "model_name": "lightgbm",
+        "top_n": 20,
+        "weighting": "equal",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "lgb_top30",
+        "model_name": "lightgbm",
+        "top_n": 30,
+        "weighting": "equal",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "lgb_top20_invvol",
+        "model_name": "lightgbm",
+        "top_n": 20,
+        "weighting": "inverse_volatility",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "momentum60_top20",
+        "model_name": "momentum_60",
+        "top_n": 20,
+        "weighting": "equal",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      },
+      {
+        "name": "lowvol_top20",
+        "model_name": "low_volatility",
+        "top_n": 20,
+        "weighting": "inverse_volatility",
+        "hold_buffer": 5,
+        "industry_cap": 0.3
+      }
+    ],
+    "holdout_status": "retrospective_research"
+  },
+  "selected": {
+    "name": "lowvol_top20",
+    "model_name": "low_volatility",
+    "top_n": 20,
+    "weighting": "inverse_volatility",
+    "hold_buffer": 5,
+    "industry_cap": 0.3,
+    "validation_score": 0.14240589257023992,
+    "passes_validation": true
+  },
+  "validation_candidates": 7,
+  "test_metrics": {
+    "start_date": "2025-01-02",
+    "end_date": "2026-08-13",
+    "periods": 79,
+    "total_return": -0.015481824131168498,
+    "annual_return": -0.009904887601938861,
+    "benchmark_return": 0.24124578840173494,
+    "sharpe": -0.020108044412987164,
+    "max_drawdown": -0.15469945718808376,
+    "win_rate": 0.5189873417721519,
+    "mean_rank_ic": 0.01840776369100073,
+    "transaction_cost_roundtrip": 0.0021,
+    "model": "low_volatility",
+    "horizon_days": 5,
+    "top_n": 20,
+    "label_mode": "neutral",
+    "weighting": "inverse_volatility",
+    "hold_buffer": 5,
+    "industry_cap": 0.3,
+    "average_one_way_turnover": 0.3062609229159355,
+    "signal_execution_rate": 0.9987341772151899,
+    "blocked_limit_up": 2,
+    "deferred_exits": 0,
+    "average_cash_weight": 0.0009553215040120471,
+    "data_health": {
+      "symbols": 421,
+      "rows": 466581,
+      "data_start": "2022-01-04",
+      "data_end": "2026-08-21",
+      "snapshot_date": null,
+      "membership_mode": "point_in_time",
+      "membership_coverage": 1.0,
+      "membership_symbol_coverage": 1.0,
+      "membership_snapshots": 12,
+      "survivorship_bias": false,
+      "best_constituent_return": 33.1295693087224,
+      "median_constituent_return": -0.09528907922912211,
+      "max_abs_daily_return": 1.4166666666666665,
+      "quarantined_symbols": [
+        "600066"
+      ],
+      "warnings": [
+        "1只股票出现单日绝对收益超过35%，已从训练和交易中隔离。"
+      ]
+    },
+    "warning": "研究用途；结果来自历史样本外走步回测，不代表未来收益。"
+  },
+  "test_excess_return": -0.25672761253290344,
+  "positive_excess_year_ratio": 0.0,
+  "test_pass": false,
+  "decision": "research_only",
+  "note": "本历史测试区间此前已被观察，因此只能视为回顾性留出；真正未触碰测试需依赖未来数据。"
+}

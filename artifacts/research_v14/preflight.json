@@ -1,0 +1,19 @@
+{
+  "status": "passed_before_v14_performance",
+  "rows": 2680710,
+  "symbols": 799,
+  "date_min": "2010-01-04",
+  "date_max": "2026-08-21",
+  "announcement_features": 16,
+  "announcement_feature_nan_values": 0,
+  "final_dataset_memory_mb": 5528.8,
+  "observed_peak_working_set_bytes_approx": 18628943872,
+  "checks_only": [
+    "row and symbol count",
+    "date range",
+    "announcement feature count",
+    "announcement feature missingness",
+    "memory feasibility"
+  ],
+  "performance_or_ic_computed": false
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": "stockpilot-research-v4",
+  "locked_at": "2026-08-24",
+  "status": "retrospective_research",
+  "purpose": "Evaluate one pre-registered, interpretable factor-stability model without tuning on V4 test folds.",
+  "data_sha256": {
+    "data/market_history.csv": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "data/fundamentals_pit.csv": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "data/universes/000300/history.csv": "2CDA18F9813EFCA113EEE4495578BD31600C4CFF420168130BD3A54EDC50DECC",
+    "data/exposures.csv": "AEB273A48DB4977F312820AE00D1F5C97C773422033DE53F20E900AB9292CB72"
+  },
+  "factors": ["quality", "growth", "low_volatility", "trend"],
+  "selection": {
+    "test_years": [2024, 2025, 2026],
+    "training_year_window": 3,
+    "minimum_training_years": 2,
+    "minimum_ic_days_per_year": 60,
+    "minimum_absolute_mean_rank_ic": 0.005,
+    "minimum_direction_consistency": 0.60,
+    "weights": "absolute training mean Rank IC, normalized",
+    "direction": "sign of training mean Rank IC",
+    "fallback": "hold cash when no factor qualifies"
+  },
+  "portfolio": {
+    "horizon_days": 5,
+    "rebalance_every_days": 5,
+    "top_n": 20,
+    "minimum_positions": 8,
+    "hold_buffer": 5,
+    "industry_cap": 0.30,
+    "weighting": "inverse_volatility",
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "pass_gates": {
+    "net_excess_return_gt": 0.0,
+    "mean_rank_ic_gt": 0.0,
+    "max_drawdown_gt": -0.20,
+    "positive_test_year_ratio_gte": 0.50
+  },
+  "interpretation": "A pass only creates a candidate for a new future shadow protocol; it does not authorize trading."
+}

@@ -1,0 +1,21 @@
+# 虚拟环境
+.venv/
+.venv311/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.env
+
+# 数据：原始、缓存、演示、影子行情一律不提交
+data/
+
+# 产物：默认忽略运行结果（净值/信号/预测 CSV、日志），
+# 但保留不可篡改的冻结锁、协议、报告与审计链
+artifacts/*
+!artifacts/.gitkeep
+!artifacts/*/
+artifacts/**/*.csv
+artifacts/**/*.parquet
+artifacts/**/*.log
+artifacts/**/*.png

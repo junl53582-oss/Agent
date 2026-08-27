@@ -1,0 +1,54 @@
+{
+  "protocol": "stockpilot-v12-portfolio-aware-purged-risk-budget",
+  "status": "pre_registered_before_any_v12_model_performance",
+  "production_model": "V6",
+  "test_years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "development_context": "V12 is independent and designed after V11 failed. V11 parameters and results are not modified.",
+  "target": {
+    "definition": "20-day stock return minus same-date broad-sector official-weight benchmark minus fixed round-trip cost minus liquidity impact proxy",
+    "fixed_cost": 0.0021,
+    "maximum_liquidity_impact": 0.003,
+    "ranking_group": "date plus broad sector",
+    "relevance": "within-group top-heavy 0..4",
+    "portfolio_rank_share": 0.75,
+    "v10_global_share": 0.25
+  },
+  "validation": {
+    "training_window_years": 8,
+    "nested_validation_years": 2,
+    "embargo_calendar_days": 28,
+    "cadence_trading_days": 20,
+    "global_gate": "positive estimated net marginal payoff in both immediately preceding validation years",
+    "technology_gate": "positive technology Top5 estimated net marginal payoff in both years with sufficient samples"
+  },
+  "risk_budget": {
+    "annual_volatility_target": 0.12,
+    "minimum_equity_exposure": 0.35,
+    "maximum_equity_exposure": 1.0,
+    "rule": "full exposure when observable 60-day benchmark momentum is nonnegative; otherwise clip(target volatility / observable 60-day benchmark volatility)"
+  },
+  "portfolio": {
+    "maximum_active_budget": 0.15,
+    "maximum_stock_active_weight": 0.0075,
+    "sector_neutral_before_cash_overlay": true,
+    "maximum_ex_ante_tracking_error": 0.06,
+    "active_top_n": 30,
+    "rebalance_every_trading_days": 20
+  },
+  "ablation_modes": ["core", "v10_global", "v12_portfolio_ungated", "v12_portfolio_gated", "v12_risk_budget"],
+  "replacement_gates": {
+    "cumulative_excess_gt": 0.0,
+    "positive_excess_years_gte": 4,
+    "rank_ic_5_gte_v6": 0.025300983903540037,
+    "rank_ic_20_gt": 0.0,
+    "selected_net_marginal_gt": 0.0,
+    "technology_rank_ic_5_gte": 0.0,
+    "technology_rank_ic_20_gte": 0.0,
+    "max_drawdown_gte": -0.18,
+    "realized_tracking_error_lte": 0.12,
+    "average_one_way_turnover_lte_v8": 0.4197862975359378,
+    "average_transaction_cost_lte_v8": 0.0008795827208884614,
+    "future_shadow": "must pass after every retrospective gate"
+  },
+  "decision_policy": "No parameter changes after lock. Keep V6 unless all retrospective and append-only future-shadow gates pass."
+}

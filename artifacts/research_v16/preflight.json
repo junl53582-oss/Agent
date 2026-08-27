@@ -1,0 +1,343 @@
+{
+  "passed": true,
+  "performance_evaluated": false,
+  "char_corpus_shape": [
+    298113,
+    32768
+  ],
+  "word_corpus_shape": [
+    298113,
+    32768
+  ],
+  "char_nonzero_features": 44235006,
+  "word_nonzero_features": 6102690,
+  "char_sparse_matrix_bytes": 355072504,
+  "word_sparse_matrix_bytes": 50013976,
+  "first_fold_fitted_events": 8339,
+  "folds": [
+    {
+      "test_year": 2020,
+      "cutoff_year": 2018,
+      "training_events": 8339,
+      "available_raw_event_years": [
+        2017
+      ],
+      "mature_raw_event_years": [
+        2017
+      ]
+    },
+    {
+      "test_year": 2020,
+      "cutoff_year": 2019,
+      "training_events": 19717,
+      "available_raw_event_years": [
+        2017,
+        2018
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "test_year": 2020,
+      "cutoff_year": 2020,
+      "training_events": 32243,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "test_year": 2021,
+      "cutoff_year": 2019,
+      "training_events": 19717,
+      "available_raw_event_years": [
+        2017,
+        2018
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018
+      ]
+    },
+    {
+      "test_year": 2021,
+      "cutoff_year": 2020,
+      "training_events": 32243,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "test_year": 2021,
+      "cutoff_year": 2021,
+      "training_events": 44703,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "test_year": 2022,
+      "cutoff_year": 2020,
+      "training_events": 32243,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "test_year": 2022,
+      "cutoff_year": 2021,
+      "training_events": 44703,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "test_year": 2022,
+      "cutoff_year": 2022,
+      "training_events": 56796,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "test_year": 2023,
+      "cutoff_year": 2021,
+      "training_events": 44703,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "test_year": 2023,
+      "cutoff_year": 2022,
+      "training_events": 56796,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "test_year": 2023,
+      "cutoff_year": 2023,
+      "training_events": 68272,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "test_year": 2024,
+      "cutoff_year": 2022,
+      "training_events": 56796,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "test_year": 2024,
+      "cutoff_year": 2023,
+      "training_events": 68272,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "test_year": 2024,
+      "cutoff_year": 2024,
+      "training_events": 79105,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "test_year": 2025,
+      "cutoff_year": 2023,
+      "training_events": 68272,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "test_year": 2025,
+      "cutoff_year": 2024,
+      "training_events": 79105,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "test_year": 2025,
+      "cutoff_year": 2025,
+      "training_events": 89374,
+      "available_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "mature_raw_event_years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "protocol": "stockpilot-v14-pit-announcement-event-gated-two-stage",
+  "status": "registered_before_v14_performance",
+  "objective": "Test whether complete point-in-time disclosure titles add net marginal alpha beyond the same-data V13 two-stage baseline without increasing portfolio risk.",
+  "accepted_candidate_source": "announcements only if the pre-registered external-data audit passes",
+  "rejected_candidate_sources": {
+    "analyst_reports": "coverage below the pre-registered 400-symbol minimum",
+    "northbound_holdings": "coverage below the pre-registered 350-symbol minimum and series stops in 2024",
+    "current_profit_forecast_snapshot": "not historically versioned",
+    "current_fund_flow_rank": "not point-in-time replayable"
+  },
+  "anti_leakage": {
+    "announcement_effective_time": "next available trading day after publication date",
+    "training_label_embargo_calendar_days": 28,
+    "historical_membership": "point-in-time CSI 300 membership and official historical weights",
+    "fundamentals": "as-of announcement date only",
+    "feature_selection": "training years only; stable direction in at least 4 years"
+  },
+  "model": {
+    "event_line": "LightGBM top-20-percent classifier times positive conditional L1 magnitude",
+    "baseline_line": "same-data V13 two-stage model",
+    "final_score": "80 percent event line plus 20 percent V10 global line",
+    "new_event_feature_gate": {
+      "minimum_years": "expanding-window minimum of all event years available at that fold, capped at 4; at least 1",
+      "minimum_sign_consistency": 0.65,
+      "minimum_median_absolute_annual_ic": 0.003
+    }
+  },
+  "nested_validation_gate": {
+    "years": 2,
+    "event_payoff_pooled_one_sided_90pct_lower_bound": "greater_than_0",
+    "incremental_vs_v13_pooled_one_sided_90pct_lower_bound": "greater_than_0",
+    "each_validation_year_event_payoff": "at_least_-0.0025",
+    "at_least_one_stable_announcement_feature_each_fold": true,
+    "technology_line_has_analogous_gate": true
+  },
+  "portfolio": {
+    "benchmark": "CSI 300 point-in-time official weights",
+    "maximum_active_budget": 0.15,
+    "maximum_single_stock_active_weight": 0.0075,
+    "sector_deviation": 0.0,
+    "maximum_ex_ante_tracking_error": 0.06,
+    "rebalance_trading_days": 20,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "replacement_gates": {
+    "cumulative_excess": "greater_than_0",
+    "positive_excess_years": "at_least_4_of_6",
+    "rank_ic_5": "at_least_v6",
+    "rank_ic_20": "greater_than_0",
+    "selected_net_marginal": "greater_than_0",
+    "technology_rank_ic_5_and_20": "nonnegative",
+    "maximum_drawdown": "not_below_-0.18",
+    "realized_tracking_error": "at_most_0.12",
+    "turnover_and_cost": "not_above_v8",
+    "core_replication_tracking_error": "at_most_0.02",
+    "future_shadow_test": "required_before_production_replacement"
+  },
+  "decision_policy": "Freeze data, code, dependencies and environment before the first V14 performance run. Failed sources stay excluded. Failed retrospective gates keep V6 in production."
+}

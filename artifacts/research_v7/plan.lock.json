@@ -1,0 +1,18 @@
+{
+  "protocol": "stockpilot-research-v7-multihorizon-confidence",
+  "locked_at": "2026-08-25",
+  "status": "retrospective_research",
+  "data_sha256": {
+    "data/market_history.csv": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "data/fundamentals_pit.csv": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "data/universes/000300/history.csv": "2CDA18F9813EFCA113EEE4495578BD31600C4CFF420168130BD3A54EDC50DECC",
+    "data/exposures.csv": "AEB273A48DB4977F312820AE00D1F5C97C773422033DE53F20E900AB9292CB72"
+  },
+  "horizons": {"5": 0.50, "20": 0.30, "60": 0.20},
+  "score": {"multihorizon_experts": 0.65, "v6_base": 0.35, "uncertainty_penalty": 0.10},
+  "models": {"type": "ridge", "alpha": 50.0, "global_share": 0.60, "industry_expert_share": 0.40, "training_window_years": 3},
+  "portfolio": {"top_n": 30, "minimum_positions": 20, "sector_balanced": true, "holding_score_bonus": 0.05, "rebalance_every_days": 5, "fee_rate": 0.0003, "stamp_duty": 0.0005, "slippage": 0.0005},
+  "strict_gates": {"excess_return_gt": 0.0, "mean_rank_ic_gt": 0.0, "max_drawdown_gt": -0.20, "positive_test_year_ratio_gte": 0.50, "nonnegative_sector_ic_ratio_gte": 0.60},
+  "v6_replacement_gates": {"excess_return_gt": -0.026184784718117804, "mean_rank_ic_gte": 0.025300983903540037, "max_drawdown_gte": -0.18915470153920222, "positive_test_year_ratio_gte": 0.6666666666666666},
+  "replacement_policy": "Switch from V6 only if every V6 replacement gate passes. Trading remains unauthorized unless strict gates and a later future protocol pass."
+}

@@ -1,0 +1,35 @@
+{
+  "protocol": "stockpilot-v10-core-replication-audit",
+  "status": "pre_registered_before_audit_results",
+  "data": [
+    "data/universes/000300/history_v9.csv",
+    "data/market_history_v10.csv"
+  ],
+  "test_years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "portfolio": {
+    "official_csi300_weight_share": 1.0,
+    "horizon_days": 5,
+    "rebalance_every_trading_days": 5,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "same_execution_rules_as_v9": true
+  },
+  "outputs": [
+    "gross and net replication return",
+    "gross and net tracking error",
+    "cash and weight coverage",
+    "turnover and cost"
+  ],
+  "gate": {
+    "annualized_net_tracking_error_lte": 0.02
+  },
+  "decision_policy": "Continue V10 model research only if the frozen 100% core replication gate passes. No parameter changes after audit results.",
+  "input_schema_amendment": {
+    "invalid_lock_sha256": "15195106DA40958470735E4E840F9B458DECE3EB970121169982EA5F51B208B5",
+    "reason": "Tencent cache labels traded volume as amount and has no monetary turnover; mixed-schema concatenation left volume null for 154 of 298 initial constituents.",
+    "fixed_mapping": "Tencent amount -> volume; monetary amount proxy = volume * mean(open, close)",
+    "parameter_change": false,
+    "audit_copy": "artifacts/research_v10/invalid_input_schema_run_151951"
+  }
+}

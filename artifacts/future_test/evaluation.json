@@ -1,0 +1,19 @@
+{
+  "as_of": "2026-08-26",
+  "observed_trading_days": 3,
+  "signal_snapshots": 1,
+  "matured_periods": 0,
+  "pending_signals": 1,
+  "total_return": 0.0,
+  "benchmark_return": 0.0,
+  "excess_return": 0.0,
+  "latest_matured_signal": null,
+  "ledger_path": "artifacts\\future_test\\ledger.csv",
+  "execution_authorized": false,
+  "audit_chain": {
+    "records": 7,
+    "head": "6e4d06c837e159bf00f6b14f28665293c578f670c22b526f84e843099bc3f85e",
+    "intact": true,
+    "errors": []
+  }
+}

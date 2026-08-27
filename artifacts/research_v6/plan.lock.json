@@ -1,0 +1,44 @@
+{
+  "protocol": "stockpilot-research-v6-sector-balanced-ensemble",
+  "locked_at": "2026-08-24",
+  "status": "retrospective_research",
+  "data_sha256": {
+    "data/market_history.csv": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "data/fundamentals_pit.csv": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "data/universes/000300/history.csv": "2CDA18F9813EFCA113EEE4495578BD31600C4CFF420168130BD3A54EDC50DECC",
+    "data/exposures.csv": "AEB273A48DB4977F312820AE00D1F5C97C773422033DE53F20E900AB9292CB72"
+  },
+  "test_years": [2024, 2025, 2026],
+  "score_ensemble": {
+    "v5_multidimensional_global_rank": 0.65,
+    "v4_training_stability_rank": 0.20,
+    "v5_within_broad_sector_rank": 0.15
+  },
+  "portfolio": {
+    "selection": "broad-sector quotas proportional to each date's eligible universe",
+    "top_n": 30,
+    "minimum_positions": 20,
+    "minimum_one_per_sector_when_available": true,
+    "sector_weights": "eligible-universe count share",
+    "within_sector_weights": "inverse volatility normalized inside sector",
+    "rebalance_every_days": 5,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "strict_pass_gates": {
+    "net_excess_return_gt": 0.0,
+    "mean_rank_ic_gt": 0.0,
+    "max_drawdown_gt": -0.20,
+    "positive_test_year_ratio_gte": 0.50,
+    "nonnegative_broad_sector_ic_ratio_gte": 0.60
+  },
+  "v4_replacement_gates": {
+    "excess_return_gt_v4": -0.35492101062415604,
+    "mean_rank_ic_gt": 0.0,
+    "max_drawdown_gt_v4": -0.30289312680425784,
+    "positive_test_year_ratio_gte_v4": 0.3333333333333333
+  },
+  "replacement_policy": "Replace V4 only as the default research prediction when every replacement gate passes. Trading authorization remains false unless every strict gate passes and a new future protocol later passes.",
+  "known_limitations": ["retrospective data already observed", "no point-in-time news or analyst revisions", "no split-safe historical valuation ratios"]
+}

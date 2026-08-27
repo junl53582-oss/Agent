@@ -1,0 +1,32 @@
+{
+  "protocol": "v14-new-pit-data-candidate-audit",
+  "status": "registered_before_v14_data_download_or_model_performance",
+  "sources": {
+    "analyst_reports": {
+      "provider": "Eastmoney research report list via AkShare",
+      "allowed_fields": ["report publication date", "title", "rating", "institution", "industry"],
+      "forbidden_fields": ["current-schema forecast columns on historical reports", "PDF content without verified publication timestamp"],
+      "minimum_symbol_coverage": 400,
+      "minimum_start_date": "2018-01-01"
+    },
+    "northbound_holdings": {
+      "provider": "Eastmoney Stock Connect holdings via AkShare",
+      "known_publication_stop": "2024-08-16",
+      "policy_after_stop": "mark stale/missing; never forward-fill as current flow",
+      "minimum_symbol_coverage": 350,
+      "minimum_start_date": "2018-01-01"
+    },
+    "announcements": {
+      "provider": "CNInfo official disclosure query",
+      "allowed_fields": ["announcement publication date", "title", "announcement id"],
+      "minimum_symbol_coverage": 700,
+      "minimum_start_date": "2017-01-01"
+    }
+  },
+  "rejected_sources": {
+    "current_profit_forecast_snapshot": "not historically versioned",
+    "current_fund_flow_rank": "cannot be replayed point in time",
+    "individual_fund_flow_history": "endpoint unavailable during audit"
+  },
+  "decision_policy": "A source enters V14 only after coverage, date, duplicate and future-timestamp audit. Missing data remains explicitly missing."
+}

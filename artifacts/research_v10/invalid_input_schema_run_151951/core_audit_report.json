@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-08-25T05:50:56.461724+00:00",
+  "status": "frozen_core_replication_audit_complete",
+  "audit_lock_sha256": "15195106DA40958470735E4E840F9B458DECE3EB970121169982EA5F51B208B5",
+  "metrics": {
+    "gross_return": 0.273883137926058,
+    "net_return": 0.2713799051362187,
+    "benchmark_return": 0.5237297218459462,
+    "gross_excess_return": -0.24984658391988823,
+    "net_excess_return": -0.25234981670972756,
+    "annualized_gross_tracking_error": 0.16227214377166413,
+    "annualized_net_tracking_error": 0.16227345181874472,
+    "average_cash_weight": 0.5519470082392071,
+    "minimum_weight_coverage": 0.41853258392830023,
+    "average_one_way_turnover": 0.003399346183647891,
+    "average_transaction_cost": 6.763404312717413e-06
+  },
+  "gate": {
+    "annualized_net_tracking_error_lte_2pct": false
+  },
+  "passed": false,
+  "decision": "stop_and_diagnose_replication"
+}

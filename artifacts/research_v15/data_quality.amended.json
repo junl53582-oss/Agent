@@ -1,0 +1,100 @@
+{
+  "event_documents": 298113,
+  "event_symbols": 790,
+  "event_date_min": "2017-01-04",
+  "event_date_max": "2026-08-21",
+  "complete_three_target_ratio": 0.36115835270518226,
+  "eligible_event_documents": 108518,
+  "eligible_complete_documents": 107666,
+  "eligible_incomplete_documents": 852,
+  "eligible_complete_three_target_ratio": 0.9921487679463314,
+  "ineligible_documents": 189595,
+  "duplicate_symbol_date_keys": 0,
+  "invalid_event_dates": 0,
+  "invalid_eligibility": 0,
+  "blank_documents": 0,
+  "invalid_event_counts": 0,
+  "label_chronology_violations": 0,
+  "raw_event_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "eligible_completeness_by_year": {
+    "2017": {
+      "eligible": 10065,
+      "complete": 10063,
+      "ratio": 0.9998012916045703
+    },
+    "2018": {
+      "eligible": 11484,
+      "complete": 11484,
+      "ratio": 1.0
+    },
+    "2019": {
+      "eligible": 12549,
+      "complete": 12549,
+      "ratio": 1.0
+    },
+    "2020": {
+      "eligible": 12445,
+      "complete": 12445,
+      "ratio": 1.0
+    },
+    "2021": {
+      "eligible": 12012,
+      "complete": 12012,
+      "ratio": 1.0
+    },
+    "2022": {
+      "eligible": 11317,
+      "complete": 11317,
+      "ratio": 1.0
+    },
+    "2023": {
+      "eligible": 10757,
+      "complete": 10757,
+      "ratio": 1.0
+    },
+    "2024": {
+      "eligible": 10279,
+      "complete": 10278,
+      "ratio": 0.9999027142718163
+    },
+    "2025": {
+      "eligible": 10877,
+      "complete": 10861,
+      "ratio": 0.9985290061597867
+    },
+    "2026": {
+      "eligible": 6733,
+      "complete": 5900,
+      "ratio": 0.8762810040100996
+    }
+  },
+  "gates": {
+    "minimum_250000_documents": true,
+    "minimum_750_symbols": true,
+    "observed_by_2017_01_31": true,
+    "eligible_denominator_nonempty": true,
+    "eligible_complete_three_target_ratio_at_least_95pct": true,
+    "unique_symbol_date_keys": true,
+    "dates_valid": true,
+    "eligibility_valid": true,
+    "documents_nonempty": true,
+    "raw_events_positive": true,
+    "label_chronology_valid": true
+  },
+  "passed": true,
+  "amendment_sha256": "D2B5D144060971856F61F5F62016F97426E43E1681052F2AD6A1A92F87DD5C39",
+  "original_quality_sha256": "E7F69E8A067AB27DA274DADF6712DA7339219FAB66C3476CC2F3E3B6B02C526B",
+  "event_document_sha256": "FF21C7125F5B36EE6AD3AABEAA5CEC87BFE2FB19DA4D9D7B4D0DFDFDFC2B5939",
+  "performance_seen": false
+}

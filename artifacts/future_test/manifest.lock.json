@@ -1,0 +1,50 @@
+{
+  "frozen_at_utc": "2026-08-24T12:26:14.722259+00:00",
+  "mode": "shadow_observation",
+  "execution_authorized": false,
+  "prior_research_decision": "research_only",
+  "research_cutoff": "2026-08-21",
+  "evaluation_start": "2026-08-24",
+  "minimum_trading_days": 126,
+  "selected_config": {
+    "name": "lowvol_top20",
+    "model_name": "low_volatility",
+    "top_n": 20,
+    "weighting": "inverse_volatility",
+    "hold_buffer": 5,
+    "industry_cap": 0.3,
+    "validation_score": 0.14240589257023992,
+    "passes_validation": true
+  },
+  "pass_gates": {
+    "excess_return": "> 0",
+    "mean_rank_ic": "> 0",
+    "max_drawdown": "> -20%",
+    "positive_excess_year_ratio": ">= 50%",
+    "exposure_coverage": ">= 95%"
+  },
+  "frozen_inputs": {
+    "market": {
+      "path": "data\\market_history.csv",
+      "sha256": "81b51da8eb32485b411c414bceb9c43b69499a4d4be132adc9b76f8b519df204"
+    },
+    "membership": {
+      "path": "data\\universes\\000300\\history.csv",
+      "sha256": "2cda18f9813efca113eee4495578bd31600c4cff420168130bd3a54edc50decc"
+    },
+    "exposure": {
+      "path": "data\\exposures.csv",
+      "sha256": "aeb273a48db4977f312820ae00d1f5c97c773422033de53f20e900ab9292cb72"
+    },
+    "selected_config": {
+      "path": "artifacts\\validation_v2\\selected_config.lock.json",
+      "sha256": "afef181d2df6f80bb7a94f3203b8329016a79c26f1c4059e2143992a3bc0a7b3"
+    }
+  },
+  "rules": [
+    "冻结后不得修改模型、特征、权重或门槛",
+    "只允许追加evaluation_start之后首次观察到的数据",
+    "达到最少交易日之前不得给出通过结论",
+    "本协议只收集影子信号，不连接券商或自动下单"
+  ]
+}

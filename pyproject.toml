@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stockpilot-cn"
+version = "0.1.0"
+description = "Walk-forward A-share ranking, backtesting and decision dashboard"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<3",
+]
+
+[project.optional-dependencies]
+app = [
+  "akshare>=1.14",
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "streamlit>=1.32",
+  "plotly>=5.18",
+]
+ml = ["lightgbm>=4.5,<5"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+stockpilot = "stockpilot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["stockpilot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

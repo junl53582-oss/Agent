@@ -1,0 +1,63 @@
+{
+  "protocol": "stockpilot-research-v8-pit-sector-regime",
+  "locked_at": "2026-08-25",
+  "status": "retrospective_research",
+  "data_sha256": {
+    "data/market_history.csv": "81B51DA8EB32485B411C414BCEB9C43B69499A4D4BE132ADC9B76F8B519DF204",
+    "data/fundamentals_pit.csv": "407067EE43F3A80D22461151FEB5F43D536A012466118C010BC7BB2417027617",
+    "data/universes/000300/history.csv": "2CDA18F9813EFCA113EEE4495578BD31600C4CFF420168130BD3A54EDC50DECC",
+    "data/exposures.csv": "AEB273A48DB4977F312820AE00D1F5C97C773422033DE53F20E900AB9292CB72"
+  },
+  "test_years": [2024, 2025, 2026],
+  "training": {
+    "window_years": 3,
+    "label_horizon_days": 5,
+    "label_mode": "market_neutral",
+    "model": "ridge",
+    "ridge_alpha": 50.0,
+    "minimum_technology_rows": 5000,
+    "minimum_technology_dates": 100
+  },
+  "score": {
+    "v6_base_share": 0.75,
+    "enhanced_global_share": 0.25,
+    "technology_specialist_share_within_enhanced": 0.70,
+    "technology_global_share_within_enhanced": 0.30,
+    "risk_on_momentum_tilt": 0.05,
+    "risk_off_quality_tilt": 0.05
+  },
+  "portfolio": {
+    "top_n": 30,
+    "minimum_positions": 20,
+    "sector_balanced": true,
+    "holding_score_bonus": 0.035,
+    "rebalance_every_days": 5,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005
+  },
+  "features": {
+    "point_in_time_only": true,
+    "valuation": ["book_to_price_rank", "earnings_yield_rank"],
+    "fundamental": ["roe_rank", "roic_rank", "debt_ratio_rank", "revenue_growth_rank", "profit_growth_rank", "operating_cash_margin_rank", "gross_margin_rank", "fundamental_coverage"],
+    "behavior": ["momentum", "short_reversal", "volume_attention", "low_volatility", "liquidity", "industry_momentum"],
+    "technology_specialist": true,
+    "research_and_development": "not_used_missing_reliable_pit_field",
+    "analyst_expectations": "not_used_missing_versioned_snapshot"
+  },
+  "strict_gates": {
+    "excess_return_gt": 0.0,
+    "mean_rank_ic_gt": 0.0,
+    "max_drawdown_gt": -0.20,
+    "positive_test_year_ratio_gte": 0.50,
+    "nonnegative_sector_ic_ratio_gte": 0.60
+  },
+  "v6_replacement_gates": {
+    "excess_return_gt": -0.026184784718117804,
+    "mean_rank_ic_gte": 0.025300983903540037,
+    "max_drawdown_gte": -0.18915470153920222,
+    "positive_test_year_ratio_gte": 0.6666666666666666,
+    "average_one_way_turnover_lt": 0.50
+  },
+  "replacement_policy": "Switch from V6 only if every locked V6 replacement gate passes. No post-result parameter changes. Execution remains unauthorized."
+}

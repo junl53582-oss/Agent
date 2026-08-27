@@ -1,0 +1,73 @@
+{
+  "protocol": "stockpilot-v16-pit-title-wordchar-ensemble-text-alpha",
+  "status": "registered_before_any_v16_performance_or_ic",
+  "objective": "Test whether adding a jieba word-level n-gram text head to the frozen V15 char n-gram head, and raising the text share of the final score from 0.25 to 0.35, improves stable net marginal alpha beyond the same-data V13 baseline and beyond the V15 char-only line replicated under identical accounting.",
+  "motivation_pre_registered": "V15 reported that announcement-title text was the only component carrying positive incremental excess (+5.18pp ungated, +4.46pp over the same-data V13 baseline) while using the simplest possible representation (char 2-4 gram hashing with a linear regressor). The V15 frozen report itself lists pretrained embeddings and richer text representations as the main unexplored margin.",
+  "immutability": "V15 data, code, lock and results remain unchanged; V16 reuses the V15 event document file and the V15 quality verdicts as inputs.",
+  "data": {
+    "event_source": "the frozen V15 event document file data/event_documents_pit_v15.csv, byte-identical, verified by SHA-256 against the V15 quality report",
+    "market_membership_fundamentals_industry": "the same frozen V10/V14 input files locked by V15",
+    "no_new_data_fetching": true
+  },
+  "text_representation": {
+    "char_head": {
+      "vectorizer": "sklearn HashingVectorizer",
+      "analyzer": "char",
+      "ngram_range": [2, 4],
+      "n_features": 32768,
+      "alternate_sign": false,
+      "norm": "l2",
+      "random_seed_base": 51,
+      "note": "byte-identical to the frozen V15 text head so that the replica mode reproduces V15 exactly"
+    },
+    "word_head": {
+      "vectorizer": "sklearn HashingVectorizer",
+      "analyzer": "jieba.lcut tokens with blank tokens removed",
+      "ngram_range": [1, 2],
+      "n_features": 32768,
+      "alternate_sign": false,
+      "norm": "l2",
+      "random_seed_base": 151,
+      "determinism": "jieba is deterministic given a fixed version; the version is recorded in the lock environment"
+    },
+    "ensemble": "per event and horizon, char and word head predictions are blended 0.5/0.5 before the fixed horizon weighting"
+  },
+  "targets": {
+    "horizons_trading_days": [1, 5, 20],
+    "definition": "identical to V15: next-open to horizon-exit-open return minus point-in-time official-weight broad-sector return minus the pre-existing liquidity-aware round-trip cost",
+    "label_maturity": "identical to V15: 20-day label end must be before the cutoff minus a 28-calendar-day embargo",
+    "winsorization": [-0.2, 0.2],
+    "standardization": "training events only",
+    "fixed_blend": {"1_day": 0.45, "5_day": 0.35, "20_day": 0.2}
+  },
+  "model": {
+    "text_regressor": "per head, three chronological averaged elastic-net Huber SGD regressors with a fixed 30 epochs and no tolerance-based early stop, identical hyper-parameters to V15",
+    "recent_event_lookback_calendar_days": 28,
+    "recency_half_life_calendar_days": 7,
+    "final_score": "65 percent same-data V13 comparable score plus 35 percent recent char+word ensemble text score",
+    "replica_score": "75 percent same-data V13 comparable score plus 25 percent recent char-only text score, evaluated only as an attribution anchor; it must reproduce the V15 ungated line under the V16 accounting stack"
+  },
+  "attribution_modes": {
+    "core": "benchmark only",
+    "v13_comparable": "baseline without text",
+    "v15_char_replica": "V15 final score replicated under V16 accounting",
+    "v16_text_ungated": "the V16 candidate without nested-validation gates",
+    "v16_text_gated": "the V16 formal line, falling back to the benchmark in test years where nested validation fails"
+  },
+  "gates": {
+    "replacement": "the 17 V15 retrospective gates applied to v16_text_gated, unchanged",
+    "attribution": "the ungated V16 ensemble line must not deliver cumulative excess below the V15 char replica line evaluated in the same run",
+    "nested_validation": "identical to V15: pooled payoff lower bound, incremental lower bound, technology bounds and per-validation-year floors must pass in every test year before the gated line may select stocks"
+  },
+  "portfolio": "identical to V15: Top-30 active budget 15 percent, per-stock active weight 0.75 percent, sector neutrality, ex-ante tracking error cap 6 percent, 20-trading-day rebalances, V10 accounting",
+  "decision_rule": {
+    "all_gates_passed": "status becomes a paper-trade candidate only; the production model remains V6 and no execution is authorized",
+    "any_gate_failed": "decision stays keep_v6; results are retained as reproducible research",
+    "no_post_hoc_changes": "after freezing, neither parameters nor inputs may be modified; re-running requires a new pre-registered version"
+  },
+  "honest_reporting": [
+    "2020-2025 has been observed by V4 through V15 research lines; any success on this window is weaker evidence than the future shadow protocol",
+    "the text share increase from 0.25 to 0.35 is motivated by V15's frozen attribution evidence and is locked before any V16 evaluation",
+    "a failure of the attribution gate must be reported as evidence that the word head adds nothing, not discarded"
+  ]
+}

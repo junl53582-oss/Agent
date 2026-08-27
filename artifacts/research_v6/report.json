@@ -1,0 +1,52 @@
+{
+  "created_at_utc": "2026-08-24T16:00:54.388622+00:00",
+  "status": "retrospective_research",
+  "plan_lock_sha256": "94EDFC9E05BD30A58A14E7E11A988A1B7FB0D5358E462DF1B20CB23DCA4C0F4D",
+  "settings": {
+    "test_years": [
+      2024,
+      2025,
+      2026
+    ],
+    "v5_weight": 0.65,
+    "v4_weight": 0.2,
+    "sector_rank_weight": 0.15,
+    "top_n": 30,
+    "min_positions": 20,
+    "rebalance_every": 5,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "artifact_dir": "artifacts\\research_v6",
+    "plan_lock_path": "artifacts\\research_v6\\plan.lock.json"
+  },
+  "metrics": {
+    "periods": 127,
+    "total_return": 0.41421172006064366,
+    "benchmark_return": 0.44039650477876147,
+    "excess_return": -0.026184784718117804,
+    "mean_rank_ic": 0.025300983903540037,
+    "max_drawdown": -0.18915470153920222,
+    "positive_test_year_ratio": 0.6666666666666666,
+    "nonnegative_broad_sector_ic_ratio": 0.8333333333333334,
+    "average_cash_weight": 0.0024592723821070615
+  },
+  "strict_gates": {
+    "excess_return": false,
+    "mean_rank_ic": true,
+    "max_drawdown": true,
+    "positive_test_year_ratio": true,
+    "broad_sector_ic": true
+  },
+  "strict_passed": false,
+  "replacement_gates": {
+    "excess_better_than_v4": true,
+    "mean_rank_ic": true,
+    "drawdown_better_than_v4": true,
+    "year_stability_at_least_v4": true
+  },
+  "replacement_approved": true,
+  "decision": "replace_v4_as_default_research_model",
+  "execution_authorized": false,
+  "warning": "V6替换门槛仅代表相对V4改进，不等于通过实盘门槛。"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "lowvol_top20",
+  "model_name": "low_volatility",
+  "top_n": 20,
+  "weighting": "inverse_volatility",
+  "hold_buffer": 5,
+  "industry_cap": 0.3,
+  "validation_score": 0.14240589257023992,
+  "passes_validation": true
+}

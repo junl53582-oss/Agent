@@ -1,0 +1,32 @@
+{
+  "dataset_rows": 2680710,
+  "dataset_symbols": 799,
+  "dataset_date_min": "2010-01-04",
+  "dataset_date_max": "2026-08-21",
+  "event_documents": 298113,
+  "event_symbols": 790,
+  "event_date_min": "2017-01-04",
+  "event_date_max": "2026-08-21",
+  "complete_three_target_ratio": 0.36115835270518226,
+  "duplicate_symbol_date_keys": 0,
+  "raw_event_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "gates": {
+    "minimum_250000_documents": true,
+    "minimum_750_symbols": true,
+    "observed_by_2017_01_31": true,
+    "complete_three_target_ratio_at_least_95pct": false,
+    "unique_symbol_date_keys": true
+  },
+  "passed": false
+}

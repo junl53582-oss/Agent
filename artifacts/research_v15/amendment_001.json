@@ -1,0 +1,29 @@
+{
+  "registered_on_shanghai_date": "2026-08-27",
+  "stage": "before_first_v15_performance_run_and_before_freeze",
+  "parent_protocol": "artifacts/research_v15/protocol.json",
+  "original_failed_quality_report": "artifacts/research_v15/data_quality.json",
+  "original_failed_quality_sha256": "E7F69E8A067AB27DA274DADF6712DA7339219FAB66C3476CC2F3E3B6B02C526B",
+  "event_document_sha256": "FF21C7125F5B36EE6AD3AABEAA5CEC87BFE2FB19DA4D9D7B4D0DFDFDFC2B5939",
+  "observations_already_seen": "Data coverage only: 298113 total documents, 108518 eligible, 107666 complete. No V15 model performance or IC has been run.",
+  "quality_revision": {
+    "reason": "Targets are defined only for point-in-time eligible stocks, whereas the original denominator includes all historical-union events. Ineligible events have intentionally undefined sector-relative targets.",
+    "denominator": "ALL events with eligible=true at event date, including immature or incomplete eligible events; no filtering by target availability",
+    "numerator": "eligible events with finite 1/5/20-day targets and present, ordered future label end dates",
+    "threshold": 0.95,
+    "all_event_ratio": "retain and report the original 36.1158 percent separately; do not relabel it as passing",
+    "coverage_gates": "unchanged: 250000 total documents, 750 total symbols, observed by 2017-01-31, no duplicate keys",
+    "additional_safety": "nonempty eligible denominator; no invalid eligibility, blank documents, nonpositive raw event counts, invalid event dates or invalid label chronology",
+    "output": "artifacts/research_v15/data_quality.amended.json"
+  },
+  "correctness_revision": [
+    "Preserve caller row alignment when returning validation predictions.",
+    "Use the identical V13-style 80/20 two-stage/V10-global baseline in validation and final scoring; V15 remains 75 percent baseline and 25 percent text.",
+    "All inherited fitting inputs are restricted to labels matured before cutoff minus 28 calendar days; outer validation targets must also mature before the outer test cutoff minus embargo.",
+    "Count available years from raw eligible positive-count events, independently from complete mature training-event years. Never infer event years from ranked values.",
+    "Normalize recent text within the current point-in-time eligible stock universe and current sector; exclude zero-count, future and out-of-scope events.",
+    "Include initial capital when calculating sampled-period drawdown; report that this is not a daily mark-to-market drawdown."
+  ],
+  "unchanged": "Titles, target values, corpus, blend weights, model hyperparameters, transaction costs, performance thresholds, test years and V14 frozen files remain unchanged.",
+  "limitations": "Announcement titles are text representations, not full announcement bodies or a pretrained language model. Historical 2020-2025 years have already been explored in earlier versions; this run is retrospective research, not an unseen future holdout."
+}

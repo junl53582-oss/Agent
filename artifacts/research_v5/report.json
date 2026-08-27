@@ -1,0 +1,62 @@
+{
+  "created_at_utc": "2026-08-24T15:49:43.437880+00:00",
+  "status": "retrospective_research",
+  "plan_lock_sha256": "1524D6EB86A2991D805A45BCBDFDA4B7499A5274ED80FFB19D7F6C06CEDDD754",
+  "settings": {
+    "test_years": [
+      2024,
+      2025,
+      2026
+    ],
+    "training_window_years": 3,
+    "ridge_alpha": 50.0,
+    "minimum_expert_rows": 5000,
+    "minimum_expert_dates": 100,
+    "rebalance_every": 5,
+    "top_n": 20,
+    "min_positions": 8,
+    "hold_buffer": 5,
+    "industry_cap": 0.3,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "artifact_dir": "artifacts\\research_v5",
+    "plan_lock_path": "artifacts\\research_v5\\plan.lock.json"
+  },
+  "dimensions_implemented": [
+    "fundamental",
+    "market_behavior",
+    "risk",
+    "liquidity",
+    "learned_global",
+    "learned_industry"
+  ],
+  "known_missing_dimensions": [
+    "point-in-time analyst forecast revisions",
+    "point-in-time announcement/news sentiment",
+    "split-safe historical valuation ratios",
+    "macro series with vintage timestamps"
+  ],
+  "fundamental_pit_violations": 0,
+  "metrics": {
+    "periods": 127,
+    "total_return": 0.2537922252568008,
+    "benchmark_return": 0.44039650477876147,
+    "excess_return": -0.18660427952196068,
+    "mean_rank_ic": 0.021529075444405636,
+    "max_drawdown": -0.20811052543853792,
+    "positive_test_year_ratio": 0.6666666666666666,
+    "nonnegative_broad_sector_ic_ratio": 0.8333333333333334,
+    "average_cash_weight": 0.002978177130642901
+  },
+  "gates": {
+    "excess_return": false,
+    "mean_rank_ic": true,
+    "max_drawdown": false,
+    "positive_test_year_ratio": true,
+    "broad_sector_ic": true
+  },
+  "passed": false,
+  "decision": "continue_research",
+  "warning": "历史区间已被观察；即使通过也只能建立新的未来影子测试，不能授权交易。"
+}

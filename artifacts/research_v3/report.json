@@ -1,0 +1,48 @@
+{
+  "created_at_utc": "2026-08-24T14:54:39.844545+00:00",
+  "status": "retrospective_research",
+  "settings": {
+    "horizons": [
+      5,
+      10,
+      20
+    ],
+    "rebalance_every": 5,
+    "retrain_every": 20,
+    "min_train_days": 252,
+    "train_window_days": 756,
+    "top_n": 20,
+    "min_positions": 8,
+    "agreement_threshold": 0.6666666666666666,
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "industry_cap": 0.3,
+    "hold_buffer": 5,
+    "artifact_dir": "artifacts\\research_v3",
+    "fundamental_path": "data\\fundamentals_pit.csv"
+  },
+  "fundamental_rows": 31401,
+  "fundamental_symbols": 421,
+  "fundamental_pit_violations": 0,
+  "nested_folds": 3,
+  "metrics": {
+    "periods": 127,
+    "total_return": 0.16056451196028632,
+    "benchmark_return": 0.440682861133763,
+    "excess_return": -0.28011834917347667,
+    "mean_rank_ic": -0.010228078016193895,
+    "max_drawdown": -0.22217768102649893,
+    "positive_fold_ratio": 0.3333333333333333,
+    "average_cash_weight": 2.1854783949314106e-17
+  },
+  "gates": {
+    "excess_return": false,
+    "mean_rank_ic": false,
+    "max_drawdown": false,
+    "positive_fold_ratio": false
+  },
+  "passed": false,
+  "decision": "continue_research",
+  "warning": "所有历史区间均已被观察；结果只能筛选V3研究方向，不能替代新的未来测试。"
+}

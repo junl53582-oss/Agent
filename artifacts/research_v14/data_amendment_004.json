@@ -1,0 +1,9 @@
+{
+  "amendment": "filter CNInfo related-security rows to the explicitly requested symbol",
+  "stage": "after download completion but before the external-data audit, data lock or any V14 performance",
+  "issue": "The 800 requested membership symbols produced 801 distinct returned security codes because a small number of CNInfo organization queries include related securities.",
+  "repair": "During deterministic cache combination, retain a disclosure row only when its six-digit secCode equals the symbol encoded in that cache filename.",
+  "network_redownload_required": false,
+  "coverage_threshold_changed": false,
+  "model_performance_seen": false
+}

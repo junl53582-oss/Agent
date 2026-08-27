@@ -1,0 +1,13 @@
+{
+  "amendment": "parse mixed date and datetime disclosure timestamps and compare future dates by calendar day",
+  "stage": "after the first external-data audit failed, before data lock or any V14 model performance",
+  "observed_failure": {
+    "invalid_dates": 197921,
+    "same_day_rows_misclassified_as_future": 24
+  },
+  "root_cause": "The CSV legitimately mixes midnight date-only strings with intraday timestamp strings. Pandas strict inferred-format parsing accepted only one representation, and the future check compared intraday rows against current-day midnight.",
+  "repair": "Use format=mixed for deterministic parsing and compare normalized calendar dates to the registered as-of date.",
+  "title_unicode_verified": true,
+  "coverage_threshold_changed": false,
+  "model_performance_seen": false
+}
