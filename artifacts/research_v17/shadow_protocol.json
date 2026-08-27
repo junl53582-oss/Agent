@@ -1,0 +1,41 @@
+{
+  "protocol": "stockpilot-v17-timing-shadow-test",
+  "status": "registered_before_any_v17_shadow_evaluation",
+  "objective": "Verify whether the V17 market-momentum timing rule (hold V16 ungated when the prior 20-trading-day benchmark return is positive, otherwise cash) holds out-of-sample over 126 untouched trading days from 2026-08-27.",
+  "parent": "stockpilot-v17-market-momentum-timing-over-v16 (lock F999B893 then re-frozen as 7D798E94 after dependency correction)",
+  "timing_rule": {
+    "signal": "prior 20-trading-day benchmark return",
+    "window_trading_days": 20,
+    "threshold": 0.0,
+    "action_long": "mark in_market=true (hold V16 ungated candidates)",
+    "action_flat": "mark in_market=false (cash, zero return)",
+    "look_ahead_guard": "the signal at day T uses only benchmark returns through day T-1 (inclusive), known at the T close"
+  },
+  "benchmark_definition": {
+    "note": "The retrospective V17 validation used the equal-weighted CSI300 constituent return. The shadow test uses the CSI300 index (000300) close-to-close return as a simpler, unambiguous proxy; this is an approximation and is recorded as a limitation.",
+    "index": "000300",
+    "source": "local daily bars from data/shadow/bars and the frozen market history",
+    "return": "close / close.shift(20) - 1"
+  },
+  "evaluation": {
+    "start_date": "2026-08-27",
+    "minimum_trading_days": 126,
+    "cadence": "every trading day, one immutable decision record",
+    "pass_gates": {
+      "timing_win_rate_at_least_plus_10pct_vs_always_hold": true,
+      "timing_max_drawdown_no_worse_than_always_hold": true,
+      "timing_cumulative_excess_positive": true,
+      "timing_holds_at_least_30pct": true
+    }
+  },
+  "decision_rule": {
+    "all_gates_passed": "the timing rule is promoted to paper-trade candidate only; still no automatic execution",
+    "any_gate_failed": "the retrospective +339 percent excess is judged an overfit; decision returns to keep_v6",
+    "immutable": "decision records are append-only and sha256-chained"
+  },
+  "limitations": [
+    "index-based benchmark proxy differs from the equal-weighted retrospective benchmark",
+    "requires daily market data ingestion which depends on network access to the data provider",
+    "a conclusion is only reachable after 126 trading days"
+  ]
+}
