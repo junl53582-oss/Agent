@@ -9,6 +9,7 @@ import pandas as pd
 
 from research_v14.features import load_announcements
 from research_v15.features import build_event_documents
+from research_v17.shadow_signal import fetch_index_closes
 
 from .config import V16Settings
 from .data import load_v16_dataset
@@ -19,6 +20,8 @@ from .text_model import EnsembleTextCorpus
 STRENGTH_THRESHOLD_STRONG = 90.0
 STRENGTH_THRESHOLD_MEDIUM = 75.0
 TOP_CANDIDATES = 30
+TIMING_WINDOW = 20
+TIMING_THRESHOLD = 0.0
 
 
 def _as_float(series: pd.Series, default: float = 0.5) -> pd.Series:
@@ -87,6 +90,24 @@ def risk_rating(frame: pd.DataFrame) -> pd.Series:
     return risk.map(rate)
 
 
+def market_timing() -> dict:
+    """V17 市场动量择时：000300 指数过去 20 交易日收益 > 0 则持仓。
+
+    只用于给出当日是否应持仓的判断，不改变选股排序。
+    """
+    closes = fetch_index_closes()
+    if len(closes) < TIMING_WINDOW + 1:
+        raise RuntimeError(f"指数日线样本不足: {len(closes)}")
+    dates = [item[0] for item in closes]
+    values = [item[1] for item in closes]
+    momentum = float(values[-1] / values[-1 - TIMING_WINDOW] - 1.0)
+    return {
+        "timing_date": dates[-1],
+        "prior_20d_return": momentum,
+        "in_market": momentum > TIMING_THRESHOLD,
+    }
+
+
 def _load_names(path: str | Path = "data/stock_names.csv") -> dict[str, str]:
     target = Path(path)
     if not target.exists():
@@ -138,6 +159,9 @@ def run_predict(
     ordered = scored.sort_values("pred_rank").reset_index(drop=True)
     candidates = ordered.head(TOP_CANDIDATES).copy()
 
+    print("V16+V17: 计算市场动量择时信号", flush=True)
+    timing = market_timing()
+
     output_dir = Path("artifacts/research_v16/live")
     date_text = str(latest_date.date())
     prediction_dir = output_dir / "predictions"
@@ -154,6 +178,7 @@ def run_predict(
     ordered[present].to_csv(prediction_dir / f"{date_text}.csv", index=False, encoding="utf-8-sig")
     candidates[present].to_csv(signal_dir / f"{date_text}.csv", index=False, encoding="utf-8-sig")
 
+    action = "持仓（可参考下方候选）" if timing["in_market"] else "空仓（择时信号转负，建议观望）"
     report = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "model": "research_v16_wordchar_ensemble_text",
@@ -161,17 +186,28 @@ def run_predict(
         "training_cutoff": f"{year}-01-01 (embargoed)",
         "prediction_count": int(len(ordered)),
         "candidate_count": int(len(candidates)),
+        "market_timing": {
+            "rule": "prior 20 trading-day CSI300 index return > 0",
+            "timing_date": timing["timing_date"],
+            "prior_20d_return": timing["prior_20d_return"],
+            "in_market": timing["in_market"],
+            "note": "V17 timing rule, in-sample win rate 94%, pending 126-day shadow test",
+        },
+        "suggested_action": action,
         "execution_authorized": False,
         "protocol_status": "research_only",
-        "disclaimer": "研究信号，非投资建议；历史全截面IC为负，单点预测不可靠。",
+        "disclaimer": "研究信号，非投资建议；历史全截面IC为负，择时仍需影子测试确认。",
         "signal_path": str(signal_dir / f"{date_text}.csv"),
         "prediction_path": str(prediction_dir / f"{date_text}.csv"),
     }
     (output_dir / "latest.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print("\n" + "=" * 72)
+    print(f"市场择时 [{timing['timing_date']}]  沪深300 二十日动量: {timing['prior_20d_return']:+.2%}")
+    print(f"建议动作: {action}")
+    print("=" * 72)
     print(f"V16 每日决策清单  {date_text}")
-    print(f"候选 Top{TOP_CANDIDATES} | 强度分 = v16 评分截面百分位 | 风险 = 波动+流动性+可买性")
+    print(f"候选 Top{TOP_CANDIDATES} | 强度分 = v16 评分截面百分位 | 风险 = 波动+流动性+舆情")
     print("=" * 72)
     header = f"{'排名':<4}{'代码':<8}{'名称':<12}{'行业':<14}{'强度':<7}{'分级':<6}{'风险':<6}"
     print(header)

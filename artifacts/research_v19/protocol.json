@@ -1,0 +1,40 @@
+{
+  "protocol": "stockpilot-v19-regime-adaptive-weighting",
+  "status": "registered_before_any_v19_performance_or_ic",
+  "objective": "Test whether making the baseline/text blend weight adapt to market regime improves the V16 signal: higher cumulative excess, better IC, and no worse drawdown.",
+  "motivation": "V16 uses a fixed 65/35 baseline/text blend regardless of market state. Event-driven text signals plausibly work better in up markets and worse in down markets, so a fixed weight may leave value on the table.",
+  "architecture_change": {
+    "before_v16": "score = 0.65 * v13_comparable + 0.35 * text_event (constant)",
+    "after_v19": "score = w(regime) * v13_comparable + (1 - w(regime)) * text_event",
+    "regime_definition": "prior rebalance period benchmark return (no look-ahead)",
+    "weights": {
+      "bull_prior_return_gt_0.02": 0.50,
+      "neutral_between_thresholds": 0.65,
+      "bear_prior_return_lt_-0.02": 0.80
+    },
+    "note": "Training is unchanged (reuses the frozen V16 models); only the score combination is restructured."
+  },
+  "modes": {
+    "v16_ungated": "fixed 65/35 blend, same-run control",
+    "v19_adaptive": "regime-adaptive blend"
+  },
+  "gates": {
+    "v19_excess_positive": "cumulative excess over benchmark positive",
+    "v19_excess_beats_v16_ungated": "excess above the frozen V16 ungated +5.92pp",
+    "v19_beats_same_run_v16": "excess above the same-run V16 control",
+    "v19_ic5_beats_v16": "rank IC5 above V16's -0.0251",
+    "v19_ic20_beats_v16": "rank IC20 above V16's -0.0168",
+    "v19_drawdown_no_worse": "max drawdown no worse than the same-run V16 control",
+    "v19_ic5_positive": "rank IC5 turns positive (the decisive gate)"
+  },
+  "decision_rule": {
+    "all_gates_passed": "the adaptive blend replaces the fixed blend as the preferred representation; still no execution and still requires shadow testing",
+    "any_gate_failed": "decision stays keep_v6; result recorded as retrospective evidence"
+  },
+  "honest_reporting": [
+    "the three regime weights are one preregistered configuration, not an optimized fit",
+    "2020-2025 is a retrospective window reused by V3-V18",
+    "historical evidence suggests the IC5-positive gate will fail",
+    "this restructures the score combination, not the underlying predictive signal"
+  ]
+}
