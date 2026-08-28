@@ -7,6 +7,9 @@ __pycache__/
 .pytest_cache/
 .env
 
+# WorkBuddy 工作元数据（不属于项目代码）
+.workbuddy/
+
 # 数据：原始、缓存、演示、影子行情一律不提交
 data/
 

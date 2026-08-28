@@ -1,0 +1,36 @@
+{
+  "protocol": "stockpilot-v18-bge-embedding-text-alpha",
+  "status": "registered_before_any_v18_performance_or_ic",
+  "objective": "Test whether replacing the V16 char+word n-gram text head with pretrained BGE semantic embeddings improves the announcement-title signal enough to turn the full-cross-section rank IC positive.",
+  "hypothesis_origin": "V15/V16 showed announcement-title text carries real but weak marginal alpha (ungated +5.9pp excess, but negative IC). The V16 report lists pretrained embeddings as the next margin. This line upgrades representation while keeping everything else frozen.",
+  "model": {
+    "embedding": "BAAI/bge-small-zh-v1.5 via hf-mirror",
+    "embedding_dim": 512,
+    "normalization": "l2 normalized",
+    "text_head": "per-horizon Ridge regression (alpha 1.0, seed 61+h) on embeddings",
+    "baseline": "reuses the frozen V16 baseline (V13 two-stage + V10 global), 65 percent",
+    "text_share": 0.35,
+    "targets": "same 1/5/20 day event targets, fixed blend 0.45/0.35/0.20"
+  },
+  "modes": {
+    "v13_comparable": "baseline without text",
+    "v18_text_ungated": "baseline + embedding text head"
+  },
+  "gates": {
+    "v18_excess_positive_vs_benchmark": "cumulative excess positive",
+    "v18_excess_beats_v16_ungated": "excess above the frozen V16 ungated +5.92pp",
+    "v18_ic5_beats_v16": "rank IC5 above V16's -0.0251",
+    "v18_ic20_beats_v16": "rank IC20 above V16's -0.0168",
+    "v18_beat_v13_baseline": "excess above the same-run V13 baseline",
+    "v18_ic5_positive": "rank IC5 turns positive (the decisive gate)"
+  },
+  "decision_rule": {
+    "all_gates_passed": "the embedding text head replaces the n-gram head as the preferred representation; still no execution and still requires shadow testing",
+    "any_gate_failed": "decision stays keep_v6; the embedding result is recorded as retrospective evidence"
+  },
+  "honest_reporting": [
+    "embeddings are computed on titles only, not full announcement bodies",
+    "2020-2025 is a retrospective window reused by V3-V17",
+    "historical evidence strongly suggests the IC5-positive gate will fail"
+  ]
+}

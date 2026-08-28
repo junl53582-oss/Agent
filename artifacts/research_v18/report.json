@@ -1,0 +1,73 @@
+{
+  "created_at_utc": "2026-08-28T03:29:18.895271+00:00",
+  "status": "frozen_v18_embedding_validation_complete",
+  "plan_lock_sha256": "08DC143A5754BB5478221A27484D48DBB69A03820C70F7305BEDA960972A6A99",
+  "environment": {
+    "python": "3.11.9",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "lightgbm": "4.7.0",
+    "scikit_learn": "1.6.1",
+    "scipy": "1.17.1",
+    "jieba": "0.42.1",
+    "torch": "2.5.1+cpu",
+    "sentence_transformers": "3.4.1"
+  },
+  "ablation": {
+    "v13_comparable": {
+      "total_return": 0.32313020407839743,
+      "benchmark_return": 0.3158880943448903,
+      "excess_return": 0.0072421097335071405,
+      "positive_excess_years": 3,
+      "rank_ic_5": -0.03593287805092345,
+      "rank_ic_20": -0.032424648170023454,
+      "max_drawdown": -0.3576610157650192,
+      "average_one_way_turnover": 0.08849739268465436,
+      "average_transaction_cost": 0.00018241986710352756
+    },
+    "v18_text_ungated": {
+      "total_return": 0.27317118056205203,
+      "benchmark_return": 0.3158880943448903,
+      "excess_return": -0.04271691378283826,
+      "positive_excess_years": 2,
+      "rank_ic_5": -0.030732218442727437,
+      "rank_ic_20": -0.02772146062564867,
+      "max_drawdown": -0.3707009026530552,
+      "average_one_way_turnover": 0.11123351844717953,
+      "average_transaction_cost": 0.00023016573120483044
+    }
+  },
+  "v18_metrics": {
+    "total_return": 0.27317118056205203,
+    "benchmark_return": 0.3158880943448903,
+    "excess_return": -0.04271691378283826,
+    "positive_excess_years": 2,
+    "rank_ic_5": -0.030732218442727437,
+    "rank_ic_20": -0.02772146062564867,
+    "max_drawdown": -0.3707009026530552,
+    "average_one_way_turnover": 0.11123351844717953,
+    "average_transaction_cost": 0.00023016573120483044
+  },
+  "v16_reference": {
+    "ungated_excess": 0.0592,
+    "ungated_ic5": -0.0251,
+    "ungated_ic20": -0.0168
+  },
+  "gates": {
+    "v18_excess_positive_vs_benchmark": false,
+    "v18_excess_beats_v16_ungated": false,
+    "v18_ic5_beats_v16": false,
+    "v18_ic20_beats_v16": false,
+    "v18_beat_v13_baseline": false,
+    "v18_ic5_positive": false
+  },
+  "approved": false,
+  "decision": "keep_v6",
+  "execution_authorized": false,
+  "limitations": [
+    "Embeddings are computed on announcement titles only, not full text.",
+    "2020-2025 is a retrospective window reused by earlier versions.",
+    "The embedding model is frozen at BAAI/bge-small-zh-v1.5 via hf-mirror.",
+    "Positive IC (negative gate off) is required; historical evidence shows negative IC."
+  ]
+}
