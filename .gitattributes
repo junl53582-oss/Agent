@@ -6,3 +6,11 @@ tests/test_prediction_v30*.py text eol=lf
 # Frozen reports, locks, models and snapshots must never receive line-ending conversion.
 artifacts/prediction_v30/** -text
 artifacts/prediction_v30r1/** -text
+
+# Forward prediction revisions extend the same byte-for-byte freeze contract.
+stockpilot/prediction_forward*.py text eol=lf
+tests/test_prediction_forward*.py text eol=lf
+stockpilot/cli.py text eol=lf
+stockpilot/api.py text eol=lf
+dashboard.py text eol=lf
+artifacts/prediction_forward/** -text

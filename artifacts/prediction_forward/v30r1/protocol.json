@@ -1,0 +1,29 @@
+{
+  "version": "V30r1-forward",
+  "purpose": "Generate immutable forward predictions from the frozen V30r1 model without retraining or modifying frozen evidence.",
+  "data_rules": {
+    "market_adjustment": "HFQ only; new downloads are anchored per symbol to the frozen HFQ scale using at least 10 overlapping trading days.",
+    "overlap_ratio_max_relative_deviation": 0.0025,
+    "overlap_return_max_absolute_difference": 0.0025,
+    "minimum_current_membership_coverage": 0.95,
+    "noncurrent_overlap_failure_policy": "isolate the symbol and record it; a current PIT member failure is fatal",
+    "pit_membership": true,
+    "pit_fundamentals": true,
+    "pit_industry": true,
+    "frozen_feature_parity_required": true,
+    "full_frozen_history_quality_state_inherited": true
+  },
+  "model_rules": {
+    "parent": "V30r1",
+    "retraining": false,
+    "hyperparameter_search": false,
+    "calibrator_change": false,
+    "certification_promotion": false
+  },
+  "output_rules": {
+    "prediction_snapshots_immutable": true,
+    "same_date_hash_mismatch_fails": true,
+    "production_prediction_ready_inherited": true,
+    "execution_authorized": false
+  }
+}

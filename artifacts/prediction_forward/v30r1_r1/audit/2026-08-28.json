@@ -1,0 +1,6288 @@
+{
+  "auxiliary_ranking": {
+    "coverage": 0.8850574712643678,
+    "current_rows": 261,
+    "matched_rows": 231,
+    "missing_policy": "fixed neutral 0.5 for candidate_score only",
+    "missing_rows": 30,
+    "source": "artifacts\\research_v6\\live\\predictions\\2026-08-28.csv",
+    "source_date": "2026-08-28",
+    "used_by_expected_return_heads": false,
+    "used_by_probability_heads": false
+  },
+  "execution_authorized": false,
+  "frozen_feature_parity": {
+    "categorical_equal": {
+      "broad_sector": true,
+      "regime": true
+    },
+    "maximum_numeric_difference": 4.2500725161431774e-16,
+    "numeric_differences": {
+      "benchmark_weight_rank": 8.326672684688674e-17,
+      "book_to_price_rank": 9.71445146547012e-17,
+      "cash_ratio_change_rank": 9.71445146547012e-17,
+      "cash_ratio_rank": 9.020562075079397e-17,
+      "close": 0.0,
+      "debt_ratio_change_rank": 9.71445146547012e-17,
+      "debt_ratio_rank": 9.020562075079397e-17,
+      "deducted_profit_growth_change_rank": 9.020562075079397e-17,
+      "deducted_profit_growth_rank": 9.71445146547012e-17,
+      "downside_volatility_60_rank": 9.71445146547012e-17,
+      "drawdown_120_rank": 9.71445146547012e-17,
+      "earnings_yield_rank": 9.107298248878237e-17,
+      "fcff_back_change_rank": 9.71445146547012e-17,
+      "fcff_back_rank": 8.326672684688674e-17,
+      "fixed_asset_turnover_change_rank": 9.71445146547012e-17,
+      "fixed_asset_turnover_rank": 9.71445146547012e-17,
+      "fundamental_coverage": 0.0,
+      "fundamental_freshness_rank": 8.326672684688674e-17,
+      "gross_margin_change_rank": 9.71445146547012e-17,
+      "gross_margin_rank": 9.71445146547012e-17,
+      "gross_margin_yoy_change_rank": 9.71445146547012e-17,
+      "gross_margin_yoy_rank": 9.71445146547012e-17,
+      "growth": 9.71445146547012e-17,
+      "industry_momentum": 9.367506770274758e-17,
+      "interest_debt_ratio_change_rank": 9.020562075079397e-17,
+      "interest_debt_ratio_rank": 9.71445146547012e-17,
+      "intraday_strength_20_rank": 9.71445146547012e-17,
+      "inventory_turnover_change_rank": 9.020562075079397e-17,
+      "inventory_turnover_rank": 9.020562075079397e-17,
+      "liquidity": 9.71445146547012e-17,
+      "low_volatility": 9.71445146547012e-17,
+      "momentum": 9.71445146547012e-17,
+      "momentum_120_rank": 9.367506770274758e-17,
+      "open": 0.0,
+      "operating_cash_margin_change_rank": 9.71445146547012e-17,
+      "operating_cash_margin_rank": 9.71445146547012e-17,
+      "operating_cycle_change_rank": 9.71445146547012e-17,
+      "operating_cycle_rank": 9.71445146547012e-17,
+      "overnight_gap_20_rank": 9.367506770274758e-17,
+      "price_position_120_rank": 9.020562075079397e-17,
+      "profit_growth_change_rank": 9.71445146547012e-17,
+      "profit_growth_rank": 9.71445146547012e-17,
+      "quality": 9.367506770274758e-17,
+      "receivables_turnover_change_rank": 9.80118763926896e-17,
+      "receivables_turnover_rank": 9.71445146547012e-17,
+      "revenue_growth_change_rank": 9.020562075079397e-17,
+      "revenue_growth_rank": 9.020562075079397e-17,
+      "roe_change_rank": 9.71445146547012e-17,
+      "roe_rank": 9.540979117872439e-17,
+      "roic_change_rank": 9.71445146547012e-17,
+      "roic_rank": 9.71445146547012e-17,
+      "short_reversal": 9.71445146547012e-17,
+      "staff_average_profit_change_rank": 0.0,
+      "staff_average_profit_rank": 6.938893903907228e-17,
+      "staff_average_revenue_change_rank": 0.0,
+      "staff_average_revenue_rank": 6.938893903907228e-17,
+      "technology_growth_rank": 8.326672684688674e-17,
+      "technology_momentum_rank": 9.020562075079397e-17,
+      "technology_quality_rank": 8.326672684688674e-17,
+      "technology_valuation_rank": 9.020562075079397e-17,
+      "volatility_20": 4.2500725161431774e-16,
+      "volatility_60_rank": 9.367506770274758e-17,
+      "volume_attention": 9.71445146547012e-17,
+      "volume_trend_60_rank": 9.71445146547012e-17
+    },
+    "numeric_tolerance": 1e-10,
+    "passed": true,
+    "symbols": 249
+  },
+  "frozen_feature_pit": {
+    "as_of": "2026-08-21",
+    "eligible_predictions": 249,
+    "full_history_bad_price_symbols": 10,
+    "fundamentals_not_future": true,
+    "industry_not_future": true,
+    "market_rows": 611198,
+    "market_symbols": 779,
+    "membership_not_future": true,
+    "passed": true,
+    "ranking_coverage": 0.0,
+    "window_start": "2023-05-09"
+  },
+  "generated_at_utc": "2026-08-29T21:47:12.367344+00:00",
+  "input_hashes": {
+    "artifacts\\research_v6\\live\\predictions\\2026-08-28.csv": "a875df13e281dc0b102012677131b3577173b7a949baf5f615fe09d35a52421a",
+    "data\\fundamentals_pit_v10_extended.csv": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+    "data\\industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+    "data\\market_history_v10_hfq.csv": "fcc1ea387719476410f8d4dcc49840e74bd087aec351ed02cb40d1318dd45fc3",
+    "data\\prediction_forward\\v30r1\\hfq_union_2026-08-28.csv": "00e8eafa3f23db2fdf63f24dae2f0cd2bb35a86ab219ac3282e876dc48b066bc",
+    "data\\universes\\000300\\history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1"
+  },
+  "latest_feature_pit": {
+    "as_of": "2026-08-28",
+    "eligible_predictions": 261,
+    "full_history_bad_price_symbols": 10,
+    "fundamentals_not_future": true,
+    "industry_not_future": true,
+    "market_rows": 610980,
+    "market_symbols": 779,
+    "membership_not_future": true,
+    "passed": true,
+    "ranking_coverage": 0.0,
+    "window_start": "2023-05-16"
+  },
+  "locks": {
+    "failed_forward_parent": {
+      "intact": true,
+      "lock_sha256": "7cfbeb82325892adb6a77945f28d0708552d5626fcc1d672aa4fc869d6c720ec",
+      "mismatches": []
+    },
+    "forward_r1": {
+      "intact": true,
+      "lock_sha256": "b7890e39ebfb3965ca676929c896bfb81095ea7b528fba3dda4a02cf6d696a4d",
+      "mismatches": []
+    },
+    "v30": {
+      "intact": true,
+      "lock_sha256": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8",
+      "mismatches": []
+    },
+    "v30r1": {
+      "intact": true,
+      "lock_sha256": "c631c3293859dd9bc61a38a61959f4bdfbf2e83464e54031899838834dac7a75",
+      "mismatches": []
+    }
+  },
+  "market_stitch": {
+    "anchored_symbols": 729,
+    "as_of": "2026-08-28",
+    "cutoff": "2026-08-21",
+    "diagnostics": [
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.918937070759078e-05,
+        "max_return_absolute_difference": 3.082572900992009e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8287328606902509,
+        "symbol": "000001"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.954123764804418e-05,
+        "max_return_absolute_difference": 2.612400286394756e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.3172160444797456,
+        "symbol": "000002"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003990147042718384,
+        "max_return_absolute_difference": 0.00024369788115219393,
+        "overlap_days": 15,
+        "stitch_factor": 0.8320271682340648,
+        "symbol": "000008"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007329018485374705,
+        "max_return_absolute_difference": 0.0006877473441464499,
+        "overlap_days": 15,
+        "stitch_factor": 0.7965447154471543,
+        "symbol": "000009"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004238981423221322,
+        "max_return_absolute_difference": 0.00020488567909815458,
+        "overlap_days": 15,
+        "stitch_factor": 0.8625042416016289,
+        "symbol": "000012"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.004837414956131769,
+        "max_return_absolute_difference": 0.0031171228585858968,
+        "overlap_days": 15,
+        "stitch_factor": 1.098519318431028,
+        "symbol": "000021"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0013078541545445965,
+        "max_return_absolute_difference": 0.0006852342260648125,
+        "overlap_days": 15,
+        "stitch_factor": 1.224942063837509,
+        "symbol": "000027"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001856863773778028,
+        "max_return_absolute_difference": 0.0015587303861704926,
+        "overlap_days": 15,
+        "stitch_factor": 1.060522151898734,
+        "symbol": "000031"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000039"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.017608692755454847,
+        "max_return_absolute_difference": 0.01851053534509295,
+        "overlap_days": 15,
+        "stitch_factor": 0.7098939169732843,
+        "symbol": "000059"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00021470439673920705,
+        "max_return_absolute_difference": 0.00014157082022436818,
+        "overlap_days": 15,
+        "stitch_factor": 0.7782454144746197,
+        "symbol": "000060"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0013789353502580148,
+        "max_return_absolute_difference": 0.0014970166123693396,
+        "overlap_days": 15,
+        "stitch_factor": 1.15533721007954,
+        "symbol": "000061"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003415225372371822,
+        "max_return_absolute_difference": 0.00029979321716000484,
+        "overlap_days": 15,
+        "stitch_factor": 0.9217550913857464,
+        "symbol": "000063"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010125728092631459,
+        "max_return_absolute_difference": 0.0008379233370315875,
+        "overlap_days": 15,
+        "stitch_factor": 0.8212125474750317,
+        "symbol": "000066"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010616602421522625,
+        "max_return_absolute_difference": 0.0006334691386302715,
+        "overlap_days": 15,
+        "stitch_factor": 0.9187739325411395,
+        "symbol": "000069"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007430309444478311,
+        "max_return_absolute_difference": 0.0004312941233164391,
+        "overlap_days": 15,
+        "stitch_factor": 1.0628194647318951,
+        "symbol": "000089"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006979701745628564,
+        "max_return_absolute_difference": 0.0005386425593418842,
+        "overlap_days": 15,
+        "stitch_factor": 0.8031661220761056,
+        "symbol": "000100"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00043665612488230643,
+        "max_return_absolute_difference": 0.000577365408497732,
+        "overlap_days": 15,
+        "stitch_factor": 0.652673159225631,
+        "symbol": "000156"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00016990067869870895,
+        "max_return_absolute_difference": 6.670822417120803e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7606171044432275,
+        "symbol": "000157"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000166"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000301"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.0591473410067636e-05,
+        "max_return_absolute_difference": 3.614525446971051e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0011713980742711,
+        "symbol": "000333"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.766344346749605e-05,
+        "max_return_absolute_difference": 3.288525248446028e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002533863204626,
+        "symbol": "000338"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000439584353365996,
+        "max_return_absolute_difference": 0.00016095601021959283,
+        "overlap_days": 15,
+        "stitch_factor": 0.7909459382314324,
+        "symbol": "000400"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.00522459411794296,
+        "max_return_absolute_difference": 0.0025746569814366627,
+        "overlap_days": 15,
+        "stitch_factor": 0.9838326200665716,
+        "symbol": "000401"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00019019911804207812,
+        "max_return_absolute_difference": 0.0001626801580816295,
+        "overlap_days": 15,
+        "stitch_factor": 0.8314435840707965,
+        "symbol": "000402"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00062397116810331,
+        "max_return_absolute_difference": 0.00037317147995952205,
+        "overlap_days": 15,
+        "stitch_factor": 1.1698497976317388,
+        "symbol": "000408"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0013617551894771207,
+        "max_return_absolute_difference": 0.0011504055992184181,
+        "overlap_days": 15,
+        "stitch_factor": 0.8180222267530585,
+        "symbol": "000415"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.002541876638614271,
+        "max_return_absolute_difference": 0.0012317069726455188,
+        "overlap_days": 15,
+        "stitch_factor": 1.0090796138774731,
+        "symbol": "000422"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.9918817202156944e-05,
+        "max_return_absolute_difference": 1.9182304502152192e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003925023150089,
+        "symbol": "000423"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0014268764668714518,
+        "max_return_absolute_difference": 0.0005375111469712035,
+        "overlap_days": 15,
+        "stitch_factor": 0.9730996535561443,
+        "symbol": "000425"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00035889819834145076,
+        "max_return_absolute_difference": 0.00046886590189809674,
+        "overlap_days": 15,
+        "stitch_factor": 0.799470298902762,
+        "symbol": "000488"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0008292629270489904,
+        "max_return_absolute_difference": 0.000522176557759213,
+        "overlap_days": 15,
+        "stitch_factor": 0.7639902676399026,
+        "symbol": "000503"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.0027903401364186564,
+        "max_return_absolute_difference": 0.0013193577981489568,
+        "overlap_days": 15,
+        "stitch_factor": 1.4607255229882359,
+        "symbol": "000528"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.0028408275204405697,
+        "max_return_absolute_difference": 0.0017815867472371627,
+        "overlap_days": 15,
+        "stitch_factor": 1.4483037156704361,
+        "symbol": "000536"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.588398452618712e-05,
+        "max_return_absolute_difference": 1.1614398079951016e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.2524127535253027,
+        "symbol": "000538"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.0030572550952725486,
+        "max_return_absolute_difference": 0.0024994935849460553,
+        "overlap_days": 15,
+        "stitch_factor": 0.798022073972386,
+        "symbol": "000539"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007519771170823031,
+        "max_return_absolute_difference": 0.0007646570831327804,
+        "overlap_days": 15,
+        "stitch_factor": 0.8526392961876833,
+        "symbol": "000553"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000555"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0016741847720831426,
+        "max_return_absolute_difference": 0.0015589037175108844,
+        "overlap_days": 15,
+        "stitch_factor": 1.0539770901080945,
+        "symbol": "000559"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015198715666131513,
+        "max_return_absolute_difference": 9.751116064826704e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.9259194736558849,
+        "symbol": "000568"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000581"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015150562627053166,
+        "max_return_absolute_difference": 7.26032045790248e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7156615925058547,
+        "symbol": "000596"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0009234480801778577,
+        "max_return_absolute_difference": 0.0004981019686274291,
+        "overlap_days": 15,
+        "stitch_factor": 1.095833918187945,
+        "symbol": "000598"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0014187903949525182,
+        "max_return_absolute_difference": 0.0011045790023542779,
+        "overlap_days": 15,
+        "stitch_factor": 0.8735495186253769,
+        "symbol": "000612"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000617"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000623"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000625"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000629"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000630"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000631"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000651"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000652"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000656"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000657"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000661"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0011287924673752947,
+        "max_return_absolute_difference": 0.0006965904322046024,
+        "overlap_days": 15,
+        "stitch_factor": 1.076973255055447,
+        "symbol": "000680"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00017616281233423514,
+        "max_return_absolute_difference": 8.774866600513853e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7587581121245146,
+        "symbol": "000685"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0008417524325139425,
+        "max_return_absolute_difference": 0.00039026553827614663,
+        "overlap_days": 15,
+        "stitch_factor": 1.1324498462439594,
+        "symbol": "000686"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000690"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000703"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0008509506706966263,
+        "max_return_absolute_difference": 0.0004649704324370951,
+        "overlap_days": 15,
+        "stitch_factor": 1.1022789425706472,
+        "symbol": "000708"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.002138718934430628,
+        "max_return_absolute_difference": 0.0008126998571771349,
+        "overlap_days": 15,
+        "stitch_factor": 1.1358024691358026,
+        "symbol": "000709"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000712"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.0029590149159309798,
+        "max_return_absolute_difference": 0.0026248109760809157,
+        "overlap_days": 15,
+        "stitch_factor": 0.7906105632551528,
+        "symbol": "000717"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000718"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0017506616718721002,
+        "max_return_absolute_difference": 0.0022862350799770503,
+        "overlap_days": 15,
+        "stitch_factor": 1.0433370544452076,
+        "symbol": "000723"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005030178353779835,
+        "max_return_absolute_difference": 0.0005531000031893107,
+        "overlap_days": 15,
+        "stitch_factor": 0.7066068087171256,
+        "symbol": "000725"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0012009496964417998,
+        "max_return_absolute_difference": 0.0007234727572619226,
+        "overlap_days": 15,
+        "stitch_factor": 1.1590907797300911,
+        "symbol": "000728"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.002590885783566921,
+        "max_return_absolute_difference": 0.001473827509436254,
+        "overlap_days": 15,
+        "stitch_factor": 0.836099851601128,
+        "symbol": "000729"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0008442126107688352,
+        "max_return_absolute_difference": 0.0007031424290723232,
+        "overlap_days": 15,
+        "stitch_factor": 0.8152344392341191,
+        "symbol": "000733"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.002019247203448704,
+        "max_return_absolute_difference": 0.0011767155648421124,
+        "overlap_days": 15,
+        "stitch_factor": 0.819135518586633,
+        "symbol": "000738"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000750"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000758"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000768"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000776"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000778"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000783"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000786"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000792"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.01449338108961895,
+        "max_return_absolute_difference": 0.00752236468630707,
+        "overlap_days": 15,
+        "stitch_factor": 0.7093904448105437,
+        "symbol": "000793"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000800"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004053279038079838,
+        "max_return_absolute_difference": 0.0002503072217963087,
+        "overlap_days": 15,
+        "stitch_factor": 0.7613328661424623,
+        "symbol": "000807"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.006267445713051156,
+        "max_return_absolute_difference": 0.005335074531787498,
+        "overlap_days": 15,
+        "stitch_factor": 0.7430067966395031,
+        "symbol": "000822"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018296153070638255,
+        "max_return_absolute_difference": 0.0008151595340206708,
+        "overlap_days": 15,
+        "stitch_factor": 0.8095003079849141,
+        "symbol": "000825"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.004781445138269502,
+        "max_return_absolute_difference": 0.003924931309894575,
+        "overlap_days": 15,
+        "stitch_factor": 0.7826982492276003,
+        "symbol": "000826"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0012315179221146222,
+        "max_return_absolute_difference": 0.0006511306960521601,
+        "overlap_days": 15,
+        "stitch_factor": 0.8566468933050263,
+        "symbol": "000831"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.014753874799492639,
+        "max_return_absolute_difference": 0.014050370062662187,
+        "overlap_days": 15,
+        "stitch_factor": 0.7681595043636674,
+        "symbol": "000839"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010258855217537555,
+        "max_return_absolute_difference": 3.7462676057420374e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.1235442375045006,
+        "symbol": "000858"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.006503003324255574,
+        "max_return_absolute_difference": 0.00441179640616518,
+        "overlap_days": 15,
+        "stitch_factor": 0.9421514462138446,
+        "symbol": "000860"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002455668777721076,
+        "max_return_absolute_difference": 0.00011791357665258406,
+        "overlap_days": 15,
+        "stitch_factor": 0.7844872720190166,
+        "symbol": "000869"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0008203537259745541,
+        "max_return_absolute_difference": 0.000929707320488804,
+        "overlap_days": 15,
+        "stitch_factor": 0.8620886403599262,
+        "symbol": "000876"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0015853999254413775,
+        "max_return_absolute_difference": 0.0008970981507254727,
+        "overlap_days": 15,
+        "stitch_factor": 0.8297178014043893,
+        "symbol": "000877"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.002828765607935102,
+        "max_return_absolute_difference": 0.0026263760516436196,
+        "overlap_days": 15,
+        "stitch_factor": 0.8681986763338607,
+        "symbol": "000878"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00029844508984799845,
+        "max_return_absolute_difference": 0.0004944385132014117,
+        "overlap_days": 15,
+        "stitch_factor": 0.7531740104555639,
+        "symbol": "000883"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.9758551446202866e-05,
+        "max_return_absolute_difference": 2.0378955589928083e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000197589418542,
+        "symbol": "000895"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.010424930888275119,
+        "max_return_absolute_difference": 0.008027634439220277,
+        "overlap_days": 15,
+        "stitch_factor": 0.9633928571428572,
+        "symbol": "000897"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0019142031337153753,
+        "max_return_absolute_difference": 0.001958610495195967,
+        "overlap_days": 15,
+        "stitch_factor": 1.0041753653444676,
+        "symbol": "000898"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005538835046501323,
+        "max_return_absolute_difference": 0.00025106181786160864,
+        "overlap_days": 15,
+        "stitch_factor": 0.9762235334953142,
+        "symbol": "000900"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000917"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.0021647252860530486,
+        "max_return_absolute_difference": 0.003910343980166431,
+        "overlap_days": 15,
+        "stitch_factor": 0.7431818181818182,
+        "symbol": "000927"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0009460704193828828,
+        "max_return_absolute_difference": 0.0010070472966374755,
+        "overlap_days": 15,
+        "stitch_factor": 1.0018921475875118,
+        "symbol": "000932"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005277878917631096,
+        "max_return_absolute_difference": 0.0002813480473465857,
+        "overlap_days": 15,
+        "stitch_factor": 0.9076682581336912,
+        "symbol": "000933"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00022618698483600763,
+        "max_return_absolute_difference": 0.0002551142684047436,
+        "overlap_days": 15,
+        "stitch_factor": 0.8054243219597551,
+        "symbol": "000937"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002214575269643415,
+        "max_return_absolute_difference": 0.00015405841409488197,
+        "overlap_days": 15,
+        "stitch_factor": 0.6676580511695982,
+        "symbol": "000938"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010272376696218721,
+        "max_return_absolute_difference": 0.00017700479802096325,
+        "overlap_days": 15,
+        "stitch_factor": 0.7812626468343014,
+        "symbol": "000951"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018994165785092276,
+        "max_return_absolute_difference": 0.0014119914808724543,
+        "overlap_days": 15,
+        "stitch_factor": 0.966029265403567,
+        "symbol": "000959"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000960"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.9073993312977997e-05,
+        "max_return_absolute_difference": 3.0025936789579433e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000963"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001021941689209438,
+        "max_return_absolute_difference": 0.0006892948069417981,
+        "overlap_days": 15,
+        "stitch_factor": 0.7776998597475456,
+        "symbol": "000968"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00022972069158766484,
+        "max_return_absolute_difference": 0.00023383742548821473,
+        "overlap_days": 15,
+        "stitch_factor": 0.760323864066979,
+        "symbol": "000969"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000970"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000975"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000977"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000983"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000988"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "000999"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "001280"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "001289"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "001391"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "001965"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "001979"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002001"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002007"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002008"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002010"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002024"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002027"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002028"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.912689670320212e-05,
+        "max_return_absolute_difference": 2.9272177795025556e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7411451362667122,
+        "symbol": "002032"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.816999072012386e-05,
+        "max_return_absolute_difference": 7.044091319141632e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7578927067703767,
+        "symbol": "002038"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00021986362752102195,
+        "max_return_absolute_difference": 0.00026916396941367715,
+        "overlap_days": 15,
+        "stitch_factor": 0.7698590112171781,
+        "symbol": "002044"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.6434843525491303e-05,
+        "max_return_absolute_difference": 2.4743014072958758e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7407332665274464,
+        "symbol": "002049"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.5140187650540824e-05,
+        "max_return_absolute_difference": 2.8755353823406438e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7710548647835609,
+        "symbol": "002050"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002051"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002064"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002065"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002069"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002073"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00011154077627195669,
+        "max_return_absolute_difference": 0.00010664290333151083,
+        "overlap_days": 15,
+        "stitch_factor": 1.0013923013923014,
+        "symbol": "002074"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012255529594573655,
+        "max_return_absolute_difference": 9.323802732419395e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004730688653105,
+        "symbol": "002081"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000209349290277272,
+        "max_return_absolute_difference": 0.00012446639312324592,
+        "overlap_days": 15,
+        "stitch_factor": 1.0015043766208516,
+        "symbol": "002085"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002092"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002106"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00020661157024792765,
+        "max_return_absolute_difference": 0.00020759809009751606,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002120"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002122"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002128"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00020533880903483848,
+        "max_return_absolute_difference": 0.0002004718887411716,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002129"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00025835488868564127,
+        "max_return_absolute_difference": 0.00012012468922795172,
+        "overlap_days": 15,
+        "stitch_factor": 1.0013945189698061,
+        "symbol": "002131"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00014428450601955412,
+        "max_return_absolute_difference": 0.00016653073030847843,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003125000076294,
+        "symbol": "002142"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002146"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002152"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.676229727571755e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002153"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 13,
+        "stitch_factor": 1.0,
+        "symbol": "002155"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.8521753460640795e-05,
+        "max_return_absolute_difference": 2.5221796720487077e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0012210012210012,
+        "symbol": "002157"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002174"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.078767872237819e-05,
+        "max_return_absolute_difference": 1.9091224462530754e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000793950100237,
+        "symbol": "002179"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002180"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002183"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002195"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002202"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002230"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002236"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002241"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002242"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002244"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002252"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002269"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002271"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00036809618204958205,
+        "max_return_absolute_difference": 0.0003648206038173729,
+        "overlap_days": 15,
+        "stitch_factor": 1.0014331780723755,
+        "symbol": "002275"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002292"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.6464256067514356e-05,
+        "max_return_absolute_difference": 3.210388522245644e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0005928751868847,
+        "symbol": "002294"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.958951415365512e-06,
+        "max_return_absolute_difference": 6.087559395906439e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002197802303963,
+        "symbol": "002299"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.142060050460472e-05,
+        "max_return_absolute_difference": 4.2006296506524876e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004183145725587,
+        "symbol": "002304"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002310"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.082360580286547e-05,
+        "max_return_absolute_difference": 3.195847167347665e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001197636189434,
+        "symbol": "002311"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002344"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.3836630100683145e-05,
+        "max_return_absolute_difference": 3.5695942437463657e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002553082889143,
+        "symbol": "002352"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.0480207299323752e-05,
+        "max_return_absolute_difference": 1.0114167634300841e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000258326500728,
+        "symbol": "002353"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.0964800099276815e-06,
+        "max_return_absolute_difference": 2.123169297041372e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002371"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004159468835829294,
+        "max_return_absolute_difference": 0.00041149179826271975,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003988831272437,
+        "symbol": "002375"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002378"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.935443520261764e-06,
+        "max_return_absolute_difference": 9.325573340213111e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.000006935491621,
+        "symbol": "002384"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002385"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002399"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002400"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002405"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.810583243537337e-05,
+        "max_return_absolute_difference": 6.266169450142023e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0016712252325741,
+        "symbol": "002410"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002414"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002415"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002416"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.6239967875782995e-05,
+        "max_return_absolute_difference": 3.019074726795523e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004602693762954,
+        "symbol": "002422"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002424"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002426"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002429"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002431"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002456"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002459"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.518879674355933e-05,
+        "max_return_absolute_difference": 1.475151806862307e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002460"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002463"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002465"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.100352414746158e-05,
+        "max_return_absolute_difference": 5.004203114222783e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0055391345781186,
+        "symbol": "002466"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002468"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002470"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002475"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.735588572974848e-05,
+        "max_return_absolute_difference": 5.4666335156161594e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004022590773918,
+        "symbol": "002493"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002498"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0013521559884017709,
+        "max_return_absolute_difference": 0.0014741006120317923,
+        "overlap_days": 15,
+        "stitch_factor": 1.0041987424340366,
+        "symbol": "002500"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.347418062326639e-05,
+        "max_return_absolute_difference": 7.41560142356601e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.00036563071298,
+        "symbol": "002508"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010512669843465439,
+        "max_return_absolute_difference": 0.00010652095328311795,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001006240401646,
+        "symbol": "002532"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.316502457992534e-05,
+        "max_return_absolute_difference": 4.1836422122187855e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0005450499295745,
+        "symbol": "002555"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013009842780542513,
+        "max_return_absolute_difference": 6.963572153095843e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0013085802488249,
+        "symbol": "002558"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002568"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002570"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.047977152581538e-05,
+        "max_return_absolute_difference": 1.2920656418113907e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.000802794467185,
+        "symbol": "002572"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002594"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002600"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002601"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002602"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002603"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002607"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002608"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002624"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002625"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002648"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002653"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002673"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002709"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002714"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002736"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002739"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002756"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002773"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002791"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002797"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.393161471256569e-05,
+        "max_return_absolute_difference": 5.3166084671874e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002812"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002821"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010871162856818106,
+        "max_return_absolute_difference": 0.0001445051436093081,
+        "overlap_days": 15,
+        "stitch_factor": 1.0036937204535783,
+        "symbol": "002831"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002837"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002839"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002841"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002916"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002920"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.655660878429615e-05,
+        "max_return_absolute_difference": 4.8106822360227675e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0010417757389258,
+        "symbol": "002925"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002938"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002939"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002945"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "002958"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "003816"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.175496942801729e-05,
+        "max_return_absolute_difference": 7.818401434533939e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000717601185731,
+        "symbol": "300002"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.209954723115693e-05,
+        "max_return_absolute_difference": 2.6210387504166377e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0006321113147227,
+        "symbol": "300003"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.0682468957523561e-05,
+        "max_return_absolute_difference": 1.0194024613996433e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000302449900573,
+        "symbol": "300014"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300015"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.4847922905468778e-05,
+        "max_return_absolute_difference": 2.79790605577368e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000486915818865,
+        "symbol": "300017"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300024"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300027"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300033"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.435891042240073e-06,
+        "max_return_absolute_difference": 3.6952511615062633e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000508931752252,
+        "symbol": "300058"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.542490202710027e-06,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300059"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00014419610670501903,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300070"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300072"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300085"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300122"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.9328416039127205e-06,
+        "max_return_absolute_difference": 7.181019130220179e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000069328896686,
+        "symbol": "300124"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.115003907836147e-05,
+        "max_return_absolute_difference": 5.769415311795978e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000545137374617,
+        "symbol": "300133"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300136"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.1305730849993125e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300142"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300144"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.5045023975979177e-05,
+        "max_return_absolute_difference": 8.37546835508185e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0005264681881596,
+        "symbol": "300146"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.15232818517164e-05,
+        "max_return_absolute_difference": 3.5677129622047055e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0009086778736938,
+        "symbol": "300168"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300182"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.124136810461202e-05,
+        "max_return_absolute_difference": 8.145312372720426e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300207"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300223"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.782418080033878e-05,
+        "max_return_absolute_difference": 3.4015256997976806e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000654293504456,
+        "symbol": "300251"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.410613288851621e-06,
+        "max_return_absolute_difference": 9.095125922176095e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000094107018493,
+        "symbol": "300274"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.7722235804716888e-05,
+        "max_return_absolute_difference": 1.7112399399943357e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003649635036498,
+        "symbol": "300296"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.8526811009778044e-06,
+        "max_return_absolute_difference": 1.896906574705426e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000037166878717,
+        "symbol": "300308"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300315"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.684635829153237e-05,
+        "max_return_absolute_difference": 2.7494995135990408e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300316"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.8525126872726005e-05,
+        "max_return_absolute_difference": 1.704224758447559e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.000891790623872,
+        "symbol": "300347"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300394"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300408"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300413"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300418"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300433"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.378016085797135e-05,
+        "max_return_absolute_difference": 7.95413732441741e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300442"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300450"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300454"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.989675579385015e-06,
+        "max_return_absolute_difference": 8.143604182775377e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0000166132287767,
+        "symbol": "300476"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300496"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300498"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300502"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300529"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300558"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300595"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300601"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300628"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300661"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300676"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300677"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300750"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300751"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300759"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300760"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300763"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300769"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300782"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300803"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300832"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300866"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002113009324711257,
+        "max_return_absolute_difference": 0.00025664399717539865,
+        "overlap_days": 15,
+        "stitch_factor": 1.0050287266396514,
+        "symbol": "300888"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300896"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300919"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300957"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300979"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "300999"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.9399792520943286e-05,
+        "max_return_absolute_difference": 3.6110141728995515e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "301165"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "301236"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "301269"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "301308"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "302132"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600000"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600004"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010969522942755328,
+        "max_return_absolute_difference": 0.0006059944411733742,
+        "overlap_days": 15,
+        "stitch_factor": 0.7687736358725014,
+        "symbol": "600006"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00034665078394813253,
+        "max_return_absolute_difference": 0.0003762690691032633,
+        "overlap_days": 15,
+        "stitch_factor": 1.0021629416005768,
+        "symbol": "600008"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001409444278017702,
+        "max_return_absolute_difference": 0.00014648160632058094,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001409642959338,
+        "symbol": "600009"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600010"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006026967678884887,
+        "max_return_absolute_difference": 0.0003967661269853595,
+        "overlap_days": 15,
+        "stitch_factor": 0.7812400635930048,
+        "symbol": "600011"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00033650822139108527,
+        "max_return_absolute_difference": 0.0002800965227052199,
+        "overlap_days": 15,
+        "stitch_factor": 0.7734651810701482,
+        "symbol": "600015"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.467863377110586e-05,
+        "max_return_absolute_difference": 0.00012540213505574105,
+        "overlap_days": 15,
+        "stitch_factor": 0.7702475366498438,
+        "symbol": "600016"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600017"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000657684512788359,
+        "max_return_absolute_difference": 0.00031934118290199986,
+        "overlap_days": 15,
+        "stitch_factor": 11.296482412060302,
+        "symbol": "600018"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003606438552909985,
+        "max_return_absolute_difference": 0.0006693226950448272,
+        "overlap_days": 15,
+        "stitch_factor": 1.0009794854730183,
+        "symbol": "600019"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600021"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010726972714594218,
+        "max_return_absolute_difference": 0.0014473756076246458,
+        "overlap_days": 15,
+        "stitch_factor": 0.7827004219409283,
+        "symbol": "600022"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600023"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006925113721231169,
+        "max_return_absolute_difference": 0.00024531322625631624,
+        "overlap_days": 15,
+        "stitch_factor": 1.0152329749103943,
+        "symbol": "600025"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005492709178946953,
+        "max_return_absolute_difference": 0.00045327126363647885,
+        "overlap_days": 15,
+        "stitch_factor": 0.7784596218443067,
+        "symbol": "600026"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005798977761595214,
+        "max_return_absolute_difference": 0.0006399069226294962,
+        "overlap_days": 15,
+        "stitch_factor": 0.7721649484536083,
+        "symbol": "600027"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005549118063599146,
+        "max_return_absolute_difference": 0.0008972945210650174,
+        "overlap_days": 15,
+        "stitch_factor": 0.788091068301226,
+        "symbol": "600028"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600029"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.648286975843078e-05,
+        "max_return_absolute_difference": 5.631401401962055e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7424740540192097,
+        "symbol": "600030"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.296563089299042e-05,
+        "max_return_absolute_difference": 1.0952080866655223e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.9996158712942878,
+        "symbol": "600031"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004899809714213887,
+        "max_return_absolute_difference": 0.0007604869002151293,
+        "overlap_days": 15,
+        "stitch_factor": 0.8108651911468812,
+        "symbol": "600033"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 5.96131455834481e-05,
+        "max_return_absolute_difference": 6.0320356310095136e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0058995657919576,
+        "symbol": "600036"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000366502466173646,
+        "max_return_absolute_difference": 0.00037503335236022117,
+        "overlap_days": 15,
+        "stitch_factor": 0.7763367463026165,
+        "symbol": "600037"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0012444211050752774,
+        "max_return_absolute_difference": 0.0010296964054865576,
+        "overlap_days": 15,
+        "stitch_factor": 1.0560490681921357,
+        "symbol": "600038"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600039"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600048"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0014877993823481095,
+        "max_return_absolute_difference": 0.0016991629310467715,
+        "overlap_days": 15,
+        "stitch_factor": 0.7623421354764637,
+        "symbol": "600050"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.006994229613118352,
+        "max_return_absolute_difference": 0.0037585514228928307,
+        "overlap_days": 15,
+        "stitch_factor": 0.8323027454860252,
+        "symbol": "600058"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018784737337347313,
+        "max_return_absolute_difference": 0.0016348233438481241,
+        "overlap_days": 15,
+        "stitch_factor": 1.2085053548533435,
+        "symbol": "600060"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0015404067437198021,
+        "max_return_absolute_difference": 0.0007219963798399398,
+        "overlap_days": 15,
+        "stitch_factor": 0.719000163371998,
+        "symbol": "600061"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600062"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600066"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600079"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600085"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600089"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600096"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600098"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600100"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600104"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600108"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600109"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600111"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600115"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012218030009836234,
+        "max_return_absolute_difference": 6.452867917539074e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0132664093845096,
+        "symbol": "600118"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600123"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005704989779697911,
+        "max_return_absolute_difference": 0.00030924522229003326,
+        "overlap_days": 15,
+        "stitch_factor": 0.8794188413844161,
+        "symbol": "600125"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004279094580164067,
+        "max_return_absolute_difference": 0.00012737815416075104,
+        "overlap_days": 15,
+        "stitch_factor": 1.187579104974127,
+        "symbol": "600132"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.915424446665483e-05,
+        "max_return_absolute_difference": 4.0790729266326764e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.9999225059285465,
+        "symbol": "600143"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600150"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.011639377862430411,
+        "max_return_absolute_difference": 0.009267004730375117,
+        "overlap_days": 15,
+        "stitch_factor": 0.8571891354740785,
+        "symbol": "600151"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001246891552495466,
+        "max_return_absolute_difference": 6.78988077600362e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.913488098736409,
+        "symbol": "600153"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00016581181196873018,
+        "max_return_absolute_difference": 0.00011325784653726245,
+        "overlap_days": 15,
+        "stitch_factor": 0.8129546241773467,
+        "symbol": "600157"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.004974872810987296,
+        "max_return_absolute_difference": 0.00285581753141817,
+        "overlap_days": 15,
+        "stitch_factor": 0.8515486725663717,
+        "symbol": "600158"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005626796352932173,
+        "max_return_absolute_difference": 0.00031888599545537577,
+        "overlap_days": 15,
+        "stitch_factor": 0.8930711939213081,
+        "symbol": "600160"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010151415954795517,
+        "max_return_absolute_difference": 8.750445295058196e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7711147954795137,
+        "symbol": "600161"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.002254144092415311,
+        "max_return_absolute_difference": 0.0010034382673281828,
+        "overlap_days": 15,
+        "stitch_factor": 1.2694433212023184,
+        "symbol": "600166"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001893018127573809,
+        "max_return_absolute_difference": 0.0010943434399168783,
+        "overlap_days": 15,
+        "stitch_factor": 0.7814155031295138,
+        "symbol": "600169"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600170"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600176"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002903645879017702,
+        "max_return_absolute_difference": 0.00011052159852820154,
+        "overlap_days": 15,
+        "stitch_factor": 1.1667757711117102,
+        "symbol": "600177"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00014030754256477707,
+        "max_return_absolute_difference": 5.425773041345394e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7522060137504291,
+        "symbol": "600183"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002550707430322152,
+        "max_return_absolute_difference": 0.00017955938545877181,
+        "overlap_days": 15,
+        "stitch_factor": 0.8014702748527593,
+        "symbol": "600188"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001160279279925014,
+        "max_return_absolute_difference": 0.0009369820876177215,
+        "overlap_days": 15,
+        "stitch_factor": 1.1284959862277266,
+        "symbol": "600196"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005002641471412161,
+        "max_return_absolute_difference": 0.00048487886890313803,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004789281917363,
+        "symbol": "600208"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600210"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600216"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600219"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600221"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600233"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600236"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600239"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600246"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600251"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600252"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600256"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600259"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600266"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005664959962430327,
+        "max_return_absolute_difference": 0.00035049334750869576,
+        "overlap_days": 15,
+        "stitch_factor": 0.7660183050578484,
+        "symbol": "600267"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018407991621007813,
+        "max_return_absolute_difference": 0.0006278357624317499,
+        "overlap_days": 15,
+        "stitch_factor": 1.141437755698422,
+        "symbol": "600269"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013503028498162983,
+        "max_return_absolute_difference": 8.742450444021443e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7892383955349305,
+        "symbol": "600271"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.1220831340974513e-05,
+        "max_return_absolute_difference": 5.2625407043205286e-06,
+        "overlap_days": 15,
+        "stitch_factor": 0.8000614750949022,
+        "symbol": "600276"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0009353281659958412,
+        "max_return_absolute_difference": 0.0007374491183325116,
+        "overlap_days": 15,
+        "stitch_factor": 0.9812568908489525,
+        "symbol": "600282"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005284989946521268,
+        "max_return_absolute_difference": 0.00031992221420318323,
+        "overlap_days": 15,
+        "stitch_factor": 0.7747928774157755,
+        "symbol": "600299"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000743954056965368,
+        "max_return_absolute_difference": 0.0006891025641024839,
+        "overlap_days": 15,
+        "stitch_factor": 0.7816234033786568,
+        "symbol": "600300"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018616419476273904,
+        "max_return_absolute_difference": 0.0022817270840496118,
+        "overlap_days": 15,
+        "stitch_factor": 0.790436005625879,
+        "symbol": "600307"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.335780158459812e-06,
+        "max_return_absolute_difference": 4.395673999013638e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600309"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600312"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.730501803328906e-05,
+        "max_return_absolute_difference": 1.5221289076050581e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002897011418905,
+        "symbol": "600315"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001925264932103321,
+        "max_return_absolute_difference": 0.0001487621197311384,
+        "overlap_days": 15,
+        "stitch_factor": 1.223341586271664,
+        "symbol": "600316"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002799004538135419,
+        "max_return_absolute_difference": 0.00029305662352197004,
+        "overlap_days": 15,
+        "stitch_factor": 0.8028913963328632,
+        "symbol": "600320"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00040662213186171137,
+        "max_return_absolute_difference": 0.00035853550429720826,
+        "overlap_days": 15,
+        "stitch_factor": 0.99721059972106,
+        "symbol": "600325"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012669371524853812,
+        "max_return_absolute_difference": 8.312354719164361e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8009937478929786,
+        "symbol": "600331"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00016655611740301612,
+        "max_return_absolute_difference": 0.00017439223013271388,
+        "overlap_days": 15,
+        "stitch_factor": 0.7705905205905206,
+        "symbol": "600332"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600339"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012370161118013812,
+        "max_return_absolute_difference": 0.00014741122917993899,
+        "overlap_days": 15,
+        "stitch_factor": 0.7701800524891689,
+        "symbol": "600340"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.854875196877664e-05,
+        "max_return_absolute_difference": 4.0692354209781456e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7304155563651777,
+        "symbol": "600346"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.758765771650246e-05,
+        "max_return_absolute_difference": 7.289997174741991e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.770044643934781,
+        "symbol": "600348"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002805896083601933,
+        "max_return_absolute_difference": 0.00044883383193883297,
+        "overlap_days": 15,
+        "stitch_factor": 0.7604991780347289,
+        "symbol": "600350"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013611737626018083,
+        "max_return_absolute_difference": 0.00014352135587203385,
+        "overlap_days": 15,
+        "stitch_factor": 0.7156993148475255,
+        "symbol": "600352"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015267534033647223,
+        "max_return_absolute_difference": 0.00012463018808894777,
+        "overlap_days": 15,
+        "stitch_factor": 0.8204973624717408,
+        "symbol": "600362"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600369"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00031249458977511413,
+        "max_return_absolute_difference": 0.0005271387197187671,
+        "overlap_days": 15,
+        "stitch_factor": 0.7440527371739754,
+        "symbol": "600372"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002103844841889746,
+        "max_return_absolute_difference": 0.00037875472303672275,
+        "overlap_days": 15,
+        "stitch_factor": 0.7461945024908712,
+        "symbol": "600373"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006873679767207541,
+        "max_return_absolute_difference": 0.0005066834983684654,
+        "overlap_days": 15,
+        "stitch_factor": 0.7739439429235704,
+        "symbol": "600376"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00033403181946545235,
+        "max_return_absolute_difference": 0.0003220611916266991,
+        "overlap_days": 15,
+        "stitch_factor": 0.7632607337184314,
+        "symbol": "600377"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00022269364732063757,
+        "max_return_absolute_difference": 0.0001682629704752303,
+        "overlap_days": 15,
+        "stitch_factor": 0.7333966664850741,
+        "symbol": "600380"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00011922085952797978,
+        "max_return_absolute_difference": 0.00015298181556411272,
+        "overlap_days": 15,
+        "stitch_factor": 0.803388090349076,
+        "symbol": "600383"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004913489087154943,
+        "max_return_absolute_difference": 0.0003368611456735504,
+        "overlap_days": 15,
+        "stitch_factor": 0.6705255793612845,
+        "symbol": "600390"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003415143534539755,
+        "max_return_absolute_difference": 0.00027708311319329937,
+        "overlap_days": 15,
+        "stitch_factor": 0.7610619469026548,
+        "symbol": "600395"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000982013624947209,
+        "max_return_absolute_difference": 0.00046387203699249646,
+        "overlap_days": 15,
+        "stitch_factor": 0.8289044472172158,
+        "symbol": "600398"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003173472241932984,
+        "max_return_absolute_difference": 0.0002805372199541356,
+        "overlap_days": 15,
+        "stitch_factor": 0.769793597966522,
+        "symbol": "600403"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.761164859178884e-06,
+        "max_return_absolute_difference": 9.694787476033362e-06,
+        "overlap_days": 15,
+        "stitch_factor": 0.8475653716459853,
+        "symbol": "600406"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012020404453583211,
+        "max_return_absolute_difference": 0.00010068639391835887,
+        "overlap_days": 15,
+        "stitch_factor": 0.9243746138628086,
+        "symbol": "600415"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.840582562481437e-05,
+        "max_return_absolute_difference": 9.558401835207953e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600418"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.856728671209787e-05,
+        "max_return_absolute_difference": 5.913469383211911e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.752174319894768,
+        "symbol": "600426"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00019382868456485625,
+        "max_return_absolute_difference": 0.00018806170206031592,
+        "overlap_days": 15,
+        "stitch_factor": 0.7764842095793472,
+        "symbol": "600428"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.8524991075196127e-05,
+        "max_return_absolute_difference": 1.7868032141210577e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.78208781285683,
+        "symbol": "600436"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.249136823819555e-05,
+        "max_return_absolute_difference": 4.641873677135866e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8698219592522547,
+        "symbol": "600438"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.225969018138546e-05,
+        "max_return_absolute_difference": 9.015602501882825e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7579549385197575,
+        "symbol": "600446"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001931390691550794,
+        "max_return_absolute_difference": 0.00012894337490054752,
+        "overlap_days": 15,
+        "stitch_factor": 0.7952675627323249,
+        "symbol": "600456"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.405612145954365e-05,
+        "max_return_absolute_difference": 3.207005903593796e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7355151196635008,
+        "symbol": "600460"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002683569265832242,
+        "max_return_absolute_difference": 0.0002256203280408542,
+        "overlap_days": 15,
+        "stitch_factor": 0.7723098657876147,
+        "symbol": "600481"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00011855432615415218,
+        "max_return_absolute_difference": 7.616354757855603e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7521859856968949,
+        "symbol": "600482"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.878824128797589e-05,
+        "max_return_absolute_difference": 3.284731746067138e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.689810623893534,
+        "symbol": "600487"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00014755965853274766,
+        "max_return_absolute_difference": 8.732341958572754e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7855023461245387,
+        "symbol": "600489"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0011387709465376927,
+        "max_return_absolute_difference": 0.0006351866013531993,
+        "overlap_days": 15,
+        "stitch_factor": 0.8017233760857909,
+        "symbol": "600497"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00034881585479284993,
+        "max_return_absolute_difference": 0.0002016750411142354,
+        "overlap_days": 15,
+        "stitch_factor": 0.6769403430638257,
+        "symbol": "600498"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.004889586267757151,
+        "max_return_absolute_difference": 0.0033603664488999208,
+        "overlap_days": 15,
+        "stitch_factor": 0.9548665307347194,
+        "symbol": "600500"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003675050431346527,
+        "max_return_absolute_difference": 0.0003864745143815629,
+        "overlap_days": 15,
+        "stitch_factor": 0.77834179357022,
+        "symbol": "600508"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0009273669229565851,
+        "max_return_absolute_difference": 0.0005353636806952888,
+        "overlap_days": 15,
+        "stitch_factor": 1.0211082323219947,
+        "symbol": "600515"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013077023669416654,
+        "max_return_absolute_difference": 0.000130395097144409,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600516"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.390217592069149e-05,
+        "max_return_absolute_difference": 0.00011374627134230764,
+        "overlap_days": 15,
+        "stitch_factor": 0.8002346247936671,
+        "symbol": "600517"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.085664681822813e-05,
+        "max_return_absolute_difference": 0.00014623511329592276,
+        "overlap_days": 15,
+        "stitch_factor": 0.8015672311879912,
+        "symbol": "600518"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.5334468201899654e-05,
+        "max_return_absolute_difference": 1.5205419737762682e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8923731416491657,
+        "symbol": "600519"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012583295491896962,
+        "max_return_absolute_difference": 9.718518643109242e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.998381740536761,
+        "symbol": "600521"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.50625040507802e-05,
+        "max_return_absolute_difference": 6.562950992439198e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7577864879672946,
+        "symbol": "600522"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006936191193931407,
+        "max_return_absolute_difference": 0.0002767379635360001,
+        "overlap_days": 15,
+        "stitch_factor": 0.7357955097444708,
+        "symbol": "600528"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.400937573400547e-05,
+        "max_return_absolute_difference": 5.892296028187083e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7771671932584446,
+        "symbol": "600535"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.85980020285848e-05,
+        "max_return_absolute_difference": 9.227152507329528e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.746713456989355,
+        "symbol": "600546"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.14965000319345e-05,
+        "max_return_absolute_difference": 2.3602818828516448e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8001614862269759,
+        "symbol": "600547"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.103233244236783e-05,
+        "max_return_absolute_difference": 4.527967426359858e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7754421301295262,
+        "symbol": "600549"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00021814167453837463,
+        "max_return_absolute_difference": 0.00023965310584705968,
+        "overlap_days": 15,
+        "stitch_factor": 0.7155007187350263,
+        "symbol": "600550"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015479774028182014,
+        "max_return_absolute_difference": 0.00022809118299937925,
+        "overlap_days": 15,
+        "stitch_factor": 0.7413817861316327,
+        "symbol": "600566"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001687451125653272,
+        "max_return_absolute_difference": 0.0019673048746355892,
+        "overlap_days": 15,
+        "stitch_factor": 0.7862190812720848,
+        "symbol": "600569"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.4563463060012225e-05,
+        "max_return_absolute_difference": 1.3939108334914962e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7145757886074551,
+        "symbol": "600570"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006907428978111252,
+        "max_return_absolute_difference": 0.0005380577427822608,
+        "overlap_days": 15,
+        "stitch_factor": 0.7524788835842819,
+        "symbol": "600578"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600582"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012870430237166275,
+        "max_return_absolute_difference": 0.00010582293568872636,
+        "overlap_days": 15,
+        "stitch_factor": 0.8072703979501961,
+        "symbol": "600583"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600584"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600585"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013435543693418595,
+        "max_return_absolute_difference": 9.949410141019133e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.6695239678498663,
+        "symbol": "600588"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600596"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600597"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005571209510840669,
+        "max_return_absolute_difference": 0.0004786890509450581,
+        "overlap_days": 15,
+        "stitch_factor": 0.7495161288308548,
+        "symbol": "600598"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600600"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600601"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600606"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600611"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600633"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600635"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600637"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600638"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600639"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00040963680242511735,
+        "max_return_absolute_difference": 0.0003989648444709948,
+        "overlap_days": 15,
+        "stitch_factor": 1.2178944330989796,
+        "symbol": "600642"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0022545787552523677,
+        "max_return_absolute_difference": 0.0014518377985388575,
+        "overlap_days": 15,
+        "stitch_factor": 1.043507203439637,
+        "symbol": "600643"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001039883921367668,
+        "max_return_absolute_difference": 0.0006133016619827014,
+        "overlap_days": 15,
+        "stitch_factor": 0.8544267877412031,
+        "symbol": "600648"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.007738600011344188,
+        "max_return_absolute_difference": 0.007647687708274731,
+        "overlap_days": 15,
+        "stitch_factor": 3.756082071291755,
+        "symbol": "600649"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.00297599708119356,
+        "max_return_absolute_difference": 0.0013599803623979279,
+        "overlap_days": 15,
+        "stitch_factor": 5.164208564738191,
+        "symbol": "600654"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0009796650938578289,
+        "max_return_absolute_difference": 0.0006780339175099792,
+        "overlap_days": 15,
+        "stitch_factor": 1.5181672099536292,
+        "symbol": "600655"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.009013057454868134,
+        "max_return_absolute_difference": 0.006809893639570186,
+        "overlap_days": 15,
+        "stitch_factor": 0.7313621430376548,
+        "symbol": "600657"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.019342528631235e-05,
+        "max_return_absolute_difference": 4.184344529223338e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.4295030682676284,
+        "symbol": "600660"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0018490612309343124,
+        "max_return_absolute_difference": 0.0004079656407329768,
+        "overlap_days": 15,
+        "stitch_factor": 1.0616749174917492,
+        "symbol": "600663"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.010744813978856849,
+        "max_return_absolute_difference": 0.002999481277235594,
+        "overlap_days": 15,
+        "stitch_factor": 1.2441952656019932,
+        "symbol": "600664"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.004084707958156186,
+        "max_return_absolute_difference": 0.002854867625346369,
+        "overlap_days": 15,
+        "stitch_factor": 1.1082289803220036,
+        "symbol": "600666"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00023690297428458074,
+        "max_return_absolute_difference": 0.00013417924361636135,
+        "overlap_days": 15,
+        "stitch_factor": 1.185387347099829,
+        "symbol": "600674"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007408408436242464,
+        "max_return_absolute_difference": 0.0005017956066069029,
+        "overlap_days": 15,
+        "stitch_factor": 0.8082023359971897,
+        "symbol": "600675"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0012227934532966778,
+        "max_return_absolute_difference": 0.0010604059927216136,
+        "overlap_days": 15,
+        "stitch_factor": 1.110701159185529,
+        "symbol": "600682"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00030012680252733404,
+        "max_return_absolute_difference": 0.000327594715849977,
+        "overlap_days": 15,
+        "stitch_factor": 0.7898109705265146,
+        "symbol": "600685"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.001418586500917307,
+        "max_return_absolute_difference": 0.001291149221368082,
+        "overlap_days": 15,
+        "stitch_factor": 0.7113412023482307,
+        "symbol": "600688"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00022186280079039555,
+        "max_return_absolute_difference": 7.600942446628345e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.232195588945582,
+        "symbol": "600690"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007689766800034192,
+        "max_return_absolute_difference": 0.00031038459499521664,
+        "overlap_days": 15,
+        "stitch_factor": 0.9317757938358563,
+        "symbol": "600694"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000249985072457215,
+        "max_return_absolute_difference": 0.00012995682459149283,
+        "overlap_days": 15,
+        "stitch_factor": 1.0681318343611448,
+        "symbol": "600703"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010550612968078799,
+        "max_return_absolute_difference": 0.0006593453506988922,
+        "overlap_days": 15,
+        "stitch_factor": 0.8489992852037169,
+        "symbol": "600704"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.005687528854897872,
+        "max_return_absolute_difference": 0.0022759022415481667,
+        "overlap_days": 15,
+        "stitch_factor": 1.2875343772801258,
+        "symbol": "600717"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004886384187550163,
+        "max_return_absolute_difference": 0.00026726542023736144,
+        "overlap_days": 15,
+        "stitch_factor": 0.9874608993581956,
+        "symbol": "600718"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001816374272818333,
+        "max_return_absolute_difference": 0.00010201839203882734,
+        "overlap_days": 15,
+        "stitch_factor": 0.7893825555405318,
+        "symbol": "600732"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001740150158249243,
+        "max_return_absolute_difference": 0.0002785155514455351,
+        "overlap_days": 15,
+        "stitch_factor": 0.7583392659973887,
+        "symbol": "600733"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.003854390203993807,
+        "max_return_absolute_difference": 0.0018940291059292846,
+        "overlap_days": 15,
+        "stitch_factor": 1.1404004169578466,
+        "symbol": "600737"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007510458164572409,
+        "max_return_absolute_difference": 0.001103444266611353,
+        "overlap_days": 15,
+        "stitch_factor": 0.9704822981639287,
+        "symbol": "600739"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003244147969436728,
+        "max_return_absolute_difference": 0.0001538049999763036,
+        "overlap_days": 15,
+        "stitch_factor": 0.8807109289424402,
+        "symbol": "600741"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.005627321149669351,
+        "max_return_absolute_difference": 0.004898229360379425,
+        "overlap_days": 15,
+        "stitch_factor": 1.1670822475241207,
+        "symbol": "600745"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0016647726366945115,
+        "max_return_absolute_difference": 0.001089304852254891,
+        "overlap_days": 15,
+        "stitch_factor": 0.7886740331491713,
+        "symbol": "600748"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002454058891181443,
+        "max_return_absolute_difference": 0.00023879619757583015,
+        "overlap_days": 15,
+        "stitch_factor": 0.7675819309123117,
+        "symbol": "600754"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.100554024153105e-05,
+        "max_return_absolute_difference": 7.973854726883722e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.7679746230718456,
+        "symbol": "600760"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600763"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00013583686538032325,
+        "max_return_absolute_difference": 0.00016033095777945316,
+        "overlap_days": 15,
+        "stitch_factor": 0.742357682329728,
+        "symbol": "600770"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001077935176698741,
+        "max_return_absolute_difference": 0.00011968058538469606,
+        "overlap_days": 15,
+        "stitch_factor": 0.7825111012287478,
+        "symbol": "600779"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.002885418256508121,
+        "max_return_absolute_difference": 0.0007241659970023129,
+        "overlap_days": 15,
+        "stitch_factor": 0.8299830467425527,
+        "symbol": "600782"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0011968365821380944,
+        "max_return_absolute_difference": 0.0007661615134084698,
+        "overlap_days": 15,
+        "stitch_factor": 0.8231679671120642,
+        "symbol": "600783"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.43955999172929e-05,
+        "max_return_absolute_difference": 1.077761399559396e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0005591015274233,
+        "symbol": "600795"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004896298291536816,
+        "max_return_absolute_difference": 0.00031348319134827385,
+        "overlap_days": 15,
+        "stitch_factor": 0.8573915465496831,
+        "symbol": "600803"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.003599257606155648,
+        "max_return_absolute_difference": 0.0024305555555553804,
+        "overlap_days": 15,
+        "stitch_factor": 0.8339160839160839,
+        "symbol": "600808"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.238709680350674e-05,
+        "max_return_absolute_difference": 3.308178794814154e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.9277174637893204,
+        "symbol": "600809"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600812"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00023822419523800153,
+        "max_return_absolute_difference": 0.0001630205429137277,
+        "overlap_days": 15,
+        "stitch_factor": 1.1077729609839702,
+        "symbol": "600816"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0016508715586616152,
+        "max_return_absolute_difference": 0.0007474000557824434,
+        "overlap_days": 15,
+        "stitch_factor": 1.2060591342359297,
+        "symbol": "600820"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0017637555157685725,
+        "max_return_absolute_difference": 0.0005796901671173416,
+        "overlap_days": 15,
+        "stitch_factor": 0.8918580489554712,
+        "symbol": "600827"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007236831292628532,
+        "max_return_absolute_difference": 0.000625337001416093,
+        "overlap_days": 15,
+        "stitch_factor": 0.9841424398386424,
+        "symbol": "600835"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600839"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600845"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00033708184460379265,
+        "max_return_absolute_difference": 0.0004787473416222321,
+        "overlap_days": 15,
+        "stitch_factor": 0.6907272244547304,
+        "symbol": "600848"
+      },
+      {
+        "accepted": false,
+        "max_ratio_relative_deviation": 0.00439152844808155,
+        "max_return_absolute_difference": 0.0025464496042638674,
+        "overlap_days": 15,
+        "stitch_factor": 0.92176839478544,
+        "symbol": "600859"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600863"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600867"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600871"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600872"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600873"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600874"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600875"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600879"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600880"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600881"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600884"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600886"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600887"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003343415191245924,
+        "max_return_absolute_difference": 0.0002550083781883705,
+        "overlap_days": 15,
+        "stitch_factor": 1.1126305954302218,
+        "symbol": "600893"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600895"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005818485557381736,
+        "max_return_absolute_difference": 0.00044088869328773317,
+        "overlap_days": 15,
+        "stitch_factor": 1.0222967064995627,
+        "symbol": "600900"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600905"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0010950209124915844,
+        "max_return_absolute_difference": 0.0009497671153997356,
+        "overlap_days": 15,
+        "stitch_factor": 1.0009615393505356,
+        "symbol": "600909"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600918"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0005876758587586295,
+        "max_return_absolute_difference": 0.0005326653422015326,
+        "overlap_days": 15,
+        "stitch_factor": 1.011120378952341,
+        "symbol": "600919"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600926"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600928"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600930"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600938"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600941"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0007979409727408848,
+        "max_return_absolute_difference": 0.000865059064080409,
+        "overlap_days": 15,
+        "stitch_factor": 1.0041152263374484,
+        "symbol": "600958"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600959"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600968"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.987563937539299e-05,
+        "max_return_absolute_difference": 8.412775785138216e-05,
+        "overlap_days": 15,
+        "stitch_factor": 0.8010959842452264,
+        "symbol": "600970"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0004275917904683624,
+        "max_return_absolute_difference": 0.0002953565932526381,
+        "overlap_days": 15,
+        "stitch_factor": 0.9892678218373676,
+        "symbol": "600971"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "600977"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0003232340317824711,
+        "max_return_absolute_difference": 0.00016252192307741886,
+        "overlap_days": 15,
+        "stitch_factor": 1.0064910271095837,
+        "symbol": "600989"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00031093585091135356,
+        "max_return_absolute_difference": 0.0006124196598531473,
+        "overlap_days": 15,
+        "stitch_factor": 0.7540209967181625,
+        "symbol": "600997"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006017420449097033,
+        "max_return_absolute_difference": 0.0006152355473236781,
+        "overlap_days": 15,
+        "stitch_factor": 1.001177163037081,
+        "symbol": "600998"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002832720042243997,
+        "max_return_absolute_difference": 0.00027774186628315434,
+        "overlap_days": 15,
+        "stitch_factor": 1.001105277785413,
+        "symbol": "600999"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601001"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601003"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601006"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012744318841872992,
+        "max_return_absolute_difference": 0.00017162141625648442,
+        "overlap_days": 15,
+        "stitch_factor": 1.004417221819526,
+        "symbol": "601009"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601012"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000735503760651568,
+        "max_return_absolute_difference": 0.0011545542484477922,
+        "overlap_days": 15,
+        "stitch_factor": 1.0027107783137734,
+        "symbol": "601016"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601018"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601021"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601058"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601059"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601066"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601077"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601088"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601098"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601099"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601100"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601101"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601106"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601107"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601108"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601111"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601117"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601118"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601127"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601136"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601138"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601139"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601155"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601158"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601162"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601163"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.000111727436750364,
+        "max_return_absolute_difference": 0.0001229522228907154,
+        "overlap_days": 15,
+        "stitch_factor": 1.000970298122513,
+        "symbol": "601166"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601168"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601169"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601179"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601186"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601198"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.3148428763765097e-05,
+        "max_return_absolute_difference": 6.97309065489371e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0004316857528979,
+        "symbol": "601211"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601212"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601216"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 8.041474155606743e-05,
+        "max_return_absolute_difference": 4.4976285231701496e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.001451800721887,
+        "symbol": "601225"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601228"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601229"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.7745183695259144e-05,
+        "max_return_absolute_difference": 1.6481280198821224e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001645548968756,
+        "symbol": "601231"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00016375741105356667,
+        "max_return_absolute_difference": 0.0001591249083947588,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001424510790122,
+        "symbol": "601233"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601236"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601238"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601288"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601298"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.912124393656846e-05,
+        "max_return_absolute_difference": 2.3314405370067348e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0011774712352246,
+        "symbol": "601318"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601319"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0006958574024354958,
+        "max_return_absolute_difference": 0.0007022286854805326,
+        "overlap_days": 15,
+        "stitch_factor": 1.002056908023704,
+        "symbol": "601328"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601333"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601336"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601360"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601369"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601375"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601377"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601390"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601398"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601456"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601519"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601555"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601566"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601577"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601588"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601600"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601601"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601607"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601608"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601611"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601615"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601618"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601628"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601633"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601658"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.562043884761337e-05,
+        "max_return_absolute_difference": 4.016912555893093e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0006247079151458,
+        "symbol": "601666"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601668"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601669"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601688"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.759906304895871e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601689"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601696"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601698"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601699"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601717"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601718"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601727"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601728"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601766"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601788"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.214513669140388e-06,
+        "max_return_absolute_difference": 3.391138267305749e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.000091016656802,
+        "symbol": "601799"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601800"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601801"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601808"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601816"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601818"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601825"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601828"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601838"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601857"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601865"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601866"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601868"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601872"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00022979836901515505,
+        "max_return_absolute_difference": 0.0002235612724736935,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002213125152142,
+        "symbol": "601877"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601878"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601881"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601888"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601898"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601899"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601901"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601916"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601918"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601919"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601928"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601929"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601933"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601939"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601958"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601966"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601969"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601985"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601988"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601990"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601991"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601992"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601995"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601997"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "601998"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603000"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603019"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603087"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.743543057519119e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603156"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603160"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603185"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603195"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0001747640685074714,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603233"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 3.135287662647812e-05,
+        "max_return_absolute_difference": 3.083158603245373e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603259"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603260"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603288"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603290"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603296"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603338"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00012489921579650343,
+        "max_return_absolute_difference": 0.0001436425690286569,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002369529742463,
+        "symbol": "603369"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00010827785852585148,
+        "max_return_absolute_difference": 0.00011137478111156174,
+        "overlap_days": 15,
+        "stitch_factor": 1.0002239892934672,
+        "symbol": "603392"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603486"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603501"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603517"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00018326427978254678,
+        "max_return_absolute_difference": 0.0001997591503162255,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003585533996606,
+        "symbol": "603658"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603659"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.3071265099705585e-05,
+        "max_return_absolute_difference": 5.938180571263274e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001675462952435,
+        "symbol": "603699"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603799"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 9.996001599366089e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603806"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015061379289504906,
+        "max_return_absolute_difference": 0.00015545554675622242,
+        "overlap_days": 15,
+        "stitch_factor": 1.0001506364808268,
+        "symbol": "603833"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00024319377193027236,
+        "max_return_absolute_difference": 0.0003249779790301943,
+        "overlap_days": 15,
+        "stitch_factor": 1.0122359654008766,
+        "symbol": "603858"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603882"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0002987750224081598,
+        "max_return_absolute_difference": 0.0002964649642995809,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603885"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603893"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 7.584194329224303e-06,
+        "max_return_absolute_difference": 3.3057263114644186e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.000174641983933,
+        "symbol": "603899"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.373892536171155e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603939"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603986"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "603993"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 1.6432233469143576e-05,
+        "max_return_absolute_difference": 1.6724925155919834e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "605117"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 4.476275738596325e-05,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "605499"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00023452157598491397,
+        "max_return_absolute_difference": 0.00023424650962799998,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688005"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688008"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688009"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688012"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688036"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688041"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688047"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.00015723362557840126,
+        "max_return_absolute_difference": 0.00015469645300014712,
+        "overlap_days": 15,
+        "stitch_factor": 1.0003006644517145,
+        "symbol": "688065"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.490977541240284e-06,
+        "max_return_absolute_difference": 6.345862180623385e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688072"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688082"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688111"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688126"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 2.2482519840716364e-05,
+        "max_return_absolute_difference": 2.1796939709606278e-05,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688169"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688183"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688187"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688223"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 6.0654216378353e-06,
+        "max_return_absolute_difference": 6.066047121056073e-06,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688256"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688271"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688303"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688363"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688396"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688472"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688506"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688521"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688561"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688599"
+      },
+      {
+        "accepted": true,
+        "max_ratio_relative_deviation": 0.0,
+        "max_return_absolute_difference": 0.0,
+        "overlap_days": 15,
+        "stitch_factor": 1.0,
+        "symbol": "688981"
+      }
+    ],
+    "extension_rows": 3642,
+    "isolated_noncurrent_symbol_count": 32,
+    "isolated_noncurrent_symbols": [
+      "000021",
+      "000059",
+      "000401",
+      "000422",
+      "000528",
+      "000536",
+      "000539",
+      "000717",
+      "000729",
+      "000793",
+      "000822",
+      "000826",
+      "000839",
+      "000860",
+      "000878",
+      "000897",
+      "000927",
+      "600058",
+      "600151",
+      "600158",
+      "600500",
+      "600649",
+      "600654",
+      "600657",
+      "600664",
+      "600666",
+      "600717",
+      "600737",
+      "600745",
+      "600782",
+      "600808",
+      "600859"
+    ],
+    "latest_all_symbols": 762,
+    "latest_current_coverage": 1.0,
+    "latest_current_members_covered": 300,
+    "maximum_observed_ratio_relative_deviation": 0.017608692755454847,
+    "maximum_observed_return_absolute_difference": 0.01851053534509295,
+    "membership_size": 300,
+    "membership_snapshot": "2026-06-30",
+    "overlap_rows": 11413,
+    "passed": true
+  },
+  "version": "V30r1-forward-r1"
+}

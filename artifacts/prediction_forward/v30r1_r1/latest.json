@@ -1,0 +1,21 @@
+{
+  "prediction_date": "2026-08-28",
+  "prediction_count": 261,
+  "snapshot_path": "artifacts\\prediction_forward\\v30r1_r1\\predictions\\2026-08-28.csv",
+  "sha256": "611e57477ea7c77e01bb688edcec806977bd912e0c5d0409799c25156366131a",
+  "already_recorded": false,
+  "model_version": "V30r1:1aedd67c6548",
+  "training_cutoff": "2026-08-21",
+  "production_prediction_ready": false,
+  "future_126d_confirmed": false,
+  "future_confirmation_status": "COLLECTING",
+  "execution_authorized": false,
+  "drift_status": "SEVERE",
+  "ledger_rows": 783,
+  "settled_rows": 0,
+  "market_audit_passed": true,
+  "feature_parity_passed": true,
+  "pit_audit_passed": true,
+  "auxiliary_ranking_coverage": 0.8850574712643678,
+  "auxiliary_ranking_neutral_fallback_rows": 30
+}

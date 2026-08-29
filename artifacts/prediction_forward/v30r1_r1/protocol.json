@@ -1,0 +1,18 @@
+{
+  "version": "V30r1-forward-r1",
+  "parent": "V30r1-forward failed inference",
+  "repair_scope": "Treat V6 ranking as optional candidate-score metadata. Missing same-date V6 rows receive a fixed neutral 0.5; no stock is dropped.",
+  "probability_heads_changed": false,
+  "calibrators_changed": false,
+  "expected_return_heads_changed": false,
+  "ranking_fallback": {
+    "value": 0.5,
+    "applies_to": "candidate_score only",
+    "minimum_coverage_gate": null,
+    "same_date_source_required": true,
+    "coverage_disclosed": true
+  },
+  "market_and_pit_gates": "identical to frozen V30r1-forward parent",
+  "production_prediction_ready_may_not_be_promoted": true,
+  "execution_authorized": false
+}

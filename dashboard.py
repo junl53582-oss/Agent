@@ -215,14 +215,16 @@ with tab_shadow:
             st.caption("未出现在下拉框中的股票，表示它不在本期可交易预测截面内。")
 
 with tab_probability:
-    st.subheader("V30r1 多周期概率预测 · 独立研究修正版")
+    st.subheader("V30r1 多周期概率预测 · 冻结模型前向跟踪")
     v30r1_dir = settings.artifact_dir / "prediction_v30r1"
     v30r1_latest_path = v30r1_dir / "live" / "latest.json"
     v30r1_status_path = v30r1_dir / "certification" / "status.json"
-    if not v30r1_latest_path.exists() or not v30r1_status_path.exists():
+    forward_latest_path = settings.artifact_dir / "prediction_forward" / "v30r1" / "latest.json"
+    display_latest_path = forward_latest_path if forward_latest_path.exists() else v30r1_latest_path
+    if not display_latest_path.exists() or not v30r1_status_path.exists():
         st.info("尚无V30r1真实预测快照。请先完成冻结验证并运行 predict-v30r1-latest。")
     else:
-        probability_metadata = json.loads(v30r1_latest_path.read_text(encoding="utf-8"))
+        probability_metadata = json.loads(display_latest_path.read_text(encoding="utf-8"))
         probability_status = json.loads(v30r1_status_path.read_text(encoding="utf-8"))
         probability_path = Path(probability_metadata["snapshot_path"])
         if not probability_path.exists():
@@ -281,6 +283,8 @@ with tab_probability:
                 f"模型 {probability_metadata['model_version']}；不可变快照 SHA-256："
                 f"{probability_metadata['sha256']}"
             )
+            if display_latest_path == forward_latest_path:
+                st.caption("当前展示为冻结V30r1模型的最新HFQ/PIT前向推理，未重训、未调参。")
 
 with tab_today:
     latest["symbol"] = latest["symbol"].str.zfill(6)

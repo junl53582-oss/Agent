@@ -18,6 +18,7 @@ from .prediction.config import PredictionSettings
 from .prediction.inference import prediction_history, prediction_status
 from .prediction_v30r1.config import V30R1Settings
 from .prediction_v30r1.inference import v30r1_status
+from .prediction_forward import ForwardPredictionSettings, forward_status
 
 app = FastAPI(title="StockPilot CN API", version="0.1.0")
 
@@ -132,11 +133,19 @@ def future_audit() -> dict:
 
 
 def _prediction_snapshot() -> pd.DataFrame:
-    settings = PredictionSettings()
-    latest = settings.artifact_dir / "live" / "latest.json"
-    if not latest.exists():
+    candidates = [
+        ForwardPredictionSettings().artifact_dir / "latest.json",
+        V30R1Settings().artifact_dir / "live" / "latest.json",
+        PredictionSettings().artifact_dir / "live" / "latest.json",
+    ]
+    available = []
+    for latest in candidates:
+        if latest.exists():
+            metadata = json.loads(latest.read_text(encoding="utf-8"))
+            available.append((pd.Timestamp(metadata["prediction_date"]), metadata))
+    if not available:
         raise HTTPException(status_code=404, detail="V30 latest prediction is not available")
-    metadata = json.loads(latest.read_text(encoding="utf-8"))
+    _, metadata = max(available, key=lambda item: item[0])
     path = Path(metadata["snapshot_path"])
     if not path.exists():
         raise HTTPException(status_code=404, detail="V30 immutable snapshot is missing")
@@ -185,7 +194,9 @@ def symbol_prediction(symbol: str) -> dict:
 
 @app.get("/prediction-model/status")
 def prediction_model_status() -> dict:
-    return prediction_status()
+    result = prediction_status()
+    result["forward_inference"] = forward_status()
+    return result
 
 
 @app.get("/prediction-model/validation")

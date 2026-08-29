@@ -1,0 +1,17 @@
+{
+  "version": "V30r1-forward-r1",
+  "frozen_at_utc": "2026-08-29T21:42:32.519936+00:00",
+  "scope": "inference_only_auxiliary_ranking_neutral_fallback",
+  "parent_failure_preserved": true,
+  "probability_heads_unchanged": true,
+  "production_prediction_ready_may_not_be_promoted": true,
+  "execution_authorized": false,
+  "files": {
+    "artifacts/prediction_forward/v30r1_r1/protocol.json": "31a02d6b6a6ea4a95299ffddffd9b1fa60720ae9f495587f1308f6f5fde80d6f",
+    "stockpilot/prediction_forward_r1.py": "824d1328095350b42451afa72c48fc2954542e87031855ec463b7721d7b5e40b",
+    "tests/test_prediction_forward_r1.py": "b1aef9eb5e468ccc64aed9409bc845f9131e759b807706dd2cb3865159ffde32",
+    "artifacts/prediction_forward/v30r1/plan.lock.json": "7cfbeb82325892adb6a77945f28d0708552d5626fcc1d672aa4fc869d6c720ec",
+    "artifacts/prediction_v30r1/validation.lock.json": "c631c3293859dd9bc61a38a61959f4bdfbf2e83464e54031899838834dac7a75",
+    "artifacts/prediction_v30/validation.lock.json": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8"
+  }
+}

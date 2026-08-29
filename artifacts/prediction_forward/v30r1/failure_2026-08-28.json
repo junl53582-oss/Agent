@@ -1,0 +1,11 @@
+{
+  "version": "V30r1-forward",
+  "prediction_date": "2026-08-28",
+  "stage": "latest_feature_pit_audit",
+  "status": "FAILED_BEFORE_PREDICTION_OUTPUT",
+  "reason": "V30 HFQ eligible universe had 261 rows while same-date V6 QFQ ranking evidence covered 231 rows; coverage 0.8850574712643678 was below the frozen 0.95 gate.",
+  "prediction_snapshot_written": false,
+  "model_or_calibrator_changed": false,
+  "frozen_parent_modified": false,
+  "execution_authorized": false
+}

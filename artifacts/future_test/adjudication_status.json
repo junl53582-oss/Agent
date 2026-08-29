@@ -1,6 +1,6 @@
 {
   "phase": "collecting",
-  "observed_trading_days": 3,
+  "observed_trading_days": 5,
   "minimum_trading_days": 126,
   "evaluation_cutoff": null,
   "window_signal_snapshots": 0,

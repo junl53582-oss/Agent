@@ -229,6 +229,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     predict_v30r1.add_argument("--limit", type=int, default=20)
     sub.add_parser("prediction-v30r1-status", help="查看V30r1独立修正版认证状态")
+    forward = sub.add_parser(
+        "prediction-forward-update", help="用冻结V30r1模型生成经过HFQ/PIT审计的前向预测"
+    )
+    forward.add_argument("--market", required=True, help="新下载的HFQ增量行情CSV")
+    forward.add_argument("--as-of", required=True, dest="as_of")
+    forward.add_argument("--ranking", required=True, help="同日V6不可变预测CSV")
+    forward.add_argument("--limit", type=int, default=20)
+    sub.add_parser("prediction-forward-status", help="查看V30r1前向预测与冻结完整性")
     return parser
 
 
@@ -284,6 +292,25 @@ def main() -> None:
         from .prediction_v30r1.inference import v30r1_status
 
         print(json.dumps(v30r1_status(), ensure_ascii=False, indent=2))
+        return
+    if args.command == "prediction-forward-update":
+        from .prediction_forward import run_forward_prediction
+
+        result = run_forward_prediction(args.market, args.as_of, ranking_path=args.ranking)
+        predictions = pd.read_csv(result["snapshot_path"], dtype={"symbol": str}).head(args.limit)
+        columns = [
+            "rank_5d", "symbol", "name", "p_up_1d", "p_up_5d", "p_up_20d",
+            "expected_return_5d", "expected_return_20d", "confidence_level",
+            "prediction_ready", "execution_authorized",
+        ]
+        print(f"Prediction date: {result['prediction_date']} (frozen V30r1 forward inference)")
+        print(predictions[columns].to_string(index=False, float_format=lambda value: f"{value:.4f}"))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "prediction-forward-status":
+        from .prediction_forward import forward_status
+
+        print(json.dumps(forward_status(), ensure_ascii=False, indent=2))
         return
     if args.command == "future-complete-lock":
         files: list[tuple[Path, str]] = [
