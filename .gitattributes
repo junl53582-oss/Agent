@@ -13,4 +13,8 @@ tests/test_prediction_forward*.py text eol=lf
 stockpilot/cli.py text eol=lf
 stockpilot/api.py text eol=lf
 dashboard.py text eol=lf
+stockpilot/data.py text eol=lf
+stockpilot/membership.py text eol=lf
+research_v9/data.py text eol=lf
+research_v10/fundamentals.py text eol=lf
 artifacts/prediction_forward/** -text
