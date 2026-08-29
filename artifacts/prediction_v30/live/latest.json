@@ -1,0 +1,15 @@
+{
+  "prediction_date": "2026-08-21",
+  "prediction_count": 249,
+  "snapshot_path": "artifacts\\prediction_v30\\live\\predictions\\2026-08-21.csv",
+  "sha256": "5d8f9c152af36482f8763db2b061aa045c49e12b3de0408e155222048a11de93",
+  "already_recorded": true,
+  "model_version": "V30:d5da844fe36d",
+  "production_prediction_ready": false,
+  "future_126d_confirmed": false,
+  "future_confirmation_status": "COLLECTING",
+  "execution_authorized": false,
+  "drift_status": "SEVERE",
+  "ledger_rows": 747,
+  "settled_rows": 0
+}

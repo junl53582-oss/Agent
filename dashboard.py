@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
@@ -98,33 +99,34 @@ for warning in health.get("warnings", []):
 if v6_report and v6_report.get("replacement_approved"):
     active_metrics = v6_report["metrics"]
     st.caption("当前全局指标：V6行业均衡集成 · 回顾性走步测试")
-    with st.container(horizontal=True):
-        st.metric("V6策略收益", f"{active_metrics['total_return']:.1%}", border=True)
-        st.metric("同期基准", f"{active_metrics['benchmark_return']:.1%}", border=True)
-        st.metric("累计超额", f"{active_metrics['excess_return']:.1%}", border=True)
-        st.metric("V6最大回撤", f"{active_metrics['max_drawdown']:.1%}", border=True)
-        st.metric("V6平均Rank IC", f"{active_metrics['mean_rank_ic']:.3f}", border=True)
-    with st.container(horizontal=True):
-        st.metric(
+    metric_columns = st.columns(5)
+    metric_columns[0].metric("V6策略收益", f"{active_metrics['total_return']:.1%}", border=True)
+    metric_columns[1].metric("同期基准", f"{active_metrics['benchmark_return']:.1%}", border=True)
+    metric_columns[2].metric("累计超额", f"{active_metrics['excess_return']:.1%}", border=True)
+    metric_columns[3].metric("V6最大回撤", f"{active_metrics['max_drawdown']:.1%}", border=True)
+    metric_columns[4].metric("V6平均Rank IC", f"{active_metrics['mean_rank_ic']:.3f}", border=True)
+    metric_columns = st.columns(3)
+    metric_columns[0].metric(
             "正超额年份", f"{active_metrics['positive_test_year_ratio']:.1%}", border=True
         )
-        st.metric(
+    metric_columns[1].metric(
             "非负行业IC",
             f"{active_metrics['nonnegative_broad_sector_ic_ratio']:.1%}",
             border=True,
         )
-        st.metric("平均现金权重", f"{active_metrics['average_cash_weight']:.1%}", border=True)
+    metric_columns[2].metric("平均现金权重", f"{active_metrics['average_cash_weight']:.1%}", border=True)
 else:
     st.caption("当前全局指标：历史Ridge回测")
-    with st.container(horizontal=True):
-        st.metric("累计收益", f"{summary['total_return']:.1%}", border=True)
-        st.metric("年化收益", f"{summary['annual_return']:.1%}", border=True)
-        st.metric("最大回撤", f"{summary['max_drawdown']:.1%}", border=True)
-        st.metric("夏普比率", f"{summary['sharpe']:.2f}", border=True)
-        st.metric("平均Rank IC", f"{summary['mean_rank_ic']:.3f}", border=True)
+    metric_columns = st.columns(5)
+    metric_columns[0].metric("累计收益", f"{summary['total_return']:.1%}", border=True)
+    metric_columns[1].metric("年化收益", f"{summary['annual_return']:.1%}", border=True)
+    metric_columns[2].metric("最大回撤", f"{summary['max_drawdown']:.1%}", border=True)
+    metric_columns[3].metric("夏普比率", f"{summary['sharpe']:.2f}", border=True)
+    metric_columns[4].metric("平均Rank IC", f"{summary['mean_rank_ic']:.3f}", border=True)
 
 (
     tab_shadow,
+    tab_probability,
     tab_today,
     tab_backtest,
     tab_race,
@@ -136,6 +138,7 @@ else:
 ) = st.tabs(
     [
         "V6最新预测",
+        "V30概率预测",
         "历史回测候选",
         "回测表现",
         "模型赛马",
@@ -157,11 +160,11 @@ with tab_shadow:
         prediction_latest["symbol"] = prediction_latest["symbol"].str.zfill(6)
         shadow_latest.insert(3, "name", shadow_latest["symbol"].map(stock_names).fillna("—"))
         signal_date = latest_signal_paths[-1].stem
-        with st.container(horizontal=True):
-            st.metric("信号日期", signal_date, border=True)
-            st.metric("可交易股票", len(prediction_latest), border=True)
-            st.metric("入选候选", len(shadow_latest), border=True)
-            st.metric("持有周期", "5个交易日", border=True)
+        metric_columns = st.columns(4)
+        metric_columns[0].metric("信号日期", signal_date, border=True)
+        metric_columns[1].metric("可交易股票", len(prediction_latest), border=True)
+        metric_columns[2].metric("入选候选", len(shadow_latest), border=True)
+        metric_columns[3].metric("持有周期", "5个交易日", border=True)
 
         st.warning(
             "V6现为默认最新预测模型：相对V4改进门槛已通过，但严格超额收益门槛未通过。"
@@ -198,18 +201,86 @@ with tab_shadow:
             row = prediction_latest.loc[prediction_latest["symbol"] == selected_symbol].iloc[0]
             top_label = f"Top-{len(shadow_latest)}"
             selected_text = f"已进入{top_label}" if bool(row["selected"]) else f"未进入{top_label}"
-            with st.container(horizontal=True):
-                st.metric(
+            metric_columns = st.columns(4)
+            metric_columns[0].metric(
                     "股票",
                     f"{stock_names.get(selected_symbol, '未知')} {selected_symbol}",
                     border=True,
                 )
-                st.metric(
+            metric_columns[1].metric(
                     "横截面排名", f"{int(row['pred_rank'])}/{len(prediction_latest)}", border=True
                 )
-                st.metric("模型分数", f"{row['score']:.4f}", border=True)
-                st.metric("本期状态", selected_text, border=True)
+            metric_columns[2].metric("模型分数", f"{row['score']:.4f}", border=True)
+            metric_columns[3].metric("本期状态", selected_text, border=True)
             st.caption("未出现在下拉框中的股票，表示它不在本期可交易预测截面内。")
+
+with tab_probability:
+    st.subheader("V30r1 多周期概率预测 · 独立研究修正版")
+    v30r1_dir = settings.artifact_dir / "prediction_v30r1"
+    v30r1_latest_path = v30r1_dir / "live" / "latest.json"
+    v30r1_status_path = v30r1_dir / "certification" / "status.json"
+    if not v30r1_latest_path.exists() or not v30r1_status_path.exists():
+        st.info("尚无V30r1真实预测快照。请先完成冻结验证并运行 predict-v30r1-latest。")
+    else:
+        probability_metadata = json.loads(v30r1_latest_path.read_text(encoding="utf-8"))
+        probability_status = json.loads(v30r1_status_path.read_text(encoding="utf-8"))
+        probability_path = Path(probability_metadata["snapshot_path"])
+        if not probability_path.exists():
+            st.error("V30r1元数据存在，但不可变预测快照缺失。")
+        else:
+            probability_frame = pd.read_csv(probability_path, dtype={"symbol": str})
+            probability_frame["symbol"] = probability_frame["symbol"].str.zfill(6)
+            metric_columns = st.columns(5)
+            metric_columns[0].metric("预测日期", probability_metadata["prediction_date"], border=True)
+            metric_columns[1].metric("预测股票数", probability_metadata["prediction_count"], border=True)
+            metric_columns[2].metric(
+                    "立即预测认证",
+                    "通过" if probability_status["production_prediction_ready"] else "未通过",
+                    border=True,
+                )
+            metric_columns[3].metric(
+                    "126日长期确认",
+                    "已确认" if probability_status["future_126d_confirmed"] else "收集中",
+                    border=True,
+                )
+            metric_columns[4].metric("实盘授权", "否", border=True)
+            if not probability_status["production_prediction_ready"]:
+                st.error(
+                    "当前仅展示真实数据上的研究预测，不能视为已认证概率或买卖建议。"
+                    "V30r1虽修复了校准反转，但20日校准、基线与稳定性门禁仍未通过。"
+                )
+            if probability_metadata.get("drift_status") == "SEVERE":
+                st.warning("最新特征分布漂移为 SEVERE，系统已把置信度降级为 LOW。")
+            display_probability = probability_frame.sort_values("rank_5d").head(20)
+            st.dataframe(
+                display_probability[
+                    [
+                        "rank_5d", "symbol", "name", "close", "p_up_1d", "p_up_5d",
+                        "p_up_20d", "expected_return_5d", "expected_return_20d",
+                        "confidence_level", "risk_level", "prediction_ready",
+                    ]
+                ],
+                column_config={
+                    "rank_5d": st.column_config.NumberColumn("5日排名", format="%d"),
+                    "symbol": st.column_config.TextColumn("股票代码", pinned=True),
+                    "name": st.column_config.TextColumn("股票名称"),
+                    "close": st.column_config.NumberColumn("收盘价", format="¥%.2f"),
+                    "p_up_1d": st.column_config.NumberColumn("上涨概率 1D", format="percent"),
+                    "p_up_5d": st.column_config.NumberColumn("上涨概率 5D", format="percent"),
+                    "p_up_20d": st.column_config.NumberColumn("上涨概率 20D", format="percent"),
+                    "expected_return_5d": st.column_config.NumberColumn("预期收益 5D", format="percent"),
+                    "expected_return_20d": st.column_config.NumberColumn("预期收益 20D", format="percent"),
+                    "confidence_level": st.column_config.TextColumn("置信度"),
+                    "risk_level": st.column_config.TextColumn("风险等级"),
+                    "prediction_ready": st.column_config.CheckboxColumn("认证可用"),
+                },
+                hide_index=True,
+                width="stretch",
+            )
+            st.caption(
+                f"模型 {probability_metadata['model_version']}；不可变快照 SHA-256："
+                f"{probability_metadata['sha256']}"
+            )
 
 with tab_today:
     latest["symbol"] = latest["symbol"].str.zfill(6)
@@ -431,12 +502,12 @@ with tab_v4:
             st.success("V4通过回顾性门槛，只能作为新一轮未来影子协议候选。")
         else:
             st.error("V4未通过全部门槛，保留研究结果但不能替换冻结模型。")
-        with st.container(horizontal=True):
-            st.metric("策略收益", f"{v4['total_return']:.2%}", border=True)
-            st.metric("同期基准", f"{v4['benchmark_return']:.2%}", border=True)
-            st.metric("超额收益", f"{v4['excess_return']:.2%}", border=True)
-            st.metric("平均Rank IC", f"{v4['mean_rank_ic']:.4f}", border=True)
-            st.metric("最大回撤", f"{v4['max_drawdown']:.2%}", border=True)
+        metric_columns = st.columns(5)
+        metric_columns[0].metric("策略收益", f"{v4['total_return']:.2%}", border=True)
+        metric_columns[1].metric("同期基准", f"{v4['benchmark_return']:.2%}", border=True)
+        metric_columns[2].metric("超额收益", f"{v4['excess_return']:.2%}", border=True)
+        metric_columns[3].metric("平均Rank IC", f"{v4['mean_rank_ic']:.4f}", border=True)
+        metric_columns[4].metric("最大回撤", f"{v4['max_drawdown']:.2%}", border=True)
         st.caption(
             f"规则锁：{v4_report['plan_lock_sha256'][:12]}…；"
             f"正超额年份比例 {v4['positive_test_year_ratio']:.1%}；"
@@ -488,12 +559,12 @@ with tab_v3:
             st.success("V3通过回顾性嵌套验证，可作为下一轮未来协议候选。")
         else:
             st.error("V3未通过嵌套验证，不能替换当前冻结模型。")
-        with st.container(horizontal=True):
-            st.metric("嵌套策略收益", f"{v3['total_return']:.2%}", border=True)
-            st.metric("同期基准", f"{v3['benchmark_return']:.2%}", border=True)
-            st.metric("超额收益", f"{v3['excess_return']:.2%}", border=True)
-            st.metric("平均Rank IC", f"{v3['mean_rank_ic']:.4f}", border=True)
-            st.metric("最大回撤", f"{v3['max_drawdown']:.2%}", border=True)
+        metric_columns = st.columns(5)
+        metric_columns[0].metric("嵌套策略收益", f"{v3['total_return']:.2%}", border=True)
+        metric_columns[1].metric("同期基准", f"{v3['benchmark_return']:.2%}", border=True)
+        metric_columns[2].metric("超额收益", f"{v3['excess_return']:.2%}", border=True)
+        metric_columns[3].metric("平均Rank IC", f"{v3['mean_rank_ic']:.4f}", border=True)
+        metric_columns[4].metric("最大回撤", f"{v3['max_drawdown']:.2%}", border=True)
         st.caption(
             f"PIT基本面：{v3_report['fundamental_symbols']}只、"
             f"{v3_report['fundamental_rows']:,}条；"

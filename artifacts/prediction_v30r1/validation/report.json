@@ -1,0 +1,1596 @@
+{
+  "version": "V30r1",
+  "generated_at_utc": "2026-08-29T16:53:53.906265+00:00",
+  "parent": "V30",
+  "repair_scope": "monotonic calibration and past-OOS champion selection",
+  "data": {
+    "rows": 947079,
+    "eligible_rows": 947079,
+    "symbols": 747,
+    "date_min": "2010-07-02",
+    "date_max": "2026-08-21",
+    "checks": {
+      "unique_date_symbol": true,
+      "membership_not_future": true,
+      "fundamentals_not_future": true,
+      "industry_not_future": true,
+      "real_history_span": true,
+      "minimum_symbols": true
+    },
+    "passed": true
+  },
+  "oos_years": [
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "purge_gaps": {
+    "1": 2,
+    "5": 6,
+    "20": 21
+  },
+  "folds": [
+    {
+      "year": 2018,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 58137,
+      "train_start": "2010-07-02",
+      "train_decision_end": "2017-12-27",
+      "train_label_end": "2017-12-29",
+      "validation_start": "2018-01-02",
+      "validation_end": "2018-12-28",
+      "purge_cutoff": "2017-12-28",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2019,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 60965,
+      "train_start": "2011-01-04",
+      "train_decision_end": "2018-12-26",
+      "train_label_end": "2018-12-28",
+      "validation_start": "2019-01-02",
+      "validation_end": "2019-12-31",
+      "purge_cutoff": "2018-12-27",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2020,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 61044,
+      "train_start": "2012-01-04",
+      "train_decision_end": "2019-12-27",
+      "train_label_end": "2019-12-31",
+      "validation_start": "2020-01-02",
+      "validation_end": "2020-12-31",
+      "purge_cutoff": "2019-12-30",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2021,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 60856,
+      "train_start": "2013-01-04",
+      "train_decision_end": "2020-12-29",
+      "train_label_end": "2020-12-31",
+      "validation_start": "2021-01-04",
+      "validation_end": "2021-12-31",
+      "purge_cutoff": "2020-12-30",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2022,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 57960,
+      "train_start": "2014-01-02",
+      "train_decision_end": "2021-12-29",
+      "train_label_end": "2021-12-31",
+      "validation_start": "2022-01-04",
+      "validation_end": "2022-12-30",
+      "purge_cutoff": "2021-12-30",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2023,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 57901,
+      "train_start": "2015-01-05",
+      "train_decision_end": "2022-12-28",
+      "train_label_end": "2022-12-30",
+      "validation_start": "2023-01-03",
+      "validation_end": "2023-12-29",
+      "purge_cutoff": "2022-12-29",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2024,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 58062,
+      "train_start": "2016-01-04",
+      "train_decision_end": "2023-12-27",
+      "train_label_end": "2023-12-29",
+      "validation_start": "2024-01-02",
+      "validation_end": "2024-12-31",
+      "purge_cutoff": "2023-12-28",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2025,
+      "horizon": 1,
+      "train_rows": 400000,
+      "validation_rows": 59022,
+      "train_start": "2017-01-03",
+      "train_decision_end": "2024-12-27",
+      "train_label_end": "2024-12-31",
+      "validation_start": "2025-01-02",
+      "validation_end": "2025-12-31",
+      "purge_cutoff": "2024-12-30",
+      "purge_gap": 2,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2018,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 57664,
+      "train_start": "2010-07-02",
+      "train_decision_end": "2017-12-21",
+      "train_label_end": "2017-12-29",
+      "validation_start": "2018-01-02",
+      "validation_end": "2018-12-28",
+      "purge_cutoff": "2017-12-22",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2019,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 60520,
+      "train_start": "2011-01-04",
+      "train_decision_end": "2018-12-20",
+      "train_label_end": "2018-12-28",
+      "validation_start": "2019-01-02",
+      "validation_end": "2019-12-31",
+      "purge_cutoff": "2018-12-21",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2020,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 60637,
+      "train_start": "2012-01-04",
+      "train_decision_end": "2019-12-23",
+      "train_label_end": "2019-12-31",
+      "validation_start": "2020-01-02",
+      "validation_end": "2020-12-31",
+      "purge_cutoff": "2019-12-24",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2021,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 60415,
+      "train_start": "2013-01-04",
+      "train_decision_end": "2020-12-23",
+      "train_label_end": "2020-12-31",
+      "validation_start": "2021-01-04",
+      "validation_end": "2021-12-31",
+      "purge_cutoff": "2020-12-24",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2022,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 57598,
+      "train_start": "2014-01-02",
+      "train_decision_end": "2021-12-23",
+      "train_label_end": "2021-12-31",
+      "validation_start": "2022-01-04",
+      "validation_end": "2022-12-30",
+      "purge_cutoff": "2021-12-24",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2023,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 57582,
+      "train_start": "2015-01-05",
+      "train_decision_end": "2022-12-22",
+      "train_label_end": "2022-12-30",
+      "validation_start": "2023-01-03",
+      "validation_end": "2023-12-29",
+      "purge_cutoff": "2022-12-23",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2024,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 57795,
+      "train_start": "2016-01-04",
+      "train_decision_end": "2023-12-21",
+      "train_label_end": "2023-12-29",
+      "validation_start": "2024-01-02",
+      "validation_end": "2024-12-31",
+      "purge_cutoff": "2023-12-22",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2025,
+      "horizon": 5,
+      "train_rows": 400000,
+      "validation_rows": 58705,
+      "train_start": "2017-01-03",
+      "train_decision_end": "2024-12-23",
+      "train_label_end": "2024-12-31",
+      "validation_start": "2025-01-02",
+      "validation_end": "2025-12-31",
+      "purge_cutoff": "2024-12-24",
+      "purge_gap": 6,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2018,
+      "horizon": 20,
+      "train_rows": 392050,
+      "validation_rows": 56599,
+      "train_start": "2010-07-02",
+      "train_decision_end": "2017-11-30",
+      "train_label_end": "2017-12-29",
+      "validation_start": "2018-01-02",
+      "validation_end": "2018-12-28",
+      "purge_cutoff": "2017-12-01",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2019,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 59827,
+      "train_start": "2011-01-04",
+      "train_decision_end": "2018-11-29",
+      "train_label_end": "2018-12-28",
+      "validation_start": "2019-01-02",
+      "validation_end": "2019-12-31",
+      "purge_cutoff": "2018-11-30",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2020,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 59844,
+      "train_start": "2012-01-04",
+      "train_decision_end": "2019-12-02",
+      "train_label_end": "2019-12-31",
+      "validation_start": "2020-01-02",
+      "validation_end": "2020-12-31",
+      "purge_cutoff": "2019-12-03",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2021,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 59438,
+      "train_start": "2013-01-04",
+      "train_decision_end": "2020-12-02",
+      "train_label_end": "2020-12-31",
+      "validation_start": "2021-01-04",
+      "validation_end": "2021-12-31",
+      "purge_cutoff": "2020-12-03",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2022,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 56926,
+      "train_start": "2014-01-02",
+      "train_decision_end": "2021-12-02",
+      "train_label_end": "2021-12-31",
+      "validation_start": "2022-01-04",
+      "validation_end": "2022-12-30",
+      "purge_cutoff": "2021-12-03",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2023,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 56962,
+      "train_start": "2015-01-05",
+      "train_decision_end": "2022-12-01",
+      "train_label_end": "2022-12-30",
+      "validation_start": "2023-01-03",
+      "validation_end": "2023-12-29",
+      "purge_cutoff": "2022-12-02",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2024,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 57178,
+      "train_start": "2016-01-04",
+      "train_decision_end": "2023-11-30",
+      "train_label_end": "2023-12-29",
+      "validation_start": "2024-01-02",
+      "validation_end": "2024-12-31",
+      "purge_cutoff": "2023-12-01",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    },
+    {
+      "year": 2025,
+      "horizon": 20,
+      "train_rows": 400000,
+      "validation_rows": 58221,
+      "train_start": "2017-01-03",
+      "train_decision_end": "2024-12-02",
+      "train_label_end": "2024-12-31",
+      "validation_start": "2025-01-02",
+      "validation_end": "2025-12-31",
+      "purge_cutoff": "2024-12-03",
+      "purge_gap": 21,
+      "label_maturity_passed": true,
+      "training_validation_overlap": 0
+    }
+  ],
+  "selection": [
+    {
+      "test_year": 2019,
+      "horizon": 1,
+      "history_years": [
+        2018
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 1.125825957376986,
+      "calibration_intercept": -0.09657691885510339,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 58137,
+          "roc_auc": 0.5334613012512832,
+          "pr_auc": 0.4445043096023127,
+          "log_loss": 0.6785732814930149,
+          "brier": 0.24276101230182925,
+          "accuracy": 0.5858747441388444,
+          "balanced_accuracy": 0.5032805137572384,
+          "precision": 0.540650406504065,
+          "recall": 0.016531322505800465,
+          "f1": 0.03208169172630056,
+          "actual_up_rate": 0.4151573008583174,
+          "mean_probability": 0.4454302845343161
+        },
+        "logistic_ridge": {
+          "sample_size": 58137,
+          "roc_auc": 0.5254790294192541,
+          "pr_auc": 0.4384310117962538,
+          "log_loss": 0.6798051454394489,
+          "brier": 0.24335773204844402,
+          "accuracy": 0.5853587216402635,
+          "balanced_accuracy": 0.501595178179994,
+          "precision": 0.5423728813559322,
+          "recall": 0.007954922108054359,
+          "f1": 0.015679869334422215,
+          "actual_up_rate": 0.4151573008583174,
+          "mean_probability": 0.4460211248874204
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2020,
+      "horizon": 1,
+      "history_years": [
+        2018,
+        2019
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 1.0302106199175418,
+      "calibration_intercept": -0.03571200848855109,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 119102,
+          "roc_auc": 0.5291036316778959,
+          "pr_auc": 0.4578383807032848,
+          "log_loss": 0.682532232966594,
+          "brier": 0.24472514949301194,
+          "accuracy": 0.56877298450068,
+          "balanced_accuracy": 0.5024366067774596,
+          "precision": 0.5576077396657871,
+          "recall": 0.012312831368588685,
+          "f1": 0.02409363836740898,
+          "actual_up_rate": 0.4323269130661114,
+          "mean_probability": 0.44278318547378764
+        },
+        "logistic_ridge": {
+          "sample_size": 119102,
+          "roc_auc": 0.5228412905185731,
+          "pr_auc": 0.4519705487402017,
+          "log_loss": 0.6834089082372744,
+          "brier": 0.2451514577871105,
+          "accuracy": 0.5679585565313765,
+          "balanced_accuracy": 0.5009946138831471,
+          "precision": 0.5279605263157895,
+          "recall": 0.006234099162960517,
+          "f1": 0.01232269333384518,
+          "actual_up_rate": 0.4323269130661114,
+          "mean_probability": 0.44340227840709573
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2021,
+      "horizon": 1,
+      "history_years": [
+        2018,
+        2019,
+        2020
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 1.2349379475470337,
+      "calibration_intercept": 0.0222609542125322,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 180146,
+          "roc_auc": 0.5360426400544933,
+          "pr_auc": 0.46444092134468923,
+          "log_loss": 0.6825203686011606,
+          "brier": 0.244727177442551,
+          "accuracy": 0.5655523852874891,
+          "balanced_accuracy": 0.5020382108859324,
+          "precision": 0.541031652989449,
+          "recall": 0.011772358553135045,
+          "f1": 0.023043315441268256,
+          "actual_up_rate": 0.4352247621373775,
+          "mean_probability": 0.4429100054122777
+        },
+        "logistic_ridge": {
+          "sample_size": 180146,
+          "roc_auc": 0.5298602453469329,
+          "pr_auc": 0.4592810730383272,
+          "log_loss": 0.6834701150782301,
+          "brier": 0.24518564575167695,
+          "accuracy": 0.5649584226127696,
+          "balanced_accuracy": 0.5011963987972345,
+          "precision": 0.5119478638667632,
+          "recall": 0.009017397071577981,
+          "f1": 0.017722629566961207,
+          "actual_up_rate": 0.4352247621373775,
+          "mean_probability": 0.4438007160244024
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2022,
+      "horizon": 1,
+      "history_years": [
+        2019,
+        2020,
+        2021
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 1.2596966489978965,
+      "calibration_intercept": 0.043477781172878614,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 182865,
+          "roc_auc": 0.5383829000322574,
+          "pr_auc": 0.46949363057253046,
+          "log_loss": 0.682929021700951,
+          "brier": 0.24493518886749044,
+          "accuracy": 0.562272714844284,
+          "balanced_accuracy": 0.5024646943995655,
+          "precision": 0.5304347826086957,
+          "recall": 0.015974162011173184,
+          "f1": 0.031014320820269472,
+          "actual_up_rate": 0.4385311568643535,
+          "mean_probability": 0.442495364898423
+        },
+        "logistic_ridge": {
+          "sample_size": 182865,
+          "roc_auc": 0.5338489978370962,
+          "pr_auc": 0.46381143753559034,
+          "log_loss": 0.6837651758999223,
+          "brier": 0.24533780674177275,
+          "accuracy": 0.5613321302600279,
+          "balanced_accuracy": 0.5021595142502325,
+          "precision": 0.4962874962874963,
+          "recall": 0.02083749002394254,
+          "f1": 0.03999569166696586,
+          "actual_up_rate": 0.4385311568643535,
+          "mean_probability": 0.44427550490412965
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2023,
+      "horizon": 1,
+      "history_years": [
+        2020,
+        2021,
+        2022
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 1.1328980518549396,
+      "calibration_intercept": -0.03446582301921319,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 179860,
+          "roc_auc": 0.5363941030612609,
+          "pr_auc": 0.45662504574675367,
+          "log_loss": 0.6807837399697513,
+          "brier": 0.2438717674693411,
+          "accuracy": 0.5721672411875903,
+          "balanced_accuracy": 0.502672623462794,
+          "precision": 0.5045543266102798,
+          "recall": 0.020148613889682768,
+          "f1": 0.03874981262179583,
+          "actual_up_rate": 0.42798843544979426,
+          "mean_probability": 0.44372585666905395
+        },
+        "logistic_ridge": {
+          "sample_size": 179860,
+          "roc_auc": 0.5334029963561286,
+          "pr_auc": 0.45268128085383486,
+          "log_loss": 0.6815587234513171,
+          "brier": 0.2442428223811442,
+          "accuracy": 0.5707383520515957,
+          "balanced_accuracy": 0.5025144486816195,
+          "precision": 0.4754555198285102,
+          "recall": 0.02881342721296994,
+          "f1": 0.05433411315115809,
+          "actual_up_rate": 0.42798843544979426,
+          "mean_probability": 0.44559785002809466
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2024,
+      "horizon": 1,
+      "history_years": [
+        2021,
+        2022,
+        2023
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.879032058257461,
+      "calibration_intercept": -0.16205269329909533,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 176717,
+          "roc_auc": 0.5273091808276924,
+          "pr_auc": 0.43594174684623277,
+          "log_loss": 0.6777811731165233,
+          "brier": 0.2423721092924649,
+          "accuracy": 0.5888850535036244,
+          "balanced_accuracy": 0.5030434067902211,
+          "precision": 0.49832439678284185,
+          "recall": 0.02047053316997288,
+          "f1": 0.039325619834710744,
+          "actual_up_rate": 0.41105835884493286,
+          "mean_probability": 0.44246856532693646
+        },
+        "logistic_ridge": {
+          "sample_size": 176717,
+          "roc_auc": 0.5280902508308501,
+          "pr_auc": 0.43372884718531424,
+          "log_loss": 0.6781344868066851,
+          "brier": 0.24254152087822523,
+          "accuracy": 0.587430750861547,
+          "balanced_accuracy": 0.5028877246152196,
+          "precision": 0.46880112175741995,
+          "recall": 0.02761525860051486,
+          "f1": 0.052158086323452944,
+          "actual_up_rate": 0.41105835884493286,
+          "mean_probability": 0.4439766990642272
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2025,
+      "horizon": 1,
+      "history_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.4575100877717024,
+      "calibration_intercept": -0.24759534561469873,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 173923,
+          "roc_auc": 0.5117541177590406,
+          "pr_auc": 0.4220078710803235,
+          "log_loss": 0.678380829722369,
+          "brier": 0.24265262995772122,
+          "accuracy": 0.5898299822335171,
+          "balanced_accuracy": 0.501430438592011,
+          "precision": 0.47944412275622467,
+          "recall": 0.011618280550605469,
+          "f1": 0.02268679617502808,
+          "actual_up_rate": 0.40976179113745737,
+          "mean_probability": 0.43529245677783857
+        },
+        "logistic_ridge": {
+          "sample_size": 173923,
+          "roc_auc": 0.5139481365639601,
+          "pr_auc": 0.42120420314070767,
+          "log_loss": 0.6783583395514846,
+          "brier": 0.24264582080634858,
+          "accuracy": 0.5887950414838751,
+          "balanced_accuracy": 0.5007382142510942,
+          "precision": 0.43963443963443966,
+          "recall": 0.012825010173011351,
+          "f1": 0.02492296785100755,
+          "actual_up_rate": 0.40976179113745737,
+          "mean_probability": 0.4363020954126148
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2019,
+      "horizon": 5,
+      "history_years": [
+        2018
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.4953325135850129,
+      "calibration_intercept": -0.27470625282689154,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 57664,
+          "roc_auc": 0.509067438214077,
+          "pr_auc": 0.43028003137017484,
+          "log_loss": 0.6872363443921156,
+          "brier": 0.2470494554978829,
+          "accuracy": 0.5608178412874584,
+          "balanced_accuracy": 0.5049057381009476,
+          "precision": 0.43749253731343285,
+          "recall": 0.1509185270615372,
+          "f1": 0.224420420788289,
+          "actual_up_rate": 0.4210252497225305,
+          "mean_probability": 0.4760475199947139
+        },
+        "logistic_ridge": {
+          "sample_size": 57664,
+          "roc_auc": 0.5128228192766245,
+          "pr_auc": 0.4345686932680982,
+          "log_loss": 0.6871488129659226,
+          "brier": 0.24700673039992502,
+          "accuracy": 0.5596039123196448,
+          "balanced_accuracy": 0.5077565916895049,
+          "precision": 0.4432014644564223,
+          "recall": 0.17950407776587857,
+          "f1": 0.2555187476180704,
+          "actual_up_rate": 0.4210252497225305,
+          "mean_probability": 0.47784307095026873
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 57664,
+          "mae": 0.0366942741269214,
+          "rmse": 0.05076638777886488,
+          "rank_ic": 0.045243630939762816
+        },
+        "ridge": {
+          "sample_size": 57664,
+          "mae": 0.03699267201738383,
+          "rmse": 0.05104037064705666,
+          "rank_ic": 0.03694946305203612
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2020,
+      "horizon": 5,
+      "history_years": [
+        2018,
+        2019
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.21126662822381506,
+      "calibration_intercept": -0.10427142493275811,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 118184,
+          "roc_auc": 0.502149790417688,
+          "pr_auc": 0.4695927198977762,
+          "log_loss": 0.6921456210230144,
+          "brier": 0.24949585389698134,
+          "accuracy": 0.5247664658498612,
+          "balanced_accuracy": 0.499401553304936,
+          "precision": 0.46533140965798186,
+          "recall": 0.09906410349064103,
+          "f1": 0.16335225156783004,
+          "actual_up_rate": 0.46832058485074124,
+          "mean_probability": 0.4715089757312599
+        },
+        "logistic_ridge": {
+          "sample_size": 118184,
+          "roc_auc": 0.5055204462408703,
+          "pr_auc": 0.474342083867699,
+          "log_loss": 0.6918529812238198,
+          "brier": 0.24935134385977317,
+          "accuracy": 0.5255449130169905,
+          "balanced_accuracy": 0.5021198121000223,
+          "precision": 0.47643196151095507,
+          "recall": 0.1323986413239864,
+          "f1": 0.20721344851475346,
+          "actual_up_rate": 0.46832058485074124,
+          "mean_probability": 0.473310716538584
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 118184,
+          "mae": 0.03569514309875694,
+          "rmse": 0.050562168938708844,
+          "rank_ic": 0.04871013177825173
+        },
+        "ridge": {
+          "sample_size": 118184,
+          "mae": 0.035806232503124466,
+          "rmse": 0.050573031845811904,
+          "rank_ic": 0.03305361663489164
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2021,
+      "horizon": 5,
+      "history_years": [
+        2018,
+        2019,
+        2020
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.5693410521601566,
+      "calibration_intercept": -0.056959377857558946,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 178821,
+          "roc_auc": 0.5107039901178094,
+          "pr_auc": 0.48081869895877755,
+          "log_loss": 0.6919310946665426,
+          "brier": 0.24938992331772558,
+          "accuracy": 0.5236856968700544,
+          "balanced_accuracy": 0.5030151536488323,
+          "precision": 0.48404512136241934,
+          "recall": 0.13058923834785904,
+          "f1": 0.2056867883354627,
+          "actual_up_rate": 0.4722487850979471,
+          "mean_probability": 0.47449441560754335
+        },
+        "logistic_ridge": {
+          "sample_size": 178821,
+          "roc_auc": 0.5162052120630051,
+          "pr_auc": 0.48719078031289953,
+          "log_loss": 0.691471570280677,
+          "brier": 0.24916178524476731,
+          "accuracy": 0.5268396888508621,
+          "balanced_accuracy": 0.5079971107960352,
+          "precision": 0.49715263948572824,
+          "recall": 0.16850606290261463,
+          "f1": 0.2517002591292197,
+          "actual_up_rate": 0.4722487850979471,
+          "mean_probability": 0.4762556707708928
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 178821,
+          "mae": 0.03757065150121141,
+          "rmse": 0.0540057761864577,
+          "rank_ic": 0.04703802051237643
+        },
+        "ridge": {
+          "sample_size": 178821,
+          "mae": 0.037656641165212876,
+          "rmse": 0.05391782750562535,
+          "rank_ic": 0.036997633250615426
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2022,
+      "horizon": 5,
+      "history_years": [
+        2019,
+        2020,
+        2021
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.42403076521162136,
+      "calibration_intercept": -0.04031780325781822,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 181572,
+          "roc_auc": 0.5105222517425337,
+          "pr_auc": 0.48608851543571546,
+          "log_loss": 0.6927973826154522,
+          "brier": 0.24982310090166646,
+          "accuracy": 0.514198224395832,
+          "balanced_accuracy": 0.500755760911569,
+          "precision": 0.4828570421790761,
+          "recall": 0.15708144666704876,
+          "f1": 0.2370474164028578,
+          "actual_up_rate": 0.4804430198488754,
+          "mean_probability": 0.4757022295688422
+        },
+        "logistic_ridge": {
+          "sample_size": 181572,
+          "roc_auc": 0.514208586819657,
+          "pr_auc": 0.48930873927359425,
+          "log_loss": 0.6926140725243253,
+          "brier": 0.2497316810316452,
+          "accuracy": 0.5173429823981671,
+          "balanced_accuracy": 0.5054809489887118,
+          "precision": 0.49436690768454683,
+          "recall": 0.20221241474178941,
+          "f1": 0.28702295044623605,
+          "actual_up_rate": 0.4804430198488754,
+          "mean_probability": 0.4776794227320141
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 181572,
+          "mae": 0.039104692182545066,
+          "rmse": 0.056341767871274887,
+          "rank_ic": 0.03829428110677651
+        },
+        "ridge": {
+          "sample_size": 181572,
+          "mae": 0.03917812962838738,
+          "rmse": 0.056209273048328436,
+          "rank_ic": 0.0227320734428722
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2023,
+      "horizon": 5,
+      "history_years": [
+        2020,
+        2021,
+        2022
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 0.6349999268789294,
+      "calibration_intercept": -0.13712856786081645,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 178650,
+          "roc_auc": 0.5166463323733461,
+          "pr_auc": 0.46377530402992767,
+          "log_loss": 0.6898978281364765,
+          "brier": 0.24838056967505298,
+          "accuracy": 0.5311111111111111,
+          "balanced_accuracy": 0.5044293945090907,
+          "precision": 0.46363517232341767,
+          "recall": 0.2184166337416041,
+          "f1": 0.29694411105609037,
+          "actual_up_rate": 0.4533557234816681,
+          "mean_probability": 0.48030704207904895
+        },
+        "logistic_ridge": {
+          "sample_size": 178650,
+          "roc_auc": 0.5160536583002686,
+          "pr_auc": 0.46296016425550285,
+          "log_loss": 0.6904305078350311,
+          "brier": 0.24864437648083149,
+          "accuracy": 0.5307528687377554,
+          "balanced_accuracy": 0.5071759529557179,
+          "precision": 0.4677789127227329,
+          "recall": 0.25444488344527855,
+          "f1": 0.32960406887010485,
+          "actual_up_rate": 0.4533557234816681,
+          "mean_probability": 0.4817341581184451
+        },
+        "lightgbm_retained": true
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 178650,
+          "mae": 0.04017728070815265,
+          "rmse": 0.05697915731706375,
+          "rank_ic": 0.02718480149519545
+        },
+        "ridge": {
+          "sample_size": 178650,
+          "mae": 0.040403983022303566,
+          "rmse": 0.05700268157007665,
+          "rank_ic": 0.014059206807930831
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2024,
+      "horizon": 5,
+      "history_years": [
+        2021,
+        2022,
+        2023
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 0.46230396022669,
+      "calibration_intercept": -0.22841784202052876,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 175595,
+          "roc_auc": 0.5126404403080195,
+          "pr_auc": 0.4400831939294661,
+          "log_loss": 0.687779801917419,
+          "brier": 0.2473248717568824,
+          "accuracy": 0.5481363364560494,
+          "balanced_accuracy": 0.503503884476939,
+          "precision": 0.44198399787523657,
+          "recall": 0.1755174686882004,
+          "f1": 0.25125741948268865,
+          "actual_up_rate": 0.4319599077422478,
+          "mean_probability": 0.4754333117609392
+        },
+        "logistic_ridge": {
+          "sample_size": 175595,
+          "roc_auc": 0.5088907140366802,
+          "pr_auc": 0.43716367727453265,
+          "log_loss": 0.6887025997835278,
+          "brier": 0.24778339947061068,
+          "accuracy": 0.5422477860986931,
+          "balanced_accuracy": 0.5030771430232128,
+          "precision": 0.43909196051534466,
+          "recall": 0.21522742254449573,
+          "f1": 0.2888639198789691,
+          "actual_up_rate": 0.4319599077422478,
+          "mean_probability": 0.4774459640915101
+        },
+        "lightgbm_retained": true
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 175595,
+          "mae": 0.03650028945777997,
+          "rmse": 0.05154873096276526,
+          "rank_ic": 0.026773810821974792
+        },
+        "ridge": {
+          "sample_size": 175595,
+          "mae": 0.036824914709620585,
+          "rmse": 0.05171207173783719,
+          "rank_ic": 0.006886029829403431
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2025,
+      "horizon": 5,
+      "history_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.05753768899081653,
+      "calibration_intercept": -0.26646542981934696,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 172975,
+          "roc_auc": 0.5004465031993847,
+          "pr_auc": 0.43284656019231227,
+          "log_loss": 0.6875666009398024,
+          "brier": 0.24721454076871932,
+          "accuracy": 0.5548489666136724,
+          "balanced_accuracy": 0.5000968347670393,
+          "precision": 0.4325224528638553,
+          "recall": 0.09730901500046835,
+          "f1": 0.15887442104343266,
+          "actual_up_rate": 0.43203353085706026,
+          "mean_probability": 0.46564508825152917
+        },
+        "logistic_ridge": {
+          "sample_size": 172975,
+          "roc_auc": 0.501494756848922,
+          "pr_auc": 0.4311676403541425,
+          "log_loss": 0.6879647797877861,
+          "brier": 0.24741566208472915,
+          "accuracy": 0.5481832634773811,
+          "balanced_accuracy": 0.4980895130282055,
+          "precision": 0.42491662278392134,
+          "recall": 0.12957139607391846,
+          "f1": 0.19858694203180918,
+          "actual_up_rate": 0.43203353085706026,
+          "mean_probability": 0.46929202163029665
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 172975,
+          "mae": 0.03544109959187067,
+          "rmse": 0.053442823939592425,
+          "rank_ic": 0.04013643427595304
+        },
+        "ridge": {
+          "sample_size": 172975,
+          "mae": 0.035746758707445855,
+          "rmse": 0.05351678090938101,
+          "rank_ic": 0.0219513171739871
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2019,
+      "horizon": 20,
+      "history_years": [
+        2018
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.44142779999006215,
+      "calibration_intercept": -0.5736990753153012,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 56599,
+          "roc_auc": 0.5060950978479295,
+          "pr_auc": 0.36910853408792527,
+          "log_loss": 0.6924763615995645,
+          "brier": 0.24966028686805244,
+          "accuracy": 0.5182423717733529,
+          "balanced_accuracy": 0.5080612755953882,
+          "precision": 0.36714384138406186,
+          "recall": 0.47193111931119314,
+          "f1": 0.4129943381197391,
+          "actual_up_rate": 0.3591052845456634,
+          "mean_probability": 0.4942646594143016
+        },
+        "logistic_ridge": {
+          "sample_size": 56599,
+          "roc_auc": 0.5179717906237893,
+          "pr_auc": 0.3759149015064087,
+          "log_loss": 0.6917185057993591,
+          "brier": 0.24928740413565292,
+          "accuracy": 0.5219703528330889,
+          "balanced_accuracy": 0.5123541772165806,
+          "precision": 0.37140346184708267,
+          "recall": 0.4782287822878229,
+          "f1": 0.41810048176187203,
+          "actual_up_rate": 0.3591052845456634,
+          "mean_probability": 0.4965362249077873
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 56599,
+          "mae": 0.06879028455580452,
+          "rmse": 0.091749047371781,
+          "rank_ic": 0.06132270710337244
+        },
+        "ridge": {
+          "sample_size": 56599,
+          "mae": 0.07105573171873782,
+          "rmse": 0.09395270255252514,
+          "rank_ic": 0.02519424023164301
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2020,
+      "horizon": 20,
+      "history_years": [
+        2018,
+        2019
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.0,
+      "calibration_intercept": -0.14948841888152692,
+      "calibration_fallback_to_prevalence": true,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 116426,
+          "roc_auc": 0.48235760124067134,
+          "pr_auc": 0.4483353862199999,
+          "log_loss": 0.6963648563998923,
+          "brier": 0.2515925822736964,
+          "accuracy": 0.4989091783622215,
+          "balanced_accuracy": 0.48684602780056085,
+          "precision": 0.4434205862994279,
+          "recall": 0.3251531464637089,
+          "f1": 0.3751874223535963,
+          "actual_up_rate": 0.46269733564667687,
+          "mean_probability": 0.4820286458447964
+        },
+        "logistic_ridge": {
+          "sample_size": 116426,
+          "roc_auc": 0.48806202384449315,
+          "pr_auc": 0.45514412188566117,
+          "log_loss": 0.6962337262971889,
+          "brier": 0.2515275342014624,
+          "accuracy": 0.49909813959081306,
+          "balanced_accuracy": 0.49011490731221474,
+          "precision": 0.44977416440831075,
+          "recall": 0.3697048449972155,
+          "f1": 0.4058278145695364,
+          "actual_up_rate": 0.46269733564667687,
+          "mean_probability": 0.487152099422616
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 116426,
+          "mae": 0.0737256672955304,
+          "rmse": 0.10388770743731368,
+          "rank_ic": 0.04972711562037482
+        },
+        "ridge": {
+          "sample_size": 116426,
+          "mae": 0.0744175404311951,
+          "rmse": 0.10388476050737107,
+          "rank_ic": 0.039411245263693676
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2021,
+      "horizon": 20,
+      "history_years": [
+        2018,
+        2019,
+        2020
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.2243202861849795,
+      "calibration_intercept": -0.08186164874325694,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 176270,
+          "roc_auc": 0.486955396877434,
+          "pr_auc": 0.46796487189790836,
+          "log_loss": 0.6977647712600625,
+          "brier": 0.2522739244979656,
+          "accuracy": 0.49788392806490045,
+          "balanced_accuracy": 0.49191690645856406,
+          "precision": 0.46652374415842807,
+          "recall": 0.35938075492770327,
+          "f1": 0.40600252342219006,
+          "actual_up_rate": 0.47748907925341805,
+          "mean_probability": 0.4844859542975247
+        },
+        "logistic_ridge": {
+          "sample_size": 176270,
+          "roc_auc": 0.5102605331321001,
+          "pr_auc": 0.48933706707327734,
+          "log_loss": 0.6942795677343212,
+          "brier": 0.25055444413786154,
+          "accuracy": 0.5109434390423782,
+          "balanced_accuracy": 0.5072684600335214,
+          "precision": 0.48616482785761783,
+          "recall": 0.42564187864602515,
+          "f1": 0.45389468883032635,
+          "actual_up_rate": 0.47748907925341805,
+          "mean_probability": 0.49085987759484895
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 176270,
+          "mae": 0.07723479101395737,
+          "rmse": 0.11092404135202011,
+          "rank_ic": 0.05209888417855053
+        },
+        "ridge": {
+          "sample_size": 176270,
+          "mae": 0.07752666813519186,
+          "rmse": 0.11011430622617686,
+          "rank_ic": 0.05216830052935185
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2022,
+      "horizon": 20,
+      "history_years": [
+        2019,
+        2020,
+        2021
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.16201521108667155,
+      "calibration_intercept": 0.010706420700543161,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 179109,
+          "roc_auc": 0.4940526456586168,
+          "pr_auc": 0.49207780288978764,
+          "log_loss": 0.6983602014601389,
+          "brier": 0.2525687311019814,
+          "accuracy": 0.4948271722805666,
+          "balanced_accuracy": 0.49522126411426126,
+          "precision": 0.4949142691078175,
+          "recall": 0.3602587512247261,
+          "f1": 0.41698508328232226,
+          "actual_up_rate": 0.5014600048015454,
+          "mean_probability": 0.48434474153635676
+        },
+        "logistic_ridge": {
+          "sample_size": 179109,
+          "roc_auc": 0.5088676243487669,
+          "pr_auc": 0.5034021873319229,
+          "log_loss": 0.6957014200453442,
+          "brier": 0.25125829480877915,
+          "accuracy": 0.5064402123846373,
+          "balanced_accuracy": 0.5066292122405691,
+          "precision": 0.5090745847495671,
+          "recall": 0.44190344704729667,
+          "f1": 0.47311674146655464,
+          "actual_up_rate": 0.5014600048015454,
+          "mean_probability": 0.4925624800899996
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 179109,
+          "mae": 0.08111819192458357,
+          "rmse": 0.11644541135310585,
+          "rank_ic": 0.034900875591658304
+        },
+        "ridge": {
+          "sample_size": 179109,
+          "mae": 0.08124455926095966,
+          "rmse": 0.11539872531939402,
+          "rank_ic": 0.03382767770086192
+        },
+        "lightgbm_retained": false
+      }
+    },
+    {
+      "test_year": 2023,
+      "horizon": 20,
+      "history_years": [
+        2020,
+        2021,
+        2022
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.30079966011271947,
+      "calibration_intercept": -0.16335733002440886,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 176208,
+          "roc_auc": 0.5031101341361937,
+          "pr_auc": 0.4573160284662941,
+          "log_loss": 0.6958690286764179,
+          "brier": 0.2513309468577585,
+          "accuracy": 0.507967856169981,
+          "balanced_accuracy": 0.5052234932010831,
+          "precision": 0.46497630158517417,
+          "recall": 0.47142098306382874,
+          "f1": 0.46817646481499653,
+          "actual_up_rate": 0.4594059293562154,
+          "mean_probability": 0.49414777389134945
+        },
+        "logistic_ridge": {
+          "sample_size": 176208,
+          "roc_auc": 0.5164279434639153,
+          "pr_auc": 0.46435180659987846,
+          "log_loss": 0.6945855367471734,
+          "brier": 0.25070375185564503,
+          "accuracy": 0.5136883682920185,
+          "balanced_accuracy": 0.5141813163937312,
+          "precision": 0.4733564869451844,
+          "recall": 0.5202529925510494,
+          "f1": 0.49569802615317615,
+          "actual_up_rate": 0.4594059293562154,
+          "mean_probability": 0.5004372728692387
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 176208,
+          "mae": 0.08053312600099377,
+          "rmse": 0.11262472872400295,
+          "rank_ic": 0.032774207306273645
+        },
+        "ridge": {
+          "sample_size": 176208,
+          "mae": 0.08169672495762614,
+          "rmse": 0.11272090771071426,
+          "rank_ic": 0.013022493915645438
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2024,
+      "horizon": 20,
+      "history_years": [
+        2021,
+        2022,
+        2023
+      ],
+      "direction_source": "lightgbm",
+      "calibration_slope": 0.46685591597022996,
+      "calibration_intercept": -0.304021800783218,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 173326,
+          "roc_auc": 0.5210521144357602,
+          "pr_auc": 0.4282130752255144,
+          "log_loss": 0.690350625694145,
+          "brier": 0.24860590021647597,
+          "accuracy": 0.527497317194189,
+          "balanced_accuracy": 0.5133870892675954,
+          "precision": 0.4359393265073307,
+          "recall": 0.4251785714285714,
+          "f1": 0.43049171435922756,
+          "actual_up_rate": 0.4200177699825762,
+          "mean_probability": 0.48985322300396555
+        },
+        "logistic_ridge": {
+          "sample_size": 173326,
+          "roc_auc": 0.5159827577546501,
+          "pr_auc": 0.42503360038826854,
+          "log_loss": 0.6927077547768201,
+          "brier": 0.24977731883844553,
+          "accuracy": 0.5195065945097678,
+          "balanced_accuracy": 0.5101164261971043,
+          "precision": 0.43122769263069494,
+          "recall": 0.45141483516483516,
+          "f1": 0.44109041125308707,
+          "actual_up_rate": 0.4200177699825762,
+          "mean_probability": 0.493945444240496
+        },
+        "lightgbm_retained": true
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 173326,
+          "mae": 0.07253185096835113,
+          "rmse": 0.09978352222862437,
+          "rank_ic": 0.03078882625971793
+        },
+        "ridge": {
+          "sample_size": 173326,
+          "mae": 0.07468678190143772,
+          "rmse": 0.1013543922379591,
+          "rank_ic": -0.007460039404498282
+        },
+        "lightgbm_retained": true
+      }
+    },
+    {
+      "test_year": 2025,
+      "horizon": 20,
+      "history_years": [
+        2022,
+        2023,
+        2024
+      ],
+      "direction_source": "logistic_ridge",
+      "calibration_slope": 0.23665463391376013,
+      "calibration_intercept": -0.24640774193951603,
+      "calibration_fallback_to_prevalence": false,
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 171066,
+          "roc_auc": 0.5056606624147827,
+          "pr_auc": 0.4369733419523982,
+          "log_loss": 0.6918382921193541,
+          "brier": 0.2493213373720739,
+          "accuracy": 0.529006348426923,
+          "balanced_accuracy": 0.5046767580780107,
+          "precision": 0.4418634999347514,
+          "recall": 0.3188581268329432,
+          "f1": 0.3704160968939245,
+          "actual_up_rate": 0.4345340394935288,
+          "mean_probability": 0.4774091635080311
+        },
+        "logistic_ridge": {
+          "sample_size": 171066,
+          "roc_auc": 0.5122598540092744,
+          "pr_auc": 0.4392509513022803,
+          "log_loss": 0.6913791223443292,
+          "brier": 0.24911719038199315,
+          "accuracy": 0.5249611261150667,
+          "balanced_accuracy": 0.5051430748799077,
+          "precision": 0.441797564048719,
+          "recall": 0.35378158043425617,
+          "f1": 0.3929209093150255,
+          "actual_up_rate": 0.4345340394935288,
+          "mean_probability": 0.4820947821704151
+        },
+        "lightgbm_retained": false
+      },
+      "return_source": "lightgbm",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 171066,
+          "mae": 0.07159914730399293,
+          "rmse": 0.10255095636343618,
+          "rank_ic": 0.045398667982459666
+        },
+        "ridge": {
+          "sample_size": 171066,
+          "mae": 0.07312381643173968,
+          "rmse": 0.1031386079584467,
+          "rank_ic": 0.020590201763651363
+        },
+        "lightgbm_retained": true
+      }
+    }
+  ],
+  "certification": {
+    "data_verified": true,
+    "pit_verified": true,
+    "label_maturity_verified": true,
+    "leakage_test_passed": true,
+    "purged_walk_forward_passed": true,
+    "calibration_passed": false,
+    "baseline_beaten": false,
+    "stability_passed": false,
+    "regime_passed": false,
+    "probability_quality_passed": false,
+    "cost_aware_stress_passed": false,
+    "production_prediction_ready": false,
+    "execution_authorized": false,
+    "future_126d_confirmed": false,
+    "future_confirmation_status": "COLLECTING",
+    "reasons": [
+      "calibration_passed",
+      "baseline_beaten",
+      "stability_passed",
+      "regime_passed",
+      "probability_quality_passed",
+      "cost_aware_stress_passed"
+    ]
+  },
+  "certification_evidence": {
+    "calibration_ece": {
+      "5": 0.035957286894269185,
+      "20": 0.0669391362481883
+    },
+    "baseline_checks": {
+      "5": false,
+      "20": false
+    },
+    "probability_checks": {
+      "5": false,
+      "20": false
+    },
+    "stability_checks": {
+      "5": false,
+      "20": true
+    },
+    "stress_checks": {
+      "5": false,
+      "20": false
+    },
+    "regimes_passed": 0,
+    "sectors_passed": 1,
+    "future_126d_used_as_prediction_gate": false,
+    "parent_lock_intact": true,
+    "plan_lock_intact": true,
+    "all_calibrators_monotonic": true,
+    "retained_return_heads_valid": true
+  },
+  "production_prediction_ready": false,
+  "future_126d_confirmed": false,
+  "execution_authorized": false
+}

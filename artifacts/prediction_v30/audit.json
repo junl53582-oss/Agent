@@ -1,0 +1,17 @@
+{
+  "audit_date": "2026-08-29",
+  "audited": ["stockpilot", "research_v6", "research_v10", "research_v16", "research_v20", "research_v22", "research_v26", "research_v28", "research_v29", "tests", "README.md", "RESEARCH_AUTOPILOT.md", "RESEARCH_DECISIONS.md"],
+  "findings": {
+    "pit_membership": "Historical CSI300 snapshots are applied forward from their snapshot date; no current-universe backfill is required.",
+    "pit_fundamentals": "Extended fundamentals are joined backward by available_date and reject available_date before report_date or after prediction date.",
+    "pit_industry": "Industry classifications are joined by effective date and reject future-effective records.",
+    "labels": "Existing 5D/20D research labels already use next-open to future-open and maturity dates; V30 adds calendar-aligned 1D/5D/20D labels without overwriting parent datasets.",
+    "v6": "Retained as incumbent ranking system and not rewritten.",
+    "v26_v29": "Directional/tail probabilities are converted to centered ranks, so they cannot be exposed as calibrated probabilities.",
+    "freeze": "Existing immutable locks and negative reports remain untouched; V30 uses a new manifest and output root.",
+    "future_shadow": "Existing 126-day shadow protocol remains intact and execution_authorized remains false; only its role is changed to long-horizon confirmation for V30.",
+    "v29": "Frozen run was interrupted by explicit user request before candidate performance output and is not resumed by V30."
+  },
+  "data_available": true,
+  "execution_authorized": false
+}

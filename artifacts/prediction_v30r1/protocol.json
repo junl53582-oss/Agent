@@ -1,0 +1,34 @@
+{
+  "protocol": "stockpilot-v30r1-monotonic-calibration-and-past-oos-champion",
+  "status": "preregistered_before_v30r1_replay",
+  "parent": {
+    "version": "V30",
+    "validation_lock_sha256": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8",
+    "result": "valid_negative",
+    "immutable": true
+  },
+  "diagnosed_implementation_defects": [
+    "Unconstrained Platt slopes can be negative and reverse the next OOS year's ranking.",
+    "The latest model always retained LightGBM even when the frozen Logistic/Ridge baseline was stronger.",
+    "Return heads were not reported against Ridge before retention."
+  ],
+  "only_changes": {
+    "calibration": "Non-negative monotonic Platt. A non-positive unconstrained slope falls back to the historical OOF prevalence and never reverses ranking.",
+    "direction_selection": "For each OOS year choose LightGBM only if it beats Logistic on all available prior OOS years, capped at three; otherwise choose Logistic.",
+    "return_selection": "For each OOS year choose LightGBM only if it beats Ridge on prior OOS MAE and RMSE without lower Rank IC; otherwise choose Ridge.",
+    "latest_selection": "Use 2023-2025 OOS evidence only."
+  },
+  "unchanged": [
+    "real PIT inputs and hashes", "61 V10 features", "T-close to future-open label semantics",
+    "2019-2025 OOS years", "8-year training window", "1/5/20 horizons",
+    "2/6/21 trading-day purge gaps", "direction thresholds", "certification thresholds",
+    "V6 incumbent", "execution_authorized=false", "126 days are forward confirmation only"
+  ],
+  "prohibited": [
+    "modify V30 files or reports", "search blend weights", "reverse a signal", "change gates",
+    "drop years, sectors, or regimes", "use current-year labels for champion selection",
+    "broker connection or execution"
+  ],
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

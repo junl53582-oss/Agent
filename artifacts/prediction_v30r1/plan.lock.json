@@ -1,0 +1,19 @@
+{
+  "version": "V30r1",
+  "frozen_at_utc": "2026-08-29T16:50:55.361610+00:00",
+  "performance_not_read_before_freeze": true,
+  "parent_v30_result_already_known_for_diagnosis": true,
+  "execution_authorized": false,
+  "files": {
+    "artifacts/prediction_v30r1/protocol.json": "d99eebd882d50d7556b67f02b9a5acd54c46a302eeb1e702ae14ab74bf528a90",
+    "artifacts/prediction_v30/validation.lock.json": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8",
+    "stockpilot/prediction_v30r1/__init__.py": "b1fa57a38fffc0c223980c4bd3073492c0decddb749eb1a501127216b006be08",
+    "stockpilot/prediction_v30r1/calibration.py": "29e305468f0cdaf475c400411af24182659ebf6998ecf42c0034e48b17f849bd",
+    "stockpilot/prediction_v30r1/config.py": "b38cb843df8ca611e1f83f4591e8454dd49b40efddf5c469f60c146643aa6f38",
+    "stockpilot/prediction_v30r1/freeze.py": "a7d21573acef9ffdacf6596f550f3fda9310f3492e192bcb29b49f0100c04b0c",
+    "stockpilot/prediction_v30r1/inference.py": "8fbfc25c96566fe733314b0919d769218a54a14f5ee39f53f11e0b062fde56a5",
+    "stockpilot/prediction_v30r1/pipeline.py": "ccb5f23a814c033a4bca0a5e0ff2406e1defe8559876f6e55e5ef71fe5e60389",
+    "stockpilot/prediction_v30r1/selection.py": "c136482fb1a55ab17f5aed1b592e4d2a3dc086fe4dbcb5fe3058649507380a2e",
+    "tests/test_prediction_v30r1.py": "625215d29c62620459cf6f480dcb754c4d62ce09dc2662e28ae659c75c8bd36e"
+  }
+}

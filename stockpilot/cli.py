@@ -5,6 +5,8 @@ import json
 from dataclasses import replace
 from pathlib import Path
 
+import pandas as pd
+
 from .adjudication import adjudicate_future_test
 from .audit import (
     bootstrap_audit_chain,
@@ -215,11 +217,74 @@ def build_parser() -> argparse.ArgumentParser:
     export = sub.add_parser("membership-export-qlib", help="导出Qlib成分区间文件")
     export.add_argument("--membership", required=True)
     export.add_argument("--output", required=True)
+
+    sub.add_parser("prediction-validate", help="运行V30严格时间样本外概率认证")
+    predict_latest = sub.add_parser("predict-latest", help="生成V30最新PIT概率预测快照")
+    predict_latest.add_argument("--limit", type=int, default=20)
+    sub.add_parser("prediction-status", help="查看V30预测认证与长期确认状态")
+    prediction_history = sub.add_parser("prediction-history", help="查看证券的不可变历史预测")
+    prediction_history.add_argument("symbol")
+    predict_v30r1 = sub.add_parser(
+        "predict-v30r1-latest", help="生成V30r1独立修正版最新PIT概率预测快照"
+    )
+    predict_v30r1.add_argument("--limit", type=int, default=20)
+    sub.add_parser("prediction-v30r1-status", help="查看V30r1独立修正版认证状态")
     return parser
 
 
 def main() -> None:
     args = build_parser().parse_args()
+    if args.command == "prediction-validate":
+        from .prediction.pipeline import run_prediction_validation
+
+        print(json.dumps(run_prediction_validation(), ensure_ascii=False, indent=2))
+        return
+    if args.command == "predict-latest":
+        from .prediction.config import PredictionSettings
+        from .prediction.inference import generate_latest_predictions
+
+        result = generate_latest_predictions()
+        predictions = pd.read_csv(result["snapshot_path"], dtype={"symbol": str}).head(args.limit)
+        columns = [
+            "rank_5d", "symbol", "name", "p_up_1d", "p_up_5d", "p_up_20d",
+            "expected_return_5d", "expected_return_20d", "confidence_level", "prediction_ready",
+        ]
+        print(f"Prediction date: {result['prediction_date']}")
+        print(predictions[columns].to_string(index=False, float_format=lambda value: f"{value:.4f}"))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "prediction-status":
+        from .prediction.inference import prediction_status
+
+        print(json.dumps(prediction_status(), ensure_ascii=False, indent=2))
+        return
+    if args.command == "prediction-history":
+        from .prediction.inference import prediction_history
+
+        history = prediction_history(args.symbol)
+        if history.empty:
+            print(f"No prediction history for {str(args.symbol).zfill(6)}")
+        else:
+            print(history.to_string(index=False))
+        return
+    if args.command == "predict-v30r1-latest":
+        from .prediction_v30r1.inference import generate_latest_v30r1_predictions
+
+        result = generate_latest_v30r1_predictions()
+        predictions = pd.read_csv(result["snapshot_path"], dtype={"symbol": str}).head(args.limit)
+        columns = [
+            "rank_5d", "symbol", "name", "p_up_1d", "p_up_5d", "p_up_20d",
+            "expected_return_5d", "expected_return_20d", "confidence_level", "prediction_ready",
+        ]
+        print(f"Prediction date: {result['prediction_date']} (V30r1 research revision)")
+        print(predictions[columns].to_string(index=False, float_format=lambda value: f"{value:.4f}"))
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+    if args.command == "prediction-v30r1-status":
+        from .prediction_v30r1.inference import v30r1_status
+
+        print(json.dumps(v30r1_status(), ensure_ascii=False, indent=2))
+        return
     if args.command == "future-complete-lock":
         files: list[tuple[Path, str]] = [
             (Path(args.manifest), "base_manifest"),

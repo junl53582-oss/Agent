@@ -1,0 +1,32 @@
+{
+  "version": "V30R1",
+  "locked_at_utc": "2026-08-29T17:00:27.433558+00:00",
+  "immutable_result": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "files": {
+    "artifacts/prediction_v30/validation.lock.json": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8",
+    "artifacts/prediction_v30r1/certification/status.json": "a2e246606ff35cea4c2ed1d4d5cdbe73c75a537334536119b4a7069a42bd4d19",
+    "artifacts/prediction_v30r1/live/latest.json": "9c9ee9f8721e10904c411d43aa3c4022a9abe4bafc6e85cbb4170087ee135f7d",
+    "artifacts/prediction_v30r1/live/predictions/2026-08-21.csv": "ef6111cab901450dd2a144bed2ab36d9b146cef1def539f8c2495729f523f440",
+    "artifacts/prediction_v30r1/live/predictions/2026-08-21.csv.sha256": "784ec2a96f631f36f28cce877570b87344ac86de185faedf511641cf9c9e090f",
+    "artifacts/prediction_v30r1/models/calibrator_h1.json": "d447a2a684b4f074f5188b41d8f5284dec1963011de6a933a489c0d957ff3b28",
+    "artifacts/prediction_v30r1/models/calibrator_h20.json": "0e1e335e77bf0ce3e6d8e6970b82cbf022d65a77c7f3c3d52c23eb11eac36441",
+    "artifacts/prediction_v30r1/models/calibrator_h5.json": "adde97b9c23997a9a9b40a686b15751b4bbe9265c57e971a63f72d3e1b09c6af",
+    "artifacts/prediction_v30r1/models/manifest.json": "1aedd67c654853bdd16ac352516da7b8ca4a65ece05e5b94e60f5d76dd7ecd48",
+    "artifacts/prediction_v30r1/plan.lock.json": "47927f621c07695752a98e6830dacee6a56c1f3aa6f515303eddd315dd0b0174",
+    "artifacts/prediction_v30r1/protocol.json": "d99eebd882d50d7556b67f02b9a5acd54c46a302eeb1e702ae14ab74bf528a90",
+    "artifacts/prediction_v30r1/runtime_status.json": "2732334bebbbe7d55e047f62c01a681151a71829b0253d2bab402a4617fa7093",
+    "artifacts/prediction_v30r1/validation/baseline_comparison.csv": "af471e752b8ab0c598a5245e4f66ee13f12366d85c5481c29384dcbe7908f936",
+    "artifacts/prediction_v30r1/validation/calibration_table.csv": "84e05c602a3c0aaf967ada15f1ef75abe074f226819d8e0411e4021465ba5230",
+    "artifacts/prediction_v30r1/validation/latest_drift.csv": "ae58d2a6f600980c86e26ece63a0e202400ffa618e3c74766901198ab613e34d",
+    "artifacts/prediction_v30r1/validation/oos_predictions.csv": "63567d49a43ec415d750450c76ffcd418e6cd46912a310f6b8cd8a29ea788542",
+    "artifacts/prediction_v30r1/validation/regime_metrics.csv": "3718bbdb7df2a1422b2b0567ae2b2445915016c889ce9ad00d509d6573d9fbc2",
+    "artifacts/prediction_v30r1/validation/report.json": "a56459258a26b32493041381dd63e4c32602932bcc79b00f8f89ed4f9a5fb159",
+    "artifacts/prediction_v30r1/validation/return_baseline_comparison.csv": "455d5231b07d2a322d06e533290ec36b65e6be460c1f4b648298209dbc74384a",
+    "artifacts/prediction_v30r1/validation/sector_metrics.csv": "b5b0a0a56be906a97e6108683a2a21c401dc5465bd1e9a5e3fcb5f7e38b63ce2",
+    "artifacts/prediction_v30r1/validation/selection_audit.csv": "daa0fc2c954b747cf21191e0c6e17135383b8ea336970db29265e38020f46eb8",
+    "artifacts/prediction_v30r1/validation/support_2018.csv": "f94606246725ad23b877f43cd3913652c14dd5a93e44b89876799eb585c23cda",
+    "artifacts/prediction_v30r1/validation/yearly_metrics.csv": "c339782a64bcbfad06ebcf48add4b5bad49fd6ceced2ea7cd0d318bbbdf05a19"
+  }
+}

@@ -12,6 +12,7 @@ license = {text = "MIT"}
 dependencies = [
   "numpy>=1.24,<3",
   "pandas>=2.0,<3",
+  "jieba==0.42.1",
 ]
 
 [project.optional-dependencies]
@@ -19,7 +20,7 @@ app = [
   "akshare>=1.14",
   "fastapi>=0.110",
   "uvicorn[standard]>=0.27",
-  "streamlit>=1.32",
+  "streamlit>=1.57,<2",
   "plotly>=5.18",
 ]
 ml = ["lightgbm>=4.5,<5"]

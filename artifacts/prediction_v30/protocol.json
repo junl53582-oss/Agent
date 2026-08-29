@@ -1,0 +1,49 @@
+{
+  "protocol": "stockpilot-v30-probabilistic-prediction-layer",
+  "status": "preregistered_before_validation",
+  "purpose": "Calibrated executable-open probability and return prediction for 1/5/20 trading-day horizons, independent from V6 ranking and from order execution.",
+  "incumbent": "V6 remains the ranking incumbent; V29 remains an interrupted retrospective experiment.",
+  "data": {
+    "market": "data/market_history_v10_hfq.csv",
+    "membership": "data/universes/000300/history_v10.csv",
+    "fundamentals": "data/fundamentals_pit_v10_extended.csv",
+    "industry": "data/industry_history_v10.csv",
+    "names": "data/stock_names.csv",
+    "features": "research_v10.features.V10_FEATURES",
+    "oos_years": [2019, 2020, 2021, 2022, 2023, 2024, 2025],
+    "training_window_years": 8
+  },
+  "label_semantics": {
+    "decision": "T close",
+    "entry": "T+1 market trading-day open",
+    "exit_1d": "T+2 market trading-day open",
+    "exit_5d": "T+6 market trading-day open",
+    "exit_20d": "T+21 market trading-day open",
+    "raw_up": "return > 0",
+    "tradable_up": "return > frozen estimated round-trip cost",
+    "default_round_trip_cost": 0.0021
+  },
+  "purge_gap_trading_days": {"1": 2, "5": 6, "20": 21},
+  "models": {
+    "direction": ["LightGBM binary", "ridge-logistic baseline"],
+    "return": ["LightGBM regression_l1", "ridge baseline"],
+    "calibration": "Platt sigmoid fitted only on prior-year predictions from a model that excluded that year"
+  },
+  "fixed_lightgbm": {"learning_rate": 0.04, "num_leaves": 15, "max_depth": 5, "min_data_in_leaf": 200, "feature_fraction": 0.8, "lambda_l1": 1.0, "lambda_l2": 5.0, "num_boost_round": 120, "seed": 42},
+  "certification": {
+    "auc_min_5d_20d": 0.52,
+    "calibration_error_max": 0.05,
+    "minimum_positive_skill_years": 4,
+    "minimum_regimes_passed": 4,
+    "minimum_sectors_passed": 4,
+    "requires": ["data", "PIT", "label maturity", "leakage", "purged walk-forward", "calibration", "baseline comparison", "multi-year stability", "regime stability", "probability quality", "cost-aware stress"],
+    "future_126d_is_not_a_prediction_ready_gate": true
+  },
+  "confidence": {"low_upper": 0.4, "medium_upper": 0.7, "inputs": ["OOS skill", "calibration", "regime consistency", "sector stability", "distance from 0.5", "feature completeness", "PSI/z-score drift"]},
+  "retraining_every_trading_days": 20,
+  "immutable_daily_snapshots": true,
+  "production_prediction_ready": false,
+  "future_126d_confirmed": false,
+  "execution_authorized": false,
+  "prohibited": ["random split", "shuffle split", "ordinary KFold", "future membership", "future industry", "future fundamentals", "rank presented as probability", "confidence presented as probability", "post-result threshold changes", "broker connection or orders"]
+}

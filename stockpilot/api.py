@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 try:
@@ -13,6 +14,10 @@ except ImportError as exc:  # pragma: no cover
 from .config import Settings
 from .future_test import future_test_status
 from .pipeline import run_demo, run_file
+from .prediction.config import PredictionSettings
+from .prediction.inference import prediction_history, prediction_status
+from .prediction_v30r1.config import V30R1Settings
+from .prediction_v30r1.inference import v30r1_status
 
 app = FastAPI(title="StockPilot CN API", version="0.1.0")
 
@@ -124,6 +129,84 @@ def future_audit() -> dict:
         "protocol": verify_protocol_addendum(addendum, raise_on_error=False),
         "audit_chain": verify_audit_chain(chain, raise_on_error=False),
     }
+
+
+def _prediction_snapshot() -> pd.DataFrame:
+    settings = PredictionSettings()
+    latest = settings.artifact_dir / "live" / "latest.json"
+    if not latest.exists():
+        raise HTTPException(status_code=404, detail="V30 latest prediction is not available")
+    metadata = json.loads(latest.read_text(encoding="utf-8"))
+    path = Path(metadata["snapshot_path"])
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="V30 immutable snapshot is missing")
+    return pd.read_csv(path, dtype={"symbol": str})
+
+
+@app.get("/predictions/latest")
+def latest_predictions(
+    limit: int = 20,
+    min_probability: float = 0.0,
+    horizon: int = 5,
+    confidence: str | None = None,
+) -> list[dict]:
+    if horizon not in (1, 5, 20):
+        raise HTTPException(status_code=422, detail="horizon must be 1, 5, or 20")
+    if not 0 <= min_probability <= 1:
+        raise HTTPException(status_code=422, detail="min_probability must be in [0,1]")
+    frame = _prediction_snapshot()
+    frame = frame[frame[f"p_up_{horizon}d"] >= min_probability]
+    if confidence:
+        level = confidence.upper()
+        if level not in {"LOW", "MEDIUM", "HIGH"}:
+            raise HTTPException(status_code=422, detail="confidence must be LOW, MEDIUM, or HIGH")
+        frame = frame[frame["confidence_level"] == level]
+    frame = frame.sort_values(f"rank_{horizon}d").head(max(0, min(int(limit), 1000)))
+    return frame.replace({np.nan: None}).to_dict(orient="records")
+
+
+@app.get("/predictions/{symbol}/history")
+def symbol_prediction_history(symbol: str) -> list[dict]:
+    frame = prediction_history(symbol)
+    if frame.empty:
+        raise HTTPException(status_code=404, detail="prediction history not found")
+    return frame.replace({np.nan: None}).to_dict(orient="records")
+
+
+@app.get("/predictions/{symbol}")
+def symbol_prediction(symbol: str) -> dict:
+    normalized = str(symbol).zfill(6)
+    frame = _prediction_snapshot()
+    selected = frame[frame["symbol"].astype(str).str.zfill(6) == normalized]
+    if selected.empty:
+        raise HTTPException(status_code=404, detail="symbol prediction not found")
+    return selected.replace({np.nan: None}).iloc[0].to_dict()
+
+
+@app.get("/prediction-model/status")
+def prediction_model_status() -> dict:
+    return prediction_status()
+
+
+@app.get("/prediction-model/validation")
+def prediction_model_validation() -> dict:
+    path = PredictionSettings().validation_dir / "report.json"
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="V30 validation is not available")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+@app.get("/prediction-model/v30r1/status")
+def prediction_model_v30r1_status() -> dict:
+    return v30r1_status()
+
+
+@app.get("/prediction-model/v30r1/validation")
+def prediction_model_v30r1_validation() -> dict:
+    path = V30R1Settings().validation_dir / "report.json"
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="V30r1 validation is not available")
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 @app.post("/run")

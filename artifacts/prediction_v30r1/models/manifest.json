@@ -1,0 +1,149 @@
+{
+  "version": "V30r1",
+  "created_at_utc": "2026-08-29T16:53:53.901882+00:00",
+  "parent_validation_lock": "c7b69369d0d72e47156c5b66881df535c9b7331cbd5374a66e48512d381888f8",
+  "plan_lock": "47927f621c07695752a98e6830dacee6a56c1f3aa6f515303eddd315dd0b0174",
+  "parent_model_manifest": "artifacts\\prediction_v30\\models\\manifest.json",
+  "parent_model_manifest_sha256": "d5da844fe36d8545f1d8ea7f79080575fbfdcb1bff5581b080a79aa90a37600f",
+  "training_cutoff": "2026-08-21",
+  "models": {
+    "1": {
+      "direction_source": "logistic_ridge",
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 174985,
+          "roc_auc": 0.5166555251696582,
+          "pr_auc": 0.4241191066509018,
+          "log_loss": 0.6773756798952346,
+          "brier": 0.24215925831909174,
+          "accuracy": 0.5896391119238792,
+          "balanced_accuracy": 0.5008404947125823,
+          "precision": 0.5,
+          "recall": 0.005528708900246494,
+          "f1": 0.010936488478120137,
+          "actual_up_rate": 0.4103608880761208,
+          "mean_probability": 0.42776377560486173
+        },
+        "logistic_ridge": {
+          "sample_size": 174985,
+          "roc_auc": 0.5197702032269355,
+          "pr_auc": 0.4263872362174703,
+          "log_loss": 0.6772348782994941,
+          "brier": 0.24209658934316647,
+          "accuracy": 0.5896962596794011,
+          "balanced_accuracy": 0.5011451255881436,
+          "precision": 0.5048732943469786,
+          "recall": 0.007213781386215828,
+          "f1": 0.014224321392775251,
+          "actual_up_rate": 0.4103608880761208,
+          "mean_probability": 0.4293941026340712
+        },
+        "lightgbm_retained": false
+      },
+      "calibrator": "artifacts\\prediction_v30r1\\models\\calibrator_h1.json"
+    },
+    "5": {
+      "direction_source": "logistic_ridge",
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 174082,
+          "roc_auc": 0.49372209245274284,
+          "pr_auc": 0.4432892800020779,
+          "log_loss": 0.6899085673431501,
+          "brier": 0.24837831339881264,
+          "accuracy": 0.5454670787330109,
+          "balanced_accuracy": 0.49847681067479843,
+          "precision": 0.42044933516735444,
+          "recall": 0.023383312933496533,
+          "f1": 0.04430272725076697,
+          "actual_up_rate": 0.4505462942751117,
+          "mean_probability": 0.4554805895024407
+        },
+        "logistic_ridge": {
+          "sample_size": 174082,
+          "roc_auc": 0.5015022882901098,
+          "pr_auc": 0.45004839594247864,
+          "log_loss": 0.689537752496872,
+          "brier": 0.24819747621138885,
+          "accuracy": 0.5418997943497892,
+          "balanced_accuracy": 0.4988017993765093,
+          "precision": 0.44133131078790044,
+          "recall": 0.06306099551203591,
+          "f1": 0.11035375227300617,
+          "actual_up_rate": 0.4505462942751117,
+          "mean_probability": 0.46091399061613075
+        },
+        "lightgbm_retained": false
+      },
+      "calibrator": "artifacts\\prediction_v30r1\\models\\calibrator_h5.json",
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 174082,
+          "mae": 0.032889850500618704,
+          "rmse": 0.05182823272986357,
+          "rank_ic": 0.03623244874351704
+        },
+        "ridge": {
+          "sample_size": 174082,
+          "mae": 0.03299850222994938,
+          "rmse": 0.051610888195313565,
+          "rank_ic": 0.026738085726052685
+        },
+        "lightgbm_retained": false
+      }
+    },
+    "20": {
+      "direction_source": "logistic_ridge",
+      "direction_evidence": {
+        "lightgbm": {
+          "sample_size": 172361,
+          "roc_auc": 0.48472909749964627,
+          "pr_auc": 0.4571588898500984,
+          "log_loss": 0.6969423560292685,
+          "brier": 0.251849798785226,
+          "accuracy": 0.5103184595123027,
+          "balanced_accuracy": 0.491094667174744,
+          "precision": 0.4451459359402373,
+          "recall": 0.16608906922536168,
+          "f1": 0.24191636128475963,
+          "actual_up_rate": 0.4704254442710358,
+          "mean_probability": 0.4631611120590865
+        },
+        "logistic_ridge": {
+          "sample_size": 172361,
+          "roc_auc": 0.5046725053963961,
+          "pr_auc": 0.47109480036418006,
+          "log_loss": 0.6944197659555339,
+          "brier": 0.2506210204075059,
+          "accuracy": 0.5152267624346575,
+          "balanced_accuracy": 0.5000590298536448,
+          "precision": 0.47054619947118936,
+          "recall": 0.24362690083001368,
+          "f1": 0.3210362088019242,
+          "actual_up_rate": 0.4704254442710358,
+          "mean_probability": 0.46983048697394375
+        },
+        "lightgbm_retained": false
+      },
+      "calibrator": "artifacts\\prediction_v30r1\\models\\calibrator_h20.json",
+      "return_source": "ridge",
+      "return_evidence": {
+        "lightgbm": {
+          "sample_size": 172361,
+          "mae": 0.06784401995275893,
+          "rmse": 0.10298841765553338,
+          "rank_ic": 0.017847879055399838
+        },
+        "ridge": {
+          "sample_size": 172361,
+          "mae": 0.06810916273957673,
+          "rmse": 0.10184438141844036,
+          "rank_ic": 0.01779541564173207
+        },
+        "lightgbm_retained": false
+      }
+    }
+  },
+  "execution_authorized": false
+}

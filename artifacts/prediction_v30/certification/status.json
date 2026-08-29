@@ -1,0 +1,24 @@
+{
+  "data_verified": true,
+  "pit_verified": true,
+  "label_maturity_verified": true,
+  "leakage_test_passed": true,
+  "purged_walk_forward_passed": true,
+  "calibration_passed": false,
+  "baseline_beaten": false,
+  "stability_passed": false,
+  "regime_passed": false,
+  "probability_quality_passed": false,
+  "cost_aware_stress_passed": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "future_126d_confirmed": false,
+  "future_confirmation_status": "COLLECTING",
+  "reasons": [
+    "calibration_passed",
+    "baseline_beaten",
+    "stability_passed",
+    "regime_passed",
+    "probability_quality_passed"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "rows": 947079,
+  "eligible_rows": 947079,
+  "symbols": 747,
+  "date_min": "2010-07-02",
+  "date_max": "2026-08-21",
+  "checks": {
+    "unique_date_symbol": true,
+    "membership_not_future": true,
+    "fundamentals_not_future": true,
+    "industry_not_future": true,
+    "real_history_span": true,
+    "minimum_symbols": true
+  },
+  "passed": true
+}
