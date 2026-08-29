@@ -1,0 +1,14 @@
+{
+  "version": "V30r1-forward-r2",
+  "created_date": "2026-08-30",
+  "hypothesis": "A byte-exact, publishable inference subset can reproduce the already frozen V30r1 probabilities without shipping hundreds of megabytes of OOS evidence.",
+  "scope": "inference_only_publishable_parent_bundle",
+  "parent_r1_preserved": true,
+  "rules": [
+    "Do not modify V30, V30r1, forward, or forward-r1 frozen files.",
+    "Verify every model, calibrator, feature profile, certification status, manifest, and inference source file byte-for-byte.",
+    "Do not claim that the reduced bundle re-certifies full historical validation.",
+    "Do not promote production_prediction_ready or execution_authorized.",
+    "Probabilities and expected returns must remain identical to forward-r1."
+  ]
+}

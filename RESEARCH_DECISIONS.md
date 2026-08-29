@@ -282,3 +282,11 @@
 - 输出：2026-08-28不可变快照261只，SHA-256 `611e57477ea7c77e01bb688edcec806977bd912e0c5d0409799c25156366131a`，训练截止2026-08-21。漂移`SEVERE`，置信度全部LOW，`production_prediction_ready=false`、`future_126d_confirmed=false`、`execution_authorized=false`；预测账本783行、0行成熟。
 - 验证：新前向层与V30/V30r1专项30项通过；全仓除已知冻结V18空回归器夹具外`302 passed, 24 subtests passed`；Streamlit AppTest无异常，API已返回8月28日快照。
 - 决策：这是成功的前向推理与数据管道修复，不是预测认证通过或模型替换。V6仍为正式排名默认；下一步只追加新交易日快照并在1/5/20日标签成熟后结算，不因当前概率看起来低而改校准器或门禁。
+
+## 032 — 2026-08-30：修复干净检出的冻结推理发布缺口
+
+- 缺口：在全新索引检出中复核冻结锁时，发现旧V30/V30r1完整结果锁包含约717MB未提交OOS明细，且历史Git文本规范化使仓库blob与本地已冻结CRLF字节不同。当前工作区完整父锁仍然完好，但直接克隆不能获得全部历史验证证据；不能假称完整锁可由轻量仓库重验。
+- 边界：未修改V30、V30r1、forward或forward-r1任何冻结代码、锁、模型、数据或报告，也未把超大OOS数据上传。Git换行规则仅防止今后的forward冻结文件被转换。
+- 独立修订：新增`V30r1-forward-r2`，冻结锁`110fa074f16235ab413e13b788767913c93e04e051c2105c39b462202d384b17`。它逐文件绑定推理必需的V30/V30r1模型、校准器、manifest、训练特征画像、冻结特征面板、认证状态和推理源码；状态明确为`full_historical_validation_recertified=false`，不得借轻量bundle提升认证。
+- 验收：r2输出2026-08-28共261只，SHA-256 `149be61423334f01b4928b59cf9eb9acefccf3df9711d19063011dcbdb7c5ddb`。与r1相比，原始概率、校准概率、5/20日预期收益、1/5/20日排名和candidate score最大绝对差全部为0，状态字段一致；可发布推理bundle完整。
+- 决策：发布r2作为当前前向快照入口，但保持`production_prediction_ready=false`、`future_126d_confirmed=false`、`execution_authorized=false`、漂移SEVERE和置信度LOW。完整历史证据仍保留在本地冻结工作区，不用删减证据重新包装成“认证通过”。
