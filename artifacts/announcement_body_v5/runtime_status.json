@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "pid": 4856,
+  "at_utc": "2026-08-29T05:27:04.853557+00:00",
+  "target_date": "2026-08-29",
+  "records": 6780,
+  "new": 3000,
+  "prospective_first_seen": false,
+  "model_training_ready": false
+}

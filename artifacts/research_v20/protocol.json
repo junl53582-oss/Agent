@@ -1,0 +1,22 @@
+{
+  "protocol": "stockpilot-v20-causal-timing-and-adaptive-repair",
+  "purpose": "Repair V17 lookahead and V19 configuration in a new immutable experiment; preserve all V14-V19 records.",
+  "test_years": [2020, 2021, 2022, 2023, 2024, 2025],
+  "arms": ["v16_control", "v20_adaptive", "v20_timing"],
+  "adaptive_baseline_weights": {"bull": 0.5, "neutral": 0.65, "bear": 0.8},
+  "regime_thresholds": [-0.02, 0.02],
+  "timing": "20 daily returns through decision-date close, PIT constituent weights lagged one day; trade after decision close; >0 invested, otherwise cash",
+  "coverage": "at least 95% of lagged benchmark weight each day in the complete 20-day window",
+  "costs": "Recompute turnover for cash exits and re-entry using independent positions per arm; inherited V16 execution assumptions remain approximate.",
+  "already_seen": ["V16/V17/V18 retrospective results", "V19 code and incomplete startup record"],
+  "untouched_holdout": false,
+  "promotion_requirements": [
+    "positive cumulative excess", "at least 4 of 6 positive excess years",
+    "Rank IC no lower than V6 on a comparable horizon/universe", "technology IC nonnegative",
+    "maximum drawdown no worse than -18%", "turnover and costs no higher than V8 on a comparable basis",
+    "126 new future shadow trading days valid", "no unresolved data leakage or execution-accounting defects"
+  ],
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "failure_policy": "Record failure without deleting run markers; do not edit locked files to make a rerun pass. Repair in a new revision and preserve prior evidence."
+}

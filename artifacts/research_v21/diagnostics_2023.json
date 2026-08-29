@@ -1,0 +1,551 @@
+{
+  "year": 2023,
+  "global_validation_gate": false,
+  "technology_validation_gate": false,
+  "validation_diagnostics": {
+    "2021": {
+      "text_payoff_mean": -0.005243822466221081,
+      "baseline_payoff_mean": -0.003837458554451732,
+      "incremental_mean": -0.0014063639117693509,
+      "technology_payoff_mean": 0.006870920769592573,
+      "technology_incremental_mean": 0.0069366880835436745,
+      "top30_precision": 0.13589743589743591,
+      "training_events": 44703,
+      "raw_event_years": 4,
+      "available_raw_event_years": 4,
+      "raw_event_year_values": "2017,2018,2019,2020",
+      "validation_label_end_max": "2022-02-14 00:00:00",
+      "validation_cutoff_exclusive": "2022-12-04 00:00:00",
+      "required_raw_event_years": 4,
+      "raw_event_year_gate": true,
+      "technology_sample_valid": true
+    },
+    "2022": {
+      "text_payoff_mean": -0.009429247349781069,
+      "baseline_payoff_mean": -0.0015894401305452533,
+      "incremental_mean": -0.007839807219235821,
+      "technology_payoff_mean": -0.0014730266884213047,
+      "technology_incremental_mean": 0.0027258391692839973,
+      "top30_precision": 0.1272727272727273,
+      "training_events": 56796,
+      "raw_event_years": 5,
+      "available_raw_event_years": 5,
+      "raw_event_year_values": "2017,2018,2019,2020,2021",
+      "validation_label_end_max": "2022-12-02 00:00:00",
+      "validation_cutoff_exclusive": "2022-12-04 00:00:00",
+      "required_raw_event_years": 4,
+      "raw_event_year_gate": true,
+      "technology_sample_valid": true
+    }
+  },
+  "training_events": 68272,
+  "raw_event_years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "payoff_lower_bound": -0.01368901937897559,
+  "incremental_lower_bound": -0.012069141482481836,
+  "technology_lower_bound": -0.009500614269141639,
+  "technology_incremental_lower_bound": -0.007856838301590563,
+  "legacy_reproduction": [
+    {
+      "date": "2023-01-19",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.0861679817868771,
+          "labelled_rows": 245
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.10584745693559314,
+          "labelled_rows": 245
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": -0.06591119333950046,
+          "labelled_rows": 47
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.11325102612016419,
+          "labelled_rows": 245
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.10315955250552843,
+          "labelled_rows": 245
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": -0.06810823311748382,
+          "labelled_rows": 47
+        }
+      ]
+    },
+    {
+      "date": "2023-02-23",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.10273996090669045,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.10787352971434451,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": -0.08174120712114633,
+          "labelled_rows": 48
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.10273996090669045,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.10787352971434451,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": -0.08174120712114633,
+          "labelled_rows": 48
+        }
+      ]
+    },
+    {
+      "date": "2023-03-23",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": 0.005253588057408919,
+          "labelled_rows": 250
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": 0.012579657274516392,
+          "labelled_rows": 250
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.030317690695049183,
+          "labelled_rows": 53
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": 0.005253588057408919,
+          "labelled_rows": 250
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": 0.012579657274516392,
+          "labelled_rows": 250
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.030317690695049183,
+          "labelled_rows": 53
+        }
+      ]
+    },
+    {
+      "date": "2023-04-21",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.008987491510873134,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": 0.002824939593690739,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.20660804234611116,
+          "labelled_rows": 52
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.008987491510873134,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": 0.002824939593690739,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.20660804234611116,
+          "labelled_rows": 52
+        }
+      ]
+    },
+    {
+      "date": "2023-05-24",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.019300397754730306,
+          "labelled_rows": 244
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.08686418100938006,
+          "labelled_rows": 244
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.10356057316543639,
+          "labelled_rows": 48
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.006662288473373563,
+          "labelled_rows": 244
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.104050654870327,
+          "labelled_rows": 244
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.1971341728180634,
+          "labelled_rows": 48
+        }
+      ]
+    },
+    {
+      "date": "2023-06-21",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.014837985873230417,
+          "labelled_rows": 248
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.06244856663168279,
+          "labelled_rows": 248
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": -0.062067787927943305,
+          "labelled_rows": 52
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.014837985873230417,
+          "labelled_rows": 248
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.06244856663168279,
+          "labelled_rows": 248
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": -0.062067787927943305,
+          "labelled_rows": 52
+        }
+      ]
+    },
+    {
+      "date": "2023-07-21",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.04989329394244119,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.0011837419869695678,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": -0.2707142857142857,
+          "labelled_rows": 49
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.04989329394244119,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.0011837419869695678,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": -0.2707142857142857,
+          "labelled_rows": 49
+        }
+      ]
+    },
+    {
+      "date": "2023-08-18",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": 0.11427786393208247,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.0064126744624669945,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.07813752698119025,
+          "labelled_rows": 46
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": 0.11427786393208247,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.0064126744624669945,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.07813752698119025,
+          "labelled_rows": 46
+        }
+      ]
+    },
+    {
+      "date": "2023-09-15",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.03633164927865092,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.03966403001554422,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.02448350292938637,
+          "labelled_rows": 46
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.03633164927865092,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.03966403001554422,
+          "labelled_rows": 246
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.02448350292938637,
+          "labelled_rows": 46
+        }
+      ]
+    },
+    {
+      "date": "2023-10-23",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": 0.07703881002440366,
+          "labelled_rows": 243
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.017381966711325875,
+          "labelled_rows": 243
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.11910408432147562,
+          "labelled_rows": 45
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": 0.09153047280220653,
+          "labelled_rows": 243
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.02857687656495406,
+          "labelled_rows": 243
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.07417654808959155,
+          "labelled_rows": 45
+        }
+      ]
+    },
+    {
+      "date": "2023-11-20",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.1432756671031536,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": 0.14862951151144288,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": 0.06958315240990012,
+          "labelled_rows": 48
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.0686198927114305,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": 0.17794314323925794,
+          "labelled_rows": 242
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": 0.10095527572731221,
+          "labelled_rows": 48
+        }
+      ]
+    },
+    {
+      "date": "2023-12-18",
+      "checks": [
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_5",
+          "value": -0.06677668804224822,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v16_control",
+          "metric": "rank_ic_20",
+          "value": -0.02761307911251329,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v16_control",
+          "metric": "technology_rank_ic_5",
+          "value": -0.20235578375113256,
+          "labelled_rows": 43
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_5",
+          "value": -0.0692928911902884,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "rank_ic_20",
+          "value": -0.05358098144782416,
+          "labelled_rows": 241
+        },
+        {
+          "mode": "v20_adaptive",
+          "metric": "technology_rank_ic_5",
+          "value": -0.1443672606463304,
+          "labelled_rows": 43
+        }
+      ]
+    }
+  ],
+  "score_sha256": "83EBA46A571E2A2D2FB713AC5D855E42AB36F49606538ABBC1D55A0C6286182B",
+  "partial_result_only": true,
+  "execution_authorized": false
+}

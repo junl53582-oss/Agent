@@ -1,0 +1,19 @@
+{
+  "protocol": "announcement-body-v3-complete-fixed-pilot-gold-expansion",
+  "status": "preregistered_not_implemented_or_run",
+  "parent": "Frozen announcement_body_v2r1",
+  "purpose": "Visually review and annotate all seven remaining text PDFs in the fixed 12-document pilot",
+  "scope": "Seven existing official PDFs only; the scan remains quarantined and no new documents are fetched",
+  "categories": ["earnings_flash", "earnings_forecast", "contract", "repurchase"],
+  "acceptance": [
+    "Every page of each reviewed PDF is rendered and inspected",
+    "Facts carry page/table/cell context, role, unit/currency and uncertainty qualifier",
+    "Corporate/background numbers unrelated to the announced event are not approved",
+    "Rules are frozen before evaluating the expanded gold",
+    "No unreviewed or scan-derived fact is released"
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

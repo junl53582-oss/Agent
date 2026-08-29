@@ -1,0 +1,79 @@
+{
+  "status": "retrospective_calendar_ledger_repair_complete",
+  "lock_sha256": "CEE149CED49CCC81D6E26EE87DB5CEB277A647B4AE551E7A3E7817174E96426D",
+  "created_at_utc": "2026-08-28T21:51:32.116894+00:00",
+  "metrics": {
+    "v16_control": {
+      "total_return": 0.3559301960621777,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": 0.051477789825914,
+      "max_drawdown": -0.40671763301747754,
+      "positive_excess_years": 4,
+      "test_years": 6,
+      "rank_ic_5": -0.025196358969506717,
+      "rank_ic_20": -0.016853339994093344,
+      "technology_rank_ic_5": -0.04314436378855893,
+      "average_one_way_turnover": 0.1332549742929555,
+      "average_transaction_cost": 0.0002764807886567216,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.4794520547945205,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    },
+    "v20_adaptive": {
+      "total_return": 0.33076397667232804,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": 0.026311570436064358,
+      "max_drawdown": -0.4100917949531293,
+      "positive_excess_years": 3,
+      "test_years": 6,
+      "rank_ic_5": -0.024058932710402065,
+      "rank_ic_20": -0.01447816444765854,
+      "technology_rank_ic_5": -0.043656531261941176,
+      "average_one_way_turnover": 0.13825625215306098,
+      "average_transaction_cost": 0.00028698680261375094,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.5068493150684932,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    },
+    "v20_timing": {
+      "total_return": 0.13493423184211273,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": -0.16951817439415096,
+      "max_drawdown": -0.23236043297471065,
+      "positive_excess_years": 3,
+      "test_years": 6,
+      "rank_ic_5": -0.025196358969506717,
+      "rank_ic_20": -0.016853339994093344,
+      "technology_rank_ic_5": -0.04314436378855893,
+      "average_one_way_turnover": 0.3018399339630573,
+      "average_transaction_cost": 0.0006339301794480064,
+      "periods": 73,
+      "periods_held": 43,
+      "held_period_win_rate": 0.4186046511627907,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    }
+  },
+  "output_sha256": {
+    "equity.csv": "99E668E2A4A0A7EB1981927E5B047EB17B4C427A4D381D97353ABAAFC3F46A6F",
+    "holdings.csv": "72F88C401DD94EDD89A2FF82959509899D2FCA9DA3170A24042E6A25D4240499",
+    "daily_nav.csv": "FD3EA5C8113446443DF125E7450839ECCEE65CCBD4B87D2C34044F1C4CF5279A",
+    "settlements.json": "05AB7F3A8D3590E7CD706705BC66116D6D9B585E7466D9C137981F7AD4FE835B"
+  },
+  "frozen_inputs_intact": true,
+  "execution_authorized": false,
+  "replacement_approved": false,
+  "decision": "keep_v6",
+  "promotion_gates_evaluated": false,
+  "limitations": [
+    "Repeated retrospective window, not a blind holdout; 126 untouched future days still required.",
+    "Benchmark is a zero-cost 20-market-day PIT-snapshot portfolio with the same trade restrictions, not official CSI300 returns.",
+    "Legacy predictors and their per-security-row IC labels are unchanged; labels missing near mergers remain missing and counts are reported.",
+    "Missing quotes are nontradable last-close marks, not verified fair value; temporary missing feeds and suspensions are not distinguished.",
+    "Ordinary unrestricted public shareholders only; swaps settle on new-share listing day. Pre-listing marks stay at old last close.",
+    "HFQ economic units use raw/HFQ price anchors at swaps; no tax lots, integer share rounding or investor-specific cash election.",
+    "Daily opening-price limits are approximate, without PIT ST names, board lots or order book depth. Blocked orders retry only on next rebalance.",
+    "New calendar/NAV/benchmark accounting is not directly comparable with old V6/V8 archived cost and return metrics; gates remain unpassed."
+  ]
+}

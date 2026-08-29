@@ -1,0 +1,136 @@
+{
+  "source_path": "C:/Users/lin/Documents/ChatGPT/量化/data/announcements_pit_v14.csv",
+  "source_sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+  "rows": 966865,
+  "date_min": "2017-01-03",
+  "date_max": "2026-08-25",
+  "invalid_required_fields": 0,
+  "duplicate_announcement_id_rows": 0,
+  "conflicting_announcement_ids": 0,
+  "date_rows_with_non_midnight_time": 57739,
+  "publication_time_granularity": "mixed",
+  "coverage_2015_2025": {
+    "2015": {
+      "earnings_forecast": 0,
+      "earnings_flash": 0,
+      "contract": 0,
+      "repurchase": 0
+    },
+    "2016": {
+      "earnings_forecast": 0,
+      "earnings_flash": 0,
+      "contract": 0,
+      "repurchase": 0
+    },
+    "2017": {
+      "earnings_forecast": 548,
+      "earnings_flash": 349,
+      "contract": 369,
+      "repurchase": 972
+    },
+    "2018": {
+      "earnings_forecast": 543,
+      "earnings_flash": 383,
+      "contract": 313,
+      "repurchase": 1868
+    },
+    "2019": {
+      "earnings_forecast": 666,
+      "earnings_flash": 375,
+      "contract": 230,
+      "repurchase": 2624
+    },
+    "2020": {
+      "earnings_forecast": 644,
+      "earnings_flash": 354,
+      "contract": 215,
+      "repurchase": 1862
+    },
+    "2021": {
+      "earnings_forecast": 711,
+      "earnings_flash": 321,
+      "contract": 199,
+      "repurchase": 2229
+    },
+    "2022": {
+      "earnings_forecast": 560,
+      "earnings_flash": 324,
+      "contract": 159,
+      "repurchase": 2950
+    },
+    "2023": {
+      "earnings_forecast": 533,
+      "earnings_flash": 246,
+      "contract": 160,
+      "repurchase": 3026
+    },
+    "2024": {
+      "earnings_forecast": 513,
+      "earnings_flash": 186,
+      "contract": 141,
+      "repurchase": 3868
+    },
+    "2025": {
+      "earnings_forecast": 478,
+      "earnings_flash": 178,
+      "contract": 120,
+      "repurchase": 3224
+    }
+  },
+  "unique_securities_by_year": {
+    "2015": 0,
+    "2016": 0,
+    "2017": 690,
+    "2018": 708,
+    "2019": 731,
+    "2020": 755,
+    "2021": 765,
+    "2022": 775,
+    "2023": 776,
+    "2024": 772,
+    "2025": 768
+  },
+  "empty_year_category_cells": [
+    [
+      2015,
+      "earnings_forecast"
+    ],
+    [
+      2015,
+      "earnings_flash"
+    ],
+    [
+      2015,
+      "contract"
+    ],
+    [
+      2015,
+      "repurchase"
+    ],
+    [
+      2016,
+      "earnings_forecast"
+    ],
+    [
+      2016,
+      "earnings_flash"
+    ],
+    [
+      2016,
+      "contract"
+    ],
+    [
+      2016,
+      "repurchase"
+    ]
+  ],
+  "revision_titles": {
+    "supplement": 11302,
+    "cancellation": 3098,
+    "termination": 2787,
+    "correction": 4538
+  },
+  "revision_titles_without_explicit_lineage": 21725,
+  "source_has_historical_first_seen_field": false,
+  "source_has_explicit_revision_parent_field": false
+}

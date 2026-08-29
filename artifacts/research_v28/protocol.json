@@ -1,0 +1,20 @@
+{
+  "protocol": "stockpilot-v28-three-gate-confidence-tail",
+  "status": "preregistered_not_frozen_or_run",
+  "purpose": "Separate prediction, selection and portfolio conversion; use benchmark-relative active drawdown and cross-fitted confidence-scaled active risk.",
+  "model": [
+    "For each 5/20-day residual target fit fixed regression anchor, positive-direction probability and top-20-percent tail probability on an 8-year mature-label window.",
+    "Replace only the original LightGBM contribution with a fixed 50/50 direction/tail probability blend; retain frozen V6/Ridge contributions and 0.3/0.7 horizon weights.",
+    "Use two strictly prior validation years to assign active confidence in {0,0.25,0.5,1}; scale only the 15% maximum active budget by confidence."
+  ],
+  "independent_gates": {
+    "ranking": ["IC5>0", "IC20>0", "at least 4/6 positive IC5 years", "technology IC5>=0"],
+    "selection": ["sector-neutral top-20% spread5>0", "spread20>0", "at least 4/6 positive spread5 years", "top-20% precision lift>0"],
+    "portfolio_conversion": ["cumulative excess>0", "at least 4/6 positive excess years", "active wealth-ratio max drawdown>=-10%", "tracking error<=6%", "turnover and cost no higher than V16 control", "126 untouched future days"]
+  },
+  "drawdown_change": "Absolute strategy drawdown is reported but no longer a V28 promotion gate. Active drawdown is the drawdown of cumulative strategy wealth divided by cumulative benchmark wealth, sampled at frozen settlement dates.",
+  "data": "artifacts/research_v28/data_admission.json",
+  "governance": ["V25/V26 remain failed under their original rules and cannot be retroactively approved", "V6 is incumbent, not claimed best predictor", "no threshold, confidence tier, tail quantile, active-budget, horizon, model or portfolio search after viewing V28 results", "one frozen 2020-2025 run; still retrospective", "no replacement without all three gates and 126 new future trading days"],
+  "replacement_approved": false,
+  "execution_authorized": false
+}

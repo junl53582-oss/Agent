@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "created_at_shanghai": "2026-08-29T11:20:00+08:00",
+  "python": ".venv311/Scripts/python.exe",
+  "tests": {
+    "research_v23": 4,
+    "research_v22r1": 2,
+    "research_v22": 6,
+    "research_v21": 9,
+    "research_v20r2": 21,
+    "total": 42
+  },
+  "diagnostic_outcomes_read_before_freeze": false,
+  "portfolio_rerun": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,191 @@
+{
+  "selected": 12,
+  "completed": 12,
+  "body_extraction_passed": 11,
+  "failed": 0,
+  "pending": 0,
+  "pages": 34,
+  "numeric_mentions": 103,
+  "tables": 12,
+  "documents": [
+    {
+      "symbol": "601390",
+      "announcement_id": "1204433911",
+      "year": 2018,
+      "category": "contract",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 467,
+        "chinese_chars": 344,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "600009",
+      "announcement_id": "1204429465",
+      "year": 2018,
+      "category": "earnings_flash",
+      "status": "quarantined_quality",
+      "quality": {
+        "text_chars": 4,
+        "chinese_chars": 0,
+        "security_code_in_first_page": false,
+        "replacement_chars": 0,
+        "all_pages_have_text": false
+      }
+    },
+    {
+      "symbol": "002385",
+      "announcement_id": "1205501722",
+      "year": 2018,
+      "category": "earnings_forecast",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 954,
+        "chinese_chars": 572,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "000008",
+      "announcement_id": "1205688090",
+      "year": 2018,
+      "category": "repurchase",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 5645,
+        "chinese_chars": 4235,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "600481",
+      "announcement_id": "1211571975",
+      "year": 2021,
+      "category": "contract",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 1636,
+        "chinese_chars": 1339,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "600674",
+      "announcement_id": "1211243407",
+      "year": 2021,
+      "category": "earnings_flash",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 1343,
+        "chinese_chars": 739,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "002624",
+      "announcement_id": "1210454093",
+      "year": 2021,
+      "category": "earnings_forecast",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 2093,
+        "chinese_chars": 1468,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "000069",
+      "announcement_id": "1209041295",
+      "year": 2021,
+      "category": "repurchase",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 735,
+        "chinese_chars": 520,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "002310",
+      "announcement_id": "1220089694",
+      "year": 2024,
+      "category": "contract",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 2660,
+        "chinese_chars": 2101,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "000728",
+      "announcement_id": "1220627969",
+      "year": 2024,
+      "category": "earnings_flash",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 1182,
+        "chinese_chars": 688,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "601360",
+      "announcement_id": "1220589893",
+      "year": 2024,
+      "category": "earnings_forecast",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 829,
+        "chinese_chars": 575,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    },
+    {
+      "symbol": "002050",
+      "announcement_id": "1220789517",
+      "year": 2024,
+      "category": "repurchase",
+      "status": "extracted",
+      "quality": {
+        "text_chars": 1085,
+        "chinese_chars": 782,
+        "security_code_in_first_page": true,
+        "replacement_chars": 0,
+        "all_pages_have_text": true
+      }
+    }
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false,
+  "created_at_utc": "2026-08-29T01:23:53.128953+00:00",
+  "scope": "data preparation pilot only; no alpha or performance test",
+  "software": {
+    "python": "3.12.13",
+    "pdfplumber": "0.11.9",
+    "pypdf": "6.10.0",
+    "pypdfium2": "5.13.0"
+  }
+}

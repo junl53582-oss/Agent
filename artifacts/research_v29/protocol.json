@@ -1,0 +1,28 @@
+{
+  "protocol": "stockpilot-v29-sector-conditional-tail",
+  "status": "preregistered_not_frozen_or_run",
+  "preregistered_after_v28_completion": true,
+  "evidence": "Before V28 completed, code review identified that its tail labels were date-wide while its selection gate and active portfolio were sector-neutral. V28 later failed annual stability in ranking and selection, while risk conversion limits passed.",
+  "single_hypothesis": "Define the 5-day and 20-day top-20-percent tail labels within each point-in-time broad sector and date instead of across the whole date.",
+  "fixed_parent_behavior": [
+    "Direction probability heads, regression anchors, V10 PIT features, 8-year mature-label window, 0.3/0.7 horizons and 50/50 direction-tail blend remain unchanged from V28.",
+    "Two-prior-year confidence tiers {0,0.25,0.5,1}, maximum 15% active budget scaling, portfolio optimizer, costs, corporate actions, proxy benchmark and all three gates remain unchanged.",
+    "No new external feature is admitted; V28 data-admission exclusions remain binding."
+  ],
+  "tests_before_freeze": [
+    "sector-date tail labels select the top 20% independently in each sector",
+    "sector identity is required and missing values fail closed",
+    "non-tail model and portfolio rules equal V28",
+    "labels remain mature and do not enter prediction inputs",
+    "V16 control ledger reproduces exactly"
+  ],
+  "prohibited": [
+    "searching tail quantile, weights, sectors, technology overrides, years, top-N, confidence tiers or signs",
+    "changing gates after viewing V29 results",
+    "retroactively reapproving V25r1, V26 or V28",
+    "claiming independent out-of-sample success from 2020-2025"
+  ],
+  "promotion": "All unchanged ranking, selection and portfolio-conversion gates plus 126 untouched future trading days are required.",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

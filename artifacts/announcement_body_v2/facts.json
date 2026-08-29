@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_amount",
+      "role": "contract_original_currency",
+      "bound": "point",
+      "value_base": "2490000000.0",
+      "currency": "ILS",
+      "period": null,
+      "qualifier": null,
+      "literal": "中标金额约为24.9亿谢克尔(资金来源为以色列政府全额预算拨款),约折合45亿元人民币",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_amount",
+      "role": "converted_rmb",
+      "bound": "point",
+      "value_base": "4500000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "issuer_approximation",
+      "literal": "中标金额约为24.9亿谢克尔(资金来源为以色列政府全额预算拨款),约折合45亿元人民币",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_to_revenue",
+      "role": "reference_ratio",
+      "bound": "point",
+      "value_base": "0.007",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "reference_revenue_year_2016",
+      "literal": "约占本公司中国会计准则下2016年营业收入的0.70%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "46171.91",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "盈利:41,974.47万元至46,171.91元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "419744700.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "盈利:41,974.47万元至46,171.91元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "previous_guidance",
+      "bound": "lower",
+      "value_base": "41974500.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动区间为4,197.45万元至29,382.13万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "previous_guidance",
+      "bound": "upper",
+      "value_base": "293821300.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动区间为4,197.45万元至29,382.13万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-0.5",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "比上年同期下降:50%至45%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-0.45",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "比上年同期下降:50%至45%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "previous_guidance",
+      "bound": "lower",
+      "value_base": "-0.95",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动幅度为-95%至-65%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "previous_guidance",
+      "bound": "upper",
+      "value_base": "-0.65",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动幅度为-95%至-65%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002310_1220089694",
+      "page": 1,
+      "metric": "construction_tender_amount",
+      "role": "current_tender_result",
+      "bound": "point",
+      "value_base": "651336100.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "provisional_not_signed",
+      "literal": "中标价格:设计费631.87万元;施工费暂定金额65,133.61万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002310_1220089694",
+      "page": 1,
+      "metric": "design_tender_amount",
+      "role": "current_tender_result",
+      "bound": "point",
+      "value_base": "6318700.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "not_signed",
+      "literal": "中标价格:设计费631.87万元;施工费暂定金额65,133.61万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-0.03",
+      "currency": "CNY_per_share",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "基本每股收益:-0.03元/股",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-350000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润约为-3.5亿元至-2.4亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-240000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润约为-3.5亿元至-2.4亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-231000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润:-2.31亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-640000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润约为-6.4亿元至-4.3亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-430000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润约为-6.4亿元至-4.3亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-255000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润:-2.55亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "profit_total",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-73000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "利润总额:-0.73亿元",
+      "binding_approved": true
+    }
+  ],
+  "binding_approved_for_gold_subset": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

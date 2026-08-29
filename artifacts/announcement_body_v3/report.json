@@ -1,0 +1,239 @@
+{
+  "status": "expanded_gold_binding_failed",
+  "created_at_utc": "2026-08-29T04:36:23.698040+00:00",
+  "lock_sha256": "a5edd42a8f3a0fdc94aac72ad60ac68b505c0e606fa426c1c6602998608d282b",
+  "documents": [
+    {
+      "document_id": "601390_1204433911",
+      "status": "gold_evaluated",
+      "approved_facts": 3,
+      "pdf_sha256": "0a1019f4b859e221107ee0201727e66c676f657b2721ec800f74f4b46056ab3c"
+    },
+    {
+      "document_id": "600009_1204429465",
+      "status": "quarantined_scan",
+      "approved_facts": 0,
+      "pdf_sha256": "dcb2c2917de16163f99d99e1dcfdccfe829871cec6318129702ea23cf1782808"
+    },
+    {
+      "document_id": "002385_1205501722",
+      "status": "gold_evaluated",
+      "approved_facts": 9,
+      "pdf_sha256": "fc24137096f200fce8f6437da1755380936d21765fe1f2ce49da96600a9d8729"
+    },
+    {
+      "document_id": "000008_1205688090",
+      "status": "gold_evaluated",
+      "approved_facts": 8,
+      "pdf_sha256": "10ae963e674f9c0fb5fac82c7cdc47ca0364dcd1206d42de396876c3ce417ffd"
+    },
+    {
+      "document_id": "600481_1211571975",
+      "status": "gold_evaluated",
+      "approved_facts": 1,
+      "pdf_sha256": "a7b64281bdebd29abc4592749bbd681e735af8eade5ab3e5376bb6a0e5c3691a"
+    },
+    {
+      "document_id": "600674_1211243407",
+      "status": "gold_evaluated",
+      "approved_facts": 9,
+      "pdf_sha256": "2381b727528828949974ee4b2bb918a783e24086e1469bd98471e99f4d07e50e"
+    },
+    {
+      "document_id": "002624_1210454093",
+      "status": "gold_evaluated",
+      "approved_facts": 8,
+      "pdf_sha256": "df1d596edba469c2c706fba02a542767e40a78dae154de0036925ebb9ac62cf0"
+    },
+    {
+      "document_id": "000069_1209041295",
+      "status": "gold_evaluated",
+      "approved_facts": 7,
+      "pdf_sha256": "76273fe8f9e57a90df619da9176cd582465ac42e4c07bbd528b3bd083f2c47e2"
+    },
+    {
+      "document_id": "002310_1220089694",
+      "status": "gold_evaluated",
+      "approved_facts": 2,
+      "pdf_sha256": "1424c594ed65c8f58d174a892928cb5724b8f36c8e88692cba05b306a84760b2"
+    },
+    {
+      "document_id": "000728_1220627969",
+      "status": "gold_evaluated",
+      "approved_facts": 18,
+      "pdf_sha256": "2c2de717414eae025f4dc7617a7497dca9636b6924995927802ea4a503e82254"
+    },
+    {
+      "document_id": "601360_1220589893",
+      "status": "gold_evaluated",
+      "approved_facts": 8,
+      "pdf_sha256": "a7d8bb5b5ef177bebaded57e48c2e3cdabd521de6ce764187a15ae7859fd9562"
+    },
+    {
+      "document_id": "002050_1220789517",
+      "status": "gold_evaluated",
+      "approved_facts": 9,
+      "pdf_sha256": "8c7cc4cc94698f88e1a8fbf50e8f00e36d9fbb47377497e948fac6a3e019a2bc"
+    }
+  ],
+  "evaluation": {
+    "gold_facts": 87,
+    "predicted_facts": 82,
+    "matched_facts": 77,
+    "precision": 0.9390243902439024,
+    "recall": 0.8850574712643678,
+    "missing": [
+      [
+        "000008_1205688090",
+        "estimated_repurchase_ratio",
+        "plan_estimate",
+        "lower",
+        "0.018",
+        "ratio",
+        "proposal_shareholder_approval_required"
+      ],
+      [
+        "000008_1205688090",
+        "estimated_repurchase_ratio",
+        "plan_estimate",
+        "upper",
+        "0.036",
+        "ratio",
+        "proposal_shareholder_approval_required"
+      ],
+      [
+        "000069_1209041295",
+        "repurchase_duration_months",
+        "plan_duration",
+        "point",
+        "12",
+        "count",
+        "approved_plan"
+      ],
+      [
+        "600481_1211571975",
+        "contract_to_revenue",
+        "reference_ratio",
+        "point",
+        "0.0862",
+        "ratio",
+        "reference_revenue_year_2020"
+      ],
+      [
+        "600674_1211243407",
+        "equity_parent",
+        "current_preliminary",
+        "point",
+        "31313017785.12",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "600674_1211243407",
+        "equity_parent",
+        "period_begin",
+        "point",
+        "28795635611.60",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "600674_1211243407",
+        "equity_parent_change",
+        "reported_change",
+        "point",
+        "0.0874",
+        "ratio",
+        "preliminary_unaudited"
+      ],
+      [
+        "600674_1211243407",
+        "net_profit_parent",
+        "current_preliminary",
+        "point",
+        "2779626204.57",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "600674_1211243407",
+        "net_profit_parent",
+        "prior_year_comparator",
+        "point",
+        "2708883809.00",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "600674_1211243407",
+        "net_profit_parent_change",
+        "reported_change",
+        "point",
+        "0.0261",
+        "ratio",
+        "preliminary_unaudited"
+      ]
+    ],
+    "unexpected": [
+      [
+        "000008_1205688090",
+        "estimated_repurchase_ratio",
+        "plan_estimate",
+        "lower",
+        "0.0180",
+        "ratio",
+        "proposal_shareholder_approval_required"
+      ],
+      [
+        "000008_1205688090",
+        "estimated_repurchase_ratio",
+        "plan_estimate",
+        "upper",
+        "0.0360",
+        "ratio",
+        "proposal_shareholder_approval_required"
+      ],
+      [
+        "000728_1220627969",
+        "net_profit_parent",
+        "current_preliminary",
+        "point",
+        "997367500.00",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "000728_1220627969",
+        "net_profit_parent",
+        "prior_year_comparator",
+        "point",
+        "867437500.00",
+        "CNY",
+        "preliminary_unaudited"
+      ],
+      [
+        "000728_1220627969",
+        "net_profit_parent_change",
+        "reported_change",
+        "point",
+        "0.1498",
+        "ratio",
+        "preliminary_unaudited"
+      ]
+    ]
+  },
+  "output_sha256": {
+    "facts.json": "c2103513bdae90252e9db97bb138c1ad3af42817410c10f1687e417577c4cd22",
+    "evaluation.json": "d61367bf326405201b591edeb31f0b2385d1bee2929e430853defa906a230826"
+  },
+  "frozen_inputs_intact": true,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "limitations": [
+    "Eleven text PDFs are reviewed; one scan remains quarantined without OCR.",
+    "This fixed pilot measures binding accuracy, not historical PIT availability or model alpha.",
+    "No market, return or model data were read."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "complete",
+  "pid": 38984,
+  "at_utc": "2026-08-29T03:54:45.179173+00:00",
+  "status": "gold_binding_passed",
+  "matched": 22,
+  "gold": 22,
+  "model_training_ready": false
+}

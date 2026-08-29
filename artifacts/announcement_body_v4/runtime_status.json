@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "pid": 17152,
+  "at_utc": "2026-08-29T05:14:15.256900+00:00",
+  "status": "historical_pit_not_verified",
+  "rows": 966865,
+  "first_seen": false,
+  "lineage": false,
+  "model_training_ready": false
+}

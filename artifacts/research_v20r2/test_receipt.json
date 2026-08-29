@@ -1,0 +1,11 @@
+{
+  "date_shanghai": "2026-08-29",
+  "new_revision_tests": {"run": 21, "passed": 21, "failures": 0, "errors": 0},
+  "research_regression_before_last_three_added_tests": {"run": 151, "passed": 150, "failures": 0, "errors": 1, "known_error": "test_research_v18.ResearchV18Tests.test_recent_scores_uses_current_eligible_universe: archived fixture supplies an empty regressor list"},
+  "real_market_contract_checks": ["600837 retained through halt and converted to 601211 on 2025-03-17, exactly one settlement", "601989 retained through halt and converted to 600150 on 2025-09-16, exactly one settlement"],
+  "all_period_data_preflight": {"passed": true, "market_rows": 2680710, "market_symbols": 799, "evaluation_dates": 73},
+  "parent_verification": {"frozen_inputs_intact": true, "execution_authorized": false},
+  "performance_test_complete": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StockPilot · 实时运行日志</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101820;color:#dbe5ee;font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1400px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}h1{font-size:23px;margin:0}h2{font-size:15px;font-weight:600;margin:0}p{margin:6px 0;color:#9eb0be}.badge{padding:5px 12px;border:1px solid #38535b;border-radius:20px;color:#8ce9c3;background:#172b2b}.grid{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}.metric{background:#192530;border:1px solid #293d4c;border-radius:9px;padding:12px 18px;flex:1;min-width:145px}.metric small{display:block;color:#99acbb}.metric strong{font-size:18px}.toolbar{display:flex;gap:14px;align-items:center;margin:12px 0;flex-wrap:wrap}button{background:#294354;color:#eff7fc;border:1px solid #416276;border-radius:6px;padding:7px 14px;cursor:pointer}button:focus-visible{outline:2px solid #88d3ef}label{cursor:pointer}.log{background:#0a1118;border:1px solid #2a3d4d;border-radius:8px;padding:16px;white-space:pre-wrap;overflow-wrap:anywhere;overflow:auto;font:12px/1.65 Consolas,"Microsoft YaHei",monospace;max-height:50vh;min-height:110px;margin-top:8px}.warning{color:#ffd699;max-height:24vh;min-height:55px}.sectionhead{display:flex;justify-content:space-between;align-items:center;margin-top:18px}.hint{font-size:12px;color:#8fa3b2}#connection.error{color:#ffb1ae;border-color:#b86460}#error{color:#ffb1ae}.footer{border-top:1px solid #2a3d4d;padding-top:12px;margin-top:20px;font-size:12px;color:#8fa3b2}
+</style>
+<main>
+<header><div><h1>实时运行日志 <span id="model">—</span></h1><p>自动跟随当前研究版本 · 每 2 秒读取新增内容</p></div><span class="badge" id="connection" role="status">正在连接…</span></header>
+<div class="grid"><div class="metric"><small>运行阶段</small><strong id="stage">—</strong></div><div class="metric"><small>进程身份</small><strong id="process">—</strong></div><div class="metric"><small>测试年份</small><strong id="year">—</strong></div><div class="metric"><small>页面刷新时间（北京）</small><strong id="refreshed">—</strong></div></div>
+<div class="toolbar"><button id="pause">暂停刷新</button><label><input id="follow" type="checkbox" checked> 自动滚动到底部</label><span class="hint" id="count">等待日志</span></div>
+<p id="error" role="alert"></p>
+<div class="sectionhead"><h2>运行日志 · stdout</h2><span class="hint" id="logtime">—</span></div>
+<pre class="log" id="stdout" aria-label="运行日志">正在读取真实日志…</pre>
+<div class="sectionhead"><h2>警告与异常 · stderr</h2></div>
+<pre class="log warning" id="stderr" aria-label="警告与异常">正在读取…</pre>
+<p class="hint">阶段内部可能暂时不产生日志；页面刷新时间持续变化表示查看器仍在线，不代表模型完成了新步骤。日志原文中的 at_utc 为 UTC 时间。</p>
+<div class="footer">仅本机、只读查看。暂停刷新或关闭此页不会停止训练。正式模型仍为 <span id="active">V6</span>；无券商连接、无下单权限。日志超过 128 KiB 时显示末尾部分，磁盘原文件不会被截断。</div>
+</main>
+<script>
+const byId=id=>document.getElementById(id);
+const stages={data_preflight:'数据预检',loading_dataset:'构建训练数据',building_corpus:'构建公告语料',fitting:'训练模型',portfolio_evaluation:'评估组合',year_complete:'年度完成',verifying_outputs:'核验结果',complete:'运行结束',report_recorded:'报告已生成（待验收）',failed:'运行失败',interrupted:'进程已退出',process_unverified:'进程待核验',process_identity_mismatch:'进程身份不匹配',invalid_status:'状态文件异常',not_started:'尚未启动'};
+let paused=false,polls=0,lastStd=null,lastErr=null;
+function beijing(value){return value?new Date(value).toLocaleTimeString('zh-CN',{timeZone:'Asia/Shanghai',hour12:false}):'—'}
+function logUpdate(id,data,previous){if(data.text!==previous){const el=byId(id);el.textContent=data.text||(id==='stderr'?'暂无警告或异常':'暂无日志');if(byId('follow').checked)el.scrollTop=el.scrollHeight}return data.text}
+byId('pause').onclick=()=>{paused=!paused;byId('pause').textContent=paused?'继续刷新':'暂停刷新';if(paused){byId('connection').textContent='已暂停显示 · 训练不受影响'}};
+byId('follow').onchange=()=>{if(byId('follow').checked){for(const id of ['stdout','stderr'])byId(id).scrollTop=byId(id).scrollHeight}};
+async function poll(){
+ if(!paused){try{
+  const response=await fetch('/api/logs',{cache:'no-store',signal:AbortSignal.timeout(10000)});const data=await response.json();if(!response.ok)throw new Error(data.error||'日志服务不可用');
+  if(!paused){polls++;byId('model').textContent=data.model;byId('stage').textContent=stages[data.stage]||data.stage;byId('year').textContent=data.runtime.test_year||'尚未进入年度训练';
+  byId('process').textContent=data.process.identity_verified?'PID '+data.process.pid+' · 已核验':(data.process.state==='not_checked'?'查看运行结果':data.process.state);
+  byId('refreshed').textContent=beijing(data.refreshed_at);byId('logtime').textContent='阶段更新时间 '+beijing(data.runtime.at_utc);byId('active').textContent=data.active_model;
+  byId('count').textContent='已刷新 '+polls+' 次 · stdout '+data.stdout.size+' 字节 · stderr '+data.stderr.size+' 字节';
+  lastStd=logUpdate('stdout',data.stdout,lastStd);lastErr=logUpdate('stderr',data.stderr,lastErr);
+  byId('connection').textContent='实时连接 · 每 2 秒刷新';byId('connection').className='badge';byId('error').textContent='';}
+ }catch(error){if(!paused){byId('connection').textContent='连接中断 · 自动重试';byId('connection').className='badge error';byId('error').textContent=error.message+'（以上保留的是旧内容）'}}}
+ setTimeout(poll,2000);
+}
+poll();
+</script>
+</html>

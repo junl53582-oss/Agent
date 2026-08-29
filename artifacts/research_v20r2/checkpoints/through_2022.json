@@ -1,0 +1,10 @@
+{
+  "completed_year": 2022,
+  "output_sha256": {
+    "through_2022_equity.csv": "ED44761CCFEDAFBA87AA8FBB0CDDE4F4956F6DF7FA85037AC87A9B1FC59F37A9",
+    "through_2022_holdings.csv": "F3AAA5134CF1F23051FB0BC10D3E34EA89AC25C6C2CECFDA0FE07B6F3BFE2214",
+    "through_2022_daily_nav.csv": "0F7DFCF61C29863746D711F3CAED7334B544817B262FB8793DDBDD3DF8E632ED"
+  },
+  "partial_result_only": true,
+  "replacement_approved": false
+}

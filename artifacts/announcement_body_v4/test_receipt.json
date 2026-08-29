@@ -1,0 +1,11 @@
+{
+  "created_at_shanghai": "2026-08-29T13:16:00+08:00",
+  "command": "python -m pytest tests/test_announcement_body_v4.py -q",
+  "passed": true,
+  "tests_passed": 3,
+  "aggregate_coverage_read_before_freeze": false,
+  "market_or_return_data_read": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

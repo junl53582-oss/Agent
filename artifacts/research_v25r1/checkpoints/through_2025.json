@@ -1,0 +1,11 @@
+{
+  "completed_year": 2025,
+  "output_sha256": {
+    "through_2025_equity.csv": "CDBEB56DB3BC279E54732D13341C951BEA1076CD945719D08FF20F48126D4B3A",
+    "through_2025_holdings.csv": "43254BF7A4ED93F6DC5272E5550D6CDAA5DD6EC462FFD1E574BB1101EF387B6A",
+    "through_2025_daily_nav.csv": "DA0D12C3FE99415F630FE3E1694FAFE507AFEECE43E17CF8F07F2C1AE21535F5"
+  },
+  "partial_result_only": true,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

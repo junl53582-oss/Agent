@@ -1,0 +1,19 @@
+{
+  "recorded_date_shanghai": "2026-08-29",
+  "passed": true,
+  "scope": "Targeted tests, not the entire project suite and not performance approval",
+  "commands": [
+    ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_research_v21.py -v",
+    ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_research_result_audit.py -v",
+    ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_research_v20r2.py -v",
+    ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_research_status.py -v",
+    ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_research_log_viewer.py -v"
+  ],
+  "passed_counts": {"v21": 9, "result_audit": 5, "v20r2": 21, "status": 10, "live_logs": 6},
+  "total_passed": 51,
+  "pre_freeze_iteration": "Initial new mask fixture incorrectly expected a technology correlation from only two pairs; corrected expected missing value, then all nine V21 tests passed. Runtime minimum-sample rule was not weakened.",
+  "known_unrerun_failure": "V18 old frozen fixture error remains documented; full-suite green is not claimed.",
+  "v20r2_output_acceptance": "artifacts/autopilot/v20r2_acceptance_20260829.json",
+  "execution_authorized": false,
+  "replacement_approved": false
+}

@@ -1,0 +1,13 @@
+{
+  "protocol": "stockpilot-v20r1-copy-on-write-memory-repair",
+  "parent": "V20",
+  "reason": "V20 failed before training: pandas reset_index attempted an additional consolidated 2.38 GiB float64 block across 2680710 rows.",
+  "change": "Run unchanged V16 data loader and frozen V20 backtest under scoped pandas 2.2.3 copy_on_write=True.",
+  "unchanged": ["all historical rows and symbols", "float64 precision", "features and labels", "training windows", "market regime thresholds", "portfolio rules", "original promotion gates"],
+  "tests_before_freeze": ["exact full feature/label equality on deterministic synthetic panel with and without copy-on-write", "reset_index shares original arrays under copy-on-write and isolates mutations", "unchanged V20 real-call-chain tests under copy-on-write"],
+  "scope": "Memory-only implementation repair; no parameter selection based on returns.",
+  "performance_status": "not_observed_before_lock",
+  "untouched_holdout": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

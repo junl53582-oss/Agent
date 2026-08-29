@@ -1,0 +1,17 @@
+{
+  "protocol": "stockpilot-v24-prospective-body-ingestion-r1",
+  "status": "implementation_revision_not_run",
+  "parent_defect": "The frozen parent used one-shot run.started.json and report.json even though future eligible events require repeated append-only observations",
+  "only_change": "Store each run in a unique immutable runs/<attempt>.started/report/failure file and keep runtime_status.json as replaceable status metadata",
+  "unchanged": [
+    "Prospective-only event selection",
+    "Official detail/PDF identity verification",
+    "Append-only body cache and hashes",
+    "Scan/text-quality quarantine and no OCR",
+    "No labels, returns, model fit, replacement or trading"
+  ],
+  "body_training_approved": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

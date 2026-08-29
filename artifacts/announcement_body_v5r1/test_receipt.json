@@ -1,0 +1,21 @@
+{
+  "created_at_shanghai": "2026-08-29T13:42:00+08:00",
+  "commands": [
+    "python -m pytest tests/test_announcement_body_v5r1.py -q",
+    "python -m pytest tests/test_announcement_body_v5.py tests/test_announcement_body_v5r1.py -q",
+    "load_watchlist plus load_org_ids frozen-input preflight",
+    "python -m py_compile announcement_body_v5r1/*.py (expanded by PowerShell)"
+  ],
+  "passed": true,
+  "repair_tests_passed": 4,
+  "parent_plus_repair_tests_passed": 9,
+  "watchlist_snapshot": "2026-06-30",
+  "watchlist_securities": 300,
+  "watchlist_org_ids": 300,
+  "live_official_query_run_before_freeze": false,
+  "gold_or_threshold_changed": false,
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

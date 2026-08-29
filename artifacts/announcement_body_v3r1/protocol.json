@@ -1,0 +1,10 @@
+{
+  "protocol": "announcement-body-v3r1-implementation-repair",
+  "status": "preregistered_not_run",
+  "failed_parent_lock": "a5edd42a8f3a0fdc94aac72ad60ac68b505c0e606fa426c1c6602998608d282b",
+  "unchanged": ["Eleven text PDFs", "87 manual gold facts", "No market or return data", "Scan remains quarantined"],
+  "repairs": ["Merge continuation rows in PDF tables", "Do not map ex-items net profit as headline net profit", "Support 经审计 wording", "Support from-approval-date duration wording", "Canonicalize estimate ratios"],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

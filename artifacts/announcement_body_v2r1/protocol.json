@@ -1,0 +1,11 @@
+{
+  "protocol": "announcement-body-v2r1-table-cell-binding-repair",
+  "status": "preregistered_not_run",
+  "failed_parent": "V2 gold evaluation precision 0.9048 and recall 0.8636 because flattened table text interleaved current and prior-year cells",
+  "repair": "For correction tables only, bind current guidance and prior-year comparator from explicit 本报告期/上年同期 table columns",
+  "unchanged": ["Four PDFs", "22 gold facts", "All non-table rules", "No market/return/model data", "Historical PIT remains unverified"],
+  "acceptance": "Exact 22/22 match with zero unexpected facts; otherwise fail",
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

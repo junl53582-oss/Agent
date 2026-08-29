@@ -1,0 +1,182 @@
+{
+  "status": "retrospective_three_gate_confidence_tail_complete",
+  "lock_sha256": "C163864C4C9B24E2C5E4A176519BA9C440B7DF338F1A83C65989BE389AA4BF05",
+  "created_at_utc": "2026-08-29T11:48:41.961953+00:00",
+  "three_gates": {
+    "ranking": {
+      "metrics": {
+        "mean_ic5": 0.019281345835205386,
+        "mean_ic20": 0.023916024881708735,
+        "technology_ic5": -0.014142562298665898,
+        "positive_ic5_years": 3,
+        "years": 6,
+        "annual": {
+          "2020": {
+            "ic5": 0.03930641416933815,
+            "ic20": 0.09639024955192194,
+            "technology_ic5": 0.035760916564441386
+          },
+          "2021": {
+            "ic5": -0.013717523749536607,
+            "ic20": -0.005649112730590184,
+            "technology_ic5": -0.057370639212681956
+          },
+          "2022": {
+            "ic5": -0.03969164129157717,
+            "ic20": -0.04308512356498304,
+            "technology_ic5": -0.058510462342710956
+          },
+          "2023": {
+            "ic5": 0.04739791033800888,
+            "ic20": 0.02218067760176506,
+            "technology_ic5": 0.05189560744114985
+          },
+          "2024": {
+            "ic5": 0.08394612006749902,
+            "ic20": 0.05120717219617458,
+            "technology_ic5": 0.03310274035272558
+          },
+          "2025": {
+            "ic5": -0.0032219602170109884,
+            "ic20": 0.01641276751344631,
+            "technology_ic5": -0.09389215983351157
+          }
+        }
+      },
+      "checks": {
+        "ic5_positive": true,
+        "ic20_positive": true,
+        "positive_ic5_years_at_least_4": false,
+        "technology_ic5_nonnegative": false
+      },
+      "passed": false
+    },
+    "selection": {
+      "metrics": {
+        "mean_spread5": 0.0008665575761426145,
+        "mean_spread20": 0.0016379233832446872,
+        "precision_lift": 0.030913928723950393,
+        "positive_spread5_years": 3,
+        "years": 6,
+        "annual": {
+          "2020": {
+            "spread5": 0.002141998484529651,
+            "spread20": 0.012529638700838496,
+            "precision_lift": 0.023450725099076784
+          },
+          "2021": {
+            "spread5": -0.000668754641693367,
+            "spread20": -2.922700275569615e-05,
+            "precision_lift": 0.03954175687368968
+          },
+          "2022": {
+            "spread5": 0.0015731839162357022,
+            "spread20": -0.0037761717071539106,
+            "precision_lift": 0.04680852116675135
+          },
+          "2023": {
+            "spread5": 0.0034470071040203273,
+            "spread20": 0.0035029007109027275,
+            "precision_lift": 0.06589458705686779
+          },
+          "2024": {
+            "spread5": -0.0007246548153698901,
+            "spread20": -0.0005625069780826665,
+            "precision_lift": -0.013486288321814595
+          },
+          "2025": {
+            "spread5": -0.0006757213332323216,
+            "spread20": -0.0027447363674136444,
+            "precision_lift": 0.02389620410453748
+          }
+        }
+      },
+      "checks": {
+        "spread5_positive": true,
+        "spread20_positive": true,
+        "positive_spread5_years_at_least_4": false,
+        "precision_lift_positive": true
+      },
+      "passed": false
+    },
+    "portfolio_conversion": {
+      "metrics": {
+        "total_return": 0.2789119130156763,
+        "benchmark_return": 0.3044524062362637,
+        "excess_return": -0.02554049322058738,
+        "max_drawdown": -0.33714493375854315,
+        "positive_excess_years": 1,
+        "test_years": 6,
+        "rank_ic_5": 0.019281345835205386,
+        "rank_ic_20": 0.023916024881708735,
+        "technology_rank_ic_5": -0.014142562298665898,
+        "average_one_way_turnover": 0.06752389794752421,
+        "average_transaction_cost": 0.00013841046179555739,
+        "periods": 73,
+        "periods_held": 73,
+        "held_period_win_rate": 0.4931506849315068,
+        "active_max_drawdown": -0.02358597165764076,
+        "active_drawdown_sampling": "20-session settlement wealth ratio",
+        "tracking_error": 0.003869480848730075,
+        "control_turnover": 0.1332549742929555,
+        "control_cost": 0.0002764807886567216
+      },
+      "checks": {
+        "cumulative_excess_positive": false,
+        "positive_excess_years_at_least_4": false,
+        "active_drawdown_not_below_minus_10pct": true,
+        "tracking_error_lte_6pct": true,
+        "turnover_not_above_control": true,
+        "cost_not_above_control": true,
+        "untouched_126_day_future_test_complete": false
+      },
+      "passed": false
+    },
+    "all_three_passed": false
+  },
+  "control_reproduction": {
+    "equity": {
+      "rows": 73,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "holdings": {
+      "rows": 21898,
+      "maximum_absolute_difference": 9.996344030316351e-17
+    },
+    "daily_nav": {
+      "rows": 1533,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "settlements": {
+      "rows": 2,
+      "exact": true
+    }
+  },
+  "control_reproduction_passed": true,
+  "all_promotion_gates_passed": false,
+  "decision": "keep_v6",
+  "incumbent_semantics": "not_reliably_beaten_not_claimed_best_predictor",
+  "retroactive_reapproval": {
+    "V25r1": false,
+    "V26": false
+  },
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "frozen_inputs_intact": true,
+  "data_admission_sha256": "06CF3BE5D76F4CDA32D2B7A01EDF9A20E82443BBD14CA86149EB828E0A955FEA",
+  "model_diagnostics_sha256": "FEB275C45A621D6D9D8037F4518C61F61AE2E49F902952F509B3F0FF427C88CF",
+  "output_sha256": {
+    "equity.csv": "BAFA23E4C892F3766F1DB6324CA38EEE1F0DFC65BA4895B18685394525AFB1C9",
+    "holdings.csv": "A5076C9A703757557E30AB64648037ABB285EC0EDB76A99716A65F7EC24C14DE",
+    "daily_nav.csv": "7CF9DB6614422286E0C552454789A3A69D01798138D9861DCD2073F562E9CC33",
+    "score_trace.csv": "88219CD8753CDFE2045B14954ACE53A33E48B90A897F917B8A45CF3A89BD1FD6",
+    "settlements.json": "DAF97BB5D3C5C345BB3D2F1818C90773DD19D365D4799D0690B4D3F6C73C8B43",
+    "model_diagnostics.json": "FEB275C45A621D6D9D8037F4518C61F61AE2E49F902952F509B3F0FF427C88CF"
+  },
+  "limitations": [
+    "No new incremental source passed admission, so V28 does not pretend metadata is earnings revision or investor flow.",
+    "Active drawdown replaces absolute drawdown only for V28 and later; earlier failures remain unchanged.",
+    "The 2020-2025 window is retrospective and repeatedly observed.",
+    "V6 remains incumbent until all three gates and 126 untouched future trading days pass."
+  ]
+}

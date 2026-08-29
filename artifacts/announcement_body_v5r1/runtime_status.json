@@ -1,0 +1,9 @@
+{
+  "stage": "failed",
+  "pid": 26732,
+  "at_utc": "2026-08-29T06:23:43.983500+00:00",
+  "target_date": "2026-08-29",
+  "error": "official response shape invalid",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\announcement_body_v5r1\\runner.py\", line 31, in observe\n    raw_pages, query = fetch_watchlist(target_date, symbols, org_ids, workers=4)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\announcement_body_v5r1\\source.py\", line 110, in fetch_watchlist\n    results[symbol] = future.result()\n                      ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\_base.py\", line 449, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"C:\\Users\\lin\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\concurrent\\futures\\thread.py\", line 58, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\announcement_body_v5r1\\source.py\", line 74, in fetch_symbol\n    first_raw, first = page_fetcher(target_date, 1, symbol, org_id)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\announcement_body_v5r1\\source.py\", line 69, in fetch_page\n    raise ValueError(\"official response shape invalid\")\nValueError: official response shape invalid\n",
+  "model_training_ready": false
+}

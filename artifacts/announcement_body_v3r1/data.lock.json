@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-08-29T04:38:34.703081+00:00",
+  "parent_lock_sha256": "a5edd42a8f3a0fdc94aac72ad60ac68b505c0e606fa426c1c6602998608d282b",
+  "repair_only": [
+    "continuation row labels",
+    "exclude ex-items row",
+    "audited wording",
+    "duration wording",
+    "decimal canonicalization"
+  ],
+  "sha256": {
+    "announcement_body_v3r1/__init__.py": "e84b5e1ce14f5cb3ff70be162ff36bb6c60b4ef290462d860397db81361f2af9",
+    "announcement_body_v3r1/binder.py": "ecf2d741030c3817e82a70949349ceaf33ffaf1c5039fe757f513f6b1047be87",
+    "announcement_body_v3r1/cli.py": "7fef4cbf742a6bccc5ca2e063a9902df6dc26a51b5980255d646c9120fb638fd",
+    "announcement_body_v3r1/freeze.py": "edc11ecbfd81eb1a95d99d47007ef7a00d870d08464da82e8ffb36f9a0708863",
+    "announcement_body_v3r1/runner.py": "a30cad65b59645ced25a634c3242a6cfd9fc7d4484696f3c9d6bb55a23384632",
+    "tests/test_announcement_body_v3r1.py": "daee4ebb68c7a26cc4e8a53c1f60f9c2d1c015d9d1acb97a283bf905189707ca",
+    "artifacts/announcement_body_v3r1/protocol.json": "a75bb8a0d559cc40cd8ab66593b29871cd75fb470ddcfff8497751284b6f09bd",
+    "artifacts/announcement_body_v3r1/test_receipt.json": "9e8a9e14009d00f428d1fe19493d4b5f28fda50ca269ba1c12da65df85fee20b",
+    "artifacts/announcement_body_v3/report.json": "be6e5010a56213e10222d531ff5b34fd214c695f3b1c0f510a3e0b49eb607601",
+    "artifacts/announcement_body_v3/evaluation.json": "d61367bf326405201b591edeb31f0b2385d1bee2929e430853defa906a230826",
+    "artifacts/announcement_body_v3/facts.json": "c2103513bdae90252e9db97bb138c1ad3af42817410c10f1687e417577c4cd22",
+    "artifacts/announcement_body_v3/runtime_status.json": "359bcbcce3e8fca3f49488e99aebdd2d5b1ec601cd8ea1ec1657f105b11f301b"
+  },
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

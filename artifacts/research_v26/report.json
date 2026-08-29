@@ -1,0 +1,89 @@
+{
+  "status": "retrospective_directional_probability_complete",
+  "lock_sha256": "B875B51B6C75BA062440232BF8310AD8D0C5236559A0105F3483B6358272C9D1",
+  "created_at_utc": "2026-08-29T08:34:29.514247+00:00",
+  "metrics": {
+    "v16_replay": {
+      "total_return": 0.3559301960621777,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": 0.051477789825914,
+      "max_drawdown": -0.40671763301747754,
+      "positive_excess_years": 4,
+      "test_years": 6,
+      "rank_ic_5": -0.025196358969506717,
+      "rank_ic_20": -0.016853339994093344,
+      "technology_rank_ic_5": -0.04314436378855893,
+      "average_one_way_turnover": 0.1332549742929555,
+      "average_transaction_cost": 0.0002764807886567216,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.4794520547945205,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    },
+    "directional_probability": {
+      "total_return": 0.2816393475651493,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": -0.022813058671114383,
+      "max_drawdown": -0.4029629462220349,
+      "positive_excess_years": 3,
+      "test_years": 6,
+      "rank_ic_5": 0.029201194167918824,
+      "rank_ic_20": 0.034117718454772364,
+      "technology_rank_ic_5": -0.011270437406561437,
+      "average_one_way_turnover": 0.13664654271924692,
+      "average_transaction_cost": 0.00028360759281111157,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.4794520547945205,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    }
+  },
+  "control_reproduction": {
+    "equity": {
+      "rows": 73,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "holdings": {
+      "rows": 21898,
+      "maximum_absolute_difference": 9.996344030316351e-17
+    },
+    "daily_nav": {
+      "rows": 1533,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "settlements": {
+      "rows": 2,
+      "exact": true
+    }
+  },
+  "control_reproduction_passed": true,
+  "model_diagnostics_sha256": "62E108D78773FED126CA5C83503BD173CBE52DAD4C1703EF8BC1783A3FE4371B",
+  "gates": {
+    "cumulative_excess_positive": false,
+    "positive_excess_years_at_least_4": false,
+    "rank_ic_5_not_below_v16_control": true,
+    "technology_ic_nonnegative": false,
+    "max_drawdown_not_below_minus_18pct": false,
+    "turnover_not_above_control": false,
+    "cost_not_above_control": false,
+    "untouched_126_day_future_test_complete": false
+  },
+  "all_promotion_gates_passed": false,
+  "decision": "keep_v6",
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "frozen_inputs_intact": true,
+  "output_sha256": {
+    "equity.csv": "B640A8ACC382010229E4E8674C44FBBB52503C361C668668EC9A2910867AE9C1",
+    "holdings.csv": "7032F34E577620C51BCF97C24FF246AC7A2819A89B0EB73B95FC53483118742B",
+    "daily_nav.csv": "002F4657CD5B18FD5D65D6780E598C1B464A382DEF2E0636BB0AF7A94CA169A1",
+    "settlements.json": "3778AEA479A95BC9485FA8CC4903EB4DD3EF5A3A4F303BC773D2F0BE380D25C5",
+    "model_diagnostics.json": "62E108D78773FED126CA5C83503BD173CBE52DAD4C1703EF8BC1783A3FE4371B"
+  },
+  "limitations": [
+    "One frozen retrospective objective-change hypothesis; no parameter or portfolio search.",
+    "Only the LightGBM target changes from residual magnitude to positive-residual probability.",
+    "Announcement text remains excluded because prospective PIT evidence is incomplete.",
+    "V6 remains formal until all original gates and 126 new future trading days pass."
+  ]
+}

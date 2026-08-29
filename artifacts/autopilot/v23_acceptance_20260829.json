@@ -1,0 +1,24 @@
+{
+  "accepted_at_shanghai": "2026-08-29T11:24:00+08:00",
+  "research": "V23",
+  "lock_sha256": "9BDFBAAD4A5502D338D3509125596E97783E4320A58FCC44855D6CA4B21C7E36",
+  "frozen_inputs_intact": true,
+  "output_hashes_verified": true,
+  "portfolio_rerun": false,
+  "findings": {
+    "equal_date_top_bottom_spread_label5": 0.0007724539683445349,
+    "equal_date_top_bottom_spread_target20": 0.0027663955055506778,
+    "positive_tail_spread_years_label5": 3,
+    "positive_tail_spread_years_target20": 3,
+    "equal_sector_date_overweight_minus_other_label5": -0.0009561669923377143,
+    "equal_sector_date_overweight_minus_other_target20": -0.00022860413895476833,
+    "technology_active_weighted_label5": -0.00009176692265438184,
+    "technology_active_weighted_target20": -0.00021457832102197164,
+    "global_minus_control_average_period_cost": 0.000008733161820701396,
+    "global_minus_control_total_cost_fraction": 0.0006375208129111992
+  },
+  "interpretation": "Broad score ordering is weakly positive, but unstable across years and does not survive the frozen constrained overweight selection; technology contribution is negative and incremental cost is too small to explain the historical excess loss.",
+  "decision": "do_not_tune_portfolio_on_observed_2020_2025_results",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,9 @@
+{
+  "target_date": "2026-08-29",
+  "started_at_utc": "2026-08-29T06:23:25.294376+00:00",
+  "error": "ValueError: official response shape invalid",
+  "automatic_retry": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

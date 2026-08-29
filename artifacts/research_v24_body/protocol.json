@@ -1,0 +1,21 @@
+{
+  "protocol": "stockpilot-v24-prospective-body-ingestion",
+  "status": "preregistered_not_run",
+  "purpose": "Download and hash only post-freeze V5r2 eligible official announcement PDFs before V24 fact binding",
+  "fixed_rules": [
+    "Only prospective_metadata_eligible new events are accepted",
+    "Official CNINFO detail identity and static PDF identity must both match",
+    "Each document is append-only and content-hashed",
+    "Text-poor or scanned PDFs are quarantined without OCR",
+    "A prior failure is preserved and never retried automatically"
+  ],
+  "prohibited": [
+    "No archive_reconstructed or freeze-day baseline bodies",
+    "No unapproved OCR",
+    "No labels, returns, model fit, backtest, replacement or trading"
+  ],
+  "body_training_approved": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

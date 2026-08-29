@@ -1,0 +1,11 @@
+{
+  "completed_year": 2020,
+  "output_sha256": {
+    "through_2020_equity.csv": "27FF05526D45556D8FD4F31FDDFFD04509482FEBBCC8478F589C455324737FC2",
+    "through_2020_holdings.csv": "EE9867AD74DB36F85C89A19A79230ACFA6C698CE24662F6BE70E536BFCE6EF29",
+    "through_2020_daily_nav.csv": "D28F4A0771584F0F1CC3AC2551D87B064F84652C71B87F08B61CA0F9785E619A"
+  },
+  "partial_result_only": true,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,25 @@
+{
+  "protocol": "stockpilot-v24-announcement-body-preparation",
+  "status": "preregistered_not_trained",
+  "purpose": "Build leakage-safe structured announcement features and fixed 5/20-session label maturity before any V24 supervised fit",
+  "fixed_inputs": [
+    "Frozen V3r1 87-fact gold binding output",
+    "Frozen V5r2 prospective first-seen ledger"
+  ],
+  "fixed_rules": [
+    "Only binding_approved body facts may become features",
+    "Current, previous-guidance and prior-year roles remain distinct",
+    "Entry is always the next verified trading session after both publication and first-seen availability",
+    "Five-session and twenty-session targets must both mature before training",
+    "Freeze-day baseline and archive_reconstructed announcements are never supervised samples"
+  ],
+  "prohibited": [
+    "No historical return scan or portfolio backtest",
+    "No training on V5r2 freeze-day baseline",
+    "No unapproved OCR or unbound numbers",
+    "No model replacement or trading execution"
+  ],
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

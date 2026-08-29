@@ -1,0 +1,27 @@
+{
+  "status": "v24_preparation_contract_complete",
+  "created_at_utc": "2026-08-29T07:18:03.470185+00:00",
+  "lock_sha256": "AE8CCF2F0A70D2916762B43AD335EF8F4765EF1D667EC0003C0365F35B222CAE",
+  "frozen_inputs_intact": true,
+  "gold_documents": 11,
+  "gold_facts": 87,
+  "prospective_events": 0,
+  "training_gate": {
+    "checks": {
+      "prospective_events_positive": false,
+      "all_events_have_approved_bodies": false,
+      "all_5d_labels_mature": false,
+      "all_20d_labels_mature": false
+    },
+    "model_training_ready": false,
+    "replacement_approved": false,
+    "execution_authorized": false
+  },
+  "output_sha256": {
+    "feature_schema_preview.json": "2E5DCBC4FE33063780B7BB44746AE41E05DB5E992912A408A35738CB7ACAF308"
+  },
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "next_step": "append post-freeze bodies, then mature fixed 5d/20d labels before any supervised fit"
+}

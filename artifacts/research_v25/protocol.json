@@ -1,0 +1,31 @@
+{
+  "protocol": "stockpilot-v25-multihorizon-rank-consensus",
+  "status": "cancelled_before_implementation_duplicate_of_v10",
+  "purpose": "Return the main research line to prediction quality by replacing the unstable two-stage tail objective with a fixed equal-weight 5/20-session cross-sectional rank consensus",
+  "evidence": [
+    "V21 reproduced negative V13/V16 5-day and 20-day IC",
+    "Frozen global score had positive average IC but V23 showed unstable tail translation",
+    "Technology IC remained negative, so no technology success may be claimed"
+  ],
+  "fixed_model": [
+    "Use the existing frozen PIT V10 feature set and eligibility rules",
+    "Fit one constrained LightGBM rank-regression head for 5-session neutral rank and one for 20-session neutral rank",
+    "Use equal 0.5/0.5 sector-neutral percentile predictions; no weight search or sign reversal",
+    "Use only labels matured before each rolling training cutoff with the existing embargo",
+    "Keep the accepted V20r2 calendar, trade restrictions, costs, benchmark proxy and portfolio accounting unchanged"
+  ],
+  "validation": [
+    "First reproduce the V20r2 control ledger exactly",
+    "One frozen 2020-2025 walk-forward run only; this window is retrospective and not an independent holdout",
+    "Report annual IC, technology IC, tail spread, excess return, drawdown, turnover and costs without changing thresholds"
+  ],
+  "prohibited": [
+    "No announcement body features until prospective PIT gates pass",
+    "No top-N, horizon-weight, hyperparameter, sector-cap or holding-bonus search",
+    "No use of V25 results to create V25r1 unless there is an implementation defect",
+    "No model replacement before all original gates and 126 new future trading days"
+  ],
+  "cancellation_reason": "Repository audit found that V10 already fits fixed 5-session and 20-session Ridge/LightGBM heads and combines their cross-sectional ranks. V11 and V12 also already tested listwise tail objectives. No model was implemented, frozen or evaluated under this duplicate protocol.",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

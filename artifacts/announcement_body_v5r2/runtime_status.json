@@ -1,0 +1,12 @@
+{
+  "stage": "complete",
+  "pid": 19360,
+  "at_utc": "2026-08-29T07:10:45.468862+00:00",
+  "target_date": "2026-08-29",
+  "watchlist": 300,
+  "records": 587,
+  "unique": 587,
+  "new": 587,
+  "prospective_first_seen": false,
+  "model_training_ready": false
+}

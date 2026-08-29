@@ -1,0 +1,9 @@
+{
+  "gold_facts": 22,
+  "predicted_facts": 22,
+  "matched_facts": 22,
+  "precision": 1.0,
+  "recall": 1.0,
+  "missing": [],
+  "unexpected": []
+}

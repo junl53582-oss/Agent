@@ -1,0 +1,24 @@
+{
+  "protocol": "stockpilot-v25r1-fixed-temporal-window-ensemble",
+  "status": "preregistered_not_frozen_or_run",
+  "hypothesis": "A fixed average of 8/5/3-year LightGBM training windows reduces unstable single-window tail predictions while preserving the verified PIT feature set and all portfolio rules.",
+  "single_change": "Replace only the V10 LightGBM contribution with an equal 8/5/3-year temporal ensemble. Ridge, V6 base, 5/20 horizon weights, optimizer, calendar, costs and benchmark remain unchanged.",
+  "data_sources": {
+    "membership": "frozen historical CSI300 snapshots, 300 members per snapshot",
+    "market": "frozen 2010-01-04 through 2026-08-21 HFQ market panel",
+    "fundamentals": "announcement-date PIT financial records; zero audited PIT violations",
+    "industry": "effective-date industry history; zero audited future-date violations",
+    "corporate_actions": "frozen V20r2 action file and accepted common-calendar ledger"
+  },
+  "fixed_training_windows_years": [8, 5, 3],
+  "fixed_weights": {"v6_base": 0.4, "enhanced": 0.6, "ridge": 0.6, "lightgbm": 0.4, "horizon_5": 0.3, "horizon_20": 0.7},
+  "validation": [
+    "Tests must pass before freeze; freeze must bind code, parent scores, ledger and raw PIT inputs by SHA256.",
+    "The V20r2 v16_control ledger must reproduce exactly before candidate metrics are accepted.",
+    "Run exactly once over the unchanged 2020-2025 walk-forward schedule and report every original gate.",
+    "No result-driven window, weight, top-N, sector, sign, optimizer or cost search is permitted."
+  ],
+  "promotion": "Never replace V6 without all original historical gates and 126 untouched future trading days.",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

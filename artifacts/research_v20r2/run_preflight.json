@@ -1,0 +1,177 @@
+{
+  "passed": true,
+  "preflight_only": true,
+  "performance_test": false,
+  "market_rows": 2680710,
+  "market_symbols": 799,
+  "evaluation_dates": 73,
+  "test_years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "legacy_missing_forward_labels": [
+    {
+      "date": "2025-01-14",
+      "symbol": "600837",
+      "reason": "documented_merger_terminal_series"
+    },
+    {
+      "date": "2025-07-16",
+      "symbol": "601989",
+      "reason": "documented_merger_terminal_series"
+    }
+  ],
+  "unquoted_snapshot_members": [
+    {
+      "date": "2020-03-06",
+      "symbol": "300070"
+    },
+    {
+      "date": "2020-04-03",
+      "symbol": "600816"
+    },
+    {
+      "date": "2020-05-07",
+      "symbol": "600816"
+    },
+    {
+      "date": "2020-06-04",
+      "symbol": "001979"
+    },
+    {
+      "date": "2020-09-28",
+      "symbol": "600109"
+    },
+    {
+      "date": "2021-03-31",
+      "symbol": "000063"
+    },
+    {
+      "date": "2021-06-30",
+      "symbol": "002024"
+    },
+    {
+      "date": "2021-07-28",
+      "symbol": "601236"
+    },
+    {
+      "date": "2021-09-24",
+      "symbol": "600340"
+    },
+    {
+      "date": "2021-11-26",
+      "symbol": "002142"
+    },
+    {
+      "date": "2022-01-24",
+      "symbol": "600030"
+    },
+    {
+      "date": "2022-04-27",
+      "symbol": "600958"
+    },
+    {
+      "date": "2022-08-23",
+      "symbol": "601377"
+    },
+    {
+      "date": "2022-10-26",
+      "symbol": "600900"
+    },
+    {
+      "date": "2023-06-21",
+      "symbol": "688065"
+    },
+    {
+      "date": "2024-03-20",
+      "symbol": "600584"
+    },
+    {
+      "date": "2024-09-12",
+      "symbol": "600150"
+    },
+    {
+      "date": "2024-09-12",
+      "symbol": "600837"
+    },
+    {
+      "date": "2024-09-12",
+      "symbol": "601211"
+    },
+    {
+      "date": "2024-09-12",
+      "symbol": "601989"
+    },
+    {
+      "date": "2025-01-14",
+      "symbol": "000408"
+    },
+    {
+      "date": "2025-02-19",
+      "symbol": "600837"
+    },
+    {
+      "date": "2025-03-19",
+      "symbol": "301269"
+    },
+    {
+      "date": "2025-03-19",
+      "symbol": "600803"
+    },
+    {
+      "date": "2025-08-13",
+      "symbol": "600150"
+    },
+    {
+      "date": "2025-08-13",
+      "symbol": "601088"
+    },
+    {
+      "date": "2025-08-13",
+      "symbol": "601989"
+    },
+    {
+      "date": "2025-09-10",
+      "symbol": "601989"
+    },
+    {
+      "date": "2025-12-11",
+      "symbol": "601059"
+    },
+    {
+      "date": "2025-12-11",
+      "symbol": "601995"
+    }
+  ],
+  "actions": [
+    {
+      "old_symbol": "600837",
+      "new_symbol": "601211",
+      "ratio": 0.62,
+      "listing_date": "2025-03-17",
+      "unit_ratio": 9.538160999039388,
+      "raw_old_close": 10.41,
+      "raw_new_open": 18.1
+    },
+    {
+      "old_symbol": "601989",
+      "new_symbol": "600150",
+      "ratio": 0.1339,
+      "listing_date": "2025-09-16",
+      "unit_ratio": 0.0704631701120607,
+      "raw_old_close": 5.1,
+      "raw_new_open": 38.07
+    }
+  ],
+  "input_sha256": {
+    "data\\market_history_v10_hfq.csv": "FCC1EA387719476410F8D4DCC49840E74BD087AEC351ED02CB40D1318DD45FC3",
+    "data\\universes\\000300\\history_v10.csv": "15ADDF2A286630D92545B671B14C2F0D8FE6B7CC037B97A482088AD5C844DCA1",
+    "data\\corporate_actions_v20r2.json": "B12CACA8AC325904FCBB2758D23A93E97BED8680ED06ED5F29BC5FADA9F46E4B"
+  },
+  "replacement_approved": false,
+  "execution_authorized": false
+}

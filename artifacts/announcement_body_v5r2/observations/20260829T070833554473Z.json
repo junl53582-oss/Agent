@@ -1,0 +1,2135 @@
+{
+  "observation_id": "20260829T070833554473Z",
+  "observed_at": "2026-08-29T07:08:33.554473+00:00",
+  "target_date": "2026-08-29",
+  "query": {
+    "endpoint": "https://www.cninfo.com.cn/new/hisAnnouncement/query",
+    "target_date": "2026-08-29",
+    "partition": "frozen_csi300_symbol_org_id",
+    "watchlist_size": 300,
+    "workers": 1,
+    "inter_request_delay_seconds": 0.2,
+    "automatic_retries": 0,
+    "reported_total": 587,
+    "returned_rows": 587,
+    "partitions": [
+      {
+        "symbol": "000001",
+        "org_id": "gssz0000001",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000002",
+        "org_id": "gssz0000002",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000063",
+        "org_id": "gssz0000063",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000100",
+        "org_id": "gssz0000100",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "000157",
+        "org_id": "gssz0000157",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000166",
+        "org_id": "qsgn0000301",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000301",
+        "org_id": "gssz0000301",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "000333",
+        "org_id": "9900005965",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "000338",
+        "org_id": "9900002961",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000408",
+        "org_id": "gssz0000408",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "000425",
+        "org_id": "gssz0000425",
+        "reported_total": 10,
+        "pages": 1
+      },
+      {
+        "symbol": "000538",
+        "org_id": "gssz0000538",
+        "reported_total": 10,
+        "pages": 1
+      },
+      {
+        "symbol": "000568",
+        "org_id": "gssz0000568",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000596",
+        "org_id": "gssz0000596",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "000617",
+        "org_id": "gssz0000617",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000625",
+        "org_id": "gssz0000625",
+        "reported_total": 18,
+        "pages": 1
+      },
+      {
+        "symbol": "000630",
+        "org_id": "gssz0000630",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000651",
+        "org_id": "gssz0000651",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000657",
+        "org_id": "gssz0000657",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000708",
+        "org_id": "gssz0000708",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000725",
+        "org_id": "gssz0000725",
+        "reported_total": 17,
+        "pages": 1
+      },
+      {
+        "symbol": "000768",
+        "org_id": "gssz0000768",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000776",
+        "org_id": "gssz0000776",
+        "reported_total": 10,
+        "pages": 1
+      },
+      {
+        "symbol": "000792",
+        "org_id": "gssz0000792",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000807",
+        "org_id": "gssz0000807",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000858",
+        "org_id": "gssz0000858",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "000895",
+        "org_id": "gssz0000895",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "000938",
+        "org_id": "gssz0000938",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "000963",
+        "org_id": "gssz0000963",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000975",
+        "org_id": "gssz0000975",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "000977",
+        "org_id": "gssz0000977",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "000988",
+        "org_id": "gssz0000988",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "000999",
+        "org_id": "gssz0000999",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "001280",
+        "org_id": "9900061069",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "001391",
+        "org_id": "9900057395",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "001965",
+        "org_id": "GD008065",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "001979",
+        "org_id": "GD014107",
+        "reported_total": 9,
+        "pages": 1
+      },
+      {
+        "symbol": "002001",
+        "org_id": "gssz0002001",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002027",
+        "org_id": "gssz0002027",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002028",
+        "org_id": "gssz0002028",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002049",
+        "org_id": "gssz0002049",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "002050",
+        "org_id": "gssz0002050",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002074",
+        "org_id": "9900001001",
+        "reported_total": 2,
+        "pages": 1
+      },
+      {
+        "symbol": "002142",
+        "org_id": "9900003281",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002179",
+        "org_id": "9900003783",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002202",
+        "org_id": "9900003947",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002230",
+        "org_id": "9900004565",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002236",
+        "org_id": "9900004625",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002241",
+        "org_id": "9900004688",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002304",
+        "org_id": "9900008689",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002311",
+        "org_id": "9900009032",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002352",
+        "org_id": "9900010448",
+        "reported_total": 16,
+        "pages": 1
+      },
+      {
+        "symbol": "002353",
+        "org_id": "9900010449",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "002371",
+        "org_id": "9900006137",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002384",
+        "org_id": "9900011647",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002415",
+        "org_id": "9900012688",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002422",
+        "org_id": "9900012788",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "002460",
+        "org_id": "9900013787",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "002463",
+        "org_id": "9900013929",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "002466",
+        "org_id": "9900014189",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002475",
+        "org_id": "9900014448",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002493",
+        "org_id": "9900015502",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002532",
+        "org_id": "9900016749",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002558",
+        "org_id": "9900018280",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002594",
+        "org_id": "gshk0001211",
+        "reported_total": 17,
+        "pages": 1
+      },
+      {
+        "symbol": "002600",
+        "org_id": "9900020848",
+        "reported_total": 21,
+        "pages": 1
+      },
+      {
+        "symbol": "002602",
+        "org_id": "9900021007",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002625",
+        "org_id": "9900021556",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002648",
+        "org_id": "9900021886",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002709",
+        "org_id": "9900022986",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002714",
+        "org_id": "9900022995",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "002736",
+        "org_id": "9900004734",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002837",
+        "org_id": "9900029666",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002916",
+        "org_id": "9900022488",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002920",
+        "org_id": "9900032987",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "002938",
+        "org_id": "9900036236",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "003816",
+        "org_id": "9900027002",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300014",
+        "org_id": "9900008311",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300015",
+        "org_id": "9900008390",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300033",
+        "org_id": "9900008416",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300059",
+        "org_id": "9900010488",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300122",
+        "org_id": "9900014108",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "300124",
+        "org_id": "9900012527",
+        "reported_total": 22,
+        "pages": 1
+      },
+      {
+        "symbol": "300251",
+        "org_id": "9900020527",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300274",
+        "org_id": "9900021300",
+        "reported_total": 15,
+        "pages": 1
+      },
+      {
+        "symbol": "300308",
+        "org_id": "9900022016",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300316",
+        "org_id": "9900022122",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300394",
+        "org_id": "9900023911",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300408",
+        "org_id": "9900023108",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300413",
+        "org_id": "9900023257",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "300418",
+        "org_id": "9900023869",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300433",
+        "org_id": "9900023791",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300442",
+        "org_id": "9900023826",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300450",
+        "org_id": "9900023846",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "300476",
+        "org_id": "9900024582",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300498",
+        "org_id": "9900009247",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300502",
+        "org_id": "9900026455",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300628",
+        "org_id": "9900031465",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300661",
+        "org_id": "9900024859",
+        "reported_total": 10,
+        "pages": 1
+      },
+      {
+        "symbol": "300750",
+        "org_id": "GD165627",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300760",
+        "org_id": "9900035304",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "300803",
+        "org_id": "9900002141",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300832",
+        "org_id": "9900027265",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300866",
+        "org_id": "gfbj0839473",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300896",
+        "org_id": "9900035532",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "300999",
+        "org_id": "9900039967",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "301165",
+        "org_id": "nssc1000760",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "301236",
+        "org_id": "9900046983",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "301269",
+        "org_id": "9900048778",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "301308",
+        "org_id": "9900048787",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "302132",
+        "org_id": "9900013408",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600000",
+        "org_id": "gssh0600000",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600009",
+        "org_id": "gssh0600009",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600010",
+        "org_id": "gssh0600010",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600011",
+        "org_id": "gssh0600011",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600015",
+        "org_id": "gssh0600015",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "600016",
+        "org_id": "gssh0600016",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "600018",
+        "org_id": "9900001281",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600019",
+        "org_id": "gssh0600019",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600023",
+        "org_id": "9900027828",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "600025",
+        "org_id": "9900030360",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600026",
+        "org_id": "gssh0600026",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "600027",
+        "org_id": "gssh0600027",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600028",
+        "org_id": "gssh0600028",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600029",
+        "org_id": "gssh0600029",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "600030",
+        "org_id": "gssh0600030",
+        "reported_total": 2,
+        "pages": 1
+      },
+      {
+        "symbol": "600031",
+        "org_id": "gssh0600031",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600036",
+        "org_id": "gssh0600036",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "600039",
+        "org_id": "gssh0600039",
+        "reported_total": 12,
+        "pages": 1
+      },
+      {
+        "symbol": "600048",
+        "org_id": "9900000161",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600050",
+        "org_id": "gssh0600050",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600061",
+        "org_id": "gssh0600061",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600066",
+        "org_id": "gssh0600066",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600085",
+        "org_id": "gssh0600085",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600089",
+        "org_id": "gssh0600089",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600104",
+        "org_id": "gssh0600104",
+        "reported_total": 11,
+        "pages": 1
+      },
+      {
+        "symbol": "600111",
+        "org_id": "gssh0600111",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600115",
+        "org_id": "gssh0600115",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600118",
+        "org_id": "gssh0600118",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600150",
+        "org_id": "gssh0600150",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600160",
+        "org_id": "gssh0600160",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600176",
+        "org_id": "gssh0600176",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600183",
+        "org_id": "gssh0600183",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600188",
+        "org_id": "gssh0600188",
+        "reported_total": 9,
+        "pages": 1
+      },
+      {
+        "symbol": "600196",
+        "org_id": "gssh0600196",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "600219",
+        "org_id": "gssh0600219",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600221",
+        "org_id": "gssh0600221",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600233",
+        "org_id": "gssh0600233",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600276",
+        "org_id": "gssh0600276",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600309",
+        "org_id": "gssh0600309",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600346",
+        "org_id": "gssh0600346",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600362",
+        "org_id": "gssh0600362",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600372",
+        "org_id": "gssh0600372",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600406",
+        "org_id": "gssh0600406",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600415",
+        "org_id": "gssh0600415",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600426",
+        "org_id": "gssh0600426",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600436",
+        "org_id": "gssh0600436",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "600438",
+        "org_id": "gssh0600438",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600460",
+        "org_id": "gssh0600460",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600482",
+        "org_id": "gssh0600482",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600489",
+        "org_id": "gssh0600489",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600515",
+        "org_id": "gssh0600515",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600519",
+        "org_id": "gssh0600519",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600522",
+        "org_id": "gssh0600522",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600547",
+        "org_id": "gssh0600547",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "600549",
+        "org_id": "gssh0600549",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600570",
+        "org_id": "gssh0600570",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600584",
+        "org_id": "gssh0600584",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600585",
+        "org_id": "gssh0600585",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600588",
+        "org_id": "gssh0600588",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600600",
+        "org_id": "gssh0600600",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600660",
+        "org_id": "gssh0600660",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600674",
+        "org_id": "gssh0600674",
+        "reported_total": 2,
+        "pages": 1
+      },
+      {
+        "symbol": "600690",
+        "org_id": "gssh0600690",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600741",
+        "org_id": "gssh0600741",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600760",
+        "org_id": "gssh0600760",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600795",
+        "org_id": "gssh0600795",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600803",
+        "org_id": "gssh0600803",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "600809",
+        "org_id": "gssh0600809",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600845",
+        "org_id": "gssh0600845",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600875",
+        "org_id": "gssh0600875",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "600886",
+        "org_id": "gssh0600886",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600887",
+        "org_id": "gssh0600887",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600893",
+        "org_id": "gssh0600893",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600900",
+        "org_id": "gssh0600900",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600905",
+        "org_id": "9900016549",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600918",
+        "org_id": "qsgn0000702",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600919",
+        "org_id": "9900006248",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600926",
+        "org_id": "9900006251",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600930",
+        "org_id": "fzqy1062763",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600938",
+        "org_id": "gshk0000883",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600941",
+        "org_id": "gshk0000941",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600958",
+        "org_id": "qsgn0000065",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "600989",
+        "org_id": "9900019573",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "600999",
+        "org_id": "qsgn0000118",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601006",
+        "org_id": "9900000261",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601009",
+        "org_id": "9900003284",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601012",
+        "org_id": "9900022338",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601018",
+        "org_id": "9900010907",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601021",
+        "org_id": "9900023129",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "601058",
+        "org_id": "9900009410",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601059",
+        "org_id": "9900003683",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601066",
+        "org_id": "qsgn0000884",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601077",
+        "org_id": "9900016867",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601088",
+        "org_id": "9900003701",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601100",
+        "org_id": "9900021530",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601111",
+        "org_id": "9900000441",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601117",
+        "org_id": "9900009949",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601127",
+        "org_id": "9900024265",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601136",
+        "org_id": "qsgn0000516",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601138",
+        "org_id": "9900036731",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601166",
+        "org_id": "9900002081",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601169",
+        "org_id": "9900003642",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "601186",
+        "org_id": "9900004347",
+        "reported_total": 4,
+        "pages": 1
+      },
+      {
+        "symbol": "601211",
+        "org_id": "qsgn0000116",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601225",
+        "org_id": "9900023204",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601229",
+        "org_id": "9900010207",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601238",
+        "org_id": "9900006006",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601288",
+        "org_id": "jjxt0000020",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601318",
+        "org_id": "9900002221",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601319",
+        "org_id": "9900024684",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "601328",
+        "org_id": "9900002841",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601336",
+        "org_id": "GD040482",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "601360",
+        "org_id": "9900021962",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601377",
+        "org_id": "qsgn0000076",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "601390",
+        "org_id": "9900003904",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601398",
+        "org_id": "jjxt0000019",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601456",
+        "org_id": "qsgn0000343",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601600",
+        "org_id": "9900002901",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601601",
+        "org_id": "9900004003",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601607",
+        "org_id": "gssh0600849",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601618",
+        "org_id": "9900008087",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601628",
+        "org_id": "9900001881",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601633",
+        "org_id": "gshk0002333",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "601658",
+        "org_id": "9900005091",
+        "reported_total": 8,
+        "pages": 1
+      },
+      {
+        "symbol": "601668",
+        "org_id": "9900005970",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601669",
+        "org_id": "9900019726",
+        "reported_total": 14,
+        "pages": 1
+      },
+      {
+        "symbol": "601688",
+        "org_id": "qsgn0000161",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "601689",
+        "org_id": "9900023677",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601698",
+        "org_id": "9900036546",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601727",
+        "org_id": "9900005766",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601728",
+        "org_id": "gshk0000728",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601766",
+        "org_id": "9900005127",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601788",
+        "org_id": "qsgn0000085",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601800",
+        "org_id": "gshk0001800",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601816",
+        "org_id": "9900041360",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601818",
+        "org_id": "9900006246",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601825",
+        "org_id": "9900010687",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601838",
+        "org_id": "9900021318",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601857",
+        "org_id": "9900003825",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601868",
+        "org_id": "9900031628",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601872",
+        "org_id": "9900001441",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "601877",
+        "org_id": "9900010254",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "601878",
+        "org_id": "qsgn0000203",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601881",
+        "org_id": "qsgn0000512",
+        "reported_total": 7,
+        "pages": 1
+      },
+      {
+        "symbol": "601888",
+        "org_id": "9900008313",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601898",
+        "org_id": "9900004221",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601899",
+        "org_id": "9900004143",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601901",
+        "org_id": "9900021222",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "601916",
+        "org_id": "9900007207",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "601919",
+        "org_id": "9900003201",
+        "reported_total": 9,
+        "pages": 1
+      },
+      {
+        "symbol": "601939",
+        "org_id": "9900003682",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "601985",
+        "org_id": "9900022188",
+        "reported_total": 14,
+        "pages": 1
+      },
+      {
+        "symbol": "601988",
+        "org_id": "jjxt0000028",
+        "reported_total": 9,
+        "pages": 1
+      },
+      {
+        "symbol": "601995",
+        "org_id": "qsgn0000421",
+        "reported_total": 9,
+        "pages": 1
+      },
+      {
+        "symbol": "601998",
+        "org_id": "9900002721",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603019",
+        "org_id": "9900023134",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603259",
+        "org_id": "9900035584",
+        "reported_total": 2,
+        "pages": 1
+      },
+      {
+        "symbol": "603260",
+        "org_id": "9900031901",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603288",
+        "org_id": "9900023228",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "603296",
+        "org_id": "9900047877",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "603369",
+        "org_id": "9900023168",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603392",
+        "org_id": "9900033181",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603501",
+        "org_id": "9900030772",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603799",
+        "org_id": "9900023781",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603893",
+        "org_id": "9900033186",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "603986",
+        "org_id": "9900026561",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "603993",
+        "org_id": "gshk0003993",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "605117",
+        "org_id": "9900039788",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "605499",
+        "org_id": "9900041766",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688008",
+        "org_id": "9900039002",
+        "reported_total": 5,
+        "pages": 1
+      },
+      {
+        "symbol": "688009",
+        "org_id": "9900030958",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688012",
+        "org_id": "9900038991",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688036",
+        "org_id": "9900038988",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "688041",
+        "org_id": "9900048365",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688047",
+        "org_id": "9900048052",
+        "reported_total": 6,
+        "pages": 1
+      },
+      {
+        "symbol": "688072",
+        "org_id": "9900048695",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688082",
+        "org_id": "nssc1000455",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "688111",
+        "org_id": "9900035303",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688126",
+        "org_id": "9900039304",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688183",
+        "org_id": "nssc1000615",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "688223",
+        "org_id": "9900017709",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688256",
+        "org_id": "nssc1000595",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "688271",
+        "org_id": "9900048090",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688303",
+        "org_id": "gfbj0837316",
+        "reported_total": 1,
+        "pages": 1
+      },
+      {
+        "symbol": "688396",
+        "org_id": "gshk0000597",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688472",
+        "org_id": "9900032673",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688506",
+        "org_id": "9900024957",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688521",
+        "org_id": "9900040648",
+        "reported_total": 0,
+        "pages": 1
+      },
+      {
+        "symbol": "688981",
+        "org_id": "gshk0000981",
+        "reported_total": 0,
+        "pages": 1
+      }
+    ],
+    "membership_snapshot": "2026-06-30"
+  },
+  "raw_page_sha256": [
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "b4e543e1ff35e77ddd27f00be47f2cad3adccb4dbf3b45bf5e07f08b04858c43",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "022f9c7e5eca215cf74e361dc9df6ce8d8b88a950465fee850af786b0bbb24d0",
+    "2592b731463d443c50b1aa5e54e5d9045c4f8fbab453139ff0602b901e1b1a38",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "9b1a680f32582144bafe2d44a1324d56ca9c6a5cf7e4855f80b5469fbf2f81f0",
+    "4ab884db2d8043f71ae8ae06d383eed282de81313d82310a8e3589387a391f74",
+    "fec05e3f21586b5c9ef3aa2d02a457323c781a8a52f2debba120a86677ecc889",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "7da42e83f12c5e9ddbd52b052fcdf9d581d40e7fb8d64a3ad257f609f7795e40",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "e06ad1b96fb5ba968ae26b8de39002698041f48a098f223cc687d4661cb053d0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "7c47f6dfb93575a05a2e513ea9f24ac29ab6baba74caedd4995e9aa58698a137",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "e0f7d816e34c182829a49974b1070857731630447c826bb16f71d3e8221aac0c",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "0d37cde625e4138bc6beff9819d74d7d3273255ffb76c23c47a081531ea8f21d",
+    "3f6c6b01748825c29d00d825cbd3c4bbcabba3cbc63d20b434cafadd886cda74",
+    "bfae5dd965ac2afff12a7b607f85a07d6905eb0c8988b7b53e44784628a00f81",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "524483bb725d57c0ba92a37b463550b8c88b714906605e504bfaa574a5728311",
+    "8eaf86f69f12361440a4fbd0393f264a3021d05cec3bc3a67f74d9d593e7c17b",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "cd2f6b86fc4d98a50f3d30ff71e37044ad2b7bee4cb2a414efa0fcb938b983ca",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "7062f2ddf97c00432aba506da1fc6b6cc2ccf2fcf8f0727fdd24566933641056",
+    "a20ca4246efdeec15433cb82d7292ec8ec5ea60c21057b16709eafe83cb02ec8",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "66a2d794cc92b449826394e31effd187323e4a36e5fcc2ee1d1ff115ef4dfb53",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "eb75c5cbacd16ef4799f057818d19ec4e314aa8160eee140920ef8ee0b258ef1",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "cc2e8689c648dd08128b121e597b02dd1d60948e5daf2260376cd303f3c7c7a4",
+    "7588068847908730898f352be71bfdbb474a493753215ddb681e896f39d02058",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "461a68043ea3696d1e054f8bbde932941d190787fa7a3f09f67d2c381e183164",
+    "771484c8c2b070b3a36f553203c3d914556008da4ed63b31c42e66bf223d57d0",
+    "aac7111b361494a3aff814307ac0cabdf93244fb4ec82d43c731255ff73cc89b",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "3f63bd1fcf8a8e7d5eba614096786cbf203ab62adabd6d70f6e34d26a6ba61be",
+    "961d1dc11b4207f2d4a63fc3b4900cd342428c54f97e76282e75cd9f4089fb3d",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "bd704d5398f67a00abb1aaad8221a9b850e3f460a41d5cdb680ac9dfb279d38e",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "17011fafc814205d62efb20f25f77987ab281dfd274213fa781ec62579038ee4",
+    "32d28922653b6e5518134adff20e55b6d904fbb6fb55cbe3fd823915318a6d91",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "11f18bb31fd37b6798b509e118af9ae8db157b48aa2526c6ab27f1e82118cfa4",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "0c9b79cb03945120e564ecceaaed1d8c5fc26152fda96aa423c033d28126a29f",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "e75e042e030fe6eebdd1976d587cb2341be9867bc490c647c96e5c3226146412",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "35a58ecf6a5fc63e54a31e595cf11f8959a1904f4573c8f8c4ed6a32e4b2a341",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5640739ca9f533ba84cf95e974c759e255fe6b37f4c6d8596cf9fbfb4079cdbf",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "26e60017ab283698ea3cc7039731730e9b8d6c8a98d82d4bc58d3e741e0753bd",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "879972d183e9ae5e4bea29aee0d957116a6c03933fc6f857a40bda4be9e94c04",
+    "c2a6cdc88b19201c4bd6754432dbe1e3c94eb00d36cc5619398113920b4d2e81",
+    "09300c37c7197ee103d5813be749b70f3b0a36b39f0461913ec99fc268803b90",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "bd5f554d9f076307728e213d3e651085f348c6bcf75e3f14875e2d024d2aa568",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "e698e5f72383de0654e661e2b0e16ab8422cf88748edde1c3b55d04619768231",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "9bae07570294cd84bfc235c27583d814ffe2d319d9ef4f970e83d3e7405e9242",
+    "0de675371ccd6ba7ea90551357dc91fe5e2bd15994edfd96e65b1cb8914e9ac7",
+    "e41b51e06dbfd0a4d1d3665a9633c6dbece8c5f2bb7319053d0cf5901e342982",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5dfd58a41b1a6eafb4dbd59dc4b5c37063021d440ec4eeed4d6ac52350181eea",
+    "6f445ea2a43560b30b319de33483f460fc65d737cc30d64dd32509ca510c67f4",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "8c36f3095a389cd4ceacc1415f66d916e76667c9478cf9f81d4fbfa91bbe55c5",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "a5510229f02b4e4357fb50c3d6e9b3112a4cc8f333369b24260f8ae496b0bdc6",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "def3ce5737d94939263f9dc9d430fb6b91c770c8b91f22ecdcf8b21187b3113f",
+    "0d08914919d62db12ada047bbabcb9f5e1cc1f56ac88a556941a3d565570e591",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "3a723ff7b791dee42a39e6634564951603950022ae60f709e230b90dce159d82",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "672c6cc0dcfb07e22b15e6510804a5ee3d523de2c24f9b669b06e2cf16ed93ac",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "be96a7255b37d7bc6a1d7893173331dfd924bbd81790e684cca293c26f91b865",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5cad344f187eebaffd1b49c110c61ed4bfa1726a8f13819daf42437f85474d99",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "2e89583d467e86b8e959695f2141ac80901f1c8d1fa2710af78ef840af176933",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "56408335de3b75080e043225f137cb2541ec55f918cb20f7dcc47035b42746d5",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "845c861472f37c0726a94dc5bd555e68c6ef4c75ba89bb2589c908bde4aa721f",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "a7acae690219a8be15a596717f88aa63390bfa06703ef314e18e95a9fc6a2f9c",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "b3716abd0998395b35bc9ce78856e9da22f7695ffca90720b5269d1c76c8f844",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "f2c9b350403716bc99534ed6ec090baeec8fd0e6c2ae06800ed73ae9be9debb6",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "a72815f6f325176fdad5edc1e940d855a328b7f51025dfc3cd541aa3335283c2",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "2a41947ddd84561405a80da8ffd4fc9fc07b5db90c329c79b38fef423e40c183",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "d88fb31f9033ee7447da156b8e3f8d62eeb8d60eb2e681e65733c2f2c2428a93",
+    "0b0040dbdbadfacc23481bdbbbc66e3267bf6e43d534b5582094a8f8c8bca568",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "66757aec5e45a570425fd6458608305a68effca264e5cc06ce27ddd889357aea",
+    "3d52ace5c756d2c029b1cd5e5f7afc3448b966e672ba9702d12bb955d83108f6",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "070c1070ce01fbc179acbf5641884c6c23d8590832967296317f0f966266d24a",
+    "e033e871347bd7e822ea8232631dac34e8455bebd6ae6a71a30feb44b3c52a77",
+    "66d500fd1db3c06f68fbc409ec66e67297a759cbe9cc44c6dec76c5f8f6c79b3",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "735fffb6d9049fddd9fa760ff13eddacd6b1a45072d8a14ca4ab994ef8bd18fc",
+    "abc17944a33171490f6cc28b61b67b2ce205eb29cd8b6c196e38fa0e700b097a",
+    "6921ec6d1de9512c44d2730414a015cadef6653473e7b87322b7aa82c75ae540",
+    "fe9fce4250687e204dd5ae4d2794b1822d973fe64fb613a5bfb5750bc86a986a",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "f85151ae52b8e8d03c4a55788ea1a996b096b159f99f94ffaff8e73c2314a892",
+    "53a1d1ba4de82c19111df00090d0f4d0186db274faba0d5e8674c9a144e8b0c6",
+    "299b32eac44b4b4100958eadfa96b7fcdd0050b491c992f9d833898a42f01b9b",
+    "f7036ec9647facc95421acc92f42b21475333048e48963ee751ca4a0116e4d7e",
+    "e8548896e541e7a98fc485a6d7ae18b4c72754c7258581fdd5df1bd565e4265c",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "7e1bf4577ad33ecf4ba530b25fe08fcaddbaee99b7202e821ea6d143b04b115e",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "26c6ee7fa06b0264b88f2be2b7f294f849dee8f0a493be74add60be6a0b751c2",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "32080ed7b5ed00f0ff65427f499ac0226d04ca3c8ee5b5a8c22fca218dbb5774",
+    "4d0aaf3441fa7f2cd4bb2304e6781bc2bbe3794d65b463c67ce4ce8b05c526f8",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "43b11f8e24de79ce3255c79cff594ceb2f8937038c9d97ae066692bb38073506",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "80662b074365bee90f4452ab2a42813164f03b700202b47eb0a2278284980a5f",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "56fadba5391e8fca2aa5eb5070ea04abc483b8c10291fd0e1f244c230f7402d7",
+    "60d6bb9b97ae1dfb6ab29a648ec7042409498695f4cfd8a7f6ad549947edce1b",
+    "da8d7e271114a35e490701d607c4f724131e85b4baac32fe6613d250f6db053f",
+    "f9d4ff64a40aad6de94e42ac98d723cbbd77b889325e1fd448483d550a90af72",
+    "8c22785152d75ec1692aea7c1521e19ed9ba9a5e04cdc2d26249f94af0723e87",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "228fb8c0ef20125538b4cbab95dd9fd5f749b5db563d1ef91572f008d1a633bc",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "8b581230fd66e862f2085c6d6046b61749eb2bb7430c62d75a392943e96c9765",
+    "c4a0c510bbac5462846a32ee5cce8bd4e0fc16511fa67505378f873d2104c00c",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "2866b8300175cb79ab2d49846a4e36e37bb3d698cb1911e778f42a2b7a58985c",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "345d408137a5df623506a4fd695f9e1f849a9a411b51cf238b84d2c2359e9c98",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "650eadb4b29654fc19f54c1c020d7091b4c837ee7d029ff53ababdda7432e96a",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "924f2d85185eff32d2c169d170099de2ac7b77965b30cf285a16f37fa4b0ba47",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "9877b6ac9ba93259668e51f5a8f4e53af6ee0cf45de5d5634d315a60df20f6a7",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "9ed02e4746195dae18d186f98363991cf288dbc7f8aba7b87637ac5db358d206",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "ac5efa083a5d4afb2e6e5b99e71726f60881f1ed4af0fe8a65b0cc9b93fd9308",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "42f8cf9e55159073372135e1ba6110b4400f50724e09925a49d8b5c71445c897",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0",
+    "5997d419344c9f57ccb9e4d39ee186a387b0a2b5b7131a98cd046aac804511f0"
+  ],
+  "pages": 300,
+  "records_returned": 587,
+  "unique_announcements": 587,
+  "statuses": {
+    "new": 587,
+    "repeat_same": 0,
+    "identity_hash_changed": 0
+  },
+  "prospective_new_eligible": 0,
+  "prospective_first_seen_verified": false,
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

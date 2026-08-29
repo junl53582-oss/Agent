@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "tests": 23,
+  "command": "python -m pytest tests/test_research_v28.py tests/test_research_v26.py tests/test_research_v25r1.py tests/test_research_v22.py tests/test_research_v22r1.py -q",
+  "result": "23 passed",
+  "performance_outputs_read_before_freeze": false,
+  "candidate_run_before_freeze": false
+}

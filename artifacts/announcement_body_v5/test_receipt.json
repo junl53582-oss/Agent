@@ -1,0 +1,18 @@
+{
+  "created_at_shanghai": "2026-08-29T13:29:00+08:00",
+  "commands": [
+    "python -m pytest tests/test_announcement_body_v5.py -q",
+    "python -m pytest tests/test_announcement_body_v4.py tests/test_announcement_body_v5.py -q",
+    "python -m py_compile announcement_body_v5/*.py (expanded by PowerShell)"
+  ],
+  "passed": true,
+  "v5_tests_passed": 5,
+  "parent_plus_v5_tests_passed": 8,
+  "live_official_query_run_before_freeze": false,
+  "market_or_return_data_read": false,
+  "historical_backfill_allowed": false,
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

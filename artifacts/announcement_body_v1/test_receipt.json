@@ -1,0 +1,10 @@
+{
+  "recorded_date_shanghai": "2026-08-29",
+  "passed": true,
+  "command": ".venv311/Scripts/python.exe -B -m unittest discover -s tests -p test_announcement_body.py -v",
+  "tests_passed": 11,
+  "coverage": ["outcome-independent deterministic selection", "official HTTPS endpoint/path restriction", "document ID/issuer/title/date validation", "publication vs first-seen effective dates", "numeric mention preservation without period binding", "scan/identity/garbling quality rejection", "table retention", "maximum-page fail-closed", "cache hash verification and no overwrite", "HTML rejected as PDF"],
+  "scope": "Data preparation only; no model score, performance or replacement approval",
+  "model_training_ready": false,
+  "execution_authorized": false
+}

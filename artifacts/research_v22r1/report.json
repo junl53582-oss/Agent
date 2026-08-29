@@ -1,0 +1,85 @@
+{
+  "status": "retrospective_global_score_ablation_complete",
+  "lock_sha256": "BEDA5FAD45E9C4B697C01805E48A327B719EB01A30AB2C1CA75C86C28BF10E0A",
+  "created_at_utc": "2026-08-29T02:49:35.956205+00:00",
+  "metrics": {
+    "v16_replay": {
+      "total_return": 0.3559301960621777,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": 0.051477789825914,
+      "max_drawdown": -0.40671763301747754,
+      "positive_excess_years": 4,
+      "test_years": 6,
+      "rank_ic_5": -0.025196358969506717,
+      "rank_ic_20": -0.016853339994093344,
+      "technology_rank_ic_5": -0.04314436378855893,
+      "average_one_way_turnover": 0.1332549742929555,
+      "average_transaction_cost": 0.0002764807886567216,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.4794520547945205,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    },
+    "global_only": {
+      "total_return": 0.26956416631759095,
+      "benchmark_return": 0.3044524062362637,
+      "excess_return": -0.03488823991867274,
+      "max_drawdown": -0.4015718891789767,
+      "positive_excess_years": 3,
+      "test_years": 6,
+      "rank_ic_5": 0.032995535919758616,
+      "rank_ic_20": 0.03999443043698956,
+      "technology_rank_ic_5": -0.011586900810345493,
+      "average_one_way_turnover": 0.1374110214598761,
+      "average_transaction_cost": 0.000285213950477427,
+      "periods": 73,
+      "periods_held": 73,
+      "held_period_win_rate": 0.4794520547945205,
+      "drawdown_sampling": "market_open_and_post_rebalance_NAV"
+    }
+  },
+  "control_reproduction": {
+    "equity": {
+      "rows": 73,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "holdings": {
+      "rows": 21898,
+      "maximum_absolute_difference": 9.996344030316351e-17
+    },
+    "daily_nav": {
+      "rows": 1533,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    "settlements": {
+      "rows": 2,
+      "exact": true
+    }
+  },
+  "control_reproduction_passed": true,
+  "gates": {
+    "cumulative_excess_positive": false,
+    "positive_excess_years_at_least_4": false,
+    "technology_ic_nonnegative": false,
+    "max_drawdown_not_below_minus_18pct": false,
+    "same_accounting_v6_v8_comparison_available": false,
+    "untouched_126_day_future_test_complete": false
+  },
+  "all_promotion_gates_passed": false,
+  "decision": "keep_v6",
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "frozen_inputs_intact": true,
+  "output_sha256": {
+    "equity.csv": "89676E1A56B33EE89939938822926344DE6994D16423AF6FD77CF4E2E27213F9",
+    "holdings.csv": "39672B03B6ECBCC34139D4E529A84AFDDFFDA2937EC0FC79E8CD405970FA8E18",
+    "daily_nav.csv": "17A57D740682D677753329A6C13831D00EC131C7A258CB5A58BFF082AA91577F",
+    "settlements.json": "32A55383E5E97F27AF5DC13D60C29F4C012EA797CDFA3440E8E06F5580BD9B9A"
+  },
+  "limitations": [
+    "Implementation-only repair of V22; the only behavior change is valid access to the parent mode column.",
+    "Evidence-selected retrospective single-variable ablation; not an untouched confirmation.",
+    "No retraining or parameter search; frozen V21 global_model_score is the sole changed portfolio score.",
+    "V6 remains formal until all original gates and 126 new future trading days pass."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "accepted_at_shanghai": "2026-08-29T11:14:00+08:00",
+  "research": "V22r1",
+  "lock_sha256": "BEDA5FAD45E9C4B697C01805E48A327B719EB01A30AB2C1CA75C86C28BF10E0A",
+  "frozen_inputs_intact": true,
+  "output_hashes_verified": true,
+  "annual_checkpoints_verified": {
+    "2020": true,
+    "2021": true,
+    "2022": true,
+    "2023": true,
+    "2024": true,
+    "2025": true
+  },
+  "control_reproduction": {
+    "passed": true,
+    "equity_rows": 73,
+    "holding_rows": 21898,
+    "daily_nav_rows": 1533,
+    "independent_max_absolute_difference": 0.0
+  },
+  "global_only": {
+    "total_return": 0.26956416631759095,
+    "benchmark_return": 0.3044524062362637,
+    "excess_return": -0.03488823991867274,
+    "positive_excess_years": 3,
+    "rank_ic_5": 0.032995535919758616,
+    "rank_ic_20": 0.03999443043698956,
+    "technology_rank_ic_5": -0.011586900810345493,
+    "max_drawdown": -0.4015718891789767,
+    "average_one_way_turnover": 0.1374110214598761,
+    "average_transaction_cost": 0.000285213950477427,
+    "annual_excess": {
+      "2020": 0.021417188789911057,
+      "2021": -0.01690068302343506,
+      "2022": -0.008983112134545279,
+      "2023": 0.008641141653467521,
+      "2024": 0.0018832878985444168,
+      "2025": -0.03367935972150393
+    }
+  },
+  "failed_gates": [
+    "cumulative_excess_positive",
+    "positive_excess_years_at_least_4",
+    "technology_ic_nonnegative",
+    "max_drawdown_not_below_minus_18pct",
+    "same_accounting_v6_v8_comparison_available",
+    "untouched_126_day_future_test_complete"
+  ],
+  "classification": "valid_negative_result",
+  "decision": "keep_v6",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

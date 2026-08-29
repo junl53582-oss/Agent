@@ -1,0 +1,25 @@
+{
+  "protocol": "announcement-body-v5r1-partitioned-watchlist-repair",
+  "status": "preregistered_not_run",
+  "failed_parent_lock": "21ceafd48929d82d033f6a2753e7352b2e551ae3cd4cb7cea07bf7c17254be79",
+  "failure": "The unpartitioned CNINFO query reported 6776 rows but repeated page 1 after page 100, yielding only 3000 unique ids; the incomplete V5 observation remains preserved and is never training evidence",
+  "repair": "Query each of the 300 securities in the latest frozen point-in-time CSI 300 snapshot separately using its latest frozen CNINFO org id",
+  "unchanged": [
+    "Append-only first-seen semantics",
+    "No historical backfill",
+    "No body approval from metadata",
+    "Revision-like announcements remain lineage-quarantined",
+    "No market returns, labels, model fitting or broker access"
+  ],
+  "acceptance": [
+    "Frozen watchlist snapshot has exactly 300 unique securities and every security has a frozen org id",
+    "Each per-security response reports no more records than the pages actually fetched",
+    "No page hash repetition can silently satisfy a reported total",
+    "All returned records belong to the requested watchlist and target Shanghai date",
+    "At least one post-freeze publication is required before prospective first-seen can pass"
+  ],
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

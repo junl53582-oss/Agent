@@ -1,0 +1,26 @@
+{"stage": "selected", "at_utc": "2026-08-28T22:14:26.332812+00:00", "documents": 12, "source_rows": 966865}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:01.054376+00:00", "current": 1, "requested": 12, "symbol": "601390", "announcement_id": "1204433911", "category": "contract"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:02.131220+00:00", "symbol": "601390", "announcement_id": "1204433911", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:02.132215+00:00", "current": 2, "requested": 12, "symbol": "600009", "announcement_id": "1204429465", "category": "earnings_flash"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:02.630711+00:00", "symbol": "600009", "announcement_id": "1204429465", "body_extraction_passed": false, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:02.631711+00:00", "current": 3, "requested": 12, "symbol": "002385", "announcement_id": "1205501722", "category": "earnings_forecast"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:03.160195+00:00", "symbol": "002385", "announcement_id": "1205501722", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:03.162186+00:00", "current": 4, "requested": 12, "symbol": "000008", "announcement_id": "1205688090", "category": "repurchase"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:04.126364+00:00", "symbol": "000008", "announcement_id": "1205688090", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:04.128368+00:00", "current": 5, "requested": 12, "symbol": "600481", "announcement_id": "1211571975", "category": "contract"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:04.793104+00:00", "symbol": "600481", "announcement_id": "1211571975", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:04.794104+00:00", "current": 6, "requested": 12, "symbol": "600674", "announcement_id": "1211243407", "category": "earnings_flash"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:05.532633+00:00", "symbol": "600674", "announcement_id": "1211243407", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:05.533621+00:00", "current": 7, "requested": 12, "symbol": "002624", "announcement_id": "1210454093", "category": "earnings_forecast"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:06.231864+00:00", "symbol": "002624", "announcement_id": "1210454093", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:06.232951+00:00", "current": 8, "requested": 12, "symbol": "000069", "announcement_id": "1209041295", "category": "repurchase"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:07.109448+00:00", "symbol": "000069", "announcement_id": "1209041295", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:07.110449+00:00", "current": 9, "requested": 12, "symbol": "002310", "announcement_id": "1220089694", "category": "contract"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:07.806598+00:00", "symbol": "002310", "announcement_id": "1220089694", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:07.807474+00:00", "current": 10, "requested": 12, "symbol": "000728", "announcement_id": "1220627969", "category": "earnings_flash"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:08.406841+00:00", "symbol": "000728", "announcement_id": "1220627969", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:08.406841+00:00", "current": 11, "requested": 12, "symbol": "601360", "announcement_id": "1220589893", "category": "earnings_forecast"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:08.951741+00:00", "symbol": "601360", "announcement_id": "1220589893", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "fetching", "at_utc": "2026-08-28T22:16:08.952671+00:00", "current": 12, "requested": 12, "symbol": "002050", "announcement_id": "1220789517", "category": "repurchase"}
+{"stage": "document_complete", "at_utc": "2026-08-28T22:16:09.458295+00:00", "symbol": "002050", "announcement_id": "1220789517", "body_extraction_passed": true, "model_training_ready": false}
+{"stage": "pilot_progress", "at_utc": "2026-08-28T22:16:09.796777+00:00", "selected": 12, "completed": 12, "body_extraction_passed": 11, "failed": 0, "pending": 0}

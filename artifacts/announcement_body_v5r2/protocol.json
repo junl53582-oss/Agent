@@ -1,0 +1,20 @@
+{
+  "protocol": "announcement-body-v5r2-empty-result-and-throttle-repair",
+  "status": "preregistered_not_run",
+  "failed_parent_lock": "f88470fab5b62a2e403f5f5fb987d4a71cf4abeb232707deb47169445262f530",
+  "failure": "V5r1 stopped before ledger writes because the official per-security endpoint can encode a zero-result partition with announcements=null; immediate diagnostic requests also encountered a non-JSON response, so no automatic retry is allowed",
+  "repair": [
+    "Normalize announcements=null to an empty list only when totalAnnouncement equals zero",
+    "Keep null with nonzero total, non-JSON, HTTP errors and identity/date mismatches as hard failures",
+    "Use one worker with a fixed inter-request delay and zero retries"
+  ],
+  "unchanged": [
+    "Frozen 300-security watchlist and org ids",
+    "Append-only ledger and no historical backfill",
+    "No body approval, prices, returns, labels, model fitting or broker access"
+  ],
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

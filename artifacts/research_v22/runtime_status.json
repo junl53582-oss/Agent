@@ -1,0 +1,8 @@
+{
+  "stage": "failed",
+  "pid": 38784,
+  "at_utc": "2026-08-29T02:14:17.216633+00:00",
+  "error": "'function' object has no attribute 'eq'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\research_v22\\runner.py\", line 61, in run\n    schedule = schedule_from_parent(parent_equity, book)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\research_v22\\replay.py\", line 50, in schedule_from_parent\n    control = parent[parent.mode.eq(\"v16_control\")].copy()\n                     ^^^^^^^^^^^^^^\nAttributeError: 'function' object has no attribute 'eq'\n",
+  "execution_authorized": false
+}

@@ -1,0 +1,21 @@
+{
+  "status": "prospective_body_ingestion_complete",
+  "attempt_id": "20260829T072907877534Z",
+  "created_at_utc": "2026-08-29T07:29:08.328351+00:00",
+  "lock_sha256": "4764F6E33405B44E6F17C43DFFBEF3AC2AEB88B032741B58F79A3769CFDDBD96",
+  "frozen_inputs_intact": true,
+  "results": [],
+  "gate": {
+    "eligible_events": 0,
+    "text_extracted": 0,
+    "quarantined": 0,
+    "body_training_approved": false,
+    "model_training_ready": false,
+    "replacement_approved": false,
+    "execution_authorized": false
+  },
+  "body_training_approved": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

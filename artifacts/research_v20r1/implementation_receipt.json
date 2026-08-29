@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-29",
+  "kind": "memory_repair_verification_not_performance_approval",
+  "lock_sha256": "59116CFC7A664AFEBD6BCF6CD51DEC7785BAF8CFE7FD340D060FCF0B979205AA",
+  "memory_and_exact_equivalence_tests": {"run": 3, "passed": 3},
+  "v20_call_chain_tests_with_copy_on_write": {"run": 10, "passed": 10},
+  "research_regression_with_copy_on_write": {"run": 122, "passed": 121, "errors": 1},
+  "known_archived_failure": "V18 frozen invalid empty-regressor test fixture; unchanged, not hidden",
+  "old_v20_failure_preserved": true,
+  "frozen_inputs_intact": true,
+  "full_data_memory_success": "not_yet_established",
+  "performance_validation": "background_run_started",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

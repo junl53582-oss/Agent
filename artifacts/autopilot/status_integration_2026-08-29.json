@@ -1,0 +1,15 @@
+{
+  "date": "2026-08-29",
+  "task": "research_status_revision_and_process_identity",
+  "candidate": "V20r1",
+  "active_model": "V6",
+  "status_tests": {"run": 10, "passed": 10},
+  "v20_call_chain_regression": {"run": 10, "passed": 10},
+  "streamlit_apptest": {"exceptions": 0, "candidate_v20r1_visible": true},
+  "validation_scope": "targeted tests only; archived V18 fixture failure not hidden or retested",
+  "frozen_inputs_intact": true,
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "current_run": "loading_dataset; process identity verified; not restarted",
+  "performance_complete": false
+}

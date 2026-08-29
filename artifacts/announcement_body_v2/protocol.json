@@ -1,0 +1,23 @@
+{
+  "protocol": "announcement-body-v2-period-currency-binding-data-quality",
+  "status": "preregistered_not_implemented_or_run",
+  "parent": "Frozen announcement_body_v1 pilot",
+  "purpose": "Resolve current-versus-previous-versus-prior-year period roles and original-versus-converted currency roles before any text feature training",
+  "scope": "The same 12 fixed official CNINFO documents; no return, price, rank-IC or portfolio data",
+  "fixed_outputs": [
+    "Document/page/table/cell provenance",
+    "Fact role: current guidance, previous guidance, prior-year comparator, contract original currency, converted RMB or unbound",
+    "Reporting period and unit/currency binding",
+    "Explicit ambiguity and quarantine reason"
+  ],
+  "acceptance": [
+    "Every approved numeric fact traces to an immutable PDF hash and literal page context",
+    "No unbound numeric candidate is silently promoted to a fact",
+    "Scan-only document remains quarantined unless a separately verified OCR path exists",
+    "A manually frozen gold subset is evaluated before expanding coverage",
+    "historical_pit_verified remains false until historical availability is independently established"
+  ],
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,22 @@
+{
+  "protocol": "stockpilot-v21-frozen-component-diagnosis",
+  "parent": "V20r2 immutable completed result",
+  "purpose": "Diagnosis only; not a new production prediction model",
+  "evidence_observed_before_registration": "All V20r2 modes have negative five-day and technology IC; adaptive mode has 33.08% cumulative return but -41.01% maximum drawdown. Its summary did not save per-stock component scores or validation gates.",
+  "hypothesis": "Negative overall IC may be localized to the baseline, text coverage, technology subset or mismatch between native 20-bar targets and five-bar evaluation. Diagnose on unchanged scores before considering new alpha.",
+  "fixed_design": {
+    "years": [2020, 2021, 2022, 2023, 2024, 2025],
+    "dates": "Exactly the 73 V20r2 common-calendar rebalance dates",
+    "components": ["global_model_score", "v13_baseline_score", "v13_comparable_score", "char_text_event_score", "text_event_score", "v16_score", "adaptive_score"],
+    "targets": ["label_5", "v10_target_20", "v12_net_marginal_target", "future_return_20"],
+    "groups": ["eligible", "technology", "event_covered", "no_recent_event"],
+    "aggregation": "Pairwise finite, per-date Spearman; report annual and all-period equal-date means and valid counts. Constant or fewer than 3 observations is missing, not zero.",
+    "reproduction": "Every date: V16-control and adaptive IC5, legacy IC20 and technology IC5 match frozen V20r2 at atol=1e-9, rtol=1e-7; mismatch fails the run.",
+    "trace": "Per-year exclusive score files, raw probability/magnitude, target maturity dates, event counts and past-only validation gate diagnostics"
+  },
+  "prohibited": ["modify V20r2 or any parent", "change weights, horizons, thresholds, score signs or fitting parameters", "pick winning components as a new production model", "claim blind holdout performance", "reuse lowvol_top20 shadow as candidate evidence", "broker connections or orders"],
+  "next_decision": "Verify reproduction and inspect complete component results. Only then register one evidence-backed new hypothesis; do not automatically search weights or invert negative scores.",
+  "performance_status": "Parent aggregate results already observed; component traces not yet generated. This is retrospective diagnosis, not a blind test.",
+  "execution_authorized": false,
+  "replacement_approved": false
+}

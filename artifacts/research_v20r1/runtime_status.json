@@ -1,0 +1,8 @@
+{
+  "stage": "failed",
+  "pid": 25172,
+  "at_utc": "2026-08-28T20:50:08.272635+00:00",
+  "error": "incomplete benchmark outcome at 2025-01-14 00:00:00",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\research_v20r1\\runner.py\", line 45, in run\n    equity, holdings = run_backtest(dataset, corpus, V20R1Settings(), progress)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\lin\\Documents\\ChatGPT\\量化\\research_v20\\backtest.py\", line 43, in run_backtest\n    raise ValueError(f\"incomplete benchmark outcome at {date}\")\nValueError: incomplete benchmark outcome at 2025-01-14 00:00:00\n",
+  "execution_authorized": false
+}

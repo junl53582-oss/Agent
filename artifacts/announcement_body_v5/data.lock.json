@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-08-29T05:25:56.528495+00:00",
+  "parent_lock_sha256": "978619bc879718696f681967a56d1eec7bdcb96e07fdd6626d999d48a1414494",
+  "allowed_dynamic_data_root": "data/announcement_first_seen_v5",
+  "allowed_dynamic_artifact_root": "artifacts/announcement_body_v5/observations",
+  "sha256": {
+    "announcement_body_v5/__init__.py": "8a72ef1cea8de333a7191873e2e35da092f1c94102ac84e0058dc5281efbd8cd",
+    "announcement_body_v5/cli.py": "2aec203e682082a13710a45f8a2d6c339fe843616d6a7d0162ab1aa570660051",
+    "announcement_body_v5/freeze.py": "ab9b2578636a7ad4f0ebc8aad134d503fc41800b41f622959734ec6b7ae4586d",
+    "announcement_body_v5/ledger.py": "f9452cb5b3c823744ec296cd4b0bd1ee2ae1e7b576eb953a50ff4b16a84c6907",
+    "announcement_body_v5/runner.py": "ee28b3f20b8b42bbea793b82b3daa7a45e757fc8e7540ae2b0d8063fc6b50ffc",
+    "announcement_body_v5/source.py": "4fbd6e0cdb1d03cac1c77457bcba3954d2e8dd3dc37ee90ce6006f512fd6ce87",
+    "tests/test_announcement_body_v5.py": "abf092648da30e559b9823aa56a618cc19eb0c130a251f102128bd103c49cddc",
+    "artifacts/announcement_body_v5/protocol.json": "00059badd87f77d2e5c0223755791ed07a7f0be2d120aca064864eec57de8205",
+    "artifacts/announcement_body_v5/test_receipt.json": "4f58076991d9a501612ed341f672da7ffc3d596c6104bf9e9418b4ee39f5a1b1"
+  },
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

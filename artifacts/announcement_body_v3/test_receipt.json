@@ -1,0 +1,13 @@
+{
+  "created_at_shanghai": "2026-08-29T12:45:00+08:00",
+  "command": "python -m pytest tests/test_announcement_body_v3.py -q",
+  "passed": true,
+  "tests_passed": 4,
+  "gold_documents": 11,
+  "gold_facts": 87,
+  "all_22_remaining_pages_visually_reviewed": true,
+  "actual_gold_evaluation_run_before_freeze": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

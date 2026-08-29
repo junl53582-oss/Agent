@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "created_at_shanghai": "2026-08-29T10:08:00+08:00",
+  "python": ".venv311/Scripts/python.exe",
+  "commands": [
+    "python -m unittest discover -s tests -p test_research_v22.py -v",
+    "python -m unittest discover -s tests -p test_research_v21.py -v",
+    "python -m unittest discover -s tests -p test_research_v20r2.py -v"
+  ],
+  "tests": {
+    "research_v22": 6,
+    "research_v21": 9,
+    "research_v20r2": 21,
+    "total": 36
+  },
+  "performance_outcomes_read": false,
+  "execution_authorized": false
+}

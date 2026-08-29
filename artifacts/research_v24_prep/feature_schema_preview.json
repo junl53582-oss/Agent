@@ -1,0 +1,136 @@
+{
+  "documents": [
+    {
+      "document_id": "000008_1205688090",
+      "fact_count": 8,
+      "metric_count": 5,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 2,
+      "mean_reported_ratio": 0.026999999999999996,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "000069_1209041295",
+      "fact_count": 8,
+      "metric_count": 7,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 1,
+      "mean_reported_ratio": 0.01985,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": null,
+      "repurchased_ratio": 0.01985
+    },
+    {
+      "document_id": "000728_1220627969",
+      "fact_count": 15,
+      "metric_count": 10,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 5,
+      "mean_reported_ratio": 0.06806000000000001,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": 0.06805799658137213,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "002050_1220789517",
+      "fact_count": 9,
+      "metric_count": 7,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 1,
+      "mean_reported_ratio": 0.00374,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": null,
+      "repurchased_ratio": 0.00374
+    },
+    {
+      "document_id": "002310_1220089694",
+      "fact_count": 2,
+      "metric_count": 2,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 0,
+      "mean_reported_ratio": null,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "002385_1205501722",
+      "fact_count": 9,
+      "metric_count": 2,
+      "uncertain_fact_ratio": 0.0,
+      "ratio_fact_count": 4,
+      "mean_reported_ratio": -0.6375,
+      "guidance_revision_delta": 1.015624739424972,
+      "current_vs_prior_delta": -0.4749999791539928,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "002624_1210454093",
+      "fact_count": 8,
+      "metric_count": 3,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 2,
+      "mean_reported_ratio": -0.80325,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": -0.8031362624599367,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "600481_1211571975",
+      "fact_count": 2,
+      "metric_count": 2,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 1,
+      "mean_reported_ratio": 0.0862,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": 0.0862,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "600674_1211243407",
+      "fact_count": 15,
+      "metric_count": 10,
+      "uncertain_fact_ratio": 1.0,
+      "ratio_fact_count": 5,
+      "mean_reported_ratio": 0.12061999999999999,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": 0.12062966848527476,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "601360_1220589893",
+      "fact_count": 8,
+      "metric_count": 4,
+      "uncertain_fact_ratio": 0.0,
+      "ratio_fact_count": 0,
+      "mean_reported_ratio": null,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": -0.6875477463712758,
+      "contract_to_revenue": null,
+      "repurchased_ratio": null
+    },
+    {
+      "document_id": "601390_1204433911",
+      "fact_count": 3,
+      "metric_count": 2,
+      "uncertain_fact_ratio": 0.6666666666666666,
+      "ratio_fact_count": 1,
+      "mean_reported_ratio": 0.007,
+      "guidance_revision_delta": null,
+      "current_vs_prior_delta": null,
+      "contract_to_revenue": 0.007,
+      "repurchased_ratio": null
+    }
+  ]
+}

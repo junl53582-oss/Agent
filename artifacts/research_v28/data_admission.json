@@ -1,0 +1,20 @@
+{
+  "policy": "Only point-in-time sources with immutable identity, effective/available timestamps, revision handling and adequate coverage may enter V28.",
+  "accepted_for_model": {
+    "historical_csi300_membership": {"rows": 12600, "snapshots": 42, "snapshot_size_min": 300, "snapshot_size_max": 300, "date_min": "2010-01-04", "status": "accepted"},
+    "hfq_market_panel": {"rows": 2680710, "symbols": 799, "date_min": "2010-01-04", "date_max": "2026-08-21", "positive_prices": true, "volume_complete": true, "amount_complete": true, "status": "accepted"},
+    "announcement_date_financials": {"rows": 66607, "symbols": 796, "pit_violations": 0, "status": "accepted", "claim_limit": "reported financial changes, not analyst expectation revisions"},
+    "effective_date_industry": {"rows": 2096, "symbols": 758, "future_date_violations": 0, "status": "accepted", "claim_limit": "industry identity, not official industry climate"}
+  },
+  "rejected_or_quarantined": {
+    "analyst_reports_v14": {"rows": 21699, "symbols": 268, "status": "rejected", "reasons": ["coverage below frozen 400-symbol gate", "contains report metadata/rating but no auditable numeric consensus revision fields", "source is not an exchange/regulator filing system"]},
+    "northbound_holdings_v14": {"rows": 271034, "symbols": 199, "date_min": "2017-03-16", "date_max": "2024-08-16", "status": "rejected", "reasons": ["coverage below frozen 350-symbol gate", "series ends in 2024 and cannot be forward-filled"]},
+    "announcement_archive_titles": {"rows": 966865, "symbols": 791, "date_min": "2017-01-03", "status": "quarantined", "reasons": ["no historical first-seen timestamp", "2015-2016 missing", "21725 revision-like titles lack explicit parent lineage"]},
+    "prospective_announcement_body": {"status": "future_only", "prospective_eligible_samples": 0, "reasons": ["must accumulate after frozen first-seen ledger", "cannot backfill historical training"]},
+    "official_industry_climate": {"status": "not_present_not_used", "reasons": ["no frozen release-vintage dataset in workspace"]},
+    "investor_type_fund_flow": {"status": "not_present_not_used", "reasons": ["market amount/volume is not claimed as investor-type flow"]}
+  },
+  "new_features_admitted_this_version": [],
+  "model_training_may_use_only": ["historical_csi300_membership", "hfq_market_panel", "announcement_date_financials", "effective_date_industry"],
+  "performance_seen_while_admitting_sources": false
+}

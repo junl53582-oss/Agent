@@ -10,12 +10,29 @@ from stockpilot.audit import verify_audit_chain, verify_protocol_addendum
 from stockpilot.config import Settings
 from stockpilot.future_test import future_test_status
 from stockpilot.pipeline import run_demo
+from research_status import build_status
 
 st.set_page_config(page_title="StockPilot CN", page_icon="📈", layout="wide")
 st.title("StockPilot CN · A股走步选股")
 st.caption("预测未来5日横截面超额收益｜样本外走步验证｜研究用途")
 
 settings = Settings.from_env()
+research_state = build_status()
+with st.expander("研究升级状态 · 正式模型仍为 V6"):
+    st.write(f"独立修正版：{research_state['candidate_model']}；阶段：{research_state['candidate_stage']}")
+    process = research_state["candidate_process"]
+    if process.get("identity_verified"):
+        st.caption(f"已核验研究进程：PID {process['pid']}；尚未据此认定性能通过。")
+    elif research_state["candidate_stage"] in {"interrupted", "process_unverified", "process_identity_mismatch", "invalid_status", "invalid_registry", "incomplete_report", "candidate_not_frozen"}:
+        st.error("研究运行状态异常或无法核验，请查看决策日志；不会自动重启或切换正式模型。")
+    elif research_state["candidate_stage"] == "failed":
+        st.error(research_state["candidate_runtime"].get("error", "研究运行失败，原记录已保留。"))
+    st.warning("V17旧回测存在未来数据泄漏，94%胜率不可作为有效成绩。V20完成修复验证前不切换正式模型。")
+    historical = research_state["historical_snapshot"]
+    st.write(f"旧研究清单：选股日期 {historical['prediction_date']}；择时日期 {historical['timing_date']}")
+    for reason in historical["reasons"]:
+        st.caption(reason)
+    st.caption("研究候选不产生交易指令；未通过全部冻结门槛和未来验证，不替换顶部全局指标。")
 summary_path = settings.artifact_dir / "summary.json"
 if not summary_path.exists():
     st.info("尚无分析结果。可生成离线演示数据，确认整套流程正常。")

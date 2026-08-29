@@ -1,0 +1,29 @@
+{
+  "protocol": "announcement-body-v4-historical-pit-availability-audit",
+  "status": "preregistered_not_implemented_or_run",
+  "parent": "Frozen announcement_body_v3r1",
+  "purpose": "Determine whether official announcement text can be reconstructed with defensible point-in-time timestamps before any model training",
+  "scope": "Metadata and document-identity audit only; no market prices, returns, labels, model fitting, portfolio replay or broker access",
+  "fixed_checks": [
+    "Bind source announcement timestamp, official announcement id, security code, title and PDF path",
+    "Detect duplicate, corrected, supplemented, cancelled and withdrawn announcement relationships without using future text as prior text",
+    "Measure year/category/security coverage and missing-document rates before selecting any training sample",
+    "Keep retrieval time distinct from historical publication time and never claim historical first-seen evidence from a 2026 download",
+    "Reject documents whose identity, timestamp or revision lineage cannot be verified"
+  ],
+  "acceptance": [
+    "All audit rules and thresholds are frozen before reading aggregate coverage results",
+    "The frozen source row count and SHA256 match the V1 receipt",
+    "All 12 fixed pilot documents reproduce official ids, symbols, titles, publication dates and PDF identities with zero mismatch",
+    "Conflicting duplicate announcement ids and invalid required fields equal zero",
+    "Every 2015-2025 year/category cell has at least one record; counts are reported but are not tuned into a model gate",
+    "No event text is joined to a date earlier than its source publication timestamp",
+    "Every correction, supplement, cancellation or withdrawal has explicit source lineage or remains quarantined",
+    "Historical first-seen proof must predate or equal the proposed effective date; a 2026 retrieval never satisfies this gate"
+  ],
+  "historical_first_seen_proven": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

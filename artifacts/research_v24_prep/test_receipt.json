@@ -1,0 +1,8 @@
+{
+  "created_at_utc": "2026-08-29T07:17:31.3693634Z",
+  "command": "python311 -m pytest tests/test_research_v24_prep.py tests/test_announcement_body_v5.py tests/test_announcement_body_v5r1.py tests/test_announcement_body_v5r2.py -q",
+  "passed": true,
+  "tests": 15,
+  "performance_outputs_read_before_freeze": false,
+  "execution_authorized": false
+}

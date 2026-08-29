@@ -1,0 +1,1559 @@
+{
+  "facts": [
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_amount",
+      "role": "contract_original_currency",
+      "bound": "point",
+      "value_base": "2490000000.0",
+      "currency": "ILS",
+      "period": null,
+      "qualifier": null,
+      "literal": "中标金额约为24.9亿谢克尔(资金来源为以色列政府全额预算拨款),约折合45亿元人民币",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_amount",
+      "role": "converted_rmb",
+      "bound": "point",
+      "value_base": "4500000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "issuer_approximation",
+      "literal": "中标金额约为24.9亿谢克尔(资金来源为以色列政府全额预算拨款),约折合45亿元人民币",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601390_1204433911",
+      "page": 1,
+      "metric": "contract_to_revenue",
+      "role": "reference_ratio",
+      "bound": "point",
+      "value_base": "0.007",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "reference_revenue_year_2016",
+      "literal": "约占本公司中国会计准则下2016年营业收入的0.70%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "419744700.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "盈利:41,974.47万元至46,171.91万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "461719100.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "盈利:41,974.47万元至46,171.91万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "previous_guidance",
+      "bound": "lower",
+      "value_base": "41974500.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动区间为4,197.45万元至29,382.13万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "previous_guidance",
+      "bound": "upper",
+      "value_base": "293821300.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动区间为4,197.45万元至29,382.13万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "839489300.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "盈利:83,948.93万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-0.5",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "比上年同期下降:50%至45%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-0.45",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "比上年同期下降:50%至45%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "previous_guidance",
+      "bound": "lower",
+      "value_base": "-0.95",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动幅度为-95%至-65%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002385_1205501722",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "previous_guidance",
+      "bound": "upper",
+      "value_base": "-0.65",
+      "currency": "ratio",
+      "period": {
+        "start": "2018年1月1日",
+        "end": "2018年9月30日"
+      },
+      "qualifier": null,
+      "literal": "变动幅度为-95%至-65%",
+      "binding_approved": true
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 1,
+      "metric": "repurchase_amount",
+      "role": "plan_budget",
+      "bound": "lower",
+      "value_base": "300000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "不低于人民币30,000万元(含)、不超过人民币60,000万元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 1,
+      "metric": "repurchase_amount",
+      "role": "plan_budget",
+      "bound": "upper",
+      "value_base": "600000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "不低于人民币30,000万元(含)、不超过人民币60,000万元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 1,
+      "metric": "repurchase_duration_months",
+      "role": "plan_duration",
+      "bound": "point",
+      "value_base": "12",
+      "currency": "count",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "回购期限:自公司股东大会审议通过回购股份方案之日起不超过12个月",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 1,
+      "metric": "repurchase_price_cap",
+      "role": "plan_limit",
+      "bound": "point",
+      "value_base": "5.99",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "回购价格:不超过人民币5.99元/股",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 3,
+      "metric": "estimated_repurchase_ratio",
+      "role": "plan_estimate",
+      "bound": "lower",
+      "value_base": "0.0180",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 3,
+        "section": "repurchase_share_estimate"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 3,
+      "metric": "estimated_repurchase_ratio",
+      "role": "plan_estimate",
+      "bound": "upper",
+      "value_base": "0.0360",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 3,
+        "section": "repurchase_share_estimate"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 3,
+      "metric": "estimated_repurchase_shares",
+      "role": "plan_estimate",
+      "bound": "lower",
+      "value_base": "50083472",
+      "currency": "shares",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 3,
+        "section": "repurchase_share_estimate"
+      }
+    },
+    {
+      "document_id": "000008_1205688090",
+      "page": 3,
+      "metric": "estimated_repurchase_shares",
+      "role": "plan_estimate",
+      "bound": "upper",
+      "value_base": "100166944",
+      "currency": "shares",
+      "period": null,
+      "qualifier": "proposal_shareholder_approval_required",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 3,
+        "section": "repurchase_share_estimate"
+      }
+    },
+    {
+      "document_id": "600481_1211571975",
+      "page": 2,
+      "metric": "contract_amount",
+      "role": "current_award_notice",
+      "bound": "point",
+      "value_base": "178600000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "final_contract_amount_unconfirmed_not_signed",
+      "literal": "中标金额:人民币17,860万元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "0.6311",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "0.6154",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "basic_eps_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.0255",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "operating_revenue",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "893055276.43",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 2,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "operating_revenue",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "650469281.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 2,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 1,
+      "metric": "operating_revenue_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.3729",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 2,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 2,
+      "metric": "total_assets",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "45117089373.28",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "table_index": 0,
+        "row_index": 3,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 2,
+      "metric": "total_assets",
+      "role": "period_begin",
+      "bound": "point",
+      "value_base": "41347852404.15",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "table_index": 0,
+        "row_index": 3,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "600674_1211243407",
+      "page": 2,
+      "metric": "total_assets_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.0912",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "table_index": 0,
+        "row_index": 3,
+        "cells": {
+          "current": 3,
+          "previous": 4,
+          "change": 5
+        }
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "0.12",
+      "currency": "CNY_per_share",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "0.14",
+      "currency": "CNY_per_share",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "0.66",
+      "currency": "CNY_per_share",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "230000000",
+      "currency": "CNY",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "270000000",
+      "currency": "CNY",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "1270597800.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-0.819",
+      "currency": "ratio",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "002624_1210454093",
+      "page": 1,
+      "metric": "net_profit_parent_yoy",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-0.7875",
+      "currency": "ratio",
+      "period": {
+        "start": "2021年1月1日",
+        "end": "2021年6月30日"
+      },
+      "qualifier": "unaudited_forecast",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "source": "explicit_table_cells"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 1,
+      "metric": "repurchase_price_cap",
+      "role": "plan_limit",
+      "bound": "point",
+      "value_base": "8",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "回购价格为不超过人民币8元/股",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 1,
+      "metric": "repurchase_shares_cap",
+      "role": "plan_limit",
+      "bound": "point",
+      "value_base": "246080000",
+      "currency": "shares",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "回购数量不超过24,608万股",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 2,
+      "metric": "repurchase_execution_price",
+      "role": "actual_progress",
+      "bound": "lower",
+      "value_base": "5.84",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "as_of_2020-12-31_excluding_fees",
+      "literal": "累计回购了162,847,162股,占公司截至2020年12月31日总股本的1.985%,最高成交价为7.04元/股,最低成交价为5.84元/股,支付的总金额为1,033,099,334.60元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 2,
+      "metric": "repurchase_execution_price",
+      "role": "actual_progress",
+      "bound": "upper",
+      "value_base": "7.04",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "as_of_2020-12-31_excluding_fees",
+      "literal": "累计回购了162,847,162股,占公司截至2020年12月31日总股本的1.985%,最高成交价为7.04元/股,最低成交价为5.84元/股,支付的总金额为1,033,099,334.60元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 2,
+      "metric": "repurchase_paid",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "1033099334.60",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "as_of_2020-12-31_excluding_fees",
+      "literal": "累计回购了162,847,162股,占公司截至2020年12月31日总股本的1.985%,最高成交价为7.04元/股,最低成交价为5.84元/股,支付的总金额为1,033,099,334.60元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 2,
+      "metric": "repurchased_ratio",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "0.01985",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "as_of_2020-12-31_excluding_fees",
+      "literal": "累计回购了162,847,162股,占公司截至2020年12月31日总股本的1.985%,最高成交价为7.04元/股,最低成交价为5.84元/股,支付的总金额为1,033,099,334.60元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "000069_1209041295",
+      "page": 2,
+      "metric": "repurchased_shares",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "162847162",
+      "currency": "shares",
+      "period": null,
+      "qualifier": "as_of_2020-12-31_excluding_fees",
+      "literal": "累计回购了162,847,162股,占公司截至2020年12月31日总股本的1.985%,最高成交价为7.04元/股,最低成交价为5.84元/股,支付的总金额为1,033,099,334.60元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 2,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002310_1220089694",
+      "page": 1,
+      "metric": "construction_tender_amount",
+      "role": "current_tender_result",
+      "bound": "point",
+      "value_base": "651336100.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "provisional_not_signed",
+      "literal": "中标价格:设计费631.87万元;施工费暂定金额65,133.61万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002310_1220089694",
+      "page": 1,
+      "metric": "design_tender_amount",
+      "role": "current_tender_result",
+      "bound": "point",
+      "value_base": "6318700.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "not_signed",
+      "literal": "中标价格:设计费631.87万元;施工费暂定金额65,133.61万元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "0.23",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 6,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "0.21",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 6,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "basic_eps_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.0952",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 6,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "equity_parent",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "35646559000.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "equity_parent",
+      "role": "period_begin",
+      "bound": "point",
+      "value_base": "34578867300.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "equity_parent_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.0309",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 10,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "1000169300.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 4,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "997367500.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 5,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "913917300.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 4,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "867437500.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 5,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.0944",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 4,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "net_profit_parent_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.1498",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 5,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "operating_revenue",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "3084447300.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 1,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "operating_revenue",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "3110841500.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 1,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "operating_revenue_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "-0.0085",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 1,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "total_assets",
+      "role": "current_preliminary",
+      "bound": "point",
+      "value_base": "149899188800.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 9,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "total_assets",
+      "role": "period_begin",
+      "bound": "point",
+      "value_base": "132855982500.00",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 9,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "000728_1220627969",
+      "page": 1,
+      "metric": "total_assets_change",
+      "role": "reported_change",
+      "bound": "point",
+      "value_base": "0.1283",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "preliminary_unaudited",
+      "literal": "",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "table_index": 0,
+        "row_index": 9,
+        "cells": {
+          "current": 3,
+          "previous": 6,
+          "change": 9
+        }
+      }
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "basic_eps",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-0.03",
+      "currency": "CNY_per_share",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "基本每股收益:-0.03元/股",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-350000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润约为-3.5亿元至-2.4亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-240000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润约为-3.5亿元至-2.4亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-231000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "归属于母公司所有者的净利润:-2.31亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "current_guidance",
+      "bound": "lower",
+      "value_base": "-640000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润约为-6.4亿元至-4.3亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "current_guidance",
+      "bound": "upper",
+      "value_base": "-430000000.0",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润约为-6.4亿元至-4.3亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "net_profit_parent_ex_items",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-255000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "扣除非经常性损益的净利润:-2.55亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "601360_1220589893",
+      "page": 1,
+      "metric": "profit_total",
+      "role": "prior_year_comparator",
+      "bound": "point",
+      "value_base": "-73000000.00",
+      "currency": "CNY",
+      "period": {
+        "start": "2024年1月1日",
+        "end": "2024年6月30日"
+      },
+      "qualifier": null,
+      "literal": "利润总额:-0.73亿元",
+      "binding_approved": true
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_amount",
+      "role": "plan_budget",
+      "bound": "lower",
+      "value_base": "200000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "资金总额为不低于人民币20,000万元且不超过人民币40,000万元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_amount",
+      "role": "plan_budget",
+      "bound": "upper",
+      "value_base": "400000000",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "资金总额为不低于人民币20,000万元且不超过人民币40,000万元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_duration_months",
+      "role": "plan_duration",
+      "bound": "point",
+      "value_base": "12",
+      "currency": "count",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "实施期限为自公司董事会审议通过回购股份方案之日起不超过12个月",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_execution_price",
+      "role": "actual_progress",
+      "bound": "lower",
+      "value_base": "19.81",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "as_of_2024-07-31_excluding_fees",
+      "literal": "回购公司股份13,961,794股,占公司总股本的0.3740%,最高成交价为29.09元/股,最低成交价为19.81元/股,成交总金额为319,919,680.07元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_execution_price",
+      "role": "actual_progress",
+      "bound": "upper",
+      "value_base": "29.09",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "as_of_2024-07-31_excluding_fees",
+      "literal": "回购公司股份13,961,794股,占公司总股本的0.3740%,最高成交价为29.09元/股,最低成交价为19.81元/股,成交总金额为319,919,680.07元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_paid",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "319919680.07",
+      "currency": "CNY",
+      "period": null,
+      "qualifier": "as_of_2024-07-31_excluding_fees",
+      "literal": "回购公司股份13,961,794股,占公司总股本的0.3740%,最高成交价为29.09元/股,最低成交价为19.81元/股,成交总金额为319,919,680.07元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchase_price_cap",
+      "role": "plan_limit",
+      "bound": "point",
+      "value_base": "36.00",
+      "currency": "CNY_per_share",
+      "period": null,
+      "qualifier": "approved_plan",
+      "literal": "回购的价格不超过人民币36.00元/股",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchased_ratio",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "0.003740",
+      "currency": "ratio",
+      "period": null,
+      "qualifier": "as_of_2024-07-31_excluding_fees",
+      "literal": "回购公司股份13,961,794股,占公司总股本的0.3740%,最高成交价为29.09元/股,最低成交价为19.81元/股,成交总金额为319,919,680.07元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    },
+    {
+      "document_id": "002050_1220789517",
+      "page": 1,
+      "metric": "repurchased_shares",
+      "role": "actual_progress",
+      "bound": "point",
+      "value_base": "13961794",
+      "currency": "shares",
+      "period": null,
+      "qualifier": "as_of_2024-07-31_excluding_fees",
+      "literal": "回购公司股份13,961,794股,占公司总股本的0.3740%,最高成交价为29.09元/股,最低成交价为19.81元/股,成交总金额为319,919,680.07元",
+      "binding_approved": true,
+      "provenance": {
+        "page": 1,
+        "source": "text_section"
+      }
+    }
+  ],
+  "gold_binding_passed": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

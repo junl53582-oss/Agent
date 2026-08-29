@@ -1,0 +1,26 @@
+{
+  "protocol": "stockpilot-v23-score-to-portfolio-translation-diagnosis",
+  "status": "preregistered_not_implemented_or_run",
+  "purpose": "Explain why frozen global_model_score has positive broad IC but negative ledger excess before proposing another candidate",
+  "inputs": [
+    "Frozen V21 scores",
+    "Accepted V22r1 holdings/equity",
+    "Frozen V20r2 benchmark-relative control"
+  ],
+  "fixed_diagnostics": [
+    "Equal-date top and bottom decile spreads for label_5 and v10_target_20, overall and by year",
+    "Actual global_only overweight selections versus nonselected eligible names",
+    "Sector-level selected exposure and realized target contribution",
+    "Turnover and transaction-cost delta versus v16_replay"
+  ],
+  "prohibited": [
+    "No portfolio rerun",
+    "No new score or target",
+    "No sign reversal",
+    "No weight, top-N, sector, holding-bonus or threshold search",
+    "No model replacement decision"
+  ],
+  "interpretation": "Retrospective postmortem only; identifies one next falsifiable hypothesis or stops research if evidence is insufficient",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

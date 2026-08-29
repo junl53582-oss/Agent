@@ -1,0 +1,8 @@
+{
+  "stage": "complete",
+  "pid": 4976,
+  "at_utc": "2026-08-28T22:27:54.215999+00:00",
+  "purpose": "component_diagnosis_only",
+  "decision": "keep_v6",
+  "execution_authorized": false
+}

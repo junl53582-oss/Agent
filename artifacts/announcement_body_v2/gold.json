@@ -1,0 +1,32 @@
+{
+  "created_at_shanghai": "2026-08-29T11:55:00+08:00",
+  "annotation_method": "Manual review of every page of four fixed official PDFs rendered with Poppler; no market or return data",
+  "documents": ["002385_1205501722", "601360_1220589893", "601390_1204433911", "002310_1220089694"],
+  "facts": [
+    {"document_id":"002385_1205501722","metric":"net_profit_parent","role":"previous_guidance","bound":"lower","value_base":"41974500.00","currency":"CNY","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent","role":"previous_guidance","bound":"upper","value_base":"293821300.00","currency":"CNY","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent_yoy","role":"previous_guidance","bound":"lower","value_base":"-0.95","currency":"ratio","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent_yoy","role":"previous_guidance","bound":"upper","value_base":"-0.65","currency":"ratio","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent","role":"current_guidance","bound":"lower","value_base":"419744700.00","currency":"CNY","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent","role":"current_guidance","bound":"upper","value_base":"461719100.00","currency":"CNY","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent_yoy","role":"current_guidance","bound":"lower","value_base":"-0.5","currency":"ratio","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent_yoy","role":"current_guidance","bound":"upper","value_base":"-0.45","currency":"ratio","qualifier":null},
+    {"document_id":"002385_1205501722","metric":"net_profit_parent","role":"prior_year_comparator","bound":"point","value_base":"839489300.00","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent","role":"current_guidance","bound":"lower","value_base":"-350000000.0","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent","role":"current_guidance","bound":"upper","value_base":"-240000000.0","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent_ex_items","role":"current_guidance","bound":"lower","value_base":"-640000000.0","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent_ex_items","role":"current_guidance","bound":"upper","value_base":"-430000000.0","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"profit_total","role":"prior_year_comparator","bound":"point","value_base":"-73000000.00","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent","role":"prior_year_comparator","bound":"point","value_base":"-231000000.00","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"net_profit_parent_ex_items","role":"prior_year_comparator","bound":"point","value_base":"-255000000.00","currency":"CNY","qualifier":null},
+    {"document_id":"601360_1220589893","metric":"basic_eps","role":"prior_year_comparator","bound":"point","value_base":"-0.03","currency":"CNY_per_share","qualifier":null},
+    {"document_id":"601390_1204433911","metric":"contract_amount","role":"contract_original_currency","bound":"point","value_base":"2490000000.0","currency":"ILS","qualifier":null},
+    {"document_id":"601390_1204433911","metric":"contract_amount","role":"converted_rmb","bound":"point","value_base":"4500000000","currency":"CNY","qualifier":"issuer_approximation"},
+    {"document_id":"601390_1204433911","metric":"contract_to_revenue","role":"reference_ratio","bound":"point","value_base":"0.007","currency":"ratio","qualifier":"reference_revenue_year_2016"},
+    {"document_id":"002310_1220089694","metric":"design_tender_amount","role":"current_tender_result","bound":"point","value_base":"6318700.00","currency":"CNY","qualifier":"not_signed"},
+    {"document_id":"002310_1220089694","metric":"construction_tender_amount","role":"current_tender_result","bound":"point","value_base":"651336100.00","currency":"CNY","qualifier":"provisional_not_signed"}
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

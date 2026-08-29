@@ -1,0 +1,74 @@
+{
+  "events": [
+    {
+      "mode": "v16_control",
+      "date": "2025-03-17",
+      "old_symbol": "600837",
+      "new_symbol": "601211",
+      "old_units": 2.222362261852724e-05,
+      "new_units": 0.00021197249051740612,
+      "raw_share_ratio": 0.62,
+      "fees": 0.0
+    },
+    {
+      "mode": "v16_control",
+      "date": "2025-09-16",
+      "old_symbol": "601989",
+      "new_symbol": "600150",
+      "old_units": 0.0011617143195850434,
+      "new_units": 8.185807372253776e-05,
+      "raw_share_ratio": 0.1339,
+      "fees": 0.0
+    },
+    {
+      "mode": "v20_adaptive",
+      "date": "2025-03-17",
+      "old_symbol": "600837",
+      "new_symbol": "601211",
+      "old_units": 2.2174331417513148e-05,
+      "new_units": 0.00021150234310629768,
+      "raw_share_ratio": 0.62,
+      "fees": 0.0
+    },
+    {
+      "mode": "v20_adaptive",
+      "date": "2025-09-16",
+      "old_symbol": "601989",
+      "new_symbol": "600150",
+      "old_units": 0.0011543404421046628,
+      "new_units": 8.133848693925221e-05,
+      "raw_share_ratio": 0.1339,
+      "fees": 0.0
+    },
+    {
+      "mode": "v20_timing",
+      "date": "2025-09-16",
+      "old_symbol": "601989",
+      "new_symbol": "600150",
+      "old_units": 0.0010380095143553026,
+      "new_units": 7.31414409879552e-05,
+      "raw_share_ratio": 0.1339,
+      "fees": 0.0
+    },
+    {
+      "mode": "benchmark",
+      "date": "2025-03-17",
+      "old_symbol": "600837",
+      "new_symbol": "601211",
+      "old_units": 2.666583737442166e-05,
+      "new_units": 0.00025434305005143557,
+      "raw_share_ratio": 0.62,
+      "fees": 0.0
+    },
+    {
+      "mode": "benchmark",
+      "date": "2025-09-16",
+      "old_symbol": "601989",
+      "new_symbol": "600150",
+      "old_units": 0.00035287797505964254,
+      "new_units": 2.4864900785427106e-05,
+      "raw_share_ratio": 0.1339,
+      "fees": 0.0
+    }
+  ]
+}

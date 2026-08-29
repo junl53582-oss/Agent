@@ -1,0 +1,21 @@
+{
+  "protocol": "stockpilot-v22-global-score-ledger-ablation",
+  "status": "preregistered_not_implemented_or_run",
+  "parent": "Frozen V21 component traces and V20r2 common-calendar ledger",
+  "observed_evidence": {
+    "v13_baseline_label5_ic": -0.0412018465,
+    "v13_baseline_positive_years": 1,
+    "v16_label5_ic": -0.0251963590,
+    "global_model_label5_ic": 0.0329951931,
+    "global_model_positive_years": 5,
+    "global_model_v10_target20_ic": 0.0399947716,
+    "global_model_technology_label5_ic": -0.0115869008
+  },
+  "hypothesis": "The inherited V13 two-stage component is the primary source of the negative blended cross-sectional IC. Replaying the already-frozen global_model_score alone may improve broad-universe ranking without retraining or post-hoc weight search.",
+  "single_change": "Set portfolio_score=global_model_score. Do not refit, reverse signs, search blend weights, alter eligible rows, technology rules, active budget, ledger, execution dates, benchmark, costs or corporate actions.",
+  "controls": ["First reproduce V20r2 v16_control from frozen V21 scores on all 73 dates", "Run exactly one global-only alternative with the same ledger", "Report all six annual results and existing promotion gates"],
+  "failure_conditions": ["Parent IC or control ledger mismatch", "Any use of future labels in portfolio formation", "Output/input hash mismatch", "Technology IC remains negative", "Maximum drawdown worse than -18%", "Missing same-accounting V6/V8 or candidate future evidence remains unverified for promotion"],
+  "interpretation": "Retrospective, evidence-selected ablation; even a positive result is not an untouched confirmation and cannot replace V6. Full announcement bodies remain a separate unapproved data-pilot line and are excluded from V22.",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

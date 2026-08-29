@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-08-29T03:52:32.152778+00:00",
+  "parent_lock_sha256": "ee9d5696f77da8b9659be2e4d93b2e56094f50f2465b55b4bb7c72204f0afac6",
+  "purpose": "period_currency_binding_data_quality_only",
+  "sha256": {
+    "announcement_body_v2/__init__.py": "583aa50e84da8ce02d889b260da635c0112e1634a333abb467d9cace6fb60bca",
+    "announcement_body_v2/binder.py": "f6d3e8499935f9c1c2218ee2bee6c13550e03eedc40c7cf2aaca50cc040dc8b2",
+    "announcement_body_v2/cli.py": "9214b08aa8a6545555aae196e423189e3886219838eaef9fbce59083107b60f7",
+    "announcement_body_v2/freeze.py": "e9c213bbb7853f70b7ae7d5d6aef0946404d9351e5fd76a36ddac1004faafdb8",
+    "announcement_body_v2/runner.py": "bad19079a5d1f1d64bdb3858c18ff2a9fd89c83964023a4e8595e98549615dd6",
+    "tests/test_announcement_body_v2.py": "7462a0b83730568ed7e816651b45c29f303fd1f42f2bfc5313ac6deb6d869aa9",
+    "artifacts/announcement_body_v2/protocol.json": "8deba4ea8d6561d3cced697a2213c0cd3af079819440c0270c2fcd3431f4b43e",
+    "artifacts/announcement_body_v2/gold.json": "cb19f29d714b5eb7b26597d4fe77a392024bc16cb15a18924ee62564d3c53cd6",
+    "artifacts/announcement_body_v2/test_receipt.json": "940c878f81b9fdc0a0ee105ca41e5dfa176eef7f376aee289299bb62e288fd9c",
+    "artifacts/announcement_body_v1/data.lock.json": "ee9d5696f77da8b9659be2e4d93b2e56094f50f2465b55b4bb7c72204f0afac6",
+    "artifacts/announcement_body_v1/report.json": "b286602300f424c75bcac29c852d1ac4348f77e03bec93cfd7bf193914af7c01",
+    "artifacts/announcement_body_v1/visual_qa.json": "63235665186bdbb50b96ef98d87eecfb0dbc8de3bf7cc81302fd212bcd96aa7e"
+  },
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,39 @@
+{
+  "status": "retrospective_score_to_portfolio_diagnosis_complete",
+  "lock_sha256": "9BDFBAAD4A5502D338D3509125596E97783E4320A58FCC44855D6CA4B21C7E36",
+  "created_at_utc": "2026-08-29T03:15:39.835724+00:00",
+  "costs": {
+    "v16_replay": {
+      "average_one_way_turnover": 0.13325497429295544,
+      "average_transaction_cost": 0.0002764807886566767,
+      "total_transaction_cost_fraction": 0.0201830975719374
+    },
+    "global_only": {
+      "average_one_way_turnover": 0.13741102145987605,
+      "average_transaction_cost": 0.0002852139504773781,
+      "total_transaction_cost_fraction": 0.0208206183848486
+    },
+    "global_minus_control": {
+      "average_one_way_turnover": 0.004156047166920612,
+      "average_transaction_cost": 8.733161820701396e-06,
+      "total_transaction_cost_fraction": 0.0006375208129111992
+    }
+  },
+  "output_sha256": {
+    "tail_periods.csv": "B144933D21B2EE26E6A911555D5CDAE68369070C8D840D88E92F94745922153C",
+    "tail_summary.csv": "6E9BD56FA121D038768559BD95C762796DED0FEED6F45883A1D919198F77929A",
+    "selection_periods.csv": "09AD30234FA8A2ACC2FB39A2B9465BE0E577B83CDB7E39858814DCE1B9BAD324",
+    "selection_summary.csv": "BF581745A1D9BAF903A06530E65A243D6B1C4ADE91CB9E54FA5A1EF5030684AB",
+    "active_map.csv": "58DEE68E6A0D0F388AE06CE0783AC793E20BF9DB26E36051F0D01046CA57680C"
+  },
+  "frozen_inputs_intact": true,
+  "purpose": "diagnosis_only_no_portfolio_rerun",
+  "decision": "keep_v6_review_fixed_diagnostics",
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "limitations": [
+    "Retrospective postmortem on already-observed V22r1 outcomes.",
+    "Realized labels diagnose translation but cannot tune a new candidate.",
+    "No portfolio was rerun and no parameter alternative was evaluated."
+  ]
+}

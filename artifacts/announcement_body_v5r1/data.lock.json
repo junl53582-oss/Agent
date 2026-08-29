@@ -1,0 +1,25 @@
+{
+  "created_at_utc": "2026-08-29T05:32:02.206303+00:00",
+  "parent_lock_sha256": "21ceafd48929d82d033f6a2753e7352b2e551ae3cd4cb7cea07bf7c17254be79",
+  "failed_observation_report_sha256": "1ee9e6d0d17d5689763093ee539cf2bc3f76d103643d4805e18cc3e0206e8a42",
+  "allowed_dynamic_data_root": "data/announcement_first_seen_v5r1",
+  "allowed_dynamic_artifact_root": "artifacts/announcement_body_v5r1/observations",
+  "sha256": {
+    "announcement_body_v5r1/__init__.py": "841dce8dcb11d49eb61abc286d28b9b75fa9bf351159a8d0686dd12401b8b2ee",
+    "announcement_body_v5r1/cli.py": "2aec203e682082a13710a45f8a2d6c339fe843616d6a7d0162ab1aa570660051",
+    "announcement_body_v5r1/freeze.py": "380eef64123843ce027998788bbdcf0612ba09da228efdef3e1021caaf640383",
+    "announcement_body_v5r1/runner.py": "455621f0de8fa718eb4c1ea13c768a7b92553e482ca36e2c7e8429907a9f4ade",
+    "announcement_body_v5r1/source.py": "5b642b853d75d51ae4689c10fd4b51cc991b8b5fbcc5477d0992c278d8067e9f",
+    "tests/test_announcement_body_v5r1.py": "7d35fecadaee2baa7502a22fb3e69b151d2d85b26bde7091a210371836e81277",
+    "artifacts/announcement_body_v5r1/protocol.json": "0353b52e15996a13c475d794a6859de75a788c60e5690316dd9b82d99af0ab15",
+    "artifacts/announcement_body_v5r1/test_receipt.json": "2f54f261a6ce6cfefdf672b8a05599e62d084d2cb827e7c891d909976584739e",
+    "artifacts/announcement_body_v5/observations/20260829T052607992096Z.report.json": "1ee9e6d0d17d5689763093ee539cf2bc3f76d103643d4805e18cc3e0206e8a42",
+    "artifacts/announcement_body_v5/data.lock.json": "21ceafd48929d82d033f6a2753e7352b2e551ae3cd4cb7cea07bf7c17254be79",
+    "data/universes/000300/history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1",
+    "data/announcements_pit_v14.csv": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118"
+  },
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

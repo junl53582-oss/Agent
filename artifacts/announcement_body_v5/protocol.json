@@ -1,0 +1,30 @@
+{
+  "protocol": "announcement-body-v5-prospective-first-seen-ledger",
+  "status": "preregistered_not_implemented_or_run",
+  "parent": "Frozen announcement_body_v4 audit",
+  "purpose": "Create forward-only, append-only evidence for announcement availability without pretending reconstructed archives were observed historically",
+  "scope": "Official CNINFO announcement metadata and returned document identities observed after protocol freeze; no prices, returns, labels, model training or broker access",
+  "separation": {
+    "legacy_archive": "2017-2025 metadata stays archive_reconstructed and training_quarantined",
+    "prospective_ledger": "Only records actually first observed after V5 freeze may receive prospective_first_seen timestamps"
+  },
+  "rules": [
+    "Append immutable raw-response hash, query window, retrieval start/end, source publication timestamp and document identity",
+    "Never backdate first_seen from source publication date",
+    "Duplicate ids must preserve the first observed hash and record later hash changes as new evidence, never overwrite",
+    "Correction/supplement/cancellation/withdrawal titles stay quarantined until an explicit parent id is available or a separately frozen lineage rule is validated",
+    "Use next trading session after max(source publication day, actual Shanghai first-seen day) as the earliest prospective effective date",
+    "No document body is approved by metadata observation alone"
+  ],
+  "acceptance": [
+    "Tests prove append-only behavior, idempotency, hash-change detection, timezone handling and no backdating",
+    "Writes are confined to a new data/announcement_first_seen_v5 directory and its artifact receipts",
+    "At least one genuinely new post-freeze official announcement is observed before prospective_pit_verified can become true",
+    "Historical PIT remains false for all reconstructed pre-freeze rows"
+  ],
+  "prospective_pit_verified": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

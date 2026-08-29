@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-29",
+  "kind": "implementation_verification_not_performance_approval",
+  "lock_sha256": "FA37037684B83A30C4456DB7F303D3667EBBA81AB81A68494BE4A0CEDCC70960",
+  "tests": {
+    "v20_targeted": {"run": 10, "passed": 10},
+    "archive_contract_supplement": {"run": 1, "passed": 1},
+    "full_unittest_discovery": {"run": 141, "passed": 140, "errors": 1},
+    "known_archived_failure": "test_research_v18.ResearchV18Tests.test_recent_scores_uses_current_eligible_universe: invalid empty-regressor fixture and event-date expectations; frozen original preserved, corrected contract tested independently",
+    "streamlit_apptest": {"exception_count": 0}
+  },
+  "frozen_inputs_intact": true,
+  "performance_validation": "started_in_background_see_runtime_status",
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "automation": {"id": "a", "schedule": "weekdays 18:30 Asia/Shanghai", "research_continuation_added": true},
+  "unresolved": [
+    "V20 performance run has not completed at receipt time",
+    "Old V18 frozen test still errors; full original suite is not all green",
+    "Fresh aligned PIT prediction pipeline remains pending; old mixed-date recommendation is blocked in new integration",
+    "Inherited execution approximation requires independent audit before any promotion"
+  ]
+}

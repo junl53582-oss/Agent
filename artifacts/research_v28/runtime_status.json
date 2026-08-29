@@ -1,0 +1,8 @@
+{
+  "stage": "complete",
+  "pid": 43080,
+  "at_utc": "2026-08-29T11:48:41.976566+00:00",
+  "decision": "keep_v6",
+  "all_promotion_gates_passed": false,
+  "execution_authorized": false
+}

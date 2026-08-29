@@ -1,0 +1,13 @@
+{
+  "protocol": "stockpilot-v20r2-corporate-action-calendar-nav-repair",
+  "parent": "V20r1 (failed, immutable)",
+  "reason": "Documented terminal quote series for 600837 and 601989 cannot yield shifted 20-row returns; inherited execution also silently dropped suspended/absent holdings.",
+  "unchanged": ["V16/V20 predictors and training labels", "historical market/features/corpus", "model parameters and 2020-2025 test years", "causal market regime thresholds", "original promotion gates"],
+  "changes": ["separate event and raw-quote provenance files", "full-period preflight before expensive model fitting", "common market calendar entry T+1 to T+21", "persistent economic units and cash with weight drift", "missing-bar last-close marks, never synthetic tradable bars", "registered ordinary-share swaps applied on new-share listing dates with raw/HFQ unit conversion", "sell restrictions retain positions; no cash is released for failed sales", "self-financing buys after sell proceeds and costs", "zero-cost comparable PIT snapshot benchmark ledger, explicitly not official CSI300", "year-end exclusive checkpoints and daily opening NAV"],
+  "valuation": "Old stock remains nontradable at its last observed close during documented terminal halt. Convert to successor economic units on listing date only; no pre-listing fair-value estimate or cash-election optimization.",
+  "scope": "Accounting repair, not a new alpha optimization. All modes use the same ledger. Old archived V6/V8 metrics are not asserted comparable.",
+  "limitations": ["HFQ economic units and fractional shares are an approximation", "temporary price gaps are observable nontrading states, not independently verified suspension records", "legacy per-stock-bar label ICs are retained with sample counts", "no PIT ST name/limit exemption or microstructure simulator", "blocked orders wait for the next 20-day rebalance"],
+  "performance_status": "not_observed_before_lock",
+  "replacement_approved": false,
+  "execution_authorized": false
+}

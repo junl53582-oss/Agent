@@ -1,0 +1,14 @@
+{
+  "protocol": "stockpilot-v27-technology-direction-specialist",
+  "status": "superseded_before_implementation_by_user_requested_v28_framework",
+  "hypothesis": "Technology stocks have a distinct mapping from PIT fundamentals and technical features to positive residual-return probability; a fixed specialist blend can address persistently negative technology IC without changing non-technology predictions.",
+  "parent": "V26 directional probability",
+  "single_change": "For PIT technology rows only, replace the global binary-probability rank with 60% global and 40% technology-only binary-probability rank, using the existing V10 technology blend weights.",
+  "unchanged": ["V26 global probability score for every non-technology stock", "frozen V6 and Ridge contributions", "5/20 weights 0.3/0.7", "8-year mature-label training window", "V20r2 optimizer, calendar, costs, restrictions, corporate actions and benchmark"],
+  "data_quality": {"industry_source": "effective-date frozen PIT industry history", "industry_future_violations": 0, "evaluation_technology_rows": 3594, "evaluation_technology_symbols": 92, "evaluation_dates": 73},
+  "validation": ["implement leakage and non-technology-invariance tests before freeze", "bind V26 completed negative result and all PIT inputs", "exactly reproduce V20r2 v16_control", "run one unchanged 2020-2025 walk-forward evaluation"],
+  "prohibited": ["no specialist-weight, threshold, feature, parameter, subsector or year search", "no current industry backfill", "no announcement body data", "no V27 performance run in the same research cycle that completed V26", "no replacement without all original gates and 126 new future trading days"],
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "superseded_reason": "The user explicitly requested a broader three-gate evaluation, benchmark-relative drawdown, cross-fitted confidence and incremental-data admission framework. V27 was never implemented, frozen or run."
+}

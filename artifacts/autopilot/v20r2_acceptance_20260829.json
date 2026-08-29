@@ -1,0 +1,341 @@
+{
+  "schema": "stockpilot-post-run-audit-v1",
+  "created_at_utc": "2026-08-28T21:54:22.835561+00:00",
+  "source_report_sha256": "6088B193DEFB05879C25EAA1E3B4F8075F2BD6EE9B3A75FEE0CBD5D16B8044C6",
+  "lock_sha256": "CEE149CED49CCC81D6E26EE87DB5CEB277A647B4AE551E7A3E7817174E96426D",
+  "frozen_inputs_intact": true,
+  "output_consistency_passed": true,
+  "settlements_checked": 7,
+  "metrics_and_gates": {
+    "v16_control": {
+      "metrics": {
+        "total_return": 0.3559301960621799,
+        "benchmark_return": 0.3044524062362659,
+        "excess_return": 0.051477789825914,
+        "max_drawdown": -0.40671763301747754,
+        "positive_excess_years": 4,
+        "test_years": 6,
+        "periods": 73,
+        "periods_held": 73,
+        "held_period_win_rate": 0.4794520547945205,
+        "rank_ic_5": -0.025196358969506696,
+        "rank_ic_20": -0.01685333999409333,
+        "technology_rank_ic_5": -0.04314436378855893,
+        "average_one_way_turnover": 0.13325497429295544,
+        "average_transaction_cost": 0.0002764807886566767
+      },
+      "annual": [
+        {
+          "year": 2020,
+          "return": 0.3376110326871944,
+          "benchmark_return": 0.30464378746194254,
+          "excess_return": 0.03296724522525185,
+          "rank_ic_5": 0.026773903574468332,
+          "technology_rank_ic_5": -0.008084853337720507
+        },
+        {
+          "year": 2021,
+          "return": -0.09719703935923629,
+          "benchmark_return": -0.08990199724584746,
+          "excess_return": -0.007295042113388828,
+          "rank_ic_5": -0.06641577573910075,
+          "technology_rank_ic_5": -0.12554080787895425
+        },
+        {
+          "year": 2022,
+          "return": -0.0735111222515632,
+          "benchmark_return": -0.07765103396491879,
+          "excess_return": 0.004139911713355593,
+          "rank_ic_5": -0.010261598939545273,
+          "technology_rank_ic_5": -0.04403459442045696
+        },
+        {
+          "year": 2023,
+          "return": -0.19826301303516436,
+          "benchmark_return": -0.1831608718793154,
+          "excess_return": -0.015102141155848958,
+          "rank_ic_5": -0.027645071182083352,
+          "technology_rank_ic_5": -0.0042496404171216235
+        },
+        {
+          "year": 2024,
+          "return": 0.15504267487625278,
+          "benchmark_return": 0.1539743596612424,
+          "excess_return": 0.0010683152150103847,
+          "rank_ic_5": -0.048234003602886134,
+          "technology_rank_ic_5": -0.004784366743551621
+        },
+        {
+          "year": 2025,
+          "return": 0.30871281682289187,
+          "benchmark_return": 0.2636307005153422,
+          "excess_return": 0.04508211630754966,
+          "rank_ic_5": -0.029726463139890923,
+          "technology_rank_ic_5": -0.07509354580445178
+        }
+      ],
+      "gate_screen": {
+        "positive_excess": {
+          "status": "pass",
+          "value": 0.051477789825914,
+          "basis": "PIT proxy only, not official CSI300"
+        },
+        "four_of_six_years": {
+          "status": "pass",
+          "value": 4,
+          "basis": "decision-year cohorts; PIT proxy only"
+        },
+        "rank_ic_at_least_v6": {
+          "status": "unverified",
+          "value": null,
+          "basis": "No same-input, same-label V6 comparison"
+        },
+        "technology_ic_nonnegative": {
+          "status": "fail",
+          "value": -0.04314436378855893,
+          "basis": "Legacy five-security-bar labels"
+        },
+        "max_drawdown_at_least_minus_18pct": {
+          "status": "fail",
+          "value": -0.40671763301747754,
+          "basis": "Opening and post-trade NAV, not intraday worst case"
+        },
+        "turnover_and_cost_at_most_v8": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Archived V8 uses different dates, intervals and accounting"
+        },
+        "candidate_future_shadow_126_days": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Existing lowvol_top20 shadow is not a V20r2 shadow"
+        }
+      },
+      "blocked_orders": 39,
+      "stale_position_observations": 531
+    },
+    "v20_adaptive": {
+      "metrics": {
+        "total_return": 0.3307639766723307,
+        "benchmark_return": 0.3044524062362659,
+        "excess_return": 0.0263115704360648,
+        "max_drawdown": -0.4100917949531293,
+        "positive_excess_years": 3,
+        "test_years": 6,
+        "periods": 73,
+        "periods_held": 73,
+        "held_period_win_rate": 0.5068493150684932,
+        "rank_ic_5": -0.02405893271040205,
+        "rank_ic_20": -0.014478164447658528,
+        "technology_rank_ic_5": -0.04365653126194118,
+        "average_one_way_turnover": 0.13825625215306095,
+        "average_transaction_cost": 0.00028698680261370134
+      },
+      "annual": [
+        {
+          "year": 2020,
+          "return": 0.3413184363366626,
+          "benchmark_return": 0.30464378746194254,
+          "excess_return": 0.03667464887472005,
+          "rank_ic_5": 0.03906161290999102,
+          "technology_rank_ic_5": 0.00046284864874456417
+        },
+        {
+          "year": 2021,
+          "return": -0.09632791458789947,
+          "benchmark_return": -0.08990199724584746,
+          "excess_return": -0.006425917342052001,
+          "rank_ic_5": -0.05705747550001925,
+          "technology_rank_ic_5": -0.12399203576275707
+        },
+        {
+          "year": 2022,
+          "return": -0.08410556640272904,
+          "benchmark_return": -0.07765103396491879,
+          "excess_return": -0.006454532437810245,
+          "rank_ic_5": -0.02469431820346965,
+          "technology_rank_ic_5": -0.058443009558493686
+        },
+        {
+          "year": 2023,
+          "return": -0.19764879662436075,
+          "benchmark_return": -0.1831608718793154,
+          "excess_return": -0.014487924745045344,
+          "rank_ic_5": -0.021629546267953714,
+          "technology_rank_ic_5": 0.007067832088292858
+        },
+        {
+          "year": 2024,
+          "return": 0.16058236821529603,
+          "benchmark_return": 0.1539743596612424,
+          "excess_return": 0.006608008554053635,
+          "rank_ic_5": -0.044750774158917345,
+          "technology_rank_ic_5": 0.0018917306060038063
+        },
+        {
+          "year": 2025,
+          "return": 0.287278094119249,
+          "benchmark_return": 0.2636307005153422,
+          "excess_return": 0.023647393603906774,
+          "rank_ic_5": -0.04054314051040947,
+          "technology_rank_ic_5": -0.09260316858599467
+        }
+      ],
+      "gate_screen": {
+        "positive_excess": {
+          "status": "pass",
+          "value": 0.0263115704360648,
+          "basis": "PIT proxy only, not official CSI300"
+        },
+        "four_of_six_years": {
+          "status": "fail",
+          "value": 3,
+          "basis": "decision-year cohorts; PIT proxy only"
+        },
+        "rank_ic_at_least_v6": {
+          "status": "unverified",
+          "value": null,
+          "basis": "No same-input, same-label V6 comparison"
+        },
+        "technology_ic_nonnegative": {
+          "status": "fail",
+          "value": -0.04365653126194118,
+          "basis": "Legacy five-security-bar labels"
+        },
+        "max_drawdown_at_least_minus_18pct": {
+          "status": "fail",
+          "value": -0.4100917949531293,
+          "basis": "Opening and post-trade NAV, not intraday worst case"
+        },
+        "turnover_and_cost_at_most_v8": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Archived V8 uses different dates, intervals and accounting"
+        },
+        "candidate_future_shadow_126_days": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Existing lowvol_top20 shadow is not a V20r2 shadow"
+        }
+      },
+      "blocked_orders": 41,
+      "stale_position_observations": 531
+    },
+    "v20_timing": {
+      "metrics": {
+        "total_return": 0.1349342318421154,
+        "benchmark_return": 0.3044524062362659,
+        "excess_return": -0.1695181743941505,
+        "max_drawdown": -0.23236043297471076,
+        "positive_excess_years": 3,
+        "test_years": 6,
+        "periods": 73,
+        "periods_held": 43,
+        "held_period_win_rate": 0.4186046511627907,
+        "rank_ic_5": -0.025196358969506696,
+        "rank_ic_20": -0.01685333999409333,
+        "technology_rank_ic_5": -0.04314436378855893,
+        "average_one_way_turnover": 0.3018399339630573,
+        "average_transaction_cost": 0.0006339301794479708
+      },
+      "annual": [
+        {
+          "year": 2020,
+          "return": 0.09711232248455426,
+          "benchmark_return": 0.30464378746194254,
+          "excess_return": -0.20753146497738828,
+          "rank_ic_5": 0.026773903574468332,
+          "technology_rank_ic_5": -0.008084853337720507
+        },
+        {
+          "year": 2021,
+          "return": -0.04294657109595479,
+          "benchmark_return": -0.08990199724584746,
+          "excess_return": 0.046955426149892676,
+          "rank_ic_5": -0.06641577573910075,
+          "technology_rank_ic_5": -0.12554080787895425
+        },
+        {
+          "year": 2022,
+          "return": 0.1627298936881003,
+          "benchmark_return": -0.07765103396491879,
+          "excess_return": 0.2403809276530191,
+          "rank_ic_5": -0.010261598939545273,
+          "technology_rank_ic_5": -0.04403459442045696
+        },
+        {
+          "year": 2023,
+          "return": -0.09013642257840415,
+          "benchmark_return": -0.1831608718793154,
+          "excess_return": 0.09302444930091125,
+          "rank_ic_5": -0.027645071182083352,
+          "technology_rank_ic_5": -0.0042496404171216235
+        },
+        {
+          "year": 2024,
+          "return": -0.06776189553685708,
+          "benchmark_return": 0.1539743596612424,
+          "excess_return": -0.22173625519809947,
+          "rank_ic_5": -0.048234003602886134,
+          "technology_rank_ic_5": -0.004784366743551621
+        },
+        {
+          "year": 2025,
+          "return": 0.0959770245779068,
+          "benchmark_return": 0.2636307005153422,
+          "excess_return": -0.1676536759374354,
+          "rank_ic_5": -0.029726463139890923,
+          "technology_rank_ic_5": -0.07509354580445178
+        }
+      ],
+      "gate_screen": {
+        "positive_excess": {
+          "status": "fail",
+          "value": -0.1695181743941505,
+          "basis": "PIT proxy only, not official CSI300"
+        },
+        "four_of_six_years": {
+          "status": "fail",
+          "value": 3,
+          "basis": "decision-year cohorts; PIT proxy only"
+        },
+        "rank_ic_at_least_v6": {
+          "status": "unverified",
+          "value": null,
+          "basis": "No same-input, same-label V6 comparison"
+        },
+        "technology_ic_nonnegative": {
+          "status": "fail",
+          "value": -0.04314436378855893,
+          "basis": "Legacy five-security-bar labels"
+        },
+        "max_drawdown_at_least_minus_18pct": {
+          "status": "fail",
+          "value": -0.23236043297471076,
+          "basis": "Opening and post-trade NAV, not intraday worst case"
+        },
+        "turnover_and_cost_at_most_v8": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Archived V8 uses different dates, intervals and accounting"
+        },
+        "candidate_future_shadow_126_days": {
+          "status": "unverified",
+          "value": null,
+          "basis": "Existing lowvol_top20 shadow is not a V20r2 shadow"
+        }
+      },
+      "blocked_orders": 25,
+      "stale_position_observations": 322
+    }
+  },
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "decision": "keep_v6_and_diagnose_score_components",
+  "limitations": [
+    "Post-hoc output consistency audit, not an independent trade replay or performance preregistration.",
+    "Positive proxy excess is not proof of outperformance against official CSI300.",
+    "All three modes fail technology IC and the -18% drawdown screen.",
+    "V6/V8 comparability and candidate-specific future shadow evidence are absent."
+  ]
+}

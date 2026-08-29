@@ -1,0 +1,17 @@
+{
+  "inspection_complete": true,
+  "inspection_date_shanghai": "2026-08-29",
+  "renderer": "pdftoppm 26.05.0, first page, scale-to 1500",
+  "documents": [
+    {"id": "002385_1205501722", "category": "earnings_forecast", "pdf_sha256": "fc24137096f200fce8f6437da1755380936d21765fe1f2ce49da96600a9d8729", "visible": true, "identity_matches": true, "table_headers_visible": ["本报告期", "上年同期"], "review": "Correction announcement contains previous forecast, corrected forecast and prior-year values; numerical binding is not approved."},
+    {"id": "601360_1220589893", "category": "earnings_forecast", "pdf_sha256": "a7d8bb5b5ef177bebaded57e48c2e3cdabd521de6ce764187a15ae7859fd9562", "visible": true, "identity_matches": true, "review": "Current forecast ranges and prior-period values are visibly distinct; literal-number extraction alone is insufficient."},
+    {"id": "600009_1204429465", "category": "earnings_flash", "pdf_sha256": "dcb2c2917de16163f99d99e1dcfdccfe829871cec6318129702ea23cf1782808", "visible": true, "identity_matches": true, "review": "Image/scanned financial statement is readable visually but has no usable text layer; parser correctly quarantined it. No OCR fallback was invented."},
+    {"id": "601390_1204433911", "category": "contract", "pdf_sha256": "0a1019f4b859e221107ee0201727e66c676f657b2721ec800f74f4b46056ab3c", "visible": true, "identity_matches": true, "review": "Issuer, announcement number, foreign contract denomination and approximate CNY equivalent are visible; currency roles must remain explicit."}
+  ],
+  "layout_defects": [],
+  "text_extraction_result": "11 of 12 accepted; one scan quarantined",
+  "numeric_table_binding_approved": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

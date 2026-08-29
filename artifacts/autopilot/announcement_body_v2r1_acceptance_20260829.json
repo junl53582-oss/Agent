@@ -1,0 +1,31 @@
+{
+  "accepted_at_shanghai": "2026-08-29T12:15:00+08:00",
+  "version": "announcement_body_v2r1",
+  "lock_sha256": "a8f108e6b501f1ce2c4ad36a9a01478bb2252f735d5c8530990d46f515ccb001",
+  "frozen_inputs_intact": true,
+  "pdf_visual_review": {
+    "documents": 4,
+    "pages": 9,
+    "renderer": "Poppler pdftoppm",
+    "layout_binding_issue_found": "Flattened correction table text interleaved current and prior-year cells",
+    "repair": "Use explicit 本报告期 and 上年同期 table columns"
+  },
+  "gold_evaluation": {
+    "documents": 4,
+    "gold_facts": 22,
+    "predicted_facts": 22,
+    "matched_facts": 22,
+    "precision": 1.0,
+    "recall": 1.0,
+    "missing": 0,
+    "unexpected": 0
+  },
+  "remaining": {
+    "unreviewed_text_documents": 7,
+    "quarantined_scans": 1,
+    "historical_pit_verified": false
+  },
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

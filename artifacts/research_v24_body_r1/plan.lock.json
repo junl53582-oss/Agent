@@ -1,0 +1,18 @@
+{
+  "locked_at_utc": "2026-08-29T07:28:54.123299+00:00",
+  "parent_lock_sha256": "9FE65EEFB4D13AE9D3BE7DF8851E86374BC912A972E0EB13C59278EC2433A072",
+  "purpose": "append_safe_prospective_body_runtime",
+  "sha256": {
+    "research_v24_body_r1/__init__.py": "94E99E7B6F9389818D2C8E3A74E69066C4C0ECAE3F2B0616DB58C773EB86D39C",
+    "research_v24_body_r1/cli.py": "0B14555255E58D8C35D0003AE3AE0E721A967B3F6087F168D2541720AE4B3FA4",
+    "research_v24_body_r1/freeze.py": "CC1065EC3632AFCEE2B0BF8C9CC169306AA15B3E659922FC1323B6AD808F3120",
+    "research_v24_body_r1/runner.py": "44F40207C90E49967E3C6078C4E337239A26F3A6F46BE1B6D9786709184736EC",
+    "tests/test_research_v24_body_r1.py": "B134920D68EDE3AEEE3AAD8EC6CAD078D0B88838708AE8DB2684042DF0DB617C",
+    "artifacts/research_v24_body_r1/protocol.json": "0CCEE74A22FBE72895C92D5C7F41AFE1D71D7F3503DCEFA682DD60C45B0F2294",
+    "artifacts/research_v24_body_r1/test_receipt.json": "6A0A719805F1DE6A2D0BB6C950D619FC2376916A6F38AA0C4DA0A1DF9CDF6469"
+  },
+  "body_training_approved": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false
+}

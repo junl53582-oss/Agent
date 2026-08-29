@@ -1,0 +1,15 @@
+{
+  "protocol": "stockpilot-v22r1-mode-column-access-repair",
+  "status": "preregistered_not_run",
+  "failed_parent": "V22 stopped before scheduling or portfolio replay because parent.mode resolved to pandas.DataFrame.mode",
+  "repair": "Use parent['mode'] and preserve every frozen V22 score, feature, optimizer, ledger, cost, schedule rule and gate",
+  "performance_outcomes_observed": false,
+  "acceptance": [
+    "The parent V20r2 v16_control schedule is exactly 73 dates with next-day entry and 20-day ledger horizons",
+    "V22r1 control equity, holdings, daily NAV, costs and settlements reproduce V20r2",
+    "Only one global_model_score candidate replay is run",
+    "Any control mismatch or frozen hash mismatch fails the experiment"
+  ],
+  "replacement_approved": false,
+  "execution_authorized": false
+}

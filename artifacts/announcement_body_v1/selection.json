@@ -1,0 +1,152 @@
+{
+  "created_at_utc": "2026-08-28T22:14:26.326252+00:00",
+  "source_sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+  "source_rows": 966865,
+  "source_path": "data/announcements_pit_v14.csv",
+  "rule": "minimum SHA256(symbol:id) per year/category; no market data or outcomes read",
+  "years": [
+    2018,
+    2021,
+    2024
+  ],
+  "categories": {
+    "earnings_forecast": [
+      "业绩预告"
+    ],
+    "earnings_flash": [
+      "业绩快报"
+    ],
+    "contract": [
+      "重大合同",
+      "中标",
+      "重大经营合同"
+    ],
+    "repurchase": [
+      "回购"
+    ]
+  },
+  "records": [
+    {
+      "symbol": "601390",
+      "announcement_date": "2018-02-28",
+      "title": "重大海外工程中标公告",
+      "announcement_id": "1204433911",
+      "org_id": "9900003904",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601390&announcementId=1204433911&orgId=9900003904",
+      "selection_year": 2018,
+      "selection_category": "contract"
+    },
+    {
+      "symbol": "600009",
+      "announcement_date": "2018-02-24 00:00:00",
+      "title": "比较式合并资产负债表和合并利润表（2017年度业绩快报数）",
+      "announcement_id": "1204429465",
+      "org_id": "gssh0600009",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600009&announcementId=1204429465&orgId=gssh0600009",
+      "selection_year": 2018,
+      "selection_category": "earnings_flash"
+    },
+    {
+      "symbol": "002385",
+      "announcement_date": "2018-10-15 00:00:00",
+      "title": "2018年度前三季度业绩预告修正公告",
+      "announcement_id": "1205501722",
+      "org_id": "9900011648",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002385&announcementId=1205501722&orgId=9900011648",
+      "selection_year": 2018,
+      "selection_category": "earnings_forecast"
+    },
+    {
+      "symbol": "000008",
+      "announcement_date": "2018-12-25 00:00:00",
+      "title": "关于回购公司部分股份的预案",
+      "announcement_id": "1205688090",
+      "org_id": "gssz0000008",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=000008&announcementId=1205688090&orgId=gssz0000008",
+      "selection_year": 2018,
+      "selection_category": "repurchase"
+    },
+    {
+      "symbol": "600481",
+      "announcement_date": "2021-11-13",
+      "title": "双良节能系统股份有限公司关于控股子公司收到中标通知书的公告",
+      "announcement_id": "1211571975",
+      "org_id": "gssh0600481",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600481&announcementId=1211571975&orgId=gssh0600481",
+      "selection_year": 2021,
+      "selection_category": "contract"
+    },
+    {
+      "symbol": "600674",
+      "announcement_date": "2021-10-13 00:00:00",
+      "title": "四川川投能源股份有限公司2021年前三季度业绩快报公告",
+      "announcement_id": "1211243407",
+      "org_id": "gssh0600674",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1211243407&orgId=gssh0600674",
+      "selection_year": 2021,
+      "selection_category": "earnings_flash"
+    },
+    {
+      "symbol": "002624",
+      "announcement_date": "2021-07-10 00:00:00",
+      "title": "2021年半年度业绩预告",
+      "announcement_id": "1210454093",
+      "org_id": "9900021520",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002624&announcementId=1210454093&orgId=9900021520",
+      "selection_year": 2021,
+      "selection_category": "earnings_forecast"
+    },
+    {
+      "symbol": "000069",
+      "announcement_date": "2021-01-05 00:00:00",
+      "title": "关于回购公司股份进展情况的公告",
+      "announcement_id": "1209041295",
+      "org_id": "gssz0000069",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=000069&announcementId=1209041295&orgId=gssz0000069",
+      "selection_year": 2021,
+      "selection_category": "repurchase"
+    },
+    {
+      "symbol": "002310",
+      "announcement_date": "2024-05-18 00:00:00",
+      "title": "关于全资子公司项目中标公示的提示性公告",
+      "announcement_id": "1220089694",
+      "org_id": "9900009031",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002310&announcementId=1220089694&orgId=9900009031",
+      "selection_year": 2024,
+      "selection_category": "contract"
+    },
+    {
+      "symbol": "000728",
+      "announcement_date": "2024-07-13 00:00:00",
+      "title": "国元证券股份有限公司2024年半年度业绩快报",
+      "announcement_id": "1220627969",
+      "org_id": "gssz0000728",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=000728&announcementId=1220627969&orgId=gssz0000728",
+      "selection_year": 2024,
+      "selection_category": "earnings_flash"
+    },
+    {
+      "symbol": "601360",
+      "announcement_date": "2024-07-10 00:00:00",
+      "title": "三六零安全科技股份有限公司2024年半年度业绩预告",
+      "announcement_id": "1220589893",
+      "org_id": "9900021962",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=601360&announcementId=1220589893&orgId=9900021962",
+      "selection_year": 2024,
+      "selection_category": "earnings_forecast"
+    },
+    {
+      "symbol": "002050",
+      "announcement_date": "2024-08-03 00:00:00",
+      "title": "关于回购公司股份的进展公告",
+      "announcement_id": "1220789517",
+      "org_id": "gssz0002050",
+      "announcement_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002050&announcementId=1220789517&orgId=gssz0002050",
+      "selection_year": 2024,
+      "selection_category": "repurchase"
+    }
+  ],
+  "purpose": "12-document parsing/provenance pilot, not a training corpus",
+  "model_training_ready": false
+}

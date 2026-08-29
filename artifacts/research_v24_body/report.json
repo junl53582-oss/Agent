@@ -1,0 +1,21 @@
+{
+  "status": "prospective_body_ingestion_complete",
+  "created_at_utc": "2026-08-29T07:23:58.345294+00:00",
+  "lock_sha256": "9FE65EEFB4D13AE9D3BE7DF8851E86374BC912A972E0EB13C59278EC2433A072",
+  "frozen_inputs_intact": true,
+  "results": [],
+  "gate": {
+    "eligible_events": 0,
+    "text_extracted": 0,
+    "quarantined": 0,
+    "body_training_approved": false,
+    "model_training_ready": false,
+    "replacement_approved": false,
+    "execution_authorized": false
+  },
+  "body_training_approved": false,
+  "model_training_ready": false,
+  "replacement_approved": false,
+  "execution_authorized": false,
+  "next_step": "rerun only after V5r2 appends a new eligible event; then bind facts before labels"
+}

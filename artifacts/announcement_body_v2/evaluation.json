@@ -1,0 +1,56 @@
+{
+  "gold_facts": 22,
+  "predicted_facts": 21,
+  "matched_facts": 19,
+  "precision": 0.9047619047619048,
+  "recall": 0.8636363636363636,
+  "missing": [
+    [
+      "002385_1205501722",
+      "net_profit_parent",
+      "current_guidance",
+      "lower",
+      "419744700.00",
+      "CNY",
+      "None"
+    ],
+    [
+      "002385_1205501722",
+      "net_profit_parent",
+      "current_guidance",
+      "upper",
+      "461719100.00",
+      "CNY",
+      "None"
+    ],
+    [
+      "002385_1205501722",
+      "net_profit_parent",
+      "prior_year_comparator",
+      "point",
+      "839489300.00",
+      "CNY",
+      "None"
+    ]
+  ],
+  "unexpected": [
+    [
+      "002385_1205501722",
+      "net_profit_parent",
+      "current_guidance",
+      "lower",
+      "46171.91",
+      "CNY",
+      "None"
+    ],
+    [
+      "002385_1205501722",
+      "net_profit_parent",
+      "current_guidance",
+      "upper",
+      "419744700.00",
+      "CNY",
+      "None"
+    ]
+  ]
+}
