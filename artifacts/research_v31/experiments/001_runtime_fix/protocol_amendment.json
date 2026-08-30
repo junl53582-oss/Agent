@@ -1,0 +1,16 @@
+{
+  "amendment_id": "V31-IMPLEMENTATION-FIX-001",
+  "parent_protocol_sha256": "56bef4ac6c3cab32042507b3073e01fcb87d0c714ca0df7e156aa8330cccf169",
+  "parent_plan_lock_sha256": "803f31a1694009b17183a97455de687487787a5554e2407b9510fe850571aae0",
+  "allowed_change": "Drop rows with non-finite training target at the model input boundary before deterministic full-date sampling.",
+  "target_definitions_changed": false,
+  "feature_universe_changed": false,
+  "factor_gates_changed": false,
+  "model_families_changed": false,
+  "model_parameters_changed": false,
+  "oos_years_changed": false,
+  "promotion_gates_changed": false,
+  "random_seed_changed": false,
+  "final_oos_observed_before_change": false,
+  "rerun_policy": "One corrected run is allowed only after targeted regression test and a new amendment lock."
+}

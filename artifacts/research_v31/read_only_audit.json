@@ -1,0 +1,46 @@
+{
+  "audit_id": "V31-READ-ONLY-AUDIT-2026-08-31",
+  "baseline_commit": "26abbcf591100ad65e03d62f9b6381a69008dc11",
+  "head_equals_origin_main": true,
+  "working_tree_clean_before_implementation": true,
+  "v6": {
+    "structure": "V5 Ridge global and sector experts plus V4 train-only stable factor specifications plus sector-relative rank blend",
+    "ml_components": ["Ridge global model", "Ridge broad-sector experts"],
+    "rule_components": ["V4 factor direction/weight rules", "regime component weights", "sector quota selection", "inverse-volatility weights"],
+    "historical_mean_rank_ic": 0.025300983903540037,
+    "absolute_strict_gate_passed": false,
+    "relative_replacement_approved": true
+  },
+  "v30r1": {
+    "direction_heads": ["LightGBM binary", "Logistic/Ridge baseline"],
+    "return_heads": ["LightGBM regression", "Ridge baseline"],
+    "failed_gates": ["calibration", "baseline comparison", "stability", "regime", "probability quality", "cost stress"],
+    "meta_feature_status": "DISABLED_TIME_CONSISTENCY_NOT_PROVEN_FOR_ALL_HISTORY"
+  },
+  "dataset": {
+    "rows": 947079,
+    "symbols": 747,
+    "date_min": "2010-07-02",
+    "date_max": "2026-08-21",
+    "factor_count": 61,
+    "duplicate_date_symbol_rows": 0,
+    "source_manifest": "artifacts/prediction_v30/cache/manifest.json"
+  },
+  "targets": {
+    "1d": "T+1 open to T+2 open",
+    "5d": "T+1 open to T+6 open",
+    "20d": "T+1 open to T+21 open",
+    "direction": "tradable_up_h using cost threshold",
+    "return": "future_return_hd",
+    "ranking": "cross-sectional future return or residual-return rank"
+  },
+  "architecture_findings": [
+    "No canonical research package exists; historical research code is version-directory based.",
+    "Walk-forward, metric and portfolio logic is repeated across versions.",
+    "V10 feature cache can be reused without rebuilding or touching prospective evidence.",
+    "Official benchmark open-price evidence is unapproved, so benchmark-relative training target must remain disabled.",
+    "XGBoost and CatBoost are not installed; adding them is not justified for this fixed first challenger.",
+    "V31 must be implemented as one canonical research_challenger package, not a copy of V6 or V30."
+  ],
+  "formal_conclusion": "READ_ONLY_AUDIT_COMPLETE"
+}

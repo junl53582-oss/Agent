@@ -5,6 +5,9 @@ tests/test_prediction_v30*.py text eol=lf
 
 # Frozen reports, locks, models and snapshots must never receive line-ending conversion.
 artifacts/prediction_v30/** -text
+# The lightweight cache manifest is directly bound by V31 and was frozen from
+# the Windows evidence workspace; materialize its canonical CRLF bytes in CI.
+artifacts/prediction_v30/cache/manifest.json text eol=crlf
 artifacts/prediction_v30r1/** -text
 
 # Forward prediction revisions extend the same byte-for-byte freeze contract.
@@ -88,3 +91,10 @@ stockpilot/prospective_r4/** -text
 tests/test_prospective_alpha_v1r4.py -text
 artifacts/prospective_alpha_v1r4/** -text
 data/prospective_alpha_v1r3/observations/_V1R4_ACTIVE/** -text
+
+# V31 challenger code/protocol/results are frozen byte-for-byte and must
+# materialize identically on Windows and Ubuntu CI.
+stockpilot/research_challenger/** -text
+tests/test_research_challenger_v31.py -text
+artifacts/research_v31/** -text whitespace=cr-at-eol
+V31_RESEARCH_REPORT.md -text

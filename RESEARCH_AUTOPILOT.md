@@ -179,6 +179,14 @@ V1r3 qualification不信任JSON自报布尔值，而是重新计算calendar、re
 
 V20r2 HFQ市场和公司行动信任链已批准；官方benchmark开盘序列未批准，因此结算fail-closed为`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。下一步只在真实上海交易日运行一次V1r3入口；本版本完成后停止主动创建V1r4/V1r5，转入真实observation、第二截面Revision、成熟标签和因子验证。
 
+## 当前研究结论：V31已拒绝，停止结果驱动重跑
+
+V31 以唯一 canonical implementation `stockpilot.research_challenger` 完成预注册的 2020–2025 六年 Purged Walk-Forward。有效修订锁为 `7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449`；首次运行在输出任何指标前因非有限成熟标签转换错误失败，失败证据保留，修订只过滤非有限训练标签，未改变目标、特征、模型、参数、OOS 或晋级门槛。
+
+最终预注册 LambdaRank 的 5日 RankIC 为 -0.02370，低于 V6 的 -0.00469；只有 1/6 年优于 V6。Top20 净 Alpha 点估计改善，但 block bootstrap 95% 区间跨零，最大回撤 -62.43%，且年度、regime、行业稳定性门禁失败。结论为 `V31_REJECTED`，V6 保持 champion，V31 不进入 candidate 或 prospective shadow。
+
+自动闭环不得根据已见结果把 Ridge 或 LightGBM regression 改成新的胜者，也不得搜索特征、权重、Top-K、年份或 horizon。下一步回到 V1r4 真实前向积累：上游输入封存且 preflight 通过时每日最多观察一次，追加不可变预测；官方 CSI 300 open evidence 未批准前 settlement 继续 fail-closed。没有新真实交易日或成熟标签时，不开新历史性能实验。
+
 ## 原后续顺序（当前先完成上面的V21诊断）
 
 1. 完成真实调用链测试、旧冻结输入校验，并运行 V20；保留负结果。

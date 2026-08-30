@@ -528,3 +528,15 @@ python -m stockpilot.prospective_r4.cli daily --date YYYY-MM-DD
 `seal-inputs`只验证并绑定已经由上游生成的本地HFQ增量行情和V6排名，不抓数据、不训练V6。`preflight`完全只读；上海交易日18:30之前、输入未封存、哈希/日期/覆盖不符或同日已有reservation时，`daily_run_allowed=false`且不会消费当日唯一reservation。18:30只是项目既有影子观察政策的保守防早运行窗口，不承诺所有provider一定在此时完成。
 
 Prospective settlement的benchmark语义已固定为官方CSI 300 Price Index（000300）open-to-open，但仓库仍没有提交且冻结的官方开盘序列，因此状态保持`BENCHMARK_UNAPPROVED`和`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。禁止使用ETF、组合账本、策略NAV、成分均值或close代理。
+
+## V31 Research Challenger
+
+V31 是与正式 prospective 链隔离的历史排序挑战者，唯一入口为：
+
+```powershell
+python -m stockpilot.research_challenger.cli audit
+python -m stockpilot.research_challenger.cli verify
+python -m stockpilot.research_challenger.cli report
+```
+
+协议在 OOS 前冻结，并对 2020–2025 六个滚动年份进行 Purged Walk-Forward。预注册的 LambdaRank 挑战者未通过 RankIC、稳定性、bootstrap 和回撤门禁，结论为 `V31_REJECTED`。V6 继续作为正式排名模型；不得根据已经看过的结果改用 Ridge/LightGBM 回归或调参重跑。完整证据见 `V31_RESEARCH_REPORT.md` 和 `artifacts/research_v31/`。

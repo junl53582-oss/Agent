@@ -1,0 +1,13 @@
+{
+  "experiment": "V31_INITIAL_FROZEN_RUN",
+  "original_plan_lock_sha256": "803f31a1694009b17183a97455de687487787a5554e2407b9510fe850571aae0",
+  "status": "IMPLEMENTATION_FAILURE_BEFORE_METRICS",
+  "failure_stage": "2020_1D_lightgbm_lambdarank_fit",
+  "exception": "LightGBMError: ranking label contained integer sentinel produced by NaN cast",
+  "root_cause": "Rows with a present label_end_date but missing realized return were not removed at the model boundary.",
+  "oos_metrics_written": 0,
+  "decision_artifact_written": false,
+  "final_oos_years_reached": [],
+  "result_driven_changes_allowed": false,
+  "original_lock_and_protocol_preserved": true
+}

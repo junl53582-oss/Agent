@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-08-30T21:28:02.102326+00:00",
+  "immutable": true,
+  "files": {
+    "bootstrap.json": "c99810d443d36de63c8666df9e6350c96c8dc1ea6ca74cb4d5d1dc662e38e091",
+    "decision.json": "cfea2753e4359a5fad64216a6c53f8e782b38175cd3340e04d4bf4bf99883eb5",
+    "factor_audit.csv": "6de2d33d16ddb09fc3effdf167757cef70ebcb04d14420b7bded1786c9bc76dd",
+    "factor_correlation.csv": "6c6fa860eb83bf4e1581c3e0f30eefe47c01e1cab8c1855409858b6303870201",
+    "factor_inventory.csv": "d8f861f57bd1963311f3ab6a53796f5276b330aef6b555266320a834a1a5c8f1",
+    "factor_stability.csv": "03255764a3ddec8b52d9d5fe1699151b40c1b26110d7948437c6f44953cfdf85",
+    "feature_importance.csv": "0833c42b40a8d006ab09188fb3e9c41810f5a906c3b42ef1731220e435eb6ccb",
+    "industry_metrics.csv": "e971af96b888241bccf0d9a0490cb7faea2b05c141bb6170346222426df441ea",
+    "model_comparison.csv": "e06a8f3673b7cab1179a20180632f79fad9fa0f5b3329dfc8a9b8cdccbb04f97",
+    "plan.lock.json": "803f31a1694009b17183a97455de687487787a5554e2407b9510fe850571aae0",
+    "plan.lock.json.sha256": "f9d973b056a06b6a573b67a8541d3fea982885f9538296df16bc3fdcd47c17d3",
+    "protocol.json": "56bef4ac6c3cab32042507b3073e01fcb87d0c714ca0df7e156aa8330cccf169",
+    "protocol.json.sha256": "4b2f3a9bcc0e49f2c2298bad7294bc21bd6ca334321c77687fef5bea86893951",
+    "quantile_metrics.csv": "7c58033f5afd0c50a063f1367d185b5d27cbf87146e36fc3656b3d9cde56c0dc",
+    "read_only_audit.json": "4fbefda7791eb02932b839f2f4f8747c5eb6801047cd5cda25360963a3ae4a8b",
+    "read_only_audit.json.sha256": "4338050d2b4eefc11eca5c49155669288d3d3081eefb5b13422533560932f38b",
+    "regime_metrics.csv": "3afbec16855c2d093201a64fb3cff29ad8d2c30a402cc4bf18173e9921287415",
+    "report.json": "044f01e43da2b1d771490375e575ef80a43b787d8772dab0ac917e95590e0669",
+    "topk_metrics.csv": "2ce56e3266f46c356a362cde159fdc154531382ccc9868b11ea1d91a32f65e5d",
+    "turnover_metrics.csv": "fd6524ac37e7a9d80fa23550c163893269d7f1576d930921941bf57d892597f4",
+    "walk_forward_folds.json": "55bb575df6be457584a45e759017d67ddd26d3e3b09ace8b486881ffc9e0a524",
+    "yearly_metrics.csv": "3cfc4cdade75066e0fb1cd04670c98291eb02dbe2af5f2e69702cccdbf64584b"
+  },
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

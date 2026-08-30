@@ -1,0 +1,94 @@
+{
+  "protocol_id": "V31-RESEARCH-CHALLENGER-2026-08-31",
+  "model_id": "V31",
+  "role": "RANKING_CHALLENGER",
+  "status": "RESEARCH_ONLY",
+  "champion": "V6",
+  "forecast_engine": "V30r1-forward-r2",
+  "created_before_oos_evaluation": true,
+  "data": {
+    "dataset": "artifacts/prediction_v30/cache/eligible_panel.parquet",
+    "manifest": "artifacts/prediction_v30/cache/manifest.json",
+    "prospective_data_allowed": false,
+    "pit_membership_required": true,
+    "pit_fundamentals_required": true,
+    "pit_industry_required": true
+  },
+  "targets": {
+    "primary": "cross_sectional_future_return_rank_5d",
+    "secondary": "cross_sectional_future_return_rank_20d",
+    "exploratory": "cross_sectional_future_return_rank_1d",
+    "industry_neutral": ["industry_alpha_rank_5d", "industry_alpha_rank_20d"],
+    "benchmark_relative": "DISABLED_BENCHMARK_EVIDENCE_UNAPPROVED"
+  },
+  "label_semantics": {
+    "entry": "T+1_open",
+    "exit": {"1": "T+2_open", "5": "T+6_open", "20": "T+21_open"},
+    "features_may_not_include_future_or_label_columns": true
+  },
+  "walk_forward": {
+    "oos_years": [2020, 2021, 2022, 2023, 2024, 2025],
+    "final_oos_years": [2024, 2025],
+    "training_window_years": 8,
+    "validation_years": 1,
+    "purge_gap_trading_days": {"1": 2, "5": 6, "20": 21},
+    "embargo": "validation labels must mature before OOS start",
+    "random_split_forbidden": true,
+    "final_oos_may_not_select_features_models_targets_or_weights": true
+  },
+  "features": {
+    "universe": "research_v10.features.V10_FEATURES",
+    "selection_target": "5D rank only",
+    "selection_scope": "training rows only for each fold",
+    "minimum_abs_rank_ic": 0.005,
+    "minimum_positive_ratio": 0.52,
+    "minimum_year_direction_consistency": 0.6,
+    "bh_fdr_q": 0.1,
+    "maximum_pairwise_abs_correlation": 0.9,
+    "maximum_selected_factors": 20,
+    "fallback_factor_selection": false,
+    "neutralization_diagnostics": ["raw", "industry", "size", "industry_and_size"]
+  },
+  "models": {
+    "v6": "champion_baseline",
+    "ridge": {"alpha": 10.0},
+    "lightgbm_regression": {"objective": "regression_l1", "boost_rounds": 80},
+    "lightgbm_lambdarank": {"objective": "lambdarank", "boost_rounds": 80},
+    "xgboost": "DISABLED_DEPENDENCY_NOT_PRESENT",
+    "catboost": "DISABLED_DEPENDENCY_NOT_PRESENT",
+    "pre_registered_challenger": "lightgbm_lambdarank",
+    "deep_learning": "OUT_OF_SCOPE",
+    "random_seed": 42,
+    "training_row_cap": 200000
+  },
+  "portfolio": {
+    "top_k": [10, 20, 30],
+    "quantiles": 5,
+    "rebalance_trading_days": {"1": 1, "5": 5, "20": 20},
+    "fee_rate": 0.0003,
+    "stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "comparator": "PIT constituent-weighted research proxy; not approved official index evidence",
+    "official_benchmark_target_enabled": false
+  },
+  "promotion_gates": {
+    "minimum_mean_rank_ic_improvement": 0.005,
+    "rank_ic_ir_not_worse": true,
+    "positive_rank_ic_ratio_not_worse": true,
+    "top20_net_alpha_better": true,
+    "paired_block_bootstrap_rank_ic_lower_bound_positive": true,
+    "paired_block_bootstrap_top20_lower_bound_positive": true,
+    "minimum_positive_years": 4,
+    "maximum_drawdown_worsening": 0.03,
+    "stability_may_not_significantly_worsen": true
+  },
+  "bootstrap": {"method": "moving_block", "replications": 1000, "block_length": 20, "seed": 42},
+  "immutable_decisions": {
+    "v6_modified": false,
+    "v30_modified": false,
+    "v30r1_modified": false,
+    "v31_may_replace_v6_in_this_run": false,
+    "production_prediction_ready": false,
+    "execution_authorized": false
+  }
+}

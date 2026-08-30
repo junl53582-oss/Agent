@@ -345,3 +345,16 @@
 - P0-B：新增显式本地输入封存。HFQ输入要求schema、正价格、无date/symbol重复、无未来日期、目标日300/300 PIT成分和来源manifest/failures绑定；V6排名要求同日、240只/80%覆盖、唯一symbol/rank、V6模型及锁、历史training cutoff和`execution_authorized=false`。封存及preflight均不抓数据或训练模型。
 - Benchmark：冻结语义为官方CSI 300 Price Index `000300`开盘序列，禁止ETF、V20r2组合账本、NAV、成分均值及close代理。仓库无合格官方open源，故只冻结一次性历史导入和未来append-only更新协议，状态继续`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。
 - 研究边界：V6、V30、V30r1、V1r3均未修改；模型训练0次、因子研究0次、V31未训练。真实market/financial/benchmark provider请求均为0。完成后停止基础设施扩展，进入真实observation/prediction/settlement积累阶段。
+
+## 038 — 2026-08-31：V31 Research Challenger 唯一历史OOS裁决
+
+- 预注册：在读取V31 OOS结果前冻结目标、61个候选因子、模型家族、2020–2025六个滚动OOS年份、purge、成本、随机种子及晋级门槛。benchmark-relative训练目标因官方open证据未批准而禁用；启用5日主目标、20日次目标、1日探索目标及PIT行业中性诊断。V30历史meta-feature因无法证明全历史严格冻结OOS而禁用。
+- 架构：新增唯一公共实现`stockpilot.research_challenger`，没有复制V6/V30目录，没有创建`research_v31_r*`。V6、V30、V30r1和prospective V1r4代码、锁、预测与账本均未修改；V31只读成熟历史PIT面板，不读prospective结果，不写正式预测。
+- 数据：真实PIT面板947,079行、747只、2010-07-02至2026-08-21，成分、财务公告日和行业生效日检查通过。OOS使用2020–2025六年，最终保留期为2024–2025；所有winsor、impute、scale、neutralization与因子筛选只拟合训练期。
+- 运行修订：首次唯一运行在生成任何模型指标或Final OOS产物前，因已到标签结束日但收益为NaN的样本被LambdaRank转换为整数而失败。原锁与失败收据永久保留；独立协议修订只在训练前过滤非有限标签，不改变目标、特征、模型、参数、年份、成本或门槛。有效锁为`7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449`。
+- RankIC：5日均值/ICIR/正比例分别为V6 `-0.00469/-0.02725/48.93%`、Ridge `0.03181/0.15980/55.46%`、LightGBM regression `0.03323/0.17781/57.04%`、预注册LambdaRank `-0.02370/-0.10928/46.67%`。LambdaRank只有2020和2025为正，且仅1/6年度优于V6。
+- Top-K与风险：LambdaRank 5日Top20 gross/net为62.03%/32.06%，研究代理基准为36.58%，净Alpha -4.52%，年化换手16.71倍，最大回撤-62.43%。相对V6的Top20净Alpha单期点估计改善，但moving-block bootstrap均值+0.00204，95%区间`[-0.00164, 0.00545]`跨零；RankIC差值95%区间`[-0.05055, 0.00623]`同样跨零。
+- 稳定性：LambdaRank 5日RankIC在bull/bear/sideways/high-vol/low-vol全部为负；科技行业为-0.01205，年度、regime、行业、回撤和两项bootstrap门禁均失败。10项晋级门禁仅Top20净Alpha点估计一项通过。
+- 裁决：`V31_REJECTED`，`promotion_to_candidate=false`，V6继续champion。不得因Ridge或LightGBM regression事后看起来更好而切换预注册挑战者或重跑；任何新假设必须等待新增、可审计且未用于本轮决策的信息，并另行预注册。
+- 验证：V31定向25项通过；V31+V1r4+V6+forward-r2集成63项通过；全仓`478 passed, 1 xfailed, 24 subtests passed`，V18精确strict xfail保留。结果manifest SHA-256为`af6d7bb9a71faab9fdca603276136d9df321f6edeeb2c31b37ff0b297983f103`；生产预测与执行权限仍为false。
+- 下一步：不再开启基于同一历史OOS的性能实验。继续V1r4真实观察、V30r1-forward-r2不可变预测和成熟标签结算；官方CSI 300开盘证据未批准前保持`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。

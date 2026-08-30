@@ -1,0 +1,17 @@
+{
+  "verified_at_utc": "2026-08-30T21:37:19.0122107Z",
+  "status": "VERIFIED_RESEARCH_REJECTED",
+  "effective_plan_lock_path": "artifacts/research_v31/experiments/001_runtime_fix/plan.lock.json",
+  "effective_plan_lock_sha256": "7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449",
+  "result_artifact_manifest_path": "artifacts/research_v31/artifact_manifest.json",
+  "result_artifact_manifest_sha256": "af6d7bb9a71faab9fdca603276136d9df321f6edeeb2c31b37ff0b297983f103",
+  "test_receipt_path": "artifacts/research_v31/acceptance/test_receipt.json",
+  "test_receipt_sha256": "1a62f6b6def08a60a724dc88c144a71cf80221c3b300afd05483c60fc218685f",
+  "parent_locks_intact": true,
+  "result_artifacts_intact": true,
+  "decision": "V31_REJECTED",
+  "champion": "V6",
+  "promotion_to_candidate": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

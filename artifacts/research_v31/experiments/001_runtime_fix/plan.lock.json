@@ -1,0 +1,32 @@
+{
+  "model_id": "V31",
+  "amendment_id": "V31-IMPLEMENTATION-FIX-001",
+  "frozen_at_utc": "2026-08-30T21:08:52.640806+00:00",
+  "parent_failed_plan_lock_sha256": "803f31a1694009b17183a97455de687487787a5554e2407b9510fe850571aae0",
+  "final_oos_opened_before_fix": false,
+  "target_or_gate_change": false,
+  "files": {
+    "artifacts/research_v31/protocol.json": "56bef4ac6c3cab32042507b3073e01fcb87d0c714ca0df7e156aa8330cccf169",
+    "artifacts/research_v31/experiments/001_runtime_fix/protocol_amendment.json": "01a8384abb6f009ea2a870fbe67673c2e636119cfea25b8e2d75b1c0c6be150e",
+    "artifacts/research_v31/experiments/001_runtime_fix/failure_receipt.json": "041e06a1eca6007d543c691a03542817a88167ea56b532d1a19091767342ee91",
+    "stockpilot/research_challenger/__init__.py": "9b62326c81778c8d0d5f90d357a0e55e33e86b6d106897b24ec9c9c8af7c6fe8",
+    "stockpilot/research_challenger/config.py": "e801b73d3836165d0d15eb11e2697dd751f9ebf26e39214f7f044e8fd2c19b20",
+    "stockpilot/research_challenger/data.py": "f4e8e2e893f86cf14440f884708ae8d4b1eaa39dfb76580263b880be66207828",
+    "stockpilot/research_challenger/split.py": "a5db4714d517e9fb2023c2090da59389210e83767c10e6e68dd4554a75d190ea",
+    "stockpilot/research_challenger/factors.py": "72fb9ef407923ff00c44b6601eb0e24d50d5b31b2ef9a4f224ab4be3865dc62b",
+    "stockpilot/research_challenger/models.py": "9da3b111d46660bc9b14d3d45d8285a93b92981c511a32cf64093825c62ddcf4",
+    "stockpilot/research_challenger/metrics.py": "c13b384a62db979978e9cdf681edcc732ccba305b9b9e595b7bb99f58c0db721",
+    "stockpilot/research_challenger/pipeline.py": "81723090500236fb8f3bb5473178a02571a3081a1e805a2d8264ac05336f57e9",
+    "stockpilot/research_challenger/freeze.py": "9b23053e87ca981cdfd218030f9adba4a3db8e4b7fd00c7429bc4b8e0c5bf5a3",
+    "stockpilot/research_challenger/cli.py": "edb34cc63352805efa9837f0911b1a794c444c25674d44f08de1f1a5c164dfbf",
+    "tests/test_research_challenger_v31.py": "871860140897fac22d1bd18ee4401311439ea996fae575573a6c2940293f7013",
+    ".github/workflows/prospective-integrity.yml": "6b7792c903eb17be4a841a83e13b021fa13101f77d6bd57e0d075445a99f9a38",
+    "artifacts/prospective_alpha_v1r4/plan.lock.json": "39a6dfd2f63b68d1dfad77c039240ad5526786d1d2a0cfa67fd96426f27e1c1f",
+    "artifacts/research_v6/plan.lock.json": "94edfc9e05bd30a58a14e7e11a988a1b7fb0d5358e462df1b20cb23dca4c0f4d",
+    "artifacts/prediction_forward/v30r1_r2/plan.lock.json": "110fa074f16235ab413e13b788767913c93e04e051c2105c39b462202d384b17",
+    "artifacts/research_v20r2/plan.lock.json": "cee149ced49ccc81d6e26ee87db5ceb277a647b4ae551e7a3e7817174e96426d",
+    "artifacts/prediction_v30/cache/manifest.json": "7b1e03295ba7f63ad681d9f9c65b65bc086eddb57b708cc3905471ea0ca8441c"
+  },
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,20 @@
+{
+  "rank_ic_5d_delta": {
+    "samples": 1455,
+    "mean_delta": -0.01901214567608763,
+    "ci_lower": -0.05055183887080943,
+    "ci_upper": 0.006232177493148206,
+    "replications": 1000,
+    "block_length": 20,
+    "seed": 42
+  },
+  "top20_net_alpha_5d_delta": {
+    "samples": 294,
+    "mean_delta": 0.0020370124322898185,
+    "ci_lower": -0.0016382763088220913,
+    "ci_upper": 0.005453129898484171,
+    "replications": 1000,
+    "block_length": 10,
+    "seed": 42
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-08-30T21:28:02.014114+00:00",
+  "champion": "V6",
+  "challenger": "V31",
+  "challenger_model": "lightgbm_lambdarank",
+  "v31_status": "RESEARCH_ONLY",
+  "historical_oos_passed": false,
+  "promotion_to_candidate": false,
+  "decision": "V31_REJECTED",
+  "gates": {
+    "mean_rank_ic_meaningfully_better": false,
+    "rank_ic_ir_not_worse": false,
+    "positive_ratio_not_worse": false,
+    "top20_net_alpha_better": true,
+    "rank_ic_bootstrap_lower_positive": false,
+    "top20_bootstrap_lower_positive": false,
+    "minimum_positive_years": false,
+    "drawdown_not_materially_worse": false,
+    "regime_stability_not_worse": false,
+    "industry_stability_not_worse": false
+  },
+  "positive_years_vs_v6": 1,
+  "benchmark_target": "DISABLED_BENCHMARK_EVIDENCE_UNAPPROVED",
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "v6_remains_champion": true,
+  "v31_writes_to_prospective": false
+}
