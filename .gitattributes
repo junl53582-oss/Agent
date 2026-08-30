@@ -55,3 +55,15 @@ artifacts/prospective_alpha_v1/** -text
 artifacts/prospective_alpha_v1r1/** -text
 data/prospective_alpha_v1/** -text
 data/prospective_alpha_v1r1/** -text
+
+# Prospective Alpha V1r2 freezes its implementation/protocol byte-for-byte,
+# while future runtime observations remain append-only outside the code lock.
+stockpilot/prospective_r2/** text eol=lf
+tests/test_prospective_alpha_v1r2.py text eol=lf
+artifacts/prospective_alpha_v1r2/** -text
+data/pit_observations_v2/_LEGACY_LOW_LEVEL_ENTRYPOINT_DISABLED/** -text
+
+# V18 predates the newer artifact-wide rules; preserve its lock's original
+# Windows bytes so its committed sidecar remains verifiable on Linux CI too.
+artifacts/research_v18/plan.lock.json text eol=crlf
+artifacts/research_v18/plan.lock.sha256 text eol=crlf

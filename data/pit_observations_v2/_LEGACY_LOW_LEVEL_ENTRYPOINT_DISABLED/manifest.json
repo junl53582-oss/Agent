@@ -1,0 +1,10 @@
+{
+  "policy": "LEGACY_LOW_LEVEL_ENTRYPOINT",
+  "status": "DIRECT_DAILY_EXECUTION_FORBIDDEN",
+  "official_entrypoint": "python -m stockpilot.prospective_r2.cli daily",
+  "reason": "Frozen pit_data_v2 CLI has a check-then-create TOCTOU race and cannot share the V1r2 global reservation without mutating its frozen parent.",
+  "network_requests_allowed": false,
+  "retry_allowed": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

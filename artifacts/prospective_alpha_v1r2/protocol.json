@@ -1,0 +1,23 @@
+{
+  "version": "prospective-alpha-v1r2",
+  "objective": "Operationally integrate prospective PIT evidence without model training or historical tuning",
+  "official_daily_entrypoint": "python -m stockpilot.prospective_r2.cli daily",
+  "minimum_qualified_observation_dates": 20,
+  "minimum_expectation_coverage": 0.8,
+  "minimum_qualified_label_dates_per_horizon": 20,
+  "minimum_label_coverage": 0.8,
+  "minimum_label_symbols": 240,
+  "trading_horizons": [1, 5, 20],
+  "global_date_reservation_before_network": true,
+  "same_date_retry_allowed": false,
+  "historical_backfill_allowed": false,
+  "silent_fallback_allowed": false,
+  "missing_may_equal_zero": false,
+  "prospective_results_may_tune_formula": false,
+  "v30r1_forward_r2_logic_changed": false,
+  "v31_training_allowed": false,
+  "model_training_ready": false,
+  "replacement_evaluation_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

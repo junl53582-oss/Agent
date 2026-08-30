@@ -315,3 +315,14 @@
 - 独立修订：V1冻结后提交前并发复核发现，原“扫描既有observation后再建目录”对两个同时进程不是原子的，并且通用source receipt未拒绝“有行但所有必需值全NaN”。父V1锁和证据保留；V1r1在网络前以交易日期排他创建attempt receipt，失败尝试也禁止同日重试，并要求非空数据至少一个必需值真实可用。4项修订测试覆盖双线程竞态、失败重试、全NaN拒绝和真实0接纳。
 - 验证：新增基础设施测试34项全通过；全仓`357 passed, 1 xfailed, 24 subtests passed`，退出码0。父V1锁`a27040ea043d62d14d744dc863c8221f9a310caf4e8d7cbe214ae40850899c13`和活动V1r1锁`cf5c9aca0f91bc20c249b6f4828f56976e3be89e7b40867da3b8a5c5b95ac396`均完整；活动Feature panel SHA-256为`9f17c59767e029528e11e1b938312d139d09f77d05074abf2dae12ce9202252c`。
 - 决策：不训练V31、不读取新观察表现调公式。下一个真实上海交易日数据发布后每源最多观察一次；第二截面后才生成Revision，标签成熟后才追加账本。达到20个不同交易日观察及各周期成熟标签只是因子验证最低门槛，不自动替换V6或解锁生产/执行。
+
+## 035 — 2026-08-30：Prospective Alpha V1r2 日常运行加固完成
+
+- 只读审计确认关键集成缺口：冻结V1r1虽有原子占位，但真实`pit_data_v2.cli observe`仍走检查后创建目录，存在TOCTOU且不校验交易日；V1 readiness未绑定覆盖与完整性，成熟日期可被单只结算错误计数；公告左连接会把未确认缺失补成0；二阶Revision和标签来源绑定不足。
+- 独立修订新增`stockpilot/prospective_r2`，唯一入口为`python -m stockpilot.prospective_r2.cli daily`。上交所日历在网络前验证，日期占位使用OS级`O_EXCL`，两个spawn进程实测只有一个provider调用；失败尝试永久阻止同日重试。冻结V2无法原地修改，故新增由V1r2锁绑定的fail-closed哨兵，旧CLI在网络前拒绝。
+- 观察合格要求盈利预期SUCCESS、覆盖至少80%、raw/normalized/来源receipt/观察receipt/PIT成分/PIT行业/交易日历哈希全部可验证。标签按1/5/20日分别要求至少240只、覆盖至少80%，并绑定实际价格、基准及公司行动来源；单只×20日不能解锁。
+- Feature Store严格区分缺失与0：只有逐股确认查询才允许公告0，资金流`SOURCE_UNAVAILABLE`保持NaN。二阶修订绑定observation_id、observed_at、snapshot/source hash并证明T-2<T-1<T。不可变写使用durable incomplete marker，manifest读取先验sidecar。
+- V30r1-forward-r2逻辑未改，只通过其原有不可覆盖写入接口追加；标签结算与当天来源成功解耦。当前仓库没有批准的最新benchmark数据源，因此默认结算明确返回`NOT_RUN_APPROVED_SOURCES_UNAVAILABLE`，不伪造基准。
+- 测试：V1r2针对性31项通过；全仓`388 passed, 1 xfailed, 24 subtests passed`。唯一xfail仍是既定V18空regressors夹具。V18锁和sidecar完整；其`research_v16/predict.py`、`stockpilot/api.py`、`stockpilot/cli.py`三项共享依赖在本任务前已演进，事实保留，未修改或重跑V18。
+- 冻结：V1r2锁`0cedde7aead609898d46ed88fb4580b03a2508d5d24d46ec7bec88fb81165d4a`，artifact manifest `41c5de110ee15dd63e1386d8a55896e8302595b2db03cabb784dc218e3646199`。V1、V1r1、PIT V2、V30r2、V6和V18锁证据完整。本轮真实provider网络请求0；周日官方入口在日历检查处拒绝。
+- 当前：继承来源基线1、合格交易观察0、成熟1/5/20日均0；所有质量、因子、训练、替换、生产与执行门禁保持false，V31未训练。下一步只在新的真实上海交易日运行一次唯一入口。

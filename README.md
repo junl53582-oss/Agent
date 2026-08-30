@@ -4,6 +4,20 @@
 
 > 仅供研究和软件验证，不构成投资建议。历史回测无法保证未来表现。
 
+## Prospective Alpha V1r2 日常证据链
+
+唯一正式日常入口为：
+
+```powershell
+python -m stockpilot.prospective_r2.cli daily
+python -m stockpilot.prospective_r2.cli status
+python -m stockpilot.prospective_r2.cli verify
+```
+
+该入口在任何 provider 请求前验证冻结父锁、上海当前日期、上交所交易日历并以跨进程排他文件占位。同一交易日最多一次网络尝试，失败也不可自动或人工重试；旧 `python -m pit_data_v2.cli observe` 已由代码级 fail-closed 哨兵禁用，不能绕过全局占位。来源失败彼此隔离，未确认缺失不补零；只有确认查询成功的公告才允许真实 0，资金流不可用保持 NaN。
+
+观察与标签均需达到 80% 覆盖门槛；标签还要求每日至少 240 只、价格/基准/公司行动来源完整，才计为合格成熟日期。20 个合格观察和每个 1/5/20 日周期各 20 个合格成熟日期只会解锁因子验证，不会直接训练 V31、替换 V6、认证生产预测或授权执行。V1r2 锁为 `0cedde7aead609898d46ed88fb4580b03a2508d5d24d46ec7bec88fb81165d4a`。
+
 ## 2026-08-30 V30 概率预测层状态
 
 - 已实现 1/5/20 日上涨概率、5/20 日预期收益、原始概率、校准概率、横截面排名、置信度、漂移、风险等级、不可变快照、自动结算、CLI、API 和网页展示。
