@@ -1,0 +1,32 @@
+{
+  "version": "pit-data-v1r1",
+  "created_at_utc": "2026-08-30T05:16:57.130697+00:00",
+  "scope": "pagination_only_repair_prospective_capture_no_model_access",
+  "parent_lock_sha256": "90a03b87ca4b13fa079f08860b4d92b7dbb39cb5b0018f758eec508396c9c50a",
+  "parent_failure_preserved": true,
+  "allowed_dynamic_data_root": "data/pit_observations_v1r1",
+  "allowed_dynamic_artifact_roots": [
+    "artifacts/pit_data_v1r1/observations",
+    "artifacts/pit_data_v1r1/failures"
+  ],
+  "files": {
+    "pit_data_v1r1/__init__.py": "6a8bb06cd7c382acf9324fb1ea9339681cb41f679fa0c14925b481f35d8d2532",
+    "pit_data_v1r1/cli.py": "08823e70d91625cdc8270399a3eb61dd2e8cd86874258ecea0d9398bc056a124",
+    "pit_data_v1r1/core.py": "8cc269a31d896c699339f588c6604f2b6701715190a6dae5cce0b5bd0f76ba83",
+    "pit_data_v1r1/freeze.py": "31ea488ba1a624e102dbfd43898e0acfd9a296f431aec298f3ea33052fccd5ac",
+    "pit_data_v1r1/source.py": "c6292c7dd44e8eb8695e264ae7eed5ba0d003d7583cf870db4ebf47e99f2facd",
+    "tests/test_pit_data_v1r1.py": "f6e3709706860fc4ee4692cfe4b40baf0858e1ff0af96f508522f3b919f3e249",
+    "artifacts/pit_data_v1r1/protocol.json": "a565f0e8474193ecf9d1a9ea425f8160a270f44c7858c9de847e3410686d99f3",
+    "artifacts/pit_data_v1r1/test_receipt.json": "c2276b3f9fd5e2e53592d0a1bcc7c2213345a6827b7450be50eedce5fce2553d",
+    "artifacts/pit_data_v1/data.lock.json": "90a03b87ca4b13fa079f08860b4d92b7dbb39cb5b0018f758eec508396c9c50a",
+    "artifacts/pit_data_v1/data.lock.sha256": "62398852d05eed22449b95b9c4cfe49e0b70ed455f22634f0421c5e4a170f835",
+    "artifacts/pit_data_v1/failures/20260830T051501644980Z.json": "f174b9560cdc0ca34dd5286d4deeb4203ec1dfab5e34965a269004b5c6f8150e",
+    "data/universes/000300/history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1",
+    "data/industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+    "artifacts/prediction_v30r1/validation.lock.json": "c631c3293859dd9bc61a38a61959f4bdfbf2e83464e54031899838834dac7a75"
+  },
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

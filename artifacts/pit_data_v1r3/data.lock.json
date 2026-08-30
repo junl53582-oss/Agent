@@ -1,0 +1,37 @@
+{
+  "version": "pit-data-v1r3",
+  "created_at_utc": "2026-08-30T05:24:48.677140+00:00",
+  "scope": "offline_admission_of_frozen_prospective_expectation_evidence",
+  "parent_lock_sha256": "91c081e6c39f5e8331c75846790a3a7fee0b077b577b30f833ab8ab92352ac1a",
+  "parent_observation_id": "20260830T051947935413Z",
+  "parent_failure_preserved": true,
+  "allowed_dynamic_data_root": "data/pit_observations_v1r3",
+  "allowed_dynamic_artifact_root": "artifacts/pit_data_v1r3/observations",
+  "files": {
+    "pit_data_v1r3/__init__.py": "4ae46bcc61d3dbd12101d2f8feaa4235e942b229645f9eb9bc96cccf65e4f1aa",
+    "pit_data_v1r3/cli.py": "6ee10bb8addce87e8d2be2fc8f206834288a3910dff2b0654b036cf89bfdeefc",
+    "pit_data_v1r3/core.py": "814889ef0dae0ca8086aad2bbeeac29e43d6da065cfd65cfe4772d1553538d73",
+    "pit_data_v1r3/freeze.py": "a72af31112a84a231762b6bfb2318f7c3a6b4a0f5bb64bc40297e191ed709a51",
+    "tests/test_pit_data_v1r3.py": "99f6a535c4a79e798f67280cd5fc0f5937a2fbe30e9f044e2f223e9c8452a45c",
+    "artifacts/pit_data_v1r3/protocol.json": "78dd1ffe1e1a56da799bcd0a5654e9cf891df8bfb3be9f41dff85392f352901c",
+    "artifacts/pit_data_v1r3/test_receipt.json": "7375b3726db63785215168a4b85a23c90692852f652c443b4f885c1476a9fcf1",
+    "artifacts/pit_data_v1r2/data.lock.json": "91c081e6c39f5e8331c75846790a3a7fee0b077b577b30f833ab8ab92352ac1a",
+    "artifacts/pit_data_v1r2/data.lock.sha256": "ccd09ddd1fba1d83e922f0a59041f0c762c8b54e8b96d2594e77d2f99637e4a6",
+    "artifacts/pit_data_v1r2/observations/20260830T051947935413Z.json": "b941575d730706167df79015ced789caec06a67eba7cc25b71ea356bb8b71f5e",
+    "data/universes/000300/history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1",
+    "data/industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c"
+  },
+  "raw_evidence_files": {
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0001.json": "2e532a88acc98c0a3e480dec3c9ab051eb1a4e80096c428d759e44bca410f8e3",
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0002.json": "9e5e709d39fa0fc3cb00911986da99bdb34c8ccff7d8ef5b16b5c7cb43dcf2d2",
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0003.json": "6bb32ede608432194ad67318efad32340d5d14f880a2b2219df0525b83c8020a",
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0004.json": "f9023b2c34c079911d815e4e127f6b0389ec0910003637727f634e859708041f",
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0005.json": "532737aa7591988e21d984a82d4569943bdda2b4ce1a0fe39530d8d84bafed96",
+    "data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/page_0006.json": "81bf6d52d55c29b03c682d7341765f5d9e75d772ce026d420b9dde5643951606"
+  },
+  "network_access_allowed": false,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,21 @@
+{
+  "protocol": "prospective-incremental-pit-data-v1r3-exact-duplicate-offline-admission",
+  "created_date": "2026-08-30",
+  "failed_parent": "pit-data-v1r2",
+  "parent_observation_id": "20260830T051947935413Z",
+  "failure": "The live expectation endpoint returned exact records duplicated across adjacent pages; V1r2 rejected all duplicates before normalized evidence was written.",
+  "repair": [
+    "Use only the six raw expectation pages prospectively witnessed by V1r2 on 2026-08-30 and bind every page SHA-256 before admission.",
+    "Collapse a duplicate symbol only when its complete provider record hash is identical; any conflicting record fails closed.",
+    "Retain all contributing page hashes, provider-record hash, duplicate count and the original first-seen timestamp.",
+    "Carry the fund-flow provider failure forward without retrying it or treating missing flow data as success."
+  ],
+  "admission_run_is_offline": true,
+  "network_access_allowed": false,
+  "historical_backfill_allowed": false,
+  "minimum_prospective_observations_before_model_experiment": 20,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

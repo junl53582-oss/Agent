@@ -1,0 +1,26 @@
+{
+  "version": "pit-data-v1",
+  "created_at_utc": "2026-08-30T05:14:49.853504+00:00",
+  "scope": "prospective_data_capture_only_no_model_or_return_access",
+  "allowed_dynamic_data_root": "data/pit_observations_v1",
+  "allowed_dynamic_artifact_roots": [
+    "artifacts/pit_data_v1/observations",
+    "artifacts/pit_data_v1/failures"
+  ],
+  "files": {
+    "pit_data_v1/__init__.py": "1398e89840f477d789e6781aed2c0e1fc401869fbf55910cefa925e510cea08f",
+    "pit_data_v1/cli.py": "18c614b8d02b510aceb1215bf88b4cbd85ce27612d7511d8ba77d11f2a185f39",
+    "pit_data_v1/core.py": "0bb3fdc6a9b99ae1dc297f8a14e367c7b740a3fe604c040e6c16a14412997447",
+    "pit_data_v1/freeze.py": "3c4fb14e32d15474d8b94a043e684200c9ce37b249d515e06849af42c70f0cad",
+    "tests/test_pit_data_v1.py": "4d55476bd28bae3504cd8de62be9076ddaddf4f9583e38708f664bd70c7f2544",
+    "artifacts/pit_data_v1/protocol.json": "2445fb474fd05919cd103c9579d351b6a7b4cc67b045ae829efa6a1862a86598",
+    "artifacts/pit_data_v1/test_receipt.json": "334eb677b8d3fe40d1daa6d96b5b1db1e8a9322fd22c13af569b105c42f1016c",
+    "data/universes/000300/history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1",
+    "data/industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+    "artifacts/prediction_v30r1/validation.lock.json": "c631c3293859dd9bc61a38a61959f4bdfbf2e83464e54031899838834dac7a75"
+  },
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

@@ -1,0 +1,38 @@
+{
+  "as_of_shanghai_date": "2026-08-30",
+  "status": "COLLECTING_PROSPECTIVE_PIT_EVIDENCE",
+  "sources": {
+    "earnings_expectations": {
+      "status": "PROSPECTIVE_BASELINE_VERIFIED",
+      "observations": 1,
+      "symbols": 288,
+      "watchlist": 300,
+      "coverage": 0.96,
+      "snapshot_sha256": "3da6646a8c7b86e038bdee01a62a35245ecddc4df0312c7c2c3e718b3a874c89"
+    },
+    "stock_money_flow": {
+      "status": "SOURCE_UNAVAILABLE",
+      "observations": 0,
+      "reason": "Provider proxy disconnect; no same-day retry and no fabricated fallback."
+    },
+    "announcement_events": {
+      "status": "PROSPECTIVE_LEDGER_ACTIVE_NO_NEW_EVENT",
+      "observations_on_2026_08_30": 1,
+      "new_events": 0,
+      "snapshot_sha256": "3ab90e76fa9e048e0f352e99d89f6599835454856affc47c18eec6b430ccc3de"
+    },
+    "industry_prosperity": {
+      "status": "LEVEL_BASELINE_VERIFIED_REVISIONS_PENDING",
+      "industries": 27,
+      "revision_rows": 0,
+      "snapshot_sha256": "76009f1b93d46d97387335425359e9aef1dccfc8d9ee77f4c840af5fb33bf316"
+    }
+  },
+  "minimum_prospective_observations": 20,
+  "completed_prospective_expectation_observations": 1,
+  "labels_matured": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "next_action": "On the next Shanghai trading date after data publication, run one V2 observation and the existing announcement witness; append only, then settle matured prediction labels."
+}

@@ -23,5 +23,14 @@
   "future_confirmation_status": "COLLECTING",
   "execution_authorized": false,
   "replacement_approved": false,
-  "next_step": "append only new trading-date predictions and settle matured 1d/5d/20d outcomes; do not retune seen OOS"
+  "active_pit_data_package": "pit_data_v2",
+  "pit_data_lock_sha256": "7ea08c142e63bdea33b191fae6ce01e2662ad77a5aa1e1321669373d755fb742",
+  "pit_expectation_baseline_date": "2026-08-30",
+  "pit_expectation_observations": 1,
+  "pit_expectation_coverage": 0.96,
+  "pit_fund_flow_status": "SOURCE_UNAVAILABLE",
+  "pit_announcement_status": "PROSPECTIVE_LEDGER_ACTIVE_NO_NEW_EVENT",
+  "pit_industry_prosperity_status": "LEVEL_BASELINE_VERIFIED_REVISIONS_PENDING",
+  "pit_model_training_ready": false,
+  "next_step": "on the next Shanghai trading date append one V2 PIT observation and one announcement witness; append new forward prediction and settle matured 1d/5d/20d outcomes; do not retune seen OOS"
 }

@@ -1,0 +1,19 @@
+{
+  "protocol": "prospective-incremental-pit-data-v1r1-pagination-repair",
+  "created_date": "2026-08-30",
+  "failed_parent": "pit-data-v1",
+  "failure": "Eastmoney fund-flow endpoint silently capped requested pageSize=500 to 100, so V1 correctly failed closed at expected=5299 and actual=1100 before normalized outputs.",
+  "repair": [
+    "Set the frozen fund-flow page size to the observed provider maximum of 100.",
+    "Retain exact total-versus-returned pagination validation.",
+    "Use a new append-only data and artifact root."
+  ],
+  "unchanged": [
+    "Approved endpoints, fields, watchlist, PIT industry source, coverage gates, and raw SHA-256 receipts.",
+    "No historical backfill, returns, model fitting, parameter tuning, broker access, or order execution."
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

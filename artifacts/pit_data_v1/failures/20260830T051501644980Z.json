@@ -1,0 +1,9 @@
+{
+  "observation_id": "20260830T051501644980Z",
+  "observed_at_utc": "2026-08-30T05:15:01.644980+00:00",
+  "target_date": "2026-08-30",
+  "error": "ValueError: fund-flow pagination mismatch: expected=5299, actual=1100",
+  "automatic_retry": false,
+  "model_training_ready": false,
+  "execution_authorized": false
+}

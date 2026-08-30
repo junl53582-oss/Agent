@@ -1,0 +1,49 @@
+{
+  "version": "pit-data-v1r2",
+  "observation_id": "20260830T051947935413Z",
+  "observed_at_utc": "2026-08-30T05:19:47.935413+00:00",
+  "observed_date_shanghai": "2026-08-30",
+  "membership_snapshot": "2026-06-30",
+  "watchlist_size": 300,
+  "status": "failed",
+  "completed_sources": [],
+  "failed_sources": [
+    "expectations",
+    "industry_prosperity",
+    "fund_flows"
+  ],
+  "sources": {
+    "expectations": {
+      "status": "failed",
+      "error": "ValueError: expectation snapshot is empty or contains duplicate symbols",
+      "automatic_retry": false,
+      "prospective_capture_verified": false,
+      "model_training_ready": false
+    },
+    "industry_prosperity": {
+      "status": "failed",
+      "error": "RuntimeError: blocked because expectation capture failed",
+      "automatic_retry": false,
+      "prospective_capture_verified": false,
+      "model_training_ready": false,
+      "dependency_error": "ValueError: expectation snapshot is empty or contains duplicate symbols"
+    },
+    "fund_flows": {
+      "status": "failed",
+      "error": "ProxyError: HTTPSConnectionPool(host='push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?fid=f62&po=1&pz=100&pn=1&np=1&fltt=2&invt=2&ut=b2884a393a59ad64002292a3e90d46a5&fs=m%3A0%2Bt%3A6%2Bf%3A%212%2Cm%3A0%2Bt%3A13%2Bf%3A%212%2Cm%3A0%2Bt%3A80%2Bf%3A%212%2Cm%3A1%2Bt%3A2%2Bf%3A%212%2Cm%3A1%2Bt%3A23%2Bf%3A%212%2Cm%3A0%2Bt%3A7%2Bf%3A%212%2Cm%3A1%2Bt%3A3%2Bf%3A%212&fields=f12%2Cf14%2Cf2%2Cf3%2Cf62%2Cf184%2Cf66%2Cf69%2Cf72%2Cf75%2Cf78%2Cf81%2Cf84%2Cf87%2Cf124 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))",
+      "automatic_retry": false,
+      "prospective_capture_verified": false,
+      "model_training_ready": false
+    }
+  },
+  "partial_capture_preserved": false,
+  "prospective_capture_verified": false,
+  "historical_pit_verified": false,
+  "effective_date_verified": false,
+  "labels_matured": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "frozen_inputs_intact": true,
+  "lock_sha256": "91c081e6c39f5e8331c75846790a3a7fee0b077b577b30f833ab8ab92352ac1a"
+}

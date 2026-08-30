@@ -18,3 +18,29 @@ stockpilot/membership.py text eol=lf
 research_v9/data.py text eol=lf
 research_v10/fundamentals.py text eol=lf
 artifacts/prediction_forward/** -text
+
+# Prospective PIT packages are frozen byte-for-byte. Python/test/protocol files
+# are authored with LF; runtime locks and CSV ledgers use their native CRLF.
+pit_data_v*/** text eol=lf
+tests/test_pit_data_v*.py text eol=lf
+artifacts/pit_data_v*/protocol.json text eol=lf
+artifacts/pit_data_v*/test_receipt.json text eol=lf
+artifacts/pit_data_v*/source_status.json text eol=lf
+artifacts/pit_data_v*/failures/** text eol=lf
+artifacts/pit_data_v*/observations/** text eol=lf
+artifacts/pit_data_v*/data.lock.json text eol=crlf
+artifacts/pit_data_v*/data.lock.sha256 text eol=crlf
+
+# The V2 release includes the small immutable evidence slice needed to verify
+# its locks after a clean Windows checkout; later daily data remains ignored.
+data/universes/000300/history_v10.csv text eol=crlf
+data/industry_history_v10.csv text eol=crlf
+data/pit_observations_v1r2/20260830T051947935413Z/manifest.json text eol=lf
+data/pit_observations_v1r2/20260830T051947935413Z/raw/expectations/*.json -text
+data/pit_observations_v1r3/20260830T051947935413Z/manifest.json text eol=lf
+data/pit_observations_v1r3/20260830T051947935413Z/expectations.csv text eol=crlf
+data/pit_observations_v1r3/20260830T051947935413Z/industry_prosperity.csv text eol=crlf
+
+artifacts/announcement_body_v5r2/data.lock.json text eol=crlf
+artifacts/announcement_body_v5r2/data.lock.sha256 text eol=crlf
+artifacts/announcement_body_v5r2/observations/** text eol=crlf

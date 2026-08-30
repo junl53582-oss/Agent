@@ -290,3 +290,16 @@
 - 独立修订：新增`V30r1-forward-r2`，冻结锁`110fa074f16235ab413e13b788767913c93e04e051c2105c39b462202d384b17`。它逐文件绑定推理必需的V30/V30r1模型、校准器、manifest、训练特征画像、冻结特征面板、认证状态和推理源码；状态明确为`full_historical_validation_recertified=false`，不得借轻量bundle提升认证。
 - 验收：r2输出2026-08-28共261只，SHA-256 `149be61423334f01b4928b59cf9eb9acefccf3df9711d19063011dcbdb7c5ddb`。与r1相比，原始概率、校准概率、5/20日预期收益、1/5/20日排名和candidate score最大绝对差全部为0，状态字段一致；可发布推理bundle完整。
 - 决策：发布r2作为当前前向快照入口，但保持`production_prediction_ready=false`、`future_126d_confirmed=false`、`execution_authorized=false`、漂移SEVERE和置信度LOW。完整历史证据仍保留在本地冻结工作区，不用删减证据重新包装成“认证通过”。
+
+## 033 — 2026-08-30：建立盈利预期/资金流/公告/行业景气前瞻PIT证据线
+
+- 研究决策：不再使用已反复观察的2019–2025结果搜索模型、阈值、权重、行业或top-N。下一次性能实验必须等待未见证时点的新PIT信息和成熟标签；当前只建证据线、追加前向快照和结算。
+- 公告基线：冻结V5r2在2026-08-30查询300只PIT沪深300成分，官方返回0条。该日是周日，记为安全无新事件，不计为新交易日或模型样本；观察证据SHA-256为`3ab90e76fa9e048e0f352e99d89f6599835454856affc47c18eec6b430ccc3de`。
+- V1首次实时源失败：资金流接口声明5299行，但provider把请求的500页容量静默截为100，实际只收1100行；原锁/失败证据保留。V1r1固定100页容量并保留全量行数门禁，但provider/proxy断开；当日不再重试。V1r2将源独立持久化，但预期规范化因跨页重复硬失败。三个原版均不改锁、不覆盖失败。
+- 重复定位：V1r2保存的6页原始预期响应共2,860行/2,394代码。按2026-06-30 PIT成分快照映射后为292行/288唯一股，覆盖96%；4只重复股的完整provider record哈希全部相同，冲突重复为0，缺失12只有审计清单。
+- V1r3独立修复：先通过16项联动测试，后冻结六个原始页哈希，锁`338d4a9b5fe6020d68a2ae3e80e2ec247c59736abd9e5417d17e5ede8c764f40`。唯一离线接纳运行不发网络请求；对完整provider record相同的同股记录去重，保留全部页哈希、record哈希和重复计数，任何冲突都将失败。288行身份哈希全唯一、PIT行业缺失0，预期快照SHA-256为`3da6646a8c7b86e038bdee01a62a35245ecddc4df0312c7c2c3e718b3a874c89`。
+- 行业景气：按当日生效行业将预期水平聚合为27个行业，SHA-256为`76009f1b93d46d97387335425359e9aef1dccfc8d9ee77f4c840af5fb33bf316`。因只有1个前瞻时点，预期修正幅度和正修正广度仍为缺失/0；禁止使用当前快照回填历史景气。
+- V2后续入口：19项预期/资金流/公告/前向快照联动测试通过，冻结锁`7ea08c142e63bdea33b191fae6ce01e2662ad77a5aa1e1321669373d755fb742`完整。冻结前发现公告锁文件名错误，因V2尚未生成锁或抓取数据，修正后重跑测试再冻结。冻结后同日观察被“2026-08-30已有基线”门禁拒绝，没有发网络请求。
+- 准入状态：盈利预期为`PROSPECTIVE_BASELINE_VERIFIED`；公告为`PROSPECTIVE_LEDGER_ACTIVE_NO_NEW_EVENT`；行业景气为`LEVEL_BASELINE_VERIFIED_REVISIONS_PENDING`；资金流为`SOURCE_UNAVAILABLE`。统一状态见`artifacts/pit_data_v2/source_status.json`。仅有1/20个预期观察且无成熟新标签，因此`model_training_ready=false`、`production_prediction_ready=false`、`execution_authorized=false`。
+- 下一步：下一个上海交易日数据发布后，各执行一次V2观察和V5r2公告观察；开始形成真实预期修正和行业广度。并行只追加V30r1-forward-r2的新交易日快照及成熟1/5/20日结算；无新日期时不重试、不调参。
+- 测试：本次新增和相关链19项全通过。全仓为`323 passed, 24 subtests passed, 1 failed`；唯一失败是已有冻结V18的空回归器夹具，本次不改V18。

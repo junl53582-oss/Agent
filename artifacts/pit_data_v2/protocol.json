@@ -1,0 +1,21 @@
+{
+  "protocol": "forward-only-audited-pit-data-v2",
+  "created_date": "2026-08-30",
+  "purpose": "Accumulate immutable new PIT earnings expectations, stock money flow and industry-prosperity revisions without reusing seen 2019-2025 outcomes.",
+  "parent": "pit-data-v1r3",
+  "rules": [
+    "Observe only the current Shanghai date; historical backfill and same-date recapture are forbidden.",
+    "Fetch sources independently, preserve partial success, and make no automatic retry after a source failure.",
+    "Collapse only identical full provider records across pages; conflicting duplicates fail closed.",
+    "Derive forecast revisions and industry breadth only from two or more prospectively witnessed snapshots.",
+    "Require at least 20 distinct prospective observations and matured labels before any pre-registered model experiment.",
+    "Never read returns or labels, tune a model, change the V6 incumbent, authorize execution, or claim prediction readiness."
+  ],
+  "minimum_expectation_coverage": 0.60,
+  "minimum_flow_coverage": 0.95,
+  "minimum_prospective_observations": 20,
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

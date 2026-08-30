@@ -1,0 +1,19 @@
+{
+  "protocol": "prospective-incremental-pit-data-v1r2-source-isolation-repair",
+  "created_date": "2026-08-30",
+  "failed_parent": "pit-data-v1r1",
+  "failure": "The repaired flow pagination encountered an external proxy disconnect; V1r1 also coupled all sources, so a flow outage prevented successful expectation evidence from being persisted.",
+  "repair": [
+    "Capture and hash earnings expectations independently from stock money flow.",
+    "Persist source-level success and source-level failure without converting a partial observation into model-ready data.",
+    "Derive industry prosperity only when the expectation source succeeds."
+  ],
+  "unchanged": [
+    "No automatic retries, historical backfill, return access, label access, model training, parameter tuning, broker access, or execution.",
+    "The provider page-size=100 repair and exact total-row gate remain mandatory."
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

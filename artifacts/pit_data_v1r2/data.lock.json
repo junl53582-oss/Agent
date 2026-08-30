@@ -1,0 +1,28 @@
+{
+  "version": "pit-data-v1r2",
+  "created_at_utc": "2026-08-30T05:19:37.317267+00:00",
+  "scope": "source_isolated_prospective_capture_no_model_access",
+  "parent_lock_sha256": "1c26bd326c51e7dd4a09f50228ff3f645c7c1365f15d5764f49dbdfcbd457d9e",
+  "parent_failure_preserved": true,
+  "allowed_dynamic_data_root": "data/pit_observations_v1r2",
+  "allowed_dynamic_artifact_root": "artifacts/pit_data_v1r2/observations",
+  "files": {
+    "pit_data_v1r2/__init__.py": "cc31808bd781e94971d3ebdad1a13c6cc3f78f289d14adff815719ab3a7f8d61",
+    "pit_data_v1r2/cli.py": "61ba6cd217ebd1d52ea145a0b8d31603727b334ed11164b13458e90dbb2ab662",
+    "pit_data_v1r2/core.py": "4b25aae53e32dcfb27e3754f1b750135727358b603e2458cc78eefc67eb8c0a9",
+    "pit_data_v1r2/freeze.py": "39ed3321080479630de70c32c4585d30f0d531dfc254c690a4bd6a177cf2d9c4",
+    "tests/test_pit_data_v1r2.py": "d35158de7dd4d743df8aa3d9b9d1e99e0c32a08383c2b0997b6cce09226d1396",
+    "artifacts/pit_data_v1r2/protocol.json": "4e0b7484caa08c98c11ebc86df6844979abb27fd6cc67aead1b5226e99d3d1a0",
+    "artifacts/pit_data_v1r2/test_receipt.json": "800eb5f0ea20b04d097beb008f5fa9fd3c474317cc30fe6507188c6d455c82b8",
+    "artifacts/pit_data_v1r1/data.lock.json": "1c26bd326c51e7dd4a09f50228ff3f645c7c1365f15d5764f49dbdfcbd457d9e",
+    "artifacts/pit_data_v1r1/data.lock.sha256": "af2e07a1fb57caaa228d717ed98e23e29c50a2f147cef46bf19ad3a97253f003",
+    "artifacts/pit_data_v1r1/failures/20260830T051706299489Z.json": "68cea0c1b589896d215f8da95f0b755a51be828734f2b9af0404021995772109",
+    "data/universes/000300/history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1",
+    "data/industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+    "artifacts/prediction_v30r1/validation.lock.json": "c631c3293859dd9bc61a38a61959f4bdfbf2e83464e54031899838834dac7a75"
+  },
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

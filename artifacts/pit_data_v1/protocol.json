@@ -1,0 +1,23 @@
+{
+  "protocol": "prospective-incremental-pit-data-v1",
+  "created_date": "2026-08-30",
+  "purpose": "Collect new earnings expectations, stock money flow, announcement events, and derived industry prosperity without tuning on seen 2019-2025 outcomes.",
+  "approved_sources": {
+    "earnings_expectations": "https://datacenter-web.eastmoney.com/api/data/v1/get RPT_WEB_RESPREDICT",
+    "stock_money_flow": "https://push2.eastmoney.com/api/qt/clist/get",
+    "announcement_events": "existing frozen announcement_body_v5r2 CNINFO first-seen ledger",
+    "industry_prosperity": "derived only from prospectively observed expectations plus PIT CNINFO industry effective dates"
+  },
+  "rules": [
+    "Raw HTTP pages are append-only and SHA-256 bound to every normalized row.",
+    "Observation time, provider source time, membership snapshot, and industry effective date remain separate fields.",
+    "Historical analyst, northbound, and announcement archives remain isolated and cannot be relabeled as prospective PIT.",
+    "The first observation is a baseline; industry revisions require a prior observation with the same forecast year.",
+    "At least 20 distinct prospective observations plus matured labels are required before any model experiment; this is not a 126-day production gate.",
+    "No prices, returns, model fitting, parameter search, broker connection, or order execution is allowed in this data phase."
+  ],
+  "historical_pit_verified": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}
