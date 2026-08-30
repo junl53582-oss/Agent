@@ -1,5 +1,11 @@
 # 自动研究与修复进度
 
+## 当前接续：Prospective Alpha V1r4 最小运行闭环（2026-08-31）
+
+V1r3只读审计发现首次真实观察前的两个P0缺口：没有上海18:30数据窗口门禁，并且daily在检查V30增量HFQ与V6同日排名之前就消费唯一reservation。独立V1r4只增加运行wrapper：先验证父锁、当日XSHG交易日、18:30窗口、已封存本地输入和reservation不存在，全部通过后才允许构造provider。preflight不写文件、不发provider请求；V6/V30/V30r1逻辑均未修改，V31未训练。
+
+Benchmark语义依据冻结的CSI300 PIT universe和历史协议确定为官方CSI 300 Price Index `000300`开盘序列；当前仓库仍没有可在clean checkout重算的官方open evidence，因此保持`UNAPPROVED`，结算继续返回`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。下一步不是再建版本，而是在上游输入真实发布后封存输入、运行preflight，并仅在`daily_run_allowed=true`时执行一次daily。
+
 ## 当前接续：Prospective PIT Observation & Alpha Validation V1（2026-08-30）
 
 已完成独立基础设施V1并冻结，父锁为`a27040ea043d62d14d744dc863c8221f9a310caf4e8d7cbe214ae40850899c13`；提交前并发审计发现“扫描后创建”竞态和全NaN成功缺口，未改父版，在独立V1r1修复并冻结，活动锁为`cf5c9aca0f91bc20c249b6f4828f56976e3be89e7b40867da3b8a5c5b95ac396`。它统一提供多源append-only观察账本、网络前原子日期占位、严格两截面Revision、PIT Feature Store、只写成熟结果的1/5/20日标签账本，以及IC/RankIC/decay/turnover/分组稳定性算法；没有V31训练入口。全仓测试`357 passed, 1 xfailed, 24 subtests passed`，透明xfail是冻结V18文件内无法合法改写的空回归头夹具，正式三回归头契约测试通过，V18代码、测试、锁和报告哈希均未修改。

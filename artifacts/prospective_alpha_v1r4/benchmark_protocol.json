@@ -1,0 +1,32 @@
+{
+  "version": "prospective-alpha-v1r4-benchmark-v1",
+  "policy_status": "RESOLVED_FROM_FROZEN_RESEARCH_UNIVERSE",
+  "identity": {
+    "name": "CSI 300 Price Index",
+    "code": "000300",
+    "provider": "China Securities Index Co., Ltd.",
+    "instrument_type": "PRICE_INDEX",
+    "price_field": "official_open"
+  },
+  "purpose": "Compute benchmark open-to-open return on exactly the same entry and maturity sessions as each stock label.",
+  "required_schema": ["date", "open"],
+  "required_properties": [
+    "official index series rather than ETF, portfolio ledger, strategy NAV or synthetic proxy",
+    "one unique positive open value per trading date",
+    "immutable source file with SHA-256 sidecar",
+    "immutable evidence manifest binding identity, source, path, hash, rows and coverage",
+    "no dates after settlement as-of",
+    "clean-checkout and Ubuntu CI reproducibility"
+  ],
+  "current_source_status": "UNAPPROVED",
+  "acquisition_protocol": {
+    "source_required": "official China Securities Index historical open-price distribution or a separately approved licensed mirror with preserved raw evidence",
+    "one_time_history_import": "capture raw response/file, preserve provider identity and request parameters, normalize only date/open, write immutable source and evidence manifest",
+    "future_updates": "append-only by new trading date; existing dates and hashes cannot be overwritten",
+    "fallback_allowed": false
+  },
+  "prohibited_proxies": ["ETF", "V20r2 portfolio ledger", "strategy NAV", "constituent average", "close substituted for open", "synthetic series"],
+  "default_settlement_status": "SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED",
+  "provider_requests_during_build": 0,
+  "execution_authorized": false
+}

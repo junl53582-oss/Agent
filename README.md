@@ -512,3 +512,19 @@ python -m stockpilot.prospective_r3.cli verify
 V1r3不信任观察或标签中的自报`verified=true`字段。每次认证都会重新验证交易日历、全局reservation、V1r3锁、PIT成分、PIT行业、source receipt、raw/normalized文件、实际覆盖率及标签结算来源。V1r2和PIT V2新运行入口均已fail-closed，防止运行证据分叉。
 
 当前V20r2 HFQ市场与公司行动信任链可验证，但仓库没有已冻结批准的官方benchmark开盘序列，因此默认标签结算明确返回`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`，不会fallback或自行假定沪深300数据。V6与`V30r1-forward-r2`保持不变，V31未训练，生产预测和执行权限保持关闭。
+
+## Prospective Alpha V1r4 operational closure
+
+V1r3的冻结代码不再直接运行。正式顺序是：
+
+```powershell
+python -m stockpilot.prospective_r4.cli verify
+python -m stockpilot.prospective_r4.cli status
+python -m stockpilot.prospective_r4.cli seal-inputs --date YYYY-MM-DD
+python -m stockpilot.prospective_r4.cli preflight --date YYYY-MM-DD
+python -m stockpilot.prospective_r4.cli daily --date YYYY-MM-DD
+```
+
+`seal-inputs`只验证并绑定已经由上游生成的本地HFQ增量行情和V6排名，不抓数据、不训练V6。`preflight`完全只读；上海交易日18:30之前、输入未封存、哈希/日期/覆盖不符或同日已有reservation时，`daily_run_allowed=false`且不会消费当日唯一reservation。18:30只是项目既有影子观察政策的保守防早运行窗口，不承诺所有provider一定在此时完成。
+
+Prospective settlement的benchmark语义已固定为官方CSI 300 Price Index（000300）open-to-open，但仓库仍没有提交且冻结的官方开盘序列，因此状态保持`BENCHMARK_UNAPPROVED`和`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。禁止使用ETF、组合账本、策略NAV、成分均值或close代理。

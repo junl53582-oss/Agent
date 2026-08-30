@@ -1,0 +1,22 @@
+{
+  "version": "prospective-alpha-v1r4",
+  "scope": "minimal-operational-closure-before-first-real-observation",
+  "parent": "prospective-alpha-v1r3",
+  "changes": [
+    "pre-reservation Shanghai execution-time gate",
+    "pre-reservation sealed V30r1-forward-r2 market and V6 ranking input gate",
+    "official CSI 300 open-price benchmark acquisition and approval protocol"
+  ],
+  "official_daily_entrypoint": "python -m stockpilot.prospective_r4.cli daily",
+  "preflight_entrypoint": "python -m stockpilot.prospective_r4.cli preflight",
+  "input_sealing_entrypoint": "python -m stockpilot.prospective_r4.cli seal-inputs --date YYYY-MM-DD",
+  "real_provider_requests_during_build": 0,
+  "v6_modified": false,
+  "v30_logic_modified": false,
+  "v30r1_logic_modified": false,
+  "v31_trained": false,
+  "factor_research_runs": 0,
+  "model_retrain_runs": 0,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

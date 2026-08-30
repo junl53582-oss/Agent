@@ -82,3 +82,9 @@ artifacts/research_v20r2/data_audit.json text eol=crlf
 artifacts/research_v20r2/plan.lock.json text eol=crlf
 artifacts/research_v20r2/plan.lock.sha256 text eol=crlf
 data/corporate_actions_v20r2.json text eol=lf
+
+# Prospective Alpha V1r4 is a minimal operational wrapper around frozen V1r3.
+stockpilot/prospective_r4/** -text
+tests/test_prospective_alpha_v1r4.py -text
+artifacts/prospective_alpha_v1r4/** -text
+data/prospective_alpha_v1r3/observations/_V1R4_ACTIVE/** -text

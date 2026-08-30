@@ -1,0 +1,26 @@
+{
+  "version": "prospective-alpha-v1r4-preflight-v1",
+  "timezone": "Asia/Shanghai",
+  "earliest_daily_run_time": "18:30",
+  "time_policy_basis": "The repository's pre-existing daily shadow observation policy permits one run only after 18:30 Shanghai time.",
+  "time_policy_limit": "This gate only prevents obviously premature execution. It does not claim every upstream provider is guaranteed complete at this time.",
+  "order": [
+    "verify frozen parent locks",
+    "verify current Shanghai date",
+    "verify official Shanghai trading session",
+    "verify earliest execution time",
+    "verify immutable local prediction-input evidence",
+    "verify no reservation already exists",
+    "create atomic reservation",
+    "construct providers",
+    "perform provider requests"
+  ],
+  "preflight_is_read_only": true,
+  "preflight_provider_requests": 0,
+  "preflight_creates_reservation": false,
+  "minimum_forward_market_symbols": 300,
+  "minimum_v6_ranking_symbols": 240,
+  "minimum_v6_ranking_coverage": 0.8,
+  "v6_automatic_training_forbidden": true,
+  "execution_authorized": false
+}

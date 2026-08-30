@@ -337,3 +337,11 @@
 - 验证：V1r3定向32项通过；全仓`420 passed, 1 xfailed, 24 subtests passed`。V18保持原strict xfail，V6、V18、V30/V30r1和V1/V1r1/V1r2/PIT V2冻结资产均未修改。Provider网络请求0。
 - 冻结：V1r3锁`a987f74304718a1aea39d881cad05ec56f252f0bf2fcf37dc2810a518bbd86bb`，artifact manifest `19c04bcc6c57d3117ad3a9a6e89f735ff95bf9b3eb845cb53a87e45aeff597da`。当前继承基线1、运行观察0、认证合格观察0、成熟1/5/20均0；所有readiness保持false，V31未训练。
 - 决策：V1r3达到基础设施收口标准。除非真实运行出现新的CRITICAL/HIGH完整性缺陷，不再主动创建V1r4/V1r5。下一阶段只积累真实交易日observation、第二截面Revision、成熟标签和预注册因子验证。
+
+## 037 — 2026-08-31：Prospective Alpha V1r4 首次真实观察前最小运行闭环
+
+- 只读审计：V1r3仅验证日期与交易日，没有时刻门禁；它先reserve，再发现`hfq_union_{date}.csv`或V6同日ranking缺失。daily不生成这两个输入。V6 `predict`会重新拟合既定流程，因此未自动接入。benchmark确实为`UNAPPROVED`，结算默认严格阻塞。
+- P0-A：V1r4冻结`Asia/Shanghai 18:30`保守窗口，依据项目既有每日影子观察政策；它只防止明显过早运行，不声称provider必然完整。交易日、时刻、父锁和输入证据全部在reservation及provider构造前验证，失败不写attempt或假daily receipt。
+- P0-B：新增显式本地输入封存。HFQ输入要求schema、正价格、无date/symbol重复、无未来日期、目标日300/300 PIT成分和来源manifest/failures绑定；V6排名要求同日、240只/80%覆盖、唯一symbol/rank、V6模型及锁、历史training cutoff和`execution_authorized=false`。封存及preflight均不抓数据或训练模型。
+- Benchmark：冻结语义为官方CSI 300 Price Index `000300`开盘序列，禁止ETF、V20r2组合账本、NAV、成分均值及close代理。仓库无合格官方open源，故只冻结一次性历史导入和未来append-only更新协议，状态继续`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。
+- 研究边界：V6、V30、V30r1、V1r3均未修改；模型训练0次、因子研究0次、V31未训练。真实market/financial/benchmark provider请求均为0。完成后停止基础设施扩展，进入真实observation/prediction/settlement积累阶段。
