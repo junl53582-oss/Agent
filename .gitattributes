@@ -44,3 +44,14 @@ data/pit_observations_v1r3/20260830T051947935413Z/industry_prosperity.csv text e
 artifacts/announcement_body_v5r2/data.lock.json text eol=crlf
 artifacts/announcement_body_v5r2/data.lock.sha256 text eol=crlf
 artifacts/announcement_body_v5r2/observations/** text eol=crlf
+
+# Prospective alpha V1 binds code and evidence byte-for-byte.
+stockpilot/prospective/** text eol=lf
+stockpilot/prospective_r1/** text eol=lf
+tests/test_prospective_alpha_v1.py text eol=lf
+tests/test_prospective_alpha_v1r1.py text eol=lf
+tests/conftest.py text eol=lf
+artifacts/prospective_alpha_v1/** -text
+artifacts/prospective_alpha_v1r1/** -text
+data/prospective_alpha_v1/** -text
+data/prospective_alpha_v1r1/** -text

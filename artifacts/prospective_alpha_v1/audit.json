@@ -1,0 +1,45 @@
+{
+  "audited_commit": "e77af8754ab12b59ce836982b4c5617bbbaef90b",
+  "audit_scope": [
+    "pit_data_v1, pit_data_v1r3 and pit_data_v2",
+    "announcement_body_v5r2 prospective witness",
+    "V30r1-forward-r2 inference and settlement",
+    "V6 incumbent implementation",
+    "V18 frozen fixture failure",
+    "existing walk-forward and probability metrics infrastructure"
+  ],
+  "findings": {
+    "pit_v2_same_date_guard": "PASS: _observed_dates is checked before capture_sources or any fetcher call",
+    "pit_v2_backfill_guard": "PASS: target date must equal current Shanghai date before capture_sources",
+    "pit_v2_source_isolation": "PASS: expectation and fund-flow exceptions are isolated; partial success is retained",
+    "pit_v2_duplicate_rule": "PASS: V1r3 full-provider-record identity permits exact duplicates and rejects conflicts",
+    "pit_v2_immutability_gap": "GAP: normalized CSV files lack exclusive-create helpers and complete normalized provenance receipts",
+    "pit_v2_ledger_gap": "GAP: no unified per-source request/raw/normalized/universe/membership/industry/code/lock schema",
+    "revision_ordering_gap": "GAP: parent industry_prosperity accepts a prior frame but does not itself prove prior observed_at < current observed_at",
+    "revision_first_snapshot": "PASS: first snapshot produces no eps_revision values",
+    "readiness_derivation_gap": "GAP: model_training_ready is safely hard-coded false but is not fact-derived from trading observations and mature labels",
+    "training_bypass": "PASS IN V2: no training entry point exists; new infrastructure also exposes none",
+    "forward_snapshot": "PASS: V30r1-forward-r2 prediction and feature snapshots are immutable and same-day mismatches fail",
+    "forward_settlement_gap": "GAP: stockpilot.prediction.settlement rewrites a derived CSV and emits unsettled rows instead of an append-only mature-only ledger",
+    "label_semantics": "PASS: existing labels use T close decision, T+1 open entry and T+H+1 open exit",
+    "announcement_ledger": "PASS WITH LIMITATION: raw pages and events are exclusive-create; a zero-result Sunday query is retained as fact, not an event sample",
+    "fund_flow": "SOURCE_UNAVAILABLE; no fallback admitted",
+    "weekend_baseline": "The 2026-08-30 source baseline is genuine evidence but cannot count as a Shanghai trading observation"
+  },
+  "frozen_v18_diagnosis": {
+    "classification": "A_TEST_FIXTURE_SCHEMA_INCOMPATIBILITY",
+    "reason": "The failing fixture directly constructs EmbeddingTextModel with regressors=[], while fit() deterministically creates one Ridge head for each of three EVENT_TARGETS.",
+    "frozen_test_sha256": "292604523fb4beb4ce8ea0933f47a7de73846604e97199a776e0e3a58eecbf6d",
+    "frozen_text_model_sha256": "190d82664ad2c1b7c28d5fa0b31928ce64a7defc87012d3008603999891f18ed",
+    "frozen_lock_sha256": "08dc143a5754bb5478221a27484d48dbb69a03820c70f7305beda960972a6a99",
+    "frozen_report_sha256": "7e31a07e1ec46dd88ccf8610b45a5b90918f26bbfbfefd75565dd8f670b4989e",
+    "resolution": "Do not modify the locked test, model, lock or report. Transparently quarantine the impossible fixture as strict xfail and retain a passing fitted three-regressor contract test."
+  },
+  "network_activity_for_this_phase": 0,
+  "current_date_is_trading_date": false,
+  "second_expectation_snapshot_created": false,
+  "v31_trained": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

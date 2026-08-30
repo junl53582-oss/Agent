@@ -303,3 +303,15 @@
 - 准入状态：盈利预期为`PROSPECTIVE_BASELINE_VERIFIED`；公告为`PROSPECTIVE_LEDGER_ACTIVE_NO_NEW_EVENT`；行业景气为`LEVEL_BASELINE_VERIFIED_REVISIONS_PENDING`；资金流为`SOURCE_UNAVAILABLE`。统一状态见`artifacts/pit_data_v2/source_status.json`。仅有1/20个预期观察且无成熟新标签，因此`model_training_ready=false`、`production_prediction_ready=false`、`execution_authorized=false`。
 - 下一步：下一个上海交易日数据发布后，各执行一次V2观察和V5r2公告观察；开始形成真实预期修正和行业广度。并行只追加V30r1-forward-r2的新交易日快照及成熟1/5/20日结算；无新日期时不重试、不调参。
 - 测试：本次新增和相关链19项全通过。全仓为`323 passed, 24 subtests passed, 1 failed`；唯一失败是已有冻结V18的空回归器夹具，本次不改V18。
+
+## 034 — 2026-08-30：Prospective PIT Observation & Alpha Validation Infrastructure完成
+
+- 审计：确认PIT V2同日和回填门禁都在fetcher前执行，预期与资金流独立保存，V1r3仅对完整provider record完全相同的重复安全去重；但V2缺统一请求/原始/标准化/成分/行业/代码/锁血缘，父行业Revision没有自行验证`t1.observed_at > t0.observed_at`，现有预测结算CSV会重写且预先产生未成熟行。这些缺口在新独立包修复，所有冻结V2/V30/V6文件未改。
+- 新链：新增`stockpilot.prospective`，按每次观察和每个来源排他创建raw、normalized、failure和receipt；区分`EMPTY_SUCCESS`、`REQUEST_FAILED`和`SOURCE_UNAVAILABLE`，拒绝silent fallback。统一记录请求参数、raw/normalized SHA-256、universe/PIT成分/PIT行业哈希、覆盖、重复/冲突、缺失、Git SHA和锁哈希。
+- Revision/Feature：只有两个带时区且严格递增的真实截面才能按相同预测年度计算个股绝对/比例/排名/方向/持续性/相对行业Revision及行业广度、离散度、排名和加速度。首截面所有Revision保持缺失，绝不补零。Feature Store逐日排他写入，缺失与真实0分离，每类特征都有availability和provenance。
+- 成熟标签：新账本只在真实交易日历到达T+H+1后追加1/5/20日open-to-open标签，记录entry/exit、基准、超额、公司行动处理和价格源哈希；缺价、停牌、退市均保存显式状态，不静默删样本，不覆盖已结算记录。
+- 当前事实：2026-08-30为周日，本轮网络请求0次，没有伪造第二截面。继承真实基线的来源观察数为1，但合格交易日`pit_observation_count=0`；Feature Store 300行，预期可用288、公告零事件可用300、资金流可用0、Revision可用0。成熟1/5/20日计数均0，所有训练、因子验证、替换、生产和执行门禁保持false。
+- V18：失败分类为A（冻结测试夹具schema不兼容）。夹具直接构造`regressors=[]`，而正式`fit()`固定产生3个目标回归头；锁内测试、模型、锁和报告SHA均与冻结值一致。由于测试本身被锁绑定，不能合法修改；通过非冻结测试配置将该精确用例透明标记strict xfail，并保留合法三头契约测试，未伪造regressor或更改研究结论。
+- 独立修订：V1冻结后提交前并发复核发现，原“扫描既有observation后再建目录”对两个同时进程不是原子的，并且通用source receipt未拒绝“有行但所有必需值全NaN”。父V1锁和证据保留；V1r1在网络前以交易日期排他创建attempt receipt，失败尝试也禁止同日重试，并要求非空数据至少一个必需值真实可用。4项修订测试覆盖双线程竞态、失败重试、全NaN拒绝和真实0接纳。
+- 验证：新增基础设施测试34项全通过；全仓`357 passed, 1 xfailed, 24 subtests passed`，退出码0。父V1锁`a27040ea043d62d14d744dc863c8221f9a310caf4e8d7cbe214ae40850899c13`和活动V1r1锁`cf5c9aca0f91bc20c249b6f4828f56976e3be89e7b40867da3b8a5c5b95ac396`均完整；活动Feature panel SHA-256为`9f17c59767e029528e11e1b938312d139d09f77d05074abf2dae12ce9202252c`。
+- 决策：不训练V31、不读取新观察表现调公式。下一个真实上海交易日数据发布后每源最多观察一次；第二截面后才生成Revision，标签成熟后才追加账本。达到20个不同交易日观察及各周期成熟标签只是因子验证最低门槛，不自动替换V6或解锁生产/执行。

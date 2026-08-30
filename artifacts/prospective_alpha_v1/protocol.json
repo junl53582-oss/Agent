@@ -1,0 +1,29 @@
+{
+  "version": "prospective-alpha-v1",
+  "objective": "Prospective PIT observation, feature, mature-label and alpha-validation infrastructure",
+  "scope": [
+    "append-only multi-source observation evidence",
+    "revision features only after two strictly ordered prospective snapshots",
+    "PIT feature panels preserving unavailable versus real zero",
+    "append-only 1D/5D/20D mature open-to-open labels",
+    "factor IC, RankIC, decay, turnover and grouped-stability algorithms"
+  ],
+  "prohibited": [
+    "historical prospective backfill",
+    "same-date recapture or retry",
+    "silent source fallback",
+    "zero imputation of unavailable features",
+    "V31 training",
+    "historical OOS parameter tuning",
+    "production or execution promotion"
+  ],
+  "minimum_real_trading_observations": 20,
+  "readiness_rule": "20 distinct verified Shanghai trading-date expectation observations and at least 20 distinct settled prediction dates at each of 1D, 5D and 20D",
+  "weekend_baseline_policy": "Retain as source evidence but never count as a trading observation or label sample",
+  "model_training_entrypoint_present": false,
+  "model_training_ready": false,
+  "factor_validation_ready": false,
+  "replacement_evaluation_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

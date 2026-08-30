@@ -1,0 +1,19 @@
+{
+  "version": "prospective-alpha-v1r1",
+  "parent_lock_sha256": "a27040ea043d62d14d744dc863c8221f9a310caf4e8d7cbe214ae40850899c13",
+  "changes": [
+    "atomically reserve the target date before any provider callable",
+    "retain failed attempt evidence and forbid same-day retries",
+    "reject non-empty normalized sources whose required value columns are entirely unavailable"
+  ],
+  "unchanged": [
+    "revision formulas",
+    "feature store",
+    "mature label ledger",
+    "alpha validation algorithms",
+    "20-observation readiness rule"
+  ],
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

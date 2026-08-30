@@ -1,6 +1,14 @@
 # 自动研究与修复进度
 
-## 当前接续：新增PIT信息前瞻证据线（2026-08-30）
+## 当前接续：Prospective PIT Observation & Alpha Validation V1（2026-08-30）
+
+已完成独立基础设施V1并冻结，父锁为`a27040ea043d62d14d744dc863c8221f9a310caf4e8d7cbe214ae40850899c13`；提交前并发审计发现“扫描后创建”竞态和全NaN成功缺口，未改父版，在独立V1r1修复并冻结，活动锁为`cf5c9aca0f91bc20c249b6f4828f56976e3be89e7b40867da3b8a5c5b95ac396`。它统一提供多源append-only观察账本、网络前原子日期占位、严格两截面Revision、PIT Feature Store、只写成熟结果的1/5/20日标签账本，以及IC/RankIC/decay/turnover/分组稳定性算法；没有V31训练入口。全仓测试`357 passed, 1 xfailed, 24 subtests passed`，透明xfail是冻结V18文件内无法合法改写的空回归头夹具，正式三回归头契约测试通过，V18代码、测试、锁和报告哈希均未修改。
+
+现有2026-08-30真实来源基线已作为V1r1继承证据索引：300只Feature Store中盈利预期可用288、公告零事件可用300、资金流可用0、Revision可用0，面板SHA-256为`9f17c59767e029528e11e1b938312d139d09f77d05074abf2dae12ce9202252c`。因为当日是周日，事实状态明确拆分为`source_observation_count=1`与`pit_observation_count=0`，周末不能计作交易样本。当前`mature_1d_count=0`、`mature_5d_count=0`、`mature_20d_count=0`、`model_training_ready=false`、`factor_validation_ready=false`、`replacement_evaluation_ready=false`、`production_prediction_ready=false`、`execution_authorized=false`。
+
+下一步仅在新的上海交易日且数据实际发布后执行一次真实观察；同日再次尝试、回填或非交易日会在任何网络请求前失败。第二个严格晚于首截面的真实盈利预期观察出现后才能生成Revision；预测标签只有T+H+1开盘真实出现后才追加结算。达到20个不同交易日观察且1/5/20日各有20个不同预测日成熟标签后，才允许进入因子验证；这仍不自动批准V31、替换V6、生产预测或交易。
+
+## 前一阶段：新增PIT信息前瞻证据线（2026-08-30）
 
 停止针对已反复观察的2019–2025 OOS结果调参。当前主动研究转为只追加不可变未来预测/结算，并积累有首次见证时间、原始响应哈希、PIT成分和PIT行业映射的新信息。V6仍为排名默认；V30r1-forward-r2仍为前向预测入口，`production_prediction_ready=false`、`execution_authorized=false`。
 
