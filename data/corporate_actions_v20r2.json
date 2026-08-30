@@ -1,0 +1,26 @@
+{
+  "schema": "stockpilot-ordinary-public-share-swap-v1",
+  "usage": "valuation and settlement only; never join future action outcomes to model features",
+  "events": [
+    {
+      "old_symbol": "600837", "new_symbol": "601211", "ratio": 0.62,
+      "halt_announced": "2025-02-05", "last_trade": "2025-02-05", "halt_start": "2025-02-06",
+      "listing_announced": "2025-03-14", "listing_date": "2025-03-17",
+      "halt_source": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10734146&stockid=600837",
+      "conversion_source": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10783319",
+      "halt_announcement_id": "1222455977", "conversion_announcement_id": "1222789432",
+      "old_quote_file": "data/corporate_actions_v20r2_sources/600837_2025_unadjusted.json",
+      "new_quote_file": "data/corporate_actions_v20r2_sources/601211_2025_unadjusted.json"
+    },
+    {
+      "old_symbol": "601989", "new_symbol": "600150", "ratio": 0.1339,
+      "halt_announced": "2025-08-12", "last_trade": "2025-08-12", "halt_start": "2025-08-13",
+      "listing_announced": "2025-09-12", "listing_date": "2025-09-16",
+      "halt_source": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601989&announcementId=1224444107",
+      "conversion_source": "https://paper.cnstock.com/html/2025-09/12/content_2120240.htm",
+      "halt_announcement_id": "1224444107", "conversion_announcement_id": "1224653312",
+      "old_quote_file": "data/corporate_actions_v20r2_sources/601989_2025_unadjusted.json",
+      "new_quote_file": "data/corporate_actions_v20r2_sources/600150_2025_unadjusted.json"
+    }
+  ]
+}
