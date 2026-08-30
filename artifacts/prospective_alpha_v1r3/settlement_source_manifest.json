@@ -1,0 +1,32 @@
+{
+  "version": "prospective-alpha-v1r3-settlement-sources-v1",
+  "market": {
+    "status": "APPROVED",
+    "path": "data/market_history_v10_hfq.csv",
+    "sha256": "fcc1ea387719476410f8d4dcc49840e74bd087aec351ed02cb40d1318dd45fc3",
+    "data_audit_path": "artifacts/research_v20r2/data_audit.json",
+    "data_audit_sha256": "b2e4ec8c1217395171b4cd79d9b3462a40ba58c9c8520baf1706c169807b55ac",
+    "adjustment": "HFQ economic units",
+    "pit_rule": "frozen V20r2 audit input; no data after settlement as-of may be read"
+  },
+  "benchmark": {
+    "status": "UNAPPROVED",
+    "path": null,
+    "reason": "the repository contains no frozen official benchmark open-price source; V20r2 benchmark is a portfolio ledger, not an index series"
+  },
+  "corporate_actions": {
+    "status": "APPROVED",
+    "dataset_path": "data/corporate_actions_v20r2.json",
+    "dataset_sha256": "b12caca8ac325904fcbb2758d23a93e97bed8680ed06ed5f29bc5fada9f46e4b",
+    "trusted_lock_path": "artifacts/research_v20r2/plan.lock.json",
+    "trusted_lock_sha256": "cee149ced49ccc81d6e26ee87db5ceb277a647b4ae551e7a3e7817174e96426d"
+  },
+  "trading_calendar": {
+    "status": "APPROVED",
+    "path": "artifacts/prospective_alpha_v1r2/trading_calendar_2026.json",
+    "sha256": "c74a6a24f9cb425042fa7ae0b5a97d3f7650b9856afa0c2801cc891e30d5edc8"
+  },
+  "default_runtime_status": "SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED",
+  "fallback_allowed": false,
+  "execution_authorized": false
+}

@@ -40,3 +40,15 @@ jobs:
           payload=json.loads(lock.read_text());
           bad=[name for name,value in payload['files'].items() if not (root/name).exists() or digest(root/name)!=value];
           assert not bad, 'committed V1r2 freeze mismatch: '+str(bad)"
+      - name: Run V1r3 certification tests explicitly
+        run: python -m pytest -q tests/test_prospective_alpha_v1r3.py
+      - name: Verify committed V1r3 freeze and parent surface
+        run: >-
+          python -c "import hashlib,json,pathlib;
+          root=pathlib.Path('.'); lock=root/'artifacts/prospective_alpha_v1r3/plan.lock.json';
+          digest=lambda p: hashlib.sha256(p.read_bytes()).hexdigest();
+          expected=(lock.with_suffix(lock.suffix+'.sha256')).read_text().strip();
+          assert digest(lock)==expected, 'V1r3 lock sidecar mismatch';
+          payload=json.loads(lock.read_text());
+          bad=[name for name,value in payload['files'].items() if not (root/name).exists() or digest(root/name)!=value];
+          assert not bad, 'committed V1r3 freeze mismatch: '+str(bad)"

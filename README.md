@@ -498,3 +498,17 @@ date,symbol,open,high,low,close,volume,amount
 ```powershell
 python -m unittest discover -s tests -v
 ```
+
+## Prospective Alpha V1r3
+
+新的前瞻证据唯一入口为：
+
+```powershell
+python -m stockpilot.prospective_r3.cli daily
+python -m stockpilot.prospective_r3.cli status
+python -m stockpilot.prospective_r3.cli verify
+```
+
+V1r3不信任观察或标签中的自报`verified=true`字段。每次认证都会重新验证交易日历、全局reservation、V1r3锁、PIT成分、PIT行业、source receipt、raw/normalized文件、实际覆盖率及标签结算来源。V1r2和PIT V2新运行入口均已fail-closed，防止运行证据分叉。
+
+当前V20r2 HFQ市场与公司行动信任链可验证，但仓库没有已冻结批准的官方benchmark开盘序列，因此默认标签结算明确返回`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`，不会fallback或自行假定沪深300数据。V6与`V30r1-forward-r2`保持不变，V31未训练，生产预测和执行权限保持关闭。

@@ -326,3 +326,14 @@
 - 测试：V1r2针对性31项通过；全仓`388 passed, 1 xfailed, 24 subtests passed`。唯一xfail仍是既定V18空regressors夹具。V18锁和sidecar完整；其`research_v16/predict.py`、`stockpilot/api.py`、`stockpilot/cli.py`三项共享依赖在本任务前已演进，事实保留，未修改或重跑V18。
 - 冻结：V1r2锁`0cedde7aead609898d46ed88fb4580b03a2508d5d24d46ec7bec88fb81165d4a`，artifact manifest `41c5de110ee15dd63e1386d8a55896e8302595b2db03cabb784dc218e3646199`。V1、V1r1、PIT V2、V30r2、V6和V18锁证据完整。本轮真实provider网络请求0；周日官方入口在日历检查处拒绝。
 - 当前：继承来源基线1、合格交易观察0、成熟1/5/20日均0；所有质量、因子、训练、替换、生产与执行门禁保持false，V31未训练。下一步只在新的真实上海交易日运行一次唯一入口。
+
+## 036 — 2026-08-31：Prospective Alpha V1r3 证据派生认证与结算接入完成
+
+- 审计确认V1r2 qualification仍信任`verified=true`、64字符哈希及receipt自报覆盖率，daily readiness固定传`labels=[]`，顶层状态只看observation，默认结算未识别具体缺失来源。这些问题均在独立V1r3修复，V1r2及其锁未改。
+- V1r3对每个observation重新验证官方锁、XSHG日历、唯一reservation、PIT成分、PIT行业、观察receipt、盈利预期receipt、raw页、normalized文件、来源身份、冲突重复和实际有效值覆盖率；自报布尔值不参与最终资格公式。认证receipt为运行时append-only证据。
+- readiness统一使用canonical runtime status builder，明确区分继承基线、运行观察和认证合格观察；daily的before/after都加载真实label ledger。成熟日期只计通过独立label evidence认证、至少240只且覆盖至少80%的日期。
+- Settlement trust root已验证V20r2锁sidecar、全部内部绑定、data audit、HFQ市场和公司行动数据。仓库没有冻结批准的官方benchmark开盘序列；V20r2 benchmark是组合账本而非指数序列，因此默认明确阻塞为`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`，没有fallback。
+- 日状态由observation/prediction/settlement共同聚合为COMPLETE、DERIVATIVES_PENDING、PARTIAL、FAILED或INTERRUPTED；`NO_MATURE_LABELS`是正常终态。结算与当天source成功解耦。
+- 验证：V1r3定向32项通过；全仓`420 passed, 1 xfailed, 24 subtests passed`。V18保持原strict xfail，V6、V18、V30/V30r1和V1/V1r1/V1r2/PIT V2冻结资产均未修改。Provider网络请求0。
+- 冻结：V1r3锁`a987f74304718a1aea39d881cad05ec56f252f0bf2fcf37dc2810a518bbd86bb`，artifact manifest `19c04bcc6c57d3117ad3a9a6e89f735ff95bf9b3eb845cb53a87e45aeff597da`。当前继承基线1、运行观察0、认证合格观察0、成熟1/5/20均0；所有readiness保持false，V31未训练。
+- 决策：V1r3达到基础设施收口标准。除非真实运行出现新的CRITICAL/HIGH完整性缺陷，不再主动创建V1r4/V1r5。下一阶段只积累真实交易日observation、第二截面Revision、成熟标签和预注册因子验证。

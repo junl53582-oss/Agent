@@ -63,6 +63,13 @@ tests/test_prospective_alpha_v1r2.py text eol=lf
 artifacts/prospective_alpha_v1r2/** -text
 data/pit_observations_v2/_LEGACY_LOW_LEVEL_ENTRYPOINT_DISABLED/** -text
 
+# Prospective Alpha V1r3 is the final infrastructure revision.  Preserve the
+# frozen code, tests, protocols and V1r2 fail-closed runtime barrier exactly.
+stockpilot/prospective_r3/** -text
+tests/test_prospective_alpha_v1r3.py -text
+artifacts/prospective_alpha_v1r3/** -text
+data/prospective_alpha_v1r2/observations/_V1R3_ACTIVE/** -text
+
 # V18 predates the newer artifact-wide rules; preserve its lock's original
 # Windows bytes so its committed sidecar remains verifiable on Linux CI too.
 artifacts/research_v18/plan.lock.json text eol=crlf

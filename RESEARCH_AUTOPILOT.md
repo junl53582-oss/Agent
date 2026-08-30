@@ -163,15 +163,15 @@ V20r1已通过3项内存/一致性测试，copy-on-write下研究版本回归121
 
 `freeze` 和 `run` 禁止重复覆盖。若存在启动记录但进程已停止，先查异常，不删除启动记录重新来过。
 
-## 当前活动基础设施：Prospective Alpha V1r2
+## 当前活动基础设施：Prospective Alpha V1r3
 
-当前活动版本为 `prospective-alpha-v1r2`，正式排名模型仍为V6，前向概率入口仍为`V30r1-forward-r2`。V1r2锁`0cedde7aead609898d46ed88fb4580b03a2508d5d24d46ec7bec88fb81165d4a`已冻结并复核完整。
+当前活动版本为 `prospective-alpha-v1r3`，正式排名模型仍为V6，前向概率入口仍为`V30r1-forward-r2`。V1r3锁`a987f74304718a1aea39d881cad05ec56f252f0bf2fcf37dc2810a518bbd86bb`已冻结并复核完整。
 
-唯一日常入口：`python -m stockpilot.prospective_r2.cli daily`。旧`pit_data_v2.cli observe`已fail-closed，禁止直接运行。每次仅在真实上海交易日执行一次；日期占位必须发生在任何provider请求前，失败也不允许同日重试。周末或休市日只报告网络前拒绝，不写观察、不计样本。
+唯一日常入口：`python -m stockpilot.prospective_r3.cli daily`。旧V1r2和`pit_data_v2.cli observe`均已fail-closed，禁止直接运行。每次仅在真实上海交易日执行一次；日期占位必须发生在任何provider请求前，失败也不允许同日重试。
 
-当前继承来源基线观察1次，但合格交易日观察0次；1/5/20日合格成熟日期均0。`observation_quality_ready=false`、`label_quality_ready=false`、`factor_validation_ready=false`、`model_training_ready=false`、`replacement_evaluation_ready=false`、`production_prediction_ready=false`、`execution_authorized=false`。禁止训练V31或依据未来观察调公式。
+V1r3 qualification不信任JSON自报布尔值，而是重新计算calendar、reservation、锁、PIT成分/行业、raw/normalized/source receipt、覆盖和标签来源证据。当前继承来源基线1、V1r3运行观察0、认证合格观察0；1/5/20日合格成熟日期均0。所有质量、训练、替换、生产和执行状态保持false，V31未训练。
 
-下一步只在新的真实上海交易日运行一次官方入口，形成第二个真实预期截面后按冻结规则生成Revision；价格、官方基准和公司行动来源都可验证时才结算成熟标签。达到观察/标签最低门槛后先做冻结的因子验证，不自动进入模型训练。
+V20r2 HFQ市场和公司行动信任链已批准；官方benchmark开盘序列未批准，因此结算fail-closed为`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。下一步只在真实上海交易日运行一次V1r3入口；本版本完成后停止主动创建V1r4/V1r5，转入真实observation、第二截面Revision、成熟标签和因子验证。
 
 ## 原后续顺序（当前先完成上面的V21诊断）
 

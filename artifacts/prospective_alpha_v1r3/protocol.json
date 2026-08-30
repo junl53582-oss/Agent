@@ -1,0 +1,21 @@
+{
+  "version": "prospective-alpha-v1r3",
+  "scope": "evidence-derived-certification-and-settlement-integration",
+  "parent": "prospective-alpha-v1r2",
+  "principle": "certification recomputes evidence and never trusts self-declared verified booleans",
+  "minimum_qualified_observation_dates": 20,
+  "minimum_expectation_coverage": 0.8,
+  "minimum_qualified_label_dates_per_horizon": 20,
+  "minimum_label_coverage": 0.8,
+  "minimum_label_symbols": 240,
+  "horizons": [1, 5, 20],
+  "entry_exit_semantics": "T close prediction; T+1 open entry; T+H+1 open exit",
+  "official_daily_entrypoint": "python -m stockpilot.prospective_r3.cli daily",
+  "runtime_data_is_append_only_not_frozen": true,
+  "provider_network_requests_during_build": 0,
+  "model_training_ready": false,
+  "replacement_evaluation_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "v31_trained": false
+}

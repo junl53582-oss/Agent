@@ -1,0 +1,12 @@
+{
+  "active_version": "prospective-alpha-v1r3",
+  "only_authorized_daily_entrypoint": "python -m stockpilot.prospective_r3.cli daily",
+  "v1r2_new_runtime_disabled": true,
+  "v1r2_fail_closed_barrier": "data/prospective_alpha_v1r2/observations/_V1R3_ACTIVE/observation.json",
+  "legacy_pit_v2_remains_disabled": true,
+  "same_date_retry_allowed": false,
+  "provider_fallback_allowed": false,
+  "model_training_ready": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

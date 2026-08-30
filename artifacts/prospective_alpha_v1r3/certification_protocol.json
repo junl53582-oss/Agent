@@ -1,0 +1,12 @@
+{
+  "version": "prospective-alpha-v1r3-certification-v1",
+  "observation_formula": "reservation_verified AND official_lock_verified AND calendar_verified AND membership_verified AND industry_verified AND observation_receipt_verified AND earnings_source_verified AND raw_evidence_verified AND normalized_evidence_verified AND coverage_verified",
+  "self_declared_booleans_are_evidence": false,
+  "calendar": "recompute target membership in frozen XSHG sessions and compare actual calendar hash",
+  "reservation": "verify canonical date path, immutable O_EXCL receipt fields, observation id, no-retry flags and approved V1r3 lock hash",
+  "membership": "rebuild the as-of membership snapshot from the bound history source",
+  "industry": "rebuild the latest effective-date mapping at or before target date",
+  "source": "verify receipt/raw/normalized sidecars and hashes, source identity, no fallback, no conflicts and recomputed valid-value coverage",
+  "label": "verify immutable record, approved market/benchmark files, V20r2 corporate-action trust root, PIT universe size and recomputed returns",
+  "manual_override": false
+}
