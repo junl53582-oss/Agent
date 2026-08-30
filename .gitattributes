@@ -81,4 +81,4 @@ artifacts/research_v18/plan.lock.sha256 text eol=crlf
 artifacts/research_v20r2/data_audit.json text eol=crlf
 artifacts/research_v20r2/plan.lock.json text eol=crlf
 artifacts/research_v20r2/plan.lock.sha256 text eol=crlf
-data/corporate_actions_v20r2.json text eol=crlf
+data/corporate_actions_v20r2.json text eol=lf
