@@ -14,8 +14,12 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - name: Install project
-        run: python -m pip install -r requirements.txt
+      - name: Install native test dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgomp1
+      - name: Install project and test dependencies
+        run: >-
+          python -m pip install -r requirements.txt -e ".[dev]"
+          "scikit-learn>=1.4,<2"
       - name: Clean-checkout compatible test suite
         # Three historical tests require intentionally uncommitted research data:
         # V30's ~717 MB OOS evidence, V6's local market/exposure inputs, and the
