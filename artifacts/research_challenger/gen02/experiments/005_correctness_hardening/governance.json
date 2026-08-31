@@ -1,0 +1,22 @@
+{
+  "2026_labels_read": false,
+  "amendment": "CORRECTNESS_ONLY",
+  "decision": "CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY",
+  "eligibility_changed": true,
+  "execution_authorized": false,
+  "holdout_opened": false,
+  "hyperparameters_changed": false,
+  "model_retrain_reason": "deterministic correctness-only recalculation after maturity and execution fixes",
+  "model_retrained": true,
+  "new_models_added": false,
+  "original_result_preserved": true,
+  "production_prediction_ready": false,
+  "provider_requests": 0,
+  "research_outcome_changed": false,
+  "shadow_eligible": false,
+  "thresholds_changed": false,
+  "v1r4_modified": false,
+  "v30_modified": false,
+  "v30r1_modified": false,
+  "v6_modified": false
+}

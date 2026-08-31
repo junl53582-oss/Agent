@@ -1,0 +1,9 @@
+{
+  "command": "python -m pytest -q",
+  "exit_code": 0,
+  "kind": "full",
+  "new_skip_added": false,
+  "new_xfail_added": false,
+  "recorded_at_utc": "2026-08-31T07:57:56.586351+00:00",
+  "summary": "509 passed, 1 xfailed, 24 subtests passed in 113.50s"
+}

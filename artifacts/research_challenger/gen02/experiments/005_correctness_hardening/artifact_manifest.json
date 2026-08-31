@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-08-31T07:58:48.493876+00:00",
+  "files": {
+    "2025_failure_analysis_corrected.json": "20b3a175771f2bb138f472e2d167af92c547a98fd8135c7273ece62c26d11134",
+    "before_after.json": "2c76d080eecc9356a88af5b963d5acab14d971ec0b1521b1431a3ac18ae1cc53",
+    "bootstrap_corrected.json": "3da563d14bb38696196fd52c42ba2aee516fe9c6710200bd4984e8be7e0c4e11",
+    "candidate_gate_matrix_corrected.csv": "40c7f072ac7fc4ae50b52ac53b206d3dddc409e9fdbb03f75f7e5a165394404e",
+    "decision.json": "93d35368a58db7276f68f784b2367757d3e70ae2b9d1ced4f3e2618dd0a46523",
+    "experiments/006_postrun_eligibility_interpretation/final_interpretation.json": "adf023a1fb6ea8af5953922759865a2981c9a43ca3994d5c0a50168883dc80ea",
+    "experiments/006_postrun_eligibility_interpretation/protocol_amendment.json": "62519e9897f8951d38c41102c4303ce44b8f01347c34ee2396719b4876fda141",
+    "factor_decay_corrected.csv": "163514758babbb58aed3f77186f573c2dcc0a0539988373aebd252bb8f7312b9",
+    "factor_selection_frequency.csv": "2eb665908dd1ae22f32611549f871f1885f5a58a2bf6434f49a4391caa9cb2c4",
+    "factor_selection_stability.csv": "a156a2e16c025e530c1730518259853fb70e2ce7731c54b6fee1264fa78ae4dc",
+    "feature_drift_corrected.csv": "f747181204e9b1d8a97bf5f829e6c125499d737a1c91560ea32cbf131224969c",
+    "full_test_receipt.json": "f8beb518ca53fa7dc80b42d6686921001cba4ab5e70aefee2158643aef0a468c",
+    "governance.json": "019a154628590651fdd2160e2fd6cf5529572a19940e3909cb18869c67e2d7d2",
+    "industry_metrics_corrected.csv": "7bd58c1000b0cd229e250a3f0f285225dc0a6ce8bc90f457d21fcb73d23eacf0",
+    "model_comparison_corrected.csv": "9c061a5c6f3e1142365a7757bdd403851ad6ae4fd0568ec05d53d425fdba4b4f",
+    "portfolio_variants_corrected.csv": "730ffe499355a4d90a16aa32ec607d4c15730427455fe302d5f97fe8d95806bb",
+    "pre_run_plan.lock.json": "6d97835048d5b55acecd16b8dc096ab5994656c66e1263f78d5dc9fc958b4734",
+    "protocol_amendment.json": "9130578872a941a7a22c00442585d03286e904373e665ad5edbe6929bf01607f",
+    "ranking_differences_corrected.csv": "d88399d866471e0283d1381cfa0683c68e14e29993f10609342ec1de7352745a",
+    "regime_metrics_corrected.csv": "576777f9dd9bbd2598602946354e2a4091cacabe3fb8a1f5500ddc2eb30424b2",
+    "report.json": "e4d8ef609b128d2019d64d5fd82d33f2e51f218b82259c28162a4f48b707ef41",
+    "tail_metrics_corrected.csv": "5e1d2013508cfc17a983de8b39dcf7cde7479083d9190ec0b9aa9f90b8dcbeb1",
+    "targeted_test_receipt.json": "3f65780ef39abe7cbff56c7dd35996e7054da3368cdd729708af97bbd5dff72b",
+    "training_window_sensitivity.csv": "dd0eee96dc85a80b1062a2ba7d9129f056c94d04301e161cf0d0d181f7254f9e",
+    "turnover_decomposition_corrected.csv": "8666a0650a29ad3f8aff30c2dbcb780142121763067b26a45132bffe618a5e94",
+    "yearly_metrics_corrected.csv": "7be65ec0c6dbc5ad81a9d2b5f47eb02c5487abaec5233ae1bb288b02918c9cb3"
+  },
+  "manifest_id": "GEN02-CORRECTNESS-HARDENING-005"
+}

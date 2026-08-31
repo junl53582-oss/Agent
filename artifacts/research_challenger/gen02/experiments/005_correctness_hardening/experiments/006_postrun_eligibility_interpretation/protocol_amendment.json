@@ -1,0 +1,13 @@
+{
+  "2026_labels_read": false,
+  "amendment_id": "GEN02-CORRECTNESS-POSTRUN-INTERPRETATION-006",
+  "classification": "POSTRUN_INTERPRETATION_ONLY",
+  "holdout_opened": false,
+  "hyperparameters_changed": false,
+  "model_retrained": false,
+  "performance_recomputed": false,
+  "provider_requests": 0,
+  "reason": "Separate a gate-eligible corrected configuration from the best ineligible diagnostic near miss.",
+  "research_recalculated": false,
+  "thresholds_changed": false
+}

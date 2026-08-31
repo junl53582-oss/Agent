@@ -217,3 +217,11 @@ V31 以唯一 canonical implementation `stockpilot.research_challenger` 完成�
 开发区最佳点估计是LightGBM Regression、20日、等权Top30：RankIC 0.04373、ICIR 0.22589、正比例58.42%、净研究代理Alpha +13.67%、最大回撤-17.83%、年化换手5.68倍。但2025 RankIC为-0.03134，Top-decile IC为-0.06625，预注册年度稳定性门禁失败。5日buffer Top20虽有+1.43%净研究代理Alpha和正2025 RankIC，但年化换手15.79倍，超过冻结的15倍门槛。不得事后放宽任一门槛。
 
 最终裁决`GEN2_REJECTED`、`shadow_eligible=false`，有效operational amendment锁为`c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d`，最终锁为`5a826a4c7fca26bf6cd60abc7a1cc9c8c052fc52dd75ada3c8925373ada16405`，artifact manifest为`c7d33d8f03c05042ed97c3623b4e3111d5d1d7b1535aeacc9eb7e1cd751fcb22`。V6保持champion。2026历史确认未运行且不允许运行；正式prospective、production和execution状态均未改变。下一步只回到V1r4真实前向积累，等待新的、预注册日期之后的未来证据；不得在已见2020–2025或已污染2026上继续调Top-K、窗口、buffer、权重或模型。
+
+## Gen02 correctness-only amendment：等待人工重新裁决，不自动晋级
+
+Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：按所选20日周期解释factor decay；把冻结的`maximum_sector_weight <= 0.45`绑定到逐调仓最坏行业权重；复用V20r2状态账本处理卖出不可成交、资金占用与终期不可成交；严格分离eligible与diagnostic near-miss；拆分算术成本率之和与复利总收益拖累；并在Parquet扫描层同时要求`date < 2026-01-01`及`label_end_date_20d < 2026-01-01`，排除跨入2026才成熟的2025标签。
+
+重算意外产生`CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY`：LightGBM Regression/20D/sector-balanced Top20按纠正后的机械门禁为8/8，但Top-K净研究代理Alpha相对V6的moving-block bootstrap 95%区间仍跨0。依用户预注册治理规则，冻结的操作性裁决仍为`GEN2_REJECTED`，V6仍是champion；`shadow_eligible=false`、`production_prediction_ready=false`、`execution_authorized=false`，不得自动晋级或创建Gen2 shadow。只有人工重新裁决才能改变研究状态。
+
+原Gen02 artifact未覆盖。correctness-only amendment最终锁为`2f6a670279aeccf69dc7ed596179562ad129ed28f53115e151d1d3db7d2a05bc`，manifest为`d0a0d14e241395e197ea66573be2980fe40b35381fa42ebfc2beb71aca064b79`；post-run解释锁为`fa2789e6c4315f13ec91a5647d61bfdf31c49bf52915362ade3c9deab92b1bc2`。本轮2026标签读取0、holdout打开0、provider请求0、超参数/阈值/模型族变化0。下一步只执行V1r4真实前向观察与成熟结算；不再重算Gen02或使用已见历史结果调参。

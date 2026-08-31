@@ -1,0 +1,121 @@
+{
+  "alpha_field_semantics": "research_proxy_alpha_only",
+  "created_at_utc": "2026-08-31T07:52:51.876810+00:00",
+  "data": {
+    "2026_labels_read": false,
+    "dataset_sha256": "8aa5e3f2817d6bf8e5da3bd265b4f078206b58b10ee770907233595c59342b02",
+    "date_max": "2025-12-02",
+    "date_min": "2010-07-02",
+    "latest_label_end_20d": "2025-12-31",
+    "latest_label_end_5d": "2025-12-10",
+    "manifest_rows": 947079,
+    "manifest_sha256": "7b1e03295ba7f63ad681d9f9c65b65bc086eddb57b708cc3905471ea0ca8441c",
+    "parquet_filters": [
+      "date < 2026-01-01",
+      "label_end_date_20d < 2026-01-01"
+    ],
+    "pit_checks": {
+      "fundamentals_pit": true,
+      "industry_pit": true,
+      "membership_pit": true
+    },
+    "rows": 903296,
+    "source_hashes": {
+      "data\\fundamentals_pit_v10_extended.csv": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+      "data\\industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+      "data\\market_history_v10_hfq.csv": "fcc1ea387719476410f8d4dcc49840e74bd087aec351ed02cb40d1318dd45fc3",
+      "data\\universes\\000300\\history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1"
+    },
+    "symbols": 735
+  },
+  "decision": "CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY",
+  "diagnostic_near_miss": {
+    "all_gates_passed": true,
+    "annualized_turnover": 7.520850670320099,
+    "gates": "{\"drawdown_acceptable\": true, \"net_research_proxy_alpha_positive\": true, \"positive_ratio\": true, \"rank_ic_2025_positive\": true, \"rank_ic_ir_positive\": true, \"rank_ic_positive\": true, \"sector_concentration_acceptable\": true, \"turnover_acceptable\": true}",
+    "gates_passed": 8,
+    "horizon": 20,
+    "max_drawdown": -0.2252041136074906,
+    "mean_maximum_sector_weight": 0.34618925734525313,
+    "mean_rank_ic": 0.04987666852835187,
+    "model": "lightgbm_regression",
+    "net_research_proxy_alpha": 0.024933920426399192,
+    "p95_maximum_sector_weight": 0.4088915138190584,
+    "portfolio_policy": "sector_balanced_top20",
+    "positive_rank_ic_ratio": 0.592747559274756,
+    "rank_ic_2025": 0.001248770082136381,
+    "rank_ic_ir": 0.26534749011677106,
+    "selection_semantics": "DIAGNOSTIC_NEAR_MISS_NOT_ELIGIBLE",
+    "worst_maximum_sector_weight": 0.42003768015326165
+  },
+  "eligible_configuration": {
+    "all_gates_passed": true,
+    "annualized_turnover": 7.520850670320099,
+    "gates": "{\"drawdown_acceptable\": true, \"net_research_proxy_alpha_positive\": true, \"positive_ratio\": true, \"rank_ic_2025_positive\": true, \"rank_ic_ir_positive\": true, \"rank_ic_positive\": true, \"sector_concentration_acceptable\": true, \"turnover_acceptable\": true}",
+    "gates_passed": 8,
+    "horizon": 20,
+    "max_drawdown": -0.2252041136074906,
+    "mean_maximum_sector_weight": 0.34618925734525313,
+    "mean_rank_ic": 0.04987666852835187,
+    "model": "lightgbm_regression",
+    "net_research_proxy_alpha": 0.024933920426399192,
+    "p95_maximum_sector_weight": 0.4088915138190584,
+    "portfolio_policy": "sector_balanced_top20",
+    "positive_rank_ic_ratio": 0.592747559274756,
+    "rank_ic_2025": 0.001248770082136381,
+    "rank_ic_ir": 0.26534749011677106,
+    "selection_semantics": "FROZEN_PROTOCOL_ELIGIBLE",
+    "worst_maximum_sector_weight": 0.42003768015326165
+  },
+  "exit_tradability_verdict": {
+    "implemented": true,
+    "limitations": [
+      "missing quote is an observable non-trading state, not independently verified suspension metadata",
+      "price-limit test is an approximation without order-book depth",
+      "HFQ economic units and fractional shares remain research approximations"
+    ],
+    "sell_failure_does_not_release_cash": true,
+    "sell_failure_retains_position": true,
+    "status": "CANONICAL_STATEFUL_RESEARCH_LEDGER_NOT_PRODUCTION_REALISTIC",
+    "terminal_untradable_position_not_fake_liquidated": true
+  },
+  "gen2_rejected_remains": false,
+  "governance": {
+    "2026_labels_read": false,
+    "amendment": "CORRECTNESS_ONLY",
+    "decision": "CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY",
+    "eligibility_changed": true,
+    "execution_authorized": false,
+    "holdout_opened": false,
+    "hyperparameters_changed": false,
+    "model_retrain_reason": "deterministic correctness-only recalculation after maturity and execution fixes",
+    "model_retrained": true,
+    "new_models_added": false,
+    "original_result_preserved": true,
+    "production_prediction_ready": false,
+    "provider_requests": 0,
+    "research_outcome_changed": false,
+    "shadow_eligible": false,
+    "thresholds_changed": false,
+    "v1r4_modified": false,
+    "v30_modified": false,
+    "v30r1_modified": false,
+    "v6_modified": false
+  },
+  "official_benchmark_status": "UNAPPROVED",
+  "price_and_execution_evidence": {
+    "2026_market_rows_used": 0,
+    "canonical_ledger": "research_v20r2.ledger.Ledger",
+    "corporate_action_events": 2,
+    "corporate_action_path": "data/corporate_actions_v20r2.json",
+    "corporate_action_sha256": "b12caca8ac325904fcbb2758d23a93e97bed8680ed06ed5f29bc5fada9f46e4b",
+    "market_date_max": "2025-12-31",
+    "market_path": "data/market_history_v10_hfq.csv",
+    "market_rows_loaded": 736345,
+    "market_sha256": "fcc1ea387719476410f8d4dcc49840e74bd087aec351ed02cb40d1318dd45fc3"
+  },
+  "prospective_boundary": "V1r4 observations and V30r1-forward-r2 predictions do not constitute prospective validation of the Gen2 LightGBM challenger. Gen2 remains rejected and no Gen2 prospective system is created by this amendment.",
+  "report_id": "GEN02-CORRECTNESS-HARDENING-005",
+  "transaction_cost_semantics": "transaction_cost_rate_sum is the arithmetic sum of per-period cost rates; compounded_total_return_drag equals gross_total_return minus net_total_return",
+  "v6_remains_champion": true
+}

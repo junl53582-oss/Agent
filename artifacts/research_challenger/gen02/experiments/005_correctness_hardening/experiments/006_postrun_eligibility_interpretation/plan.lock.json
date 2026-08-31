@@ -1,0 +1,15 @@
+{
+  "2026_labels_read": false,
+  "created_at_utc": "2026-08-31T07:54:56.462806+00:00",
+  "files": {
+    "artifacts/research_challenger/gen02/experiments/005_correctness_hardening/candidate_gate_matrix_corrected.csv": "40c7f072ac7fc4ae50b52ac53b206d3dddc409e9fdbb03f75f7e5a165394404e",
+    "final_interpretation.json": "adf023a1fb6ea8af5953922759865a2981c9a43ca3994d5c0a50168883dc80ea",
+    "protocol_amendment.json": "62519e9897f8951d38c41102c4303ce44b8f01347c34ee2396719b4876fda141"
+  },
+  "holdout_opened": false,
+  "lock_id": "GEN02-CORRECTNESS-POSTRUN-INTERPRETATION-006",
+  "new_code_sha256": "d23eb5dc7b3abe9e666b319b9e3642f7614c4a4d5752aa1e97d0b1d15908a584",
+  "new_test_sha256": "9fef88f44926a74adafeed503da788e3d2abda609d47bb5c3db1c99ecad56f54",
+  "original_code_sha256": "6d3b02b79976c7f5b4527c69387105a23699b3c7ccb13ca13eed4985e9f294b5",
+  "research_recalculated": false
+}

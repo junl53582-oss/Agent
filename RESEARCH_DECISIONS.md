@@ -378,3 +378,15 @@
 - 统计证据：最佳配置相对V6的RankIC差moving-block bootstrap均值+0.06550，95%区间[+0.03733,+0.09781]；Top30净研究代理Alpha单期差均值+0.00543，但95%区间[-0.00101,+0.01450]跨零。所有值均为development-only，不是历史确认或官方benchmark Alpha。
 - 裁决：最佳点估计LGB Regression/20D/equal Top30通过8项绝对门禁中的7项，唯一失败是2025 RankIC必须为正；`GEN2_REJECTED`、`shadow_eligible=false`、`historical_confirmation_passed=false`。V6继续champion，V30r1-forward-r2及V1r4不变，production和execution均false。
 - 验证：最终代码形态的Gen02+V31+V1r4定向75项通过；全仓`495 passed, 1 xfailed, 24 subtests passed`，V18仍为唯一原strict xfail，没有新增skip/xfail。Gen02最终锁`5a826a4c7fca26bf6cd60abc7a1cc9c8c052fc52dd75ada3c8925373ada16405`，递归artifact manifest `c7d33d8f03c05042ed97c3623b4e3111d5d1d7b1535aeacc9eb7e1cd751fcb22`。下一步不再用已见2020–2025或已污染2026调参，只积累V1r4不可变真实前向观察、预测和成熟结算；新的challenger必须等待新的预注册未来起点。
+
+## 041 — 2026-08-31：Gen02 correctness hardening 与研究治理裁决
+
+- 审计发现六项指定缺陷和一项更高优先级成熟性缺陷：20日挑战者错误引用5日factor decay；sector gate把“最坏值”实现成“平均最大值”；组合把目标外旧仓视为已卖并可能伪造终期清算；候选排序在冻结规则前插入`gates_passed`；成本字段混淆算术费率和复利收益拖累；V1r4与Gen02 prospective边界不明确；此外，仅按`date < 2026`读取会包含标签结束日在2026年的2025样本。
+- 修复作为独立`CORRECTNESS_ONLY` amendment完成，未覆盖原Gen02证据。成熟安全读取把数据缩至903,296行、735只，决策日截至2025-12-02，20日标签结束日截至2025-12-31；2026标签与performance读取均为0，holdout未打开。
+- 交易账本复用`research_v20r2.ledger.Ledger`和`PriceBook`，绑定`data/market_history_v10_hfq.csv`及冻结公司行动哈希；卖出失败不释放现金、仓位继续承担收益，买入受现金约束，终期不可卖不伪造平仓。当前仍只能称`CANONICAL_STATEFUL_RESEARCH_LEDGER_NOT_PRODUCTION_REALISTIC`：缺少独立停牌元数据和订单簿深度，涨跌停判断为近似，HFQ与碎股是研究口径。
+- 科学影响：同一LightGBM Regression/20日排序的RankIC从0.04373变为0.04988，2025 RankIC从-0.03134变为+0.00125，主因是排除跨2026才成熟的标签；Top-decile IC从-0.06625变为-0.07105，尾部没有改善。原equal Top30在纠正账本下净研究代理Alpha为+18.80%、年化换手5.90、最大回撤-17.84%，但最坏行业权重76.79%，正确失败sector gate。
+- 纠正后机械门禁出现一个eligible配置：LightGBM Regression/20D/sector-balanced Top20，RankIC 0.04988、ICIR 0.26535、正比例59.27%、2025 RankIC +0.00125、净研究代理Alpha +2.49%、最大回撤-22.52%、年化换手7.52、最坏行业权重42.00%，8/8门禁通过。然而相对V6的Top-K净代理Alpha差bootstrap 95%区间`[-0.00528,+0.01191]`跨0；不能声称交易收益改善获得统计确认。
+- 依预注册规则触发`CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY`并立即停止自动晋级。操作性冻结裁决仍为`GEN2_REJECTED`，`shadow_eligible=false`，V6保持champion；必须人工重新裁决，不能自动启动Gen02 prospective shadow。
+- 治理：超参数、threshold、feature、target、horizon、模型族均未改变；V6/V30/V30r1/V1r4未修改；provider请求0。确定性正确性重算模型1次，不是调参或新研究代际。V1r4 observation和V30r1-forward-r2预测不构成Gen02 LightGBM的prospective验证。
+- 验证：最终定向`110 passed`；全仓`509 passed, 1 xfailed, 24 subtests passed`，唯一xfail仍为冻结V18夹具，无新增skip/xfail。correctness amendment最终锁`2f6a670279aeccf69dc7ed596179562ad129ed28f53115e151d1d3db7d2a05bc`，manifest `d0a0d14e241395e197ea66573be2980fe40b35381fa42ebfc2beb71aca064b79`；post-run解释锁`fa2789e6c4315f13ec91a5647d61bfdf31c49bf52915362ade3c9deab92b1bc2`。
+- 下一步：不重跑或调参Gen02。保持正式状态全部false，只继续V1r4从新真实交易日起追加不可变观察、预测与成熟结算；官方benchmark未批准前继续fail closed。

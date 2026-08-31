@@ -1,0 +1,21 @@
+{
+  "2026_labels_read": false,
+  "created_at_utc": "2026-08-31T07:58:48.533318+00:00",
+  "decision": "CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY",
+  "execution_authorized": false,
+  "files": {
+    "artifacts/prospective_alpha_v1r4/plan.lock.json": "39a6dfd2f63b68d1dfad77c039240ad5526786d1d2a0cfa67fd96426f27e1c1f",
+    "artifacts/research_challenger/gen02/experiments/005_correctness_hardening/artifact_manifest.json": "d0a0d14e241395e197ea66573be2980fe40b35381fa42ebfc2beb71aca064b79",
+    "artifacts/research_challenger/gen02/plan.lock.json": "5a826a4c7fca26bf6cd60abc7a1cc9c8c052fc52dd75ada3c8925373ada16405",
+    "artifacts/research_v20r2/plan.lock.json": "cee149ced49ccc81d6e26ee87db5ceb277a647b4ae551e7a3e7817174e96426d",
+    "artifacts/research_v6/plan.lock.json": "94edfc9e05bd30a58a14e7e11a988a1b7fb0d5358e462df1b20cb23dca4c0f4d",
+    "stockpilot/research_challenger/gen02_correctness.py": "d23eb5dc7b3abe9e666b319b9e3642f7614c4a4d5752aa1e97d0b1d15908a584",
+    "tests/test_research_challenger_gen02_correctness.py": "9fef88f44926a74adafeed503da788e3d2abda609d47bb5c3db1c99ecad56f54"
+  },
+  "holdout_opened": false,
+  "hyperparameters_changed": false,
+  "lock_id": "GEN02-CORRECTNESS-HARDENING-005-FINAL",
+  "production_prediction_ready": false,
+  "shadow_eligible": false,
+  "thresholds_changed": false
+}

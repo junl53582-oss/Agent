@@ -1,0 +1,52 @@
+{
+  "amendment_id": "GEN02-CORRECTNESS-HARDENING-005",
+  "benchmark_status": "UNAPPROVED",
+  "changes": [
+    "maturity-safe label filter before 2026",
+    "horizon-aware factor decay",
+    "worst-snapshot maximum sector weight gate",
+    "V20r2 stateful sell/cash/corporate-action ledger",
+    "frozen eligible selection separated from diagnostic near miss",
+    "cost-rate sum separated from compounded total-return drag",
+    "V1r4 evidence explicitly excluded from Gen2 validation"
+  ],
+  "classification": "CORRECTNESS_ONLY_AMENDMENT",
+  "execution_authorized": false,
+  "parent_commit": "0bf59670496ef86f37608c1682f6573473ec6072",
+  "parent_effective_lock": "c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d",
+  "portfolio_status": "RESEARCH_PROXY_ONLY",
+  "production_prediction_ready": false,
+  "prospective_boundary": "V1r4 observations and V30r1-forward-r2 predictions do not constitute prospective validation of the Gen2 LightGBM challenger. Gen2 remains rejected and no Gen2 prospective system is created by this amendment.",
+  "sector_gate": {
+    "metric": "worst_maximum_sector_weight",
+    "operator": "<=",
+    "reason": "frozen protocol says maximum, not average maximum",
+    "threshold": 0.45
+  },
+  "shadow_eligible": false,
+  "unchanged": {
+    "2026_labels_read": false,
+    "costs_changed": false,
+    "development_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "holdout_opened": false,
+    "horizons": [
+      5,
+      20
+    ],
+    "hyperparameters_changed": false,
+    "models": [
+      "ridge",
+      "lightgbm_regression"
+    ],
+    "new_models_added": false,
+    "provider_requests": 0,
+    "thresholds_changed": false
+  }
+}
