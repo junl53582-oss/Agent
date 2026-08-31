@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-28T19:37:08.472384+00:00",
+  "generated_at_utc": "2026-08-31T18:10:25.106103+00:00",
   "model": "research_v16_wordchar_ensemble_text",
   "latest_prediction_date": "2026-08-21",
   "training_cutoff": "2026-01-01 (embargoed)",
@@ -7,8 +7,8 @@
   "candidate_count": 30,
   "market_timing": {
     "rule": "prior 20 trading-day CSI300 index return > 0",
-    "timing_date": "2026-08-28",
-    "prior_20d_return": 0.004572599276404743,
+    "timing_date": "2026-08-31",
+    "prior_20d_return": 0.018029221822599917,
     "in_market": true,
     "note": "V17 timing rule, in-sample win rate 94%, pending 126-day shadow test"
   },

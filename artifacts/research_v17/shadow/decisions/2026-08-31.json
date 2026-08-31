@@ -1,0 +1,10 @@
+{
+  "date": "2026-08-31",
+  "recorded_at_utc": "2026-08-31T17:34:45.904774+00:00",
+  "benchmark": "000300 index close-to-close",
+  "window_trading_days": 20,
+  "threshold": 0.0,
+  "prior_20d_return": 0.018029221822599917,
+  "in_market": true,
+  "execution_authorized": false
+}
