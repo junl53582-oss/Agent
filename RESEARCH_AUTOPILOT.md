@@ -235,3 +235,12 @@ Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：
 独立入口为`python -m stockpilot.research_challenger.prospective_gen2 verify|status|predict|settle`，数据根为`data/prospective_gen2`，与V1r4/V30r1证据完全分离。每日预测、manifest和20日成熟结算均为append-only并带SHA-256；旧预测不能覆盖，结算只读冻结score。官方benchmark仍未批准，只允许research-proxy指标，official alpha继续fail-closed。
 
 007人工裁决锁为`a214d9bf279c01cb25fddbfeacaed88416a4acb50b3179c16fe65484578335b3`。首次锁因记录Windows绝对代码路径而不能在clean checkout复算，原证据保留；纯路径可移植性008修订未改变任何决策或策略，有效锁为`1abb4bf9c65875b4e96918f931bfa78299ee5aa1938b4e02acd8fc2614a92022`。下一步只从2026-09-01或之后的真实新交易日开始，在本地PIT面板完整且锁验证通过时追加一次research-only预测；不得回填或自动晋级。
+## Gen2 Prospective Runtime Hardening 009
+
+- 009 只修正前向运行 correctness，不重开历史研究，不改变 V6/Gen2 裁决。
+- 新 canonical 入口为 `python -m stockpilot.research_challenger.prospective_gen2_runtime`；原 007/008 模块及锁保持不变。
+- 每日顺序固定为 `18:30时间门禁 -> seal-inputs -> read-only preflight -> atomic reservation -> predict`。任一输入、PIT、哈希或时间门禁失败即停止。
+- 每日 score 与组合分离：仅从 2026-09-01 锚定的每 20 个交易日产生 `REBALANCE`，其他日为 `HOLD`；组合成本使用 canonical `research_v20r2.ledger.Ledger`。
+- 20D settlement 以真实上海日期为权威时钟，`as_of` 仅 fixture test mode 可用；市场数据必须有不可变 witness 和公司行动哈希。
+- research proxy 统一为 PIT benchmark constituent-weighted；official benchmark 仍 `UNAPPROVED`。
+- 本轮不生成真实 prediction，Provider 请求为 0，`production_prediction_ready=false`、`execution_authorized=false`。

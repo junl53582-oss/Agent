@@ -403,3 +403,11 @@
 - 冻结：007人工裁决锁`a214d9bf279c01cb25fddbfeacaed88416a4acb50b3179c16fe65484578335b3`、核心artifact manifest `dfc5f95dd30b4c1ba055346fe6d5eee50b065c15a67c1c62c850641095ea95f2`。007锁错误记录Windows绝对代码路径，未覆盖；008纯operational portability修订以仓库相对路径重新绑定同一决定，有效锁`1abb4bf9c65875b4e96918f931bfa78299ee5aa1938b4e02acd8fc2614a92022`。
 - 验证：新增29项专项测试；Gen2/V31/V20r2/V1r4集成138项通过；全仓`537 passed, 1 xfailed, 24 subtests passed`，唯一xfail仍为冻结V18，无新增skip/xfail。
 - 状态：`production_prediction_ready=false`、`execution_authorized=false`、`automatic_promotion_allowed=false`、`production_shadow_eligible=false`。下一步仅从2026-09-01起，在真实PIT输入完整时追加新的research-only预测，不回填、不交易。
+## 043. Gen2 Prospective Runtime Hardening 009
+
+- 结果：确认 008 后前向实现存在默认 scorer 缺 horizons、无输入封存、settlement 信任调用者 `as_of`、每日 Top20 与 20D 调仓口径冲突、无 stateful cost ledger、research proxy 误用等口径。
+- 决策：不改写已冻结 007/008，新增 009 独立 runtime 修订，分类为 `PROSPECTIVE_RUNTIME_CORRECTNESS_ONLY`。
+- 实施：新入口强制 18:30、不可变 input seal、只读 preflight、原子 reservation、target-date PIT/universe 门禁、动态 label provenance、20交易日锚定调仓、canonical stateful Ledger 与 PIT benchmark-weighted proxy。
+- 安全：V6 仍为 champion，Gen2 未晋级；模型/特征/训练/组合/成本策略均未改，2026 holdout 未打开，真实 Provider 请求 0，未生成首条真实预测。
+- 验收：009 targeted 与旧 Gen2/V1r4 integration 先通过，再运行全仓测试并冻结 009。
+- 实际验收：009 targeted `34 passed`，Gen2/V1r4 integration `110 passed`，全仓 `572 passed, 1 xfailed, 24 subtests passed`。009 锁为 `29e3066081be0489499b26833eb78eea040b6916fe44d1a7552a7f47137efb06`，artifact manifest 为 `496ad4fb08792555266f792d7377d4bfc4be5646ffa9f7387d6760047fe56acf`。
