@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "V31-CI-VERIFIER-FIX-002",
+  "historical_oos_rerun": false,
+  "targeted_v31": "26 passed",
+  "integration_v31_v1r4_v6_forward_r2": "64 passed",
+  "full_repository": "479 passed, 1 xfailed, 24 subtests passed",
+  "v18_xfail": "preserved exact historical empty-regressors fixture classification",
+  "v31_operational_lock_intact": true,
+  "all_v1r4_parent_locks_intact": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

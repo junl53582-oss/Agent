@@ -1,0 +1,14 @@
+{
+  "experiment": "V31_CLEAN_CHECKOUT_ACCEPTANCE",
+  "github_actions_run_id": 33337053516,
+  "github_actions_job_id": 99325726003,
+  "commit_sha": "5754b49d8bf37a09d16b0c264dcf83ddb9d19837",
+  "status": "CI_VERIFIER_IMPLEMENTATION_FAILURE",
+  "failed_step": "Verify committed V31 protocol and code lock",
+  "root_cause": "The workflow verified the preserved original failed lock instead of the effective runtime amendment lock.",
+  "v31_targeted_tests_passed": true,
+  "v1r4_and_parent_steps_passed": true,
+  "research_outputs_modified": false,
+  "historical_oos_rerun_allowed": false,
+  "result_driven_changes_allowed": false
+}

@@ -181,7 +181,7 @@ V20r2 HFQ市场和公司行动信任链已批准；官方benchmark开盘序列�
 
 ## 当前研究结论：V31已拒绝，停止结果驱动重跑
 
-V31 以唯一 canonical implementation `stockpilot.research_challenger` 完成预注册的 2020–2025 六年 Purged Walk-Forward。有效修订锁为 `7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449`；首次运行在输出任何指标前因非有限成熟标签转换错误失败，失败证据保留，修订只过滤非有限训练标签，未改变目标、特征、模型、参数、OOS 或晋级门槛。
+V31 以唯一 canonical implementation `stockpilot.research_challenger` 完成预注册的 2020–2025 六年 Purged Walk-Forward。模型运行修订锁为 `7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449`；首次运行在输出任何指标前因非有限成熟标签转换错误失败，失败证据保留，修订只过滤非有限训练标签，未改变目标、特征、模型、参数、OOS 或晋级门槛。首次GitHub验收的测试均通过，但workflow误验原始失败锁；纯CI修订未重跑研究，最新operational verifier锁为`6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`。
 
 最终预注册 LambdaRank 的 5日 RankIC 为 -0.02370，低于 V6 的 -0.00469；只有 1/6 年优于 V6。Top20 净 Alpha 点估计改善，但 block bootstrap 95% 区间跨零，最大回撤 -62.43%，且年度、regime、行业稳定性门禁失败。结论为 `V31_REJECTED`，V6 保持 champion，V31 不进入 candidate 或 prospective shadow。
 

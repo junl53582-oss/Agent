@@ -1,0 +1,16 @@
+{
+  "amendment_id": "V31-CI-VERIFIER-FIX-002",
+  "parent_effective_plan_lock_sha256": "7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449",
+  "allowed_change": "Make local and GitHub clean-checkout verification select and bind the latest immutable V31 amendment lock.",
+  "historical_oos_already_observed": true,
+  "research_outputs_changed": false,
+  "target_definitions_changed": false,
+  "feature_universe_changed": false,
+  "factor_gates_changed": false,
+  "model_families_changed": false,
+  "model_parameters_changed": false,
+  "oos_years_changed": false,
+  "promotion_gates_changed": false,
+  "random_seed_changed": false,
+  "research_rerun_authorized": false
+}

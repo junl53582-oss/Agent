@@ -31,7 +31,9 @@ PARENT_PATHS = (
     "artifacts/prediction_v30/cache/manifest.json",
 )
 
-AMENDMENT_ROOT = Path("artifacts/research_v31/experiments/001_runtime_fix")
+RUNTIME_AMENDMENT_ROOT = Path("artifacts/research_v31/experiments/001_runtime_fix")
+CI_AMENDMENT_ROOT = Path("artifacts/research_v31/experiments/002_ci_verifier_fix")
+AMENDMENT_ROOTS = (RUNTIME_AMENDMENT_ROOT, CI_AMENDMENT_ROOT)
 
 
 def _sidecar(path: Path) -> Path:
@@ -80,7 +82,7 @@ def freeze_plan(settings: ChallengerSettings | None = None) -> dict:
 def freeze_amendment(settings: ChallengerSettings | None = None) -> dict:
     settings = settings or ChallengerSettings()
     original = settings.artifact_dir / "plan.lock.json"
-    target = AMENDMENT_ROOT / "plan.lock.json"
+    target = RUNTIME_AMENDMENT_ROOT / "plan.lock.json"
     if target.exists():
         raise RuntimeError("V31 amendment lock already exists")
     if not original.exists() or not _sidecar(original).exists():
@@ -88,8 +90,8 @@ def freeze_amendment(settings: ChallengerSettings | None = None) -> dict:
     original_sha = sha256(original)
     if _sidecar(original).read_text().strip().lower() != original_sha:
         raise RuntimeError("V31 original failed lock sidecar mismatch")
-    amendment = AMENDMENT_ROOT / "protocol_amendment.json"
-    failure = AMENDMENT_ROOT / "failure_receipt.json"
+    amendment = RUNTIME_AMENDMENT_ROOT / "protocol_amendment.json"
+    failure = RUNTIME_AMENDMENT_ROOT / "failure_receipt.json"
     for path in (amendment, failure):
         if not path.exists() or not _sidecar(path).exists():
             raise RuntimeError(f"V31 amendment evidence missing: {path}")
@@ -121,14 +123,70 @@ def freeze_amendment(settings: ChallengerSettings | None = None) -> dict:
     return {"lock_sha256": sha256(target), "intact": True, "amendment": True}
 
 
+def freeze_ci_amendment(settings: ChallengerSettings | None = None) -> dict:
+    """Freeze an operational-only correction to the clean-checkout verifier."""
+    settings = settings or ChallengerSettings()
+    parent = RUNTIME_AMENDMENT_ROOT / "plan.lock.json"
+    target = CI_AMENDMENT_ROOT / "plan.lock.json"
+    if target.exists():
+        raise RuntimeError("V31 CI amendment lock already exists")
+    if not parent.exists() or not _sidecar(parent).exists():
+        raise RuntimeError("V31 runtime amendment lock is missing")
+    parent_sha = sha256(parent)
+    if _sidecar(parent).read_text().strip().lower() != parent_sha:
+        raise RuntimeError("V31 runtime amendment lock sidecar mismatch")
+    amendment = CI_AMENDMENT_ROOT / "protocol_amendment.json"
+    failure = CI_AMENDMENT_ROOT / "failure_receipt.json"
+    for path in (amendment, failure):
+        if not path.exists() or not _sidecar(path).exists():
+            raise RuntimeError(f"V31 CI amendment evidence missing: {path}")
+        if _sidecar(path).read_text().strip().lower() != sha256(path):
+            raise RuntimeError(f"V31 CI amendment evidence sidecar mismatch: {path}")
+    paths = [
+        settings.protocol_path,
+        amendment,
+        failure,
+        settings.artifact_dir / "artifact_manifest.json",
+        *map(Path, CODE_PATHS),
+        *map(Path, PARENT_PATHS),
+    ]
+    missing = [str(path) for path in paths if not path.exists()]
+    if missing:
+        raise RuntimeError(f"V31 CI amendment inputs missing: {missing}")
+    payload = {
+        "model_id": settings.model_id,
+        "amendment_id": "V31-CI-VERIFIER-FIX-002",
+        "frozen_at_utc": datetime.now(timezone.utc).isoformat(),
+        "parent_effective_plan_lock_sha256": parent_sha,
+        "historical_oos_already_observed": True,
+        "research_outputs_modified": False,
+        "research_rerun_authorized": False,
+        "target_or_gate_change": False,
+        "files": {path.as_posix(): sha256(path) for path in paths},
+        "production_prediction_ready": False,
+        "execution_authorized": False,
+    }
+    target.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    _sidecar(target).write_text(sha256(target) + "\n", encoding="ascii")
+    return {
+        "lock_sha256": sha256(target),
+        "intact": True,
+        "amendment": True,
+        "amendment_id": payload["amendment_id"],
+    }
+
+
+def _effective_lock_target(settings: ChallengerSettings) -> Path:
+    for root in reversed(AMENDMENT_ROOTS):
+        candidate = root / "plan.lock.json"
+        if candidate.exists():
+            return candidate
+    return settings.artifact_dir / "plan.lock.json"
+
+
 def verify_plan_lock(settings: ChallengerSettings | None = None) -> dict:
     settings = settings or ChallengerSettings()
-    amendment_target = AMENDMENT_ROOT / "plan.lock.json"
-    target = (
-        amendment_target
-        if amendment_target.exists()
-        else settings.artifact_dir / "plan.lock.json"
-    )
+    target = _effective_lock_target(settings)
     sidecar = _sidecar(target)
     if not target.exists() or not sidecar.exists():
         return {"intact": False, "mismatches": ["plan.lock.json"], "lock_sha256": None}
@@ -145,7 +203,8 @@ def verify_plan_lock(settings: ChallengerSettings | None = None) -> dict:
         "intact": not mismatches,
         "mismatches": mismatches,
         "lock_sha256": actual_lock,
-        "amendment": target == amendment_target,
+        "amendment": target.parent in AMENDMENT_ROOTS,
+        "amendment_id": payload.get("amendment_id"),
         "production_prediction_ready": False,
         "execution_authorized": False,
     }

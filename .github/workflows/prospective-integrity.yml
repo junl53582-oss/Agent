@@ -69,7 +69,7 @@ jobs:
       - name: Verify committed V31 protocol and code lock
         run: >-
           python -c "import hashlib,json,pathlib;
-          root=pathlib.Path('.'); lock=root/'artifacts/research_v31/plan.lock.json';
+          root=pathlib.Path('.'); lock=root/'artifacts/research_v31/experiments/002_ci_verifier_fix/plan.lock.json';
           digest=lambda p: hashlib.sha256(p.read_bytes()).hexdigest();
           expected=(lock.with_suffix(lock.suffix+'.sha256')).read_text().strip();
           assert digest(lock)==expected, 'V31 lock sidecar mismatch';

@@ -358,3 +358,10 @@
 - 裁决：`V31_REJECTED`，`promotion_to_candidate=false`，V6继续champion。不得因Ridge或LightGBM regression事后看起来更好而切换预注册挑战者或重跑；任何新假设必须等待新增、可审计且未用于本轮决策的信息，并另行预注册。
 - 验证：V31定向25项通过；V31+V1r4+V6+forward-r2集成63项通过；全仓`478 passed, 1 xfailed, 24 subtests passed`，V18精确strict xfail保留。结果manifest SHA-256为`af6d7bb9a71faab9fdca603276136d9df321f6edeeb2c31b37ff0b297983f103`；生产预测与执行权限仍为false。
 - 下一步：不再开启基于同一历史OOS的性能实验。继续V1r4真实观察、V30r1-forward-r2不可变预测和成熟标签结算；官方CSI 300开盘证据未批准前保持`SETTLEMENT_BLOCKED_BENCHMARK_UNAPPROVED`。
+
+## 039 — 2026-08-31：V31 clean-checkout verifier 独立修复
+
+- 事实：commit `5754b49d8bf37a09d16b0c264dcf83ddb9d19837` 的GitHub Actions run `33337053516`中，clean-checkout suite、V1r2/V1r3/V1r4全部门禁以及V31 26项前一版本测试均通过；唯一失败步骤是V31 lock verifier。
+- 根因：workflow硬编码读取保留的原始失败锁`artifacts/research_v31/plan.lock.json`，而不是有效的`001_runtime_fix`修订锁。因此它正确发现修订后的模型边界/测试文件与失败前锁不同，但错误地把这当成冻结损坏。
+- 修复：新增纯operational amendment `V31-CI-VERIFIER-FIX-002`，让CLI和CI选择最新存在的不可变修订锁；新增一项测试证明多修订时选择最新锁。没有修改pipeline、模型、因子、目标、参数、OOS、结果或晋级门槛，没有重新运行历史研究。
+- 证据：原始失败锁`803f31...`、模型运行锁`7224e1...`及首轮CI失败记录均保留。最新operational verifier锁为`6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`，本地重新验证完整。

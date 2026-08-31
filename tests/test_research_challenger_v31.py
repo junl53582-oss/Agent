@@ -33,6 +33,7 @@ from stockpilot.research_challenger.models import (
 )
 from stockpilot.research_challenger.pipeline import _write_json_new
 from stockpilot.research_challenger.split import build_fold
+from stockpilot.research_challenger import freeze as freeze_module
 
 
 def _calendar_frame() -> pd.DataFrame:
@@ -340,3 +341,29 @@ def test_protocol_fixates_challenger_before_oos() -> None:
     assert protocol["created_before_oos_evaluation"] is True
     assert protocol["models"]["pre_registered_challenger"] == "lightgbm_lambdarank"
     assert protocol["walk_forward"]["final_oos_may_not_select_features_models_targets_or_weights"] is True
+
+
+def test_lock_verifier_selects_latest_existing_amendment(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    settings = replace(ChallengerSettings(), artifact_dir=tmp_path / "root")
+    settings.artifact_dir.mkdir(parents=True)
+    old_root = tmp_path / "001"
+    latest_root = tmp_path / "002"
+    for root, amendment_id in ((old_root, "OLD"), (latest_root, "LATEST")):
+        root.mkdir()
+        payload = {
+            "amendment_id": amendment_id,
+            "files": {},
+            "production_prediction_ready": False,
+            "execution_authorized": False,
+        }
+        lock = root / "plan.lock.json"
+        lock.write_text(json.dumps(payload), encoding="utf-8")
+        lock.with_suffix(".json.sha256").write_text(
+            freeze_module.sha256(lock) + "\n", encoding="ascii"
+        )
+    monkeypatch.setattr(freeze_module, "AMENDMENT_ROOTS", (old_root, latest_root))
+    result = freeze_module.verify_plan_lock(settings)
+    assert result["intact"] is True
+    assert result["amendment_id"] == "LATEST"

@@ -9,7 +9,16 @@ from .config import ChallengerSettings
 def main() -> None:
     parser = argparse.ArgumentParser(description="Canonical research-only ranking challenger")
     parser.add_argument(
-        "command", choices=("audit", "freeze", "freeze-amendment", "verify", "run", "report")
+        "command",
+        choices=(
+            "audit",
+            "freeze",
+            "freeze-amendment",
+            "freeze-ci-amendment",
+            "verify",
+            "run",
+            "report",
+        ),
     )
     args = parser.parse_args()
     settings = ChallengerSettings()
@@ -36,6 +45,10 @@ def main() -> None:
         from .freeze import freeze_amendment
 
         result = freeze_amendment(settings)
+    elif args.command == "freeze-ci-amendment":
+        from .freeze import freeze_ci_amendment
+
+        result = freeze_ci_amendment(settings)
     elif args.command == "run":
         from .pipeline import run_v31
 

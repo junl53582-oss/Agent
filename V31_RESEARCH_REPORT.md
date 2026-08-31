@@ -22,6 +22,7 @@ V31 没有写入 prospective observation、prediction 或 mature-label ledger，
 - 复用：V10 PIT 因子、V6 scorer、V4/V5 train-only 训练、A 股交易成本、turnover、V30 open-to-open 标签语义。
 - 未复制 V6/V30，也未创建 `research_v31_r1/r2`。
 - 初次冻结运行在任何指标写入前因非有限训练目标进入 LambdaRank 而失败。原锁 `803f31a1...` 与失败证据保留；只修复模型边界的非有限目标过滤，目标、因子、模型参数和门槛未变。有效修订锁：`7224e1a18a3dabc0cd4a5c80d78ef8b6678e3099a25dbfd070bc509056615449`。
+- 首次推送后 GitHub 测试全部通过，但 CI verifier 错误读取原始失败锁。该纯验收缺陷独立冻结为 `V31-CI-VERIFIER-FIX-002`；没有重跑研究或改动结果。最新 operational verifier 锁为 `6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`，模型运行证据仍由上述 `7224e1...` 锁约束。
 
 ## Dataset / PIT
 
