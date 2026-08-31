@@ -411,3 +411,14 @@
 - 安全：V6 仍为 champion，Gen2 未晋级；模型/特征/训练/组合/成本策略均未改，2026 holdout 未打开，真实 Provider 请求 0，未生成首条真实预测。
 - 验收：009 targeted 与旧 Gen2/V1r4 integration 先通过，再运行全仓测试并冻结 009。
 - 实际验收：009 targeted `34 passed`，Gen2/V1r4 integration `110 passed`，全仓 `572 passed, 1 xfailed, 24 subtests passed`。009 锁为 `29e3066081be0489499b26833eb78eea040b6916fe44d1a7552a7f47137efb06`，artifact manifest 为 `496ad4fb08792555266f792d7377d4bfc4be5646ffa9f7387d6760047fe56acf`。
+
+## 044. Gen2 Runtime Self-Verification 010/010r1 收敛
+
+- 运行现场：任务开始时存在单一 `research_v16.predict` 实际工作进程及其bash/venv父链。命令行、创建时间、CPU持续增长和内存变化证明其为`RUNNING_VALID`，未中止；其于2026-09-01 02:10上海时间自然完成，生成内容归类为与009/010无关的C类运行证据，未混入Runtime提交。
+- 009已作为独立边界提交，commit为`1a61bc8fc29ad6a1ca90f1561b61ea168fddc75e`；父007/008、correctness、interpretation、V1r4、V6和V30均未改。
+- 010首次冻结在激活后自验时正确失败：interpretation锁的两个目录内相对成员被错误地按仓库根解析。未更新active、未写prediction/settlement、Provider请求0。原010文件和`failure_receipt.json`永久保留，不覆盖。
+- 010r1只修正锁成员相对路径解析并绑定失败010证据。正式入口统一为`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked`；`verify/status/seal-inputs/preflight/predict/settle`全部在任何副作用前调用同一effective verifier。任一007/008/009/010r1/correctness/interpretation/V1r4/V6/challenger spec/calendar失败均抛`GEN2_EFFECTIVE_RUNTIME_LOCK_INVALID`。
+- 010r1有效锁为`1e9aad0fd763862e0f05aad72c04739a87595b0e0d0fd303d47d00d71243cc1e`，artifact manifest为`3ea0bd7c133ecb29a10dbdbf621deac23d45cd795176b79b00e7acacdf151d25`。active_research只由verified runtime派生关键入口、实际0个prediction/0个settlement及分层锁状态；008不再冒充完整operational lock。
+- 正式只读入口实测：`verify`与`status`通过完整锁链；02:33上海时间执行`preflight --date 2026-09-01`因18:30门禁和未封存输入被阻塞，Provider请求0，未创建reservation或prediction。本任务未执行真实`seal-inputs/predict/settle`。
+- 验收：冻结后009/010r1 targeted `62 passed`；全仓`600 passed, 1 xfailed, 24 subtests passed`，V18既定strict xfail保留，无新增skip/xfail。模型、特征、训练、组合、成本、prospective起始日均未变；历史调参0、2026 holdout读取0、真实Provider请求0、Gen2真实prediction 0。
+- 状态：V6保持Champion；Gen2仍为`HISTORICAL_RESEARCH_CLOSED / NOT_PROMOTED / PROSPECTIVE_RESEARCH_ONLY_APPROVED`；`production_prediction_ready=false`、`execution_authorized=false`、`automatic_promotion_allowed=false`。完成push和GitHub Actions前不得判定READY。

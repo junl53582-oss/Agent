@@ -244,3 +244,11 @@ Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：
 - 20D settlement 以真实上海日期为权威时钟，`as_of` 仅 fixture test mode 可用；市场数据必须有不可变 witness 和公司行动哈希。
 - research proxy 统一为 PIT benchmark constituent-weighted；official benchmark 仍 `UNAPPROVED`。
 - 本轮不生成真实 prediction，Provider 请求为 0，`production_prediction_ready=false`、`execution_authorized=false`。
+
+## 当前正式 Gen2 Runtime：009 + 010r1 self-verification
+
+009已冻结且不得修改，锁为`29e3066081be0489499b26833eb78eea040b6916fe44d1a7552a7f47137efb06`。010首次激活因interpretation锁相对路径解析错误而fail-closed，失败证据保留；不得删除或覆盖。有效自校验修订为010r1，锁`1e9aad0fd763862e0f05aad72c04739a87595b0e0d0fd303d47d00d71243cc1e`。
+
+唯一正式Gen2 operational入口：`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked`。`verify`、`status`、`seal-inputs`、`preflight`、`predict`、`settle`全部必须先验证007/008/009/010r1、correctness/interpretation、V1r4、V6、challenger spec和calendar。任何失败立即停止，不允许转用未锁定的009 CLI绕过。
+
+当前实际Gen2 prediction与20D settlement均为0。V6仍为Champion；Gen2未晋级，Official benchmark仍`UNAPPROVED`，`production_prediction_ready=false`、`execution_authorized=false`。首次真实prediction只能在独立后续operational run中执行：上海合法交易日18:30后、同日sealed PIT输入完整、preflight通过且Git/CI锁链完整；禁止回填、自动晋级、交易或在本任务内补跑。

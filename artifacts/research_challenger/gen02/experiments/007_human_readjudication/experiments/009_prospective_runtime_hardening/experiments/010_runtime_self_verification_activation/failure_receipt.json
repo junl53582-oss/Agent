@@ -1,0 +1,15 @@
+{
+  "attempt_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010",
+  "attempted_at_utc": "2026-08-31T18:29:55+00:00",
+  "status": "FAILED_NOT_ACTIVATED",
+  "classification": "IMPLEMENTATION_ERROR",
+  "failure_reason": "RELATIVE_LOCK_MEMBER_RESOLUTION_BUG",
+  "error": "GEN2_EFFECTIVE_RUNTIME_LOCK_INVALID_AFTER_FREEZE: interpretation members final_interpretation.json and protocol_amendment.json were resolved against the repository root instead of the interpretation lock directory",
+  "active_research_updated": false,
+  "prediction_written": false,
+  "settlement_written": false,
+  "provider_requests": 0,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "recovery_policy": "preserve this failed attempt and activate only through an independent 010r1 amendment"
+}

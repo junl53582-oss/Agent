@@ -76,3 +76,11 @@ jobs:
           payload=json.loads(lock.read_text());
           bad=[name for name,value in payload['files'].items() if not (root/name).exists() or digest(root/name)!=value];
           assert not bad, 'committed V31 freeze mismatch: '+str(bad)"
+      - name: Run Gen2 runtime 009 and self-verification 010 tests explicitly
+        run: >-
+          python -m pytest -q
+          tests/test_research_challenger_gen2_runtime_009.py
+          tests/test_research_challenger_gen2_runtime_lock_activation.py
+      - name: Verify effective Gen2 operational runtime lock
+        run: >-
+          python -m stockpilot.research_challenger.prospective_gen2_runtime_locked verify
