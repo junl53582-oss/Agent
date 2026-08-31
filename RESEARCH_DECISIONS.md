@@ -390,3 +390,16 @@
 - 治理：超参数、threshold、feature、target、horizon、模型族均未改变；V6/V30/V30r1/V1r4未修改；provider请求0。确定性正确性重算模型1次，不是调参或新研究代际。V1r4 observation和V30r1-forward-r2预测不构成Gen02 LightGBM的prospective验证。
 - 验证：最终定向`110 passed`；全仓`509 passed, 1 xfailed, 24 subtests passed`，唯一xfail仍为冻结V18夹具，无新增skip/xfail。correctness amendment最终锁`2f6a670279aeccf69dc7ed596179562ad129ed28f53115e151d1d3db7d2a05bc`，manifest `d0a0d14e241395e197ea66573be2980fe40b35381fa42ebfc2beb71aca064b79`；post-run解释锁`fa2789e6c4315f13ec91a5647d61bfdf31c49bf52915362ade3c9deab92b1bc2`。
 - 下一步：不重跑或调参Gen02。保持正式状态全部false，只继续V1r4从新真实交易日起追加不可变观察、预测与成熟结算；官方benchmark未批准前继续fail closed。
+
+## 042 — 2026-08-31：Gen02 Human Re-adjudication 与Research-Only前向激活
+
+- 人工裁决：V6继续champion；Gen02历史研究关闭且不晋级。correctness修复产生的LightGBM Regression/20D/sector-balanced Top20只获准`PROSPECTIVE_RESEARCH_ONLY_APPROVED`。理由是2026并非untouched holdout、Top-K净研究代理收益差bootstrap区间跨0、2025 RankIC仅约+0.00125且Top-decile IC仍负。
+- 治理事实拆分：原Gen02确实存在2025决策行的标签结束日跨入2026；correctness run本身没有主动读取2026已实现标签、没有打开holdout；`untouched_2026_holdout=false`继续成立。不得再使用含糊的单一`2026_labels_read`掩盖两项不同事实。
+- 唯一冻结规范：LightGBM regression_l1、80轮、seed42；20日T+1 open至T+21 open横截面排名；年度train-only BH-FDR/相关性/稳定性选因子；8年训练、1年验证、20日purge；sector-balanced Top20等权、20交易日再平衡；佣金3bps、滑点5bps、卖出印花税5bps。所有模型、特征、训练、组合和成本策略均独立哈希。
+- 训练语义为`DETERMINISTIC_PROTOCOL_RETRAIN`，因为冻结Gen2/V31历史流程按每个OOS年度重新选择训练期特征并拟合模型，而不是保存一个永久模型文件。未来只允许按同一冻结算法和当时已成熟PIT标签确定性重训；超参数搜索、feature/target/portfolio/cost修改全部禁止。
+- 时间边界：人工冻结日2026-08-31，首个合法未来XSHG交易日2026-09-01；更早日期、非当日日期及非交易日全部fail-closed。本任务真实预测0、市场/财务/benchmark provider请求均0，没有回填。
+- 架构：新增单文件canonical模块`stockpilot.research_challenger.prospective_gen2`，写入`data/prospective_gen2`，不修改`stockpilot/prospective_r4`。每日prediction CSV/JSON/manifest均不可覆盖、带sidecar并形成previous-manifest链；20日到期前禁止结算，到期后只读取冻结prediction，不重算score。20/60/120个交易日检查点只产生pipeline/provisional/human-review状态，永不自动晋级。
+- Benchmark边界：未批准official benchmark时仍可生成Top20对universe/research proxy的研究指标，但请求official alpha会硬失败；所有结果继续标记`research_proxy_alpha_only`。
+- 冻结：007人工裁决锁`a214d9bf279c01cb25fddbfeacaed88416a4acb50b3179c16fe65484578335b3`、核心artifact manifest `dfc5f95dd30b4c1ba055346fe6d5eee50b065c15a67c1c62c850641095ea95f2`。007锁错误记录Windows绝对代码路径，未覆盖；008纯operational portability修订以仓库相对路径重新绑定同一决定，有效锁`1abb4bf9c65875b4e96918f931bfa78299ee5aa1938b4e02acd8fc2614a92022`。
+- 验证：新增29项专项测试；Gen2/V31/V20r2/V1r4集成138项通过；全仓`537 passed, 1 xfailed, 24 subtests passed`，唯一xfail仍为冻结V18，无新增skip/xfail。
+- 状态：`production_prediction_ready=false`、`execution_authorized=false`、`automatic_promotion_allowed=false`、`production_shadow_eligible=false`。下一步仅从2026-09-01起，在真实PIT输入完整时追加新的research-only预测，不回填、不交易。

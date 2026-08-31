@@ -225,3 +225,13 @@ Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：
 重算意外产生`CORRECTNESS_RECALCULATION_CHANGED_ELIGIBILITY`：LightGBM Regression/20D/sector-balanced Top20按纠正后的机械门禁为8/8，但Top-K净研究代理Alpha相对V6的moving-block bootstrap 95%区间仍跨0。依用户预注册治理规则，冻结的操作性裁决仍为`GEN2_REJECTED`，V6仍是champion；`shadow_eligible=false`、`production_prediction_ready=false`、`execution_authorized=false`，不得自动晋级或创建Gen2 shadow。只有人工重新裁决才能改变研究状态。
 
 原Gen02 artifact未覆盖。correctness-only amendment最终锁为`2f6a670279aeccf69dc7ed596179562ad129ed28f53115e151d1d3db7d2a05bc`，manifest为`d0a0d14e241395e197ea66573be2980fe40b35381fa42ebfc2beb71aca064b79`；post-run解释锁为`fa2789e6c4315f13ec91a5647d61bfdf31c49bf52915362ade3c9deab92b1bc2`。本轮2026标签读取0、holdout打开0、provider请求0、超参数/阈值/模型族变化0。下一步只执行V1r4真实前向观察与成熟结算；不再重算Gen02或使用已见历史结果调参。
+
+## Gen02人工重新裁决已完成：只允许独立research-only前向观察
+
+人工裁决维持V6为champion，Gen02历史研究状态为`HISTORICAL_RESEARCH_CLOSED`、晋级状态为`NOT_PROMOTED`。correctness修复后的唯一机械合格配置被冻结为LightGBM Regression/20日/sector-balanced Top20，但只批准`PROSPECTIVE_RESEARCH_ONLY_APPROVED`；生产shadow、自动晋级、交易和执行均禁止。
+
+人工冻结日为2026-08-31，已验证XSHG日历的首个未来交易日为2026-09-01。此前日期一律禁止回填；本轮没有生成任何真实Gen02预测。训练语义冻结为`DETERMINISTIC_PROTOCOL_RETRAIN`：每个预测年度按既有V31 train-only选择算法确定特征，以8年窗口、20日purge、固定LightGBM参数和seed 42确定性重训；这是协议内重训，不是重新调参。
+
+独立入口为`python -m stockpilot.research_challenger.prospective_gen2 verify|status|predict|settle`，数据根为`data/prospective_gen2`，与V1r4/V30r1证据完全分离。每日预测、manifest和20日成熟结算均为append-only并带SHA-256；旧预测不能覆盖，结算只读冻结score。官方benchmark仍未批准，只允许research-proxy指标，official alpha继续fail-closed。
+
+007人工裁决锁为`a214d9bf279c01cb25fddbfeacaed88416a4acb50b3179c16fe65484578335b3`。首次锁因记录Windows绝对代码路径而不能在clean checkout复算，原证据保留；纯路径可移植性008修订未改变任何决策或策略，有效锁为`1abb4bf9c65875b4e96918f931bfa78299ee5aa1938b4e02acd8fc2614a92022`。下一步只从2026-09-01或之后的真实新交易日开始，在本地PIT面板完整且锁验证通过时追加一次research-only预测；不得回填或自动晋级。
