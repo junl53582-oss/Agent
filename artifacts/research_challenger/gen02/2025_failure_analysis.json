@@ -1,0 +1,75 @@
+{
+  "classification": "DEVELOPMENT_ONLY",
+  "no_2026_labels_read": true,
+  "primary_2025_failure_hypotheses": [
+    {
+      "evidence": {
+        "2025_overall_rank_ic": -0.031336798709561284,
+        "2025_top_decile_ic": -0.06624604954078783,
+        "2025_top_quintile_ic": 0.009576260844792997
+      },
+      "hypothesis": "TAIL_SIGNAL_WEAKNESS",
+      "rank": 1
+    },
+    {
+      "evidence": {
+        "annualized_turnover": 5.684383561643835,
+        "gross_research_proxy_alpha": 0.24212250808567637,
+        "net_research_proxy_alpha": 0.13670651449542248,
+        "transaction_cost_sum": 0.06915999999999999
+      },
+      "hypothesis": "TRANSACTION_COST_AND_RANKING_CHURN",
+      "rank": 2
+    },
+    {
+      "evidence": {
+        "largest_negative_ic_changes": [
+          {
+            "factor": "volatility_60_rank",
+            "ic_change": -0.08326179587836309
+          },
+          {
+            "factor": "low_volatility",
+            "ic_change": -0.07328687451773316
+          },
+          {
+            "factor": "industry_momentum",
+            "ic_change": -0.018503879981335916
+          },
+          {
+            "factor": "operating_cash_margin_rank",
+            "ic_change": -0.018121004336915342
+          },
+          {
+            "factor": "cash_ratio_change_rank",
+            "ic_change": -0.007637844999009338
+          }
+        ],
+        "sign_reversal_count": 3
+      },
+      "hypothesis": "FACTOR_DECAY_AND_SIGN_REVERSAL",
+      "rank": 3
+    },
+    {
+      "evidence": {
+        "severe_factors": [
+          "fundamental_freshness_rank"
+        ],
+        "severe_psi_factor_count": 1
+      },
+      "hypothesis": "FEATURE_DISTRIBUTION_SHIFT",
+      "rank": 4
+    },
+    {
+      "evidence": {
+        "average_liquidity_rank": 0.17414991329684054,
+        "average_maximum_sector_weight": 0.3748858447488584,
+        "average_size_rank": 0.36087715337873666
+      },
+      "hypothesis": "PORTFOLIO_EXPOSURE_CONCENTRATION",
+      "rank": 5
+    }
+  ],
+  "report_id": "2025_FAILURE_ANALYSIS",
+  "selection_jaccard_2024_to_2025": 0.75
+}

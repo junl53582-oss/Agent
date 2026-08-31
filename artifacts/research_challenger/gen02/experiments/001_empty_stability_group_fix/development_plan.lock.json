@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-08-31T04:25:10.852360+00:00",
+  "execution_authorized": false,
+  "files": {
+    "artifacts/research_challenger/gen02/development_plan.lock.json": "6ea91a786b9cdb2cb2fd29c148bce660e8f34387fadb796311dc341dd0b6aad9",
+    "artifacts/research_challenger/gen02/development_protocol.json": "aef514147df3313571ae6e821f2d29b29aa52d61ad578be095aa2816d97cc51c",
+    "artifacts/research_challenger/gen02/experiments/001_empty_stability_group_fix/failure_receipt.json": "945f85a6d379d6b384ef62a95aa9611d134275ae6959b1ee72787782a8cc6a79",
+    "artifacts/research_challenger/gen02/experiments/001_empty_stability_group_fix/protocol_amendment.json": "77999affc4970c01b195f08638d01344047c913fc9342f1ac85707331ed438f7",
+    "stockpilot/research_challenger/gen02.py": "c39c00bf9c8d844aab1843986cf8262a79fcd0662f7a790b62ee256a7b76d6ee",
+    "stockpilot/research_challenger/gen02_portfolio.py": "5b5443c13008f0a99bed482fc2a8090a69ea0a2d88ada7adb5d09c6cb569da41",
+    "tests/test_research_challenger_gen02.py": "c8fe2636571118dbf4e4f1c22ff824a824930a649637e668e85612640d3cbff0"
+  },
+  "holdout_open_allowed": false,
+  "implementation_only": true,
+  "lock_id": "CHALLENGER-GEN02-DEVELOPMENT-AMENDMENT-001",
+  "production_prediction_ready": false,
+  "research_rules_changed": false,
+  "untouched_2026_holdout": false
+}

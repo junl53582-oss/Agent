@@ -1,0 +1,17 @@
+{
+  "amendment_id": "GEN02-RECORD-TEST-CLI-FIX-003",
+  "classification": "POST_RUN_OPERATIONAL_ONLY_NO_RESULT_RECOMPUTATION",
+  "costs_changed": false,
+  "created_at_utc": "2026-08-31T04:51:03.792045+00:00",
+  "dates_changed": false,
+  "development_result_already_written": true,
+  "development_result_changed": false,
+  "features_changed": false,
+  "gates_changed": false,
+  "holdout_2026_opened": false,
+  "model_rerun_required": false,
+  "models_changed": false,
+  "portfolio_rules_changed": false,
+  "repair": "Rename the positional destination to test_command.",
+  "root_cause": "The record-test positional argument reused argparse destination 'command' and shadowed the subcommand name."
+}

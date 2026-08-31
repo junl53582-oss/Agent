@@ -1,0 +1,18 @@
+{
+  "created_at_utc": "2026-08-31T04:51:03.817203+00:00",
+  "execution_authorized": false,
+  "files": {
+    "artifacts/research_challenger/gen02/decision.json": "3d288c5926c182d277ba1248cdfb7546cd93a5e7b19173ba7d06baa3efa0273f",
+    "artifacts/research_challenger/gen02/experiments/002_numpy_bool_serialization_fix/development_plan.lock.json": "f27cda9c4fdc50da648090fde1cd0ee16eced9cb99e272b88ca1d1856358c51b",
+    "artifacts/research_challenger/gen02/experiments/003_record_test_cli_fix/protocol_amendment.json": "fb87857bf7011c07ac311dd80ed46f78db898077dcefac84372a60e10f642438",
+    "artifacts/research_challenger/gen02/report.json": "c9b7c95c9012f7ed8803780728cfb028e8aa09fcf736b95789b13421daa64fe0",
+    "stockpilot/research_challenger/gen02.py": "b0b73888fea3944d791bfb349e4e75916136ddaec5f94abe0ecb1bb6fc351182",
+    "stockpilot/research_challenger/gen02_portfolio.py": "5b5443c13008f0a99bed482fc2a8090a69ea0a2d88ada7adb5d09c6cb569da41",
+    "tests/test_research_challenger_gen02.py": "73a32c831c63fd3f03417613c2c82db1071451457801242d7c2429c9f2d41f74"
+  },
+  "holdout_open_allowed": false,
+  "implementation_only": true,
+  "lock_id": "CHALLENGER-GEN02-POSTRUN-AMENDMENT-003",
+  "production_prediction_ready": false,
+  "research_results_changed": false
+}

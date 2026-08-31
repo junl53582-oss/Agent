@@ -1,0 +1,54 @@
+{
+  "audit_id": "CHALLENGER-GEN02-HOLDOUT-AUDIT",
+  "candidate_period": {
+    "end": "2026-08-21",
+    "start": "2026-01-01"
+  },
+  "consequence": "2026 is not eligible for final historical confirmation; labels and performance must not be opened by Gen02.",
+  "created_at_utc": "2026-08-31T04:15:08.725165+00:00",
+  "decisive_evidence": {
+    "existing_2026_signal_dates": {
+      "artifacts/comparison/ridge/latest_signals.csv": "2026-08-21",
+      "artifacts/latest_signals.csv": "2026-08-21"
+    },
+    "files": [
+      {
+        "path": "artifacts/comparison/ridge/summary.json",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "8deb1fe8e720943e19f0e8055a45fa3e35d5ad6b3280980c8cd4619cbad202eb"
+      },
+      {
+        "path": "artifacts/comparison/ridge/latest_signals.csv",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "e4ff06d9a9b0e9536bd003eba3e70344cd0728c2b47b7e4d6620af81a73005f6"
+      },
+      {
+        "path": "artifacts/latest_signals.csv",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "e4ff06d9a9b0e9536bd003eba3e70344cd0728c2b47b7e4d6620af81a73005f6"
+      },
+      {
+        "path": "artifacts/prediction_v30/live/predictions/2026-08-21.csv",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "5d8f9c152af36482f8763db2b061aa045c49e12b3de0408e155222048a11de93"
+      },
+      {
+        "path": "artifacts/prediction_v30/live/predictions/2026-08-21.csv.sha256",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "5963bb33b4db1f7adc1df0149f77b95f445bab99da86bcd2d1cd7ddf3f162d6e"
+      },
+      {
+        "path": "RESEARCH_DECISIONS.md",
+        "reason": "repository evidence created or inspected with a 2026 decision date",
+        "sha256": "2c12e154898c5e67a8d60b36ed1717071dba1e7a6e297125e8f5197f706cf756"
+      }
+    ],
+    "research_decision_log_contains_2026_08_21": true,
+    "ridge_comparison_data_end": null,
+    "v30_prediction_snapshot_exists": true
+  },
+  "historical_confirmation_possible": false,
+  "holdout_open_permitted": false,
+  "untouched_2026_holdout": false,
+  "verdict_rule": "If untouched status cannot be proved, verdict is FALSE."
+}

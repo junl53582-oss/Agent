@@ -365,3 +365,16 @@
 - 根因：workflow硬编码读取保留的原始失败锁`artifacts/research_v31/plan.lock.json`，而不是有效的`001_runtime_fix`修订锁。因此它正确发现修订后的模型边界/测试文件与失败前锁不同，但错误地把这当成冻结损坏。
 - 修复：新增纯operational amendment `V31-CI-VERIFIER-FIX-002`，让CLI和CI选择最新存在的不可变修订锁；新增一项测试证明多修订时选择最新锁。没有修改pipeline、模型、因子、目标、参数、OOS、结果或晋级门槛，没有重新运行历史研究。
 - 证据：原始失败锁`803f31...`、模型运行锁`7224e1...`及首轮CI失败记录均保留。最新operational verifier锁为`6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`，本地重新验证完整。
+
+## 040 — 2026-08-31：Challenger Generation 02 RankIC到可交易Alpha裁决
+
+- 留出审计：`UNTOUCHED_2026_HOLDOUT=false`。决定性证据包括`artifacts/comparison/ridge/latest_signals.csv`和`artifacts/latest_signals.csv`的2026-08-21 Ridge信号、`artifacts/prediction_v30/live/predictions/2026-08-21.csv`及既有研究决策日志。无法把2026重新包装为一次性final holdout；Gen02打开命令在读取标签前以`UNTOUCHED_2026_HOLDOUT_FALSE`失败。
+- 数据隔离：正式开发读取在Parquet predicate层固定`date < 2026-01-01`，得到908,497行、738只、2010-07-02至2025-12-31；成分、财务和行业PIT检查均通过，prospective行使用0，provider网络请求0。2020–2025明确降级为development-only。
+- 预注册范围：只比较Ridge与LightGBM Regression，LambdaRank保持冻结拒绝；只研究5日/20日，Ridge窗口3/5/8年、固定2年半衰期，组合只含Top10/20/30、两种简单rank weighting、Top20/exit30 buffer及复用V6行业配额。成本保持佣金3bps、滑点5bps、卖出印花税5bps；未新增模型族。
+- RankIC到Alpha：LGB 5日/20日RankIC为0.03323/0.04373，Ridge为0.03181/0.04218；但挑战者与V6的Top20重合仅17.99%–25.53%，信号排序差异大。20日LGB Top30 gross研究代理Alpha +24.21%，成本合计6.92个百分点后net +13.67%；5日LGB buffer Top20 gross +29.75%，成本19.14个百分点后net仅+1.43%。换手和tail质量决定是否可交易，不能只看全截面RankIC。
+- 2025失效：20日LGB整体RankIC -0.03134、Top-decile IC -0.06625，而Top-quintile仅+0.00958。`volatility_60_rank`和`low_volatility`相对2020–2024均值分别衰减-0.08326/-0.07329并反转；`fundamental_freshness_rank` PSI 0.27147为唯一严重漂移。2024→2025选因子Jaccard 0.75，不支持“主要由选择集合完全失稳”解释。
+- 转换诊断：20日Top30年化换手5.68倍、最大行业权重37.49%、平均size rank 0.3609、liquidity rank 0.1741；并非单一行业或极端低流动性唯一驱动。20日buffer把换手降至4.72倍但净代理Alpha仅+0.016%，说明降低成本无法修复2025负tail。5日buffer换手仍15.79倍，超过预注册上限15倍。
+- 实现缺陷：首次运行在所有拟合后因空行业切片汇总报`KeyError: rank_ic`，第二次在gate JSON序列化报NumPy bool错误；两次均在任何performance/decision写出前失败，失败收据永久保留。001只跳过无足够样本的空切片，002只正规化bool；003只修复测试收据CLI参数覆盖，004只让最终manifest递归绑定全部失败/amendment证据，均未重跑研究。有效post-run amendment锁为`c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d`。
+- 统计证据：最佳配置相对V6的RankIC差moving-block bootstrap均值+0.06550，95%区间[+0.03733,+0.09781]；Top30净研究代理Alpha单期差均值+0.00543，但95%区间[-0.00101,+0.01450]跨零。所有值均为development-only，不是历史确认或官方benchmark Alpha。
+- 裁决：最佳点估计LGB Regression/20D/equal Top30通过8项绝对门禁中的7项，唯一失败是2025 RankIC必须为正；`GEN2_REJECTED`、`shadow_eligible=false`、`historical_confirmation_passed=false`。V6继续champion，V30r1-forward-r2及V1r4不变，production和execution均false。
+- 验证：最终代码形态的Gen02+V31+V1r4定向75项通过；全仓`495 passed, 1 xfailed, 24 subtests passed`，V18仍为唯一原strict xfail，没有新增skip/xfail。Gen02最终锁`5a826a4c7fca26bf6cd60abc7a1cc9c8c052fc52dd75ada3c8925373ada16405`，递归artifact manifest `c7d33d8f03c05042ed97c3623b4e3111d5d1d7b1535aeacc9eb7e1cd751fcb22`。下一步不再用已见2020–2025或已污染2026调参，只积累V1r4不可变真实前向观察、预测和成熟结算；新的challenger必须等待新的预注册未来起点。

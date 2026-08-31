@@ -1,0 +1,22 @@
+{
+  "attempt_id": "GEN02-DEVELOPMENT-ATTEMPT-002",
+  "attempted_at_utc": "2026-08-31T04:25:21Z",
+  "failed_at_utc": "2026-08-31T04:36:15Z",
+  "command": "python -m stockpilot.research_challenger.gen02 develop",
+  "exit_code": 1,
+  "failure_class": "IMPLEMENTATION_DEFECT",
+  "failure_stage": "post-fit candidate gate serialization before decision/artifact emission",
+  "exception": "TypeError: Object of type bool is not JSON serializable",
+  "root_cause": "Gate comparisons returned numpy.bool_ values; an explicit json.dumps call lacked bool normalization.",
+  "performance_outputs_written": false,
+  "holdout_2026_opened": false,
+  "holdout_2026_labels_read": false,
+  "prospective_data_used": false,
+  "provider_requests": 0,
+  "parent_amendment_lock_sha256": "3605021a0709b5179f17ed354d0e827a4a17d94be3a58eab087172569775afb3",
+  "failed_code_sha256": "c39c00bf9c8d844aab1843986cf8262a79fcd0662f7a790b62ee256a7b76d6ee",
+  "repair_scope": "Normalize gate values to native bool before JSON encoding; do not change research rules or results.",
+  "automatic_retry": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

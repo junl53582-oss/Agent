@@ -1,0 +1,13 @@
+{
+  "kind": "final_full_repository",
+  "recorded_at_utc": "2026-08-31T04:58:20Z",
+  "command": "python -m pytest -q",
+  "summary": "495 passed, 1 xfailed, 24 subtests passed in 98.91s",
+  "exit_code": 0,
+  "code_state": "post-amendment-004",
+  "v18_strict_xfail_preserved": true,
+  "new_xfail_added": false,
+  "new_skip_added": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

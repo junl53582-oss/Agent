@@ -1,0 +1,15 @@
+{
+  "amendment_id": "GEN02-NUMPY-BOOL-SERIALIZATION-FIX-002",
+  "classification": "IMPLEMENTATION_ONLY_NO_RESEARCH_RULE_CHANGE",
+  "costs_changed": false,
+  "created_at_utc": "2026-08-31T04:37:22.810796+00:00",
+  "dates_changed": false,
+  "features_changed": false,
+  "gates_changed": false,
+  "holdout_2026_opened": false,
+  "models_changed": false,
+  "performance_outputs_written_before_failure": false,
+  "portfolio_rules_changed": false,
+  "repair": "Normalize every gate value to native bool before explicit JSON encoding.",
+  "root_cause": "Gate comparisons returned numpy.bool_ values that json.dumps cannot encode."
+}

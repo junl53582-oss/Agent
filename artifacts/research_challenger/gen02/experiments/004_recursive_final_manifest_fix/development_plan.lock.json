@@ -1,0 +1,18 @@
+{
+  "created_at_utc": "2026-08-31T04:56:18.257645+00:00",
+  "execution_authorized": false,
+  "files": {
+    "artifacts/research_challenger/gen02/decision.json": "3d288c5926c182d277ba1248cdfb7546cd93a5e7b19173ba7d06baa3efa0273f",
+    "artifacts/research_challenger/gen02/experiments/003_record_test_cli_fix/development_plan.lock.json": "78b249f82dd2abc3d32f6c1dc8a683fa6b1a0e226e7f572c243c7b8b7b2761cd",
+    "artifacts/research_challenger/gen02/experiments/004_recursive_final_manifest_fix/protocol_amendment.json": "d2b715b94054965c42a5763d2ee98ee8dbae3ec135dedaeecf26b2ece22e9ffa",
+    "artifacts/research_challenger/gen02/report.json": "c9b7c95c9012f7ed8803780728cfb028e8aa09fcf736b95789b13421daa64fe0",
+    "stockpilot/research_challenger/gen02.py": "7f62d4a8ad3a9bcb6207211b0e82919c7fa4e8fc5f9918986d2ce97edf5e9944",
+    "stockpilot/research_challenger/gen02_portfolio.py": "5b5443c13008f0a99bed482fc2a8090a69ea0a2d88ada7adb5d09c6cb569da41",
+    "tests/test_research_challenger_gen02.py": "0c976a15f16876865c810fe7c3bf6b0ac3b426c33f9df36e8d2e43ef788760d6"
+  },
+  "holdout_open_allowed": false,
+  "implementation_only": true,
+  "lock_id": "CHALLENGER-GEN02-POSTRUN-AMENDMENT-004",
+  "production_prediction_ready": false,
+  "research_results_changed": false
+}

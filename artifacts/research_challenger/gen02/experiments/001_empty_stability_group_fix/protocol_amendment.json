@@ -1,0 +1,15 @@
+{
+  "amendment_id": "GEN02-EMPTY-STABILITY-GROUP-FIX-001",
+  "classification": "IMPLEMENTATION_ONLY_NO_RESEARCH_RULE_CHANGE",
+  "costs_changed": false,
+  "created_at_utc": "2026-08-31T04:25:10.846750+00:00",
+  "dates_changed": false,
+  "features_changed": false,
+  "gates_changed": false,
+  "holdout_2026_opened": false,
+  "models_changed": false,
+  "performance_outputs_written_before_failure": false,
+  "portfolio_rules_changed": false,
+  "repair": "Skip empty regime or industry metric slices before summarize_ic.",
+  "root_cause": "Insufficient industry slices returned a schema-less empty metric frame."
+}

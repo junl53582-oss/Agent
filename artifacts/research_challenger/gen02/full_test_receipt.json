@@ -1,0 +1,11 @@
+{
+  "command": "python -m pytest -q",
+  "execution_authorized": false,
+  "exit_code": 0,
+  "kind": "full",
+  "new_skip_added": false,
+  "new_xfail_added": false,
+  "production_prediction_ready": false,
+  "recorded_at_utc": "2026-08-31T04:53:19.347677+00:00",
+  "summary": "494 passed, 1 xfailed, 24 subtests passed in 107.52s"
+}

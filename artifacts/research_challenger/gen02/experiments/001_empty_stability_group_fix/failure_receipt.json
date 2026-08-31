@@ -1,0 +1,22 @@
+{
+  "attempt_id": "GEN02-DEVELOPMENT-ATTEMPT-001",
+  "attempted_at_utc": "2026-08-31T04:15:39Z",
+  "failed_at_utc": "2026-08-31T04:23:44Z",
+  "command": "python -m stockpilot.research_challenger.gen02 develop",
+  "exit_code": 1,
+  "failure_class": "IMPLEMENTATION_DEFECT",
+  "failure_stage": "post-fit stability aggregation before decision/artifact emission",
+  "exception": "KeyError: rank_ic",
+  "root_cause": "An industry slice with fewer than 20 usable cross-sectional observations produced a schema-less empty daily_rank_metrics DataFrame; _stability_metrics passed it to summarize_ic, which correctly expects a rank_ic column.",
+  "performance_outputs_written": false,
+  "holdout_2026_opened": false,
+  "holdout_2026_labels_read": false,
+  "prospective_data_used": false,
+  "provider_requests": 0,
+  "development_plan_lock_sha256": "6ea91a786b9cdb2cb2fd29c148bce660e8f34387fadb796311dc341dd0b6aad9",
+  "failed_code_sha256": "ecf43940ef6f61a7e110619e984fa02a9ef602e6a8870ca02ddc90a76117e9b7",
+  "repair_scope": "Skip insufficient empty regime/industry slices; do not change models, features, dates, costs, gates, or portfolio rules.",
+  "automatic_retry": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

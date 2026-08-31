@@ -1,0 +1,21 @@
+{
+  "classification": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "rank_ic_delta_vs_v6": {
+    "block_length": 20,
+    "ci_lower": 0.037325801067466885,
+    "ci_upper": 0.09781143308085571,
+    "mean_delta": 0.06549852673544064,
+    "replications": 1000,
+    "samples": 1455,
+    "seed": 42
+  },
+  "topk_net_research_proxy_alpha_delta_vs_v6": {
+    "block_length": 10,
+    "ci_lower": -0.0010138086685425429,
+    "ci_upper": 0.014504364928500584,
+    "mean_delta": 0.0054292329211302,
+    "replications": 1000,
+    "samples": 73,
+    "seed": 42
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "amendment_id": "GEN02-RECURSIVE-FINAL-MANIFEST-FIX-004",
+  "classification": "POST_RUN_OPERATIONAL_ONLY_NO_RESULT_RECOMPUTATION",
+  "costs_changed": false,
+  "created_at_utc": "2026-08-31T04:56:18.251865+00:00",
+  "dates_changed": false,
+  "development_result_already_written": true,
+  "development_result_changed": false,
+  "features_changed": false,
+  "gates_changed": false,
+  "holdout_2026_opened": false,
+  "model_rerun_required": false,
+  "models_changed": false,
+  "portfolio_rules_changed": false,
+  "repair": "Bind the latest verified amendment lock and recursively enumerate immutable experiment evidence.",
+  "root_cause": "The final freezer referenced the root development lock and enumerated only top-level artifacts, omitting the effective amendment chain from the manifest."
+}

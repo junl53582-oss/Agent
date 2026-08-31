@@ -1,0 +1,24 @@
+{
+  "code": {
+    "stockpilot/research_challenger/gen02.py": "7f62d4a8ad3a9bcb6207211b0e82919c7fa4e8fc5f9918986d2ce97edf5e9944",
+    "stockpilot/research_challenger/gen02_portfolio.py": "5b5443c13008f0a99bed482fc2a8090a69ea0a2d88ada7adb5d09c6cb569da41",
+    "tests/test_research_challenger_gen02.py": "0c976a15f16876865c810fe7c3bf6b0ac3b426c33f9df36e8d2e43ef788760d6"
+  },
+  "created_at_utc": "2026-08-31T04:59:15.708521+00:00",
+  "development_lock_sha256": "c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d",
+  "execution_authorized": false,
+  "historical_confirmation_passed": false,
+  "lock_id": "CHALLENGER-GEN02-FINAL",
+  "parents": {
+    "artifacts/prediction_forward/v30r1_r2/plan.lock.json": "110fa074f16235ab413e13b788767913c93e04e051c2105c39b462202d384b17",
+    "artifacts/prospective_alpha_v1r4/plan.lock.json": "39a6dfd2f63b68d1dfad77c039240ad5526786d1d2a0cfa67fd96426f27e1c1f",
+    "artifacts/research_challenger/gen02/experiments/004_recursive_final_manifest_fix/development_plan.lock.json": "c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d",
+    "artifacts/research_v31/experiments/002_ci_verifier_fix/plan.lock.json": "6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f",
+    "artifacts/research_v6/plan.lock.json": "94edfc9e05bd30a58a14e7e11a988a1b7fb0d5358e462df1b20cb23dca4c0f4d"
+  },
+  "production_prediction_ready": false,
+  "prospective_v1r4_modified": false,
+  "untouched_2026_holdout": false,
+  "v30_modified": false,
+  "v6_modified": false
+}

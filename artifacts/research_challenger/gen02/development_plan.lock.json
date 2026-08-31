@@ -1,0 +1,22 @@
+{
+  "created_at_utc": "2026-08-31T04:15:30.370287+00:00",
+  "execution_authorized": false,
+  "files": {
+    "artifacts/prospective_alpha_v1r4/plan.lock.json": "39a6dfd2f63b68d1dfad77c039240ad5526786d1d2a0cfa67fd96426f27e1c1f",
+    "artifacts/research_challenger/gen02/development_protocol.json": "aef514147df3313571ae6e821f2d29b29aa52d61ad578be095aa2816d97cc51c",
+    "artifacts/research_challenger/gen02/holdout_audit.json": "49d4deb7a32e8337a7156a70d734ff2797102b1456a0a7e35171eacb3d779c0e",
+    "artifacts/research_v31/artifact_manifest.json": "af6d7bb9a71faab9fdca603276136d9df321f6edeeb2c31b37ff0b297983f103",
+    "artifacts/research_v31/experiments/002_ci_verifier_fix/plan.lock.json": "6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f",
+    "artifacts/research_v6/plan.lock.json": "94edfc9e05bd30a58a14e7e11a988a1b7fb0d5358e462df1b20cb23dca4c0f4d",
+    "stockpilot/research_challenger/gen02.py": "ecf43940ef6f61a7e110619e984fa02a9ef602e6a8870ca02ddc90a76117e9b7",
+    "stockpilot/research_challenger/gen02_portfolio.py": "5b5443c13008f0a99bed482fc2a8090a69ea0a2d88ada7adb5d09c6cb569da41",
+    "tests/test_research_challenger_gen02.py": "b2241b492d53d9665c5f910324048095b9fd0376a4fbaa93e9c292b81548e0ec"
+  },
+  "holdout_open_allowed": false,
+  "lock_id": "CHALLENGER-GEN02-DEVELOPMENT-PLAN",
+  "production_prediction_ready": false,
+  "prospective_v1r4_modified": false,
+  "untouched_2026_holdout": false,
+  "v30_modified": false,
+  "v6_modified": false
+}

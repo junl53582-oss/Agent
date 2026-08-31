@@ -207,3 +207,13 @@ V31 以唯一 canonical implementation `stockpilot.research_challenger` 完成�
 - 2026-08-29 04:18上海时间，完整回测已在隐藏后台启动。启动器PID8012，实际Python工作进程PID25936（以运行状态与实时进程校验为准，PID不能长期当作唯一身份）。启动器：`scripts/start_v20.ps1`。
 - 当前仍在构建历史数据集，尚无收益结论。下次先检查 `runtime_status.json` 和日志，不能因加载较久而重复启动。
 - 原未来影子状态只读检查：3/126日，最新行情2026-08-26、300只、1份信号；`frozen_inputs_intact=true`、`execution_authorized=false`。本轮未补写影子数据，原每日任务后续按规则推进。
+
+## Challenger Generation 02：已拒绝，2026不得作为未触碰留出集
+
+用户明确授权的Gen02已在唯一canonical package `stockpilot.research_challenger`内完成；只新增Gen02模块，没有创建research_v32/research_v33或新的prospective版本。V31、V6、V30/V30r1和Prospective V1r4冻结文件均未修改。
+
+2026留出审计裁决为`UNTOUCHED_2026_HOLDOUT=false`：仓库已有数据截止2026-08-21的Ridge比较摘要与同日信号、V30同日不可变预测，以及决策日志中的人工检查记录。按照fail-closed规则，Gen02的Parquet读取在扫描层限制为`date < 2026-01-01`；`evaluate-holdout-2026`在读取任何2026标签或表现前硬失败。2020–2025只能称为development evidence。
+
+开发区最佳点估计是LightGBM Regression、20日、等权Top30：RankIC 0.04373、ICIR 0.22589、正比例58.42%、净研究代理Alpha +13.67%、最大回撤-17.83%、年化换手5.68倍。但2025 RankIC为-0.03134，Top-decile IC为-0.06625，预注册年度稳定性门禁失败。5日buffer Top20虽有+1.43%净研究代理Alpha和正2025 RankIC，但年化换手15.79倍，超过冻结的15倍门槛。不得事后放宽任一门槛。
+
+最终裁决`GEN2_REJECTED`、`shadow_eligible=false`，有效operational amendment锁为`c3353cf4643d4aa08e994ffb30581db71e82c87a917f021f0f71fc06bddecf1d`，最终锁为`5a826a4c7fca26bf6cd60abc7a1cc9c8c052fc52dd75ada3c8925373ada16405`，artifact manifest为`c7d33d8f03c05042ed97c3623b4e3111d5d1d7b1535aeacc9eb7e1cd751fcb22`。V6保持champion。2026历史确认未运行且不允许运行；正式prospective、production和execution状态均未改变。下一步只回到V1r4真实前向积累，等待新的、预注册日期之后的未来证据；不得在已见2020–2025或已污染2026上继续调Top-K、窗口、buffer、权重或模型。

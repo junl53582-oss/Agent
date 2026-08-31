@@ -1,0 +1,23 @@
+{
+  "all_development_gates_passed": false,
+  "challenger_model": "lightgbm_regression",
+  "cost_model": {
+    "commission": 0.0003,
+    "sell_stamp_duty": 0.0005,
+    "slippage": 0.0005,
+    "unchanged_from_v31": true
+  },
+  "created_after_development_before_any_future_shadow": true,
+  "execution_authorized": false,
+  "feature_policy": "V31 yearly train-only selected factors; no prospective inputs",
+  "historical_confirmation_claimed": false,
+  "portfolio_policy": "equal_top30",
+  "precommit_id": "GEN02-UNIQUE-FUTURE-HYPOTHESIS",
+  "primary_horizon": 20,
+  "production_prediction_ready": false,
+  "rebalance_trading_days": 20,
+  "shadow_eligible": false,
+  "top_k": 30,
+  "training_window_policy": "8-year rolling baseline unless future protocol separately freezes an approved development variant",
+  "untouched_2026_holdout": false
+}
