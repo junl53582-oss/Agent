@@ -252,3 +252,9 @@ Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：
 唯一正式Gen2 operational入口：`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked`。`verify`、`status`、`seal-inputs`、`preflight`、`predict`、`settle`全部必须先验证007/008/009/010r1、correctness/interpretation、V1r4、V6、challenger spec和calendar。任何失败立即停止，不允许转用未锁定的009 CLI绕过。
 
 当前实际Gen2 prediction与20D settlement均为0。V6仍为Champion；Gen2未晋级，Official benchmark仍`UNAPPROVED`，`production_prediction_ready=false`、`execution_authorized=false`。首次真实prediction只能在独立后续operational run中执行：上海合法交易日18:30后、同日sealed PIT输入完整、preflight通过且Git/CI锁链完整；禁止回填、自动晋级、交易或在本任务内补跑。
+
+## 010r2取代010r1成为唯一有效self-verification activation
+
+010r1因修改V31冻结锁所绑定的workflow而在GitHub Actions run `33426335442`失败，不能作为正式Runtime；原锁和CI失败回执保留。010r2已恢复workflow原字节，并把V31 operational lock纳入effective verifier；有效锁为`894de2b3d122a03590184c46413c3092230517dcf629317c1dce0e059d29d89b`。正式入口路径不变，仍为`stockpilot.research_challenger.prospective_gen2_runtime_locked`，但其activation revision必须显示`010r2`。
+
+后续唤醒先运行`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked verify`；只有010r2、009、008/007、V31、correctness/interpretation、V1r4、V6、challenger spec和calendar全部完整才可继续。010/010r1不得删除、覆盖或恢复为active。当前真实prediction/settlement仍为0，状态继续保持非生产、非执行、非自动晋级。

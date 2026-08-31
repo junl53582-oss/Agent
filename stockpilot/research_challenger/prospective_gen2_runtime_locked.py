@@ -38,8 +38,11 @@ from .prospective_gen2 import (
 FAILED_ACTIVATION_010_DIR = (
     runtime.AMENDMENT_009 / "experiments/010_runtime_self_verification_activation"
 )
-ACTIVATION_DIR = (
+FAILED_ACTIVATION_010R1_DIR = (
     runtime.AMENDMENT_009 / "experiments/010r1_runtime_self_verification_activation"
+)
+ACTIVATION_DIR = (
+    runtime.AMENDMENT_009 / "experiments/010r2_runtime_self_verification_activation"
 )
 ACTIVATION_LOCK = ACTIVATION_DIR / "plan.lock.json"
 ACTIVE_RESEARCH_PATH = Path("artifacts/active_research.json")
@@ -47,6 +50,12 @@ V1R4_LOCK = Path("artifacts/prospective_alpha_v1r4/plan.lock.json")
 V6_LOCK = Path("artifacts/research_v6/plan.lock.json")
 CORRECTNESS_LOCK = Path(
     "artifacts/research_challenger/gen02/experiments/005_correctness_hardening/plan.lock.json"
+)
+V31_OPERATIONAL_LOCK = Path(
+    "artifacts/research_v31/experiments/002_ci_verifier_fix/plan.lock.json"
+)
+EXPECTED_V31_OPERATIONAL_LOCK = (
+    "6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f"
 )
 
 
@@ -79,7 +88,7 @@ def verify_activation(path: Path = ACTIVATION_LOCK) -> dict:
     """Verify 010 without requiring its lock to contain its own digest."""
     result = _verify_lock_surface(path)
     payload = result.pop("payload")
-    if payload.get("lock_id") != "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R1":
+    if payload.get("lock_id") != "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2":
         result["mismatches"].append("ACTIVATION_LOCK_ID")
     base = runtime.verify_amendment()
     if payload.get("runtime_009_lock_sha256") != base.get("lock_sha256"):
@@ -122,6 +131,12 @@ def verify_effective_runtime_freeze(
         "interpretation",
         lambda: _verify_lock_surface(
             Path(CORRECTNESS_INTERPRETATION_LOCK), EXPECTED_INTERPRETATION_LOCK
+        ),
+    )
+    v31 = capture(
+        "v31",
+        lambda: _verify_lock_surface(
+            V31_OPERATIONAL_LOCK, EXPECTED_V31_OPERATIONAL_LOCK
         ),
     )
     try:
@@ -191,6 +206,8 @@ def verify_effective_runtime_freeze(
         "correctness_lock_sha256": correctness.get("lock_sha256"),
         "interpretation_lock_intact": interpretation.get("intact") is True,
         "interpretation_lock_sha256": interpretation.get("lock_sha256"),
+        "v31_operational_lock_intact": v31.get("intact") is True,
+        "v31_operational_lock_sha256": v31.get("lock_sha256"),
         "v1r4_lock_intact": v1r4.get("intact") is True,
         "v1r4_lock_sha256": v1r4.get("v1r4_lock_sha256"),
         "v6_lock_intact": v6["intact"],
@@ -357,8 +374,8 @@ def write_derived_active_research_view(
                 "python -m stockpilot.research_challenger.prospective_gen2_runtime_locked "
                 "settle --date YYYY-MM-DD --market PATH"
             ),
-            "gen02_effective_runtime_status": "SELF_VERIFYING_RUNTIME_010R1_ACTIVE",
-            "gen02_runtime_self_verification_revision": "010r1",
+            "gen02_effective_runtime_status": "SELF_VERIFYING_RUNTIME_010R2_ACTIVE",
+            "gen02_runtime_self_verification_revision": "010r2",
             "gen02_self_verification_010_lock_sha256": status[
                 "self_verification_010_lock_sha256"
             ],
@@ -415,16 +432,22 @@ def write_derived_active_research_view(
 
 
 def freeze_activation(*, now: datetime | None = None) -> dict:
-    """Freeze 010r1 once, without including the resulting lock in its own map."""
+    """Freeze 010r2 once, without including the resulting lock in its own map."""
     now = now or datetime.now(timezone.utc)
     if ACTIVATION_DIR.exists() and any(ACTIVATION_DIR.iterdir()):
-        raise RuntimeError("SELF_VERIFICATION_ACTIVATION_010R1_ALREADY_EXISTS")
+        raise RuntimeError("SELF_VERIFICATION_ACTIVATION_010R2_ALREADY_EXISTS")
     failed_lock = FAILED_ACTIVATION_010_DIR / "plan.lock.json"
     failure_receipt = FAILED_ACTIVATION_010_DIR / "failure_receipt.json"
     if not failed_lock.is_file() or not failure_receipt.is_file():
         raise RuntimeError("FAILED_ACTIVATION_010_EVIDENCE_MISSING")
     verify_immutable(failed_lock)
     verify_immutable(failure_receipt)
+    failed_010r1_lock = FAILED_ACTIVATION_010R1_DIR / "plan.lock.json"
+    ci_failure_receipt = FAILED_ACTIVATION_010R1_DIR / "ci_failure_receipt.json"
+    if not failed_010r1_lock.is_file() or not ci_failure_receipt.is_file():
+        raise RuntimeError("FAILED_ACTIVATION_010R1_EVIDENCE_MISSING")
+    verify_immutable(failed_010r1_lock)
+    verify_immutable(ci_failure_receipt)
     base = runtime.verify_amendment()
     human = verify_human_freeze()
     correctness = verify_correctness_lock()
@@ -437,10 +460,13 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
     verify_v1r4_lock()
     if sha256_file(V6_LOCK) != EXPECTED_V6_LOCK:
         raise RuntimeError("V6_LOCK_INVALID_BEFORE_010_FREEZE")
+    v31 = _verify_lock_surface(V31_OPERATIONAL_LOCK, EXPECTED_V31_OPERATIONAL_LOCK)
+    if v31["intact"] is not True:
+        raise RuntimeError(f"V31_LOCK_INVALID_BEFORE_010R2_FREEZE:{v31['mismatches']}")
 
     ACTIVATION_DIR.mkdir(parents=True, exist_ok=True)
     protocol = {
-        "amendment_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R1",
+        "amendment_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
         "classification": "OPERATIONAL_SELF_VERIFICATION_ONLY",
         "canonical_entrypoint": (
             "python -m stockpilot.research_challenger.prospective_gen2_runtime_locked"
@@ -452,6 +478,9 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         "runtime_009_lock_sha256": base["lock_sha256"],
         "failed_activation_010_lock_sha256": sha256_file(failed_lock),
         "failed_activation_010_preserved": True,
+        "failed_activation_010r1_lock_sha256": sha256_file(failed_010r1_lock),
+        "failed_activation_010r1_preserved": True,
+        "v31_operational_lock_sha256": v31["lock_sha256"],
         "model_changed": False,
         "feature_policy_changed": False,
         "training_policy_changed": False,
@@ -477,6 +506,8 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         "original_009_preserved": True,
         "failed_activation_010_preserved": True,
         "failed_activation_010_reason": "RELATIVE_LOCK_MEMBER_RESOLUTION_BUG",
+        "failed_activation_010r1_preserved": True,
+        "failed_activation_010r1_reason": "FROZEN_V31_WORKFLOW_MEMBER_CHANGED",
         "activation_self_reference_strategy": (
             "plan lock hashes code, tests, parents and protocol/audit; sidecar hashes "
             "plan lock; plan lock never hashes itself"
@@ -497,6 +528,8 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         runtime.AMENDMENT_009 / "plan.lock.json",
         failed_lock,
         failure_receipt,
+        failed_010r1_lock,
+        ci_failure_receipt,
         runtime.AMENDMENT_008,
         runtime.HUMAN_DIR / "plan.lock.json",
         runtime.HUMAN_DIR / "decision.json",
@@ -505,12 +538,13 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         Path(CORRECTNESS_INTERPRETATION_LOCK),
         V1R4_LOCK,
         V6_LOCK,
+        V31_OPERATIONAL_LOCK,
         runtime.RuntimeSettings().calendar_path,
         ACTIVATION_DIR / "protocol_amendment.json",
         ACTIVATION_DIR / "audit.json",
     ]
     lock = {
-        "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R1",
+        "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
         "created_at_utc": runtime._utc(now),
         "runtime_009_lock_sha256": base["lock_sha256"],
         "protocol_amendment_sha256": protocol_hash,
@@ -534,7 +568,7 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         )
     write_derived_active_research_view()
     return {
-        "status": "SELF_VERIFYING_RUNTIME_010R1_ACTIVE",
+        "status": "SELF_VERIFYING_RUNTIME_010R2_ACTIVE",
         "lock_sha256": lock_hash,
         "artifact_manifest_sha256": manifest_hash,
         "runtime_009_lock_sha256": base["lock_sha256"],
@@ -555,7 +589,7 @@ def main(argv: list[str] | None = None) -> int:
     settle.add_argument("--market", type=Path, required=True)
     sub.add_parser("status")
     sub.add_parser("verify")
-    sub.add_parser("freeze-010r1")
+    sub.add_parser("freeze-010r2")
     args = parser.parse_args(argv)
     if args.command == "seal-inputs":
         result = seal_inputs(args.date)
@@ -571,7 +605,7 @@ def main(argv: list[str] | None = None) -> int:
             raise EffectiveRuntimeLockError(
                 f"GEN2_EFFECTIVE_RUNTIME_LOCK_INVALID:{result['failures']}"
             )
-    elif args.command == "freeze-010r1":
+    elif args.command == "freeze-010r2":
         result = freeze_activation()
     else:
         result = derived_status()

@@ -422,3 +422,11 @@
 - 正式只读入口实测：`verify`与`status`通过完整锁链；02:33上海时间执行`preflight --date 2026-09-01`因18:30门禁和未封存输入被阻塞，Provider请求0，未创建reservation或prediction。本任务未执行真实`seal-inputs/predict/settle`。
 - 验收：冻结后009/010r1 targeted `62 passed`；全仓`600 passed, 1 xfailed, 24 subtests passed`，V18既定strict xfail保留，无新增skip/xfail。模型、特征、训练、组合、成本、prospective起始日均未变；历史调参0、2026 holdout读取0、真实Provider请求0、Gen2真实prediction 0。
 - 状态：V6保持Champion；Gen2仍为`HISTORICAL_RESEARCH_CLOSED / NOT_PROMOTED / PROSPECTIVE_RESEARCH_ONLY_APPROVED`；`production_prediction_ready=false`、`execution_authorized=false`、`automatic_promotion_allowed=false`。完成push和GitHub Actions前不得判定READY。
+
+## 045. 010r1 CI失败与010r2冻结父锁闭环
+
+- GitHub Actions run `33426335442` 在新增Runtime步骤前的既有V31 verifier处失败：010r1修改了`.github/workflows/prospective-integrity.yml`，而该文件是V31 operational lock的冻结成员。V31锁与研究产物没有修改；010r1不能被接受为正式Runtime，CI失败回执已append-only保留。
+- 修复不得覆盖010r1：恢复workflow为V31锁要求的SHA-256 `62eaa6483e09df43f07f961b3e15f044302cd44c7cda12a1784c8188744eff36`；clean-checkout全仓本来会收集新增测试，因此将actual effective verifier放入010r2测试，而不是修改被冻结workflow。
+- 010r2把V31 operational lock `6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`加入effective trust root，并绑定失败010/010r1回执、009、007/008、correctness/interpretation、V1r4、V6、challenger spec和calendar。任一失败阻止全部正式命令。
+- 010r2锁为`894de2b3d122a03590184c46413c3092230517dcf629317c1dce0e059d29d89b`，artifact manifest为`ebe59b79fe564cd163c40cf916ba55c415fafb3c3cb9c9e6c7c6f59d364f40f5`。冻结后targeted `63 passed`，全仓`601 passed, 1 xfailed, 24 subtests passed`；没有真实prediction、settlement、provider请求或研究调参。
+- 当前只有010r2可作为effective activation；010和010r1均是不可删除的失败历史。新的GitHub Actions在成功前仍不得输出READY。
