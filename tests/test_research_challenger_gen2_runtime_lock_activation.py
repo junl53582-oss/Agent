@@ -207,7 +207,7 @@ def test_010_activation_verifies_in_clean_checkout(tmp_path: Path) -> None:
     write_immutable_json(
         lock,
         {
-            "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
+            "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R3",
             "runtime_009_lock_sha256": base.verify_amendment()["lock_sha256"],
             "files": {bound.as_posix(): sha256_file(bound)},
         },
@@ -223,11 +223,17 @@ def test_010r1_resolves_lock_local_relative_members(tmp_path: Path) -> None:
     assert locked._verify_lock_surface(lock)["intact"] is True
 
 
-def test_010r2_effective_runtime_verifies_in_clean_checkout() -> None:
+def test_010r3_effective_runtime_verifies_in_clean_checkout() -> None:
     result = locked.verify_effective_runtime_freeze()
     assert result["effective_operational_lock_intact"] is True
     assert result["v31_operational_lock_intact"] is True
     assert result["failures"] == []
+
+
+def test_v1r4_portable_lock_surface_does_not_claim_runtime_data_ready() -> None:
+    result = locked._verify_portable_v1r4_lock()
+    assert result["intact"] is True
+    assert result["runtime_data_readiness_deferred_to_seal_preflight"] is True
 
 
 def test_active_research_cannot_claim_ready_when_runtime_lock_invalid(tmp_path: Path) -> None:

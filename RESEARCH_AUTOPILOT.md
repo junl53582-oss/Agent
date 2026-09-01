@@ -258,3 +258,9 @@ Gen02正确性加固已完成一次且仅一次确定性重算。修复包括：
 010r1因修改V31冻结锁所绑定的workflow而在GitHub Actions run `33426335442`失败，不能作为正式Runtime；原锁和CI失败回执保留。010r2已恢复workflow原字节，并把V31 operational lock纳入effective verifier；有效锁为`894de2b3d122a03590184c46413c3092230517dcf629317c1dce0e059d29d89b`。正式入口路径不变，仍为`stockpilot.research_challenger.prospective_gen2_runtime_locked`，但其activation revision必须显示`010r2`。
 
 后续唤醒先运行`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked verify`；只有010r2、009、008/007、V31、correctness/interpretation、V1r4、V6、challenger spec和calendar全部完整才可继续。010/010r1不得删除、覆盖或恢复为active。当前真实prediction/settlement仍为0，状态继续保持非生产、非执行、非自动晋级。
+
+## 当前唯一有效 activation：010r3
+
+010r2在GitHub Actions run `33427387986`暴露clean-checkout语义错误：它把“V1r4提交锁面完整”与“本机四个大型V6运行数据可用”混为一个门禁。010r2和失败回执保留，不得使用。010r3只在effective freeze层验证可移植的V1r4 lock/sidecar/files/parent摘要，真实运行数据完整性继续由009 seal/preflight严格验证，未降低任何prediction写入门禁。
+
+010r3锁为`576449bd3d85f66e9a148ffa5fc7074fb8d926ed10404d02732a20ac8a8ce56d`。正式入口仍是`python -m stockpilot.research_challenger.prospective_gen2_runtime_locked`，active revision必须为`010r3`。在新HEAD的clean clone与GitHub CI成功前状态为NOT_READY；不得运行首条真实Gen2 prediction。010/010r1/010r2全部保留为失败历史。

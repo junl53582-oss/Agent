@@ -1,0 +1,23 @@
+{
+  "activation_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
+  "status": "CI_FAILED_NOT_OPERATIONALLY_ACCEPTED",
+  "github_actions_run_id": 33427387986,
+  "head_sha": "97e198932b69baad52ad7fa8b485939b420acadb",
+  "failed_at_utc": "2026-08-31T18:54:18+00:00",
+  "failed_step": "Clean-checkout compatible test suite",
+  "failure_reason": "effective verifier recursively required ignored local V6 research datasets through verify_v1r4_lock even though the committed V1r4/V6 lock surfaces were intact",
+  "confirmed_clean_checkout_failures": [
+    "data/market_history.csv",
+    "data/fundamentals_pit.csv",
+    "data/universes/000300/history.csv",
+    "data/exposures.csv"
+  ],
+  "v1r4_modified": false,
+  "v6_modified": false,
+  "prediction_written": false,
+  "settlement_written": false,
+  "provider_requests": 0,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "recovery_policy": "preserve 010r2 and activate an independent 010r3 with portable lock-surface verification; runtime data readiness remains a separate seal/preflight gate"
+}

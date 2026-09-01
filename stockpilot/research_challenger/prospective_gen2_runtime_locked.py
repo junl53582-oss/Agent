@@ -21,8 +21,6 @@ from stockpilot.prospective_r2.integrity import (
     verify_immutable,
     write_immutable_json,
 )
-from stockpilot.prospective_r4.freeze import verify_lock as verify_v1r4_lock
-
 from . import prospective_gen2_runtime as runtime
 from .gen02_correctness import verify_final as verify_correctness_lock
 from .prospective_gen2 import (
@@ -41,8 +39,11 @@ FAILED_ACTIVATION_010_DIR = (
 FAILED_ACTIVATION_010R1_DIR = (
     runtime.AMENDMENT_009 / "experiments/010r1_runtime_self_verification_activation"
 )
-ACTIVATION_DIR = (
+FAILED_ACTIVATION_010R2_DIR = (
     runtime.AMENDMENT_009 / "experiments/010r2_runtime_self_verification_activation"
+)
+ACTIVATION_DIR = (
+    runtime.AMENDMENT_009 / "experiments/010r3_runtime_self_verification_activation"
 )
 ACTIVATION_LOCK = ACTIVATION_DIR / "plan.lock.json"
 ACTIVE_RESEARCH_PATH = Path("artifacts/active_research.json")
@@ -88,7 +89,7 @@ def verify_activation(path: Path = ACTIVATION_LOCK) -> dict:
     """Verify 010 without requiring its lock to contain its own digest."""
     result = _verify_lock_surface(path)
     payload = result.pop("payload")
-    if payload.get("lock_id") != "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2":
+    if payload.get("lock_id") != "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R3":
         result["mismatches"].append("ACTIVATION_LOCK_ID")
     base = runtime.verify_amendment()
     if payload.get("runtime_009_lock_sha256") != base.get("lock_sha256"):
@@ -101,6 +102,40 @@ def verify_activation(path: Path = ACTIVATION_LOCK) -> dict:
             "execution_authorized": False,
         }
     )
+    return result
+
+
+def _verify_portable_v1r4_lock() -> dict:
+    """Verify committed V1r4 evidence without requiring ignored research data.
+
+    The recursive V1r4 verifier intentionally checks V6's local frozen datasets.
+    Those large files are absent in a clean checkout. Operational data readiness
+    remains enforced by 009 seal/preflight; this verifier proves the committed
+    V1r4 lock bytes, sidecar, direct files and parent digest relationships.
+    """
+    result = _verify_lock_surface(V1R4_LOCK, EXPECTED_V1R4_LOCK)
+    payload = result.pop("payload")
+    parents = payload.get("parent_locks", {})
+    files = payload.get("files", {})
+    expected_relationships = {
+        "parent_v1r3_lock_sha256": files.get(
+            "artifacts/prospective_alpha_v1r3/plan.lock.json"
+        ),
+        "v18_lock_sha256": files.get("artifacts/research_v18/plan.lock.json"),
+        "v20r2_lock_sha256": files.get("artifacts/research_v20r2/plan.lock.json"),
+        "v30r1_forward_r2_lock_sha256": files.get(
+            "artifacts/prediction_forward/v30r1_r2/plan.lock.json"
+        ),
+        "v6_lock_sha256": files.get("artifacts/research_v6/plan.lock.json"),
+    }
+    if parents.get("all_parent_locks_intact") is not True:
+        result["mismatches"].append("V1R4_PARENT_STATUS")
+    for key, expected in expected_relationships.items():
+        if expected is None or parents.get(key) != expected:
+            result["mismatches"].append(f"V1R4_PARENT_RELATION:{key}")
+    result["intact"] = not result["mismatches"]
+    result["v1r4_lock_sha256"] = result["lock_sha256"]
+    result["runtime_data_readiness_deferred_to_seal_preflight"] = True
     return result
 
 
@@ -139,18 +174,7 @@ def verify_effective_runtime_freeze(
             V31_OPERATIONAL_LOCK, EXPECTED_V31_OPERATIONAL_LOCK
         ),
     )
-    try:
-        v1r4_raw = verify_v1r4_lock()
-        v1r4 = {
-            "intact": v1r4_raw.get("frozen_inputs_intact") is True
-            and v1r4_raw.get("v1r4_lock_sha256") == EXPECTED_V1R4_LOCK,
-            **v1r4_raw,
-        }
-        if not v1r4["intact"]:
-            failures.append("v1r4:LOCK_OR_PARENT_MISMATCH")
-    except Exception as error:
-        failures.append(f"v1r4:{type(error).__name__}:{error}")
-        v1r4 = {"intact": False, "mismatches": [f"{type(error).__name__}:{error}"]}
+    v1r4 = capture("v1r4", _verify_portable_v1r4_lock)
     v6_digest = sha256_file(V6_LOCK) if V6_LOCK.is_file() else None
     v6 = {"intact": v6_digest == EXPECTED_V6_LOCK, "lock_sha256": v6_digest}
     if not v6["intact"]:
@@ -210,6 +234,10 @@ def verify_effective_runtime_freeze(
         "v31_operational_lock_sha256": v31.get("lock_sha256"),
         "v1r4_lock_intact": v1r4.get("intact") is True,
         "v1r4_lock_sha256": v1r4.get("v1r4_lock_sha256"),
+        "v1r4_runtime_data_readiness_deferred_to_seal_preflight": v1r4.get(
+            "runtime_data_readiness_deferred_to_seal_preflight"
+        )
+        is True,
         "v6_lock_intact": v6["intact"],
         "v6_lock_sha256": v6_digest,
         "challenger_spec_intact": challenger_spec_intact,
@@ -374,8 +402,8 @@ def write_derived_active_research_view(
                 "python -m stockpilot.research_challenger.prospective_gen2_runtime_locked "
                 "settle --date YYYY-MM-DD --market PATH"
             ),
-            "gen02_effective_runtime_status": "SELF_VERIFYING_RUNTIME_010R2_ACTIVE",
-            "gen02_runtime_self_verification_revision": "010r2",
+            "gen02_effective_runtime_status": "SELF_VERIFYING_RUNTIME_010R3_ACTIVE",
+            "gen02_runtime_self_verification_revision": "010r3",
             "gen02_self_verification_010_lock_sha256": status[
                 "self_verification_010_lock_sha256"
             ],
@@ -432,10 +460,10 @@ def write_derived_active_research_view(
 
 
 def freeze_activation(*, now: datetime | None = None) -> dict:
-    """Freeze 010r2 once, without including the resulting lock in its own map."""
+    """Freeze 010r3 once, without including the resulting lock in its own map."""
     now = now or datetime.now(timezone.utc)
     if ACTIVATION_DIR.exists() and any(ACTIVATION_DIR.iterdir()):
-        raise RuntimeError("SELF_VERIFICATION_ACTIVATION_010R2_ALREADY_EXISTS")
+        raise RuntimeError("SELF_VERIFICATION_ACTIVATION_010R3_ALREADY_EXISTS")
     failed_lock = FAILED_ACTIVATION_010_DIR / "plan.lock.json"
     failure_receipt = FAILED_ACTIVATION_010_DIR / "failure_receipt.json"
     if not failed_lock.is_file() or not failure_receipt.is_file():
@@ -448,6 +476,12 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         raise RuntimeError("FAILED_ACTIVATION_010R1_EVIDENCE_MISSING")
     verify_immutable(failed_010r1_lock)
     verify_immutable(ci_failure_receipt)
+    failed_010r2_lock = FAILED_ACTIVATION_010R2_DIR / "plan.lock.json"
+    ci_failure_010r2 = FAILED_ACTIVATION_010R2_DIR / "ci_failure_receipt.json"
+    if not failed_010r2_lock.is_file() or not ci_failure_010r2.is_file():
+        raise RuntimeError("FAILED_ACTIVATION_010R2_EVIDENCE_MISSING")
+    verify_immutable(failed_010r2_lock)
+    verify_immutable(ci_failure_010r2)
     base = runtime.verify_amendment()
     human = verify_human_freeze()
     correctness = verify_correctness_lock()
@@ -457,16 +491,18 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         or correctness.get("intact") is not True
     ):
         raise RuntimeError("GEN2_PARENT_LOCK_INVALID_BEFORE_010_FREEZE")
-    verify_v1r4_lock()
+    v1r4 = _verify_portable_v1r4_lock()
+    if v1r4["intact"] is not True:
+        raise RuntimeError(f"V1R4_LOCK_INVALID_BEFORE_010R3_FREEZE:{v1r4['mismatches']}")
     if sha256_file(V6_LOCK) != EXPECTED_V6_LOCK:
         raise RuntimeError("V6_LOCK_INVALID_BEFORE_010_FREEZE")
     v31 = _verify_lock_surface(V31_OPERATIONAL_LOCK, EXPECTED_V31_OPERATIONAL_LOCK)
     if v31["intact"] is not True:
-        raise RuntimeError(f"V31_LOCK_INVALID_BEFORE_010R2_FREEZE:{v31['mismatches']}")
+        raise RuntimeError(f"V31_LOCK_INVALID_BEFORE_010R3_FREEZE:{v31['mismatches']}")
 
     ACTIVATION_DIR.mkdir(parents=True, exist_ok=True)
     protocol = {
-        "amendment_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
+        "amendment_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R3",
         "classification": "OPERATIONAL_SELF_VERIFICATION_ONLY",
         "canonical_entrypoint": (
             "python -m stockpilot.research_challenger.prospective_gen2_runtime_locked"
@@ -480,7 +516,11 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         "failed_activation_010_preserved": True,
         "failed_activation_010r1_lock_sha256": sha256_file(failed_010r1_lock),
         "failed_activation_010r1_preserved": True,
+        "failed_activation_010r2_lock_sha256": sha256_file(failed_010r2_lock),
+        "failed_activation_010r2_preserved": True,
         "v31_operational_lock_sha256": v31["lock_sha256"],
+        "v1r4_portable_lock_surface_sha256": v1r4["lock_sha256"],
+        "runtime_data_readiness_gate": "009_SEAL_AND_PREFLIGHT",
         "model_changed": False,
         "feature_policy_changed": False,
         "training_policy_changed": False,
@@ -508,6 +548,8 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         "failed_activation_010_reason": "RELATIVE_LOCK_MEMBER_RESOLUTION_BUG",
         "failed_activation_010r1_preserved": True,
         "failed_activation_010r1_reason": "FROZEN_V31_WORKFLOW_MEMBER_CHANGED",
+        "failed_activation_010r2_preserved": True,
+        "failed_activation_010r2_reason": "CLEAN_CHECKOUT_REQUIRED_IGNORED_V6_DATA",
         "activation_self_reference_strategy": (
             "plan lock hashes code, tests, parents and protocol/audit; sidecar hashes "
             "plan lock; plan lock never hashes itself"
@@ -530,6 +572,8 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         failure_receipt,
         failed_010r1_lock,
         ci_failure_receipt,
+        failed_010r2_lock,
+        ci_failure_010r2,
         runtime.AMENDMENT_008,
         runtime.HUMAN_DIR / "plan.lock.json",
         runtime.HUMAN_DIR / "decision.json",
@@ -544,7 +588,7 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         ACTIVATION_DIR / "audit.json",
     ]
     lock = {
-        "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R2",
+        "lock_id": "GEN02-RUNTIME-SELF-VERIFICATION-ACTIVATION-010R3",
         "created_at_utc": runtime._utc(now),
         "runtime_009_lock_sha256": base["lock_sha256"],
         "protocol_amendment_sha256": protocol_hash,
@@ -568,7 +612,7 @@ def freeze_activation(*, now: datetime | None = None) -> dict:
         )
     write_derived_active_research_view()
     return {
-        "status": "SELF_VERIFYING_RUNTIME_010R2_ACTIVE",
+        "status": "SELF_VERIFYING_RUNTIME_010R3_ACTIVE",
         "lock_sha256": lock_hash,
         "artifact_manifest_sha256": manifest_hash,
         "runtime_009_lock_sha256": base["lock_sha256"],
@@ -589,7 +633,7 @@ def main(argv: list[str] | None = None) -> int:
     settle.add_argument("--market", type=Path, required=True)
     sub.add_parser("status")
     sub.add_parser("verify")
-    sub.add_parser("freeze-010r2")
+    sub.add_parser("freeze-010r3")
     args = parser.parse_args(argv)
     if args.command == "seal-inputs":
         result = seal_inputs(args.date)
@@ -605,7 +649,7 @@ def main(argv: list[str] | None = None) -> int:
             raise EffectiveRuntimeLockError(
                 f"GEN2_EFFECTIVE_RUNTIME_LOCK_INVALID:{result['failures']}"
             )
-    elif args.command == "freeze-010r2":
+    elif args.command == "freeze-010r3":
         result = freeze_activation()
     else:
         result = derived_status()

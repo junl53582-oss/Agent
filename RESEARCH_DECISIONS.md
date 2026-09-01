@@ -430,3 +430,10 @@
 - 010r2把V31 operational lock `6858eb261532b305c4470dc3b3907def3499fc1251017a4a821caf784f34600f`加入effective trust root，并绑定失败010/010r1回执、009、007/008、correctness/interpretation、V1r4、V6、challenger spec和calendar。任一失败阻止全部正式命令。
 - 010r2锁为`894de2b3d122a03590184c46413c3092230517dcf629317c1dce0e059d29d89b`，artifact manifest为`ebe59b79fe564cd163c40cf916ba55c415fafb3c3cb9c9e6c7c6f59d364f40f5`。冻结后targeted `63 passed`，全仓`601 passed, 1 xfailed, 24 subtests passed`；没有真实prediction、settlement、provider请求或研究调参。
 - 当前只有010r2可作为effective activation；010和010r1均是不可删除的失败历史。新的GitHub Actions在成功前仍不得输出READY。
+
+## 046. 010r2 clean-checkout失败与010r3 portable lock/runtime-data分层
+
+- GitHub Actions run `33427387986` 在clean-checkout suite中失败。使用`core.autocrlf=false`独立clean clone复现后，007/008/009/010r2、correctness/interpretation、V31、V6锁、challenger spec和calendar均完整；唯一失败是V1r4递归verifier继续要求四个刻意未提交的大型V6研究数据文件。010r2及CI失败回执保留，不能作为正式activation。
+- 010r3不修改V1r4/V6：effective freeze改为验证V1r4 sidecar、固定digest、全部直接files map及parent digest关系。它不声称本机运行数据可用；行情、fundamental、universe、exposure、sealed PIT输入仍由009 `seal-inputs/preflight`在真实运行时逐项fail-closed。
+- 010r3继续绑定V31 operational lock及失败010/010r1/010r2证据。有效锁`576449bd3d85f66e9a148ffa5fc7074fb8d926ed10404d02732a20ac8a8ce56d`，artifact manifest `7c65a4a738e59c8feb1b34ce63fd58a5df36b145d963c03cf6cae77796bdfc5b`。
+- 冻结后targeted `64 passed`；全仓`602 passed, 1 xfailed, 24 subtests passed`，两条既有constant-input Spearman warning。真实Provider请求0、历史调参0、prediction 0、settlement 0；生产/执行/自动晋级均false。提交后必须再做blob字节clean clone和GitHub CI，成功前仍为NOT_READY。
