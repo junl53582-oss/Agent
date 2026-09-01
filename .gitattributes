@@ -117,6 +117,10 @@ artifacts/research_challenger/**/011_daily_pit_feature_activation/** text eol=lf
 # Direct files bound by the pre-011 Gen2 lock graph are LF-authored too.
 .github/workflows/prospective-integrity.yml text eol=lf
 tests/test_research_challenger*.py text eol=lf
+artifacts/research_challenger/gen02/decision.json text eol=lf
+artifacts/research_challenger/gen02/report.json text eol=lf
+artifacts/research_challenger/gen02/experiments/003_record_test_cli_fix/development_plan.lock.json text eol=lf
+artifacts/research_challenger/gen02/experiments/004_recursive_final_manifest_fix/protocol_amendment.json text eol=lf
 artifacts/research_challenger/gen02/plan.lock.json text eol=lf
 artifacts/research_challenger/gen02/experiments/005_correctness_hardening/artifact_manifest.json text eol=lf
 artifacts/research_challenger/gen02/experiments/005_correctness_hardening/candidate_gate_matrix_corrected.csv text eol=lf
