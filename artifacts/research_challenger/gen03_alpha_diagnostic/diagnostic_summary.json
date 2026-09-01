@@ -72,6 +72,15 @@
     },
     "symbols": 735
   },
+  "delivery": {
+    "branch": "codex/gen2-alpha-diagnostic",
+    "ci_status": "prospective-integrity/verify passed on research commit",
+    "frozen_files_modified": 0,
+    "local_verification": "658 passed, 1 xfailed, 24 subtests passed; ruff passed",
+    "pr_label": "PR #5",
+    "pr_url": "https://github.com/junl53582-oss/Agent/pull/5",
+    "research_commit": "dc9129b18a3701d5d1268b775fe24fcc5e8ddaa8"
+  },
   "diagnostic_details": {
     "ablation": [
       {

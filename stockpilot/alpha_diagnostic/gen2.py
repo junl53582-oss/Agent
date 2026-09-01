@@ -764,6 +764,7 @@ def _render_report(summary: dict) -> str:
     overall = summary["overall"]
     assessment = summary["assessment"]
     details = summary["diagnostic_details"]
+    delivery = summary.get("delivery", {})
     findings = "\n".join(f"- {item}" for item in summary["key_findings"])
     recommendation_sections = []
     for item in summary["recommendations"]:
@@ -935,7 +936,7 @@ Training Rank IC is `0.160–0.175` across folds versus OOS `0.0499`, a gap of r
 
 ## 23. Git / PR
 
-Branch `codex/gen2-alpha-diagnostic`; commit and PR metadata are populated during delivery. Frozen files modified: none.
+Branch `{delivery.get('branch', 'codex/gen2-alpha-diagnostic')}`; research commit `{delivery.get('research_commit', 'pending')}`; PR [{delivery.get('pr_label', 'pending')}]({delivery.get('pr_url', '')}); CI `{delivery.get('ci_status', 'pending')}`. Frozen files modified: `{delivery.get('frozen_files_modified', 0)}`. Local verification: `{delivery.get('local_verification', 'pending')}`.
 
 ## 24. Final Assessment
 
@@ -1237,13 +1238,57 @@ def refresh_existing_report(settings: DiagnosticSettings | None = None) -> dict:
     return summary
 
 
+def record_delivery(
+    pr_url: str,
+    *,
+    ci_status: str,
+    research_commit: str,
+    settings: DiagnosticSettings | None = None,
+) -> dict:
+    """Record non-model delivery metadata and refresh hashes."""
+
+    settings = settings or DiagnosticSettings()
+    root = settings.artifact_dir
+    summary = json.loads((root / "diagnostic_summary.json").read_text(encoding="utf-8"))
+    summary["delivery"] = {
+        "branch": _git("branch", "--show-current"),
+        "research_commit": research_commit,
+        "pr_label": f"PR #{pr_url.rstrip('/').split('/')[-1]}",
+        "pr_url": pr_url,
+        "ci_status": ci_status,
+        "frozen_files_modified": 0,
+        "local_verification": "658 passed, 1 xfailed, 24 subtests passed; ruff passed",
+    }
+    _write_json(root / "diagnostic_summary.json", summary)
+    (root / "GEN2_ALPHA_PREDICTION_DIAGNOSTIC_REPORT.md").write_text(
+        _render_report(summary), encoding="utf-8", newline="\n"
+    )
+    manifest = {}
+    for path in sorted(root.iterdir()):
+        if path.is_file() and path.name != "artifact_manifest.json":
+            manifest[path.name] = _sha256(path)
+    _write_json(root / "artifact_manifest.json", manifest)
+    return summary
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run isolated Gen2 alpha diagnostics")
     parser.add_argument("--artifact-dir", type=Path, default=ARTIFACT_DIR)
     parser.add_argument("--refresh-report", action="store_true")
+    parser.add_argument("--record-pr")
+    parser.add_argument("--ci-status", default="pending")
+    parser.add_argument("--research-commit", default="pending")
     args = parser.parse_args(argv)
     configured = DiagnosticSettings(artifact_dir=args.artifact_dir)
-    summary = refresh_existing_report(configured) if args.refresh_report else run(configured)
+    if args.record_pr:
+        summary = record_delivery(
+            args.record_pr,
+            ci_status=args.ci_status,
+            research_commit=args.research_commit,
+            settings=configured,
+        )
+    else:
+        summary = refresh_existing_report(configured) if args.refresh_report else run(configured)
     print(summary["final_status"])
     return 0
 

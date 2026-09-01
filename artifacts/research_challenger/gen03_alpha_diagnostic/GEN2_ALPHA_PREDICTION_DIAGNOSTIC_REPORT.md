@@ -261,7 +261,7 @@ Success criterion: Higher ICIR and worst-regime Rank IC without higher turnover.
 
 ## 23. Git / PR
 
-Branch `codex/gen2-alpha-diagnostic`; commit and PR metadata are populated during delivery. Frozen files modified: none.
+Branch `codex/gen2-alpha-diagnostic`; research commit `dc9129b18a3701d5d1268b775fe24fcc5e8ddaa8`; PR [PR #5](https://github.com/junl53582-oss/Agent/pull/5); CI `prospective-integrity/verify passed on research commit`. Frozen files modified: `0`. Local verification: `658 passed, 1 xfailed, 24 subtests passed; ruff passed`.
 
 ## 24. Final Assessment
 
