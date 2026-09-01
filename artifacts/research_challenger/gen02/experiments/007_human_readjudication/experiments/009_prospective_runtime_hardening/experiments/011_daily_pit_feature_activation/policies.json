@@ -1,0 +1,31 @@
+{
+  "activation_id": "GEN02-DAILY-PIT-FEATURE-ACTIVATION-011",
+  "market_acquisition": {
+    "adjustment": "hfq",
+    "primary": "akshare-eastmoney",
+    "fallback": "akshare-tencent",
+    "fallback_order_explicit": true,
+    "request_end_is_target_date": true,
+    "future_market_forbidden": true,
+    "previous_day_substitution_forbidden": true,
+    "minimum_universe_coverage": 0.95,
+    "overlap_calendar_days": 45
+  },
+  "feature_materialization": {
+    "builder": "stockpilot.prediction_forward.build_latest_pit_feature_panel",
+    "membership_join": "latest snapshot_date <= target_date",
+    "fundamental_join": "latest available_date <= target_date",
+    "industry_join": "latest effective_date <= target_date",
+    "decision_time": "target close after 18:30 Asia/Shanghai",
+    "entry_time": "next verified trading session open",
+    "feature_count": 61,
+    "daily_unique_column_count": 71
+  },
+  "state": {
+    "research_only": true,
+    "gen2_promoted": false,
+    "v6_champion": true,
+    "execution_authorized": false,
+    "prediction_backfill_2026_09_01": false
+  }
+}

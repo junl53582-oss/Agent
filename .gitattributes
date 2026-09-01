@@ -99,6 +99,33 @@ tests/test_research_challenger_v31.py -text
 artifacts/research_v31/** -text whitespace=cr-at-eol
 V31_RESEARCH_REPORT.md -text
 
+# Gen2's effective verifier hashes these LF-authored parent locks directly.
+# Force canonical LF bytes in fresh Windows worktrees as well as Linux CI.
+artifacts/research_challenger/gen02/experiments/005_correctness_hardening/plan.lock.json text eol=lf
+artifacts/research_challenger/gen02/experiments/005_correctness_hardening/experiments/006_postrun_eligibility_interpretation/plan.lock.json text eol=lf
+artifacts/research_v6/plan.lock.json text eol=lf
+artifacts/research_v4/plan.lock.json text eol=lf
+artifacts/research_v5/plan.lock.json text eol=lf
+artifacts/research_v7/plan.lock.json text eol=lf
+artifacts/research_v8/plan.lock.json text eol=lf
+
+# Daily PIT V1 is append-only operational code/evidence authored in canonical LF.
+stockpilot/daily_pit/** text eol=lf
+tests/test_daily_pit_*.py text eol=lf
+artifacts/research_challenger/**/011_daily_pit_feature_activation/** text eol=lf
+
+# Direct files bound by the pre-011 Gen2 lock graph are LF-authored too.
+.github/workflows/prospective-integrity.yml text eol=lf
+tests/test_research_challenger*.py text eol=lf
+artifacts/research_challenger/gen02/plan.lock.json text eol=lf
+artifacts/research_challenger/gen02/experiments/005_correctness_hardening/artifact_manifest.json text eol=lf
+artifacts/research_challenger/gen02/experiments/005_correctness_hardening/candidate_gate_matrix_corrected.csv text eol=lf
+artifacts/research_challenger/gen02/experiments/005_correctness_hardening/experiments/006_postrun_eligibility_interpretation/*.json text eol=lf
+artifacts/research_challenger/**/010*_runtime_self_verification_activation/*.json text eol=lf
+artifacts/research_challenger/**/010r1_runtime_self_verification_activation/*.json text eol=lf
+artifacts/research_challenger/**/010r2_runtime_self_verification_activation/*.json text eol=lf
+artifacts/research_challenger/**/010r3_runtime_self_verification_activation/*.json text eol=lf
+
 # Prediction V1 product schema is independently versioned product evidence,
 # never model-promotion evidence. Preserve schema bytes and normalize its code.
 stockpilot/intelligence/** text eol=lf
