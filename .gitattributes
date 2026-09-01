@@ -133,6 +133,12 @@ artifacts/research_challenger/**/010r1_runtime_self_verification_activation/*.js
 artifacts/research_challenger/**/010r2_runtime_self_verification_activation/*.json text eol=lf
 artifacts/research_challenger/**/010r3_runtime_self_verification_activation/*.json text eol=lf
 
+# Gen2 alpha diagnostics are isolated, reproducible research outputs. Preserve
+# generated artifact bytes exactly while keeping their implementation portable.
+stockpilot/alpha_diagnostic/** text eol=lf
+tests/test_gen2_alpha_diagnostic.py text eol=lf
+artifacts/research_challenger/gen03_alpha_diagnostic/** -text whitespace=cr-at-eol
+
 # Prediction V1 product schema is independently versioned product evidence,
 # never model-promotion evidence. Preserve schema bytes and normalize its code.
 stockpilot/intelligence/** text eol=lf

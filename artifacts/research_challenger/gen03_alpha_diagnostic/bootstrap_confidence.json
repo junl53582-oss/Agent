@@ -1,0 +1,7 @@
+{
+  "block_length": 20,
+  "ci_lower": 0.017311704609088104,
+  "ci_upper": 0.08686498031154578,
+  "replications": 1000,
+  "samples": 1434
+}

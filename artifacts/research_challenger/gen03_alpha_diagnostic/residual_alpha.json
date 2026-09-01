@@ -1,0 +1,13 @@
+{
+  "controls": [
+    "sector",
+    "size",
+    "volatility",
+    "momentum",
+    "liquidity"
+  ],
+  "dates": 1434,
+  "mean_residual_rank_ic": 0.0204882670229622,
+  "positive_ratio": 0.5983263598326359,
+  "t_stat": 6.759983349698148
+}
