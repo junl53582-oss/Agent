@@ -1,0 +1,33 @@
+{
+  "lock_id": "GEN02-DAILY-PIT-FEATURE-ACTIVATION-011",
+  "status": "ACTIVE_RESEARCH_ONLY_INPUT_LAYER",
+  "human_007_lock_sha256": "a214d9bf279c01cb25fddbfeacaed88416a4acb50b3179c16fe65484578335b3",
+  "parent_008_lock_sha256": "1abb4bf9c65875b4e96918f931bfa78299ee5aa1938b4e02acd8fc2614a92022",
+  "runtime_009_lock_sha256": "29e3066081be0489499b26833eb78eea040b6916fe44d1a7552a7f47137efb06",
+  "runtime_010r3_lock_sha256": "576449bd3d85f66e9a148ffa5fc7074fb8d926ed10404d02732a20ac8a8ce56d",
+  "correctness_lock_sha256": "2f6a670279aeccf69dc7ed596179562ad129ed28f53115e151d1d3db7d2a05bc",
+  "interpretation_lock_sha256": "fa2789e6c4315f13ec91a5647d61bfdf31c49bf52915362ade3c9deab92b1bc2",
+  "v1r4_lock_sha256": "39a6dfd2f63b68d1dfad77c039240ad5526786d1d2a0cfa67fd96426f27e1c1f",
+  "v6_lock_sha256": "94edfc9e05bd30a58a14e7e11a988a1b7fb0d5358e462df1b20cb23dca4c0f4d",
+  "market_acquisition_policy_sha256": "da8fb075dd1285333de095dddc7a57a953e0942e53dca44df9ab98a9b465ff36",
+  "feature_materialization_policy_sha256": "32f0eeb745e350a0bb2c510e2cf50997de7cac4ab88f466377a6216a24f2dd3e",
+  "daily_feature_schema_sha256": "44ebaad8d628689a50e1e788eda98d3054c632639e20710bd5e097f51bb10dbf",
+  "files": {
+    "stockpilot/daily_pit/__init__.py": "7d97bb706fe9f91c3f59e39fd0879bce543187069ed7f5b94898e88ea0ab4a82",
+    "stockpilot/daily_pit/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "stockpilot/daily_pit/cli.py": "9c5ca3b1b1f86d361d5a6c7639d5f5d9aa8552e865d228f6e98b058dff103678",
+    "stockpilot/daily_pit/pipeline.py": "9303f96a3dca0007fc98633ffea8621421fbfe9899a916c9802ffca5b6621685",
+    "stockpilot/daily_pit/runtime.py": "3918427e84823510fc33e79ad1d0e4058a82fe04ddc4600336be21d42178ed10",
+    "tests/test_daily_pit_pipeline.py": "54868043d30d539cd1697743b6f6d255cf5150ddbe66241bbc77507126e40926",
+    "tests/test_daily_pit_runtime.py": "bb9e87aa9641ba63a26824df70f51a7f40a72312f55e32cba210634c436afbf5",
+    "artifacts/research_challenger/gen02/experiments/007_human_readjudication/experiments/009_prospective_runtime_hardening/experiments/011_daily_pit_feature_activation/plan.md": "ef71f93d896731c7bc8af68a87790dabf176400bf8a1b3e7dcd86053d7290f26",
+    "artifacts/research_challenger/gen02/experiments/007_human_readjudication/experiments/009_prospective_runtime_hardening/experiments/011_daily_pit_feature_activation/policies.json": "4304fceb445eced9ffc3fa399448d8d5b2803a2297f9f8ef3d4bf8ab0d445770"
+  },
+  "research_only": true,
+  "v6_champion": true,
+  "gen2_promoted": false,
+  "automatic_promotion_allowed": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "prediction_backfill_2026_09_01": false
+}
