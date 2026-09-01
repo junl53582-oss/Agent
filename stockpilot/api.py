@@ -13,12 +13,14 @@ except ImportError as exc:  # pragma: no cover
 
 from .config import Settings
 from .future_test import future_test_status
+from .intelligence.adapters import adapt_forward_r2_snapshot, adapt_v30r1_snapshot
+from .intelligence.snapshot import build_daily_snapshot, derive_top_k
 from .pipeline import run_demo, run_file
 from .prediction.config import PredictionSettings
 from .prediction.inference import prediction_history, prediction_status
+from .prediction_forward import ForwardPredictionSettings, forward_status
 from .prediction_v30r1.config import V30R1Settings
 from .prediction_v30r1.inference import v30r1_status
-from .prediction_forward import ForwardPredictionSettings, forward_status
 
 app = FastAPI(title="StockPilot CN API", version="0.1.0")
 
@@ -132,7 +134,7 @@ def future_audit() -> dict:
     }
 
 
-def _prediction_snapshot() -> pd.DataFrame:
+def _prediction_snapshot_metadata() -> dict:
     candidates = [
         ForwardPredictionSettings().artifact_dir / "latest.json",
         V30R1Settings().artifact_dir / "live" / "latest.json",
@@ -146,10 +148,26 @@ def _prediction_snapshot() -> pd.DataFrame:
     if not available:
         raise HTTPException(status_code=404, detail="V30 latest prediction is not available")
     _, metadata = max(available, key=lambda item: item[0])
+    return metadata
+
+
+def _prediction_snapshot() -> pd.DataFrame:
+    metadata = _prediction_snapshot_metadata()
     path = Path(metadata["snapshot_path"])
     if not path.exists():
         raise HTTPException(status_code=404, detail="V30 immutable snapshot is missing")
     return pd.read_csv(path, dtype={"symbol": str})
+
+
+def _canonical_prediction_snapshot():
+    metadata = _prediction_snapshot_metadata()
+    path = Path(metadata["snapshot_path"])
+    normalized = path.as_posix().lower()
+    if "prediction_forward/v30r1_r2/" in normalized:
+        records = adapt_forward_r2_snapshot(path)
+    else:
+        records = adapt_v30r1_snapshot(path)
+    return build_daily_snapshot(records)
 
 
 @app.get("/predictions/latest")
@@ -218,6 +236,37 @@ def prediction_model_v30r1_validation() -> dict:
     if not path.exists():
         raise HTTPException(status_code=404, detail="V30r1 validation is not available")
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+@app.get("/api/v1/predictions/latest")
+def canonical_latest_predictions() -> dict:
+    """Versioned canonical interface; legacy prediction endpoints remain unchanged."""
+    return _canonical_prediction_snapshot().to_dict()
+
+
+@app.get("/api/v1/predictions/top/{k}")
+def canonical_top_predictions(k: int) -> dict:
+    if k not in {10, 20, 50}:
+        raise HTTPException(status_code=422, detail="k must be 10, 20, or 50")
+    snapshot = _canonical_prediction_snapshot()
+    return {
+        "prediction_date": snapshot.prediction_date,
+        "universe_id": snapshot.universe_id,
+        "schema_version": snapshot.schema_version,
+        "snapshot_hash": snapshot.snapshot_hash,
+        "k": k,
+        "records": [record.to_dict() for record in derive_top_k(snapshot, k)],
+    }
+
+
+@app.get("/api/v1/predictions/symbol/{symbol}")
+def canonical_symbol_prediction(symbol: str) -> dict:
+    normalized = str(symbol).zfill(6)
+    snapshot = _canonical_prediction_snapshot()
+    for record in snapshot.records:
+        if record.symbol == normalized:
+            return record.to_dict()
+    raise HTTPException(status_code=404, detail="symbol prediction not found")
 
 
 @app.post("/run")

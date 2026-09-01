@@ -98,3 +98,9 @@ stockpilot/research_challenger/** -text
 tests/test_research_challenger_v31.py -text
 artifacts/research_v31/** -text whitespace=cr-at-eol
 V31_RESEARCH_REPORT.md -text
+
+# Prediction V1 product schema is independently versioned product evidence,
+# never model-promotion evidence. Preserve schema bytes and normalize its code.
+stockpilot/intelligence/** text eol=lf
+tests/test_prediction_v1_phase1.py text eol=lf
+artifacts/prediction_v1/schema/** -text
