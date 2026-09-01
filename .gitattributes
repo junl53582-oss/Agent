@@ -113,6 +113,9 @@ artifacts/research_v8/plan.lock.json text eol=lf
 stockpilot/daily_pit/** text eol=lf
 tests/test_daily_pit_*.py text eol=lf
 artifacts/research_challenger/**/011_daily_pit_feature_activation/** text eol=lf
+tests/fixtures/build_daily_pit_sandbox_replay.py text eol=lf
+tests/fixtures/daily_pit_sandbox_replay_v1/** -text
+artifacts/research_challenger/gen02/experiments/012_sandbox_replay_operational_contract/** text eol=lf
 
 # Direct files bound by the pre-011 Gen2 lock graph are LF-authored too.
 .github/workflows/prospective-integrity.yml text eol=lf
