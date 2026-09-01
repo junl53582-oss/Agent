@@ -1,0 +1,29 @@
+{
+  "lock_id": "GEN02-SIDE-EFFECT-FREE-SANDBOX-REPLAY-012",
+  "status": "ACTIVE_RESEARCH_ONLY_SANDBOX",
+  "parent_011_lock_sha256": "0f72a2c78125673a0e468567c2e9e453312529acbb9dc7986ff685ef3edaadad",
+  "files": {
+    "stockpilot/daily_pit/sandbox.py": "0f3ac460e2ee0cfe15a19e2ad77d59d73d5da0601d3df073949900f9073af120",
+    "tests/test_daily_pit_sandbox.py": "b9a47388cc5588c62ec79874d61c56fed60ca7d1dd7c30c60da59baa12c81495",
+    "tests/fixtures/build_daily_pit_sandbox_replay.py": "d33fbd88ea417f7bc7af563d48daf34dc173504b4e774f9bdd94a83144d0b273",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/corporate_actions.json": "24de1c4a19c43ad41b013f13dcd858c17b0daa7f33a53f19913e5b11366d1c2e",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/historical_manifest.json": "ba847cde57974fa426e376336c064906b504c9dd495d3e8141cb405f5811a1a7",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/historical_panel.parquet": "1f1b0791f358e0632bae7883c30b4d2c6b7dd67390242bce69a220b076d7cf22",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/market.csv": "0ae2481f62e977d2b2b7e6be140a35a048961bf168ca8e720ef0956673a5930a",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/membership.csv": "7bf8fc2d98c8242ebf03fee23dc153b82cbdbdb11d4c521b4ee0dc9d75d65941",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/panel.parquet": "edbcda8b10c1abc208bd82da52e34e01729f745143452bb6256ac1369262a82c",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/replay_manifest.json": "63cf89594981da2e01ceebb9ae1eb2cce25f834c9148f37d4ee73db6e3d977dd",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/replay_manifest.json.sha256": "415235ff3bad41da17b1a6f43fe642758ea642053bfcdec946277955636a7f97",
+    "tests/fixtures/daily_pit_sandbox_replay_v1/settlement_market.csv": "1dd4078c1adf7e6892e3adb57943825c840248398f7b7276b2db2418e65fd40a",
+    "artifacts/research_challenger/gen02/experiments/012_sandbox_replay_operational_contract/plan.md": "420bc73e79b42a6365003bb541093b45804faf7e536cecd05acd8bdf2465c44e",
+    "artifacts/research_challenger/gen02/experiments/012_sandbox_replay_operational_contract/policies.json": "a818ddee2840274271ca6a13eee32be5174536d3c1f6a291c9aeda5ce0ef7d39"
+  },
+  "real_provider_requests": 0,
+  "production_write_count": 0,
+  "broker_requests": 0,
+  "real_orders": false,
+  "real_trades": false,
+  "real_promotion": false,
+  "production_prediction_ready": false,
+  "execution_authorized": false
+}

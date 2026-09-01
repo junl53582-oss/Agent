@@ -4,6 +4,22 @@
 
 > 仅供研究和软件验证，不构成投资建议。历史回测无法保证未来表现。
 
+## DAILY PIT side-effect-free sandbox replay
+
+完整的 DAILY PIT operational dry run 使用显式 replay-only 入口：
+
+```powershell
+python -m stockpilot.daily_pit.sandbox 2026-09-02 `
+  --replay-source tests/fixtures/daily_pit_sandbox_replay_v1 `
+  --sandbox-root tmp/daily-pit-sandbox
+```
+
+该命令只接受带 SHA-256 清单的 replay bundle，并把 market、feature、seal、
+attempt、prediction、settlement 和统一审计清单写入唯一的 sandbox run 目录。
+它不会调用真实 provider 或 broker，也不能写入 `data/prospective_gen2` 的
+production roots；所有输出始终保持 `execution_authorized=false`。成功的
+sandbox replay 仅证明离线生命周期完整，不授权实盘交易。
+
 ## Prospective Alpha V1r2 日常证据链
 
 唯一正式日常入口为：

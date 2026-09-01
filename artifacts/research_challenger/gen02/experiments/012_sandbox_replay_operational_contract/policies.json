@@ -1,0 +1,14 @@
+{
+  "contract_version": "DAILY_PIT_SANDBOX_REPLAY_V1",
+  "mode": "SIDE_EFFECT_FREE_SANDBOX_REPLAY",
+  "provider_backend": "HASH_VERIFIED_REPLAY_ONLY",
+  "mutable_state_scope": "UNIQUE_SANDBOX_RUN_DIRECTORY_ONLY",
+  "production_provider_requests": 0,
+  "production_writes": 0,
+  "broker_requests": 0,
+  "real_orders": false,
+  "real_trades": false,
+  "real_promotion": false,
+  "execution_authorized": false,
+  "parent_contract": "GEN02-DAILY-PIT-FEATURE-ACTIVATION-011"
+}
