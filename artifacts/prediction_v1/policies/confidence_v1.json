@@ -1,0 +1,29 @@
+{
+  "policy_version": "confidence-score-v1.0.0",
+  "policy_type": "PRODUCT_PRESENTATION_FUSION",
+  "not_alpha_model": true,
+  "not_model_promotion_evidence": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "missing_value_policy": "null_not_fabricated",
+  "score_direction": "higher_is_more_confident",
+  "minimum_component_coverage": 0.25,
+  "band_thresholds": [20.0, 40.0, 60.0, 80.0],
+  "dispersion_scale": 0.25,
+  "normalization": {
+    "prediction_dispersion": "1 - min(1, horizon_probability_range / 0.25)",
+    "upstream_confidence_evidence": "canonical upstream field in [0,1]",
+    "other_components": "pre-normalized real evidence in [0,1]; absent is null"
+  },
+  "weights": {
+    "independent_model_agreement": 0.15,
+    "historical_calibration": 0.15,
+    "data_completeness": 0.1,
+    "feature_completeness": 0.1,
+    "drift_ood_quality": 0.1,
+    "regime_familiarity": 0.05,
+    "prediction_dispersion": 0.15,
+    "historical_stability": 0.05,
+    "upstream_confidence_evidence": 0.15
+  }
+}
