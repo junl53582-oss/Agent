@@ -1365,11 +1365,12 @@ def write_report(
     ensemble = metrics[metrics["family"].eq("ensemble")]
     rejected = ranking[ranking["status"].eq("REJECTED")]
     selected = summary["selected"]
-    topk = costs[
-        costs["score"].eq(best["score"])
-        & costs["cost_bps"].eq(20)
-        & ~costs["policy"].str.contains("buffer")
+    topk_source = costs[
+        costs["cost_bps"].eq(20) & ~costs["policy"].str.contains("buffer")
     ]
+    topk_counts = topk_source.groupby("score").size()
+    fully_evaluated = topk_counts[topk_counts.ge(len(settings.top_ks))].index
+    topk = topk_source[topk_source["score"].isin(fully_evaluated)]
     weak = regimes[
         regimes["score"].isin(["gen2_baseline", best["score"]])
         & regimes["dimension"].isin(["market_regime", "market_cap", "volatility", "sector"])
@@ -1484,6 +1485,29 @@ Selected (maximum two): `{selected}`. The leading candidate is `{best["experimen
 ## 23. Gen3 Assessment
 
 Did Gen3 materially improve predictive quality over Gen2? **{summary["assessment"]}**. This label is limited to development/comparative research evidence and is not confirmatory proof.
+
+Answers to the required research questions:
+
+1. Rank IC: directionally yes for Stable-Core Ridge (0.06410), but not with a positive paired CI lower bound.
+2. ICIR: directionally yes (0.28700 versus 0.26535), with insufficient joint evidence.
+3. Train/OOS gap: lower for Stable-Core Ridge, though its OOS weakness remains material.
+4. 2025-like weakness: no; its 2025 IC is negative.
+5. Risk-off: descriptively improved, not confirmed.
+6. Large-cap: descriptively improved, not confirmed.
+7. Technology: descriptively improved, not confirmed.
+8. Low-volatility: descriptively improved, not confirmed.
+9. Quantile monotonicity: improved for Stable-Core Ridge, while Q5-Q1 magnitude remains small.
+10. 20 bps alpha: no Top20 challenger remained positive.
+11. Turnover: no meaningful reduction for the leading ranking challenger.
+12. Residual alpha: not sufficiently preserved by the leading challenger.
+13. Ridge versus LGBM: Ridge remained close, and Stable-Core Ridge led raw IC.
+14. Ensemble increment: small and statistically inconclusive; no ensemble passed the joint gates.
+15. De-redundancy: no; the pre-registered de-redundant model underperformed baseline.
+16. New features: some show standalone information, but the group did not preserve residual/cost evidence strongly enough.
+17. Top20: no historical cost-survival support for a production change; production remains untouched.
+18. Best K: K=30–50 appears stronger for some reused histories, with explicit data-mining risk and no authorization to select it.
+19. Forward-validation candidate: none met the pre-registered `GEN3_RESEARCH_CANDIDATE` gate; Stable-Core Ridge is only an alpha-research lead.
+20. Continue Gen3: insufficient evidence for confirmatory promotion; continue constrained alpha research and collect future unseen observations.
 
 ## 24. Next Phase
 

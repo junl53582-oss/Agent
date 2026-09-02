@@ -1,0 +1,23 @@
+item,kind,family,rank_ic,incremental_rank_ic,residual_rank_ic,evidence_basis
+A_GEN2_BASELINE,experiment,baseline,0.04987666852835187,0.0,0.02272627329888178,Exact Gen2 reproduction anchors all paired comparisons.
+B1_SHALLOW_REG,experiment,regularization,0.04810285282100607,-0.001773815707345798,0.014980830832762403,Lower tree capacity and row/feature subsampling reduce overfit.
+B2_STRONG_REG,experiment,regularization,0.04730743778590658,-0.0025692307424452915,0.014104545751687186,Stronger shrinkage improves weak-year robustness.
+B3_EARLY_STOP_REG,experiment,regularization,0.045378554950225164,-0.004498113578126704,0.012781546480055255,Past-only validation can choose boosting length without OOS tuning.
+C1_FULL61_REG,experiment,feature_selection,0.047049576843938075,-0.0028270916844137933,0.008955052238927997,Regularization may safely use the complete frozen information set.
+C2_STABLE_CORE_REG,experiment,feature_selection,0.06022492406760787,0.010348255539256002,0.013900150125065042,Stable high-activity features improve sample efficiency.
+C3_DE_REDUNDANT_REG,experiment,feature_selection,0.049074001950106236,-0.0008026665782456324,0.015145545868741648,Removing one representative from each >0.90 cluster reduces noise.
+C4_REMOVE_DEAD_REG,experiment,feature_selection,0.04786851951240824,-0.002008149015943629,0.013177979373335869,Features inactive in all folds and weak in diagnostics add variance.
+E_NEW_INDEPENDENT_FEATURES,experiment,new_features,0.05661688500601766,0.006740216477665789,0.008971831785391265,Six PIT-safe ratios/residual ranks add independent risk/liquidity/price information.
+F_REGIME_INTERACTIONS,experiment,regime_conditioning,0.06124138885091881,0.01136472032256694,0.009538868648620002,Simple PIT interactions address known weak slices without separate models.
+G1_RIDGE_GEN2,experiment,linear,0.04828066326890036,-0.0015960052594515065,0.00838266565762308,A linear model may generalize as well as trees with a smaller gap.
+G2_RIDGE_STABLE_CORE,experiment,linear,0.06410218716264009,0.014225518634288219,0.016238504298200035,Stable-core linear structure may improve worst-year behavior.
+H1_ENSEMBLE_50_50,experiment,ensemble,0.05102686222567364,0.0011501936973217705,0.0167201707803978,Fixed rank averaging diversifies tree and linear errors.
+H2_ENSEMBLE_PAST_IC,experiment,ensemble,0.05103360125026013,0.0011569327219082617,0.016023985606208865,Past validation IC weights adapt without reading test labels.
+H3_ENSEMBLE_REGIME,experiment,ensemble,0.050945698506264354,0.0010690299779124862,0.015612556853980022,Shrunk past-regime weights improve weak regimes without separate models.
+I_RESIDUALIZED_SCORE,experiment,residualization,0.014980830832762403,-0.03489583769558947,0.014980830832762403,Current-date exposure neutralization preserves more independent alpha.
+gen3_vol_adjusted_momentum_60,new_feature_standalone,price_behavior,-0.014423674473415811,,,positive_years=3/6
+gen3_downside_asymmetry,new_feature_standalone,risk,-0.025219650487473343,,,positive_years=1/6
+gen3_sector_relative_momentum_60,new_feature_standalone,price_behavior,-0.015338382428683482,,,positive_years=2/6
+gen3_extreme_reversal_5,new_feature_standalone,price_behavior,0.0038690883239635766,,,positive_years=3/6
+gen3_liquidity_shock,new_feature_standalone,liquidity,0.01949959036717315,,,positive_years=5/6
+gen3_trend_consistency,new_feature_standalone,price_behavior,-0.016375907365796628,,,positive_years=3/6
