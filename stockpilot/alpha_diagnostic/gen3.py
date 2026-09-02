@@ -699,6 +699,17 @@ def freeze_protocol(settings: Gen3Settings | None = None) -> dict:
 
 
 def _score_summary(daily: pd.DataFrame) -> dict:
+    if daily.empty or "rank_ic" not in daily:
+        return {
+            "dates": 0,
+            "rank_ic_mean": np.nan,
+            "rank_ic_median": np.nan,
+            "rank_ic_std": np.nan,
+            "icir": np.nan,
+            "positive_ic_ratio": np.nan,
+            "pearson_ic_mean": np.nan,
+            "rank_ic_t_stat": np.nan,
+        }
     summary = summarize_ic(daily)
     values = pd.to_numeric(daily.get("rank_ic"), errors="coerce").dropna()
     return {

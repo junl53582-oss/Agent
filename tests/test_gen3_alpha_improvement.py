@@ -10,6 +10,7 @@ from stockpilot.alpha_diagnostic.gen3 import (
     NEW_FEATURES,
     REGIME_INTERACTIONS,
     Gen3Settings,
+    _score_summary,
     add_gen3_features,
     feature_registry,
     freeze_protocol,
@@ -77,6 +78,12 @@ def test_paired_block_bootstrap_is_deterministic() -> None:
     )
     assert first == second
     assert first["ci_lower"] > 0
+
+
+def test_empty_sparse_slice_is_reported_not_crashed() -> None:
+    result = _score_summary(pd.DataFrame())
+    assert result["dates"] == 0
+    assert np.isnan(result["rank_ic_mean"])
 
 
 def test_protocol_freezes_small_hypothesis_driven_registry(tmp_path) -> None:
