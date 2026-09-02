@@ -1,0 +1,12 @@
+{
+  "2024_2025_used_for_selection": false,
+  "selected_label": "L4_BETA_RESIDUAL_RANK",
+  "selected_label_experiment": "B3_BETA_RESIDUAL_RANK",
+  "selected_signal_experiment": "A2_LIQUIDITY_SHOCK",
+  "selected_signal_family": "liquidity_shock",
+  "selection_source": "2020-2023 development folds only",
+  "signal_admitted": true,
+  "signal_development_delta_vs_harness": 0.005127109225563184,
+  "signal_family_mean_residual_ic": 1.7058638643659358e-05,
+  "signal_positive_development_years": 3
+}

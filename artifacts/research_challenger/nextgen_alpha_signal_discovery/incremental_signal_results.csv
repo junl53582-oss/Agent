@@ -1,0 +1,4 @@
+family,hypothesis,pit_status,rank_ic_mean,residual_ic,worst_year,incremental_vs_harness,status
+residual_momentum,Past-beta and sector residual momentum adds independent price information.,PIT_SAFE,0.06233297628872003,0.014961080462370132,-0.012745576351213178,-0.0017692108739200546,REJECTED
+liquidity_shock,Abnormal liquidity and price impact contain information beyond liquidity level.,PIT_SAFE,0.06668679503468888,0.011892640535746696,-0.015954778727735038,0.002584607872048797,REJECTED
+price_path_shape,Path smoothness and return sequencing distinguish durable from noisy trends.,PIT_SAFE,0.06140952752322943,0.014066225268307721,-0.010100702896708768,-0.0026926596394106564,REJECTED

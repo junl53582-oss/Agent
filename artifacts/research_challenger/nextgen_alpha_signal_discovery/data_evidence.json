@@ -1,0 +1,27 @@
+{
+  "2026_labels_read": false,
+  "dataset_sha256": "8aa5e3f2817d6bf8e5da3bd265b4f078206b58b10ee770907233595c59342b02",
+  "date_max": "2025-12-02",
+  "date_min": "2010-07-02",
+  "latest_label_end_20d": "2025-12-31",
+  "latest_label_end_5d": "2025-12-10",
+  "manifest_rows": 947079,
+  "manifest_sha256": "7b1e03295ba7f63ad681d9f9c65b65bc086eddb57b708cc3905471ea0ca8441c",
+  "parquet_filters": [
+    "date < 2026-01-01",
+    "label_end_date_20d < 2026-01-01"
+  ],
+  "pit_checks": {
+    "fundamentals_pit": true,
+    "industry_pit": true,
+    "membership_pit": true
+  },
+  "rows": 903296,
+  "source_hashes": {
+    "data\\fundamentals_pit_v10_extended.csv": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+    "data\\industry_history_v10.csv": "275e72acb154563dd85eb8f6ed5035439829281d7bf3604495eb9eaf2e14652c",
+    "data\\market_history_v10_hfq.csv": "fcc1ea387719476410f8d4dcc49840e74bd087aec351ed02cb40d1318dd45fc3",
+    "data\\universes\\000300\\history_v10.csv": "15addf2a286630d92545b671b14c2f0d8fe6b7cc037b97a482088ad5c844dca1"
+  },
+  "symbols": 735
+}
