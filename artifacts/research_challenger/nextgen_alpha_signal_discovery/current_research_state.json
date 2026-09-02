@@ -44,9 +44,9 @@
     "turnover_metrics.csv",
     "yearly_metrics.csv"
   ],
-  "latest_commit": "5085cd07925bcb5d31a0fc8d1eb768aea4063b92",
+  "latest_commit": "e3ab5f2",
   "next_recommended_action": "WAIT_FOR_GENUINELY_UNSEEN_FORWARD_DATA_OR_NEW_PIT_SOURCE",
-  "open_pr": null,
+  "open_pr": "https://github.com/junl53582-oss/Agent/pull/7",
   "pending_experiments": [],
   "rejected_experiments": [
     "C1_DEV_SELECTED_SIGNAL_LABEL_RIDGE",

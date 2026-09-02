@@ -322,7 +322,7 @@ Initial: three signal families and five alternative label models, plus Gen2/harn
 
 ## 23. Git / PR
 
-Branch `codex/nextgen-alpha-signal-discovery`, baseline `442a88a9fc24b9c43e62ec48f38ed7858490adfd`. Research-only code/tests/artifacts; frozen, 007-012, DAILY PIT and sandbox modified count must remain zero. Final commits, PR head and CI are recorded after push; PR must remain unmerged.
+Branch `codex/nextgen-alpha-signal-discovery`, baseline `442a88a9fc24b9c43e62ec48f38ed7858490adfd`, research-result commit `e3ab5f2`. PR [#7](https://github.com/junl53582-oss/Agent/pull/7) remains open and must not be auto-merged. Research-only code/tests/artifacts; frozen, 007-012, DAILY PIT and sandbox modified count is zero. Final CI status is bound to the PR head and reported in delivery after the metadata push.
 
 ## 24. Final Answer
 
