@@ -141,6 +141,9 @@ artifacts/research_challenger/gen03_alpha_diagnostic/** -text whitespace=cr-at-e
 stockpilot/alpha_diagnostic/gen3.py text eol=lf
 tests/test_gen3_alpha_improvement.py text eol=lf
 artifacts/research_challenger/gen03_alpha_improvement/** -text whitespace=cr-at-eol
+stockpilot/alpha_diagnostic/nextgen.py text eol=lf
+tests/test_nextgen_alpha_signal_discovery.py text eol=lf
+artifacts/research_challenger/nextgen_alpha_signal_discovery/** -text whitespace=cr-at-eol
 
 # Prediction V1 product schema is independently versioned product evidence,
 # never model-promotion evidence. Preserve schema bytes and normalize its code.

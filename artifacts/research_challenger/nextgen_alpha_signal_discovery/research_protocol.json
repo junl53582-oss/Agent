@@ -1,0 +1,94 @@
+{
+  "admission_rule": {
+    "label": "highest development IC among frozen labels; selection does not use 2024-2025",
+    "lightgbm": "run only when selected signal passes signal admission",
+    "signal": "development delta > 0.003, >=3/4 positive years, family mean residual IC > 0"
+  },
+  "baseline_sha": "442a88a9fc24b9c43e62ec48f38ed7858490adfd",
+  "classification": "DEVELOPMENT_RESEARCH_ONLY",
+  "created_at_utc": "2026-09-02T02:16:49.835289+00:00",
+  "hard_stops": [
+    "PIT violation",
+    "future leakage",
+    "label contamination",
+    "frozen mutation",
+    "007-012 mutation",
+    "DAILY PIT/sandbox mutation",
+    "production write",
+    "broker/live trade",
+    "champion activation",
+    "budget exhausted"
+  ],
+  "nested_discipline": {
+    "comparison_years": [
+      2024,
+      2025
+    ],
+    "development_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "manual_retuning_against_2025": false,
+    "untouched_holdout": false
+  },
+  "protocol_id": "NEXT_GENERATION_ALPHA_SIGNAL_DISCOVERY_AND_LABEL_REDESIGN",
+  "settings": {
+    "artifact_dir": "artifacts/research_challenger/nextgen_alpha_signal_discovery",
+    "bootstrap_block_length": 20,
+    "bootstrap_replications": 1000,
+    "comparison_years": [
+      2024,
+      2025
+    ],
+    "cost_bps": [
+      0,
+      10,
+      20,
+      30,
+      50
+    ],
+    "development_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "experiment_config_budget": 12,
+    "horizon": 20,
+    "major_family_budget": 3,
+    "maximum_candidates": 2,
+    "seed": 42,
+    "top_ks": [
+      10,
+      20,
+      30,
+      50
+    ],
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "source_sha": "442a88a9fc24b9c43e62ec48f38ed7858490adfd",
+  "success_gates": {
+    "icir_gt_gen2": 0.26534749011677106,
+    "paired_bootstrap_ci_lower_gt": 0.0,
+    "quantile_monotonicity_better": true,
+    "rank_ic_gt_gen2": 0.04987666852835187,
+    "residual_ic_gte": 0.0204882670229622,
+    "topk_20bps_alpha_gte": 0.0,
+    "train_oos_gap_not_worse": true,
+    "worst_year_gt": 0.0
+  },
+  "tracks": {
+    "A": "three new economic signal families screened before model admission",
+    "B": "six evaluated label semantics plus one analytical and one unavailable control",
+    "interaction": "development-only rule selects at most one signal and one label for two follow-ups"
+  }
+}
