@@ -1,0 +1,23 @@
+{
+  "GEN3_ALPHA_IMPROVEMENT_REPORT.md": "30c5a62a8ff744086e299b57950cfd598cfd7d7204174c740aad82676fc32cef",
+  "baseline_metrics.json": "3991f00b65ba05a658332321b4a2952af7e01ae9b01b9e7e9ac8226d6fd44f09",
+  "candidate_ranking.csv": "725d6178826acd2d282c6ad5818ee24199dd319b9e15da557881d2946cafa102",
+  "candidate_summary.json": "7b2bdf3bea440f5e0bf451144473d85d14302adbe87f05ff37790dcdc9ad586c",
+  "challenger_metrics.csv": "d6dcb67890b76da0eaed1f35cf8b3e3d15fba7ae92c5a8b3d74003944f71b168",
+  "cost_metrics.csv": "7a421f34c86d3e85e8bfc2eb1cd870ede55b98a2a8701ebe22e024411b3fe64a",
+  "data_evidence.json": "5253fc5e2ac27bc830ebf5eed03dc8f762af3cdb9140508c616ac319765bdb80",
+  "experiment_registry.json": "0d2daf4ad78f1512ff6cc57fda63ff0710c3ac10015cd996686f2b5b867b693d",
+  "feature_ablation.csv": "e85d55a476a9e1b76b910809d221482b9dbffd6a9acbd34190fc3f8105c68aa7",
+  "feature_registry.json": "9095ba84fd56027d366e4bd689e48b81f1097345d6990204929cae224dc54cc7",
+  "fold_receipts.json": "6c7fa92cb6c6ff48d0d20a0d6456f407fa5bb7179d01e8305fbc3c2938f09203",
+  "gen3_feature_registry.json": "9095ba84fd56027d366e4bd689e48b81f1097345d6990204929cae224dc54cc7",
+  "model_receipts.json": "57b181a53dcc66471e02fc91f267eeb9eb897a53e0e9400acc48084cc7b990a5",
+  "paired_comparisons.csv": "5a1fc73b5677013806c935f2be99b9aa0efdae8c9cb2e965455a796125ea4dba",
+  "price_evidence.json": "2a674b39008d7e393767e33e595d0942b75b470304a89b3b02df8a38fef69538",
+  "quantile_metrics.csv": "6b5b234004cf8cd66ddc426a96f4b1bbde02b6e4a2e06251fd7aae0a6bd2932a",
+  "regime_metrics.csv": "c8db32b6211e240ac2f66d2e9a22bec25e685729879f93089b58c525db6d1766",
+  "reproducibility.json": "e6b8e588b273414df30c641bc256b1d4688d08a49416706243062c08df8c8183",
+  "research_protocol.json": "ec1dbf92b985757e85a9d9f80d7238715a20b3c00a642c308274c87b7f00b993",
+  "turnover_metrics.csv": "8aeb42e47b3c056c5aaf22d19f19e45f819788a007d4d175aa6cef519dcb1218",
+  "yearly_metrics.csv": "51af0481adb8b98b2a19ab517184c834339e6acd99a88645fb9acdaf363304d9"
+}

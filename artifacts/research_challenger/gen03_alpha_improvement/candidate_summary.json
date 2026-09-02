@@ -1,0 +1,9 @@
+{
+  "assessment": "NO",
+  "candidate_role": "GEN3_RESEARCH_CANDIDATE",
+  "champion_promoted": false,
+  "final_status": "GEN3_ALPHA_IMPROVEMENT_INCONCLUSIVE",
+  "interpretation": "development/comparative research evidence only",
+  "selected": [],
+  "untouched_confirmatory_holdout": false
+}

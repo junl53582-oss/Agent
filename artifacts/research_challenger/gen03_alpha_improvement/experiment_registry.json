@@ -1,0 +1,146 @@
+[
+  {
+    "config": "baseline",
+    "expected_mechanism": "None; frozen comparative baseline.",
+    "family": "baseline",
+    "feature_policy": "yearly_frozen_gen2",
+    "hypothesis": "Exact Gen2 reproduction anchors all paired comparisons.",
+    "id": "A_GEN2_BASELINE",
+    "model": "lightgbm",
+    "score": "gen2_baseline"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Lower train/OOS gap and fold variance.",
+    "family": "regularization",
+    "feature_policy": "yearly_frozen_gen2",
+    "hypothesis": "Lower tree capacity and row/feature subsampling reduce overfit.",
+    "id": "B1_SHALLOW_REG",
+    "model": "lightgbm",
+    "score": "lgbm_shallow"
+  },
+  {
+    "config": "strong",
+    "expected_mechanism": "Higher worst-year IC and ICIR at lower complexity.",
+    "family": "regularization",
+    "feature_policy": "yearly_frozen_gen2",
+    "hypothesis": "Stronger shrinkage improves weak-year robustness.",
+    "id": "B2_STRONG_REG",
+    "model": "lightgbm",
+    "score": "lgbm_strong_reg"
+  },
+  {
+    "config": "early_stop",
+    "expected_mechanism": "Adaptive rounds reduce unnecessary boosting.",
+    "family": "regularization",
+    "feature_policy": "yearly_frozen_gen2",
+    "hypothesis": "Past-only validation can choose boosting length without OOS tuning.",
+    "id": "B3_EARLY_STOP_REG",
+    "model": "lightgbm",
+    "score": "lgbm_early_stop"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Recover conditional features without deep trees.",
+    "family": "feature_selection",
+    "feature_policy": "full61",
+    "hypothesis": "Regularization may safely use the complete frozen information set.",
+    "id": "C1_FULL61_REG",
+    "model": "lightgbm",
+    "score": "lgbm_full61"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Lower variance with preserved risk/liquidity/price alpha.",
+    "family": "feature_selection",
+    "feature_policy": "stable_core",
+    "hypothesis": "Stable high-activity features improve sample efficiency.",
+    "id": "C2_STABLE_CORE_REG",
+    "model": "lightgbm",
+    "score": "lgbm_stable_core"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Lower correlation burden without losing information sources.",
+    "family": "feature_selection",
+    "feature_policy": "de_redundant",
+    "hypothesis": "Removing one representative from each >0.90 cluster reduces noise.",
+    "id": "C3_DE_REDUNDANT_REG",
+    "model": "lightgbm",
+    "score": "lgbm_dedup"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Reduce dimensionality while retaining selected evidence.",
+    "family": "feature_selection",
+    "feature_policy": "remove_dead_unstable",
+    "hypothesis": "Features inactive in all folds and weak in diagnostics add variance.",
+    "id": "C4_REMOVE_DEAD_REG",
+    "model": "lightgbm",
+    "score": "lgbm_dead_removed"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Improve residual IC and quantile ordering.",
+    "family": "new_features",
+    "feature_policy": "stable_core_plus_new",
+    "hypothesis": "Six PIT-safe ratios/residual ranks add independent risk/liquidity/price information.",
+    "id": "E_NEW_INDEPENDENT_FEATURES",
+    "model": "lightgbm",
+    "score": "lgbm_new_features"
+  },
+  {
+    "config": "shallow",
+    "expected_mechanism": "Improve risk-off/large-cap/technology/low-vol IC.",
+    "family": "regime_conditioning",
+    "feature_policy": "stable_core_new_interactions",
+    "hypothesis": "Simple PIT interactions address known weak slices without separate models.",
+    "id": "F_REGIME_INTERACTIONS",
+    "model": "lightgbm",
+    "score": "lgbm_regime_interactions"
+  },
+  {
+    "config": "ridge_alpha_10",
+    "expected_mechanism": "Stable additive signal and low variance.",
+    "family": "linear",
+    "feature_policy": "yearly_frozen_gen2",
+    "hypothesis": "A linear model may generalize as well as trees with a smaller gap.",
+    "id": "G1_RIDGE_GEN2",
+    "model": "ridge",
+    "score": "ridge_gen2"
+  },
+  {
+    "config": "ridge_alpha_10",
+    "expected_mechanism": "Reduced feature and functional complexity.",
+    "family": "linear",
+    "feature_policy": "stable_core",
+    "hypothesis": "Stable-core linear structure may improve worst-year behavior.",
+    "id": "G2_RIDGE_STABLE_CORE",
+    "model": "ridge",
+    "score": "ridge_stable_core"
+  },
+  {
+    "family": "ensemble",
+    "hypothesis": "Fixed rank averaging diversifies tree and linear errors.",
+    "id": "H1_ENSEMBLE_50_50",
+    "score": "ensemble_50_50"
+  },
+  {
+    "family": "ensemble",
+    "hypothesis": "Past validation IC weights adapt without reading test labels.",
+    "id": "H2_ENSEMBLE_PAST_IC",
+    "score": "ensemble_past_ic"
+  },
+  {
+    "family": "ensemble",
+    "hypothesis": "Shrunk past-regime weights improve weak regimes without separate models.",
+    "id": "H3_ENSEMBLE_REGIME",
+    "score": "ensemble_regime"
+  },
+  {
+    "family": "residualization",
+    "hypothesis": "Current-date exposure neutralization preserves more independent alpha.",
+    "id": "I_RESIDUALIZED_SCORE",
+    "score": "residualized_shallow"
+  }
+]

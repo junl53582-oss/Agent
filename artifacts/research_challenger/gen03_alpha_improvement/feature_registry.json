@@ -1,0 +1,196 @@
+[
+  {
+    "category": "price_behavior",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_vol_adjusted_momentum_60",
+    "formula": "rank(momentum_60 / abs(volatility_60))",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "momentum_60",
+      "volatility_60"
+    ],
+    "lookback": "60 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Separate trend from volatility loading.",
+    "pit_available": true
+  },
+  {
+    "category": "risk",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_downside_asymmetry",
+    "formula": "rank(-downside_volatility_60 / abs(volatility_60))",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "downside_volatility_60",
+      "volatility_60"
+    ],
+    "lookback": "60 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Measure downside asymmetry beyond total volatility.",
+    "pit_available": true
+  },
+  {
+    "category": "price_behavior",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_sector_relative_momentum_60",
+    "formula": "within-industry rank(momentum_60)",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "momentum_60",
+      "industry"
+    ],
+    "lookback": "60 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Remove broad sector momentum contamination.",
+    "pit_available": true
+  },
+  {
+    "category": "price_behavior",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_extreme_reversal_5",
+    "formula": "rank(-ret_5 / abs(volatility_20))",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "ret_5",
+      "volatility_20"
+    ],
+    "lookback": "5/20 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Test reversal after volatility-scaled extremes.",
+    "pit_available": true
+  },
+  {
+    "category": "liquidity",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_liquidity_shock",
+    "formula": "rank(volume_ratio_20 / max(1+volume_trend_60,0.1))",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "volume_ratio_20",
+      "volume_trend_60"
+    ],
+    "lookback": "20/60 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Distinguish immediate volume shock from medium trend.",
+    "pit_available": true
+  },
+  {
+    "category": "price_behavior",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_trend_consistency",
+    "formula": "rank((sign(ret_5)+sign(ret_20)+sign(momentum_60))*abs(ret_20)/volatility_20)",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "ret_5",
+      "ret_20",
+      "momentum_60",
+      "volatility_20"
+    ],
+    "lookback": "5/20/60 sessions",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Reward direction consistency rather than raw momentum.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_risk_off_x_vol_adjusted_momentum",
+    "formula": "risk-off trend interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "regime",
+      "gen3_vol_adjusted_momentum_60"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_risk_off_x_liquidity_shock",
+    "formula": "risk-off liquidity interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "regime",
+      "gen3_liquidity_shock"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_large_cap_x_sector_relative_momentum",
+    "formula": "large-cap residual momentum interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "benchmark_weight_rank",
+      "gen3_sector_relative_momentum_60"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_large_cap_x_downside_asymmetry",
+    "formula": "large-cap downside-risk interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "benchmark_weight_rank",
+      "gen3_downside_asymmetry"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_low_vol_x_extreme_reversal",
+    "formula": "low-vol reversal interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "volatility_20",
+      "gen3_extreme_reversal_5"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  },
+  {
+    "category": "regime_interaction",
+    "diagnostic_evidence_source": "PR #5 Gen2 alpha diagnostic",
+    "effective_timestamp_semantics": "computed only from inputs available at decision date",
+    "feature_name": "gen3_technology_x_trend_consistency",
+    "formula": "technology trend-consistency interaction",
+    "frozen_contract_modified": false,
+    "inputs": [
+      "broad_sector",
+      "gen3_trend_consistency"
+    ],
+    "lookback": "inherits source lookback; regime/bucket observed at decision date",
+    "missing_policy": "replace non-finite result with cross-sectional neutral 0.0",
+    "motivation": "Address a pre-registered weak slice without a separate model.",
+    "pit_available": true
+  }
+]

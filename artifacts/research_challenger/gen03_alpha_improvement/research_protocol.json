@@ -1,0 +1,93 @@
+{
+  "architecture_sha": "63a866830efad38098ae8cc3237b4cd8340970c8",
+  "classification": "DEVELOPMENT_COMPARATIVE_RESEARCH_ONLY",
+  "created_at_utc": "2026-09-02T01:18:23.431848+00:00",
+  "diagnostic_summary_sha256": "8575e67ea91703a59e8d8f6684b94a9bce075412d5a31143da30c16836e3e3cc",
+  "evaluation": {
+    "future_standardization": false,
+    "purge_gap_trading_days": 21,
+    "random_split": false,
+    "selection_semantics": "all families fixed before full evaluation run",
+    "target": "cross-sectional rank of 20D T+1-open to T+21-open return",
+    "training_window_years": 8,
+    "validation_years": 1
+  },
+  "forbidden": [
+    "Gen2 modification",
+    "007-012 modification",
+    "DAILY PIT modification",
+    "sandbox modification",
+    "execution/settlement modification",
+    "Gen3 activation",
+    "champion promotion",
+    "live trading authorization"
+  ],
+  "merged_diagnostic_sha": "e91a7b2cd97b088bb613977867417b3fa3aaa2d1",
+  "nested_discipline": {
+    "2025_untouched": false,
+    "comparison_years": [
+      2024,
+      2025
+    ],
+    "manual_retuning_against_2025_after_protocol": false,
+    "research_development_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "untouched_holdout_available": false
+  },
+  "protocol_id": "GEN3_ALPHA_IMPROVEMENT_EXPERIMENT",
+  "settings": {
+    "artifact_dir": "artifacts/research_challenger/gen03_alpha_improvement",
+    "bootstrap_block_length": 20,
+    "bootstrap_replications": 1000,
+    "comparison_years": [
+      2024,
+      2025
+    ],
+    "cost_bps": [
+      0,
+      10,
+      20,
+      30,
+      50
+    ],
+    "horizon": 20,
+    "maximum_research_candidates": 2,
+    "quantiles": 5,
+    "random_seed": 42,
+    "research_development_years": [
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "top_ks": [
+      10,
+      20,
+      30,
+      40,
+      50
+    ],
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "source_sha": "e91a7b2cd97b088bb613977867417b3fa3aaa2d1",
+  "success_gates": {
+    "20bps_research_proxy_alpha_gte": 0.0,
+    "icir_baseline": 0.26534749011677106,
+    "paired_rank_ic_bootstrap_lower_gt": 0.0,
+    "quantile_monotonicity_better": true,
+    "rank_ic_baseline": 0.04987666852835187,
+    "residual_ic_floor": 0.018488267022962197,
+    "train_oos_gap_not_worse": true
+  }
+}

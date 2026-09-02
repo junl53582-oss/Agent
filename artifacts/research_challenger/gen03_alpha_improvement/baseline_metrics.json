@@ -1,0 +1,18 @@
+{
+  "dates": 1434,
+  "diagnostic_reference_rank_ic": 0.04987666852835187,
+  "experiment_id": "A_GEN2_BASELINE",
+  "family": "baseline",
+  "icir": 0.26534749011677106,
+  "pearson_ic_mean": 0.02533432461434377,
+  "positive_ic_ratio": 0.592747559274756,
+  "rank_ic_mean": 0.04987666852835187,
+  "rank_ic_median": 0.04172509679210889,
+  "rank_ic_std": 0.1879673650065532,
+  "rank_ic_t_stat": 10.048229823862561,
+  "reproduction_difference": 0.0,
+  "score": "gen2_baseline",
+  "train_oos_gap": 0.11948918756916013,
+  "train_rank_ic": 0.169365856097512,
+  "worst_year_rank_ic": 0.001248770082136381
+}
