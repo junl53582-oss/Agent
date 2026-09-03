@@ -32,3 +32,8 @@ artifacts/forward_evidence/**/attempts/
 artifacts/forward_evidence/**/predictions/
 artifacts/forward_evidence/**/settlements/
 artifacts/forward_evidence/**/checkpoints/
+
+# Daily prediction product runtime outputs are immutable but local operational data.
+artifacts/daily_predictions/**/predictions/
+artifacts/daily_predictions/**/attempts/
+artifacts/daily_predictions/**/latest.json

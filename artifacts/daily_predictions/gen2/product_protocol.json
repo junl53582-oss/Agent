@@ -1,0 +1,28 @@
+{
+  "product_version": "DAILY_STOCK_PREDICTION_V1",
+  "phase": "DAILY_STOCK_PREDICTION_PRODUCT",
+  "baseline_sha": "0119ca98e4db9156ec1008b8155fa4342131943d",
+  "model_id": "GEN2-LGBM-20D-SECTOR-BALANCED-TOP20",
+  "target_horizon_sessions": 20,
+  "target_semantics": "cross-sectional relative-strength ranking",
+  "top_k": {
+    "primary": 20,
+    "display": [10, 20]
+  },
+  "signal_strength": {
+    "VERY_HIGH": "percentile >= 95",
+    "HIGH": "90 <= percentile < 95",
+    "MEDIUM": "70 <= percentile < 90",
+    "LOW": "percentile < 70",
+    "probability_semantics": false
+  },
+  "model_evidence_level": "WEAK_REGIME_DEPENDENT",
+  "data_window": "18:30 Asia/Shanghai or later",
+  "real_provider_confirmation_required": true,
+  "feature_contribution_status": "NOT_PERSISTED_BY_FROZEN_RUNTIME",
+  "research_only": true,
+  "execution_authorized": false,
+  "broker_requests_allowed": 0,
+  "real_orders_allowed": false,
+  "real_trades_allowed": false
+}
