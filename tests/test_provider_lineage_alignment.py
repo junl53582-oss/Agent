@@ -6,9 +6,12 @@ from pathlib import Path
 
 import pandas as pd
 
+from research_v10.features import V10_FEATURES
+from stockpilot.daily_pit.pipeline import DAILY_FEATURE_COLUMNS, META_COLUMNS
 from stockpilot.prospective_r2.integrity import sha256_file
 from stockpilot.provider_lineage_alignment import (
     ProviderLineageAlignmentSettings,
+    _assemble_candidate_panel,
     acquire_tencent_candidate,
     verify_candidate,
 )
@@ -76,3 +79,29 @@ def test_tencent_candidate_is_isolated_complete_and_idempotent(tmp_path: Path) -
     assert {path.name: sha256_file(path) for path in production.iterdir()} == before
     assert verify_candidate("2026-09-03", settings)["idempotent"] is True
     assert acquire_tencent_candidate("2026-09-03", settings=settings)["idempotent"] is True
+
+
+def test_candidate_panel_carries_builder_sector_without_changing_features() -> None:
+    keys = {"date": pd.Timestamp("2026-09-03"), "symbol": "000001"}
+    metadata = pd.DataFrame(
+        [{
+            **keys,
+            "eligible": True,
+            "in_universe": True,
+            "membership_snapshot_date": pd.Timestamp("2026-06-30"),
+            "available_date": pd.Timestamp("2026-08-31"),
+            "industry_effective_date": pd.Timestamp("2026-01-01"),
+            "industry": "test-industry",
+            "benchmark_weight": 1.0,
+        }]
+    )
+    feature_values = {name: float(index) for index, name in enumerate(V10_FEATURES)}
+    reduced = pd.DataFrame([{**keys, "broad_sector": "builder-sector", **feature_values}])
+
+    panel = _assemble_candidate_panel(metadata, reduced)
+
+    assert list(panel.columns) == DAILY_FEATURE_COLUMNS
+    assert len(set(panel.columns)) == 71
+    assert panel.loc[0, "broad_sector"] == "builder-sector"
+    assert panel.loc[0, V10_FEATURES].to_dict() == feature_values
+    assert set(META_COLUMNS).issubset(panel.columns)
