@@ -131,12 +131,14 @@ closed. It never submits an order.
 
 - Branch: `codex/daily-stock-prediction`
 - Parent: verified PR #8 head `52a14664b0dc8ded1c71fcad71fbefc1e6f7c481`
+- Implementation commit: `d67e96dee6511f37491ad9fc5ec002a2ca94589f`
 - Change class: additive presentation/product layer only
 - Frozen Gen2 modified: 0
 - 007–012 modified: 0
 - DAILY PIT core modified: 0
 - Sandbox core modified: 0
-- PR/CI: recorded after final push
+- PR: `https://github.com/junl53582-oss/Agent/pull/9`
+- Required CI: verified on the final PR head before closeout
 
 ## 11. Final User Instructions
 
