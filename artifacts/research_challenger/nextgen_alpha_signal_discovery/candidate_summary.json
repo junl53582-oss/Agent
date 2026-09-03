@@ -1,0 +1,14 @@
+{
+  "automatic_continuation_decision": "ALPHA_RESEARCH_PLATEAU",
+  "champion_promoted": false,
+  "confirmatory_candidate": "NO",
+  "credible_signal_families": 0,
+  "experiment_configs_used": 12,
+  "final_status": "ALPHA_RESEARCH_PLATEAU",
+  "historical_optimization_stopped": true,
+  "label_redesign_assessment": "NO",
+  "major_family_budget_used": 3,
+  "new_alpha_assessment": "NO",
+  "next_automatic_action": "WAIT_FOR_GENUINELY_UNSEEN_FORWARD_DATA_OR_NEW_PIT_SOURCE",
+  "selected_candidates": []
+}

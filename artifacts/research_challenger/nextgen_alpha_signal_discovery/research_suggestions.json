@@ -1,0 +1,35 @@
+[
+  {
+    "automatic_execution": "NOT_EXECUTED_NEW_EXTERNAL_DATA_AUTHORITY_AND_COVERAGE_REQUIRED",
+    "evidence": "Best new standalone residual IC was 0.0149; no family passed joint admission/candidate gates.",
+    "expected_information_gain": "High",
+    "expected_mechanism": "A genuinely new PIT source can add orthogonal earnings/event/ownership information.",
+    "experiment": "Acquire and freeze a historically complete announcement/analyst/ownership source before any model test.",
+    "hypothesis": "The current plateau reflects missing information rather than insufficient model capacity.",
+    "priority": "P0",
+    "risk_of_overfitting": "High if source coverage is backfilled or selected after seeing returns.",
+    "success_gate": "Source-level PIT audit plus positive residual IC and paired CI on pre-registered future folds."
+  },
+  {
+    "automatic_execution": "WAIT_FOR_FORWARD_EVIDENCE",
+    "evidence": "2020-2025 has been used by Gen2, Gen3 and this bounded discovery cycle.",
+    "expected_information_gain": "High",
+    "expected_mechanism": "Future matured DAILY PIT outcomes provide independent evidence.",
+    "experiment": "Freeze the best non-promoted research directions and collect unseen forward labels without retuning.",
+    "hypothesis": "Historical reuse is now the dominant statistical uncertainty.",
+    "priority": "P1",
+    "risk_of_overfitting": "Low if specifications remain frozen.",
+    "success_gate": "Positive paired block-bootstrap lower bound and non-negative 20 bps proxy alpha on future data."
+  },
+  {
+    "automatic_execution": "DEFERRED_BUDGET_EXHAUSTED",
+    "evidence": "Top20 cost survival remains weak across historical candidates.",
+    "expected_information_gain": "Medium",
+    "expected_mechanism": "New slow-moving information could improve retention and net alpha.",
+    "experiment": "Only after a new data source exists, pre-register persistence/holding-period diagnostics.",
+    "hypothesis": "Turnover fragility may require a longer-lived signal rather than more ranking complexity.",
+    "priority": "P2",
+    "risk_of_overfitting": "Medium; policy search must remain bounded.",
+    "success_gate": "Lower turnover with no Rank IC/residual IC deterioration."
+  }
+]

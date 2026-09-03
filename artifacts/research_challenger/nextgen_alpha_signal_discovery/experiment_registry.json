@@ -1,0 +1,98 @@
+[
+  {
+    "features": "gen2_yearly_frozen",
+    "hypothesis": "Exact Gen2 reproduction anchors every paired comparison.",
+    "id": "R0_GEN2_EXACT_REFERENCE",
+    "label": "L0_GEN2_CROSS_SECTIONAL_RANK",
+    "model": "lightgbm",
+    "track": "reference"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Stable-Core Ridge is the low-complexity signal-quality harness.",
+    "id": "R1_STABLE_CORE_RIDGE_HARNESS",
+    "label": "L0_GEN2_CROSS_SECTIONAL_RANK",
+    "model": "ridge",
+    "track": "harness"
+  },
+  {
+    "features": "stable_core_plus_residual_momentum",
+    "hypothesis": "Past-beta and sector residual momentum adds independent price information.",
+    "id": "A1_RESIDUAL_MOMENTUM",
+    "label": "L0_GEN2_CROSS_SECTIONAL_RANK",
+    "model": "ridge",
+    "track": "signal"
+  },
+  {
+    "features": "stable_core_plus_liquidity_shock",
+    "hypothesis": "Abnormal liquidity and price impact contain information beyond liquidity level.",
+    "id": "A2_LIQUIDITY_SHOCK",
+    "label": "L0_GEN2_CROSS_SECTIONAL_RANK",
+    "model": "ridge",
+    "track": "signal"
+  },
+  {
+    "features": "stable_core_plus_price_path_shape",
+    "hypothesis": "Path smoothness and return sequencing distinguish durable from noisy trends.",
+    "id": "A3_PRICE_PATH_SHAPE",
+    "label": "L0_GEN2_CROSS_SECTIONAL_RANK",
+    "model": "ridge",
+    "track": "signal"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Direct return regression may preserve economically meaningful magnitude.",
+    "id": "B1_RAW_FORWARD_RETURN",
+    "label": "L1_RAW_FORWARD_RETURN",
+    "model": "ridge",
+    "track": "label"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Sector-neutral labels reduce sector beta learning.",
+    "id": "B2_SECTOR_NEUTRAL_RANK",
+    "label": "L2_SECTOR_NEUTRAL_RANK",
+    "model": "ridge",
+    "track": "label"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Past-beta residual labels reduce market loading while preserving stock ranking.",
+    "id": "B3_BETA_RESIDUAL_RANK",
+    "label": "L4_BETA_RESIDUAL_RANK",
+    "model": "ridge",
+    "track": "label"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Past-volatility scaling lowers heteroskedastic label noise.",
+    "id": "B4_VOL_ADJUSTED_RANK",
+    "label": "L5_VOL_ADJUSTED_RANK",
+    "model": "ridge",
+    "track": "label"
+  },
+  {
+    "features": "stable_core",
+    "hypothesis": "Same-date winsorization reduces extreme-event leverage without future fitting.",
+    "id": "B5_ROBUST_WINSORIZED",
+    "label": "L6_ROBUST_WINSORIZED_RETURN",
+    "model": "ridge",
+    "track": "label"
+  },
+  {
+    "features": "development_selected_signal",
+    "hypothesis": "The best development-only signal and label may be complementary.",
+    "id": "C1_DEV_SELECTED_SIGNAL_LABEL_RIDGE",
+    "label": "development_selected_label",
+    "model": "ridge",
+    "track": "automatic_followup"
+  },
+  {
+    "features": "development_selected_signal",
+    "hypothesis": "A regularized tree is allowed only after development signal admission.",
+    "id": "C2_DEV_SELECTED_SIGNAL_LABEL_LGBM",
+    "label": "development_selected_label",
+    "model": "lightgbm_conditional_admission",
+    "track": "automatic_followup"
+  }
+]

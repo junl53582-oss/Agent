@@ -1,0 +1,421 @@
+[
+  {
+    "correlation_to_existing_stable_features": 0.7645975462627995,
+    "economic_hypothesis": "short residual trend persists after market and sector removal",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "residual_momentum",
+    "formula": "rank(rolling_20_sum(ret1-sector_ret-(beta60-1)*market_ret))",
+    "incremental_result": {
+      "hypothesis": "Past-beta and sector residual momentum adds independent price information.",
+      "incremental_vs_harness": -0.0017692108739200546,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06233297628872003,
+      "residual_ic": 0.014961080462370132,
+      "status": "REJECTED",
+      "worst_year": -0.012745576351213178
+    },
+    "lookback": "20 sessions; beta 60 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_residual_momentum_20",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": -0.017078211616083985,
+    "single_factor_ic": -0.021024630061629246,
+    "source_columns": [
+      "ret_1",
+      "broad_sector",
+      "date"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.584988978305969,
+    "economic_hypothesis": "medium residual trend is less beta-driven than raw momentum",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "residual_momentum",
+    "formula": "rank(rolling_60_sum(residual daily return))",
+    "incremental_result": {
+      "hypothesis": "Past-beta and sector residual momentum adds independent price information.",
+      "incremental_vs_harness": -0.0017692108739200546,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06233297628872003,
+      "residual_ic": 0.014961080462370132,
+      "status": "REJECTED",
+      "worst_year": -0.012745576351213178
+    },
+    "lookback": "60 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_residual_momentum_60",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.012201832617421792,
+    "single_factor_ic": -0.006438259514255722,
+    "source_columns": [
+      "ret_1",
+      "broad_sector",
+      "date"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.3948073985263656,
+    "economic_hypothesis": "long residual trend tests persistent stock-specific leadership",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "residual_momentum",
+    "formula": "rank(rolling_120_sum(residual daily return))",
+    "incremental_result": {
+      "hypothesis": "Past-beta and sector residual momentum adds independent price information.",
+      "incremental_vs_harness": -0.0017692108739200546,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06233297628872003,
+      "residual_ic": 0.014961080462370132,
+      "status": "REJECTED",
+      "worst_year": -0.012745576351213178
+    },
+    "lookback": "120 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_residual_momentum_120",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.014890500966580648,
+    "single_factor_ic": 0.007842129726702923,
+    "source_columns": [
+      "ret_1",
+      "broad_sector",
+      "date"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.6249815862342661,
+    "economic_hypothesis": "agreement across horizons is more durable than one cumulative return",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "residual_momentum",
+    "formula": "rank(sum(sign(resmom20,60,120))*abs(resmom60))",
+    "incremental_result": {
+      "hypothesis": "Past-beta and sector residual momentum adds independent price information.",
+      "incremental_vs_harness": -0.0017692108739200546,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06233297628872003,
+      "residual_ic": 0.014961080462370132,
+      "status": "REJECTED",
+      "worst_year": -0.012745576351213178
+    },
+    "lookback": "20/60/120 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_residual_momentum_consistency",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.011349675941818146,
+    "single_factor_ic": -0.006840860540744877,
+    "source_columns": [
+      "ng_residual_momentum_20",
+      "ng_residual_momentum_60",
+      "ng_residual_momentum_120"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.3469961732770336,
+    "economic_hypothesis": "persistent abnormal traded value reflects attention/liquidity change",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "liquidity_shock",
+    "formula": "rank(mean20(log1p(amount))-mean60(log1p(amount)))",
+    "incremental_result": {
+      "hypothesis": "Abnormal liquidity and price impact contain information beyond liquidity level.",
+      "incremental_vs_harness": 0.002584607872048797,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06668679503468888,
+      "residual_ic": 0.011892640535746696,
+      "status": "REJECTED",
+      "worst_year": -0.015954778727735038
+    },
+    "lookback": "20/60 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_abnormal_amount_20_60",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.0025486211369810494,
+    "single_factor_ic": -0.03406518759048761,
+    "source_columns": [
+      "amount"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.2115847798148664,
+    "economic_hypothesis": "improving price impact is distinct from liquidity level",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "liquidity_shock",
+    "formula": "rank(-mean20(abs(ret1)/amount)/mean60(abs(ret1)/amount))",
+    "incremental_result": {
+      "hypothesis": "Abnormal liquidity and price impact contain information beyond liquidity level.",
+      "incremental_vs_harness": 0.002584607872048797,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06668679503468888,
+      "residual_ic": 0.011892640535746696,
+      "status": "REJECTED",
+      "worst_year": -0.015954778727735038
+    },
+    "lookback": "20/60 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_amihud_change_20_60",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": -0.008896541219841335,
+    "single_factor_ic": -0.03587822849310074,
+    "source_columns": [
+      "ret_1",
+      "amount"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.43121591861248804,
+    "economic_hypothesis": "short liquidity dry-up/recovery identifies changing tradability",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "liquidity_shock",
+    "formula": "rank(mean5(log1p(amount))-mean60(log1p(amount)))",
+    "incremental_result": {
+      "hypothesis": "Abnormal liquidity and price impact contain information beyond liquidity level.",
+      "incremental_vs_harness": 0.002584607872048797,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06668679503468888,
+      "residual_ic": 0.011892640535746696,
+      "status": "REJECTED",
+      "worst_year": -0.015954778727735038
+    },
+    "lookback": "5/60 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_liquidity_dryup_5_60",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.001648070814046081,
+    "single_factor_ic": -0.024649523934730425,
+    "source_columns": [
+      "amount"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.16099511653047177,
+    "economic_hypothesis": "volume response unexplained by price magnitude is incremental attention",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "liquidity_shock",
+    "formula": "rank(volume_ratio_20-abs(ret_20))",
+    "incremental_result": {
+      "hypothesis": "Abnormal liquidity and price impact contain information beyond liquidity level.",
+      "incremental_vs_harness": 0.002584607872048797,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06668679503468888,
+      "residual_ic": 0.011892640535746696,
+      "status": "REJECTED",
+      "worst_year": -0.015954778727735038
+    },
+    "lookback": "20 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_volume_price_divergence",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.004768083823388843,
+    "single_factor_ic": 0.011284767646896923,
+    "source_columns": [
+      "volume_ratio_20",
+      "ret_20"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.5647314211335273,
+    "economic_hypothesis": "distributed positive days differ from one-off jumps",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "price_path_shape",
+    "formula": "rank(mean20(ret1>0))",
+    "incremental_result": {
+      "hypothesis": "Path smoothness and return sequencing distinguish durable from noisy trends.",
+      "incremental_vs_harness": -0.0026926596394106564,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06140952752322943,
+      "residual_ic": 0.014066225268307721,
+      "status": "REJECTED",
+      "worst_year": -0.010100702896708768
+    },
+    "lookback": "20 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_up_day_ratio_20",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.0026218842276218533,
+    "single_factor_ic": -0.013755008737314705,
+    "source_columns": [
+      "ret_1"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.05116474120487661,
+    "economic_hypothesis": "smooth paths carry less reversal noise",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "price_path_shape",
+    "formula": "rank(abs(sum20(ret1))/sum20(abs(ret1)))",
+    "incremental_result": {
+      "hypothesis": "Path smoothness and return sequencing distinguish durable from noisy trends.",
+      "incremental_vs_harness": -0.0026926596394106564,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06140952752322943,
+      "residual_ic": 0.014066225268307721,
+      "status": "REJECTED",
+      "worst_year": -0.010100702896708768
+    },
+    "lookback": "20 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_trend_efficiency_20",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.004415092000267661,
+    "single_factor_ic": 0.013298812142246156,
+    "source_columns": [
+      "ret_1"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.05842733724990227,
+    "economic_hypothesis": "return sequencing distinguishes continuation and reversal",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "price_path_shape",
+    "formula": "rank(rolling20_corr(ret1,lag1(ret1)))",
+    "incremental_result": {
+      "hypothesis": "Path smoothness and return sequencing distinguish durable from noisy trends.",
+      "incremental_vs_harness": -0.0026926596394106564,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06140952752322943,
+      "residual_ic": 0.014066225268307721,
+      "status": "REJECTED",
+      "worst_year": -0.010100702896708768
+    },
+    "lookback": "20 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_return_autocorrelation_20",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.004777673425131385,
+    "single_factor_ic": -0.002039972563701697,
+    "source_columns": [
+      "ret_1"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": 0.7290847186705196,
+    "economic_hypothesis": "recovery speed captures path state beyond cumulative return",
+    "effective_timestamp": "computed after decision-date close from trailing observations only",
+    "family": "price_path_shape",
+    "formula": "rank(close/rolling20_min(close)-1)",
+    "incremental_result": {
+      "hypothesis": "Path smoothness and return sequencing distinguish durable from noisy trends.",
+      "incremental_vs_harness": -0.0026926596394106564,
+      "pit_status": "PIT_SAFE",
+      "rank_ic_mean": 0.06140952752322943,
+      "residual_ic": 0.014066225268307721,
+      "status": "REJECTED",
+      "worst_year": -0.010100702896708768
+    },
+    "lookback": "20 sessions",
+    "missing_policy": "cross-sectional neutral 0.0 after minimum-history rolling window",
+    "name": "ng_recovery_from_low_20",
+    "normalization": "same-date percentile rank centered at zero",
+    "pit_availability": true,
+    "residual_ic": 0.003918134633642038,
+    "single_factor_ic": -0.02918408548851618,
+    "source_columns": [
+      "close"
+    ],
+    "status": "SCREENED"
+  },
+  {
+    "correlation_to_existing_stable_features": null,
+    "economic_hypothesis": "Existing PIT fundamental level/change fields already belong to the tested 61-feature set; no new source.",
+    "effective_timestamp": null,
+    "family": "fundamental_quality",
+    "formula": null,
+    "incremental_result": null,
+    "lookback": null,
+    "missing_policy": null,
+    "name": "FAMILY_FUNDAMENTAL_QUALITY_AUDIT",
+    "normalization": null,
+    "pit_availability": true,
+    "residual_ic": null,
+    "single_factor_ic": null,
+    "source_columns": [],
+    "status": "NOT_NEW_INFORMATION"
+  },
+  {
+    "correlation_to_existing_stable_features": null,
+    "economic_hypothesis": "Book-to-price and earnings-yield were already tested; sales/cash-flow/EV denominators are unavailable.",
+    "effective_timestamp": null,
+    "family": "valuation",
+    "formula": null,
+    "incremental_result": null,
+    "lookback": null,
+    "missing_policy": null,
+    "name": "FAMILY_VALUATION_AUDIT",
+    "normalization": null,
+    "pit_availability": true,
+    "residual_ic": null,
+    "single_factor_ic": null,
+    "source_columns": [],
+    "status": "NOT_NEW_INFORMATION"
+  },
+  {
+    "correlation_to_existing_stable_features": null,
+    "economic_hypothesis": "Strict availability exists, but consensus surprise expectations do not.",
+    "effective_timestamp": null,
+    "family": "fundamental_surprise",
+    "formula": null,
+    "incremental_result": null,
+    "lookback": null,
+    "missing_policy": null,
+    "name": "FAMILY_FUNDAMENTAL_SURPRISE_AUDIT",
+    "normalization": null,
+    "pit_availability": false,
+    "residual_ic": null,
+    "single_factor_ic": null,
+    "source_columns": [],
+    "status": "NOT_EVALUABLE"
+  },
+  {
+    "correlation_to_existing_stable_features": null,
+    "economic_hypothesis": "Historical event timestamps do not cover the full 2010-2025 research panel with matching PIT completeness.",
+    "effective_timestamp": null,
+    "family": "event_risk",
+    "formula": null,
+    "incremental_result": null,
+    "lookback": null,
+    "missing_policy": null,
+    "name": "FAMILY_EVENT_RISK_AUDIT",
+    "normalization": null,
+    "pit_availability": false,
+    "residual_ic": null,
+    "single_factor_ic": null,
+    "source_columns": [],
+    "status": "NOT_EVALUABLE"
+  },
+  {
+    "correlation_to_existing_stable_features": null,
+    "economic_hypothesis": "Market breadth exists but is a common regime variable, not new stock-level information in this cycle.",
+    "effective_timestamp": null,
+    "family": "breadth_dispersion",
+    "formula": null,
+    "incremental_result": null,
+    "lookback": null,
+    "missing_policy": null,
+    "name": "FAMILY_BREADTH_DISPERSION_AUDIT",
+    "normalization": null,
+    "pit_availability": true,
+    "residual_ic": null,
+    "single_factor_ic": null,
+    "source_columns": [],
+    "status": "NOT_NEW_INFORMATION"
+  }
+]
