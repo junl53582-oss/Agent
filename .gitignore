@@ -24,3 +24,11 @@ artifacts/**/*.csv
 artifacts/**/*.parquet
 artifacts/**/*.log
 artifacts/**/*.png
+
+# Prospective forward evidence is append-only runtime state, not source code.
+# The frozen protocol/template are force-added and reviewed with the infrastructure PR.
+artifacts/forward_evidence/**/forward_evidence_state.json
+artifacts/forward_evidence/**/attempts/
+artifacts/forward_evidence/**/predictions/
+artifacts/forward_evidence/**/settlements/
+artifacts/forward_evidence/**/checkpoints/

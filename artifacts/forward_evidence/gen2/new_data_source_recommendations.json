@@ -1,0 +1,38 @@
+{
+  "classification": "NEW_DATA_SOURCE_RESEARCH_RECOMMENDATION",
+  "automatic_integration_allowed": false,
+  "recommendations": [
+    {
+      "source": "analyst estimate revisions",
+      "economic_hypothesis": "changes in consensus expectations may contain incremental earnings information",
+      "pit_availability": "requires vendor-grade publication and revision timestamps",
+      "licensing_access_status": "USER_DECISION_REQUIRED",
+      "expected_information_gain": "high",
+      "integration_risk": "high: revisions and backfilled histories can leak later consensus values"
+    },
+    {
+      "source": "earnings announcement surprise",
+      "economic_hypothesis": "reported-versus-expected fundamentals may explain post-announcement drift",
+      "pit_availability": "requires announcement timestamps plus contemporaneous expectations",
+      "licensing_access_status": "USER_DECISION_REQUIRED",
+      "expected_information_gain": "high",
+      "integration_risk": "high: timestamp, restatement, and expectation-vintage alignment"
+    },
+    {
+      "source": "institutional flow",
+      "economic_hypothesis": "persistent informed-flow imbalance may add short-horizon cross-sectional signal",
+      "pit_availability": "provider and release-lag validation required",
+      "licensing_access_status": "USER_DECISION_REQUIRED",
+      "expected_information_gain": "medium-high",
+      "integration_risk": "medium-high: survivorship, aggregation, and delayed-publication semantics"
+    },
+    {
+      "source": "order-flow and microstructure proxies",
+      "economic_hypothesis": "liquidity demand and price-impact asymmetry may predict near-term returns",
+      "pit_availability": "requires timestamped intraday source and reproducible market-session cutoff",
+      "licensing_access_status": "USER_DECISION_REQUIRED",
+      "expected_information_gain": "medium-high",
+      "integration_risk": "high: data volume, licensing, corporate actions, and execution contamination"
+    }
+  ]
+}
