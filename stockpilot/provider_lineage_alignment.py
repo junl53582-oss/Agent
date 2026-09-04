@@ -43,6 +43,7 @@ from stockpilot.prospective_r2.integrity import (
 
 TARGET_PROVIDER = "akshare-tencent"
 CANDIDATE_VERSION = "DAILY_PIT_TENCENT_HFQ_LINEAGE_CANDIDATE_V1"
+PRIORITY_POLICY_VERSION = "DAILY_PIT_PROVIDER_PRIORITY_TENCENT_FIRST_V1"
 
 
 class ProviderLineageAlignmentError(RuntimeError):
@@ -67,6 +68,15 @@ class ProviderLineageAlignmentSettings:
 
     def production_dir(self, target_date: str) -> Path:
         return self.production_root / target_date
+
+
+@dataclass(frozen=True)
+class ProviderPrioritySettings:
+    lineage_evidence_path: Path = Path(
+        "artifacts/daily_predictions/gen2/hfq_overlap_diagnostic.json"
+    )
+    cache_root: Path = Path("data/prospective_gen2/provider_priority_cache")
+    workers: int = 8
 
 
 def _market_symbol(symbol: str) -> str:
@@ -160,6 +170,292 @@ def fetch_tencent_hfq_candidate(
         [source for _, frame, source, _ in results if frame is not None]
     ).value_counts()
     return panel, failures, {str(key): int(value) for key, value in source_counts.items()}
+
+
+def resolve_historical_provider(settings: ProviderPrioritySettings | None = None) -> str:
+    """Resolve the frozen history lineage from immutable provenance evidence."""
+
+    settings = settings or ProviderPrioritySettings()
+    evidence = read_verified_json(settings.lineage_evidence_path)
+    provider = (
+        evidence.get("HFQ_MISMATCH_ROOT_CAUSE", {})
+        .get("historical_canonical_provider", "")
+        .lower()
+    )
+    if provider != "tencent":
+        raise ProviderLineageAlignmentError(
+            f"FROZEN_HISTORICAL_LINEAGE_UNSUPPORTED:{provider or 'MISSING'}"
+        )
+    return TARGET_PROVIDER
+
+
+def fetch_tencent_first_hfq(
+    symbols: list[str],
+    start_date: str,
+    end_date: str,
+    *,
+    cache_root: Path,
+    workers: int = 8,
+    tencent_provider: Callable[..., pd.DataFrame] | None = None,
+    eastmoney_provider: Callable[..., pd.DataFrame] | None = None,
+) -> tuple[pd.DataFrame, list[dict[str, str]], dict[str, int], int]:
+    """Fetch Tencent first and use Eastmoney only for unavailable symbols."""
+
+    if tencent_provider is None or eastmoney_provider is None:
+        try:
+            import akshare as ak
+        except ImportError as error:  # pragma: no cover
+            raise ProviderLineageAlignmentError("AKSHARE_NOT_INSTALLED") from error
+        tencent_provider = tencent_provider or ak.stock_zh_a_hist_tx
+        eastmoney_provider = eastmoney_provider or ak.stock_zh_a_hist
+    normalized = sorted({str(symbol).zfill(6) for symbol in symbols})
+    compact_start = start_date.replace("-", "")
+    compact_end = end_date.replace("-", "")
+
+    def load_one(symbol: str) -> tuple[str, pd.DataFrame | None, str, str | None, int]:
+        tencent_cache = cache_root / f"{symbol}_{start_date}_{end_date}_tencent_hfq.csv"
+        eastmoney_cache = cache_root / f"{symbol}_{start_date}_{end_date}_eastmoney_hfq.csv"
+        tencent_cache_error: str | None = None
+        if tencent_cache.is_file():
+            try:
+                frame = validate_panel(pd.read_csv(tencent_cache, dtype={"symbol": str}))
+                return symbol, frame, "tencent", None, 0
+            except Exception as error:  # noqa: BLE001
+                tencent_cache_error = type(error).__name__
+        requests = 1
+        tencent_error = (
+            f"CACHE_INVALID:{tencent_cache_error};EMPTY" if tencent_cache_error else "EMPTY"
+        )
+        try:
+            raw = tencent_provider(
+                symbol=_market_symbol(symbol),
+                start_date=compact_start,
+                end_date=compact_end,
+                adjust="hfq",
+                timeout=30,
+            )
+            if raw is not None and not raw.empty:
+                frame = _normalize_hfq(raw, symbol, "tencent")
+                _atomic_cache_write(tencent_cache, frame)
+                return symbol, frame, "tencent", None, requests
+        except Exception as error:  # noqa: BLE001
+            tencent_error = type(error).__name__
+        eastmoney_cache_error: str | None = None
+        if eastmoney_cache.is_file():
+            try:
+                frame = validate_panel(pd.read_csv(eastmoney_cache, dtype={"symbol": str}))
+                return symbol, frame, "eastmoney", None, requests
+            except Exception as error:  # noqa: BLE001
+                eastmoney_cache_error = type(error).__name__
+        requests += 1
+        try:
+            raw = eastmoney_provider(
+                symbol=symbol,
+                period="daily",
+                start_date=compact_start,
+                end_date=compact_end,
+                adjust="hfq",
+                timeout=20,
+            )
+            if raw is not None and not raw.empty:
+                frame = _normalize_hfq(raw, symbol, "eastmoney")
+                _atomic_cache_write(eastmoney_cache, frame)
+                return symbol, frame, "eastmoney", None, requests
+            eastmoney_error = (
+                f"CACHE_INVALID:{eastmoney_cache_error};EMPTY"
+                if eastmoney_cache_error
+                else "EMPTY"
+            )
+        except Exception as error:  # noqa: BLE001
+            eastmoney_error = type(error).__name__
+        return (
+            symbol,
+            None,
+            "failed",
+            f"tencent:{tencent_error};eastmoney:{eastmoney_error}",
+            requests,
+        )
+
+    results = []
+    with ThreadPoolExecutor(max_workers=max(1, min(workers, 8))) as executor:
+        futures = [executor.submit(load_one, symbol) for symbol in normalized]
+        for future in as_completed(futures):
+            results.append(future.result())
+    frames = [frame for _, frame, _, _, _ in results if frame is not None and not frame.empty]
+    failures = [
+        {"symbol": symbol, "source": source, "error": error or "UNKNOWN"}
+        for symbol, frame, source, error, _ in results
+        if frame is None or frame.empty
+    ]
+    if not frames:
+        raise ProviderLineageAlignmentError("NO_HFQ_ROWS")
+    panel = validate_panel(pd.concat(frames, ignore_index=True))
+    counts = pd.Series(
+        [source for _, frame, source, _, _ in results if frame is not None]
+    ).value_counts()
+    return (
+        panel,
+        failures,
+        {str(key): int(value) for key, value in counts.items()},
+        sum(requests for *_, requests in results),
+    )
+
+
+def validate_routed_hfq_lineage(
+    frozen: pd.DataFrame,
+    incremental: pd.DataFrame,
+    membership: pd.DataFrame,
+    *,
+    target_date: str,
+    settings: DailyPitSettings,
+) -> dict[str, Any]:
+    """Run the unchanged HFQ overlap validator before publishing routed data."""
+
+    cutoff = pd.to_datetime(frozen["date"]).max()
+    try:
+        _, audit = daily_pit_pipeline.stitch_hfq_market(
+            frozen,
+            incremental,
+            membership,
+            cutoff=cutoff,
+            as_of=target_date,
+            settings=settings.forward_settings(),
+        )
+    except Exception as error:
+        raise DailyPitError("HFQ_LINEAGE_FALLBACK_BLOCKED", str(error)) from error
+    return audit
+
+
+PriorityFetcher = Callable[
+    [list[str], str, str],
+    tuple[pd.DataFrame, list[dict[str, str]], dict[str, int], int],
+]
+
+
+def acquire_lineage_aligned_market(
+    target_date: str,
+    requested_symbols: list[str] | tuple[str, ...],
+    *,
+    now: datetime,
+    settings: DailyPitSettings | None = None,
+    priority_settings: ProviderPrioritySettings | None = None,
+    fetcher: Callable[..., tuple[pd.DataFrame, list[dict[str, str]], dict[str, int], int]] = (
+        fetch_tencent_first_hfq
+    ),
+) -> dict[str, Any]:
+    """Acquire Tencent-first DAILY PIT data with pre-publication overlap validation."""
+
+    settings = settings or DailyPitSettings()
+    priority_settings = priority_settings or ProviderPrioritySettings()
+    existing = daily_pit_pipeline._verify_existing_market(target_date, settings)
+    if existing is not None:
+        return existing
+    daily_pit_pipeline._session_guard(target_date, now, settings)
+    historical_provider = resolve_historical_provider(priority_settings)
+    snapshot, required = daily_pit_pipeline._current_members(target_date, settings)
+    requested = sorted({str(symbol).zfill(6) for symbol in requested_symbols} | required)
+    target = pd.Timestamp(target_date)
+    start = (target - pd.Timedelta(days=settings.overlap_calendar_days)).date().isoformat()
+    try:
+        market, failures, sources, provider_requests = fetcher(
+            requested,
+            start,
+            target_date,
+            cache_root=priority_settings.cache_root,
+            workers=priority_settings.workers,
+        )
+    except Exception as error:
+        raise DailyPitError("MARKET_DATA_NOT_READY", str(error)) from error
+    market = validate_panel(market)
+    market = market[pd.to_datetime(market["date"]).le(target)].copy()
+    market["date"] = pd.to_datetime(market["date"]).dt.normalize()
+    market["symbol"] = market["symbol"].astype(str).str.zfill(6)
+    target_rows = market[market["date"].eq(target)]
+    covered = required.intersection(set(target_rows["symbol"]))
+    coverage = len(covered) / len(required)
+    if target_rows.empty:
+        raise DailyPitError("MARKET_DATA_NOT_READY", "TARGET_DATE_BAR_MISSING")
+    if coverage < settings.minimum_universe_coverage:
+        raise DailyPitError(
+            "MARKET_COVERAGE_INSUFFICIENT",
+            f"{coverage:.6f}<{settings.minimum_universe_coverage:.6f}",
+        )
+    frozen = load_panel(settings.frozen_market_path)
+    membership = load_membership_history(settings.membership_path)
+    overlap_audit = validate_routed_hfq_lineage(
+        frozen, market, membership, target_date=target_date, settings=settings
+    )
+    fallback_used = int(sources.get("eastmoney", 0)) > 0
+    priority_policy = {
+        "version": PRIORITY_POLICY_VERSION,
+        "historical_lineage": historical_provider,
+        "primary": TARGET_PROVIDER,
+        "fallback": "akshare-eastmoney",
+        "fallback_condition": "tencent_unavailable",
+        "fallback_requires_hfq_overlap_validation": True,
+    }
+    directory = settings.date_dir(target_date)
+    market = market.sort_values(["date", "symbol"]).reset_index(drop=True)
+    market_hash = write_immutable_bytes(
+        directory / "market.csv", canonical_frame_bytes(market, ["date", "symbol"])
+    )
+    failure_frame = pd.DataFrame(failures, columns=["symbol", "source", "error"])
+    failure_hash = write_immutable_bytes(
+        directory / "market_failures.csv",
+        canonical_frame_bytes(failure_frame, ["symbol"])
+        if not failure_frame.empty
+        else b"\xef\xbb\xbfsymbol,source,error\n",
+    )
+    receipt = {
+        "target_date": target_date,
+        "acquired_at_utc": now.astimezone(timezone.utc).isoformat(),
+        "request_start_date": start,
+        "request_end_date": target_date,
+        "requested_symbols": len(requested),
+        "historical_provider": historical_provider,
+        "provider_sources": sources,
+        "provider_request_count": provider_requests,
+        "provider_fallback_order": [TARGET_PROVIDER, "akshare-eastmoney"],
+        "fallback_used": fallback_used,
+        "lineage_warning": "EASTMONEY_FALLBACK_USED" if fallback_used else None,
+        "overlap_validation": "PASS",
+        "overlap_audit_sha256": sha256_bytes(canonical_json_bytes(overlap_audit)),
+        "provider_priority_policy_sha256": sha256_bytes(
+            canonical_json_bytes(priority_policy)
+        ),
+        "provider_failures": len(failures),
+        "target_rows": len(target_rows),
+        "target_symbols": int(target_rows["symbol"].nunique()),
+        "required_membership_snapshot": snapshot,
+        "required_membership_symbols": len(required),
+        "required_membership_covered": len(covered),
+        "required_membership_coverage": coverage,
+        "maximum_market_date": str(market["date"].max().date()),
+        "future_market_used": False,
+        "previous_day_substituted": False,
+        "prediction_created": False,
+        "reservation_created": False,
+        **policy_hashes(settings),
+    }
+    receipt_hash = write_immutable_json(directory / "source_receipt.json", receipt)
+    manifest = {
+        "manifest_version": PRIORITY_POLICY_VERSION,
+        "target_date": target_date,
+        "files": {
+            "market.csv": market_hash,
+            "market_failures.csv": failure_hash,
+            "source_receipt.json": receipt_hash,
+        },
+        "market_rows": len(market),
+        "market_symbols": int(market["symbol"].nunique()),
+        "target_rows": len(target_rows),
+        "target_symbols": int(target_rows["symbol"].nunique()),
+        "provider_requests_made": provider_requests,
+        "provider_priority_policy_sha256": receipt["provider_priority_policy_sha256"],
+        **policy_hashes(settings),
+    }
+    manifest_hash = write_immutable_json(directory / "market_manifest.json", manifest)
+    return manifest | {"market_manifest_sha256": manifest_hash, "idempotent": False}
 
 
 def verify_candidate(
