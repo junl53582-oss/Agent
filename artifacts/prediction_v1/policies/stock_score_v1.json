@@ -1,0 +1,33 @@
+{
+  "policy_version": "stock-score-v1.0.0",
+  "policy_type": "PRODUCT_PRESENTATION_FUSION",
+  "not_alpha_model": true,
+  "not_model_promotion_evidence": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "missing_value_policy": "null_not_fabricated",
+  "score_direction": "higher_is_more_attractive",
+  "minimum_component_coverage": 0.6,
+  "band_thresholds": [20.0, 40.0, 60.0, 80.0],
+  "normalization": {
+    "ranking": "inverse market rank; same-snapshot average-tie percentile",
+    "expected_return": "mean available horizons; same-snapshot average-tie percentile",
+    "probability": "mean available horizons; same-snapshot average-tie percentile",
+    "independent_model_agreement": "model-lineage-v1 agreement in [0,1]",
+    "industry": "pre-normalized real optional evidence in [0,1]",
+    "regime": "pre-normalized real optional evidence in [0,1]",
+    "confidence": "confidence-score-v1 divided by 100",
+    "risk_retention": "one minus prediction-risk-v1 divided by 100",
+    "cross_section_rule": "fewer than two available values is null"
+  },
+  "weights": {
+    "ranking": 0.3,
+    "expected_return": 0.2,
+    "probability": 0.15,
+    "independent_model_agreement": 0.1,
+    "industry": 0.05,
+    "regime": 0.05,
+    "confidence": 0.1,
+    "risk_retention": 0.05
+  }
+}

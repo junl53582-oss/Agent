@@ -14,7 +14,8 @@ except ImportError as exc:  # pragma: no cover
 from .config import Settings
 from .future_test import future_test_status
 from .intelligence.adapters import adapt_forward_r2_snapshot, adapt_v30r1_snapshot
-from .intelligence.snapshot import build_daily_snapshot, derive_top_k
+from .intelligence.derived import build_intelligence_snapshot, enrich_prediction_record
+from .intelligence.snapshot import build_daily_snapshot
 from .pipeline import run_demo, run_file
 from .prediction.config import PredictionSettings
 from .prediction.inference import prediction_history, prediction_status
@@ -170,6 +171,17 @@ def _canonical_prediction_snapshot():
     return build_daily_snapshot(records)
 
 
+def _product_intelligence_payload():
+    canonical = _canonical_prediction_snapshot()
+    intelligence = build_intelligence_snapshot(canonical)
+    prediction_by_symbol = {record.symbol: record for record in canonical.records}
+    records = [
+        enrich_prediction_record(prediction_by_symbol[record.symbol], record)
+        for record in intelligence.records
+    ]
+    return canonical, intelligence, records
+
+
 @app.get("/predictions/latest")
 def latest_predictions(
     limit: int = 20,
@@ -241,31 +253,42 @@ def prediction_model_v30r1_validation() -> dict:
 @app.get("/api/v1/predictions/latest")
 def canonical_latest_predictions() -> dict:
     """Versioned canonical interface; legacy prediction endpoints remain unchanged."""
-    return _canonical_prediction_snapshot().to_dict()
+    canonical, intelligence, records = _product_intelligence_payload()
+    payload = canonical.to_dict()
+    payload["records"] = records
+    payload["intelligence_schema_version"] = intelligence.schema_version
+    payload["intelligence_snapshot_hash"] = intelligence.snapshot_hash
+    payload["policy_hashes"] = intelligence.policy_hashes
+    payload["product_policy_type"] = intelligence.policy_type
+    payload["not_model_promotion_evidence"] = intelligence.not_model_promotion_evidence
+    return payload
 
 
 @app.get("/api/v1/predictions/top/{k}")
 def canonical_top_predictions(k: int) -> dict:
     if k not in {10, 20, 50}:
         raise HTTPException(status_code=422, detail="k must be 10, 20, or 50")
-    snapshot = _canonical_prediction_snapshot()
+    snapshot, intelligence, records = _product_intelligence_payload()
     return {
         "prediction_date": snapshot.prediction_date,
         "universe_id": snapshot.universe_id,
         "schema_version": snapshot.schema_version,
         "snapshot_hash": snapshot.snapshot_hash,
+        "intelligence_snapshot_hash": intelligence.snapshot_hash,
+        "policy_hashes": intelligence.policy_hashes,
         "k": k,
-        "records": [record.to_dict() for record in derive_top_k(snapshot, k)],
+        "rank_type": "product_rank",
+        "records": records[: min(k, len(records))],
     }
 
 
 @app.get("/api/v1/predictions/symbol/{symbol}")
 def canonical_symbol_prediction(symbol: str) -> dict:
     normalized = str(symbol).zfill(6)
-    snapshot = _canonical_prediction_snapshot()
-    for record in snapshot.records:
-        if record.symbol == normalized:
-            return record.to_dict()
+    _, _, records = _product_intelligence_payload()
+    for record in records:
+        if record["symbol"] == normalized:
+            return record
     raise HTTPException(status_code=404, detail="symbol prediction not found")
 
 

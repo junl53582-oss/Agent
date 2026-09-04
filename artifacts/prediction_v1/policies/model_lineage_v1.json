@@ -1,0 +1,26 @@
+{
+  "policy_version": "model-lineage-v1.0.0",
+  "policy_type": "PRODUCT_PRESENTATION_FUSION",
+  "not_alpha_model": true,
+  "not_model_promotion_evidence": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "missing_value_policy": "null_not_fabricated",
+  "family_by_source_kind": {
+    "V6": "V6_RANKING_FAMILY",
+    "V30": "V30_PROBABILITY_FAMILY",
+    "V30R1": "V30_PROBABILITY_FAMILY",
+    "V30R1_FORWARD_R2": "V30_PROBABILITY_FAMILY",
+    "GEN2": "GEN2_RESEARCH_FAMILY"
+  },
+  "priority_by_source_kind": {
+    "V6": 10,
+    "V30": 20,
+    "V30R1": 30,
+    "V30R1_FORWARD_R2": 40,
+    "GEN2": 10
+  },
+  "minimum_independent_families": 2,
+  "deduplication": "one_highest_priority_output_per_independent_family",
+  "agreement_normalization": "1 - range of selected independent-family scores"
+}

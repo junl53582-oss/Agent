@@ -161,3 +161,4 @@ artifacts/daily_predictions/** -text
 stockpilot/intelligence/** text eol=lf
 tests/test_prediction_v1_phase1.py text eol=lf
 artifacts/prediction_v1/schema/** -text
+artifacts/prediction_v1/policies/** -text

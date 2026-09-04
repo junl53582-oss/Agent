@@ -1,0 +1,28 @@
+{
+  "policy_version": "prediction-risk-v1.0.0",
+  "policy_type": "PRODUCT_PRESENTATION_FUSION",
+  "not_alpha_model": true,
+  "not_model_promotion_evidence": true,
+  "production_prediction_ready": false,
+  "execution_authorized": false,
+  "missing_value_policy": "null_not_fabricated",
+  "score_direction": "higher_is_more_risky",
+  "minimum_component_coverage": 0.25,
+  "band_thresholds": [20.0, 40.0, 60.0, 80.0],
+  "dispersion_scale": 0.25,
+  "normalization": {
+    "model_uncertainty": "1 - min(1, mean_abs_probability_distance_from_0.5 / 0.5)",
+    "horizon_dispersion": "min(1, horizon_probability_range / 0.25)",
+    "other_components": "pre-normalized real risk evidence in [0,1]; absent is null"
+  },
+  "weights": {
+    "volatility": 0.2,
+    "drawdown": 0.1,
+    "liquidity": 0.15,
+    "model_uncertainty": 0.2,
+    "horizon_dispersion": 0.1,
+    "drift_ood": 0.1,
+    "regime": 0.05,
+    "data_quality": 0.1
+  }
+}
