@@ -12,6 +12,7 @@ from stockpilot.prediction_v2_data.contracts import (
     validate_analyst_estimates,
     validate_announcement_documents,
 )
+from stockpilot.prediction_v2_data.probe import probe_eastmoney_report_schema
 
 
 def _protocol() -> dict:
@@ -129,3 +130,94 @@ def test_surprise_uses_only_latest_pre_release_estimate_per_institution() -> Non
     assert result.loc[0, "consensus"] == 1.1
     assert abs(result.loc[0, "surprise"] - 0.2) < 1e-12
     assert result.loc[0, "strictly_pre_release"]
+
+
+def test_schema_probe_reuses_only_hash_bound_raw_evidence(tmp_path: Path) -> None:
+    path = tmp_path / "probe.json"
+    raw = json.dumps(
+        {
+            "currentYear": 2026,
+            "data": [
+                {
+                    "infoCode": "r1",
+                    "publishDate": "2025-01-01",
+                    "predictThisYearEps": 1.0,
+                }
+            ],
+        }
+    ).encode()
+    path.write_bytes(raw)
+    path.with_name("probe.json.sha256").write_text(
+        hashlib.sha256(raw).hexdigest(), encoding="ascii"
+    )
+    result = probe_eastmoney_report_schema(path)
+    assert result["source"] == "IMMUTABLE_LOCAL_PROBE_REUSE"
+    assert result["network_requests"] == 0
+    assert result["training_admissible"] is False
+
+
+def test_schema_probe_rejects_unbound_local_raw_evidence(tmp_path: Path) -> None:
+    path = tmp_path / "probe.json"
+    path.write_text('{"data": []}', encoding="utf-8")
+    try:
+        probe_eastmoney_report_schema(path)
+    except RuntimeError as error:
+        assert "SHA256 sidecar" in str(error)
+    else:
+        raise AssertionError("unbound probe evidence was accepted")
+
+
+def test_complete_supplier_samples_can_pass_the_contract() -> None:
+    protocol = _protocol()
+    protocol["required_imports"]["announcement_documents"].update(
+        minimum_documents=1, minimum_symbols=1, minimum_years=1
+    )
+    protocol["required_imports"]["analyst_estimates"].update(
+        minimum_symbols=1, minimum_years=1, minimum_distinct_months=1
+    )
+    protocol["required_imports"]["actual_versions"].update(
+        minimum_symbols=1, minimum_years=1
+    )
+    announcements = pd.DataFrame(
+        {
+            "symbol": ["000001"],
+            "announcement_id": ["a1"],
+            "published_at_source": ["2025-01-02T00:00:00+08:00"],
+            "effective_trading_date": ["2025-01-03"],
+            "document_sha256": ["a" * 64],
+            "text_sha256": ["b" * 64],
+            "revision_of_announcement_id": [None],
+            "source_uri": ["https://static.cninfo.com.cn/finalpage/2025-01-02/a1.PDF"],
+        }
+    )
+    estimates = pd.DataFrame(
+        {
+            "symbol": ["000001"],
+            "estimate_id": ["e1"],
+            "institution_id": ["i1"],
+            "published_at": ["2025-01-02T08:00:00+08:00"],
+            "forecast_period": ["2025-12-31"],
+            "metric": ["EPS"],
+            "estimate_value": [1.0],
+            "currency": ["CNY/share"],
+            "revision_status": ["ORIGINAL"],
+            "supersedes_estimate_id": [None],
+            "raw_record_sha256": ["c" * 64],
+        }
+    )
+    actuals = pd.DataFrame(
+        {
+            "symbol": ["000001"],
+            "actual_id": ["v1"],
+            "report_period": ["2025-12-31"],
+            "metric": ["EPS"],
+            "actual_value": [1.2],
+            "published_at": ["2026-03-01T08:00:00+08:00"],
+            "revision_status": ["ORIGINAL"],
+            "supersedes_actual_id": [None],
+            "raw_record_sha256": ["d" * 64],
+        }
+    )
+    assert validate_announcement_documents(announcements, protocol)["passed"]
+    assert validate_analyst_estimates(estimates, protocol)["passed"]
+    assert validate_actual_versions(actuals, protocol)["passed"]

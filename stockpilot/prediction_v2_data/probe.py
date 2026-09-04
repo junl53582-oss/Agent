@@ -15,8 +15,12 @@ def probe_eastmoney_report_schema(raw_path: Path, session: requests.Session | No
     """Perform one schema-only request. Raw rows remain ignored and are never training inputs."""
     raw_path.parent.mkdir(parents=True, exist_ok=True)
     requests_made = 0
+    sidecar = raw_path.with_name(f"{raw_path.name}.sha256")
     if raw_path.exists():
         raw = raw_path.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        if not sidecar.exists() or sidecar.read_text(encoding="ascii").strip() != digest:
+            raise RuntimeError("schema-probe raw response is not bound by a valid SHA256 sidecar")
         source = "IMMUTABLE_LOCAL_PROBE_REUSE"
     else:
         if urlsplit(ENDPOINT).hostname != "reportapi.eastmoney.com":
@@ -42,7 +46,11 @@ def probe_eastmoney_report_schema(raw_path: Path, session: requests.Session | No
         if len(response.content) > MAX_BYTES:
             raise ValueError("schema probe exceeded byte limit")
         raw = response.content
-        raw_path.write_bytes(raw)
+        digest = hashlib.sha256(raw).hexdigest()
+        with raw_path.open("xb") as stream:
+            stream.write(raw)
+        with sidecar.open("x", encoding="ascii") as stream:
+            stream.write(f"{digest}\n")
         source = "LIVE_SCHEMA_PROBE"
     payload = json.loads(raw)
     rows = payload.get("data") or []
@@ -52,6 +60,7 @@ def probe_eastmoney_report_schema(raw_path: Path, session: requests.Session | No
         "endpoint": ENDPOINT,
         "source": source,
         "network_requests": requests_made,
+        "network_requests_total": 1,
         "raw_sha256": hashlib.sha256(raw).hexdigest(),
         "raw_bytes": len(raw),
         "rows_observed": len(rows),
