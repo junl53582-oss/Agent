@@ -161,3 +161,8 @@ artifacts/daily_predictions/** -text
 stockpilot/intelligence/** text eol=lf
 tests/test_prediction_v1_phase1.py text eol=lf
 artifacts/prediction_v1/schema/** -text
+
+# Prediction V2 readiness is isolated research code and immutable audit evidence.
+stockpilot/prediction_v2_readiness/** text eol=lf
+tests/test_prediction_v2_new_information_readiness.py text eol=lf
+artifacts/prediction_v2/new_information_readiness/** -text

@@ -1,0 +1,16 @@
+{
+  "audit_as_of_date": "2026-09-05",
+  "files": {
+    "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT_REPORT.md": "33d3d3f15f71f352a369fbbb336cdf2af3098a795339602463346acab2f62fb5",
+    "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT_REPORT.md.sha256": "efeb26725e447db8372f924a75677167a87824a57ec60bc354f6c7e2737fa39e",
+    "protocol.json": "129e22bcdcdef24082f3db4ebf40f2001886f27fa2a3bfe899654b20cbfdbde6",
+    "protocol.json.sha256": "43b5217a8859680bf81a1ce3825c48857cc6899a4cdbde06bec49f2c45a30457",
+    "readiness_audit.json": "0a2ee528773509e52c95e9b0be720574a278bf3bb3267ed0e0f6f1aae4eb0b0d",
+    "readiness_audit.json.sha256": "4e23930dbf77aee126b36824e1489e91260e5a048734c0e31ecadea7306a1bb7",
+    "source_inventory.json": "eba5757aad70295a6a284ee908708aa4d8ad0f9e60cd4bf2bba71de2a0002aba",
+    "source_inventory.json.sha256": "88690b985ab1962066117e835a621e547e0aec9b0bf5d973d988d9bed15d8ab9",
+    "validation_receipt.json": "9471e3b6d5fcabbe04ed17a6ab4ee2527c50b64d64fc7d6aaab76341940609a8",
+    "validation_receipt.json.sha256": "e56dcc676f944d39917370b48d73a6be2d6fe5cae04ba50edd0324c06e2af702"
+  },
+  "protocol": "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT"
+}

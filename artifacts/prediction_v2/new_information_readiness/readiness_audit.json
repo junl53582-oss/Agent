@@ -1,0 +1,383 @@
+{
+  "audit": "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT",
+  "audit_as_of_date": "2026-09-05",
+  "final_decision": {
+    "audit_completed": true,
+    "bounded_challenger_experiment": "NOT_STARTED_GATE_FAILED",
+    "production_gen2": "UNCHANGED_AND_CONTINUES_DAILY",
+    "reason": "The repository lacks both a sufficiently covered, historically PIT-verified full-body event corpus and replayable historical analyst-consensus vintages. Existing title data is large but was already tested in V14-V18, while fundamental revisions cannot be replayed.",
+    "status": "PREDICTION_V2_NEW_INFORMATION_NOT_READY"
+  },
+  "gate_evaluation": {
+    "all_joint_gates_passed": false,
+    "analyst_consensus_vintage_gate": {
+      "forward_eps": true,
+      "raw_hashes": true,
+      "revisions": false,
+      "snapshots": false,
+      "span": false,
+      "symbols": false,
+      "target_or_dispersion": true
+    },
+    "analyst_report_metadata_gate": {
+      "numeric_expectations": false,
+      "rows": false,
+      "symbols": false
+    },
+    "announcement_body_gate": {
+      "content_hashes": true,
+      "documents": false,
+      "historical_pit": false,
+      "symbols": false,
+      "years": false
+    },
+    "announcement_title_gate": {
+      "documents": true,
+      "identity": true,
+      "novelty": false,
+      "source_hash": true,
+      "symbols": true,
+      "years": true
+    },
+    "earnings_surprise_gate": {
+      "actual_release_time": false,
+      "consensus_snapshot_strictly_before_release": false,
+      "replayable_vintages": false,
+      "symbols": false,
+      "years": true
+    },
+    "fundamental_actual_gate": {
+      "available_dates": true,
+      "no_revision_pollution": false,
+      "novelty": false,
+      "revisions": false,
+      "symbols": true
+    },
+    "joint_gate": {
+      "constructible_earnings_surprise": false,
+      "historical_consensus_vintages": false,
+      "no_unresolved_revision_pollution": false,
+      "novel_event_semantics": false,
+      "sufficient_join_coverage": false
+    }
+  },
+  "protocol_sha256": "129e22bcdcdef24082f3db4ebf40f2001886f27fa2a3bfe899654b20cbfdbde6",
+  "requirements": {
+    "announcement_semantics": "Acquire a broad immutable CNInfo full-body archive with source hashes, conservative publication-to-session mapping, and sufficient historical coverage.",
+    "earnings_surprise": "Acquire historical consensus vintages with numeric forward EPS/dispersion and join each vintage strictly before a PIT actual-release observation; retain revisions.",
+    "historical_analyst_expectations": "REQUIRED_OR_APPROVED_EQUIVALENT",
+    "level_2_market_data": "NOT_REQUIRED_FOR_FIRST_CHALLENGER"
+  },
+  "scope": {
+    "alpha_selected": false,
+    "labels_read": false,
+    "models_trained": false,
+    "production_files_modified": false
+  },
+  "source_root": "E:\\ChatGPT\\量化",
+  "sources": {
+    "analyst_consensus_vintages": {
+      "distinct_snapshots": 1,
+      "duplicate_symbol_snapshot_rows": 0,
+      "exists": true,
+      "files": [
+        {
+          "bytes": 110862,
+          "exists": true,
+          "expected_sha256": null,
+          "identity_verified": true,
+          "logical_path": "E:/ChatGPT/量化/data/pit_observations_v1r3/20260830T051947935413Z/expectations.csv",
+          "sha256": "3da6646a8c7b86e038bdee01a62a35245ecddc4df0312c7c2c3e718b3a874c89"
+        }
+      ],
+      "immutable_raw_hashes_complete": true,
+      "logical_path": "E:/ChatGPT/量化/data/pit_observations_v1r3",
+      "numeric_forward_eps": true,
+      "provenance": "prospective Eastmoney expectation snapshot normalized by PIT v1r3",
+      "replayable_revision_history": false,
+      "rows": 288,
+      "snapshot_max": "2026-08-30T05:19:47.935413+00:00",
+      "snapshot_min": "2026-08-30T05:19:47.935413+00:00",
+      "snapshot_span_days": 0,
+      "symbols": 288,
+      "target_or_dispersion": true
+    },
+    "analyst_report_metadata": {
+      "bytes": 3726170,
+      "columns": [
+        "symbol",
+        "report_date",
+        "title",
+        "rating",
+        "institution",
+        "industry",
+        "report_url"
+      ],
+      "content_scope": "report metadata and title",
+      "date": {
+        "distinct_years": 10,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "2017-01-03",
+        "valid": 21699
+      },
+      "duplicate_identity_rows": 0,
+      "exists": true,
+      "expected_sha256": "841c96e4356ad65299cfe826529c7f879a0506f5b65e62fd564925754406d07f",
+      "historical_consensus_vintages": false,
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/data/analyst_reports_pit_v14.csv",
+      "missing_audit_columns": [],
+      "nulls": {
+        "industry": 4,
+        "institution": 0,
+        "rating": 1314,
+        "report_date": 0,
+        "symbol": 0,
+        "title": 0
+      },
+      "numeric_expectation_fields": [],
+      "provider": "Eastmoney research report list via AkShare",
+      "rows": 21699,
+      "sha256": "841c96e4356ad65299cfe826529c7f879a0506f5b65e62fd564925754406d07f",
+      "symbols": 268
+    },
+    "announcement_bodies": {
+      "body_extraction_passed": 11,
+      "distinct_years": 3,
+      "documents": 12,
+      "documents_with_content_hash": 12,
+      "documents_with_first_seen": 12,
+      "documents_with_source_publication": 12,
+      "exists": true,
+      "historical_pit_verified": 0,
+      "logical_path": "E:/ChatGPT/量化/data/announcement_body_v1",
+      "model_training_ready": false,
+      "provenance": "CNInfo PDFs retrieved in 2026; historical records explicitly not PIT verified",
+      "source_publication_values_at_midnight": 12,
+      "symbols": 12,
+      "years": [
+        2018,
+        2021,
+        2024
+      ]
+    },
+    "announcement_embeddings": {
+      "bytes": 610535552,
+      "content_scope": "BAAI/bge-small-zh-v1.5 embeddings of titles only",
+      "exists": true,
+      "expected_sha256": "7ecf0843e98b541e5a3884622bbc75c32da1366371ffb55bcafe03c3c2a3bd22",
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/data/event_embeddings_v18.npy",
+      "novel_to_prior_research": false,
+      "sha256": "7ecf0843e98b541e5a3884622bbc75c32da1366371ffb55bcafe03c3c2a3bd22"
+    },
+    "announcement_first_seen_v5": {
+      "distinct_observation_timestamps": 1,
+      "exists": true,
+      "historical_panel_ready": false,
+      "historical_pit_verified_true_values": 0,
+      "json_files": 3226,
+      "logical_path": "E:/ChatGPT/量化/data/announcement_first_seen_v5",
+      "observation_max": "2026-08-29T05:26:07.992096+00:00",
+      "observation_min": "2026-08-29T05:26:07.992096+00:00",
+      "observation_span_days": 0
+    },
+    "announcement_first_seen_v5r2": {
+      "distinct_observation_timestamps": 1,
+      "exists": true,
+      "historical_panel_ready": false,
+      "historical_pit_verified_true_values": 0,
+      "json_files": 1187,
+      "logical_path": "E:/ChatGPT/量化/data/announcement_first_seen_v5r2",
+      "observation_max": "2026-08-29T07:08:33.554473+00:00",
+      "observation_min": "2026-08-29T07:08:33.554473+00:00",
+      "observation_span_days": 0
+    },
+    "announcement_titles": {
+      "bytes": 216700042,
+      "columns": [
+        "symbol",
+        "announcement_date",
+        "title",
+        "announcement_id",
+        "org_id",
+        "announcement_url"
+      ],
+      "content_scope": "title and metadata only",
+      "date": {
+        "distinct_years": 10,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "2017-01-03",
+        "valid": 966865
+      },
+      "duplicate_identity_rows": 0,
+      "exists": true,
+      "expected_sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+      "historical_pit_interpretation": "date-level usable only under conservative next-session embargo",
+      "identity_verified": true,
+      "intraday_publication_time_available": false,
+      "logical_path": "E:/ChatGPT/量化/data/announcements_pit_v14.csv",
+      "missing_audit_columns": [],
+      "nulls": {
+        "announcement_date": 0,
+        "announcement_id": 0,
+        "symbol": 0,
+        "title": 0
+      },
+      "provider": "CNInfo official disclosure query",
+      "rows": 966865,
+      "safe_effective_time_policy": "next verified trading session",
+      "sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+      "symbols": 791
+    },
+    "current_61_factor_baseline": {
+      "bytes": 466812164,
+      "exists": true,
+      "expected_sha256": "8aa5e3f2817d6bf8e5da3bd265b4f078206b58b10ee770907233595c59342b02",
+      "feature_count": 61,
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/artifacts/prediction_v30/cache/eligible_panel.parquet",
+      "sha256": "8aa5e3f2817d6bf8e5da3bd265b4f078206b58b10ee770907233595c59342b02",
+      "status": "reference_only; frozen Gen2 remains unchanged"
+    },
+    "event_documents": {
+      "bytes": 98424756,
+      "columns": [
+        "symbol",
+        "date",
+        "document",
+        "event_count",
+        "eligible",
+        "broad_sector",
+        "benchmark_weight",
+        "event_target_1",
+        "event_target_5",
+        "event_target_20",
+        "event_label_end_1",
+        "event_label_end_5",
+        "event_label_end_20"
+      ],
+      "contains_future_target_columns": true,
+      "content_scope": "daily aggregation of announcement titles; not full bodies",
+      "date": {
+        "distinct_years": 10,
+        "invalid": 0,
+        "max": "2026-08-21",
+        "min": "2017-01-04",
+        "valid": 298113
+      },
+      "eligible_rows": 108518,
+      "exists": true,
+      "expected_sha256": "ff21c7125f5b36ee6ad3aabeaa5cec87bfe2fb19da4d9d7b4d0dfdfdfc2b5939",
+      "identity_verified": true,
+      "ineligibility_reason": "derived title representation was already tested and the file co-locates future targets; only source announcement records may be reconsidered",
+      "logical_path": "E:/ChatGPT/量化/data/event_documents_pit_v15.csv",
+      "rows": 298113,
+      "sha256": "ff21c7125f5b36ee6ad3aabeaa5cec87bfe2fb19da4d9d7b4d0dfdfdfc2b5939",
+      "symbols": 790,
+      "training_input_eligible_for_v2": false
+    },
+    "fundamental_actuals": {
+      "actual_release_time_verified": false,
+      "already_consumed_by_current_61_factor_pipeline": true,
+      "available_date": {
+        "distinct_years": 37,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "1990-03-21",
+        "valid": 66607
+      },
+      "bytes": 18741485,
+      "columns": [
+        "symbol",
+        "report_date",
+        "available_date",
+        "update_date",
+        "book_value_per_share",
+        "earnings_per_share",
+        "roe",
+        "roic",
+        "debt_ratio",
+        "revenue_growth",
+        "profit_growth",
+        "operating_cash_margin",
+        "gross_margin",
+        "deducted_profit_growth",
+        "gross_margin_yoy",
+        "receivables_turnover",
+        "inventory_turnover",
+        "fixed_asset_turnover",
+        "cash_ratio",
+        "interest_debt_ratio",
+        "operating_cycle",
+        "staff_average_revenue",
+        "staff_average_profit",
+        "fcff_back"
+      ],
+      "distinct_years": 39,
+      "duplicate_rows_across_symbol_report_date": 0,
+      "exists": true,
+      "expected_sha256": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/data/fundamentals_pit_v10_extended.csv",
+      "novel_information_beyond_current_61_factors": false,
+      "replayable_revision_history": false,
+      "report_date": {
+        "distinct_years": 39,
+        "invalid": 0,
+        "max": "2026-06-30",
+        "min": "1988-12-31",
+        "valid": 66607
+      },
+      "revision_pollution_risk": true,
+      "rows": 66607,
+      "rows_updated_after_available_date": 43111,
+      "sha256": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+      "symbol_report_date_keys_with_multiple_versions": 0,
+      "symbols": 796
+    },
+    "prior_research": {
+      "announcement_title_research_versions": [
+        {
+          "approved": null,
+          "decision": "keep_v6",
+          "exists": true,
+          "sha256": "f55659aa5fb247ef489af0c5e95683a7ddae68833337ff814b1a5b5c20b58c0e",
+          "version": 14
+        },
+        {
+          "approved": null,
+          "decision": "keep_v6",
+          "exists": true,
+          "sha256": "cce33fc2fc71031f9ee86e026074a7d093ff43b59b24e38cf7c89c2110e82876",
+          "version": 15
+        },
+        {
+          "approved": null,
+          "decision": "keep_v6",
+          "exists": true,
+          "sha256": "673ccc184ab348b359420bbbf1e3ea6ce1d46f108c06af5514ad9af1e98d1e67",
+          "version": 16
+        },
+        {
+          "approved": true,
+          "decision": "v17_timing_replaces_ungated",
+          "exists": true,
+          "sha256": "ab63c3f76cb1efa84cdd78f20c66b7461f501885fae58351eb30cc23397abc4a",
+          "version": 17
+        },
+        {
+          "approved": false,
+          "decision": "keep_v6",
+          "exists": true,
+          "sha256": "7e31a07e1ec46dd88ccf8610b45a5b90918f26bbfbfefd75565dd8f670b4989e",
+          "version": 18
+        }
+      ],
+      "announcement_titles_are_novel": false,
+      "reason": "Announcement titles and title-derived representations were already evaluated in V14-V18; V18's frozen decision remained keep_v6."
+    }
+  }
+}
