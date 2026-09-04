@@ -1,0 +1,103 @@
+{
+  "protocol": "PREDICTION_V2_EVENT_AND_EXPECTATION_DATA_ACQUISITION",
+  "version": 1,
+  "frozen_at": "2026-09-05",
+  "status": "FROZEN_BEFORE_PROVIDER_PROBE_OR_IMPORT",
+  "objective": "Establish admissible, supplier-neutral contracts for historical announcement semantics, analyst expectation vintages, versioned actuals, and earnings surprise without training a model.",
+  "parent": {
+    "merged_main_sha": "698239168eebec181c6ccd732b647e0c196c168c",
+    "readiness_status": "PREDICTION_V2_NEW_INFORMATION_NOT_READY"
+  },
+  "boundaries": {
+    "model_training_allowed": false,
+    "return_labels_allowed": false,
+    "alpha_selection_allowed": false,
+    "production_code_changes_allowed": false,
+    "gen2_changes_allowed": false,
+    "contracts_007_012_changes_allowed": false,
+    "historical_backfill_from_current_snapshots_allowed": false,
+    "purchase_or_paid_api_activation_allowed": false
+  },
+  "public_source_probe": {
+    "provider": "Eastmoney research-report API through a direct HTTPS schema probe",
+    "purpose": "Determine whether report records contain immutable report-as-of forecast-year semantics; never admit probe data for training",
+    "maximum_requests": 1,
+    "maximum_rows_retained": 0,
+    "raw_response_retention": "local ignored evidence only",
+    "automatic_retries": 0,
+    "failure_policy": "record failure and stop; do not bypass access controls"
+  },
+  "required_imports": {
+    "announcement_documents": {
+      "minimum_documents": 50000,
+      "minimum_symbols": 500,
+      "minimum_years": 5,
+      "required_fields": [
+        "symbol",
+        "announcement_id",
+        "published_at_source",
+        "effective_trading_date",
+        "document_sha256",
+        "text_sha256",
+        "revision_of_announcement_id",
+        "source_uri"
+      ]
+    },
+    "analyst_estimates": {
+      "minimum_symbols": 400,
+      "minimum_years": 5,
+      "minimum_distinct_months": 24,
+      "required_fields": [
+        "symbol",
+        "estimate_id",
+        "institution_id",
+        "published_at",
+        "forecast_period",
+        "metric",
+        "estimate_value",
+        "currency",
+        "revision_status",
+        "supersedes_estimate_id",
+        "raw_record_sha256"
+      ]
+    },
+    "actual_versions": {
+      "minimum_symbols": 500,
+      "minimum_years": 5,
+      "required_fields": [
+        "symbol",
+        "actual_id",
+        "report_period",
+        "metric",
+        "actual_value",
+        "published_at",
+        "revision_status",
+        "supersedes_actual_id",
+        "raw_record_sha256"
+      ]
+    }
+  },
+  "time_rules": {
+    "announcement_without_verified_intraday_time": "effective on the next verified trading session",
+    "analyst_estimate": "available only at or after its source publication timestamp",
+    "surprise": "use the last admissible consensus snapshot strictly before the actual publication timestamp",
+    "revision": "never overwrite an older vintage; append a new version linked to the superseded record",
+    "delisted_and_historical_constituents": "must be retained to prevent survivorship bias"
+  },
+  "supplier_acceptance": {
+    "sample_required_before_purchase": true,
+    "sample_must_include": [
+      "field dictionary and units",
+      "at least two revisions for the same estimate or actual",
+      "publication timestamps",
+      "historical and delisted securities",
+      "stable record identifiers",
+      "raw source lineage or vendor immutable hashes",
+      "license permission for local model research and retained derived features"
+    ],
+    "current_snapshot_only": "REJECT",
+    "undocumented retrospective restatement": "REJECT"
+  },
+  "completion_gate": "All three import families pass schema, time, revision, coverage, and lineage checks before a challenger may be designed.",
+  "level_2_policy": "DEFERRED_NOT_REQUIRED_FOR_FIRST_CHALLENGER"
+}
