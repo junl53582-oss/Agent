@@ -1,0 +1,53 @@
+{
+  "report_version": "DAILY_PIT_PROVIDER_ROUTING_POLICY_REPORT_V1",
+  "status": "PROVIDER_ROUTING_POLICY_FIXED",
+  "implementation_commit": "9125a57",
+  "old_routing": [
+    "akshare-eastmoney",
+    "akshare-tencent"
+  ],
+  "new_routing": [
+    "akshare-tencent",
+    "akshare-eastmoney"
+  ],
+  "historical_lineage": "akshare-tencent",
+  "historical_lineage_evidence": "artifacts/daily_predictions/gen2/hfq_overlap_diagnostic.json",
+  "primary_provider": "akshare-tencent",
+  "fallback_provider": "akshare-eastmoney",
+  "fallback_condition": "Tencent unavailable for the requested symbol",
+  "fallback_guard": "unchanged stockpilot.prediction_forward.stitch_hfq_market",
+  "fallback_warning": "EASTMONEY_FALLBACK_USED",
+  "fallback_block_code": "HFQ_LINEAGE_FALLBACK_BLOCKED",
+  "publication_order": [
+    "resolve immutable historical lineage",
+    "request Tencent HFQ",
+    "request Eastmoney HFQ only where Tencent is unavailable",
+    "run unchanged HFQ overlap validation",
+    "publish immutable market partition only after PASS"
+  ],
+  "tests": {
+    "tencent_primary_skips_eastmoney": "PASS",
+    "historical_tencent_daily_tencent_overlap": "PASS",
+    "historical_tencent_daily_eastmoney_mismatch": "BLOCKED_BEFORE_IMMUTABLE_PUBLISH",
+    "daily_prediction_default_router": "PASS",
+    "focused": "52 passed",
+    "full_regression": "701 passed, 1 xfailed, 24 subtests passed",
+    "ruff": "PASS"
+  },
+  "integrity": {
+    "validator_modified": false,
+    "threshold_modified": false,
+    "model_modified": false,
+    "feature_modified": false,
+    "daily_pit_011_core_modified": false,
+    "gen2_modified": false
+  },
+  "prediction_readiness": {
+    "next_same_day_run": "READY_AFTER_18_30_ASIA_SHANGHAI_SUBJECT_TO_ALL_EXISTING_GATES",
+    "tencent_primary_default": true,
+    "eastmoney_fallback_requires_overlap_pass": true,
+    "historical_2026_09_03_retry": "REMAINS_BLOCKED_BY_TARGET_DATE_MUST_BE_TODAY",
+    "research_only": true,
+    "execution_authorized": false
+  }
+}

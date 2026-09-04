@@ -31,6 +31,7 @@ from stockpilot.prospective_r2.integrity import (
     write_immutable_frame,
     write_immutable_json,
 )
+from stockpilot.provider_lineage_alignment import acquire_lineage_aligned_market
 
 SHANGHAI = ZoneInfo("Asia/Shanghai")
 MODEL_ID = "GEN2-LGBM-20D-SECTOR-BALANCED-TOP20"
@@ -635,7 +636,7 @@ def predict_daily(
     now: datetime | None = None,
     settings: DailyPredictionSettings | None = None,
     baseline_verifier: Callable[[DailyPredictionSettings], dict[str, Any]] | None = None,
-    acquisition_runner: Callable[..., dict[str, Any]] = daily_pipeline.acquire_market,
+    acquisition_runner: Callable[..., dict[str, Any]] = acquire_lineage_aligned_market,
     materializer: Callable[..., dict[str, Any]] = daily_pipeline.materialize_features,
     sealer: Callable[..., dict[str, Any]] = daily_runtime.seal_inputs,
     predictor: Callable[..., dict[str, Any]] = daily_runtime.generate_prediction,
