@@ -14,7 +14,7 @@ AUDIT_DATE = "2026-09-05"
 EXPECTED_TITLE_HASH = "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118"
 EXPECTED_ANALYST_HASH = "841c96e4356ad65299cfe826529c7f879a0506f5b65e62fd564925754406d07f"
 EXPECTED_EVENT_DOCUMENT_HASH = (
-    "ff21c7125f5b36ee6ad3aabeaa5cec87bfe2fb19da4d9d7b4d0dfdfc2b5939"
+    "ff21c7125f5b36ee6ad3aabeaa5cec87bfe2fb19da4d9d7b4d0dfdfdfc2b5939"
 )
 EXPECTED_EMBEDDING_HASH = "7ecf0843e98b541e5a3884622bbc75c32da1366371ffb55bcafe03c3c2a3bd22"
 EXPECTED_FUNDAMENTAL_HASH = (
@@ -81,7 +81,7 @@ def _file_identity(path: Path, expected_sha256: str | None = None) -> dict[str, 
 
 
 def _date_summary(values: pd.Series) -> dict[str, Any]:
-    parsed = pd.to_datetime(values, errors="coerce", utc=True)
+    parsed = pd.to_datetime(values, format="mixed", errors="coerce", utc=True)
     valid = parsed.dropna()
     return {
         "valid": int(valid.size),
@@ -668,6 +668,40 @@ def _render_report(result: dict[str, Any]) -> str:
         lines.append(f"- {name}: `{_report_mark(passed)}`")
     lines.extend(
         [
+            "",
+            "## Publication-time and revision findings",
+            "",
+            (
+                f"- Announcement titles have {title.get('date', {}).get('invalid', 0)} invalid "
+                "publication dates, but only date-level timing. They can be used only from the next "
+                "verified trading session."
+            ),
+            (
+                f"- The {body.get('documents', 0)} body receipts carry source publication dates and "
+                f"retrieval first-seen timestamps, but all {body.get('source_publication_values_at_midnight', 0)} "
+                "source values are midnight/date-level and none is historically PIT verified."
+            ),
+            (
+                f"- First-seen ledgers contain only "
+                f"{sources['announcement_first_seen_v5'].get('distinct_observation_timestamps', 0)} and "
+                f"{sources['announcement_first_seen_v5r2'].get('distinct_observation_timestamps', 0)} "
+                "distinct recent observation timestamps, respectively; they are prospective seeds, not "
+                "historical panels."
+            ),
+            (
+                f"- Fundamental actuals contain {fundamentals.get('rows_updated_after_available_date', 0):,} "
+                "post-availability updates but retain no per-report vintage chain, so an original-vintage "
+                "earnings surprise cannot be replayed."
+            ),
+            "",
+            "## New-information answer",
+            "",
+            (
+                "At least one sufficiently covered signal family genuinely different from the current "
+                "61 factors and prior V14-V18 title research: `NO`. Full-body event semantics would "
+                "qualify in principle, but the repository has only 12 non-PIT-verified documents. "
+                "Earnings surprise would also qualify, but only one analyst snapshot exists."
+            ),
             "",
             "## Data acquisition decision",
             "",

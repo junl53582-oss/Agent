@@ -1,0 +1,37 @@
+{
+  "audit": "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT",
+  "validated_at": "2026-09-05",
+  "environment": {
+    "formal_audit_python": "E:/ChatGPT/量化/.venv/Scripts/python.exe",
+    "full_test_python": "E:/ChatGPT/量化-operational-main/.venv/Scripts/python.exe"
+  },
+  "checks": {
+    "scoped_ruff": "PASS",
+    "audit_tests": "7 passed",
+    "artifact_manifest": "PASS; 8 entries before this receipt was added",
+    "source_identities": "PASS; 6 of 6 expected large-file hashes matched",
+    "forbidden_scope_diff": "PASS; no Gen2, 007-012, DAILY PIT, daily prediction, forward evidence, model, or sandbox paths changed",
+    "remaining_repository_tests": "705 passed, 3 deselected, 1 xfailed, 24 subtests passed"
+  },
+  "unfiltered_repository_run": {
+    "result": "705 passed, 3 failed, 1 xfailed, 24 subtests passed",
+    "failures": [
+      {
+        "test": "test_scan_stays_outside_gold",
+        "reason": "ignored historical announcement-body data is not materialized in a clean worktree"
+      },
+      {
+        "test": "test_parent_v30_lock_remains_intact",
+        "reason": "pre-existing merged-main V30 artifact byte/line-ending mismatch; the same mismatch is present on clean operational main"
+      },
+      {
+        "test": "test_parent_lock_artifacts_remain_intact",
+        "reason": "ignored V6 parent data inputs are not materialized in a clean worktree"
+      }
+    ],
+    "task_induced_failures": 0
+  },
+  "experiment_started": false,
+  "model_training_performed": false,
+  "production_gen2_modified": false
+}

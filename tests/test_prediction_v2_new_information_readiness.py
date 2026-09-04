@@ -3,8 +3,17 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pandas as pd
+
 from stockpilot.prediction_v2_readiness.audit import (
+    EXPECTED_ANALYST_HASH,
+    EXPECTED_BASELINE_PANEL_HASH,
+    EXPECTED_EMBEDDING_HASH,
+    EXPECTED_EVENT_DOCUMENT_HASH,
+    EXPECTED_FUNDAMENTAL_HASH,
+    EXPECTED_TITLE_HASH,
     AuditSettings,
+    _date_summary,
     evaluate_joint_gate,
     run_and_write,
     sha256_file,
@@ -64,6 +73,26 @@ def test_protocol_sidecar_binds_exact_bytes() -> None:
     root = Path("artifacts/prediction_v2/new_information_readiness")
     expected = (root / "protocol.json.sha256").read_text(encoding="ascii").strip()
     assert sha256_file(root / "protocol.json") == expected
+
+
+def test_expected_source_hashes_are_complete_sha256_values() -> None:
+    for value in (
+        EXPECTED_TITLE_HASH,
+        EXPECTED_ANALYST_HASH,
+        EXPECTED_EVENT_DOCUMENT_HASH,
+        EXPECTED_EMBEDDING_HASH,
+        EXPECTED_FUNDAMENTAL_HASH,
+        EXPECTED_BASELINE_PANEL_HASH,
+    ):
+        assert len(value) == 64
+        int(value, 16)
+
+
+def test_mixed_date_formats_are_audited_without_false_invalids() -> None:
+    result = _date_summary(pd.Series(["2026-08-15", "2026-08-25 18:50:27"]))
+    assert result["invalid"] == 0
+    assert result["min"] == "2026-08-15"
+    assert result["max"] == "2026-08-25"
 
 
 def test_joint_gate_requires_new_event_semantics_and_vintages() -> None:
