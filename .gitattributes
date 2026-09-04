@@ -151,6 +151,11 @@ stockpilot/forward_evidence/** text eol=lf
 tests/test_forward_evidence_monitor.py text eol=lf
 artifacts/forward_evidence/** -text
 
+# User-facing daily prediction product and its committed contract artifacts.
+stockpilot/daily_prediction/** text eol=lf
+tests/test_daily_prediction_product.py text eol=lf
+artifacts/daily_predictions/** -text
+
 # Prediction V1 product schema is independently versioned product evidence,
 # never model-promotion evidence. Preserve schema bytes and normalize its code.
 stockpilot/intelligence/** text eol=lf
