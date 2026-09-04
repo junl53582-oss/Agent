@@ -145,6 +145,12 @@ stockpilot/alpha_diagnostic/nextgen.py text eol=lf
 tests/test_nextgen_alpha_signal_discovery.py text eol=lf
 artifacts/research_challenger/nextgen_alpha_signal_discovery/** -text whitespace=cr-at-eol
 
+# Forward-evidence monitoring is portable infrastructure; runtime registries are
+# append-only and ignored, while committed protocol/report bytes stay exact.
+stockpilot/forward_evidence/** text eol=lf
+tests/test_forward_evidence_monitor.py text eol=lf
+artifacts/forward_evidence/** -text
+
 # Prediction V1 product schema is independently versioned product evidence,
 # never model-promotion evidence. Preserve schema bytes and normalize its code.
 stockpilot/intelligence/** text eol=lf
