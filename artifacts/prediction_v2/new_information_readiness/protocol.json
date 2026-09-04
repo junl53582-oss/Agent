@@ -1,0 +1,87 @@
+{
+  "protocol": "PREDICTION_V2_NEW_INFORMATION_READINESS_AUDIT",
+  "version": 1,
+  "frozen_at": "2026-09-05",
+  "status": "FROZEN_BEFORE_FORMAL_AUDIT_EXECUTION",
+  "objective": "Determine whether repository-held announcement, filing, event, and analyst data can support a strict point-in-time new-information panel for a bounded Prediction V2 challenger.",
+  "production_boundary": {
+    "gen2_must_remain_unchanged": true,
+    "contracts_007_012_must_remain_unchanged": true,
+    "daily_pit_semantics_must_remain_unchanged": true,
+    "no_model_training_during_audit": true,
+    "no_alpha_selection_during_audit": true,
+    "no_2026_label_use": true
+  },
+  "candidate_challenger": {
+    "inputs": [
+      "announcement event semantics",
+      "earnings surprise",
+      "frozen current 61-factor baseline"
+    ],
+    "outputs": [
+      "5D probability and return",
+      "20D probability and return",
+      "60D probability and return"
+    ],
+    "status_unless_all_readiness_gates_pass": "NOT_STARTED_GATE_FAILED"
+  },
+  "source_gates": {
+    "announcement_titles": {
+      "minimum_documents": 250000,
+      "minimum_symbols": 700,
+      "minimum_distinct_years": 8,
+      "publication_policy": "effective no earlier than the next verified trading session when intraday time is unavailable",
+      "requires_unique_announcement_identity": true,
+      "requires_novelty_beyond_prior_V14_V18_title_research": true
+    },
+    "announcement_bodies": {
+      "minimum_documents": 50000,
+      "minimum_symbols": 500,
+      "minimum_distinct_years": 5,
+      "requires_content_hash": true,
+      "requires_source_publication_or_immutable_first_seen_time": true,
+      "requires_historical_pit_verified": true
+    },
+    "analyst_report_metadata": {
+      "minimum_rows": 50000,
+      "minimum_symbols": 400,
+      "requires_numeric_expectation_fields": true,
+      "requires_publication_time": true
+    },
+    "analyst_consensus_vintages": {
+      "minimum_symbols": 400,
+      "minimum_distinct_snapshots": 24,
+      "minimum_snapshot_span_days": 730,
+      "requires_numeric_forward_eps": true,
+      "requires_target_or_dispersion": true,
+      "requires_immutable_raw_hashes": true,
+      "requires_replayable_revision_history": true
+    },
+    "fundamental_actuals": {
+      "minimum_symbols": 500,
+      "requires_available_date": true,
+      "requires_replayable_revision_history": true,
+      "requires_novel_information_beyond_current_61_factors": true
+    },
+    "earnings_surprise": {
+      "requires_actual_release_time": true,
+      "requires_consensus_snapshot_strictly_before_release": true,
+      "requires_replayable_vintages": true,
+      "minimum_symbols": 400,
+      "minimum_distinct_years": 5
+    }
+  },
+  "joint_admission_gate": {
+    "requires_novel_event_semantics": true,
+    "requires_historical_consensus_vintages": true,
+    "requires_constructible_earnings_surprise": true,
+    "requires_no_unresolved_revision_pollution": true,
+    "requires_sufficient_join_coverage": true,
+    "all_required": true
+  },
+  "purchase_decision_policy": {
+    "historical_analyst_expectations": "REQUIRED_OR_APPROVED_EQUIVALENT if no repository source passes consensus-vintage and surprise gates",
+    "level_2_market_data": "NOT_REQUIRED_FOR_FIRST_CHALLENGER; reconsider only after event and surprise data are ready"
+  },
+  "stop_policy": "If the joint admission gate fails, emit PREDICTION_V2_NEW_INFORMATION_NOT_READY and do not start PREDICTION_V2_BOUNDED_CHALLENGER_EXPERIMENT."
+}
