@@ -1,0 +1,91 @@
+{
+  "report_version": "DAILY_PIT_PROVIDER_LINEAGE_ALIGNMENT_REPORT_V1",
+  "target_date": "2026-09-03",
+  "final_status": "PROVIDER_LINEAGE_ALIGNMENT_BLOCKED",
+  "current_provider": "akshare-eastmoney",
+  "historical_provider": "akshare-tencent",
+  "mismatch_cause": "CROSS_PROVIDER_HFQ_LINEAGE_CHANGE_TENCENT_TO_EASTMONEY",
+  "new_provider": "akshare-tencent",
+  "routing": {
+    "locked_primary": "akshare-eastmoney",
+    "locked_fallback": "akshare-tencent",
+    "why_eastmoney_was_used": "The primary provider returned data, so the Tencent fallback was not invoked.",
+    "locked_router_modified": false
+  },
+  "candidate": {
+    "path": "data/prospective_gen2/provider_lineage_candidates/tencent_hfq/daily_inputs/2026-09-03",
+    "provider": "akshare-tencent",
+    "adjustment": "hfq",
+    "acquired_at_utc": "2026-09-03T16:16:08.587180+00:00",
+    "rows": 10200,
+    "symbols": 300,
+    "date_min": "2026-07-20",
+    "date_max": "2026-09-03",
+    "provider_requests": 300,
+    "provider_failures": 0,
+    "mixed_provider": false,
+    "market_sha256": "a96d248237609ce629950e00c89bef0a6280140bed3727fc7c9cf052bb452198",
+    "source_receipt_sha256": "fe129d753e3e6eaff9590984feceb1a942b38d99d0c188e44f7fcfe79d3591eb",
+    "market_manifest_sha256": "d57de682d1966a648f7f3b67c1cdd2c14e108417277adf1eb680f8f5a3b942aa"
+  },
+  "original_immutable_partition": {
+    "modified": false,
+    "market_sha256": "9b8d17147ff6273a4440b5b33cc047bf5c5e88266dd7926ecc87f087aa002353",
+    "source_receipt_sha256": "135c8ef786eeb035f5019561f535f7c92b949421fe565c3e65f94834763e8c4a",
+    "market_manifest_sha256": "bbea044b18a41a74156c44f698860a3bcece9378f8642198932eabfc0cc9a319"
+  },
+  "overlap_result": {
+    "status": "PASS",
+    "current_symbols": 300,
+    "covered_symbols": 300,
+    "anchored_symbols": 300,
+    "isolated_noncurrent_symbols": 0,
+    "overlap_rows": 7500,
+    "extension_rows": 2700,
+    "ratio_limit": 0.0025,
+    "return_limit": 0.0025,
+    "maximum_ratio_deviation": 0.0016669169561821517,
+    "maximum_return_difference": 0.0016991629310467715,
+    "focus_symbols": {
+      "000630": {"overlap_rows": 25, "stitch_factor": 1.0, "ratio_deviation": 0.0, "return_difference": 0.0, "accepted": true},
+      "000792": {"overlap_rows": 25, "stitch_factor": 1.0, "ratio_deviation": 0.0, "return_difference": 0.0, "accepted": true},
+      "601607": {"overlap_rows": 25, "stitch_factor": 1.0, "ratio_deviation": 0.0, "return_difference": 0.0, "accepted": true}
+    }
+  },
+  "feature_partition": {
+    "status": "PASS",
+    "rows": 238,
+    "symbols": 238,
+    "column_count": 71,
+    "feature_count": 61,
+    "duplicates": 0,
+    "nulls": 0,
+    "panel_sha256": "3c7cc4c38719b4ba1e638498eba38165aac682b803d9506f7de2ef01ed52ca0d",
+    "manifest_sha256": "53fade1ae88ac6a55659605ea5e84a510b878ab7a80477d4af5fee7dc04634ad",
+    "feature_semantics_changed": false
+  },
+  "prediction_retry": {
+    "performed": true,
+    "status": "NO_PREDICTION",
+    "reason_code": "NO_PREDICTION",
+    "reason": "TARGET_DATE_MUST_BE_TODAY",
+    "attempt_id": "2026-09-03T162802.940418_0000",
+    "attempt_manifest_sha256": "e774c1acea96c98b14c33a8ad74d3b7306011bfbd2a52451496ec790363332a9",
+    "seal_created": false,
+    "gen2_ranking_created": false,
+    "top10_created": false,
+    "top20_created": false,
+    "provider_requests": 0,
+    "broker_requests": 0
+  },
+  "integrity": {
+    "validator_modified": false,
+    "overlap_threshold_modified": false,
+    "stock_prices_modified": false,
+    "failed_symbols_deleted": false,
+    "gen2_modified": false,
+    "feature_semantics_modified": false,
+    "model_retrained": false,
+    "execution_authorized": false
+  }
+}
