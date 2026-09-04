@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -22,6 +23,19 @@ from stockpilot.prospective_r2.integrity import (
 )
 
 DATE = "2026-09-03"
+
+
+@dataclass(frozen=True)
+class _IsolatedDailyRuntimeSettings(DailyRuntimeSettings):
+    """Keep forward-monitor fixtures away from operational market data."""
+
+    test_frozen_market_path: Path = Path("_test_frozen_market.csv")
+
+    def pit_settings(self):
+        return replace(
+            super().pit_settings(),
+            frozen_market_path=self.test_frozen_market_path,
+        )
 
 
 def _baseline(_: ForwardEvidenceSettings) -> dict:
@@ -47,7 +61,7 @@ def _baseline(_: ForwardEvidenceSettings) -> dict:
 
 
 def _settings(tmp_path: Path) -> ForwardEvidenceSettings:
-    runtime = DailyRuntimeSettings(
+    runtime = _IsolatedDailyRuntimeSettings(
         data_root=tmp_path / "core",
         prediction_root=tmp_path / "core/predictions",
         settlement_root=tmp_path / "core/settlements",
@@ -55,6 +69,7 @@ def _settings(tmp_path: Path) -> ForwardEvidenceSettings:
         reservation_root=tmp_path / "core/attempts",
         portfolio_root=tmp_path / "core/portfolio",
         daily_input_root=tmp_path / "core/daily_inputs",
+        test_frozen_market_path=tmp_path / "core/frozen_market.csv",
     )
     return ForwardEvidenceSettings(
         root=tmp_path / "forward",
