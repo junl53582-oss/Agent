@@ -1,0 +1,198 @@
+{
+  "account": {
+    "date_range_end": "2026-06-04 00:00:00",
+    "date_range_start": "2025-05-28 00:00:00",
+    "expire_time": "2026-12-06 00:00:00",
+    "license": 1,
+    "query_count_limit": 1000000
+  },
+  "account_identifier_persisted": false,
+  "analyst_schema_validation": {
+    "candidate_tables": [],
+    "passed": false,
+    "reason": "NO_ANALYST_VINTAGE_TABLE_DISCOVERED"
+  },
+  "audit": "PREDICTION_V2_JQDATA_CAPABILITY_AND_PIT_AUDIT",
+  "audit_date": "2026-09-05",
+  "authenticated": true,
+  "credential_source": "IGNORED_ENV_FILE",
+  "credential_values_persisted": false,
+  "decision": {
+    "analyst_vintage_tables": [],
+    "approved_use_now": "BOUNDED_RECENT_SCHEMA_VALIDATION_ONLY",
+    "challenger_experiment": "NOT_STARTED",
+    "entitled_history_years": 1.019,
+    "historical_analyst_expectations": "NOT_AVAILABLE",
+    "historical_coverage": "FAIL",
+    "issuer_earnings_forecast": "SCHEMA_CANDIDATE_ONLY",
+    "issuer_forecast_limitations": [
+      "publication date has no verified intraday timestamp",
+      "no explicit revision/supersession lineage fields",
+      "account entitlement is shorter than the frozen five-year minimum",
+      "issuer forecasts are not sell-side analyst consensus vintages"
+    ],
+    "market_schema": "PASS",
+    "minimum_required_history_years": 5,
+    "pit_fundamental_schema": "PASS",
+    "production_provider_modified": false,
+    "status": "PREDICTION_V2_JQDATA_FOUNDATION_BLOCKED",
+    "technical_connection": "PASS"
+  },
+  "finance_catalog": {
+    "analyst_table_search_terms": [
+      "ANALYST",
+      "RESEARCH",
+      "CONSENSUS",
+      "RATING"
+    ],
+    "relevant_tables": [
+      "FUND_REPORT_DATE",
+      "STK_FIN_FORCAST",
+      "STK_PERFORMANCE_LETTERS",
+      "STK_REPORT_DISCLOSURE"
+    ],
+    "table_count": 77
+  },
+  "fundamentals_probe": {
+    "all_publications_not_after_as_of": true,
+    "as_of": "2026-06-04",
+    "columns": [
+      "code",
+      "pubDate",
+      "statDate",
+      "net_profit"
+    ],
+    "latest_publication_observed": "2026-04-25",
+    "passed": true,
+    "query_mode": "date/as-of",
+    "rows_observed": 1,
+    "rows_retained": 0,
+    "statDate_mode_used": false
+  },
+  "market_probe": {
+    "adjustment": "post/HFQ",
+    "checks": {
+      "no_nulls": true,
+      "nonnegative_volume_and_money": true,
+      "positive_prices": true,
+      "required_fields_present": true,
+      "rows_present": true,
+      "valid_ohlc_envelope": true
+    },
+    "columns": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "money",
+      "factor"
+    ],
+    "in_memory_sample_sha256": "d4661473d7aa381e30dadec484306bf17aa1f529e3c9857420c065a48805e403",
+    "passed": true,
+    "probe_end": "2026-06-04",
+    "probe_start": "2026-06-03",
+    "provider_amount_field": "money",
+    "rows_observed": 2,
+    "rows_retained": 0,
+    "stockpilot_amount_mapping": "money -> amount"
+  },
+  "privilege_count": 163,
+  "protocol_sha256": "a3617c8f7823d2f1e06297eba4464411af5f0174e4e3070e8774f3d770c04cd8",
+  "quota_after": {
+    "spare": 999769,
+    "total": 1000000
+  },
+  "quota_before": {
+    "spare": 999829,
+    "total": 1000000
+  },
+  "relevant_privileges": [
+    "FINANCE",
+    "FINANCE_BALANCE_SHEET",
+    "FINANCE_CASHFLOW_STATEMENT",
+    "FINANCE_INCOME_STATEMENT",
+    "STK_FIN_FORCAST",
+    "STK_REPORT_DISCLOSURE",
+    "STOCK_HISTORY_CALL_AUCTION",
+    "STOCK_HISTORY_FIX_DAILY",
+    "STOCK_HISTORY_FIX_MINUTE",
+    "STOCK_HISTORY_MOVE_DAILY",
+    "STOCK_HISTORY_MOVE_MINUTE"
+  ],
+  "scope": {
+    "gen2_modified": false,
+    "model_training": false,
+    "production_provider_modified": false,
+    "raw_rows_committed": 0,
+    "return_labels_read": false
+  },
+  "sdk_version": "1.9.8",
+  "server_version": "2.0.0",
+  "table_audits": {
+    "STK_FIN_FORCAST": {
+      "field_count": 16,
+      "fields": [
+        "id",
+        "company_id",
+        "code",
+        "name",
+        "end_date",
+        "report_type_id",
+        "report_type",
+        "pub_date",
+        "type_id",
+        "type",
+        "profit_min",
+        "profit_max",
+        "profit_last",
+        "profit_ratio_min",
+        "profit_ratio_max",
+        "content"
+      ],
+      "newest_observed": "2026-08-25",
+      "oldest_observed": "2025-06-20"
+    },
+    "STK_PERFORMANCE_LETTERS": {
+      "field_count": 19,
+      "fields": [
+        "id",
+        "company_id",
+        "company_name",
+        "code",
+        "name",
+        "pub_date",
+        "start_date",
+        "end_date",
+        "report_date",
+        "report_type",
+        "total_operating_revenue",
+        "operating_revenue",
+        "operating_profit",
+        "total_profit",
+        "np_parent_company_owners",
+        "total_assets",
+        "equities_parent_company_owners",
+        "basic_eps",
+        "weight_roe"
+      ],
+      "newest_observed": "2026-08-24",
+      "oldest_observed": "2025-07-11"
+    },
+    "STK_REPORT_DISCLOSURE": {
+      "field_count": 8,
+      "fields": [
+        "id",
+        "code",
+        "end_date",
+        "appoint_date",
+        "first_date",
+        "second_date",
+        "third_date",
+        "pub_date"
+      ],
+      "newest_observed": "2026-08-31",
+      "oldest_observed": "None"
+    }
+  }
+}
