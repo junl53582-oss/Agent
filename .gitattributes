@@ -171,3 +171,5 @@ artifacts/prediction_v2/new_information_readiness/** -text
 stockpilot/prediction_v2_data/** text eol=lf
 tests/test_prediction_v2_data_acquisition.py text eol=lf
 artifacts/prediction_v2/data_acquisition/** -text
+tests/test_prediction_v2_jqdata_audit.py text eol=lf
+artifacts/prediction_v2/jqdata_capability_audit/** -text whitespace=cr-at-eol
