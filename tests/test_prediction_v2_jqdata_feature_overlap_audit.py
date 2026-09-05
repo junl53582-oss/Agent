@@ -87,8 +87,36 @@ def test_shortlist_is_deterministic_and_capped() -> None:
                 "maximum_abs_gen2_rank_corr": index / 100,
             }
         )
+    for index in range(4):
+        rows.append(
+            {
+                "feature": f"jq_company_forecast_f{index}",
+                "family": "company_forecast",
+                "role": "EVENT_SPARSE",
+                "selection_status": "KEEP_ACCUMULATING_EVENT",
+                "active_dates": 10,
+                "observations": 200,
+                "median_symbols_per_active_date": 1,
+                "maximum_abs_gen2_rank_corr": float("nan"),
+            }
+        )
+    for index in range(2):
+        rows.append(
+            {
+                "feature": f"jq_hkhold_f{index}",
+                "family": "hkhold",
+                "role": "SNAPSHOT_SPARSE",
+                "selection_status": "KEEP_ACCUMULATING_SNAPSHOT",
+                "active_dates": 5,
+                "observations": 1_000,
+                "median_symbols_per_active_date": 200,
+                "maximum_abs_gen2_rank_corr": float("nan"),
+            }
+        )
     first = _shortlist(pd.DataFrame(rows), settings)
     second = _shortlist(pd.DataFrame(rows), settings)
     assert len(first) == 20
     assert first["feature"].tolist() == second["feature"].tolist()
     assert not first["predictive_alpha_claim"].any()
+    assert (first["selection_status"] == "KEEP_ACCUMULATING_EVENT").sum() == 4
+    assert (first["selection_status"] == "KEEP_ACCUMULATING_SNAPSHOT").sum() == 2

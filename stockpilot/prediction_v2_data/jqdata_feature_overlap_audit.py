@@ -5,6 +5,7 @@ import hashlib
 import json
 import math
 import subprocess
+import warnings
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
@@ -44,6 +45,8 @@ class AuditSettings:
     event_minimum_observations: int = 100
     shortlist_target: int = 20
     shortlist_maximum: int = 25
+    shortlist_event_reserve: int = 4
+    shortlist_snapshot_reserve: int = 2
 
 
 def sha256_file(path: Path) -> str:
@@ -119,6 +122,8 @@ def _load_protocol(settings: AuditSettings) -> dict[str, Any]:
         "event_minimum_observations": settings.event_minimum_observations,
         "shortlist_target": settings.shortlist_target,
         "shortlist_maximum": settings.shortlist_maximum,
+        "shortlist_event_reserve": settings.shortlist_event_reserve,
+        "shortlist_snapshot_reserve": settings.shortlist_snapshot_reserve,
     }
     if frozen != expected:
         raise RuntimeError("FROZEN_RULES_MISMATCH")
@@ -472,21 +477,35 @@ def _shortlist(diagnostics: pd.DataFrame, settings: AuditSettings) -> pd.DataFra
     }
     candidates = diagnostics[diagnostics["selection_status"].isin(eligible_statuses)].copy()
     candidates["selection_score"] = candidates.apply(_selection_score, axis=1)
-    candidates["priority"] = candidates["selection_status"].map(
-        {
-            "KEEP_FOR_RESIDUAL_AUDIT": 0,
-            "KEEP_ACCUMULATING_EVENT": 1,
-            "KEEP_ACCUMULATING_SNAPSHOT": 2,
-        }
-    )
     candidates = candidates.sort_values(
-        ["priority", "selection_score", "feature"], ascending=[True, False, True]
+        ["selection_score", "feature"], ascending=[False, True]
     )
-    selected = candidates.head(settings.shortlist_target).copy()
+    event = candidates[candidates["selection_status"] == "KEEP_ACCUMULATING_EVENT"].head(
+        settings.shortlist_event_reserve
+    )
+    snapshot = candidates[
+        candidates["selection_status"] == "KEEP_ACCUMULATING_SNAPSHOT"
+    ].head(settings.shortlist_snapshot_reserve)
+    reserved = pd.concat([event, snapshot], ignore_index=False)
+    remaining_slots = settings.shortlist_target - len(reserved)
+    residual = candidates[
+        candidates["selection_status"] == "KEEP_FOR_RESIDUAL_AUDIT"
+    ].head(remaining_slots)
+    selected = pd.concat([residual, reserved], ignore_index=False)
+    if len(selected) < settings.shortlist_target:
+        selected_ids = set(selected["feature"])
+        fill = candidates[~candidates["feature"].isin(selected_ids)].head(
+            settings.shortlist_target - len(selected)
+        )
+        selected = pd.concat([selected, fill], ignore_index=False)
+    selected = selected.sort_values(
+        ["selection_status", "selection_score", "feature"],
+        ascending=[True, False, True],
+    ).copy()
     selected.insert(0, "shortlist_rank", range(1, len(selected) + 1))
     selected["predictive_alpha_claim"] = False
     selected["admission"] = "COLLECTION_SHORTLIST_RESEARCH_ONLY"
-    return selected.drop(columns="priority")
+    return selected
 
 
 def _quota_recommendations(diagnostics: pd.DataFrame) -> dict[str, Any]:
@@ -579,11 +598,13 @@ def run(settings: AuditSettings) -> dict[str, Any]:
         diagnostic_rows.append(row)
     diagnostics = pd.DataFrame(diagnostic_rows).sort_values(["family", "feature"])
     diagnostics["selection_status"] = diagnostics.apply(_selection_status, axis=1)
-    correlations = (
-        pd.concat(correlation_parts, ignore_index=True)
-        if correlation_parts
-        else pd.DataFrame()
-    )
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", FutureWarning)
+        correlations = (
+            pd.concat(correlation_parts, ignore_index=True)
+            if correlation_parts
+            else pd.DataFrame()
+        )
     shortlist = _shortlist(diagnostics, settings)
     if len(shortlist) > settings.shortlist_maximum:
         raise RuntimeError("SHORTLIST_CAP_EXCEEDED")

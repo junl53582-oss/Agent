@@ -18,7 +18,9 @@
     "minimum_daily_cross_section": 10,
     "partial_redundancy_threshold": 0.65,
     "redundancy_threshold": 0.85,
+    "shortlist_event_reserve": 4,
     "shortlist_maximum": 25,
+    "shortlist_snapshot_reserve": 2,
     "shortlist_target": 20,
     "sparse_asof_minimum_dates": 30
   },
