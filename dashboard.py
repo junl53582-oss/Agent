@@ -7,47 +7,17 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+from research_status import build_status
 from stockpilot.audit import verify_audit_chain, verify_protocol_addendum
 from stockpilot.config import Settings
+from stockpilot.daily_prediction.freshness import evaluate_daily_prediction_freshness
 from stockpilot.future_test import future_test_status
-from stockpilot.pipeline import run_demo
-from research_status import build_status
 
 st.set_page_config(page_title="StockPilot CN", page_icon="📈", layout="wide")
-st.title("StockPilot CN · A股走步选股")
-st.caption("预测未来5日横截面超额收益｜样本外走步验证｜研究用途")
+st.title("StockPilot CN · A股股票预测")
+st.caption("正式 DAILY Gen2 20日横截面相对强弱排名｜严格 PIT｜研究用途｜禁止自动交易")
 
 settings = Settings.from_env()
-research_state = build_status()
-with st.expander("研究升级状态 · 正式模型仍为 V6"):
-    st.write(f"独立修正版：{research_state['candidate_model']}；阶段：{research_state['candidate_stage']}")
-    process = research_state["candidate_process"]
-    if process.get("identity_verified"):
-        st.caption(f"已核验研究进程：PID {process['pid']}；尚未据此认定性能通过。")
-    elif research_state["candidate_stage"] in {"interrupted", "process_unverified", "process_identity_mismatch", "invalid_status", "invalid_registry", "incomplete_report", "candidate_not_frozen"}:
-        st.error("研究运行状态异常或无法核验，请查看决策日志；不会自动重启或切换正式模型。")
-    elif research_state["candidate_stage"] == "failed":
-        st.error(research_state["candidate_runtime"].get("error", "研究运行失败，原记录已保留。"))
-    st.warning("V17旧回测存在未来数据泄漏，94%胜率不可作为有效成绩。V20完成修复验证前不切换正式模型。")
-    historical = research_state["historical_snapshot"]
-    st.write(f"旧研究清单：选股日期 {historical['prediction_date']}；择时日期 {historical['timing_date']}")
-    for reason in historical["reasons"]:
-        st.caption(reason)
-    st.caption("研究候选不产生交易指令；未通过全部冻结门槛和未来验证，不替换顶部全局指标。")
-summary_path = settings.artifact_dir / "summary.json"
-if not summary_path.exists():
-    st.info("尚无分析结果。可生成离线演示数据，确认整套流程正常。")
-    if st.button("生成演示回测", type="primary"):
-        with st.spinner("正在生成数据、训练模型并回测……"):
-            run_demo(settings)
-        st.rerun()
-    st.stop()
-
-summary = json.loads(summary_path.read_text(encoding="utf-8"))
-equity = pd.read_csv(settings.artifact_dir / "equity.csv", parse_dates=["date"])
-latest = pd.read_csv(settings.artifact_dir / "latest_signals.csv", dtype={"symbol": str})
-signals = pd.read_csv(settings.artifact_dir / "signals.csv", dtype={"symbol": str})
-
 fallback_stock_names = {
     "601985": "中国核电",
     "600030": "中信证券",
@@ -83,7 +53,145 @@ def load_stock_name_map(path: str, modified_at_ns: int) -> dict[str, str]:
 
 stock_names = fallback_stock_names.copy()
 if stock_name_path.exists():
-    stock_names.update(load_stock_name_map(str(stock_name_path), stock_name_path.stat().st_mtime_ns))
+    stock_names.update(
+        load_stock_name_map(str(stock_name_path), stock_name_path.stat().st_mtime_ns)
+    )
+
+
+@st.fragment(run_every="60s")
+def render_formal_daily_prediction() -> None:
+    freshness = evaluate_daily_prediction_freshness()
+    status = freshness["freshness_status"]
+    st.subheader("正式 DAILY Gen2 股票预测")
+    st.caption(
+        "唯一正式首页数据源：artifacts/daily_predictions/gen2/latest.json；"
+        "每60秒只读刷新，不会触发下载、特征生成、模型推理或补跑。"
+    )
+    metrics = st.columns(4)
+    metrics[0].metric("时效状态", status, border=True)
+    metrics[1].metric(
+        "应有最新交易日", freshness.get("expected_latest_session") or "尚无", border=True
+    )
+    metrics[2].metric(
+        "正式预测日期", freshness.get("latest_prediction_date") or "尚无", border=True
+    )
+    metrics[3].metric(
+        "下一次计划运行",
+        freshness.get("scheduled_time") or "日历范围外",
+        border=True,
+    )
+
+    if status == "INVALID":
+        st.error(f"正式预测产物完整性验证失败：{freshness['reason']}")
+        st.caption("系统已 fail closed；旧研究排名不会被提升为正式预测。")
+        return
+    if status == "NO_FORMAL_PREDICTION":
+        st.error("NO_FORMAL_PREDICTION：当前不存在通过完整性验证的正式 DAILY Gen2 排名。")
+        st.info(
+            f"下一合法预测日期：{freshness.get('next_verified_prediction_date')}；"
+            f"最早数据窗口：{freshness.get('earliest_legal_time')}。"
+        )
+        st.caption("2026-09-01、2026-09-03、2026-09-04 均保持不补跑、不回填。")
+        return
+    if status == "STALE":
+        st.error(
+            f"STALE：最近正式预测落后 {freshness['lag_sessions']} 个已完成交易日。"
+            "以下排名保留用于审计，但不标记为当日预测。"
+        )
+    else:
+        st.success("CURRENT：正式预测日期与最新已完成交易日一致，且 immutable manifest 验证通过。")
+
+    prediction = freshness["prediction"]
+    ranking = pd.DataFrame(prediction["predictions"]).sort_values("rank").head(20).copy()
+    ranking["symbol"] = ranking["symbol"].astype(str).str.zfill(6)
+    ranking.insert(2, "name", ranking["symbol"].map(stock_names).fillna("—"))
+    ranking.insert(
+        0, "list", ranking["rank"].map(lambda value: "Top10" if value <= 10 else "Top20")
+    )
+    st.dataframe(
+        ranking[
+            [
+                "list",
+                "rank",
+                "symbol",
+                "name",
+                "score",
+                "percentile",
+                "signal_strength",
+                "broad_sector",
+            ]
+        ],
+        column_config={
+            "list": st.column_config.TextColumn("榜单"),
+            "rank": st.column_config.NumberColumn("全截面排名", format="%d"),
+            "symbol": st.column_config.TextColumn("股票代码", pinned=True),
+            "name": st.column_config.TextColumn("股票名称"),
+            "score": st.column_config.NumberColumn("模型分数", format="%.6f"),
+            "percentile": st.column_config.NumberColumn("相对百分位", format="%.2f%%"),
+            "signal_strength": st.column_config.TextColumn("相对强度"),
+            "broad_sector": st.column_config.TextColumn("宽行业"),
+        },
+        hide_index=True,
+        width="stretch",
+        key="formal_daily_gen2_top20",
+    )
+    with st.expander("完整性与预测身份"):
+        st.write(f"Prediction ID: `{prediction['prediction_id']}`")
+        st.write(f"Model: `{prediction['model_id']}`")
+        st.write(f"Model hash: `{prediction['model_hash']}`")
+        st.write(f"Feature manifest hash: `{prediction['feature_manifest_hash']}`")
+        st.write(f"Input seal hash: `{prediction['input_seal_hash']}`")
+        st.write(
+            f"Universe / eligible: {prediction['universe_count']} / {prediction['eligible_count']}"
+        )
+        st.caption("PIT 已通过；research only；execution authorized = false；broker requests = 0。")
+
+
+render_formal_daily_prediction()
+
+st.divider()
+st.subheader("历史研究与回测（非当日正式预测）")
+research_state = build_status()
+with st.expander("研究升级状态 · 研究模型不等于正式 DAILY 产品"):
+    st.write(
+        f"独立修正版：{research_state['candidate_model']}；阶段：{research_state['candidate_stage']}"
+    )
+    process = research_state["candidate_process"]
+    if process.get("identity_verified"):
+        st.caption(f"已核验研究进程：PID {process['pid']}；尚未据此认定性能通过。")
+    elif research_state["candidate_stage"] in {
+        "interrupted",
+        "process_unverified",
+        "process_identity_mismatch",
+        "invalid_status",
+        "invalid_registry",
+        "incomplete_report",
+        "candidate_not_frozen",
+    }:
+        st.error("研究运行状态异常或无法核验，请查看决策日志；不会自动重启或切换正式模型。")
+    elif research_state["candidate_stage"] == "failed":
+        st.error(research_state["candidate_runtime"].get("error", "研究运行失败，原记录已保留。"))
+    st.warning(
+        "V17旧回测存在未来数据泄漏，94%胜率不可作为有效成绩。V20完成修复验证前不切换正式模型。"
+    )
+    historical = research_state["historical_snapshot"]
+    st.write(
+        f"旧研究清单：选股日期 {historical['prediction_date']}；择时日期 {historical['timing_date']}"
+    )
+    for reason in historical["reasons"]:
+        st.caption(reason)
+    st.caption("研究候选不产生交易指令；未通过全部冻结门槛和未来验证，不替换正式 DAILY 产品。")
+
+summary_path = settings.artifact_dir / "summary.json"
+if not summary_path.exists():
+    st.info("尚无历史研究汇总；正式 DAILY 状态仍已在页面顶部独立显示。")
+    st.stop()
+
+summary = json.loads(summary_path.read_text(encoding="utf-8"))
+equity = pd.read_csv(settings.artifact_dir / "equity.csv", parse_dates=["date"])
+latest = pd.read_csv(settings.artifact_dir / "latest_signals.csv", dtype={"symbol": str})
+signals = pd.read_csv(settings.artifact_dir / "signals.csv", dtype={"symbol": str})
+
 v6_live_dir = settings.artifact_dir / "research_v6" / "live"
 latest_signal_paths = sorted((v6_live_dir / "signals").glob("*.csv"))
 latest_prediction_paths = sorted((v6_live_dir / "predictions").glob("*.csv"))
@@ -107,14 +215,16 @@ if v6_report and v6_report.get("replacement_approved"):
     metric_columns[4].metric("V6平均Rank IC", f"{active_metrics['mean_rank_ic']:.3f}", border=True)
     metric_columns = st.columns(3)
     metric_columns[0].metric(
-            "正超额年份", f"{active_metrics['positive_test_year_ratio']:.1%}", border=True
-        )
+        "正超额年份", f"{active_metrics['positive_test_year_ratio']:.1%}", border=True
+    )
     metric_columns[1].metric(
-            "非负行业IC",
-            f"{active_metrics['nonnegative_broad_sector_ic_ratio']:.1%}",
-            border=True,
-        )
-    metric_columns[2].metric("平均现金权重", f"{active_metrics['average_cash_weight']:.1%}", border=True)
+        "非负行业IC",
+        f"{active_metrics['nonnegative_broad_sector_ic_ratio']:.1%}",
+        border=True,
+    )
+    metric_columns[2].metric(
+        "平均现金权重", f"{active_metrics['average_cash_weight']:.1%}", border=True
+    )
 else:
     st.caption("当前全局指标：历史Ridge回测")
     metric_columns = st.columns(5)
@@ -137,8 +247,8 @@ else:
     tab_log,
 ) = st.tabs(
     [
-        "V6最新预测",
-        "V30概率预测",
+        "V6历史研究快照",
+        "V30历史研究快照",
         "历史回测候选",
         "回测表现",
         "模型赛马",
@@ -150,9 +260,13 @@ else:
     ]
 )
 with tab_shadow:
-    st.subheader("V6最新研究预测")
+    st.subheader("V6历史研究快照")
+    st.error(
+        "HISTORICAL_RESEARCH_SNAPSHOT：此区域不是 DAILY 正式预测源，也没有持续日更承诺。"
+        "其日期只代表最后一次 V6 研究快照。"
+    )
     if not latest_signal_paths or not latest_prediction_paths:
-        st.info("尚无V6预测快照。每日收盘任务完成后，这里会显示最新排名。")
+        st.info("尚无 V6 历史研究快照。")
     else:
         shadow_latest = pd.read_csv(latest_signal_paths[-1], dtype={"symbol": str})
         prediction_latest = pd.read_csv(latest_prediction_paths[-1], dtype={"symbol": str})
@@ -160,15 +274,16 @@ with tab_shadow:
         prediction_latest["symbol"] = prediction_latest["symbol"].str.zfill(6)
         shadow_latest.insert(3, "name", shadow_latest["symbol"].map(stock_names).fillna("—"))
         signal_date = latest_signal_paths[-1].stem
-        metric_columns = st.columns(4)
+        metric_columns = st.columns(5)
         metric_columns[0].metric("信号日期", signal_date, border=True)
         metric_columns[1].metric("可交易股票", len(prediction_latest), border=True)
         metric_columns[2].metric("入选候选", len(shadow_latest), border=True)
         metric_columns[3].metric("持有周期", "5个交易日", border=True)
+        metric_columns[4].metric("正式日更", "否", border=True)
 
         st.warning(
-            "V6现为默认最新预测模型：相对V4改进门槛已通过，但严格超额收益门槛未通过。"
-            "结果仅供研究，禁止自动交易；原冻结模型仍在后台独立验证。"
+            "V6仅为保留的研究快照：相对V4改进门槛已通过，但严格超额收益门槛未通过。"
+            "结果仅供研究，禁止自动交易；不得将它解释为今日正式榜单。"
         )
         display_columns = ["rank", "symbol", "name", "close", "score", "weight"]
         st.dataframe(
@@ -203,19 +318,22 @@ with tab_shadow:
             selected_text = f"已进入{top_label}" if bool(row["selected"]) else f"未进入{top_label}"
             metric_columns = st.columns(4)
             metric_columns[0].metric(
-                    "股票",
-                    f"{stock_names.get(selected_symbol, '未知')} {selected_symbol}",
-                    border=True,
-                )
+                "股票",
+                f"{stock_names.get(selected_symbol, '未知')} {selected_symbol}",
+                border=True,
+            )
             metric_columns[1].metric(
-                    "横截面排名", f"{int(row['pred_rank'])}/{len(prediction_latest)}", border=True
-                )
+                "横截面排名", f"{int(row['pred_rank'])}/{len(prediction_latest)}", border=True
+            )
             metric_columns[2].metric("模型分数", f"{row['score']:.4f}", border=True)
             metric_columns[3].metric("本期状态", selected_text, border=True)
             st.caption("未出现在下拉框中的股票，表示它不在本期可交易预测截面内。")
 
 with tab_probability:
-    st.subheader("V30r1 多周期概率预测 · 冻结模型前向跟踪")
+    st.subheader("V30r1 历史研究快照 · 冻结模型前向跟踪")
+    st.warning(
+        "此区域不承担 DAILY 正式预测日更；production_prediction_ready 未通过时仅作研究观察。"
+    )
     v30r1_dir = settings.artifact_dir / "prediction_v30r1"
     v30r1_latest_path = v30r1_dir / "live" / "latest.json"
     v30r1_status_path = v30r1_dir / "certification" / "status.json"
@@ -233,18 +351,22 @@ with tab_probability:
             probability_frame = pd.read_csv(probability_path, dtype={"symbol": str})
             probability_frame["symbol"] = probability_frame["symbol"].str.zfill(6)
             metric_columns = st.columns(5)
-            metric_columns[0].metric("预测日期", probability_metadata["prediction_date"], border=True)
-            metric_columns[1].metric("预测股票数", probability_metadata["prediction_count"], border=True)
+            metric_columns[0].metric(
+                "预测日期", probability_metadata["prediction_date"], border=True
+            )
+            metric_columns[1].metric(
+                "预测股票数", probability_metadata["prediction_count"], border=True
+            )
             metric_columns[2].metric(
-                    "立即预测认证",
-                    "通过" if probability_status["production_prediction_ready"] else "未通过",
-                    border=True,
-                )
+                "立即预测认证",
+                "通过" if probability_status["production_prediction_ready"] else "未通过",
+                border=True,
+            )
             metric_columns[3].metric(
-                    "126日长期确认",
-                    "已确认" if probability_status["future_126d_confirmed"] else "收集中",
-                    border=True,
-                )
+                "126日长期确认",
+                "已确认" if probability_status["future_126d_confirmed"] else "收集中",
+                border=True,
+            )
             metric_columns[4].metric("实盘授权", "否", border=True)
             if not probability_status["production_prediction_ready"]:
                 st.error(
@@ -257,9 +379,18 @@ with tab_probability:
             st.dataframe(
                 display_probability[
                     [
-                        "rank_5d", "symbol", "name", "close", "p_up_1d", "p_up_5d",
-                        "p_up_20d", "expected_return_5d", "expected_return_20d",
-                        "confidence_level", "risk_level", "prediction_ready",
+                        "rank_5d",
+                        "symbol",
+                        "name",
+                        "close",
+                        "p_up_1d",
+                        "p_up_5d",
+                        "p_up_20d",
+                        "expected_return_5d",
+                        "expected_return_20d",
+                        "confidence_level",
+                        "risk_level",
+                        "prediction_ready",
                     ]
                 ],
                 column_config={
@@ -270,8 +401,12 @@ with tab_probability:
                     "p_up_1d": st.column_config.NumberColumn("上涨概率 1D", format="percent"),
                     "p_up_5d": st.column_config.NumberColumn("上涨概率 5D", format="percent"),
                     "p_up_20d": st.column_config.NumberColumn("上涨概率 20D", format="percent"),
-                    "expected_return_5d": st.column_config.NumberColumn("预期收益 5D", format="percent"),
-                    "expected_return_20d": st.column_config.NumberColumn("预期收益 20D", format="percent"),
+                    "expected_return_5d": st.column_config.NumberColumn(
+                        "预期收益 5D", format="percent"
+                    ),
+                    "expected_return_20d": st.column_config.NumberColumn(
+                        "预期收益 20D", format="percent"
+                    ),
                     "confidence_level": st.column_config.TextColumn("置信度"),
                     "risk_level": st.column_config.TextColumn("风险等级"),
                     "prediction_ready": st.column_config.CheckboxColumn("认证可用"),
@@ -294,7 +429,7 @@ with tab_today:
     latest["close"] = latest["close"].map(lambda x: f"{x:.2f}")
     st.subheader(f"历史回测最近信号日：{latest['date'].iloc[0]}")
     st.dataframe(latest, width="stretch", hide_index=True)
-    st.caption("这一页来自历史回测产物；当前实际影子观察请查看左侧“影子预测”页签。")
+    st.caption("这一页来自历史回测产物；当前正式 DAILY 状态与榜单仅显示在页面顶部。")
     st.warning(
         "候选仅表示模型相对排序靠前，不构成买卖建议。实盘前需人工确认停牌、涨跌停和公告风险。"
     )
