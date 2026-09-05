@@ -1,0 +1,18 @@
+{
+  "PREDICTION_V2_JQDATA_FEATURE_OVERLAP_AND_INFORMATION_AUDIT_REPORT.md": "6353b76dbab4ef1de4f6f60ac312a78cf38b576590a1913c3fa8b821f749fbf1",
+  "PREDICTION_V2_JQDATA_FEATURE_OVERLAP_AND_INFORMATION_AUDIT_REPORT.md.sha256": "42ccb30a3723ea8f306bb8d632e7184c90fd3e2c7af13703111933a8489ce554",
+  "audit_summary.json": "2dd0a856694d64939b14607ac181bb5ef62b622c2307fac4f9bc2ebcf2f0f09e",
+  "audit_summary.json.sha256": "0c6da6268704ffdb8a188847b9b3e4a4c6138797a8a8460d785e452e012025cc",
+  "collection_shortlist.csv": "b4fdd94faaca96c88e16b282a9801584d62d7333fda3d047cb227e8ad339ebc2",
+  "collection_shortlist.csv.sha256": "92cb1a28ca50fa2c1a4a9acbbf47b325437152a53fbd74e1663c29170a14701e",
+  "feature_diagnostics.csv": "81b5f6d9209503deb3d655209fdbe4c0dfbe9f1b188881266f8b79ad1e9c8a35",
+  "feature_diagnostics.csv.sha256": "83ed09c899fc0a710d6a7de17c6dcaa7d1b3b95fbdf8121361a58b8c4aa77e6a",
+  "gen2_overlap_matrix.csv": "86210e2656d479da9b44c0ed22c8560dfa022444e520409730feaa33fa85db3f",
+  "gen2_overlap_matrix.csv.sha256": "5a47903ff8ab731c3ec311d3656b8f9dfcc344e52d67818115d3611400f41c33",
+  "jqdata_internal_overlap.csv": "06b19d911f6e74c51e4546b669e7d4e47c902c8c5a2fd5509a2f6d83553b3bda",
+  "jqdata_internal_overlap.csv.sha256": "7c45f83bd015133b6a343e0f84f2d8131598bc2a0a1114de229bd445451f268c",
+  "protocol.json": "6455cb7fd812616d56414fdab6481ef5c2cbed1004b363e967bfc10a43cee29a",
+  "protocol.json.sha256": "127c41ab818dedb34ebf5712da90ff5c60a2a014fd1908c6e934999d48bba1df",
+  "quota_recommendations.json": "7757d4680b7c46a03b7b85735527311ee99a15afdd90b60f52e45c1cb3a600aa",
+  "quota_recommendations.json.sha256": "5f00e413019428d09af743c29fc214c97e1d5bfe7be7097ace8740a649abbb46"
+}
