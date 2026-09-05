@@ -298,10 +298,28 @@ def _correlations(
         if len(part) < minimum_cross_section or part[jq_feature].nunique() < 2:
             continue
         ranked = part[columns].rank(method="average", pct=True)
-        corr = ranked.drop(columns=jq_feature).corrwith(ranked[jq_feature])
+        varying = [
+            feature
+            for feature in V10_FEATURES
+            if ranked[feature].notna().sum() >= 2 and ranked[feature].nunique() >= 2
+        ]
+        corr = pd.Series(index=V10_FEATURES, dtype=float)
+        if varying:
+            corr.loc[varying] = ranked[varying].corrwith(ranked[jq_feature])
         sector = part["broad_sector"].fillna("UNKNOWN")
         residual = ranked - ranked.groupby(sector.to_numpy()).transform("mean")
-        residual_corr = residual.drop(columns=jq_feature).corrwith(residual[jq_feature])
+        residual_corr = pd.Series(index=V10_FEATURES, dtype=float)
+        residual_varying = [
+            feature
+            for feature in varying
+            if residual[feature].notna().sum() >= 2
+            and residual[feature].nunique() >= 2
+            and residual[jq_feature].nunique() >= 2
+        ]
+        if residual_varying:
+            residual_corr.loc[residual_varying] = residual[residual_varying].corrwith(
+                residual[jq_feature]
+            )
         ranked["__jq__"] = ranked[jq_feature]
         pieces.append(ranked.drop(columns=jq_feature))
         residual["__jq__"] = residual[jq_feature]
@@ -328,8 +346,26 @@ def _correlations(
         return pd.DataFrame(columns=columns_out)
     pooled = pd.concat(pieces, ignore_index=True)
     residual_pooled = pd.concat(residual_pieces, ignore_index=True)
-    pooled_corr = pooled.drop(columns="__jq__").corrwith(pooled["__jq__"])
-    residual_corr = residual_pooled.drop(columns="__jq__").corrwith(residual_pooled["__jq__"])
+    pooled_corr = pd.Series(index=V10_FEATURES, dtype=float)
+    pooled_varying = [
+        feature
+        for feature in V10_FEATURES
+        if pooled[feature].notna().sum() >= 2 and pooled[feature].nunique() >= 2
+    ]
+    if pooled_varying:
+        pooled_corr.loc[pooled_varying] = pooled[pooled_varying].corrwith(pooled["__jq__"])
+    residual_corr = pd.Series(index=V10_FEATURES, dtype=float)
+    residual_varying = [
+        feature
+        for feature in V10_FEATURES
+        if residual_pooled[feature].notna().sum() >= 2
+        and residual_pooled[feature].nunique() >= 2
+        and residual_pooled["__jq__"].nunique() >= 2
+    ]
+    if residual_varying:
+        residual_corr.loc[residual_varying] = residual_pooled[residual_varying].corrwith(
+            residual_pooled["__jq__"]
+        )
     daily = pd.DataFrame(daily_rows)
     rows = []
     for feature in V10_FEATURES:
