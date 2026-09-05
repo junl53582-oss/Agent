@@ -1,0 +1,10 @@
+{
+  "files": {
+    "PREDICTION_V2_JQDATA_REAL_DATA_ACQUISITION_REPORT.md": "ea63ab457af6dd1866b7a932fc3475d5217c33e90006c9c905eb147d9c47a076",
+    "PREDICTION_V2_JQDATA_REAL_DATA_ACQUISITION_REPORT.md.sha256": "45cf1f5bf2a95b6e388c404c44ceb2a9ffb77f73f887e6fa2f08381725cf0605",
+    "acquisition_summary.json": "48a8b43d8306ddaa444b3dc5a554265efdcb9c00e184ba49ae004fb480951356",
+    "acquisition_summary.json.sha256": "ef67f401d8451b4b4694f6dfbabdf1e1eb9c74a1dea3a3d5d29ce4618372e566",
+    "protocol.json": "f2dfcf4105a4275ed082ffee21f76cd3fde9e9e64176028a6daf4232151827e3",
+    "protocol.json.sha256": "56b36b8d19e14ed2d2a4206bcc1d05ca9b5b839b95bcb80142d3f582869b55f2"
+  }
+}
