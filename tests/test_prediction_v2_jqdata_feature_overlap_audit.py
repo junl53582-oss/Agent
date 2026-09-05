@@ -8,6 +8,7 @@ from stockpilot.prediction_v2_data.jqdata_feature_overlap_audit import (
     AuditSettings,
     _assert_no_label_columns,
     _family,
+    _jq_internal_correlations,
     _novelty_class,
     _shortlist,
     _temporal_ready,
@@ -120,3 +121,20 @@ def test_shortlist_is_deterministic_and_capped() -> None:
     assert not first["predictive_alpha_claim"].any()
     assert (first["selection_status"] == "KEEP_ACCUMULATING_EVENT").sum() == 4
     assert (first["selection_status"] == "KEEP_ACCUMULATING_SNAPSHOT").sum() == 2
+
+
+def test_internal_jq_correlation_identifies_duplicate_features() -> None:
+    dates = pd.to_datetime(["2026-01-01"] * 10 + ["2026-01-02"] * 10)
+    base = list(range(10)) * 2
+    wide = pd.DataFrame(
+        {
+            "date": dates,
+            "symbol": [f"{index:06d}" for index in range(10)] * 2,
+            "jq_quality_a": base,
+            "jq_quality_b": base,
+            "jq_quality_c": list(reversed(base)),
+        }
+    )
+    matrix, pairs = _jq_internal_correlations(wide, minimum_observations=10)
+    assert matrix.loc["jq_quality_a", "jq_quality_b"] == pytest.approx(1.0)
+    assert len(pairs) == 3

@@ -47,6 +47,7 @@ class AuditSettings:
     shortlist_maximum: int = 25
     shortlist_event_reserve: int = 4
     shortlist_snapshot_reserve: int = 2
+    within_jq_redundancy_threshold: float = 0.90
 
 
 def sha256_file(path: Path) -> str:
@@ -124,6 +125,7 @@ def _load_protocol(settings: AuditSettings) -> dict[str, Any]:
         "shortlist_maximum": settings.shortlist_maximum,
         "shortlist_event_reserve": settings.shortlist_event_reserve,
         "shortlist_snapshot_reserve": settings.shortlist_snapshot_reserve,
+        "within_jq_redundancy_threshold": settings.within_jq_redundancy_threshold,
     }
     if frozen != expected:
         raise RuntimeError("FROZEN_RULES_MISMATCH")
@@ -436,6 +438,29 @@ def _novelty_class(maximum: float | None, settings: AuditSettings) -> str:
     return "LOW_REDUNDANCY"
 
 
+def _jq_internal_correlations(
+    wide: pd.DataFrame,
+    minimum_observations: int,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    features = [name for name in wide.columns if name not in {"date", "symbol"}]
+    ranked = wide.groupby("date", sort=False)[features].rank(method="average", pct=True)
+    matrix = ranked.corr(min_periods=minimum_observations)
+    rows = []
+    for left_index, left in enumerate(features):
+        for right in features[left_index + 1 :]:
+            value = matrix.loc[left, right]
+            if pd.notna(value):
+                rows.append(
+                    {
+                        "left_feature": left,
+                        "right_feature": right,
+                        "date_rank_corr": float(value),
+                        "absolute_date_rank_corr": abs(float(value)),
+                    }
+                )
+    return matrix, pd.DataFrame(rows)
+
+
 def _selection_status(row: pd.Series) -> str:
     if not bool(row["pit_admissible"]):
         return "EXCLUDE_PIT_RISK"
@@ -469,7 +494,11 @@ def _selection_score(row: pd.Series) -> float:
     return 0.45 * date_score + 0.30 * cross_section_score + 0.25 * novelty
 
 
-def _shortlist(diagnostics: pd.DataFrame, settings: AuditSettings) -> pd.DataFrame:
+def _shortlist(
+    diagnostics: pd.DataFrame,
+    settings: AuditSettings,
+    jq_correlation_matrix: pd.DataFrame | None = None,
+) -> pd.DataFrame:
     eligible_statuses = {
         "KEEP_FOR_RESIDUAL_AUDIT",
         "KEEP_ACCUMULATING_EVENT",
@@ -488,9 +517,23 @@ def _shortlist(diagnostics: pd.DataFrame, settings: AuditSettings) -> pd.DataFra
     ].head(settings.shortlist_snapshot_reserve)
     reserved = pd.concat([event, snapshot], ignore_index=False)
     remaining_slots = settings.shortlist_target - len(reserved)
-    residual = candidates[
+    residual_candidates = candidates[
         candidates["selection_status"] == "KEEP_FOR_RESIDUAL_AUDIT"
-    ].head(remaining_slots)
+    ]
+    residual_indexes = []
+    for index, row in residual_candidates.iterrows():
+        if len(residual_indexes) >= remaining_slots:
+            break
+        if jq_correlation_matrix is not None and residual_indexes:
+            previous = residual_candidates.loc[residual_indexes, "feature"].tolist()
+            correlations = jq_correlation_matrix.loc[row["feature"], previous].abs().dropna()
+            if (
+                not correlations.empty
+                and correlations.max() >= settings.within_jq_redundancy_threshold
+            ):
+                continue
+        residual_indexes.append(index)
+    residual = residual_candidates.loc[residual_indexes]
     selected = pd.concat([residual, reserved], ignore_index=False)
     if len(selected) < settings.shortlist_target:
         selected_ids = set(selected["feature"])
@@ -508,13 +551,31 @@ def _shortlist(diagnostics: pd.DataFrame, settings: AuditSettings) -> pd.DataFra
     return selected
 
 
-def _quota_recommendations(diagnostics: pd.DataFrame) -> dict[str, Any]:
-    kept = diagnostics[diagnostics["selection_status"].str.startswith("KEEP_")]
+def _quota_recommendations(
+    diagnostics: pd.DataFrame,
+    shortlist: pd.DataFrame,
+) -> dict[str, Any]:
+    kept = shortlist
     factor_names = sorted(
         kept.loc[kept["source_dataset"] == "FACTOR_LIBRARY", "feature"].astype(str)
     )
     valuation_names = sorted(
         kept.loc[kept["source_dataset"] == "VALUATION", "feature"].astype(str)
+    )
+    shortlisted = set(shortlist["feature"])
+    factor_paused = sorted(
+        diagnostics.loc[
+            (diagnostics["source_dataset"] == "FACTOR_LIBRARY")
+            & ~diagnostics["feature"].isin(shortlisted),
+            "feature",
+        ].astype(str)
+    )
+    valuation_paused = sorted(
+        diagnostics.loc[
+            (diagnostics["source_dataset"] == "VALUATION")
+            & ~diagnostics["feature"].isin(shortlisted),
+            "feature",
+        ].astype(str)
     )
     return {
         "provider_queries_this_audit": 0,
@@ -540,6 +601,10 @@ def _quota_recommendations(diagnostics: pd.DataFrame) -> dict[str, Any]:
             "STK_PERFORMANCE_LETTERS": "PAUSE_FEATURE_ADMISSION_UNTIL_REVISION_LINEAGE_IS_PROVED",
             "INDUSTRY_CATALOG": "STATIC_CACHE_REFRESH_ONLY_ON_PROVIDER_VERSION_CHANGE",
         },
+        "pause_features": {
+            "FACTOR_LIBRARY": factor_paused,
+            "VALUATION": valuation_paused,
+        },
     }
 
 
@@ -557,6 +622,9 @@ def run(settings: AuditSettings) -> dict[str, Any]:
     if joined.empty:
         raise RuntimeError("NO_JQDATA_GEN2_KEY_OVERLAP")
     features = [name for name in wide.columns if name not in {"date", "symbol"}]
+    jq_correlation_matrix, jq_correlation_pairs = _jq_internal_correlations(
+        wide, settings.minimum_correlation_observations
+    )
     correlation_parts = []
     diagnostic_rows = []
     for feature in features:
@@ -595,6 +663,22 @@ def run(settings: AuditSettings) -> dict[str, Any]:
             "novelty_class": _novelty_class(effective_maximum, settings),
             "temporal_ready": _temporal_ready(role, metrics, settings),
         }
+        peers = jq_correlation_pairs[
+            (jq_correlation_pairs["left_feature"] == feature)
+            | (jq_correlation_pairs["right_feature"] == feature)
+        ]
+        if peers.empty:
+            row["most_correlated_jq_feature"] = None
+            row["maximum_abs_jq_rank_corr"] = None
+        else:
+            peer_index = peers["absolute_date_rank_corr"].idxmax()
+            peer = peers.loc[peer_index]
+            row["most_correlated_jq_feature"] = (
+                peer["right_feature"]
+                if peer["left_feature"] == feature
+                else peer["left_feature"]
+            )
+            row["maximum_abs_jq_rank_corr"] = float(peer["absolute_date_rank_corr"])
         diagnostic_rows.append(row)
     diagnostics = pd.DataFrame(diagnostic_rows).sort_values(["family", "feature"])
     diagnostics["selection_status"] = diagnostics.apply(_selection_status, axis=1)
@@ -605,10 +689,14 @@ def run(settings: AuditSettings) -> dict[str, Any]:
             if correlation_parts
             else pd.DataFrame()
         )
-    shortlist = _shortlist(diagnostics, settings)
+    shortlist = _shortlist(diagnostics, settings, jq_correlation_matrix)
     if len(shortlist) > settings.shortlist_maximum:
         raise RuntimeError("SHORTLIST_CAP_EXCEEDED")
-    quota = _quota_recommendations(diagnostics)
+    quota = _quota_recommendations(diagnostics, shortlist)
+    jq_high_redundancy = jq_correlation_pairs[
+        jq_correlation_pairs["absolute_date_rank_corr"]
+        >= settings.within_jq_redundancy_threshold
+    ].sort_values("absolute_date_rank_corr", ascending=False)
     status_counts = diagnostics["selection_status"].value_counts().sort_index().to_dict()
     summary = {
         "audit": "PREDICTION_V2_JQDATA_FEATURE_OVERLAP_AND_INFORMATION_AUDIT",
@@ -637,6 +725,7 @@ def run(settings: AuditSettings) -> dict[str, Any]:
         "high_redundancy": diagnostics.loc[
             diagnostics["novelty_class"] == "HIGH_REDUNDANCY", "feature"
         ].tolist(),
+        "within_jq_high_redundancy_pairs": len(jq_high_redundancy),
         "insufficient_stability": diagnostics.loc[
             ~diagnostics["temporal_ready"], "feature"
         ].tolist(),
@@ -665,6 +754,7 @@ def run(settings: AuditSettings) -> dict[str, Any]:
     artifact_dir.mkdir(parents=True, exist_ok=True)
     _write_csv(artifact_dir / "feature_diagnostics.csv", diagnostics)
     _write_csv(artifact_dir / "gen2_overlap_matrix.csv", correlations)
+    _write_csv(artifact_dir / "jqdata_internal_overlap.csv", jq_correlation_pairs)
     _write_csv(artifact_dir / "collection_shortlist.csv", shortlist)
     _write_json(artifact_dir / "quota_recommendations.json", quota)
     _write_json(artifact_dir / "audit_summary.json", summary)
@@ -719,7 +809,13 @@ def _report(
         ]
     ]
     redundant = diagnostics[diagnostics["novelty_class"] == "HIGH_REDUNDANCY"][
-        ["feature", "most_correlated_gen2_feature", "maximum_abs_gen2_rank_corr"]
+        [
+            "feature",
+            "most_correlated_gen2_feature",
+            "maximum_abs_gen2_rank_corr",
+            "most_correlated_jq_feature",
+            "maximum_abs_jq_rank_corr",
+        ]
     ]
     stop_lines = "\n".join(
         f"- `{dataset}`: {action}" for dataset, action in quota["pause_or_stop"].items()
@@ -746,7 +842,7 @@ This audit identifies structural overlap, coverage and collection readiness only
 
 ## Collection Shortlist
 
-The {len(shortlist)} entries below are worth continued collection or bounded residual research. They are not promoted signals.
+The {len(shortlist)} entries below are worth continued collection or bounded residual research. They are not promoted signals. Continuous candidates are greedily de-duplicated at absolute within-JQData date-ranked correlation 0.90.
 
 {_markdown_table(shortlist_view, list(shortlist_view.columns))}
 

@@ -22,7 +22,8 @@
     "shortlist_maximum": 25,
     "shortlist_snapshot_reserve": 2,
     "shortlist_target": 20,
-    "sparse_asof_minimum_dates": 30
+    "sparse_asof_minimum_dates": 30,
+    "within_jq_redundancy_threshold": 0.9
   },
   "inputs": {
     "gen2_feature_count": 61,
