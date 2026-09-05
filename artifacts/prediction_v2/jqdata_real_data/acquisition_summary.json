@@ -1,0 +1,325 @@
+{
+  "actual_versions_contract": "FAIL_REVISION_LINEAGE_NOT_PROVED",
+  "analyst_vintages": "NOT_AVAILABLE",
+  "dataset_coverage": {
+    "FACTOR_LIBRARY": {
+      "date_max": "2026-06-04",
+      "date_min": "2025-05-28",
+      "pit_classification": "PIT_SAFE_PROVIDER_ASOF_WITH_LAG",
+      "query_restriction": {
+        "end": "2026-06-04",
+        "factors": [
+          "roe_ttm",
+          "roic_ttm",
+          "net_operate_cash_flow_to_asset",
+          "debt_to_asset_ratio",
+          "net_profit_growth_rate",
+          "operating_revenue_growth_rate",
+          "net_operate_cashflow_growth_rate",
+          "total_asset_growth_rate",
+          "Variance20",
+          "Variance60",
+          "Skewness20",
+          "Kurtosis20",
+          "Price1M",
+          "Price3M",
+          "ROC20",
+          "Rank1M",
+          "money_flow_20",
+          "turnover_volatility",
+          "VROC12",
+          "DAVOL20"
+        ],
+        "start": "2025-05-28",
+        "symbols": "core50_sha256",
+        "transport_batches": [
+          "quality",
+          "growth",
+          "risk",
+          "momentum",
+          "emotion"
+        ]
+      },
+      "raw_sha256": "2e3ac3093b959208470a58b337b89ec777bf02c5973e1f5fe104b4990be0704c",
+      "rows": 248000,
+      "schema_hash": "76f8ee73ad0eb9ed94b44f84d2128e5500749e778f1b36f623e744b8248b7a32",
+      "symbols": 50
+    },
+    "FINANCE_BALANCE_SHEET": {
+      "date_max": "2026-08-31",
+      "date_min": "2025-06-27",
+      "pit_classification": "PIT_RESTATEMENT_RISK",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "4e61b0002cd0cae2f8f65b0830dde46bf41c0c2c10e04d27b8ef02bcf705fe75",
+      "rows": 3005,
+      "schema_hash": "24914aac3466a7b8000f654f0e0b9b549409a7a3648ce02958a9f1ed1eba202a",
+      "symbols": 300
+    },
+    "FINANCE_CASHFLOW_STATEMENT": {
+      "date_max": "2026-08-31",
+      "date_min": "2025-06-27",
+      "pit_classification": "PIT_RESTATEMENT_RISK",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "34959c88aeb88df3621fc7501f9e8e552dd0c3a69bb81137ba873129ba493e23",
+      "rows": 3005,
+      "schema_hash": "56edf628830e852b6786f5f0b03262d6544444fbbdc5e2519f16ddf03d9a6a05",
+      "symbols": 300
+    },
+    "FINANCE_INCOME_STATEMENT": {
+      "date_max": "2026-08-31",
+      "date_min": "2025-06-27",
+      "pit_classification": "PIT_RESTATEMENT_RISK",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "931d116d6c8daa12bcb331f22d2fe1387d3bedae09e8775379ec89dbd29abd14",
+      "rows": 3005,
+      "schema_hash": "9415cfe85d72fdee78b95c850e52ad4283c694f71998d7e06c020512fe203c44",
+      "symbols": 300
+    },
+    "GET_HISTORY_INDUSTRY": {
+      "date_max": "2026-07-01",
+      "date_min": "1991-01-29",
+      "pit_classification": "PIT_SAFE_HISTORICAL_MEMBERSHIP",
+      "query_restriction": {
+        "classification": "sw_l1",
+        "symbols": "core50_sha256"
+      },
+      "raw_sha256": "f00174fc9cc47880e510943d833111615ce3c248d04e7553325899e1b2a32299",
+      "rows": 93,
+      "schema_hash": "e087553d924b6912c32d74a530cc2f9881d73cbfc83a5470dc26ab0ce04ce1ee",
+      "symbols": 50
+    },
+    "INDUSTRY_CATALOG": {
+      "date_max": "2021-12-11",
+      "date_min": "2004-02-09",
+      "pit_classification": "PIT_REFERENCE_INDUSTRY_CATALOG",
+      "query_restriction": {
+        "classification": "sw_l1",
+        "date": "2026-06-04"
+      },
+      "raw_sha256": "b28a40318ce1136741ea6263b83839dd560991cf0eef4e5b66fd89e723608b5f",
+      "rows": 31,
+      "schema_hash": "cf97f21a27ad8fb7c2926fc20a5ce027740b7e547dbcde568595fe5b872aec36",
+      "symbols": 0
+    },
+    "STK_FIN_FORCAST": {
+      "date_max": "2026-08-25",
+      "date_min": "2025-06-25",
+      "pit_classification": "PIT_SAFE_WITH_LAG",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "7ab71fda3256e2187a7579585daa62679e930d70db32d5cee383cb6626004181",
+      "rows": 298,
+      "schema_hash": "875621b4bc6cad5ca1ef9d0cd0b399fa4d3bf9139a4df08c47e10ca077d7045e",
+      "symbols": 152
+    },
+    "STK_HK_HOLD_INFO": {
+      "date_max": "2026-06-30",
+      "date_min": "2025-06-30",
+      "pit_classification": "PIT_SAFE_WITH_LAG",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "b4e7998e334609620cb769e059e3701dea72349093d34beb3c8527f482171747",
+      "rows": 1490,
+      "schema_hash": "7844891b741012251016a7654bf0cac8435d21c5c01eda064e636b249e228fec",
+      "symbols": 298
+    },
+    "STK_PERFORMANCE_LETTERS": {
+      "date_max": "2026-08-24",
+      "date_min": "2025-07-12",
+      "pit_classification": "PIT_SAFE_WITH_LAG_RESTATEMENT_RISK",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "5288ffcd221ce5e60a0b41e62ac488f39336a636417e1b0f3f7df8ddd001db6e",
+      "rows": 176,
+      "schema_hash": "6399c32241adbe8d5a0e35824256fcfbba3660acef3aaf5cfc4c147f186e9c7f",
+      "symbols": 68
+    },
+    "STK_REPORT_DISCLOSURE": {
+      "date_max": "2026-08-31",
+      "date_min": "2025-07-26",
+      "pit_classification": "PIT_SAFE_WITH_LAG_FOR_PUB_DATE_ONLY",
+      "query_restriction": {
+        "date_restriction": "provider_entitlement",
+        "universe": "csi300_reference"
+      },
+      "raw_sha256": "ca9b93d4eb7f7483e6fed6c10c85cf09d17f4bee531c3e0e9cc529598d5680c8",
+      "rows": 1500,
+      "schema_hash": "73595fab8ea1a30f985469de3e4d53a813098aa57911905d69ec33997e63787d",
+      "symbols": 300
+    },
+    "TRADING_CALENDAR": {
+      "date_max": "2026-09-04",
+      "date_min": "2025-05-28",
+      "pit_classification": "PIT_REFERENCE_CALENDAR",
+      "query_restriction": {
+        "end": "2026-09-05",
+        "start": "2025-05-28"
+      },
+      "raw_sha256": "f8e726860b50d9ca037c09a3558d5199b75d91de916342b31db67364bbe4a22c",
+      "rows": 313,
+      "schema_hash": "c0b51e9635d9382b73323c15e9da25f3c543621165c91ed71097838b492abea6",
+      "symbols": 0
+    },
+    "UNIVERSE": {
+      "date_max": "2026-06-04",
+      "date_min": "2026-06-04",
+      "pit_classification": "RESEARCH_SCOPE_ONLY",
+      "query_restriction": {
+        "date": "2026-06-04",
+        "index": "000300.XSHG"
+      },
+      "raw_sha256": "29324fc57a68b0694a12894be0d78984792227f7d3efaa10298b000fe28a31e0",
+      "rows": 300,
+      "schema_hash": "0ef607d1105138fc656df992f736109ec0fe5fcbdda3eb56e4b1294e2ee83b4d",
+      "symbols": 300
+    },
+    "VALUATION": {
+      "date_max": "2026-06-02",
+      "date_min": "2025-05-28",
+      "pit_classification": "PIT_SAFE_PROVIDER_ASOF",
+      "query_restriction": {
+        "dates": [
+          "2025-05-28",
+          "2025-06-05",
+          "2025-06-12",
+          "2025-06-19",
+          "2025-06-26",
+          "2025-07-03",
+          "2025-07-10",
+          "2025-07-17",
+          "2025-07-24",
+          "2025-07-31",
+          "2025-08-07",
+          "2025-08-14",
+          "2025-08-21",
+          "2025-08-28",
+          "2025-09-04",
+          "2025-09-11",
+          "2025-09-18",
+          "2025-09-25",
+          "2025-10-10",
+          "2025-10-17",
+          "2025-10-24",
+          "2025-10-31",
+          "2025-11-07",
+          "2025-11-14",
+          "2025-11-21",
+          "2025-11-28",
+          "2025-12-05",
+          "2025-12-12",
+          "2025-12-19",
+          "2025-12-26",
+          "2026-01-06",
+          "2026-01-13",
+          "2026-01-20",
+          "2026-01-27",
+          "2026-02-03",
+          "2026-02-10",
+          "2026-02-25",
+          "2026-03-04",
+          "2026-03-11",
+          "2026-03-18",
+          "2026-03-25",
+          "2026-04-01",
+          "2026-04-09",
+          "2026-04-16",
+          "2026-04-23",
+          "2026-04-30",
+          "2026-05-12",
+          "2026-05-19",
+          "2026-05-26",
+          "2026-06-02"
+        ],
+        "symbols": "core50_sha256"
+      },
+      "raw_sha256": "f83c855adc8aa6c580693fb4c9ae4ce10b422180c12637aaf711db3fde763d5b",
+      "rows": 2500,
+      "schema_hash": "fafa6a5a966e67839cdba1fa3c6adbeb6b00d977333c7e7e7a0e44613456e945",
+      "symbols": 50
+    }
+  },
+  "feature_store": {
+    "date_max": "2026-08-25",
+    "date_min": "2025-05-28",
+    "features": 71,
+    "long_rows": 355204,
+    "status": "READY",
+    "symbols": 300,
+    "wide_rows": 14044
+  },
+  "full_5_year_historical_gate": "FAIL",
+  "integrity": {
+    "account_identity_persisted": false,
+    "contracts_007_012_modified": 0,
+    "credentials_persisted": false,
+    "daily_pit_modified": 0,
+    "daily_prediction_modified": 0,
+    "feature_available_not_before_asof": true,
+    "feature_lineage_complete": true,
+    "future_return_values_used": false,
+    "gen2_modified": 0,
+    "model_training": false,
+    "rank_ic": "NOT_COMPUTED",
+    "return_labels_read": false,
+    "tencent_first_routing_modified": 0
+  },
+  "jqdata_adapter_usable": true,
+  "normalized_rows": 266216,
+  "pipeline": "PREDICTION_V2_JQDATA_REAL_DATA_PIPELINE",
+  "pit_safe_datasets": [
+    "GET_HISTORY_INDUSTRY",
+    "VALUATION",
+    "STK_REPORT_DISCLOSURE",
+    "STK_FIN_FORCAST",
+    "STK_HK_HOLD_INFO",
+    "FACTOR_LIBRARY"
+  ],
+  "pit_safe_with_lag_datasets": [
+    "STK_REPORT_DISCLOSURE",
+    "STK_FIN_FORCAST",
+    "STK_HK_HOLD_INFO",
+    "FACTOR_LIBRARY"
+  ],
+  "prediction_v2_data_acquisition": "BLOCKED",
+  "protocol_sha256": "f2dfcf4105a4275ed082ffee21f76cd3fde9e9e64176028a6daf4232151827e3",
+  "quota": {
+    "end_spare": 487168,
+    "local_budget": 800000,
+    "start_spare": 998884,
+    "used_this_run": 511716
+  },
+  "raw_partitions": 13,
+  "real_provider_queries": 67,
+  "real_rows_acquired": 263716,
+  "rejected": [
+    {
+      "credential_or_identity_in_error": false,
+      "dataset": "MONEYFLOW_HISTORY_DAILY",
+      "error_type": "ProviderAccessDenied",
+      "status": "REJECTED_ACCESS_DENIED"
+    }
+  ],
+  "research_only": [
+    "UNIVERSE",
+    "STK_PERFORMANCE_LETTERS",
+    "FINANCE_BALANCE_SHEET",
+    "FINANCE_INCOME_STATEMENT",
+    "FINANCE_CASHFLOW_STATEMENT"
+  ],
+  "status": "PREDICTION_V2_JQDATA_RESEARCH_DATA_READY"
+}

@@ -1,0 +1,92 @@
+{
+  "protocol": "PREDICTION_V2_JQDATA_REAL_DATA_PIPELINE",
+  "version": 1,
+  "frozen_at": "2026-09-05T13:52:00+08:00",
+  "parent_merged_main_sha": "6c6da1402f0bc2a8eeb78897450e191cc2645d77",
+  "scope": {
+    "model_training": false,
+    "return_labels_read": false,
+    "rank_ic_computed": false,
+    "production_changes": false,
+    "credential_environment_variables": [
+      "JQDATA_USERNAME",
+      "JQDATA_PASSWORD"
+    ]
+  },
+  "storage": {
+    "root": "data/prediction_v2/jqdata",
+    "raw_immutable": true,
+    "raw_gitignored": true,
+    "receipt_per_partition": true,
+    "sha256_per_partition": true,
+    "resume_checkpoint": true
+  },
+  "quota": {
+    "provider_daily_limit_rows": 1000000,
+    "local_daily_budget_rows": 800000,
+    "concurrent_requests": 1,
+    "pause_status": "JQDATA_DAILY_QUOTA_PAUSED"
+  },
+  "universe": {
+    "source": "000300.XSHG constituents",
+    "reference_date": "provider market entitlement end",
+    "feature_core_rule": "lexicographically sorted first 50 constituents",
+    "event_and_statement_rule": "all constituents",
+    "survivorship_boundary": "bounded provider integration slice; not a historical universe for model evaluation"
+  },
+  "date_rules": {
+    "market_bound_data": "use account market date_range_start/date_range_end",
+    "finance_tables": "determine accessible min/max independently from real table queries",
+    "date_only_publication": "available on next provider-verified trading session",
+    "unknown_availability": "reject from PIT feature store",
+    "financial_restatements": "retain provider-native raw but mark PIT_RESTATEMENT_RISK unless vintage replay is proved"
+  },
+  "valuation_sampling": "every fifth verified trading session in the licensed market window",
+  "factor_selection": {
+    "frozen_before_return_labels": true,
+    "maximum_total": 20,
+    "quality": [
+      "roe_ttm",
+      "roic_ttm",
+      "net_operate_cash_flow_to_asset",
+      "debt_to_asset_ratio"
+    ],
+    "growth": [
+      "net_profit_growth_rate",
+      "operating_revenue_growth_rate",
+      "net_operate_cashflow_growth_rate",
+      "total_asset_growth_rate"
+    ],
+    "risk": [
+      "Variance20",
+      "Variance60",
+      "Skewness20",
+      "Kurtosis20"
+    ],
+    "momentum": [
+      "Price1M",
+      "Price3M",
+      "ROC20",
+      "Rank1M"
+    ],
+    "emotion": [
+      "money_flow_20",
+      "turnover_volatility",
+      "VROC12",
+      "DAVOL20"
+    ]
+  },
+  "dataset_priority": [
+    "MONEYFLOW_HISTORY_DAILY",
+    "GET_HISTORY_INDUSTRY",
+    "VALUATION",
+    "STK_REPORT_DISCLOSURE",
+    "STK_FIN_FORCAST",
+    "STK_PERFORMANCE_LETTERS",
+    "FINANCE_BALANCE_SHEET",
+    "FINANCE_INCOME_STATEMENT",
+    "FINANCE_CASHFLOW_STATEMENT",
+    "STK_HK_HOLD_INFO",
+    "FACTOR_LIBRARY"
+  ]
+}
