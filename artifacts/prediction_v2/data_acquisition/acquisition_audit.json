@@ -1,0 +1,339 @@
+{
+  "acquisition_decision": {
+    "all_imports_ready": false,
+    "announcement_archive": "RECONSTRUCTION_ALLOWED_BUT_NOT_YET_HISTORICAL_PIT_APPROVED",
+    "blocking_items": [
+      "announcement_documents",
+      "analyst_estimates",
+      "actual_versions"
+    ],
+    "challenger_experiment": "NOT_STARTED",
+    "historical_analyst_expectations": "PROCUREMENT_OR_APPROVED_DELIVERY_REQUIRED",
+    "level_2": "DEFERRED_NOT_REQUIRED",
+    "status": "PREDICTION_V2_DATA_ACQUISITION_BLOCKED"
+  },
+  "audit_date": "2026-09-05",
+  "existing_repository_evidence": {
+    "analyst_consensus_vintages": {
+      "distinct_snapshots": 1,
+      "duplicate_symbol_snapshot_rows": 0,
+      "exists": true,
+      "files": [
+        {
+          "bytes": 110862,
+          "exists": true,
+          "expected_sha256": null,
+          "identity_verified": true,
+          "logical_path": "E:/ChatGPT/量化/data/pit_observations_v1r3/20260830T051947935413Z/expectations.csv",
+          "sha256": "3da6646a8c7b86e038bdee01a62a35245ecddc4df0312c7c2c3e718b3a874c89"
+        }
+      ],
+      "immutable_raw_hashes_complete": true,
+      "logical_path": "E:/ChatGPT/量化/data/pit_observations_v1r3",
+      "numeric_forward_eps": true,
+      "provenance": "prospective Eastmoney expectation snapshot normalized by PIT v1r3",
+      "replayable_revision_history": false,
+      "rows": 288,
+      "snapshot_max": "2026-08-30T05:19:47.935413+00:00",
+      "snapshot_min": "2026-08-30T05:19:47.935413+00:00",
+      "snapshot_span_days": 0,
+      "symbols": 288,
+      "target_or_dispersion": true
+    },
+    "analyst_report_metadata": {
+      "bytes": 3726170,
+      "columns": [
+        "symbol",
+        "report_date",
+        "title",
+        "rating",
+        "institution",
+        "industry",
+        "report_url"
+      ],
+      "content_scope": "report metadata and title",
+      "date": {
+        "distinct_years": 10,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "2017-01-03",
+        "valid": 21699
+      },
+      "duplicate_identity_rows": 0,
+      "exists": true,
+      "expected_sha256": "841c96e4356ad65299cfe826529c7f879a0506f5b65e62fd564925754406d07f",
+      "historical_consensus_vintages": false,
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/data/analyst_reports_pit_v14.csv",
+      "missing_audit_columns": [],
+      "nulls": {
+        "industry": 4,
+        "institution": 0,
+        "rating": 1314,
+        "report_date": 0,
+        "symbol": 0,
+        "title": 0
+      },
+      "numeric_expectation_fields": [],
+      "provider": "Eastmoney research report list via AkShare",
+      "rows": 21699,
+      "sha256": "841c96e4356ad65299cfe826529c7f879a0506f5b65e62fd564925754406d07f",
+      "symbols": 268
+    },
+    "announcement_bodies": {
+      "body_extraction_passed": 11,
+      "distinct_years": 3,
+      "documents": 12,
+      "documents_with_content_hash": 12,
+      "documents_with_first_seen": 12,
+      "documents_with_source_publication": 12,
+      "exists": true,
+      "historical_pit_verified": 0,
+      "logical_path": "E:/ChatGPT/量化/data/announcement_body_v1",
+      "model_training_ready": false,
+      "provenance": "CNInfo PDFs retrieved in 2026; historical records explicitly not PIT verified",
+      "source_publication_values_at_midnight": 12,
+      "symbols": 12,
+      "years": [
+        2018,
+        2021,
+        2024
+      ]
+    },
+    "announcement_titles": {
+      "bytes": 216700042,
+      "columns": [
+        "symbol",
+        "announcement_date",
+        "title",
+        "announcement_id",
+        "org_id",
+        "announcement_url"
+      ],
+      "content_scope": "title and metadata only",
+      "date": {
+        "distinct_years": 10,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "2017-01-03",
+        "valid": 966865
+      },
+      "duplicate_identity_rows": 0,
+      "exists": true,
+      "expected_sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+      "historical_pit_interpretation": "date-level usable only under conservative next-session embargo",
+      "identity_verified": true,
+      "intraday_publication_time_available": false,
+      "logical_path": "E:/ChatGPT/量化/data/announcements_pit_v14.csv",
+      "missing_audit_columns": [],
+      "nulls": {
+        "announcement_date": 0,
+        "announcement_id": 0,
+        "symbol": 0,
+        "title": 0
+      },
+      "provider": "CNInfo official disclosure query",
+      "rows": 966865,
+      "safe_effective_time_policy": "next verified trading session",
+      "sha256": "09463503d767708eacd0ccda0bfea9876e3898a8add311cdb9a2d5b35c1ab118",
+      "symbols": 791
+    },
+    "fundamental_actuals": {
+      "actual_release_time_verified": false,
+      "already_consumed_by_current_61_factor_pipeline": true,
+      "available_date": {
+        "distinct_years": 37,
+        "invalid": 0,
+        "max": "2026-08-25",
+        "min": "1990-03-21",
+        "valid": 66607
+      },
+      "bytes": 18741485,
+      "columns": [
+        "symbol",
+        "report_date",
+        "available_date",
+        "update_date",
+        "book_value_per_share",
+        "earnings_per_share",
+        "roe",
+        "roic",
+        "debt_ratio",
+        "revenue_growth",
+        "profit_growth",
+        "operating_cash_margin",
+        "gross_margin",
+        "deducted_profit_growth",
+        "gross_margin_yoy",
+        "receivables_turnover",
+        "inventory_turnover",
+        "fixed_asset_turnover",
+        "cash_ratio",
+        "interest_debt_ratio",
+        "operating_cycle",
+        "staff_average_revenue",
+        "staff_average_profit",
+        "fcff_back"
+      ],
+      "distinct_years": 39,
+      "duplicate_rows_across_symbol_report_date": 0,
+      "exists": true,
+      "expected_sha256": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+      "identity_verified": true,
+      "logical_path": "E:/ChatGPT/量化/data/fundamentals_pit_v10_extended.csv",
+      "novel_information_beyond_current_61_factors": false,
+      "replayable_revision_history": false,
+      "report_date": {
+        "distinct_years": 39,
+        "invalid": 0,
+        "max": "2026-06-30",
+        "min": "1988-12-31",
+        "valid": 66607
+      },
+      "revision_pollution_risk": true,
+      "rows": 66607,
+      "rows_updated_after_available_date": 43111,
+      "sha256": "8682941485fd1ac276bb515c5bdb5f2eb9db866bbf927f3dc027d8fc305bc578",
+      "symbol_report_date_keys_with_multiple_versions": 0,
+      "symbols": 796
+    }
+  },
+  "import_candidates": {
+    "actual_versions": {
+      "exists": false,
+      "passed": false,
+      "path": "E:/ChatGPT/prediction-v2-data-acquisition/data/prediction_v2_acquisition/import/actual_versions.csv",
+      "reason": "NO_APPROVED_IMPORT_DELIVERED"
+    },
+    "analyst_estimates": {
+      "exists": false,
+      "passed": false,
+      "path": "E:/ChatGPT/prediction-v2-data-acquisition/data/prediction_v2_acquisition/import/analyst_estimates.csv",
+      "reason": "NO_APPROVED_IMPORT_DELIVERED"
+    },
+    "announcement_documents": {
+      "exists": false,
+      "passed": false,
+      "path": "E:/ChatGPT/prediction-v2-data-acquisition/data/prediction_v2_acquisition/import/announcement_documents.csv",
+      "reason": "NO_APPROVED_IMPORT_DELIVERED"
+    }
+  },
+  "parent_readiness_sha256": "0a2ee528773509e52c95e9b0be720574a278bf3bb3267ed0e0f6f1aae4eb0b0d",
+  "protocol": "PREDICTION_V2_EVENT_AND_EXPECTATION_DATA_ACQUISITION",
+  "protocol_sha256": "a3617c8f7823d2f1e06297eba4464411af5f0174e4e3070e8774f3d770c04cd8",
+  "public_schema_probe": {
+    "current_year": 2026,
+    "endpoint": "https://reportapi.eastmoney.com/report/list",
+    "forecast_fields": [
+      "predictLastYearEps",
+      "predictLastYearPe",
+      "predictNextTwoYearEps",
+      "predictNextTwoYearPe",
+      "predictNextYearEps",
+      "predictNextYearPe",
+      "predictThisYearEps",
+      "predictThisYearPe"
+    ],
+    "has_explicit_forecast_period_per_value": false,
+    "has_report_publication_date": true,
+    "has_revision_or_supersession_link": false,
+    "has_stable_report_id": true,
+    "network_requests": 0,
+    "network_requests_total": 1,
+    "raw_bytes": 6929,
+    "raw_sha256": "85a3472f6c7244c4b4494a7a3f7d9682406dc7041fffda5fe3d704fd8775f70a",
+    "reason": "Dynamic predictThisYear/NextYear fields are tied to a response-level currentYear and the record schema lacks explicit per-value forecast-period and revision lineage.",
+    "record_fields": [
+      "actualLastTwoYearEps",
+      "actualLastYearEps",
+      "attachPages",
+      "attachSize",
+      "attachType",
+      "author",
+      "authorID",
+      "column",
+      "count",
+      "emIndustryCode",
+      "emRatingCode",
+      "emRatingName",
+      "emRatingValue",
+      "encodeUrl",
+      "industryCode",
+      "industryName",
+      "indvAimPriceL",
+      "indvAimPriceT",
+      "indvInduCode",
+      "indvInduName",
+      "indvIsNew",
+      "infoCode",
+      "lastEmRatingCode",
+      "lastEmRatingName",
+      "lastEmRatingValue",
+      "market",
+      "newIssuePrice",
+      "newListingDate",
+      "newPeIssueA",
+      "newPurchaseDate",
+      "orgCode",
+      "orgName",
+      "orgSName",
+      "orgType",
+      "predictLastYearEps",
+      "predictLastYearPe",
+      "predictNextTwoYearEps",
+      "predictNextTwoYearPe",
+      "predictNextYearEps",
+      "predictNextYearPe",
+      "predictThisYearEps",
+      "predictThisYearPe",
+      "publishDate",
+      "ratingChange",
+      "reportType",
+      "researcher",
+      "sRatingCode",
+      "sRatingName",
+      "stockCode",
+      "stockName",
+      "title"
+    ],
+    "rows_observed": 5,
+    "rows_retained_in_committed_artifacts": 0,
+    "source": "IMMUTABLE_LOCAL_PROBE_REUSE",
+    "top_level_fields": [
+      "TotalPage",
+      "currentYear",
+      "data",
+      "hits",
+      "pageNo",
+      "size"
+    ],
+    "training_admissible": false
+  },
+  "scope": {
+    "alpha_selection": false,
+    "model_training": false,
+    "paid_source_activated": false,
+    "production_modified": false,
+    "return_labels_read": false
+  },
+  "supplier_shortlist": [
+    {
+      "official_evidence": "official page advertises earnings forecasts and historical backtracking",
+      "official_url": "https://www.wind.com.cn/portal/zh/ClientApi/index.html",
+      "provider": "Wind Client API",
+      "status": "SAMPLE_AND_LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "official_evidence": "official manual describes analyst forecast error and divergence data",
+      "official_url": "https://manual.resset.com/RESSETRTAS.pdf",
+      "provider": "RESSET",
+      "status": "SAMPLE_AND_LICENSE_REVIEW_REQUIRED"
+    },
+    {
+      "official_evidence": "official database offers historical and custom research data",
+      "official_url": "https://www.csmar.com/channels/%E4%B8%AD%E5%9B%BD%E7%BB%8F%E6%B5%8E%E9%87%91%E8%9E%8D%E7%A0%94%E7%A9%B6%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88CSMAR%EF%BC%89.html",
+      "provider": "CSMAR",
+      "status": "EXACT_ANALYST_VINTAGE_FIELDS_NOT_PUBLICLY_CONFIRMED"
+    }
+  ]
+}

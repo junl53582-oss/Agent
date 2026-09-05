@@ -1,0 +1,27 @@
+{
+  "protocol": "PREDICTION_V2_EVENT_AND_EXPECTATION_DATA_ACQUISITION",
+  "validated_at": "2026-09-05",
+  "checks": {
+    "protocol_sidecar": "PASS",
+    "scoped_ruff": "PASS",
+    "targeted_tests": "9 passed",
+    "repository_remainder": "714 passed, 3 deselected, 1 xfailed, 24 subtests passed",
+    "artifact_manifest_before_receipt": "PASS; 7 entries",
+    "protected_scope_diff": "PASS; zero Gen2, prediction, prediction_v30r1, 007-012, DAILY PIT, daily prediction, forward evidence, and sandbox changes"
+  },
+  "schema_probe": {
+    "provider": "Eastmoney",
+    "network_requests_total": 1,
+    "automatic_retries": 0,
+    "raw_response_committed": false,
+    "raw_response_sha256": "85a3472f6c7244c4b4494a7a3f7d9682406dc7041fffda5fe3d704fd8775f70a",
+    "local_sidecar_verified_on_rerun": true,
+    "rerun_network_requests": 0,
+    "training_admissible": false
+  },
+  "model_training_performed": false,
+  "return_labels_read": false,
+  "paid_source_activated": false,
+  "production_modified": false,
+  "challenger_started": false
+}
