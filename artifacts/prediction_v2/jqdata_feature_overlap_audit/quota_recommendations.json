@@ -1,0 +1,73 @@
+{
+  "continue": {
+    "FACTOR_LIBRARY": {
+      "action": "REDUCE_TO_COLLECTION_SHORTLIST",
+      "features": [
+        "jq_growth_net_operate_cashflow_growth_rate",
+        "jq_growth_net_profit_growth_rate",
+        "jq_growth_total_asset_growth_rate",
+        "jq_risk_kurtosis20",
+        "jq_risk_skewness20"
+      ]
+    },
+    "GET_HISTORY_INDUSTRY": "INCREMENTAL_CHANGES_ONLY",
+    "STK_FIN_FORCAST": "INCREMENTAL_EVENTS_ONLY",
+    "STK_HK_HOLD_INFO": "INCREMENTAL_SNAPSHOTS_ONLY",
+    "STK_REPORT_DISCLOSURE": "INCREMENTAL_PUBLICATION_METADATA_ONLY",
+    "VALUATION": {
+      "action": "WEEKLY_INCREMENTAL_ONLY",
+      "features": [
+        "jq_valuation_market_cap_industry_percentile",
+        "jq_valuation_pb_ratio_industry_percentile",
+        "jq_valuation_pb_ratio_percentile",
+        "jq_valuation_pcf_ratio_industry_percentile",
+        "jq_valuation_pcf_ratio_own_percentile",
+        "jq_valuation_pcf_ratio_percentile",
+        "jq_valuation_pe_ratio_industry_percentile",
+        "jq_valuation_pe_ratio_own_zscore",
+        "jq_valuation_ps_ratio_industry_percentile"
+      ]
+    }
+  },
+  "pause_features": {
+    "FACTOR_LIBRARY": [
+      "jq_emotion_davol20",
+      "jq_emotion_money_flow_20",
+      "jq_emotion_turnover_volatility",
+      "jq_emotion_vroc12",
+      "jq_growth_operating_revenue_growth_rate",
+      "jq_momentum_price1m",
+      "jq_momentum_price3m",
+      "jq_momentum_rank1m",
+      "jq_momentum_roc20",
+      "jq_quality_debt_to_asset_ratio",
+      "jq_quality_net_operate_cash_flow_to_asset",
+      "jq_quality_roe_ttm",
+      "jq_quality_roic_ttm",
+      "jq_risk_variance20",
+      "jq_risk_variance60"
+    ],
+    "VALUATION": [
+      "jq_valuation_market_cap_own_percentile",
+      "jq_valuation_market_cap_own_zscore",
+      "jq_valuation_market_cap_percentile",
+      "jq_valuation_pb_ratio_own_percentile",
+      "jq_valuation_pb_ratio_own_zscore",
+      "jq_valuation_pcf_ratio_own_zscore",
+      "jq_valuation_pe_ratio_own_percentile",
+      "jq_valuation_pe_ratio_percentile",
+      "jq_valuation_ps_ratio_own_percentile",
+      "jq_valuation_ps_ratio_own_zscore",
+      "jq_valuation_ps_ratio_percentile"
+    ]
+  },
+  "pause_or_stop": {
+    "FINANCE_BALANCE_SHEET": "PAUSE_UNTIL_RESTATEMENT_REPLAY_IS_PROVED",
+    "FINANCE_CASHFLOW_STATEMENT": "PAUSE_UNTIL_RESTATEMENT_REPLAY_IS_PROVED",
+    "FINANCE_INCOME_STATEMENT": "PAUSE_UNTIL_RESTATEMENT_REPLAY_IS_PROVED",
+    "INDUSTRY_CATALOG": "STATIC_CACHE_REFRESH_ONLY_ON_PROVIDER_VERSION_CHANGE",
+    "MONEYFLOW_HISTORY_DAILY": "STOP_RETRY_UNTIL_ENTITLEMENT_CHANGES",
+    "STK_PERFORMANCE_LETTERS": "PAUSE_FEATURE_ADMISSION_UNTIL_REVISION_LINEAGE_IS_PROVED"
+  },
+  "provider_queries_this_audit": 0
+}

@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "main_sha": "864c5d949eb4364cfb7c336f89e7f8ebd13b5334",
+    "merged_jqdata_pipeline_pr": 17,
+    "merged_jqdata_pipeline_sha": "7094b42fa733d51b5b4a6627b30e138958be0df3"
+  },
+  "forbidden": {
+    "model_training": true,
+    "predictive_alpha_claim": true,
+    "provider_queries": true,
+    "rank_ic": true,
+    "return_label_values": true
+  },
+  "frozen_rules": {
+    "continuous_minimum_dates": 120,
+    "event_minimum_observations": 100,
+    "minimum_correlation_observations": 100,
+    "minimum_daily_cross_section": 10,
+    "partial_redundancy_threshold": 0.65,
+    "redundancy_threshold": 0.85,
+    "shortlist_event_reserve": 4,
+    "shortlist_maximum": 25,
+    "shortlist_snapshot_reserve": 2,
+    "shortlist_target": 20,
+    "sparse_asof_minimum_dates": 30,
+    "within_jq_redundancy_threshold": 0.9
+  },
+  "inputs": {
+    "gen2_feature_count": 61,
+    "gen2_panel_sha256": "8aa5e3f2817d6bf8e5da3bd265b4f078206b58b10ee770907233595c59342b02",
+    "jq_feature_count": 71,
+    "jq_features_long_sha256": "ca589e84b3c1b1a9bb66b7c0cfa406224a59a2bb5e119310f7bd05f9f3463832",
+    "jq_features_wide_sha256": "470cb946901741313f517499dbc3f477e0ce5519ec2f8f3bf21035d97e7dc27c"
+  },
+  "interpretation": "Low overlap is structural novelty only and is not evidence of predictive alpha.",
+  "protocol": "PREDICTION_V2_JQDATA_FEATURE_OVERLAP_AND_INFORMATION_AUDIT_V1",
+  "research_status": "RESEARCH_ONLY"
+}

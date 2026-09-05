@@ -178,3 +178,8 @@ artifacts/prediction_v2/jqdata_capability_audit/** -text whitespace=cr-at-eol
 stockpilot/prediction_v2_data/jqdata_real_data.py text eol=lf
 tests/test_prediction_v2_jqdata_real_data.py text eol=lf
 artifacts/prediction_v2/jqdata_real_data/** -text whitespace=cr-at-eol
+
+# Prediction V2 no-label JQData/Gen2 overlap audit.
+stockpilot/prediction_v2_data/jqdata_feature_overlap_audit.py text eol=lf
+tests/test_prediction_v2_jqdata_feature_overlap_audit.py text eol=lf
+artifacts/prediction_v2/jqdata_feature_overlap_audit/** -text whitespace=cr-at-eol
