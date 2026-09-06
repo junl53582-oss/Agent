@@ -330,3 +330,63 @@ def json_load(path: Path) -> dict:
     import json
 
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def test_monitor_acquisition_is_lineage_aligned() -> None:
+    """Regression guard: the raw Eastmoney-first acquire_market must never return.
+
+    The 2026-09-03 FORWARD_EVIDENCE_BLOCKED incident was caused by this stream
+    acquiring through daily_pipeline.acquire_market while the Tencent-first fix
+    was only wired into stockpilot/daily_prediction/product.py.
+    """
+
+    import inspect
+
+    from stockpilot.forward_evidence import monitor
+    from stockpilot.provider_lineage_alignment import acquire_lineage_aligned_market
+
+    assert monitor.ACQUIRE_MARKET is acquire_lineage_aligned_market
+    default = inspect.signature(monitor.run_daily).parameters["acquisition_runner"].default
+    assert default is acquire_lineage_aligned_market
+    source = inspect.getsource(monitor)
+    assert "daily_pipeline.acquire_market" not in source
+
+
+def test_after_window_acquisition_goes_through_lineage_aligned_runner(
+    tmp_path: Path, monkeypatch
+) -> None:
+    """After the data window opens, acquisition must use the injected lineage runner."""
+
+    settings = _settings(tmp_path)
+    raw_calls: list[tuple] = []
+    aligned_calls: list[tuple] = []
+
+    def forbidden(*args, **kwargs):
+        raw_calls.append(args)
+        raise AssertionError("raw Eastmoney-first acquire_market must not be used")
+
+    def aligned_spy(target_date, requested_symbols, **kwargs):
+        aligned_calls.append((target_date, requested_symbols))
+        return {"provider_requests_made": 2}
+
+    def boom(*args, **kwargs):
+        raise RuntimeError("SENTINEL_STOP_AFTER_ACQUISITION")
+
+    monkeypatch.setattr(
+        "stockpilot.forward_evidence.monitor.daily_pipeline.acquire_market", forbidden
+    )
+    monkeypatch.setattr(
+        "stockpilot.forward_evidence.monitor.daily_pipeline.materialize_features", boom
+    )
+    result = run_daily(
+        DATE,
+        confirm_real_provider_acquisition=True,
+        now=datetime(2026, 9, 3, 12, tzinfo=timezone.utc),
+        settings=settings,
+        baseline_verifier=_baseline,
+        acquisition_runner=aligned_spy,
+    )
+    assert aligned_calls == [(DATE, [])]
+    assert raw_calls == []
+    assert result["provider_requests"] == 2
+    assert "SENTINEL_STOP_AFTER_ACQUISITION" in (result["reason"] or "")

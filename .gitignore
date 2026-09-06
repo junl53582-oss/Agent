@@ -37,3 +37,6 @@ artifacts/forward_evidence/**/checkpoints/
 artifacts/daily_predictions/**/predictions/
 artifacts/daily_predictions/**/attempts/
 artifacts/daily_predictions/**/latest.json
+
+# local agent preset files - never commit to public repo
+GEMINI.md

@@ -36,12 +36,25 @@ from stockpilot.prospective_r2.integrity import (
     verify_immutable,
     write_immutable_json,
 )
+from stockpilot.provider_lineage_alignment import acquire_lineage_aligned_market
 from stockpilot.research_challenger import prospective_gen2_runtime_locked as runtime010
 
 SHANGHAI = ZoneInfo("Asia/Shanghai")
 BASELINE_SHA = "0119ca98e4db9156ec1008b8155fa4342131943d"
 MODEL_ID = "GEN2-LGBM-20D-SECTOR-BALANCED-TOP20"
 CONTRACT_VERSION = "DAILY_PIT_FORWARD_EVIDENCE_V1"
+
+# DAILY PIT market acquisition for this stream MUST go through the Tencent-first,
+# lineage-aligned runner (provider_lineage_alignment.acquire_lineage_aligned_market).
+# The raw Eastmoney-first daily-pipeline acquisition entry caused the
+# 2026-09-03 HFQ lineage break (CROSS_PROVIDER_HFQ_LINEAGE_CHANGE_TENCENT_TO_
+# EASTMONEY: symbols 000630/000792/601607 switched provider and failed overlap
+# consistency, leaving the chain FORWARD_EVIDENCE_BLOCKED). Note: the static
+# policy payload inside stockpilot/daily_pit/pipeline.py still declares the
+# frozen baseline order ("akshare-eastmoney" primary); that module is a
+# PROTECTED surface (see PROTECTED_PREFIXES) and must stay byte-identical —
+# the authoritative current policy is this runner, not that frozen payload.
+ACQUIRE_MARKET = acquire_lineage_aligned_market
 PROTECTED_PREFIXES = (
     "research_v6/",
     "artifacts/research_v6/",
@@ -1002,6 +1015,7 @@ def run_daily(
     now: datetime | None = None,
     settings: ForwardEvidenceSettings | None = None,
     baseline_verifier: Callable[[ForwardEvidenceSettings], dict[str, Any]] | None = None,
+    acquisition_runner: Callable[..., dict[str, Any]] = ACQUIRE_MARKET,
 ) -> dict[str, Any]:
     settings = settings or ForwardEvidenceSettings()
     now = now or datetime.now(timezone.utc)
@@ -1036,7 +1050,7 @@ def run_daily(
                 if not confirm_real_provider_acquisition:
                     reason = "REAL_PROVIDER_CONFIRMATION_REQUIRED"
                 else:
-                    acquired = daily_pipeline.acquire_market(
+                    acquired = acquisition_runner(
                         target_date,
                         [],
                         now=now,
